@@ -149,10 +149,10 @@ button,input,select,textarea{font:inherit}
 .footer strong{color:rgba(255,255,255,.92)}
 .copyright{width:min(calc(100% - 40px),1280px);margin-inline:auto;padding:18px 0;text-align:center;color:rgba(255,255,255,.38);font-size:.8rem}
 /* よこむすびカード */
-.yokomusubi-card{display:flex;flex-direction:column;gap:4px;margin-top:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);text-decoration:none;transition:var(--t)}
-.yokomusubi-card:hover{background:rgba(255,255,255,.13)}
-.yokomusubi-card img{height:38px;width:auto}
-.yokomusubi-tagline{color:#fff;font-size:.84rem;font-weight:700;margin-top:7px}
+.yokomusubi-card{display:block;margin-top:12px;padding:14px 16px;border-radius:14px;background:#fff;border:none;text-decoration:none;transition:transform .22s,box-shadow .22s;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.yokomusubi-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.yokomusubi-card img{height:100px;width:auto;display:block;margin:0 auto}
+.yokomusubi-tagline{display:none}
 .yokomusubi-meta{color:rgba(255,255,255,.6);font-size:.76rem}
 .footer-contact{margin-top:16px;display:flex;flex-direction:column;gap:7px}
 /* SNS cards column */
