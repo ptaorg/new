@@ -151,7 +151,7 @@ button,input,select,textarea{font:inherit}
 /* よこむすびカード */
 .yokomusubi-card{display:flex;flex-direction:column;gap:5px;margin-top:12px;padding:13px 14px;border-radius:12px;background:#fff;border:none;text-decoration:none;transition:transform .22s,box-shadow .22s;box-shadow:0 2px 12px rgba(0,0,0,.18);max-width:230px}
 .yokomusubi-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.25)}
-.yokomusubi-card img{height:52px;width:auto}
+.yokomusubi-card img{height:52px;width:auto;align-self:flex-start}
 .yokomusubi-tagline{color:#1a3a52;font-size:.82rem;font-weight:700;margin-top:4px}
 .yokomusubi-meta{color:#555;font-size:.74rem}
 .footer-contact{margin-top:16px;display:flex;flex-direction:column;gap:7px}
