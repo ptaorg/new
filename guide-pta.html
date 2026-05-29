@@ -83,7 +83,7 @@
 
     /* リスクインフォグラフィック */
     .risk-infographic{
-      background:linear-gradient(145deg,var(--navy),var(--navy-2));
+      background:linear-gradient(145deg,#1d4ed8,#2563eb);
       padding:80px 0;color:#fff;
     }
     .risk-chart{
@@ -173,13 +173,22 @@
     }
     .page-hero-bg-img img{
       width:100%;height:100%;object-fit:cover;
-      filter:brightness(.82);
+      filter:brightness(1.05);
     }
     .page-hero-bg-img::after{
       content:'';position:absolute;inset:0;
-      background:linear-gradient(160deg,rgba(5,17,31,.58) 0%,rgba(5,17,31,.32) 60%,rgba(5,17,31,.15) 100%);
+      background:linear-gradient(160deg,rgba(5,17,31,.32) 0%,rgba(5,17,31,.14) 60%,rgba(5,17,31,.05) 100%);
     }
     .page-hero-inner{position:relative;z-index:1;}
+  
+    /* ↓ Photo hero overrides — keep white text on photo background ↓ */
+    .page-hero{background:transparent!important;border-top:none!important;border-bottom:none!important}
+    .page-hero h1{color:#fff!important}
+    .page-hero h1 em{color:var(--gold-lt)!important}
+    .page-hero p{color:rgba(255,255,255,.88)!important}
+    .page-hero-kicker{background:rgba(212,175,55,.18)!important;border:1px solid rgba(212,175,55,.4)!important;color:var(--gold-lt)!important}
+    .hero-actions .btn-outline{color:#fff!important;border-color:rgba(255,255,255,.5)!important}
+    .hero-actions .btn-outline:hover{background:rgba(255,255,255,.12)!important;border-color:rgba(255,255,255,.8)!important}
   </style>
 </head>
 <body>
@@ -298,7 +307,7 @@
   <main>
 
     <!-- PDFガイドブックダウンロードバナー -->
-    <div style="background:linear-gradient(135deg,var(--navy),var(--navy-2));padding:24px 0;border-bottom:3px solid var(--gold)">
+    <div style="background:linear-gradient(135deg,#1d4ed8,#2563eb);padding:24px 0;border-bottom:3px solid var(--gold)">
       <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
         <div style="display:flex;align-items:center;gap:16px">
           <div style="font-size:2.2rem;line-height:1;flex-shrink:0">📄</div>
@@ -551,7 +560,7 @@
           </div>
         </div>
 
-        <div style="background:linear-gradient(135deg,var(--navy),var(--navy-2));border-radius:var(--radius);padding:24px 28px;text-align:center">
+        <div style="background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:var(--radius);padding:24px 28px;text-align:center">
           <p style="color:rgba(255,255,255,.9);font-size:.97rem;font-weight:700;line-height:1.85;margin:0">
             PTA活動は、無理やり維持するから苦しくなります。<br>
             <strong style="color:var(--gold-lt)">自分から手を挙げて参加する人がいるから、活動に活気が生まれます。</strong><br>
@@ -678,7 +687,7 @@
     </section>
 
     <!-- 点検チェックリスト（付録G） -->
-    <section style="background:linear-gradient(135deg,var(--navy),var(--navy-2));padding:72px 0;color:#fff">
+    <section style="background:linear-gradient(135deg,#1d4ed8,#2563eb);padding:72px 0;color:#fff">
       <div style="width:min(calc(100% - 40px),860px);margin-inline:auto">
         <div class="section-kicker" style="background:rgba(212,175,55,.15);color:var(--gold-lt)">点検チェックリスト</div>
         <h2 class="section-title" style="color:#fff;margin-top:10px">役員就任後 今すぐ確認する</h2>

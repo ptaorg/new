@@ -35,7 +35,7 @@
     .tl-content .tl-date{font-size:.75rem;font-weight:900;color:var(--text-soft);letter-spacing:.06em;margin-bottom:4px}
     .tl-content .tl-title{font-weight:800;color:var(--navy);font-size:.97rem;margin-bottom:6px}
     .tl-content p{font-size:.9rem;color:var(--text-soft);line-height:1.75;margin:0}
-    .quote-box{background:linear-gradient(145deg,var(--navy),var(--navy-2));border-radius:var(--radius);padding:28px 32px;margin:24px 0;position:relative}
+    .quote-box{background:linear-gradient(145deg,#1d4ed8,#2563eb);border-radius:var(--radius);padding:28px 32px;margin:24px 0;position:relative}
     .quote-box::before{content:'"';position:absolute;top:10px;right:20px;font-family:'Noto Serif JP',serif;font-size:5rem;color:rgba(212,175,55,.15);line-height:1}
     .quote-box .qb-src{font-size:.72rem;font-weight:900;letter-spacing:.08em;color:var(--gold-lt);text-transform:uppercase;margin-bottom:12px}
     .quote-box blockquote{font-family:'Noto Serif JP',serif;font-size:1.1rem;color:#fff;line-height:1.9;margin:0 0 14px;font-style:normal}
@@ -50,6 +50,15 @@
     .verdict{background:var(--navy);border-radius:var(--radius);padding:28px 32px;margin:32px 0;text-align:center}
     .verdict p{font-family:'Noto Serif JP',serif;font-size:1.15rem;font-weight:900;color:var(--gold-lt);margin:0;line-height:1.7}
     @media(max-width:700px){.analysis-grid{grid-template-columns:1fr}}
+  
+    /* ↓ Photo hero overrides — keep white text on photo background ↓ */
+    .page-hero{background:transparent!important;border-top:none!important;border-bottom:none!important}
+    .page-hero h1{color:#fff!important}
+    .page-hero h1 em{color:var(--gold-lt)!important}
+    .page-hero p{color:rgba(255,255,255,.88)!important}
+    .page-hero-kicker{background:rgba(212,175,55,.18)!important;border:1px solid rgba(212,175,55,.4)!important;color:var(--gold-lt)!important}
+    .hero-actions .btn-outline{color:#fff!important;border-color:rgba(255,255,255,.5)!important}
+    .hero-actions .btn-outline:hover{background:rgba(255,255,255,.12)!important;border-color:rgba(255,255,255,.8)!important}
   </style>
 </head>
 <body>

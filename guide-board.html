@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,7 @@
       border-radius:var(--radius);padding:32px;
     }
     .duty-col-school{
-      background:linear-gradient(145deg,var(--navy),var(--navy-2));color:#fff;
+      background:linear-gradient(145deg,#1d4ed8,#2563eb);color:#fff;
     }
     .duty-col-pta{
       background:#fff;border:1px solid var(--line);
@@ -108,7 +108,7 @@
 
     /* Yokohama notice */
     .yk-notice-section{
-      background:linear-gradient(145deg,var(--navy),var(--navy-2));
+      background:linear-gradient(145deg,#1d4ed8,#2563eb);
       padding:72px 0;color:#fff;
     }
     .yk-notice-card{
@@ -130,13 +130,22 @@
     }
     .page-hero-bg-img img{
       width:100%;height:100%;object-fit:cover;
-      filter:brightness(.82);
+      filter:brightness(1.05);
     }
     .page-hero-bg-img::after{
       content:'';position:absolute;inset:0;
-      background:linear-gradient(160deg,rgba(5,17,31,.58) 0%,rgba(5,17,31,.32) 60%,rgba(5,17,31,.15) 100%);
+      background:linear-gradient(160deg,rgba(5,17,31,.32) 0%,rgba(5,17,31,.14) 60%,rgba(5,17,31,.05) 100%);
     }
     .page-hero-inner{position:relative;z-index:1;}
+  
+    /* ↓ Photo hero overrides — keep white text on photo background ↓ */
+    .page-hero{background:transparent!important;border-top:none!important;border-bottom:none!important}
+    .page-hero h1{color:#fff!important}
+    .page-hero h1 em{color:var(--gold-lt)!important}
+    .page-hero p{color:rgba(255,255,255,.88)!important}
+    .page-hero-kicker{background:rgba(212,175,55,.18)!important;border:1px solid rgba(212,175,55,.4)!important;color:var(--gold-lt)!important}
+    .hero-actions .btn-outline{color:#fff!important;border-color:rgba(255,255,255,.5)!important}
+    .hero-actions .btn-outline:hover{background:rgba(255,255,255,.12)!important;border-color:rgba(255,255,255,.8)!important}
   </style>
 </head>
 <body>
@@ -254,7 +263,7 @@
   <main>
 
     <!-- PDFガイドブックダウンロードバナー -->
-    <div style="background:linear-gradient(135deg,var(--navy),var(--navy-2));padding:24px 0;border-bottom:3px solid var(--gold)">
+    <div style="background:linear-gradient(135deg,#1d4ed8,#2563eb);padding:24px 0;border-bottom:3px solid var(--gold)">
       <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
         <div style="display:flex;align-items:center;gap:16px">
           <div style="font-size:2.2rem;line-height:1;flex-shrink:0">📄</div>
@@ -422,7 +431,7 @@
           </div>
         </div>
 
-        <div style="background:linear-gradient(135deg,var(--navy),var(--navy-2));border-radius:var(--radius);padding:26px 30px">
+        <div style="background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:var(--radius);padding:26px 30px">
           <div style="font-size:.74rem;font-weight:900;letter-spacing:.06em;color:var(--gold-lt);margin-bottom:10px">個人情報保護委員会「公立学校とPTAの間で個人情報のやり取りをするためのポイント」（令和8年3月）</div>
           <p style="color:rgba(255,255,255,.9);font-size:.93rem;line-height:1.85;margin:0 0 10px"><strong style="color:var(--gold-lt)">PTAが必要な個人情報は、PTAが入会申込書を通じて、入会した会員本人から直接取得する。学校は一切関与しない。学校連絡ツールはPTA通知に使わない。</strong></p>
           <p style="color:rgba(255,255,255,.6);font-size:.82rem;line-height:1.7;margin:0">同意を得られなかった個人情報は提供にあたって削除・マスキングが必要。同意は個人ごとに取得する必要があります。</p>
@@ -488,7 +497,7 @@
           </div>
         </div>
 
-        <div style="background:linear-gradient(135deg,var(--navy),var(--navy-2));border-radius:var(--radius);padding:28px;text-align:center">
+        <div style="background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:var(--radius);padding:28px;text-align:center">
           <p style="color:rgba(255,255,255,.9);font-size:.97rem;font-weight:700;line-height:1.85;margin:0">
             「PTAは独立した団体だから教育委員会は関与できない」と言いながら、<br>
             校長がPTA副会長を務め、教頭がPTA会計を担い、学校がPTA会費を徴収する<br>
@@ -1054,7 +1063,7 @@
     </section>
 
     <!-- 即行動チェックリスト -->
-    <section style="background:linear-gradient(135deg,var(--navy),var(--navy-2));padding:72px 0;color:#fff">
+    <section style="background:linear-gradient(135deg,#1d4ed8,#2563eb);padding:72px 0;color:#fff">
       <div style="width:min(calc(100% - 40px),860px);margin-inline:auto">
         <div class="section-kicker" style="background:rgba(212,175,55,.15);color:var(--gold-lt)">Action Checklist</div>
         <h2 class="section-title" style="color:#fff;margin-top:10px">今週中にやることリスト</h2>
