@@ -148,6 +148,18 @@ button,input,select,textarea{font:inherit}
 .yokomusubi-card img{height:40px;width:auto}
 .yokomusubi-meta{color:rgba(255,255,255,.88);font-size:.82rem}
 
+/* Footer SNS Bar */
+.footer-sns-bar{background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.1);padding:20px 0}
+.footer-sns-inner{width:min(calc(100% - 40px),1240px);margin-inline:auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.footer-sns-label{font-size:.72rem;font-weight:900;letter-spacing:.08em;color:var(--gold-lt);text-transform:uppercase;flex-shrink:0}
+.footer-sns-links{display:flex;gap:12px;flex-wrap:wrap}
+.sns-btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:10px;text-decoration:none;transition:var(--t);border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06)}
+.sns-btn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:#fff}
+.sns-btn svg{flex-shrink:0}
+.sns-name{font-size:.84rem;font-weight:700;color:#fff;line-height:1.2}
+.sns-desc{font-size:.73rem;color:rgba(255,255,255,.55);line-height:1.2;margin-top:2px}
+.sns-x svg{color:#fff}.sns-yt svg{color:#ff0000}.sns-note svg{color:rgba(255,255,255,.8)}
+
 .hidden{display:none!important}
 
 /* ===================================================
