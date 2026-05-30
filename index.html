@@ -890,6 +890,7 @@
 }
 
 </style>
+  <link rel="stylesheet" href="css/home-enhance.css">
 </head>
 <body>
 
@@ -904,7 +905,7 @@
     </a>
     <div class="header-search">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" class="search-input" placeholder="キーワードで検索…" aria-label="サイト内検索">
+      <input type="text" class="search-input" id="site-search" placeholder="キーワードで検索…" aria-label="サイト内検索">
       <div class="search-results-dropdown"></div>
     </div>
     <nav class="desktop-nav" aria-label="主要ナビゲーション">
@@ -997,20 +998,123 @@
      ========================================= -->
 <section class="hero-content-wrap">
   <div class="hero-inner">
-    <div class="hero-text-row">
-      <div class="hero-eyebrow">Research · Legal Evidence · Primary Sources</div>
-      <h1 class="hero-h1">
-        PTAを、<span class="gold">任意加入の原則</span>と<br>
-        法令に基づく運営へ。
-      </h1>
-      <p class="hero-tagline">
-        PTA適正化推進委員会は、法令・公文書・教育委員会回答をもとに、PTA運営の実態と課題を整理し、保護者・学校・教育委員会が確認すべき情報を公開しています。
+    <div class="hero-text-row home-hero-copy">
+      <h1 class="home-hero-title">PTAを、学校の空気ではなく、資料で見る。</h1>
+      <p class="home-hero-lead">
+        入会、会費、個人情報、教職員関与。PTAをめぐる論点を、法令・公文書・教育委員会回答・実物資料から確認できる入口へ整理しました。
       </p>
-      <div class="hero-btns">
-        <a href="board-responses.html" class="hero-btn-primary">教育委員会の回答を見る</a>
-        <a href="national-archive.html" class="hero-btn-secondary">公文書・調査資料を見る</a>
-        <a href="law-map.html" class="hero-btn-secondary">法令・根拠を見る</a>
+      <div class="home-primary-actions" aria-label="主要入口">
+        <a href="guide-parent.html" class="home-btn home-btn--primary">保護者として読む</a>
+        <a href="guide-board.html" class="home-btn">学校・教育委員会として読む</a>
+        <a href="national-archive.html" class="home-btn">実物資料庫を見る</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-entry-section" aria-labelledby="home-entry-title">
+  <div class="home-entry-wrap">
+    <div class="home-entry-head">
+      <h2 id="home-entry-title">立場と資料から、すぐに入る。</h2>
+      <p>保護者、PTA役員、学校・教育委員会、そして資料そのもの。必要な入口を画像付きで並べ、トップページから目的の情報へ短く進めるようにしました。</p>
+    </div>
+
+    <div class="home-entry-grid">
+      <a href="guide-parent.html" class="home-entry-card home-entry-card--large">
+        <img src="assets/home/home-parent.webp" alt="保護者向け資料のイメージ" loading="lazy">
+        <span class="home-card-kicker">Parents</span>
+        <h3>保護者の方へ</h3>
+        <p>入会、退会、会費、個人情報など、家庭で確認したい論点から読み始めます。</p>
+        <span class="home-card-link">読む</span>
+      </a>
+
+      <a href="guide-pta.html" class="home-entry-card home-entry-card--large">
+        <img src="assets/home/home-pta.webp" alt="PTA役員向け資料のイメージ" loading="lazy">
+        <span class="home-card-kicker">PTA Board</span>
+        <h3>PTA役員の方へ</h3>
+        <p>任意加入、会員管理、会費徴収、個人情報管理を実務の視点で確認します。</p>
+        <span class="home-card-link">読む</span>
+      </a>
+
+      <a href="guide-board.html" class="home-entry-card home-entry-card--large">
+        <img src="assets/home/home-board.webp" alt="学校・教育委員会向け資料のイメージ" loading="lazy">
+        <span class="home-card-kicker">School / Board</span>
+        <h3>学校・教育委員会の方へ</h3>
+        <p>学校関与、配布物、徴収、服務、個人情報の取り扱いを確認します。</p>
+        <span class="home-card-link">読む</span>
+      </a>
+
+      <a href="national-archive.html" class="home-entry-card">
+        <img src="assets/home/home-materials.webp" alt="実物PTA資料庫のイメージ" loading="lazy">
+        <span class="home-card-kicker">Archive</span>
+        <h3>実物PTA資料庫</h3>
+        <p>入会案内、徴収文書、会計資料などの実物資料を確認します。</p>
+        <span class="home-card-link">開く</span>
+      </a>
+
+      <a href="board-responses.html" class="home-entry-card">
+        <img src="assets/home/home-response-db.webp" alt="教育委員会回答DBのイメージ" loading="lazy">
+        <span class="home-card-kicker">Responses</span>
+        <h3>教育委員会回答DB</h3>
+        <p>全国の教育委員会・自治体回答を論点別にたどります。</p>
+        <span class="home-card-link">開く</span>
+      </a>
+
+      <a href="guide-board.html" class="home-entry-card">
+        <img src="assets/home/home-edu.webp" alt="教育委員会向け指針のイメージ" loading="lazy">
+        <span class="home-card-kicker">Guideline</span>
+        <h3>教育委員会向け指針</h3>
+        <p>PTAに直接介入しない前提で、学校側の関与を点検します。</p>
+        <span class="home-card-link">読む</span>
+      </a>
+
+      <a href="membership.html" class="home-entry-card">
+        <img src="assets/home/home-membership.webp" alt="入会意思確認資料のイメージ" loading="lazy">
+        <span class="home-card-kicker">Membership</span>
+        <h3>入会意思確認</h3>
+        <p>申込み、承諾、みなし加入、退会手続を整理します。</p>
+        <span class="home-card-link">確認する</span>
+      </a>
+
+      <a href="fee-collection.html" class="home-entry-card">
+        <img src="assets/home/home-fee.webp" alt="会費徴収資料のイメージ" loading="lazy">
+        <span class="home-card-kicker">Fee</span>
+        <h3>会費徴収</h3>
+        <p>学校徴収金との混在、委任、会計分離、返金の論点を確認します。</p>
+        <span class="home-card-link">確認する</span>
+      </a>
+
+      <a href="privacy.html" class="home-entry-card">
+        <img src="assets/home/home-privacy.webp" alt="個人情報資料のイメージ" loading="lazy">
+        <span class="home-card-kicker">Privacy</span>
+        <h3>個人情報</h3>
+        <p>学校名簿、第三者提供、本人同意、直接取得の論点を確認します。</p>
+        <span class="home-card-link">確認する</span>
+      </a>
+
+      <a href="personnel.html" class="home-entry-card">
+        <img src="assets/home/home-staff.webp" alt="教職員関与資料のイメージ" loading="lazy">
+        <span class="home-card-kicker">Staff</span>
+        <h3>教職員関与</h3>
+        <p>勤務時間中のPTA事務、校務分掌、職務専念義務を整理します。</p>
+        <span class="home-card-link">確認する</span>
+      </a>
+
+      <a href="#site-search" class="home-entry-card" data-home-search>
+        <img src="assets/home/home-search.webp" alt="サイト内検索のイメージ" loading="lazy">
+        <span class="home-card-kicker">Search</span>
+        <h3>サイト内検索</h3>
+        <p>自治体名、資料名、論点名からサイト内の情報を探します。</p>
+        <span class="home-card-link">検索する</span>
+      </a>
+
+      <a href="#support" class="home-entry-card">
+        <img src="assets/home/home-catalog.webp" alt="支援ページのイメージ" loading="lazy">
+        <span class="home-card-kicker">Support</span>
+        <h3>支援ページ</h3>
+        <p>調査、資料整理、Web公開を継続するための支援方法を確認します。</p>
+        <span class="home-card-link">見る</span>
+      </a>
     </div>
   </div>
 </section>
@@ -1454,7 +1558,7 @@
 <!-- =========================================
      活動へのご支援
      ========================================= -->
-<section class="support-section">
+<section class="support-section" id="support">
   <div class="wrap">
     <h2>活動へのご支援をお願いします</h2>
     <p>PTA運営の適正化に向けた調査、公文書開示請求、自治体・教育委員会への訪問、資料整理、Web公開を継続するためには、一定の費用が必要です。活動にご賛同いただける方のご支援をお願いします。</p>
@@ -1558,6 +1662,7 @@
     <p class="copyright">© PTA適正化推進委員会</p>
   </footer>
 
+<script defer src="js/home-enhance.js"></script>
 <script src="js/site.js"></script>
 <script>
 /* ==========================================
