@@ -956,6 +956,43 @@
 }
 
 /* =============================================
+   動画セクション
+   ============================================= */
+.video-section {
+  background: linear-gradient(135deg, #fde8e8 0%, #fef2f2 100%);
+  padding: 80px 0 88px;
+}
+.video-section-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.video-section-kicker {
+  font-size: .72rem; font-weight: 900; letter-spacing: .16em;
+  color: #b91c1c; text-transform: uppercase; margin-bottom: 12px;
+}
+.video-section-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 900; color: #7f1d1d; line-height: 1.35; margin-bottom: 14px;
+}
+.video-section-lead {
+  font-size: clamp(.88rem, 1.2vw, .97rem);
+  color: #991b1b; line-height: 1.85;
+  max-width: 600px; margin-inline: auto;
+}
+.video-wrap {
+  max-width: 860px;
+  margin-inline: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,.6);
+  border: 1px solid rgba(255,255,255,.08);
+}
+.video-wrap video {
+  display: block; width: 100%; height: auto;
+}
+
+/* =============================================
    立場別入り口セクション
    ============================================= */
 .entry-section {
@@ -1231,6 +1268,25 @@
         <a href="board-responses.html" class="hero-btn-secondary">教育委員会回答を見る</a>
         <a href="national-archive.html" class="hero-btn-secondary">公文書・調査資料</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     動画セクション
+     ========================================= -->
+<section class="video-section">
+  <div class="wrap">
+    <div class="video-section-head">
+      <div class="video-section-kicker">Documentary</div>
+      <h2 class="video-section-title">PTAの強制加入問題</h2>
+      <p class="video-section-lead">全国で起きているPTAの強制加入・強制活動の実態を記録した映像です。</p>
+    </div>
+    <div class="video-wrap">
+      <video controls preload="metadata" poster="">
+        <source src="assets/video/PTA強制.mp4" type="video/mp4">
+        お使いのブラウザは動画の再生に対応していません。
+      </video>
     </div>
   </div>
 </section>
