@@ -1,0 +1,2421 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta name="description" content="保護者・PTA役員・学校管理職向けに、PTA運営の法的リスクを5段階で診断する監査システムです。">
+  <link rel="canonical" href="https://ptaorg.github.io/audit/index.html">
+  <meta property="og:title" content="PTAコンプライアンス監査システム | PTA適正化推進委員会">
+  <meta property="og:description" content="設問に答えるだけで、PTA運営の法的リスクを5段階で可視化します。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ptaorg.github.io/audit/index.html">
+  <meta property="og:image" content="https://ptaorg.github.io/assets/og-image.png">
+  <title>PTAコンプライアンス監査 | PTA適正化推進委員会</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ===== AUDIT SYSTEM — HEAVYWEIGHT REDESIGN ===== */
+
+    :root {
+      --risk-0: #15803D;
+      --risk-0-bg: #F0FDF4;
+      --risk-0-border: #BBF7D0;
+      --risk-1: #2563EB;
+      --risk-1-bg: #EFF6FF;
+      --risk-1-border: #BFDBFE;
+      --risk-2: #D97706;
+      --risk-2-bg: #FFFBEB;
+      --risk-2-border: #FDE68A;
+      --risk-3: #C2410C;
+      --risk-3-bg: #FFF7ED;
+      --risk-3-border: #FED7AA;
+      --risk-4: #B91C1C;
+      --risk-4-bg: #FFF5F5;
+      --risk-4-border: #FED7D7;
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse 80% 40% at 50% 0%, rgba(10,25,47,.05) 0%, transparent 60%),
+        linear-gradient(180deg, #F4F7FB 0%, #EEF2F7 100%);
+    }
+
+    /* ===== HERO — cinematic ===== */
+    .audit-hero {
+      position: relative;
+      padding: 96px 0 120px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(10,25,47,.92) 0%, rgba(26,54,93,.85) 55%, rgba(10,25,47,.92) 100%),
+        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=2400&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .audit-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 40%, rgba(212,175,55,.18) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 80% at 10% 80%, rgba(26,54,93,.45) 0%, transparent 55%);
+    }
+    .audit-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .audit-hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(calc(100% - 40px), 1240px);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(380px, 460px);
+      gap: 56px;
+      align-items: center;
+    }
+    .audit-hero-left { position: relative; }
+    .audit-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(212,175,55,.14);
+      border: 1px solid rgba(212,175,55,.42);
+      color: var(--color-gold-light);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+    .audit-hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-gold);
+      box-shadow: 0 0 12px rgba(212,175,55,.8);
+    }
+    .audit-hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.22;
+      margin-bottom: 22px;
+      letter-spacing: .01em;
+      text-shadow: 0 4px 24px rgba(0,0,0,.35);
+    }
+    .audit-hero h1 .accent {
+      background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+    .audit-hero-lede {
+      color: rgba(255,255,255,.82);
+      font-size: 1.04rem;
+      line-height: 1.95;
+      max-width: 580px;
+      margin-bottom: 30px;
+    }
+    .audit-hero-lede strong {
+      color: var(--color-gold-light);
+      font-weight: 800;
+    }
+    .audit-hero-meta {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.14);
+    }
+    .hero-meta-item {
+      color: rgba(255,255,255,.78);
+      font-size: .88rem;
+    }
+    .hero-meta-item strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-gold-light);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    /* ===== HERO RIGHT — 5 axis cards (stacked, linked) ===== */
+    .audit-hero-axes {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 24px 60px rgba(0,0,0,.35);
+    }
+    .audit-hero-axes-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0 6px 14px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .axes-head-title {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 800;
+      color: #fff;
+      font-size: 1rem;
+      letter-spacing: .04em;
+    }
+    .axes-head-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--color-gold-light);
+      font-size: .85rem;
+    }
+    .axis-link {
+      display: grid;
+      grid-template-columns: 52px 1fr auto;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      text-decoration: none;
+      color: #fff;
+      transition: all .28s ease;
+      cursor: pointer;
+    }
+    .axis-link:hover {
+      background: rgba(212,175,55,.12);
+      border-color: rgba(212,175,55,.45);
+      transform: translateX(4px);
+    }
+    .axis-link-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(212,175,55,.22), rgba(212,175,55,.08));
+      border: 1px solid rgba(212,175,55,.3);
+      display: grid; place-items: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .axis-link-text {
+      min-width: 0;
+    }
+    .axis-link-label {
+      font-size: .92rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 2px;
+      letter-spacing: .02em;
+    }
+    .axis-link-sub {
+      font-size: .72rem;
+      color: rgba(255,255,255,.6);
+      letter-spacing: .02em;
+    }
+    .axis-link-arrow {
+      color: rgba(255,255,255,.4);
+      font-size: 1.1rem;
+      font-weight: 300;
+      transition: all .3s ease;
+    }
+    .axis-link:hover .axis-link-arrow {
+      color: var(--color-gold);
+      transform: translateX(3px);
+    }
+
+    /* Risk legend compact in hero */
+    .hero-legend-mini {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      padding: 14px 6px 4px;
+      margin-top: 8px;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .mini-lv {
+      text-align: center;
+      padding: 6px 4px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.04);
+    }
+    .mini-lv-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      margin: 0 auto 4px;
+    }
+    .mini-lv-dot.lv0 { background: var(--risk-0); }
+    .mini-lv-dot.lv1 { background: var(--risk-1); }
+    .mini-lv-dot.lv2 { background: var(--risk-2); }
+    .mini-lv-dot.lv3 { background: var(--risk-3); }
+    .mini-lv-dot.lv4 { background: var(--risk-4); }
+    .mini-lv-label {
+      font-size: .62rem;
+      color: rgba(255,255,255,.65);
+      letter-spacing: .03em;
+      font-weight: 700;
+    }
+
+    /* ===== MAIN SHELL ===== */
+    .audit-shell {
+      width: min(calc(100% - 40px), 1200px);
+      margin: -72px auto 0;
+      position: relative;
+      z-index: 2;
+      padding: 0 0 120px;
+    }
+
+    /* ===== INTRO SECTION ===== */
+    #screen-intro {}
+
+    .intro-section-header {
+      text-align: center;
+      margin: 48px 0 40px;
+    }
+    .intro-section-kicker {
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--color-gold);
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      letter-spacing: .05em;
+    }
+    .intro-section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.75rem, 3vw, 2.4rem);
+      font-weight: 900;
+      color: var(--color-navy);
+      line-height: 1.3;
+      margin-bottom: 16px;
+      letter-spacing: .01em;
+    }
+    .intro-section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-gold), transparent);
+      margin: 18px auto 0;
+    }
+    .intro-section-lead {
+      font-size: 1rem;
+      color: var(--color-text-soft);
+      line-height: 1.85;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* ===== MODE CARDS — heavyweight with photos ===== */
+    .mode-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 40px;
+    }
+    .mode-card {
+      position: relative;
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid var(--color-line);
+      transition: all .4s cubic-bezier(.2, .8, .2, 1);
+      box-shadow: 0 8px 24px rgba(10,25,47,.06);
+      text-align: left;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 520px;
+    }
+    .mode-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(10,25,47,.2);
+      border-color: transparent;
+    }
+    .mode-card-image {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: #1A365D;
+    }
+    .mode-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .9s cubic-bezier(.2, .8, .2, 1);
+      filter: brightness(.82) saturate(1.05);
+    }
+    .mode-card:hover .mode-card-image img {
+      transform: scale(1.08);
+    }
+    .mode-card-image::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 2;
+      background: linear-gradient(180deg, rgba(10,25,47,.15) 0%, rgba(10,25,47,.55) 80%, rgba(10,25,47,.75) 100%);
+    }
+    .mode-card-image::after {
+      content: '';
+      position: absolute; inset: 0; z-index: 2;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .mode-card-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 3;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(6px);
+      color: var(--color-navy);
+      border: 1px solid rgba(212,175,55,.3);
+    }
+    .mode-card-title-overlay {
+      position: absolute;
+      bottom: 18px;
+      left: 22px;
+      right: 22px;
+      z-index: 3;
+    }
+    .mode-card-role-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--color-gold-light);
+      margin-bottom: 4px;
+      letter-spacing: .04em;
+    }
+    .mode-card-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.3;
+      text-shadow: 0 2px 12px rgba(0,0,0,.4);
+      letter-spacing: .01em;
+    }
+    .mode-card-body {
+      padding: 26px 26px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .mode-card-desc {
+      font-size: .92rem;
+      color: var(--color-text-soft);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .mode-check-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      padding: 16px 18px;
+      background: linear-gradient(135deg, #F8FAFC, #EEF3F8);
+      border-radius: 14px;
+      border-left: 3px solid var(--color-gold);
+      margin-bottom: 22px;
+    }
+    .mode-check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .85rem;
+      color: var(--color-text);
+      font-weight: 500;
+    }
+    .mode-check::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-gold);
+      flex-shrink: 0;
+    }
+    .mode-start-btn {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-radius: 12px;
+      background: var(--color-navy);
+      color: #fff;
+      font-size: .92rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      transition: all .3s ease;
+    }
+    .mode-card:hover .mode-start-btn {
+      background: linear-gradient(135deg, var(--color-navy) 0%, #284b78 100%);
+      transform: translateX(4px);
+    }
+    .mode-start-btn .arrow {
+      transition: transform .3s ease;
+    }
+    .mode-card:hover .mode-start-btn .arrow {
+      transform: translateX(6px);
+    }
+
+    /* ===== QUESTION SCREEN ===== */
+    #screen-question { max-width: 820px; margin: 40px auto 0; }
+
+    .q-progress-wrap {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 28px;
+      padding: 0 4px;
+    }
+    .q-progress-bar {
+      flex: 1;
+      height: 5px;
+      background: rgba(26,54,93,.1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .q-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-navy), var(--color-gold));
+      border-radius: 999px;
+      transition: width .5s ease;
+      box-shadow: 0 0 12px rgba(212,175,55,.5);
+    }
+    .q-progress-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-navy);
+      white-space: nowrap;
+    }
+
+    .q-card {
+      background: #fff;
+      border: 1px solid var(--color-line);
+      border-radius: 24px;
+      padding: 44px;
+      box-shadow: 0 16px 48px rgba(10,25,47,.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .q-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-navy), var(--color-gold), var(--color-navy));
+    }
+    .q-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .q-axis-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(26,54,93,.07);
+      color: var(--color-navy);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      border: 1px solid rgba(26,54,93,.14);
+    }
+    .q-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+      color: var(--color-navy);
+      line-height: 1.55;
+      margin-bottom: 32px;
+      font-weight: 700;
+      letter-spacing: .01em;
+    }
+    .q-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .q-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 22px;
+      border-radius: 16px;
+      border: 2px solid var(--color-line);
+      background: #fff;
+      cursor: pointer;
+      transition: all .28s ease;
+      text-align: left;
+      width: 100%;
+    }
+    .q-option:hover {
+      border-color: var(--color-navy);
+      background: linear-gradient(135deg, #F8FAFC, #EEF3F8);
+      transform: translateX(6px);
+      box-shadow: 0 8px 24px rgba(26,54,93,.08);
+    }
+    .q-option-mark {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--color-navy), #284b78);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: .95rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(26,54,93,.3);
+    }
+    .q-option-text {
+      font-size: .98rem;
+      color: var(--color-text);
+      line-height: 1.7;
+      padding-top: 5px;
+    }
+    .q-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--color-line);
+      background: #fff;
+      color: var(--color-text-soft);
+      font-size: .88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+    .btn-back:hover:not(:disabled) {
+      border-color: var(--color-navy);
+      color: var(--color-navy);
+      background: #F8FAFC;
+    }
+    .btn-back:disabled { opacity: .4; cursor: not-allowed; }
+
+    /* ===== RESULT SCREEN ===== */
+    #screen-result {}
+
+    /* Result Hero Banner — cinematic */
+    .result-risk-banner {
+      border-radius: 28px;
+      padding: 52px 56px;
+      margin: 40px 0 36px;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      box-shadow: 0 24px 64px rgba(10,25,47,.2);
+    }
+    .result-risk-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .result-risk-banner::after {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(212,175,55,.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .result-risk-banner.lv0 { background: linear-gradient(135deg, #14532D, #15803D, #166534); }
+    .result-risk-banner.lv1 { background: linear-gradient(135deg, #1e3a8a, #2563EB, #1e40af); }
+    .result-risk-banner.lv2 { background: linear-gradient(135deg, #78350F, #D97706, #92400E); }
+    .result-risk-banner.lv3 { background: linear-gradient(135deg, #7C2D12, #C2410C, #9A3412); }
+    .result-risk-banner.lv4 { background: linear-gradient(135deg, #7F1D1D, #B91C1C, #991B1B); }
+
+    .banner-inner { position: relative; z-index: 1; }
+    .banner-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.3);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      backdrop-filter: blur(6px);
+    }
+    .banner-risk-label {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.18;
+      margin-bottom: 16px;
+      letter-spacing: .01em;
+      text-shadow: 0 4px 20px rgba(0,0,0,.25);
+    }
+    .banner-summary {
+      color: rgba(255,255,255,.92);
+      font-size: 1.06rem;
+      line-height: 1.9;
+      max-width: 760px;
+    }
+    .banner-counts {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .banner-count-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      font-size: .88rem;
+      font-weight: 700;
+      backdrop-filter: blur(6px);
+    }
+    .banner-count-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    /* ===== COMPREHENSIVE ASSESSMENT — the key new addition ===== */
+    .assessment-panel {
+      background: #fff;
+      border-radius: 24px;
+      padding: 48px 52px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--color-line);
+      box-shadow: 0 16px 48px rgba(10,25,47,.08);
+    }
+    .assessment-panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--color-navy) 0%, var(--color-gold) 50%, var(--color-navy) 100%);
+    }
+    .assessment-panel::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 240px; height: 240px;
+      background-image: url('https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=800&q=80');
+      background-size: cover;
+      background-position: center;
+      opacity: .06;
+      pointer-events: none;
+    }
+    .assessment-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+      padding-bottom: 22px;
+      border-bottom: 2px solid #EEF3F8;
+      position: relative;
+    }
+    .assessment-header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .assessment-seal {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #F4E7A6, var(--color-gold) 60%, #8a6d1f);
+      display: grid; place-items: center;
+      color: var(--color-navy-dark);
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      border: 3px solid #fff;
+      box-shadow: 0 8px 24px rgba(212,175,55,.4), inset 0 1px 2px rgba(255,255,255,.5);
+      flex-shrink: 0;
+    }
+    .assessment-title-group {}
+    .assessment-kicker {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--color-gold);
+      letter-spacing: .08em;
+      margin-bottom: 2px;
+    }
+    .assessment-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--color-navy);
+      letter-spacing: .02em;
+      line-height: 1.3;
+    }
+    .assessment-date {
+      text-align: right;
+      font-size: .82rem;
+      color: var(--color-text-soft);
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: .04em;
+    }
+    .assessment-date strong {
+      display: block;
+      font-family: 'Noto Serif JP', serif;
+      color: var(--color-navy);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .assessment-body {
+      font-size: 1rem;
+      color: var(--color-text);
+      line-height: 2.05;
+      letter-spacing: .02em;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .assessment-body h4 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--color-navy);
+      margin: 24px 0 10px;
+      padding-left: 14px;
+      border-left: 4px solid var(--color-gold);
+      letter-spacing: .02em;
+    }
+    .assessment-body p {
+      margin-bottom: 16px;
+    }
+    .assessment-body p:first-letter {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--color-navy);
+      float: left;
+      line-height: 1;
+      margin: 4px 10px 0 0;
+    }
+
+    .assessment-loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      gap: 18px;
+    }
+    .assessment-spinner {
+      width: 48px; height: 48px;
+      border: 3px solid rgba(26,54,93,.15);
+      border-top-color: var(--color-gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .assessment-loading-text {
+      font-family: 'Noto Serif JP', serif;
+      color: var(--color-navy);
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: .05em;
+    }
+    .assessment-loading-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--color-text-soft);
+      font-size: .9rem;
+    }
+
+    .assessment-error {
+      padding: 24px;
+      border-radius: 14px;
+      background: #FFF7ED;
+      border: 1px solid #FED7AA;
+      color: #9A3412;
+      font-size: .92rem;
+      line-height: 1.8;
+    }
+    .assessment-error strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: .95rem;
+    }
+
+    .assessment-footer {
+      margin-top: 30px;
+      padding-top: 22px;
+      border-top: 1px dashed #E5ECF3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .assessment-footer-note {
+      font-size: .8rem;
+      color: var(--color-text-soft);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+    .btn-regenerate {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--color-line);
+      color: var(--color-navy);
+      font-size: .86rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+    .btn-regenerate:hover {
+      border-color: var(--color-gold);
+      background: rgba(212,175,55,.06);
+      color: var(--color-navy);
+    }
+    .btn-regenerate:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    /* Result layout */
+    .result-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 26px;
+      align-items: start;
+    }
+    .result-panel {
+      background: #fff;
+      border: 1px solid var(--color-line);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 8px 28px rgba(10,25,47,.06);
+    }
+    .result-panel-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .result-panel-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--color-navy), #284b78);
+      color: #fff;
+      display: grid; place-items: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(26,54,93,.25);
+    }
+    .result-panel h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--color-navy);
+      letter-spacing: .02em;
+    }
+    .result-panel-sub {
+      font-size: .85rem;
+      color: var(--color-text-soft);
+      margin-bottom: 22px;
+      padding-left: 52px;
+    }
+
+    /* 5-axis visual bars */
+    .axis-bars { display: flex; flex-direction: column; gap: 16px; margin: 14px 0; }
+    .axis-bar-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .axis-bar-name {
+      font-size: .9rem;
+      font-weight: 800;
+      color: var(--color-navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .axis-bar-risk-label {
+      font-size: .72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      letter-spacing: .04em;
+    }
+    .axis-bar-track {
+      height: 10px;
+      border-radius: 999px;
+      background: #E5ECF3;
+      overflow: hidden;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+    }
+    .axis-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width .8s cubic-bezier(.2, .8, .2, 1);
+    }
+    .fill-lv0 { background: linear-gradient(90deg, var(--risk-0), #16a34a); }
+    .fill-lv1 { background: linear-gradient(90deg, var(--risk-1), #3b82f6); }
+    .fill-lv2 { background: linear-gradient(90deg, var(--risk-2), #f59e0b); }
+    .fill-lv3 { background: linear-gradient(90deg, var(--risk-3), #ea580c); }
+    .fill-lv4 { background: linear-gradient(90deg, var(--risk-4), #dc2626); }
+
+    /* Count grid */
+    .risk-count-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 24px;
+      padding-top: 22px;
+      border-top: 1px solid #EEF3F8;
+    }
+    .risk-count-cell {
+      border-radius: 12px;
+      padding: 14px 6px;
+      text-align: center;
+      border: 1px solid;
+      transition: transform .25s ease;
+    }
+    .risk-count-cell:hover { transform: translateY(-2px); }
+    .risk-count-cell.lv0 { background: var(--risk-0-bg); border-color: var(--risk-0-border); }
+    .risk-count-cell.lv1 { background: var(--risk-1-bg); border-color: var(--risk-1-border); }
+    .risk-count-cell.lv2 { background: var(--risk-2-bg); border-color: var(--risk-2-border); }
+    .risk-count-cell.lv3 { background: var(--risk-3-bg); border-color: var(--risk-3-border); }
+    .risk-count-cell.lv4 { background: var(--risk-4-bg); border-color: var(--risk-4-border); }
+    .risk-count-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .risk-count-cell.lv0 .risk-count-num { color: var(--risk-0); }
+    .risk-count-cell.lv1 .risk-count-num { color: var(--risk-1); }
+    .risk-count-cell.lv2 .risk-count-num { color: var(--risk-2); }
+    .risk-count-cell.lv3 .risk-count-num { color: var(--risk-3); }
+    .risk-count-cell.lv4 .risk-count-num { color: var(--risk-4); }
+    .risk-count-name { font-size: .68rem; font-weight: 700; color: var(--color-text-soft); letter-spacing: .04em; }
+
+    /* Answer detail cards */
+    .answer-cards { display: flex; flex-direction: column; gap: 14px; max-height: 720px; overflow-y: auto; padding-right: 6px; }
+    .answer-cards::-webkit-scrollbar { width: 6px; }
+    .answer-cards::-webkit-scrollbar-track { background: #F1F5F9; border-radius: 3px; }
+    .answer-cards::-webkit-scrollbar-thumb { background: #CBD5E0; border-radius: 3px; }
+    .answer-card {
+      border-radius: 16px;
+      border: 1px solid;
+      padding: 20px 22px;
+      transition: all .28s ease;
+    }
+    .answer-card:hover { transform: translateX(4px); box-shadow: 0 6px 20px rgba(0,0,0,.06); }
+    .answer-card.lv0 { background: var(--risk-0-bg); border-color: var(--risk-0-border); border-left: 5px solid var(--risk-0); }
+    .answer-card.lv1 { background: var(--risk-1-bg); border-color: var(--risk-1-border); border-left: 5px solid var(--risk-1); }
+    .answer-card.lv2 { background: var(--risk-2-bg); border-color: var(--risk-2-border); border-left: 5px solid var(--risk-2); }
+    .answer-card.lv3 { background: var(--risk-3-bg); border-color: var(--risk-3-border); border-left: 5px solid var(--risk-3); }
+    .answer-card.lv4 { background: var(--risk-4-bg); border-color: var(--risk-4-border); border-left: 5px solid var(--risk-4); }
+
+    .answer-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .answer-cat { font-size: .82rem; font-weight: 800; color: var(--color-navy); letter-spacing: .02em; }
+    .answer-risk-pill {
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: .7rem;
+      font-weight: 800;
+      white-space: nowrap;
+      letter-spacing: .04em;
+    }
+    .answer-risk-pill.lv0 { background: rgba(21,128,61,.16); color: var(--risk-0); }
+    .answer-risk-pill.lv1 { background: rgba(37,99,235,.16); color: var(--risk-1); }
+    .answer-risk-pill.lv2 { background: rgba(217,119,6,.16); color: var(--risk-2); }
+    .answer-risk-pill.lv3 { background: rgba(194,65,12,.16); color: var(--risk-3); }
+    .answer-risk-pill.lv4 { background: rgba(185,28,28,.16); color: var(--risk-4); }
+
+    .answer-choice {
+      font-size: .9rem;
+      color: var(--color-text);
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    .answer-advice {
+      font-size: .86rem;
+      color: var(--color-text-soft);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .answer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .answer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 11px;
+      border-radius: 8px;
+      background: rgba(26,54,93,.08);
+      color: var(--color-navy);
+      font-size: .76rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all .2s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .answer-link:hover { background: rgba(26,54,93,.16); transform: translateY(-1px); }
+
+    /* Result actions */
+    .result-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .btn-restart, .btn-share, .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: .9rem;
+      border: none;
+      cursor: pointer;
+      transition: all .28s ease;
+      letter-spacing: .02em;
+    }
+    .btn-restart {
+      background: var(--color-navy);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(26,54,93,.25);
+    }
+    .btn-restart:hover {
+      background: #284b78;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(26,54,93,.35);
+    }
+    .btn-share {
+      background: #000;
+      color: #fff;
+    }
+    .btn-share:hover { background: #333; transform: translateY(-2px); }
+    .btn-print {
+      background: #fff;
+      color: var(--color-navy);
+      border: 1px solid var(--color-line);
+    }
+    .btn-print:hover {
+      border-color: var(--color-gold);
+      background: rgba(212,175,55,.05);
+    }
+
+    /* Law modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(10,25,47,.78);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1600;
+      backdrop-filter: blur(4px);
+    }
+    .modal.is-open { display: flex; }
+    .modal-content {
+      width: min(860px, 100%);
+      background: #fff;
+      border-radius: 24px;
+      border-top: 6px solid var(--color-gold);
+      box-shadow: 0 32px 80px rgba(10,25,47,.4);
+      position: relative;
+      padding: 40px;
+      max-height: 84vh;
+      overflow: auto;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--color-line);
+      background: #fff;
+      cursor: pointer;
+      font-size: 1.4rem;
+      display: grid;
+      place-items: center;
+      transition: all .2s ease;
+    }
+    .modal-close:hover {
+      background: #FFF7ED;
+      border-color: var(--color-gold);
+    }
+
+    .hidden { display: none !important; }
+
+    /* Print styles */
+    @media print {
+      .site-header, .mobile-overlay, .footer, .result-actions-row, .btn-regenerate { display: none !important; }
+      .audit-hero { display: none; }
+      body { background: #fff; }
+      .audit-shell { margin-top: 20px; }
+      .assessment-panel { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+      .result-panel { box-shadow: none; border: 1px solid #ccc; }
+    }
+
+    @media (max-width: 1100px) {
+      .result-layout { grid-template-columns: 1fr; }
+      .audit-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .mode-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .audit-hero { padding: 64px 0 88px; background-attachment: scroll; }
+      .mode-grid { grid-template-columns: 1fr; }
+      .risk-count-grid { grid-template-columns: repeat(5, 1fr); gap: 4px; }
+      .q-card, .assessment-panel, .result-panel, .result-risk-banner { padding: 28px 22px; }
+      .assessment-header { flex-direction: column; align-items: flex-start; }
+      .audit-shell { margin-top: -48px; }
+    }
+    @media (max-width: 480px) {
+      .result-risk-banner { padding: 32px 24px; }
+      .assessment-seal { width: 56px; height: 56px; font-size: 1.2rem; }
+      .banner-risk-label { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/popc-logo.png" alt="PTA適正化推進委員会ロゴ">
+        <span>PTA適正化推進委員会</span>
+      </a>
+      <nav class="desktop-nav" aria-label="主要ナビゲーション">
+        <a href="../index.html" class="nav-link">トップ</a>
+        <div class="nav-item has-dropdown">
+          <a href="#" class="nav-link">入口別ガイド</a>
+          <div class="mega-menu">
+            <div class="mega-col">
+              <h4>対象別入口</h4>
+              <ul>
+                <li><a href="../guide-parent.html">保護者の方へ</a></li>
+                <li><a href="../guide-pta.html">PTA役員の方へ</a></li>
+                <li><a href="../guide-board.html">教育委員会の方へ</a></li>
+                <li><a href="../guide-research.html">研究者・記者の方へ</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h4>導線</h4>
+              <ul>
+                <li><a href="../membership.html">入会手続とオプトアウト</a></li>
+                <li><a href="../law-map.html">法制度マップ</a></li>
+                <li><a href="../cases.html">判例整理</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown">
+          <a href="../law-map.html" class="nav-link">論点別</a>
+          <div class="mega-menu">
+            <div class="mega-col">
+              <h4>主要論点</h4>
+              <ul>
+                <li><a href="../membership.html">入会手続・オプトアウト</a></li>
+                <li><a href="../privacy.html">個人情報提供</a></li>
+                <li><a href="../fee-collection.html">会費徴収</a></li>
+                <li><a href="../personnel.html">教職員関与</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <a href="index.html" class="btn-gold active" style="font-size:.88rem; padding:10px 18px; min-height:0;">監査システム</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileOverlay">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-overlay" id="mobileOverlay">
+    <a href="../index.html" class="mobile-link"><span>Home</span>トップページ</a>
+    <a href="../guide-parent.html" class="mobile-link"><span>Guide</span>保護者の方へ</a>
+    <a href="../guide-pta.html" class="mobile-link"><span>Guide</span>PTA役員の方へ</a>
+    <a href="../guide-board.html" class="mobile-link"><span>Guide</span>教育委員会の方へ</a>
+    <a href="index.html" class="mobile-link"><span>Audit</span>監査システム</a>
+    <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="audit-hero">
+    <div class="audit-hero-inner">
+      <div class="audit-hero-left">
+        <div class="audit-hero-eyebrow">Compliance Audit System</div>
+        <h1>構造を見抜くための<br><span class="accent">PTAリスク診断</span></h1>
+        <p class="audit-hero-lede">
+          点数ではなく、<strong>危険度</strong>で伝える。設問に答えることで、あなたのPTAが抱える問題を
+          <strong>5段階のリスクレベル</strong>で可視化します。入会手続・個人情報・会費徴収・教職員関与・施設利用の5軸から、
+          民法・個人情報保護法・地方公務員法等に照らして診断します。
+        </p>
+        <div class="audit-hero-meta">
+          <div class="hero-meta-item">
+            <strong>5</strong>診断軸
+          </div>
+          <div class="hero-meta-item">
+            <strong>3</strong>立場別モード
+          </div>
+          <div class="hero-meta-item">
+            <strong>LV.0–4</strong>リスク評価
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side — 5 axis cards with links -->
+      <aside class="audit-hero-axes">
+        <div class="audit-hero-axes-head">
+          <span class="axes-head-title">診断5軸</span>
+          <span class="axes-head-sub">Five Axes</span>
+        </div>
+        <a href="../membership.html" class="axis-link">
+          <span class="axis-link-icon">📋</span>
+          <span class="axis-link-text">
+            <span class="axis-link-label">契約性</span>
+            <span class="axis-link-sub">入会意思・オプトアウト</span>
+          </span>
+          <span class="axis-link-arrow">→</span>
+        </a>
+        <a href="../privacy.html" class="axis-link">
+          <span class="axis-link-icon">🔒</span>
+          <span class="axis-link-text">
+            <span class="axis-link-label">情報管理</span>
+            <span class="axis-link-sub">個人情報提供</span>
+          </span>
+          <span class="axis-link-arrow">→</span>
+        </a>
+        <a href="../fee-collection.html" class="axis-link">
+          <span class="axis-link-icon">💰</span>
+          <span class="axis-link-text">
+            <span class="axis-link-label">財務健全性</span>
+            <span class="axis-link-sub">会費徴収・会計分離</span>
+          </span>
+          <span class="axis-link-arrow">→</span>
+        </a>
+        <a href="../personnel.html" class="axis-link">
+          <span class="axis-link-icon">👩‍🏫</span>
+          <span class="axis-link-text">
+            <span class="axis-link-label">服務規律</span>
+            <span class="axis-link-sub">教職員関与</span>
+          </span>
+          <span class="axis-link-arrow">→</span>
+        </a>
+        <a href="../facilities.html" class="axis-link">
+          <span class="axis-link-icon">🏫</span>
+          <span class="axis-link-text">
+            <span class="axis-link-label">公物管理</span>
+            <span class="axis-link-sub">施設利用・公私境界</span>
+          </span>
+          <span class="axis-link-arrow">→</span>
+        </a>
+        <div class="hero-legend-mini">
+          <div class="mini-lv"><div class="mini-lv-dot lv0"></div><div class="mini-lv-label">適正</div></div>
+          <div class="mini-lv"><div class="mini-lv-dot lv1"></div><div class="mini-lv-label">要注意</div></div>
+          <div class="mini-lv"><div class="mini-lv-dot lv2"></div><div class="mini-lv-label">要改善</div></div>
+          <div class="mini-lv"><div class="mini-lv-dot lv3"></div><div class="mini-lv-label">高リスク</div></div>
+          <div class="mini-lv"><div class="mini-lv-dot lv4"></div><div class="mini-lv-label">重大違法</div></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== MAIN ===== -->
+  <main class="audit-shell">
+
+    <!-- INTRO — mode select -->
+    <section id="screen-intro">
+      <div class="intro-section-header">
+        <span class="intro-section-kicker">Select Your Role</span>
+        <h2 class="intro-section-title">立場を選んで診断を始める</h2>
+        <p class="intro-section-lead">
+          保護者・PTA役員・学校管理職のそれぞれの視点から、異なる法的論点を問います。
+          匿名・無登録で、いつでも何度でも診断できます。
+        </p>
+      </div>
+
+      <div class="mode-grid">
+
+        <!-- 保護者モード -->
+        <button class="mode-card" data-role="parent">
+          <div class="mode-card-image">
+            <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=80" alt="親子のイメージ">
+            <div class="mode-card-badge">For Parents</div>
+            <div class="mode-card-title-overlay">
+              <div class="mode-card-role-label">Mode 01 · Parents</div>
+              <div class="mode-card-title">保護者モード</div>
+            </div>
+          </div>
+          <div class="mode-card-body">
+            <p class="mode-card-desc">
+              「入会した覚えがない」「会費の根拠が分からない」という疑問を、
+              民法・個人情報保護法の法的根拠から整理します。
+            </p>
+            <div class="mode-check-list">
+              <div class="mode-check">入会届・みなし加入の確認</div>
+              <div class="mode-check">個人情報の提供経路</div>
+              <div class="mode-check">会費徴収の法的根拠</div>
+              <div class="mode-check">学校による配布・案内の方法</div>
+            </div>
+            <div class="mode-start-btn">
+              <span>診断を始める</span>
+              <span class="arrow">→</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- PTA役員モード -->
+        <button class="mode-card" data-role="officer">
+          <div class="mode-card-image">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="役員会議のイメージ">
+            <div class="mode-card-badge">For Officers</div>
+            <div class="mode-card-title-overlay">
+              <div class="mode-card-role-label">Mode 02 · Officers</div>
+              <div class="mode-card-title">PTA役員モード</div>
+            </div>
+          </div>
+          <div class="mode-card-body">
+            <p class="mode-card-desc">
+              善意で運営していても、現行の慣行が法的リスクを生んでいます。
+              役員個人に及ぶ責任を法的観点から点検します。
+            </p>
+            <div class="mode-check-list">
+              <div class="mode-check">加入案内・入会手続の方式</div>
+              <div class="mode-check">会計管理・口座の分離状況</div>
+              <div class="mode-check">学校依存・事務代行の範囲</div>
+              <div class="mode-check">管理職の意思決定への関与</div>
+            </div>
+            <div class="mode-start-btn">
+              <span>診断を始める</span>
+              <span class="arrow">→</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 学校管理職モード -->
+        <button class="mode-card" data-role="school">
+          <div class="mode-card-image">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80" alt="学校の外観">
+            <div class="mode-card-badge">For School</div>
+            <div class="mode-card-title-overlay">
+              <div class="mode-card-role-label">Mode 03 · School</div>
+              <div class="mode-card-title">学校管理職モード</div>
+            </div>
+          </div>
+          <div class="mode-card-body">
+            <p class="mode-card-desc">
+              教職員の服務義務・個人情報管理・施設利用・PTAへの介入について、
+              地公法・学校教育法の行政法的観点から診断します。
+            </p>
+            <div class="mode-check-list">
+              <div class="mode-check">教職員のPTA事務従事</div>
+              <div class="mode-check">個人情報の提供実態</div>
+              <div class="mode-check">施設・設備の利用許可</div>
+              <div class="mode-check">学校名義の加入促進</div>
+            </div>
+            <div class="mode-start-btn">
+              <span>診断を始める</span>
+              <span class="arrow">→</span>
+            </div>
+          </div>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- QUESTION -->
+    <section id="screen-question" class="hidden">
+      <div class="q-progress-wrap">
+        <div class="q-progress-bar">
+          <div class="q-progress-fill" id="progressFill"></div>
+        </div>
+        <div class="q-progress-label" id="questionCounter"></div>
+      </div>
+      <div class="q-card">
+        <div class="q-meta">
+          <span class="q-axis-badge" id="questionCategory"></span>
+        </div>
+        <div class="q-text" id="questionText"></div>
+        <div class="q-options" id="questionOptions"></div>
+        <div class="q-actions">
+          <button class="btn-back" id="prevQuestion">← 前の設問</button>
+          <button class="btn-back" id="backToHome">トップへ戻る</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULT -->
+    <section id="screen-result" class="hidden">
+
+      <!-- Overall banner -->
+      <div class="result-risk-banner" id="riskBanner">
+        <div class="banner-inner">
+          <div class="banner-eyebrow" id="bannerEyebrow">診断結果</div>
+          <div class="banner-risk-label" id="bannerTitle"></div>
+          <div class="banner-summary" id="bannerSummary"></div>
+          <div class="banner-counts" id="bannerCounts"></div>
+        </div>
+      </div>
+
+      <!-- ===== COMPREHENSIVE ASSESSMENT PANEL ===== -->
+      <div class="assessment-panel">
+        <div class="assessment-header">
+          <div class="assessment-header-left">
+            <div class="assessment-seal">監査</div>
+            <div class="assessment-title-group">
+              <div class="assessment-kicker">Comprehensive Assessment</div>
+              <div class="assessment-title">総合評価書</div>
+            </div>
+          </div>
+          <div class="assessment-date">
+            <strong id="assessmentDate">—</strong>
+            <span>PTA適正化推進委員会</span>
+          </div>
+        </div>
+
+        <div id="assessmentContent">
+          <div class="assessment-loading" id="assessmentLoading">
+            <div class="assessment-spinner"></div>
+            <div class="assessment-loading-text">総合評価を生成しています…</div>
+            <div class="assessment-loading-sub">法的観点から診断結果を分析中</div>
+          </div>
+          <div class="assessment-body" id="assessmentBody" style="display:none;"></div>
+          <div class="assessment-error" id="assessmentError" style="display:none;"></div>
+        </div>
+
+        <div class="assessment-footer">
+          <p class="assessment-footer-note">
+            ※ 本評価書は入力された診断結果に基づき自動生成されたものであり、個別の法律相談に代わるものではありません。
+            重大な違法性が疑われる場合は、弁護士または行政機関へのご相談をお勧めします。
+          </p>
+          <button class="btn-regenerate" id="regenerateAssessment">
+            <span>🔄</span><span>再生成</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Axis + answers layout -->
+      <div class="result-layout">
+
+        <div>
+          <div class="result-panel">
+            <div class="result-panel-header">
+              <div class="result-panel-icon">📊</div>
+              <h3>5軸のリスク状況</h3>
+            </div>
+            <div class="result-panel-sub">各軸の危険度を色で確認できます</div>
+            <div class="axis-bars" id="axisBars"></div>
+            <div class="risk-count-grid" id="riskCountGrid"></div>
+          </div>
+
+          <div class="result-actions-row">
+            <button class="btn-restart" id="restartAudit">🔄 もう一度診断する</button>
+            <button class="btn-share" id="shareResult">𝕏 Xで共有</button>
+            <button class="btn-print" id="printResult">🖨️ 印刷する</button>
+          </div>
+        </div>
+
+        <div class="result-panel">
+          <div class="result-panel-header">
+            <div class="result-panel-icon">📝</div>
+            <h3>設問ごとの診断結果</h3>
+          </div>
+          <div class="result-panel-sub">各項目から関連法令・資料へ進めます</div>
+          <div class="answer-cards" id="resultDetails"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Law Modal -->
+  <div class="modal" id="lawModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+
+        <div>
+          <h3>PTA適正化推進委員会</h3>
+          <a href="https://yokomusubi.city.yokohama.lg.jp/organizations/detail/f69c7ad2-cf21-4dfa-87bb-9c891874eb6b/" target="_blank" rel="noopener noreferrer" class="yokomusubi-card">
+            <img src="../assets/yokomusubi.png" alt="よこむすび">
+            <span class="yokomusubi-tagline">磯子区「よこむすび」掲載団体</span>
+            <span class="yokomusubi-meta">登録番号：磯子12406</span>
+            <span class="yokomusubi-meta">分類番号：12-4（市民活動・社会教育推進）</span>
+          </a>
+          <div class="footer-contact">
+            <p>〒235-0021<br>神奈川県横浜市磯子区岡村8-17-5-301</p>
+            <p><strong>070-9012-7772</strong></p>
+            <p><a href="mailto:info@ptaorg.com">info@ptaorg.com</a></p>
+          </div>
+        </div>
+
+        <div>
+          <h4>公式発信</h4>
+          <p class="footer-sns-sub">最新資料・論考・動画はこちら</p>
+          <div class="footer-sns-cards">
+            <a href="https://x.com/jjjqqqxxx0852" target="_blank" rel="noopener" class="fsns-card fsns-x">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.836L2.25 2.25H8.08l4.263 5.636L18.244 2.25Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></svg>
+              <div>
+                <div class="fsns-name">X</div>
+                <div class="fsns-desc">速報・資料更新</div>
+              </div>
+            </a>
+            <a href="https://www.youtube.com/@PTA%E9%81%A9%E6%AD%A3%E5%8C%96%E6%8E%A8%E9%80%B2%E5%A7%94%E5%93%A1%E4%BC%9A" target="_blank" rel="noopener" class="fsns-card fsns-yt">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <div>
+                <div class="fsns-name">YouTube</div>
+                <div class="fsns-desc">動画で解説</div>
+              </div>
+            </a>
+            <a href="https://note.com/hiroshisatoh" target="_blank" rel="noopener" class="fsns-card fsns-note">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H4zm2 3h10v2H6V8zm0 4h10v2H6v-2zm0 4h6v2H6v-2z"/></svg>
+              <div>
+                <div class="fsns-name">note</div>
+                <div class="fsns-desc">論考・研究ノート</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4>立場別</h4>
+          <ul>
+            <li><a href="../guide-parent.html">保護者</a></li>
+            <li><a href="../guide-pta.html">PTA役員</a></li>
+            <li><a href="../guide-board.html">教育委員会・学校</a></li>
+            <li><a href="../guide-research.html">研究者・記者</a></li>
+            <li><a href="../guide-board.html">教育委員会向け指針</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>論点</h4>
+          <ul>
+            <li><a href="../membership.html">入会手続</a></li>
+            <li><a href="../privacy.html">個人情報</a></li>
+            <li><a href="../fee-collection.html">会費徴収</a></li>
+            <li><a href="../personnel.html">教職員関与</a></li>
+            <li><a href="../facilities.html">施設利用</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>資料・支援</h4>
+          <ul>
+            <li><a href="../board-responses.html">教育委員会の回答</a></li>
+            <li><a href="../national-archive.html">全国資料館</a></li>
+            <li><a href="../journal.html">論考・調査報告</a></li>
+            <li><a href="../report.html">総合分析レポート</a></li>
+            <li><a href="../audit/index.html">監査システム</a></li>
+            <li><a href="../law-map.html">法制度マップ</a></li>
+            <li><a href="../guideline.html">適正化ガイドライン</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <p class="copyright">© PTA適正化推進委員会</p>
+  </footer>
+
+  <script src="../js/law-data.js"></script>
+  <script src="../js/site.js"></script>
+  <script>
+  // ===== AUDIT DB (5-level risk) =====
+  const AUDIT_DB = {
+    parent: [
+      {
+        cat: '入会契約', axis: 'membership', axisIcon: '📋',
+        q: '入会の意思確認は、どのような形で行われましたか。',
+        opts: [
+          { t: 'PTAが独自に用意した入会届を自ら記入・提出した。', level: 1, laws: ['civil-law'],
+            adv: '入会の意思表示として比較的明確です。ただしPTAの任意性・個人情報の利用目的・退会の自由が入会届に明記されていたか確認してください。',
+            links: [{ label: '入会手続の詳細', url: '../membership.html' }] },
+          { t: '非加入届を出さない限り会員とされる（オプトアウト）。', level: 3, laws: ['civil-law','constitution'],
+            adv: '【違法リスク高】民法上、沈黙は承諾とみなされません。民法522条の契約成立要件を欠き、横浜市教育委員会通知（学教第1965号）でも禁止されています。会費は不当利得として返還請求の対象です。',
+            links: [{ label: 'みなし加入の無効性', url: '../membership.html' }, { label: '横浜市通知の詳細', url: '../guide-board.html' }] },
+          { t: '意思確認なく、入学と同時に全員会員として扱われた。', level: 4, laws: ['civil-law','constitution'],
+            adv: '【重大違法】契約の申込み・承諾が存在せず、民法522条の契約成立要件を完全に欠きます。会費は不当利得（民法703条）として返還請求が可能です。全国の教育委員会も「不適切」と回答しています。',
+            links: [{ label: 'みなし加入の詳細', url: '../membership.html' }, { label: '保護者向けテンプレートPDF', url: '../guide-parent.html#pdf-dl' }] },
+          { t: '任意と言われたが、断りづらい雰囲気・説明だった。', level: 2, laws: ['constitution'],
+            adv: '任意性が形骸化している状態です。消費者契約法4条の「不利益事実の不告知」として、契約取消しの対象になり得ます。',
+            links: [{ label: '保護者の権利を確認', url: '../guide-parent.html' }] }
+        ]
+      },
+      {
+        cat: '個人情報', axis: 'privacy', axisIcon: '🔒',
+        q: 'PTA名簿や連絡先は、どのように準備されていますか。',
+        opts: [
+          { t: '入会届にPTA活動への情報提供に同意し、PTAへ直接提出した。', level: 0, laws: ['personal-info'],
+            adv: '直接収集かつ明示的同意あり。個人情報保護法上、最も適正な取得方法です。',
+            links: [] },
+          { t: '学校を通じた書面同意の上で情報が提供されている。', level: 1, laws: ['personal-info'],
+            adv: '同意の具体的な内容（利用目的・提供先・管理方法）が明示されているか確認が必要です。形式的な同意書では不十分な場合があります。',
+            links: [{ label: '個人情報提供の要件', url: '../privacy.html' }] },
+          { t: '学校の名簿がそのままPTAに渡されている。', level: 4, laws: ['personal-info'],
+            adv: '【重大違法】個人情報保護法第69条違反。学校（行政機関等）が本人同意なく第三者（PTA）へ提供することは原則禁止です。全国の教育委員会への照会でも「違法」との回答が得られています。',
+            links: [{ label: '個人情報問題の詳細', url: '../privacy.html' }, { label: '削除要請テンプレート', url: '../guide-parent.html#pdf-dl' }] },
+          { t: '誰がどの情報を持っているか把握できていない。', level: 2, laws: ['personal-info'],
+            adv: '情報の保有主体・利用目的・管理責任が不明な状態です。個人情報保護法上の安全管理措置義務（同法66条）を欠く可能性があります。',
+            links: [{ label: '個人情報問題の詳細', url: '../privacy.html' }] }
+        ]
+      },
+      {
+        cat: '会費徴収', axis: 'finance', axisIcon: '💰',
+        q: 'PTA会費は、どのように徴収されていますか。',
+        opts: [
+          { t: 'PTA独自口座に、会員が直接振り込みまたはPTAが集金している。', level: 0, laws: ['civil-law'],
+            adv: '学校会計と分離されており、公私の区別が明確です。最も適正な形式です。',
+            links: [] },
+          { t: '学校徴収金と一体だが、別途明確な委任契約書がある。', level: 1, laws: ['civil-law'],
+            adv: '委任契約の内容と、PTAへの入会契約が先行して成立していることが前提です。入会前に会費が引き落とされていないか確認してください。',
+            links: [{ label: '会費徴収の問題', url: '../fee-collection.html' }] },
+          { t: '給食費等と同じ口座から一括で引き落とされている。', level: 4, laws: ['civil-law'],
+            adv: '【重大違法】地方自治法235条の4第2項（私費保管禁止）・地方財政法4条の5（割当寄付禁止）に抵触します。また入会契約なく徴収された場合は民法113条（無権代理）・703条（不当利得）として返還請求が可能です。',
+            links: [{ label: '会費徴収問題の詳細', url: '../fee-collection.html' }, { label: '返還請求テンプレート', url: '../guide-parent.html#pdf-dl' }] },
+          { t: '現金を児童・生徒経由で担任が回収している。', level: 4, laws: ['local-public-service'],
+            adv: '【重大違法】地公法35条（職務専念義務）違反。教職員が勤務時間中に私的団体の集金を担う行為は、違法な利益供与（便宜供与）にあたります。金銭紛失時の責任帰属も重大なリスクです。',
+            links: [{ label: '教職員関与の問題', url: '../personnel.html' }] }
+        ]
+      },
+      {
+        cat: '学校関与', axis: 'personnel', axisIcon: '👩‍🏫',
+        q: 'PTA配布物や連絡は誰が担っていますか。',
+        opts: [
+          { t: 'PTA役員がすべて配布・送信している。', level: 0, laws: ['social-education'],
+            adv: '独立した任意団体として自律的に事務を担えています。最も適正な状態です。',
+            links: [] },
+          { t: '学校配布物にPTA文書が同封されることがある（年数回程度）。', level: 1, laws: ['social-education'],
+            adv: '学校文書と私的団体文書の境界が不明確になるリスクがあります。「PTAは任意団体である」旨の明示が伴っているか確認してください。',
+            links: [] },
+          { t: '担任が日常的にPTA文書を配布・回収している。', level: 3, laws: ['local-public-service'],
+            adv: '【違法リスク高】地公法35条（職務専念義務）違反。教職員が私的団体の実務を恒常的に担う構造は、職務専念義務違反・利益供与にあたります。',
+            links: [{ label: '教職員関与の詳細', url: '../personnel.html' }, { label: '渉外業務の範囲', url: '../guide-board.html' }] },
+          { t: '授業時間や学校行事を利用してPTA加入案内が行われる。', level: 4, laws: ['constitution','social-education'],
+            adv: '【重大違法】学校の公的権威・場を利用した私的団体への加入促進。任意性を根本的に損ない、消費者契約法上の「不当勧誘」にあたる可能性があります。',
+            links: [{ label: '入会手続の問題', url: '../membership.html' }, { label: '教育委員会への相談', url: '../board-responses.html' }] }
+        ]
+      },
+      {
+        cat: '施設・備品', axis: 'facilities', axisIcon: '🏫',
+        q: '学校の施設・備品はどのように利用していますか。',
+        opts: [
+          { t: 'PTA専用の施設・備品を使用し、使用料等を適切に負担している。', level: 0, laws: ['school-ed'],
+            adv: '公私の境界が明確に保たれています。',
+            links: [] },
+          { t: 'PTA室・印刷機等を使用するが、使用条件の書面化はない。', level: 1, laws: ['school-ed'],
+            adv: '学校教育法137条に基づく許可条件・費用負担を書面で整理することをお勧めします。',
+            links: [{ label: '施設利用の整理', url: '../facilities.html' }] },
+          { t: '学校の印刷機・光熱費を無償で常態的に使用している。', level: 3, laws: ['school-ed'],
+            adv: '地方自治法237条（公有財産の適正管理）・地方財政法上の問題があります。公有財産の無償使用は法的根拠が必要です。',
+            links: [{ label: '施設利用の詳細', url: '../facilities.html' }] },
+          { t: '学校電話・郵便をPTAの連絡に常態的に使用している。', level: 2, laws: ['school-ed'],
+            adv: '公費（学校の通信設備）を私的団体が使用することは、利用根拠と費用負担の整理が必要です。渉外業務の範囲内での利用かどうかを確認してください。',
+            links: [{ label: '渉外業務の範囲', url: '../guide-board.html' }] }
+        ]
+      }
+    ],
+    officer: [
+      {
+        cat: '入会手続', axis: 'membership', axisIcon: '📋',
+        q: '新入生への加入案内は、どの方式で行っていますか。',
+        opts: [
+          { t: '入会届提出者のみ登録するオプトイン方式。', level: 0, laws: ['civil-law'],
+            adv: '加入意思の明示を前提とする最も適正な方式です。横浜市通知（学教第1965号）に完全に対応しています。',
+            links: [] },
+          { t: '非加入届が出ない限り加入扱いにする。', level: 3, laws: ['civil-law', 'constitution'],
+            adv: '【違法リスク高】民法522条・消費者契約法に違反します。横浜市通知でも禁止されています。役員として継続している場合、不当利得の返還責任を問われる可能性があります。',
+            links: [{ label: '入会手続を適正化する', url: '../guide-pta.html' }, { label: '入会届の雛形', url: '../guide-pta.html#pdf-officer' }] },
+          { t: '学校名簿を基に当然に全員登録している。', level: 4, laws: ['civil-law', 'personal-info'],
+            adv: '【重大違法】加入意思確認の欠如（民法522条違反）と個人情報の目的外取得（個人情報保護法69条違反）が同時に発生しています。役員として早急に是正が必要です。',
+            links: [{ label: '就任直後チェックリスト', url: '../guide-pta.html#onboard' }, { label: '適正化ロードマップ', url: '../guide-pta.html#roadmap' }] },
+          { t: '実務担当者によって学校ごとに運用が違う。', level: 2, laws: ['civil-law'],
+            adv: '統一ルールがない状態です。役員として今期中に入会届様式を整備し、全員がオプトイン方式で運用するよう規程を定めてください。',
+            links: [{ label: '適正化ロードマップ', url: '../guide-pta.html#roadmap' }] }
+        ]
+      },
+      {
+        cat: '会計管理', axis: 'finance', axisIcon: '💰',
+        q: '会費や資金は、どのように管理していますか。',
+        opts: [
+          { t: 'PTA名義口座と役員が独立して管理・監査している。', level: 0, laws: ['civil-law'],
+            adv: '団体会計としての独立性と透明性が確保されています。',
+            links: [] },
+          { t: '学校事務室が実質的に管理・補助している。', level: 4, laws: ['local-public-service'],
+            adv: '【重大違法】地公法35条（職務専念義務）・地方自治法235条の4（私費保管禁止）に反します。学校が私費を保管・管理することは法的根拠がありません。役員として即時の分離が必要です。',
+            links: [{ label: '会費徴収の問題', url: '../fee-collection.html' }, { label: '会計規程の雛形', url: '../guide-pta.html#pdf-officer' }] },
+          { t: '会長個人の口座や通帳で管理している。', level: 4, laws: ['civil-law'],
+            adv: '【重大違法】会計責任の所在が著しく不明確で、横領事件の典型パターンです。退任後に前任者として追及される可能性があります。今期中にPTA名義口座への移行が必要です。',
+            links: [{ label: '会計規程の雛形', url: '../guide-pta.html#pdf-officer' }, { label: '適正化ロードマップ', url: '../guide-pta.html#roadmap' }] },
+          { t: '現金保管が多く、監査は形式的・未実施である。', level: 2, laws: ['civil-law'],
+            adv: '内部統制が弱く、不正・紛失時に役員個人が責任を問われるリスクがあります。外部監査または独立した内部監査体制を今期中に整備してください。',
+            links: [{ label: '就任直後チェックリスト', url: '../guide-pta.html#onboard' }] }
+        ]
+      },
+      {
+        cat: '学校依存', axis: 'personnel', axisIcon: '👩‍🏫',
+        q: '印刷・仕分け・配布・会計補助などの事務は誰が担っていますか。',
+        opts: [
+          { t: '役員・有償スタッフ・外注で処理している。', level: 0, laws: ['social-education'],
+            adv: '団体として自主的に事務処理を担えています。最も適正な状態です。',
+            links: [] },
+          { t: '教頭・事務職員に相当程度依存している。', level: 3, laws: ['local-public-service'],
+            adv: '【違法リスク高】地公法35条（職務専念義務）違反。教職員の公務と団体事務が混在しており、学校への違法な利益供与（便宜供与）にあたります。',
+            links: [{ label: '渉外業務の範囲', url: '../guide-board.html' }, { label: '適正化ロードマップ', url: '../guide-pta.html#roadmap' }] },
+          { t: '担任にクラス数分の配布物処理を依頼している。', level: 4, laws: ['local-public-service'],
+            adv: '【重大違法】恒常的な事務代行であり、地公法35条の職務専念義務違反が明確です。担任への依頼を今期中に全廃し、PTAが独自配布体制を整える必要があります。',
+            links: [{ label: '就任直後チェックリスト', url: '../guide-pta.html#onboard' }, { label: 'PDF雛形（覚書）', url: '../guide-pta.html#pdf-officer' }] },
+          { t: '繁忙期のみ学校の善意で支援を受ける。', level: 1, laws: ['social-education'],
+            adv: '一時的・例外的な支援であっても、恒常化すれば職務専念義務違反となります。学校との間で「渉外業務の範囲」を書面で明確にしておくことが重要です。',
+            links: [{ label: '渉外業務の定義', url: '../guide-board.html' }] }
+        ]
+      },
+      {
+        cat: '個人情報管理', axis: 'privacy', axisIcon: '🔒',
+        q: '役員・会員の個人情報はどのように管理していますか。',
+        opts: [
+          { t: '入会届で直接収集し、PTA独自の名簿として厳重に管理している。', level: 0, laws: ['personal-info'],
+            adv: 'PTAとして適正に個人情報を管理できています。退会時の即時削除も忘れずに。',
+            links: [] },
+          { t: '学校から提供を受けた名簿を使用しているが、同意は取得している。', level: 1, laws: ['personal-info'],
+            adv: '同意取得の方法（オプトインか否か）と利用目的の明示を確認してください。同意書が存在しても、目的外利用は禁止されます。',
+            links: [{ label: '個人情報管理の要件', url: '../privacy.html' }] },
+          { t: '学校名簿をそのまま使用しており、本人同意は確認していない。', level: 4, laws: ['personal-info'],
+            adv: '【重大違法】個人情報保護法69条違反の状態です。役員として即時の是正が必要です。入会届を整備し、PTAが直接収集する体制に移行してください。',
+            links: [{ label: '入会届の雛形', url: '../guide-pta.html#pdf-officer' }, { label: '個人情報問題の詳細', url: '../privacy.html' }] },
+          { t: 'クラウドサービス・LINEグループ等で管理しているが設定が不明確。', level: 2, laws: ['personal-info'],
+            adv: '個人情報の安全管理措置（個人情報保護法66条）として、アクセス権限・削除手順・漏洩時の対応を規程化する必要があります。',
+            links: [{ label: '個人情報管理の要件', url: '../privacy.html' }] }
+        ]
+      },
+      {
+        cat: '施設利用', axis: 'facilities', axisIcon: '🏫',
+        q: '学校施設・備品の利用状況はどうなっていますか。',
+        opts: [
+          { t: '使用許可・費用負担について学校と書面で合意している。', level: 0, laws: ['school-ed'],
+            adv: '学校教育法137条に沿った適正な利用です。覚書の内容が渉外業務の範囲を超えていないかも確認してください。',
+            links: [] },
+          { t: '使用しているが、費用負担・条件は口頭合意のみ。', level: 1, laws: ['school-ed'],
+            adv: '書面化が必要です。特に光熱費・備品消耗品費の負担を明記した覚書を作成してください。',
+            links: [{ label: '施設利用の整理', url: '../facilities.html' }, { label: '覚書の雛形', url: '../guide-pta.html#pdf-officer' }] },
+          { t: '学校印刷機・電話・備品を無償で常態的に使用している。', level: 3, laws: ['school-ed'],
+            adv: '地方自治法237条・地方財政法上の問題があります。使用料相当額の負担または代替手段（自前の機器）への移行が必要です。',
+            links: [{ label: '施設利用の詳細', url: '../facilities.html' }] },
+          { t: '学校からの無償支援を前提とした活動計画になっている。', level: 2, laws: ['school-ed'],
+            adv: '活動計画の前提を見直し、学校の協力なしで運営可能な体制を段階的に整備してください。',
+            links: [{ label: '適正化ロードマップ', url: '../guide-pta.html#roadmap' }] }
+        ]
+      }
+    ],
+    school: [
+      {
+        cat: '加入指導', axis: 'membership', axisIcon: '📋',
+        q: 'PTA加入についての学校側の関与はどの程度ですか。',
+        opts: [
+          { t: 'PTA加入はPTAが独自に案内し、学校は一切関与していない。', level: 0, laws: ['social-education'],
+            adv: 'PTAの任意性・独立性が保たれており、最も適正な状態です。',
+            links: [] },
+          { t: '入学説明会でPTAの案内を行う機会を提供している。', level: 1, laws: ['social-education'],
+            adv: '「PTAは任意団体であり、加入は保護者の自由な意思による」旨を明確に告知することが必要です。',
+            links: [{ label: '教育委員会向けガイド', url: '../guide-board.html' }] },
+          { t: '学校が加入を前提として保護者に説明・案内をしている。', level: 3, laws: ['constitution','social-education'],
+            adv: '【違法リスク高】学校の公的立場を利用して私的団体への加入を促す行為は、任意性を根本的に損ないます。全国の教育委員会への照会でも「不適切」との回答が得られています。',
+            links: [{ label: '教育委員会の回答', url: '../board-responses.html' }, { label: '横浜市通知の内容', url: '../guide-board.html' }] },
+          { t: '校長・教頭がPTA会長・役員を兼務または実質的に決定している。', level: 4, laws: ['social-education'],
+            adv: '【重大違法】社会教育関係団体の自律性（社会教育法10条）を完全に否定する統制的関与。地教行法23条上の教育委員会の監督責任も問われます。',
+            links: [{ label: '教育委員会向けガイド', url: '../guide-board.html' }] }
+        ]
+      },
+      {
+        cat: '個人情報', axis: 'privacy', axisIcon: '🔒',
+        q: '学校が保有する保護者・児童の情報をPTAに提供していますか。',
+        opts: [
+          { t: '一切提供していない。PTAが入会届で直接収集している。', level: 0, laws: ['personal-info'],
+            adv: '個人情報保護法上、最も適正な状態です。横浜市通知（学教第1965号）が求める形式に完全対応しています。',
+            links: [] },
+          { t: '書面による明確な本人同意（オプトイン）を確認の上、提供している。', level: 1, laws: ['personal-info'],
+            adv: '同意の取得方法・利用目的の明示・提供範囲が適切に設定されているか確認が必要です。',
+            links: [{ label: '個人情報提供の要件', url: '../privacy.html' }] },
+          { t: '学校名簿をPTAに渡している（同意の有無は不明確）。', level: 4, laws: ['personal-info'],
+            adv: '【重大違法】個人情報保護法69条違反。校長・教頭個人が不法行為責任を問われる可能性があります。熊本PTA裁判では校長の不法行為責任が追及されています。',
+            links: [{ label: '個人情報問題の詳細', url: '../privacy.html' }, { label: '司法の現実（判例）', url: '../cases.html#judicial-reality' }] },
+          { t: '保護者から学校へ提出された緊急連絡先をPTA用途に使用している。', level: 4, laws: ['personal-info'],
+            adv: '【重大違法】目的外利用（個人情報保護法61条・69条違反）。「緊急連絡先」として収集した情報を「PTA活動」に使用することは目的外利用として厳しく禁止されています。',
+            links: [{ label: '個人情報問題の詳細', url: '../privacy.html' }] }
+        ]
+      },
+      {
+        cat: '職務専念義務', axis: 'personnel', axisIcon: '👩‍🏫',
+        q: '勤務時間中に教職員がPTA事務を担っていますか。',
+        opts: [
+          { t: '教職員はPTA↔学校間の連絡調整（渉外業務）のみを担っている。', level: 0, laws: ['local-public-service'],
+            adv: '地公法35条に沿った唯一適正な関与形態です。渉外業務の範囲が書面で明確化されているとなお適正です。',
+            links: [{ label: '渉外業務の定義', url: '../guide-board.html' }] },
+          { t: 'PTA配布物の配布・回収を担任に依頼することがある。', level: 2, laws: ['local-public-service'],
+            adv: '継続的・恒常的になれば地公法35条違反です。PTAによる独自配布体制への移行を促してください。',
+            links: [{ label: '渉外業務の範囲', url: '../guide-board.html' }] },
+          { t: '事務職員がPTA会費の集計・処理を担っている。', level: 4, laws: ['local-public-service'],
+            adv: '【重大違法】地公法35条（職務専念義務）違反。私的団体の会計事務を公務員が担うことは違法な利益供与（便宜供与）にあたります。1964年行政実例も同様の解釈を示しています。',
+            links: [{ label: '教職員関与の問題', url: '../personnel.html' }, { label: '行政実例の整理', url: '../administrative-materials.html' }] },
+          { t: 'PTA役員の選出・調整を校長・教頭が実質的に行っている。', level: 4, laws: ['social-education','local-public-service'],
+            adv: '【重大違法】社会教育関係団体の自律性侵害（社会教育法10条）と職務専念義務違反が同時に成立します。教育委員会への報告義務が生じる可能性があります。',
+            links: [{ label: '教育委員会向けガイド', url: '../guide-board.html' }] }
+        ]
+      },
+      {
+        cat: '会費・施設', axis: 'finance', axisIcon: '💰',
+        q: 'PTA会費の徴収・施設利用について学校の関与はどの程度ですか。',
+        opts: [
+          { t: '会費徴収はPTAが独自に行い、施設利用は許可・費用負担を書面化している。', level: 0, laws: ['civil-law','school-ed'],
+            adv: '公私分離が明確に保たれており、最も適正な状態です。',
+            links: [] },
+          { t: '学校徴収金と別口座だが、引き落としの取りまとめを学校が行っている。', level: 2, laws: ['civil-law'],
+            adv: '取りまとめ行為も「代理」にあたります。PTAへの入会契約が先行して成立していることと、書面による委任の存在が必要です。',
+            links: [{ label: '会費徴収の問題', url: '../fee-collection.html' }] },
+          { t: 'PTA会費が給食費等と同一の引き落とし口座・明細に含まれている。', level: 4, laws: ['civil-law'],
+            adv: '【重大違法】地方自治法235条の4第2項（私費保管禁止）・民法113条（無権代理）に抵触します。校長が「無権代理人」として保護者から返還請求を受けた場合、個人責任が及ぶ可能性があります。',
+            links: [{ label: '会費徴収の問題', url: '../fee-collection.html' }, { label: '無権代理という時限爆弾', url: '../cases.html' }] },
+          { t: '学校施設・印刷機・電話をPTAが費用負担なしで恒常的に使用している。', level: 3, laws: ['school-ed'],
+            adv: '地方自治法237条・地方財政法上の問題があります。使用条件・費用負担を書面化し、他団体との公平性も確認が必要です。',
+            links: [{ label: '施設利用の詳細', url: '../facilities.html' }] }
+        ]
+      },
+      {
+        cat: '覚書・合意書', axis: 'facilities', axisIcon: '🤝',
+        q: '学校とPTAの役割分担は書面化されていますか。',
+        opts: [
+          { t: '渉外業務（連絡調整窓口）の範囲だけを定めた覚書がある。', level: 0, laws: ['social-education'],
+            adv: '最も適正な形式です。覚書の内容が渉外業務の範囲を超えて学校の関与を固定化していないか定期的に確認してください。',
+            links: [{ label: '渉外業務の定義', url: '../guide-board.html' }] },
+          { t: '役割分担の覚書があるが、教職員の事務代行も含まれている。', level: 3, laws: ['local-public-service'],
+            adv: '【違法リスク高】覚書に「学校が○○を担当する」と記載されていても、それが職務専念義務違反に該当する業務であれば、合意しても違法状態は解消されません。覚書の内容を見直してください。',
+            links: [{ label: '覚書問題の詳細', url: '../guide-board.html' }] },
+          { t: '書面化されておらず、慣例で運営している。', level: 2, laws: ['social-education'],
+            adv: '慣例は法的根拠になりません。渉外業務の範囲と費用負担を書面で明確化することが、学校・PTAの双方を守ることにつながります。',
+            links: [{ label: '教育委員会向けガイド', url: '../guide-board.html' }, { label: '覚書の雛形', url: '../guide-pta.html#pdf-officer' }] },
+          { t: '覚書はあるが、内容を把握している職員がいない。', level: 1, laws: ['social-education'],
+            adv: '書面があっても機能しなければ意味がありません。内容を全関係者で確認し、必要に応じて更新してください。',
+            links: [] }
+        ]
+      }
+    ]
+  };
+
+  // ===== RISK LEVEL CONFIG =====
+  const RISK_CONFIG = {
+    0: { label: '適正', shortLabel: 'LV.0', color: '#15803D', cls: 'lv0', barPct: 100 },
+    1: { label: '要注意', shortLabel: 'LV.1', color: '#2563EB', cls: 'lv1', barPct: 80 },
+    2: { label: '要改善', shortLabel: 'LV.2', color: '#D97706', cls: 'lv2', barPct: 55 },
+    3: { label: '違法リスク高', shortLabel: 'LV.3', color: '#C2410C', cls: 'lv3', barPct: 30 },
+    4: { label: '重大違法', shortLabel: 'LV.4', color: '#B91C1C', cls: 'lv4', barPct: 10 }
+  };
+
+  const AXIS_LABELS = {
+    membership: '契約性', privacy: '情報管理',
+    finance: '財務健全性', personnel: '服務規律', facilities: '公物管理'
+  };
+  const AXIS_ICONS = {
+    membership: '📋', privacy: '🔒',
+    finance: '💰', personnel: '👩‍🏫', facilities: '🏫'
+  };
+  const ROLE_LABELS = {
+    parent: '保護者', officer: 'PTA役員', school: '学校管理職'
+  };
+
+  // ===== OVERALL RISK JUDGE =====
+  function judgeOverall(counts) {
+    if (counts[4] > 0) return {
+      level: 4, cls: 'lv4',
+      eyebrow: '⛔ 最優先是正',
+      title: '重大な法的違反が検出されました',
+      summary: '一つ以上の項目で、法的に重大な問題が確認されました。民法・個人情報保護法・地方公務員法等への抵触が明白であり、即時の対応が必要です。行政への相談・弁護士への確認を強く推奨します。'
+    };
+    if (counts[3] > 0) return {
+      level: 3, cls: 'lv3',
+      eyebrow: '⚠️ 法的リスク高',
+      title: '違法リスクが高い運用があります',
+      summary: '法令との整合性を欠く可能性が高い運用が含まれています。保護者からの照会・返還請求・教育委員会の是正指導がいつ来てもおかしくない状態です。慣例ではなく法的根拠に基づいた再設計が必要です。'
+    };
+    if (counts[2] > 0) return {
+      level: 2, cls: 'lv2',
+      eyebrow: '🟡 要改善',
+      title: '制度逸脱リスクがあります',
+      summary: '直ちに違法とまでは言い切れないものの、任意性・透明性・公私分離を弱める運用が含まれています。保護者の権利意識の高まりにより、いつ問題化してもおかしくありません。段階的な適正化を進めてください。'
+    };
+    if (counts[1] > 0) return {
+      level: 1, cls: 'lv1',
+      eyebrow: '🔵 要注意',
+      title: '改善の余地があります',
+      summary: '主要な項目は比較的適正ですが、一部に注意が必要な運用が見られます。横浜市通知等の最新の行政指針を踏まえた確認・改善を継続してください。'
+    };
+    return {
+      level: 0, cls: 'lv0',
+      eyebrow: '✅ 適正水準',
+      title: '適正運営に近い状態です',
+      summary: '主要論点において、契約性・自主性・公私分離が比較的明確に保たれています。引き続き横浜市通知等の最新動向を確認しながら適正運営を維持してください。'
+    };
+  }
+
+  // ===== APP =====
+  const App = {
+    role: null, step: 0, answers: [],
+
+    init() {
+      document.querySelectorAll('[data-role]').forEach(btn =>
+        btn.addEventListener('click', () => this.start(btn.dataset.role)));
+      document.getElementById('restartAudit').addEventListener('click', () => this.reset());
+      document.getElementById('backToHome').addEventListener('click', () => window.location.href = '../index.html');
+      document.getElementById('shareResult').addEventListener('click', () => this.share());
+      const printBtn = document.getElementById('printResult');
+      if (printBtn) printBtn.addEventListener('click', () => window.print());
+      document.getElementById('prevQuestion').addEventListener('click', () => this.prev());
+      const regenBtn = document.getElementById('regenerateAssessment');
+      if (regenBtn) regenBtn.addEventListener('click', () => this.generateAssessment());
+      document.getElementById('modalClose').addEventListener('click', () =>
+        document.getElementById('lawModal').classList.remove('is-open'));
+      document.getElementById('lawModal').addEventListener('click', e => {
+        if (e.target === e.currentTarget) e.currentTarget.classList.remove('is-open');
+      });
+    },
+
+    start(role) {
+      this.role = role; this.step = 0; this.answers = [];
+      this.toggle('intro', false); this.toggle('question', true); this.toggle('result', false);
+      this.renderQuestion();
+    },
+
+    reset() {
+      this.role = null; this.step = 0; this.answers = [];
+      this.toggle('intro', true); this.toggle('question', false); this.toggle('result', false);
+      const intro = document.getElementById('screen-intro');
+      if (intro) {
+        const top = intro.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }
+    },
+
+    toggle(name, show) {
+      const el = document.getElementById(`screen-${name}`);
+      if (el) el.classList.toggle('hidden', !show);
+    },
+
+    questions() { return AUDIT_DB[this.role] || []; },
+
+    renderQuestion() {
+      const qs = this.questions();
+      const q = qs[this.step];
+      if (!q) return;
+
+      const pct = (this.step / qs.length) * 100;
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('questionCounter').textContent = `${this.step + 1} / ${qs.length}`;
+      document.getElementById('questionCategory').textContent = `${q.axisIcon || ''} ${AXIS_LABELS[q.axis] || q.cat} — ${q.cat}`;
+      document.getElementById('questionText').textContent = q.q;
+
+      const container = document.getElementById('questionOptions');
+      container.innerHTML = '';
+      q.opts.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'q-option';
+        btn.innerHTML = `
+          <span class="q-option-mark">${i + 1}</span>
+          <span class="q-option-text">${opt.t}</span>`;
+        btn.addEventListener('click', () => {
+          this.answers[this.step] = { q, opt };
+          if (this.step < qs.length - 1) { this.step++; this.renderQuestion(); }
+          else this.finish();
+        });
+        container.appendChild(btn);
+      });
+
+      const prev = document.getElementById('prevQuestion');
+      prev.disabled = this.step === 0;
+      const qScreen = document.getElementById('screen-question');
+      if (qScreen) {
+        const top = qScreen.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }
+    },
+
+    prev() { if (this.step > 0) { this.step--; this.renderQuestion(); } },
+
+    finish() {
+      this.toggle('question', false);
+      this.toggle('result', true);
+      this.renderResult();
+      const shell = document.querySelector('.audit-shell');
+      if (shell) {
+        const top = shell.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }
+    },
+
+    renderResult() {
+      const counts = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 };
+      const axisMax = {};
+      this.answers.forEach(({ q, opt }) => {
+        counts[opt.level]++;
+        if (!(q.axis in axisMax) || opt.level > axisMax[q.axis]) axisMax[q.axis] = opt.level;
+      });
+
+      const overall = judgeOverall(counts);
+
+      // Banner
+      const banner = document.getElementById('riskBanner');
+      banner.className = `result-risk-banner ${overall.cls}`;
+      document.getElementById('bannerEyebrow').textContent = overall.eyebrow;
+      document.getElementById('bannerTitle').textContent = overall.title;
+      document.getElementById('bannerSummary').textContent = overall.summary;
+
+      // Banner counts
+      const bannerCounts = document.getElementById('bannerCounts');
+      bannerCounts.innerHTML = Object.entries(counts).map(([lv, cnt]) => {
+        if (cnt === 0) return '';
+        const rc = RISK_CONFIG[lv];
+        return `<div class="banner-count-chip">
+          <span class="banner-count-num">${cnt}</span>
+          <span>${rc.label}</span>
+        </div>`;
+      }).join('');
+
+      // Axis bars
+      const axisBars = document.getElementById('axisBars');
+      axisBars.innerHTML = Object.entries(AXIS_LABELS).map(([axis, label]) => {
+        const lv = axisMax[axis] ?? 0;
+        const rc = RISK_CONFIG[lv];
+        const pct = 100 - (lv * 22);
+        return `<div class="axis-bar-item">
+          <div class="axis-bar-head">
+            <div class="axis-bar-name">${AXIS_ICONS[axis]} ${label}</div>
+            <div class="axis-bar-risk-label" style="background:${rc.color}22; color:${rc.color};">${rc.label}</div>
+          </div>
+          <div class="axis-bar-track">
+            <div class="axis-bar-fill fill-${rc.cls}" style="width:${Math.max(8, pct)}%"></div>
+          </div>
+        </div>`;
+      }).join('');
+
+      // Count grid
+      const countGrid = document.getElementById('riskCountGrid');
+      countGrid.innerHTML = Object.entries(RISK_CONFIG).map(([lv, rc]) => `
+        <div class="risk-count-cell ${rc.cls}">
+          <div class="risk-count-num">${counts[lv]}</div>
+          <div class="risk-count-name">${rc.label}</div>
+        </div>`).join('');
+
+      // Answer details
+      const details = document.getElementById('resultDetails');
+      details.innerHTML = '';
+      this.answers.forEach(({ q, opt }) => {
+        const rc = RISK_CONFIG[opt.level];
+        const links = (opt.links || []).map(l =>
+          `<a href="${l.url}" class="answer-link" target="_blank" rel="noopener noreferrer">${l.label} →</a>`
+        ).join('');
+        const lawLinks = (opt.laws || []).map(key => {
+          const data = window.LAW_DATA?.[key];
+          if (!data) return '';
+          return `<button class="answer-link" onclick="App.openLaw('${key}')">⚖️ ${data.title}</button>`;
+        }).join('');
+
+        const card = document.createElement('div');
+        card.className = `answer-card ${rc.cls}`;
+        card.innerHTML = `
+          <div class="answer-card-head">
+            <div class="answer-cat">${AXIS_ICONS[q.axis]} ${q.cat}</div>
+            <div class="answer-risk-pill ${rc.cls}">${rc.shortLabel} ${rc.label}</div>
+          </div>
+          <div class="answer-choice">「${opt.t}」</div>
+          <div class="answer-advice">${opt.adv}</div>
+          ${lawLinks || links ? `<div class="answer-links">${lawLinks}${links}</div>` : ''}
+        `;
+        details.appendChild(card);
+      });
+
+      // Set date
+      const now = new Date();
+      const y = now.getFullYear();
+      const m = now.getMonth() + 1;
+      const d = now.getDate();
+      document.getElementById('assessmentDate').textContent = `${y}年${m}月${d}日`;
+
+      // Generate comprehensive assessment
+      this.generateAssessment();
+    },
+
+    // ===== COMPREHENSIVE ASSESSMENT GENERATION (CLIENT-SIDE TEMPLATE) =====
+    generateAssessment() {
+      const bodyEl = document.getElementById('assessmentBody');
+      const loadingEl = document.getElementById('assessmentLoading');
+      const regenBtn = document.getElementById('regenerateAssessment');
+
+      if (loadingEl) loadingEl.style.display = 'none';
+      if (regenBtn) regenBtn.disabled = false;
+
+      const counts = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 };
+      const axisProblems = {};
+      const criticalItems = [];
+      const illegalItems = [];
+      const actionLinks = new Set();
+
+      this.answers.forEach(({ q, opt }) => {
+        counts[opt.level]++;
+        if (!axisProblems[q.axis]) axisProblems[q.axis] = [];
+        axisProblems[q.axis].push({ cat: q.cat, level: opt.level, adv: opt.adv });
+        if (opt.level >= 4) {
+          criticalItems.push({ cat: q.cat, adv: opt.adv, links: opt.links || [] });
+          (opt.links || []).forEach(l => actionLinks.add(JSON.stringify(l)));
+        }
+        if (opt.level === 3) {
+          illegalItems.push({ cat: q.cat, adv: opt.adv, links: opt.links || [] });
+          (opt.links || []).forEach(l => actionLinks.add(JSON.stringify(l)));
+        }
+      });
+
+      const overall = judgeOverall(counts);
+      const hasLevel4 = counts[4] > 0;
+      const hasLevel3 = counts[3] > 0;
+      const hasLevel2 = counts[2] > 0;
+      const totalProblems = counts[4] + counts[3] + counts[2];
+      const roleLabel = ROLE_LABELS[this.role] || '';
+
+      // ===== 総評 =====
+      let summaryText = '';
+      if (hasLevel4) {
+        summaryText = `本診断の結果、${roleLabel}の立場から見て<strong>重大な法的違反状態</strong>が検出されました。民法・個人情報保護法・地方公務員法に抵触する問題が複合的に存在し、このまま放置した場合、<strong>不当利得返還請求・損害賠償・刑事責任・懲戒処分</strong>が現実化するリスクがあります。`;
+      } else if (hasLevel3) {
+        summaryText = `本診断の結果、<strong>違法リスクの高い運用</strong>が複数確認されました。現在は訴訟に至っていなくても、保護者の権利意識が高まるなかで、いつ照会・請求が来てもおかしくない状況です。法的根拠に基づいた運営への再設計が必要です。`;
+      } else if (hasLevel2) {
+        summaryText = `本診断では、主要な項目は比較的適正ですが、任意性・透明性・公私分離の観点で<strong>改善の余地</strong>がある運用が含まれています。段階的な適正化を進めることで、より堅牢な運営体制が構築できます。`;
+      } else {
+        summaryText = `本診断では、主要論点において<strong>比較的適正な運営</strong>が維持されています。横浜市通知など最新の行政指針を踏まえながら、現在の水準を継続してください。`;
+      }
+
+      // ===== 重大問題一覧 =====
+      let problemsHtml = '';
+      if (criticalItems.length > 0 || illegalItems.length > 0) {
+        const allProblems = [
+          ...criticalItems.map(i => ({ ...i, badge: '重大違法', badgeCls: 'lv4' })),
+          ...illegalItems.map(i => ({ ...i, badge: '違法リスク高', badgeCls: 'lv3' }))
+        ];
+        problemsHtml = `
+          <h4 style="color:#b91c1c;margin-top:20px;margin-bottom:10px;font-size:1rem;display:flex;align-items:center;gap:8px">
+            <span style="background:#fee2e2;border-radius:50%;width:24px;height:24px;display:inline-grid;place-items:center;font-size:.8rem">⛔</span>
+            検出された問題（${allProblems.length}件）
+          </h4>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            ${allProblems.map(p => `
+              <div style="background:#fff5f5;border:1px solid #fecaca;border-left:4px solid #b91c1c;border-radius:10px;padding:14px 16px">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+                  <span style="font-size:.7rem;font-weight:900;padding:2px 8px;border-radius:999px;background:#fee2e2;color:#b91c1c">${p.badge}</span>
+                  <strong style="font-size:.9rem;color:#1e293b">${p.cat}</strong>
+                </div>
+                <p style="font-size:.87rem;color:#374151;line-height:1.75;margin:0">${p.adv}</p>
+                ${p.links && p.links.length ? `<div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px">${p.links.map(l => `<a href="${l.url}" style="font-size:.78rem;font-weight:800;color:#1d4ed8;text-decoration:none;padding:3px 9px;border-radius:999px;background:#eff6ff;border:1px solid #bfdbfe">${l.label} →</a>`).join('')}</div>` : ''}
+              </div>`).join('')}
+          </div>`;
+      }
+
+      // ===== 優先アクションリスト =====
+      let actionsHtml = '';
+      if (hasLevel4) {
+        actionsHtml = `
+          <h4 style="margin-top:20px;margin-bottom:10px;font-size:1rem">🗂️ 優先アクション（フェーズ別）</h4>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="background:#fff;border:1.5px solid #fca5a5;border-radius:10px;padding:14px 16px">
+              <div style="font-size:.72rem;font-weight:900;color:#b91c1c;letter-spacing:.06em;margin-bottom:8px">⛔ 最優先（今週中）</div>
+              <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;margin:0;padding:0">
+                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#b91c1c;flex-shrink:0">1.</span>入会手続の即刻停止・オプトイン方式に切り替え</li>
+                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#b91c1c;flex-shrink:0">2.</span>学校名簿のPTAへの提供を即時停止</li>
+                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#b91c1c;flex-shrink:0">3.</span>教職員へのPTA事務依頼を即時停止</li>
+              </ul>
+            </div>
+            <div style="background:#fff;border:1.5px solid #fde68a;border-radius:10px;padding:14px 16px">
+              <div style="font-size:.72rem;font-weight:900;color:#92400e;letter-spacing:.06em;margin-bottom:8px">⚠️ 今期中（1〜3ヶ月）</div>
+              <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;margin:0;padding:0">
+                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#92400e;flex-shrink:0">4.</span>PTA独自口座を開設・学校徴収金から分離</li>
+                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#92400e;flex-shrink:0">5.</span>PTAが独自に入会届で情報を直接収集する体制を構築</li>
+                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#92400e;flex-shrink:0">6.</span>渉外業務の範囲を書面（覚書）で明確化</li>
+              </ul>
+            </div>
+            <div style="background:#fff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px">
+              <div style="font-size:.72rem;font-weight:900;color:#1d4ed8;letter-spacing:.06em;margin-bottom:8px">📋 中期（3〜6ヶ月）</div>
+              <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;margin:0;padding:0">
+                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#1d4ed8;flex-shrink:0">7.</span>会計規程・監査体制の整備</li>
+                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#1d4ed8;flex-shrink:0">8.</span>教育委員会に是正計画を提出・相談</li>
+                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#1d4ed8;flex-shrink:0">9.</span>総会で規約を改正・適正化を宣言</li>
+              </ul>
+            </div>
+          </div>`;
+      } else if (hasLevel3) {
+        actionsHtml = `
+          <h4 style="margin-top:20px;margin-bottom:10px;font-size:1rem">🗂️ 優先アクション</h4>
+          <div style="background:#fff;border:1.5px solid #fde68a;border-radius:10px;padding:14px 16px">
+            <div style="font-size:.72rem;font-weight:900;color:#92400e;letter-spacing:.06em;margin-bottom:8px">今期中に対応が必要</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;margin:0;padding:0">
+              <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#92400e">→</span>問題項目の改善計画を文書化し、役員会に提出</li>
+              <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#92400e">→</span>入会方式をオプトインへ段階的に移行</li>
+              <li style="font-size:.87mg;color:#1e293b;display:flex;gap:8px"><span style="color:#92400e">→</span>教育委員会への状況説明・相談</li>
+            </ul>
+          </div>`;
+      } else {
+        actionsHtml = `
+          <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:14px 16px;margin-top:16px">
+            <div style="font-size:.87rem;color:#15803d;font-weight:700">✅ 現在の適正な運営状態を維持しながら、横浜市通知など最新の行政指針を年1回確認することをお勧めします。</div>
+          </div>`;
+      }
+
+      // ===== 罰則・リスク =====
+      let penaltyHtml = '';
+      if (hasLevel4) {
+        penaltyHtml = `
+          <h4 style="margin-top:20px;margin-bottom:10px;font-size:1rem;color:#7f1d1d">⚖️ このまま放置した場合の法的リスク</h4>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div style="background:#fff5f5;border-radius:8px;padding:12px">
+              <div style="font-size:.72rem;font-weight:900;color:#b91c1c;margin-bottom:5px">民事リスク</div>
+              <div style="font-size:.83rem;color:#374151;line-height:1.6">不当利得返還請求（民法703条）<br>損害賠償請求（民法709条）<br>役員個人への賠償義務</div>
+            </div>
+            <div style="background:#fff5f5;border-radius:8px;padding:12px">
+              <div style="font-size:.72rem;font-weight:900;color:#b91c1c;margin-bottom:5px">刑事・行政リスク</div>
+              <div style="font-size:.83rem;color:#374151;line-height:1.6">個人情報保護法違反：1年以下懲役/100万円以下罰金<br>地公法違反による懲戒処分<br>教育委員会の是正指導</div>
+            </div>
+          </div>`;
+      } else if (hasLevel3) {
+        penaltyHtml = `
+          <div style="background:#fff5f5;border:1px solid #fecaca;border-radius:10px;padding:12px 16px;margin-top:16px">
+            <div style="font-size:.72rem;font-weight:900;color:#b91c1c;margin-bottom:6px">⚠️ 放置した場合のリスク</div>
+            <div style="font-size:.87rem;color:#374151;line-height:1.7">保護者からの照会・返還請求 / 教育委員会からの是正指導 / 役員個人への賠償リスク</div>
+          </div>`;
+      }
+
+      // ===== 参考リンク =====
+      const linkItems = [...actionLinks].map(s => JSON.parse(s));
+      let linksHtml = '';
+      if (linkItems.length > 0) {
+        linksHtml = `
+          <h4 style="margin-top:20px;margin-bottom:10px;font-size:1rem">📎 関連ページ・資料</h4>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            ${linkItems.map(l => `<a href="${l.url}" style="display:inline-flex;align-items:center;gap:5px;font-size:.82rem;font-weight:800;color:var(--navy);text-decoration:none;padding:7px 13px;border-radius:999px;background:#f1f5f9;border:1px solid #e2e8f0">${l.label} →</a>`).join('')}
+            <a href="../guide-pta.html#pdf-officer" style="display:inline-flex;align-items:center;gap:5px;font-size:.82rem;font-weight:800;color:#15803d;text-decoration:none;padding:7px 13px;border-radius:999px;background:#f0fdf4;border:1px solid #bbf7d0">📄 PDF雛形を入手する →</a>
+          </div>`;
+      }
+
+      const html = `
+        <div style="font-size:.95rem;color:#374151;line-height:1.9;margin-bottom:4px">${summaryText}</div>
+        ${problemsHtml}
+        ${penaltyHtml}
+        ${actionsHtml}
+        ${linksHtml}
+        <div style="margin-top:20px;padding:14px;background:#f8fafc;border-radius:10px;font-size:.8rem;color:#64748b;line-height:1.7">
+          ※ 本評価書は入力された診断結果に基づき自動生成されたものです。法律解釈は個別事情により異なります。重大な違法性が疑われる場合は弁護士または行政機関へご相談ください。
+        </div>`;
+
+      if (bodyEl) {
+        bodyEl.innerHTML = html;
+        bodyEl.style.display = 'block';
+      }
+    },
+
+
+    openLaw(key) {
+      const data = window.LAW_DATA?.[key];
+      const modal = document.getElementById('lawModal');
+      const body = document.getElementById('modalBody');
+      if (!data || !modal || !body) return;
+      const evidenceHtml = (data.evidence || []).map(item =>
+        `<a href="${item.url}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:8px;background:rgba(26,54,93,.08);color:var(--color-navy);font-weight:700;text-decoration:none;margin:4px;">${item.label} ↗</a>`
+      ).join('');
+      body.innerHTML = `
+        <h2 style="font-family:'Noto Serif JP',serif;color:var(--color-navy);margin-bottom:12px;">${data.title}</h2>
+        ${data.body}
+        ${evidenceHtml ? `<div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;">${evidenceHtml}</div>` : ''}`;
+      modal.classList.add('is-open');
+    },
+
+    share() {
+      const title = document.getElementById('bannerTitle').textContent;
+      const text = `【PTAコンプライアンス監査】\n判定: ${title}\n\nPTA適正化推進委員会の監査システムで診断しました。`;
+      window.open(
+        `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(location.href)}`,
+        '_blank', 'noopener'
+      );
+    }
+  };
+
+  window.App = App;
+  window.addEventListener('DOMContentLoaded', () => App.init());
+  </script>
+</body>
+</html>
