@@ -405,6 +405,11 @@ button,input,select,textarea{font:inherit}
 
 .acc-body{display:none;padding:0 20px 20px}
 .acc-body.is-open{display:block}
+
+/* FAQ accordion open state */
+.faq-item.is-open .faq-a{max-height:800px!important;padding-bottom:18px!important}
+.faq-item.is-open .faq-toggle{transform:rotate(180deg)}
+.faq-toggle{display:inline-block;transition:transform .3s ease}
 .acc-body-inner{border-top:1px solid var(--line);padding-top:18px}
 .acc-body p{font-size:.92rem;line-height:1.88;margin-bottom:12px}
 .acc-body p:last-child{margin-bottom:0}

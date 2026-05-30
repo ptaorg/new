@@ -1188,4 +1188,37 @@
     <p class="copyright">© PTA適正化推進委員会</p>
   </footer>
   <script src="js/site.js"></script>
+  <script>
+  // 役員向けチェックリスト（cl20）
+  document.querySelectorAll('.cl20-item').forEach(function(item){
+    item.addEventListener('click', function(){
+      var box = item.querySelector('.cl20-box');
+      if (!box) return;
+      var checked = box.getAttribute('data-checked') === '1';
+      if (!checked) {
+        box.setAttribute('data-checked','1');
+        box.textContent = '✓';
+        box.style.background = '#15803d';
+        box.style.borderColor = '#15803d';
+        box.style.color = '#fff';
+      } else {
+        box.setAttribute('data-checked','0');
+        box.textContent = '';
+        box.style.background = '#fff';
+        box.style.borderColor = 'var(--line)';
+        box.style.color = '';
+      }
+    });
+  });
+  // 2カラムグリッドのレスポンシブ対応
+  (function(){
+    var grid = document.querySelector('.checklist-grid-20');
+    if (!grid) return;
+    function applyGrid(){
+      grid.style.gridTemplateColumns = window.innerWidth < 700 ? '1fr' : '1fr 1fr';
+    }
+    applyGrid();
+    window.addEventListener('resize', applyGrid);
+  })();
+  </script>
 </body></html>
