@@ -175,6 +175,79 @@
     @media(max-width:900px){.visual-grid{grid-template-columns:1fr 1fr}.examples-grid{grid-template-columns:1fr}.pdf-grid{grid-template-columns:1fr 1fr}.steps-flow{flex-direction:column}}
     @media(max-width:600px){.visual-grid{grid-template-columns:1fr}.pdf-grid{grid-template-columns:1fr}}
 
+    /* ===== 追加セクション ===== */
+
+    /* FAQ アコーディオン（追加版） */
+    .faq2-section{background:var(--bg);padding:80px 0}
+    .faq2-list{display:flex;flex-direction:column;gap:10px;margin-top:40px}
+    .faq2-item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:box-shadow .2s}
+    .faq2-item.is-open{box-shadow:var(--shadow-sm)}
+    .faq2-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:12px;user-select:none}
+    .faq2-q:hover{background:var(--bg)}
+    .faq2-q-text{font-size:.97rem;font-weight:700;color:var(--navy);flex:1;line-height:1.6}
+    .faq2-q-text::before{content:'Q. ';color:var(--gold)}
+    .faq2-chevron{color:var(--text-soft);transition:transform .3s ease;flex-shrink:0;width:20px;height:20px}
+    .faq2-item.is-open .faq2-chevron{transform:rotate(180deg)}
+    .faq2-a{padding:0 22px;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+    .faq2-item.is-open .faq2-a{max-height:600px;padding:0 22px 20px}
+    .faq2-a p{font-size:.93rem;color:var(--text);line-height:1.85;margin:0;padding-top:14px;border-top:1px solid var(--line)}
+    .faq2-a p::before{content:'A. ';color:var(--navy);font-weight:700}
+
+    /* 教育委員会引用バナー */
+    .quote-banner{background:#0a1628;padding:60px 0}
+    .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+    .quote-card{
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);
+      border-radius:var(--radius);padding:28px 24px;
+      border-top:3px solid var(--gold);
+    }
+    .quote-card blockquote{
+      font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:700;
+      color:#fff;line-height:1.75;margin:0 0 16px;
+    }
+    .quote-card blockquote::before{
+      content:'\201C';font-size:2rem;color:var(--gold);line-height:0;vertical-align:-.4em;margin-right:4px;
+    }
+    .quote-source{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.6}
+    .quote-source strong{color:rgba(255,255,255,.82);display:block;margin-bottom:2px}
+
+    /* 退会手順ステップ */
+    .howto-section{background:#fff;padding:80px 0}
+    .howto-steps{display:flex;flex-direction:column;gap:0;margin-top:48px;position:relative}
+    .howto-steps::before{
+      content:'';position:absolute;left:27px;top:28px;bottom:28px;
+      width:2px;background:linear-gradient(to bottom,var(--navy),rgba(5,17,31,.15));
+      z-index:0;
+    }
+    .howto-step{
+      display:flex;align-items:flex-start;gap:24px;
+      padding:0 0 36px;position:relative;z-index:1;
+    }
+    .howto-step:last-child{padding-bottom:0}
+    .howto-num{
+      flex-shrink:0;width:56px;height:56px;border-radius:50%;
+      background:var(--navy);color:#fff;
+      display:grid;place-items:center;
+      font-size:.72rem;font-weight:900;line-height:1.2;text-align:center;
+      letter-spacing:.04em;box-shadow:0 4px 12px rgba(5,17,31,.25);
+    }
+    .howto-num span{display:block;font-size:1.15rem;font-weight:900;line-height:1}
+    .howto-body{flex:1;padding-top:8px}
+    .howto-body h4{
+      font-family:'Noto Serif JP',serif;font-size:1.08rem;font-weight:900;
+      color:var(--navy);margin-bottom:6px;
+    }
+    .howto-body p{font-size:.88rem;color:var(--text-soft);line-height:1.75;margin:0}
+    .howto-body .howto-tip{
+      display:inline-block;margin-top:8px;padding:4px 10px;
+      border-radius:999px;background:rgba(212,175,55,.12);
+      color:#92400e;font-size:.75rem;font-weight:700;
+    }
+
+    @media(max-width:900px){
+      .quote-grid{grid-template-columns:1fr}
+    }
+
     .page-hero{position:relative;overflow:hidden;}
     .page-hero-bg-img{
       position:absolute;inset:0;z-index:0;
@@ -768,6 +841,152 @@
       </div>
     </section>
 
+    <!-- ===== FAQ（追加） ===== -->
+    <section class="faq2-section">
+      <div class="container">
+        <div class="section-label">よくある質問</div>
+        <h2 class="section-title">FAQ</h2>
+        <p class="section-sub">保護者の方からよく寄せられるご質問にお答えします。</p>
+
+        <div class="faq2-list">
+
+          <div class="faq2-item">
+            <div class="faq2-q">
+              <div class="faq2-q-text">PTAを退会したら子どもが不利益を受けますか？</div>
+              <svg class="faq2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="faq2-a"><p>受けてはなりません。PTAは任意団体であり、非加入を理由に子どもの学校生活に差別を設けることは教育委員会も「不適切」と明言しています。横浜市教育委員会通知（学教第1965号）でも明確に禁止されています。</p></div>
+          </div>
+
+          <div class="faq2-item">
+            <div class="faq2-q">
+              <div class="faq2-q-text">PTA会費の引き落としを止めることができますか？</div>
+              <svg class="faq2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="faq2-a"><p>はい。加入していないか、または退会した場合、PTA会費の引き落とし自体に法的根拠がなくなります。学校が代行徴収を行っている場合は、学校側にもPTAに会員でない旨を書面で伝えてください。</p></div>
+          </div>
+
+          <div class="faq2-item">
+            <div class="faq2-q">
+              <div class="faq2-q-text">個人情報（連絡先・名前）を学校から勝手にPTAに渡されました。</div>
+              <svg class="faq2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="faq2-a"><p>個人情報保護法違反の可能性があります。学校が保護者の同意なくPTAに個人情報を提供することは違法です。全国の教育委員会への照会でも「同意なしの提供はありません」「提供することはできません」との回答が相次いでいます。</p></div>
+          </div>
+
+          <div class="faq2-item">
+            <div class="faq2-q">
+              <div class="faq2-q-text">役員を断ることができますか？</div>
+              <svg class="faq2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="faq2-a"><p>はい。PTAは任意加入の民間団体ですので、役員就任の強制はできません。加入の意思がない場合は退会も可能です。</p></div>
+          </div>
+
+          <div class="faq2-item">
+            <div class="faq2-q">
+              <div class="faq2-q-text">退会の手続きはどうすればいいですか？</div>
+              <svg class="faq2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="faq2-a"><p>PTAの会則に従い、書面（退会届）をPTA役員または学校事務室に提出します。会則に手続きが定められていない場合でも、意思表示により退会は有効です。</p></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 教育委員会引用バナー ===== -->
+    <section class="quote-banner">
+      <div class="container">
+        <div class="section-label" style="color:var(--gold)">公式回答</div>
+        <h2 class="section-title" style="color:#fff">各教育委員会の見解</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,.65)">全国の教育委員会が公式に示した回答の一部をご紹介します。</p>
+        <div class="quote-grid">
+
+          <div class="quote-card">
+            <blockquote>学校側が児童の入学をもって一律に会員とみなす運用については不適切</blockquote>
+            <div class="quote-source">
+              <strong>兵庫県教育委員会</strong>
+              令和7年12月 照会回答
+            </div>
+          </div>
+
+          <div class="quote-card">
+            <blockquote>学校が保有する個人情報をPTAに提供することはありません</blockquote>
+            <div class="quote-source">
+              <strong>長久手市教育委員会</strong>
+              令和8年1月 照会回答
+            </div>
+          </div>
+
+          <div class="quote-card">
+            <blockquote>教育委員会はPTA活動に関与しない立場</blockquote>
+            <div class="quote-source">
+              <strong>豊浦町教育委員会</strong>
+              令和8年2月 照会回答
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 退会・非加入の手順 ===== -->
+    <section class="howto-section">
+      <div class="container">
+        <div class="section-label">手順ガイド</div>
+        <h2 class="section-title">退会・非加入の手順</h2>
+        <p class="section-sub">落ち着いて一歩ずつ進めれば、手続きは難しくありません。</p>
+
+        <div class="howto-steps">
+
+          <div class="howto-step">
+            <div class="howto-num"><span>Step</span><span>1</span></div>
+            <div class="howto-body">
+              <h4>PTA会則・規約を確認する</h4>
+              <p>学校またはPTA役員に会則の開示を求めてください。退会に関する条項を確認しておくことで、手続きがスムーズになります。</p>
+              <span class="howto-tip">会則の開示は正当な権利です</span>
+            </div>
+          </div>
+
+          <div class="howto-step">
+            <div class="howto-num"><span>Step</span><span>2</span></div>
+            <div class="howto-body">
+              <h4>退会届（または非加入意思表示書）を作成する</h4>
+              <p>書面による意思表示を推奨します。自署（自筆署名）のある書面を用意することで、後日のトラブルを防ぐことができます。</p>
+              <span class="howto-tip">当サイトのテンプレートPDFを活用ください</span>
+            </div>
+          </div>
+
+          <div class="howto-step">
+            <div class="howto-num"><span>Step</span><span>3</span></div>
+            <div class="howto-body">
+              <h4>PTAの役員・会長宛に提出する</h4>
+              <p>学校の事務室経由での提出も可能です。受領の確認を取っておくとより確実です。提出日や担当者名をメモしておきましょう。</p>
+            </div>
+          </div>
+
+          <div class="howto-step">
+            <div class="howto-num"><span>Step</span><span>4</span></div>
+            <div class="howto-body">
+              <h4>会費の引き落とし停止を確認する</h4>
+              <p>口座引き落としがある場合は銀行への手続きも必要な場合があります。PTAから「退会受理」の確認を得た後、引き落とし状況を必ず確認してください。</p>
+              <span class="howto-tip">不当引き落としは返還請求が可能です（民法703条）</span>
+            </div>
+          </div>
+
+          <div class="howto-step">
+            <div class="howto-num"><span>Step</span><span>5</span></div>
+            <div class="howto-body">
+              <h4>子どもへの不利益がないか確認する</h4>
+              <p>退会後も子どもの学校生活に変化がないかを確認してください。登校班・記念品・学校行事などで差別的扱いがあれば、速やかに教育委員会に相談してください。</p>
+              <span class="howto-tip">差別的扱いは教育委員会へ相談を</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -857,4 +1076,20 @@
     <p class="copyright">© PTA適正化推進委員会</p>
   </footer>
   <script src="js/site.js"></script>
+  <script>
+  // FAQ2 アコーディオン
+  document.querySelectorAll('.faq2-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.faq2-item');
+      var isOpen = item.classList.contains('is-open');
+      // 他を全て閉じる
+      document.querySelectorAll('.faq2-item.is-open').forEach(function(el) {
+        el.classList.remove('is-open');
+      });
+      if (!isOpen) {
+        item.classList.add('is-open');
+      }
+    });
+  });
+  </script>
 </body></html>
