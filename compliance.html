@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <title>現場で実際に起きているPTA運営実例 | PTA適正化推進委員会</title>
+  <meta name="description" content="みなし加入・代行徴収・個人情報無断提供・教職員強制参加・非加入者差別——実際に流通した書類・文書をもとに、現場のコンプライアンス違反を解説します。">
+  <link rel="canonical" href="https://ptaorg.github.io/compliance.html">
+  <meta property="og:title" content="現場で実際に起きているPTA運営実例 | PTA適正化推進委員会">
+  <meta property="og:description" content="実際に流通した書類・文書をもとに、現場のコンプライアンス違反を解説します。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ptaorg.github.io/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+
+/* =============================================
+   HERO
+   ============================================= */
+.comp-hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #7f1d1d 100%);
+  padding: 80px 0 72px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.comp-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.comp-hero-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 18px; border-radius: 999px;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+  font-size: .72rem; font-weight: 900; letter-spacing: .14em;
+  text-transform: uppercase; color: #fca5a5;
+  margin-bottom: 24px; position: relative;
+}
+.comp-hero-kicker::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: #fca5a5; animation: blink 2s ease infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.7)} }
+.comp-hero h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.7rem);
+  font-weight: 900; line-height: 1.3; color: #fff;
+  margin-bottom: 20px; position: relative;
+}
+.comp-hero-lead {
+  font-size: clamp(.9rem, 1.4vw, 1.05rem);
+  color: rgba(255,255,255,.82); line-height: 1.9;
+  max-width: 680px; margin-inline: auto; position: relative;
+}
+.comp-hero-stats {
+  display: flex; justify-content: center; gap: 40px;
+  margin-top: 40px; position: relative;
+  flex-wrap: wrap;
+}
+.comp-hero-stat {
+  text-align: center;
+}
+.comp-hero-stat-num {
+  font-size: 2rem; font-weight: 900; color: #fca5a5;
+  font-family: 'Noto Serif JP', serif;
+}
+.comp-hero-stat-label {
+  font-size: .75rem; color: rgba(255,255,255,.65);
+  margin-top: 4px;
+}
+
+/* =============================================
+   アンカーナビ
+   ============================================= */
+.anchor-nav {
+  background: #fff;
+  border-bottom: 2px solid #f0f4f8;
+  position: sticky; top: 0; z-index: 80;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+.anchor-nav-inner {
+  display: flex; gap: 0; overflow-x: auto;
+  scrollbar-width: none;
+  width: min(calc(100% - 40px), 900px);
+  margin-inline: auto;
+}
+.anchor-nav-inner::-webkit-scrollbar { display: none; }
+.anchor-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 14px 18px; white-space: nowrap;
+  font-size: .8rem; font-weight: 800;
+  color: #6b7280; text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.anchor-link:hover { color: #b91c1c; border-color: #b91c1c; }
+.anchor-link .anchor-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #fee2e2; color: #b91c1c;
+  font-size: .7rem; font-weight: 900; flex-shrink: 0;
+}
+
+/* =============================================
+   共通ケースセクション
+   ============================================= */
+.case-section {
+  padding: 80px 0;
+  border-bottom: 1px solid #f0f4f8;
+}
+.case-section:nth-child(even) { background: #fafbfc; }
+.case-wrap {
+  width: min(calc(100% - 40px), 940px);
+  margin-inline: auto;
+}
+.case-header {
+  display: flex; align-items: flex-start; gap: 20px;
+  margin-bottom: 40px;
+}
+.case-num-badge {
+  flex-shrink: 0;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #b91c1c; color: #fff;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  font-weight: 900; line-height: 1;
+}
+.case-num-badge .n { font-size: 1.3rem; }
+.case-num-badge .label { font-size: .5rem; letter-spacing: .05em; opacity: .8; }
+.case-title-block {}
+.case-violation-tag {
+  display: inline-block;
+  padding: 2px 10px; border-radius: 4px;
+  background: #fef2f2; color: #b91c1c;
+  font-size: .72rem; font-weight: 800; letter-spacing: .08em;
+  border: 1px solid #fecaca;
+  margin-bottom: 8px;
+}
+.case-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 900; color: #111827; line-height: 1.3;
+  margin-bottom: 6px;
+}
+.case-subtitle {
+  font-size: .9rem; color: #6b7280;
+}
+
+/* =============================================
+   書類モックアップ + アノテーション
+   ============================================= */
+.doc-annotate-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+@media (max-width: 700px) {
+  .doc-annotate-wrap { grid-template-columns: 1fr; }
+}
+
+/* 書類モック */
+.doc-mock {
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.doc-mock-header {
+  background: #f3f4f6;
+  border-bottom: 1px solid #d1d5db;
+  padding: 10px 16px;
+  font-size: .72rem; color: #6b7280;
+  display: flex; align-items: center; gap: 8px;
+}
+.doc-mock-header::before {
+  content: ''; display: inline-block;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #f87171;
+  box-shadow: 14px 0 0 #fbbf24, 28px 0 0 #34d399;
+}
+.doc-mock-body {
+  padding: 20px 22px;
+  font-size: .82rem; line-height: 2;
+  color: #374151;
+}
+.doc-mock-title-row {
+  text-align: center;
+  font-size: 1rem; font-weight: 700;
+  margin-bottom: 12px; color: #111;
+}
+.doc-field-row {
+  display: flex; gap: 8px; align-items: baseline;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 6px 0;
+}
+.doc-field-label {
+  font-size: .75rem; color: #6b7280; min-width: 90px; flex-shrink: 0;
+}
+.doc-field-value { flex: 1; }
+.doc-field-highlight {
+  background: #fef9c3;
+  border: 1.5px solid #fbbf24;
+  border-radius: 3px;
+  padding: 0 4px;
+  position: relative;
+}
+.doc-red-box {
+  border: 2px solid #ef4444;
+  border-radius: 4px;
+  padding: 4px 8px;
+  position: relative;
+  background: #fff5f5;
+}
+.doc-stamp {
+  position: absolute; right: 16px; top: 50%;
+  transform: translateY(-50%) rotate(-12deg);
+  border: 3px solid #b91c1c;
+  border-radius: 6px;
+  color: #b91c1c; font-weight: 900;
+  font-size: .85rem; padding: 6px 10px;
+  opacity: .6; pointer-events: none;
+}
+.doc-note {
+  margin-top: 10px;
+  font-size: .75rem; color: #6b7280;
+  background: #f9fafb;
+  border-left: 3px solid #d1d5db;
+  padding: 6px 10px;
+}
+.doc-checkbox-row {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  padding: 8px 0;
+}
+.doc-checkbox {
+  display: flex; align-items: center; gap: 6px;
+  font-size: .82rem;
+}
+.doc-cb-box {
+  width: 16px; height: 16px;
+  border: 1.5px solid #374151;
+  border-radius: 2px;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.doc-cb-box.checked { background: #374151; }
+.doc-cb-box.checked::after { content: '✓'; color: #fff; font-size: .7rem; }
+.doc-cb-box.missing { border-color: #ef4444; background: #fee2e2; }
+.doc-highlight-section {
+  border: 2px dashed #ef4444;
+  border-radius: 6px;
+  padding: 10px;
+  position: relative;
+  margin: 8px 0;
+}
+.doc-highlight-section::before {
+  content: '⚠ 問題箇所';
+  position: absolute; top: -10px; left: 10px;
+  background: #ef4444; color: #fff;
+  font-size: .65rem; font-weight: 800;
+  padding: 1px 8px; border-radius: 3px;
+}
+
+/* アノテーションリスト */
+.annotation-list {
+  display: flex; flex-direction: column; gap: 16px;
+}
+.annotation-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  transition: box-shadow .2s;
+}
+.annotation-item:hover { box-shadow: 0 4px 16px rgba(185,28,28,.1); }
+.annotation-icon {
+  flex-shrink: 0;
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+}
+.annotation-icon.red { background: #fee2e2; }
+.annotation-icon.orange { background: #fff7ed; }
+.annotation-icon.yellow { background: #fefce8; }
+.annotation-text {}
+.annotation-title {
+  font-size: .85rem; font-weight: 700; color: #111827;
+  margin-bottom: 3px;
+}
+.annotation-body {
+  font-size: .78rem; color: #4b5563; line-height: 1.6;
+}
+.annotation-law {
+  margin-top: 4px;
+  display: inline-block;
+  font-size: .7rem; font-weight: 700;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 4px;
+  padding: 1px 8px;
+}
+
+/* 法的根拠ボックス */
+.law-box {
+  background: linear-gradient(135deg, #eff6ff, #f0f9ff);
+  border: 1px solid #bfdbfe;
+  border-left: 4px solid #2563eb;
+  border-radius: 0 10px 10px 0;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+}
+.law-box-title {
+  font-size: .75rem; font-weight: 900; color: #1e40af;
+  letter-spacing: .08em; margin-bottom: 8px;
+}
+.law-box-body {
+  font-size: .85rem; line-height: 1.8; color: #1e3a5f;
+}
+.law-tag {
+  display: inline-block;
+  padding: 2px 10px; border-radius: 4px;
+  background: #dbeafe; color: #1e40af;
+  font-size: .7rem; font-weight: 800;
+  margin: 2px;
+}
+
+/* 証拠バナー */
+.evidence-banner {
+  display: flex; align-items: center; gap: 12px;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: .82rem; color: #166534;
+  margin-top: 12px;
+}
+.evidence-banner svg { flex-shrink: 0; }
+
+/* =============================================
+   まとめ・CTA
+   ============================================= */
+.comp-summary {
+  background: linear-gradient(135deg, #1a1a2e, #7f1d1d);
+  color: #fff;
+  padding: 72px 0 80px;
+  text-align: center;
+}
+.comp-summary h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-weight: 900; margin-bottom: 20px;
+}
+.comp-summary p {
+  font-size: .95rem; line-height: 1.9;
+  color: rgba(255,255,255,.8);
+  max-width: 620px; margin-inline: auto 0; margin-inline: auto;
+  margin-bottom: 36px;
+}
+.comp-cta-group {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+}
+.btn-primary-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; color: #7f1d1d;
+  font-weight: 800; font-size: .9rem;
+  padding: 14px 28px; border-radius: 8px;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-primary-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.2); }
+.btn-outline-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 2px solid rgba(255,255,255,.5); color: #fff;
+  font-weight: 700; font-size: .9rem;
+  padding: 13px 28px; border-radius: 8px;
+  text-decoration: none;
+  transition: border-color .2s, background .2s;
+}
+.btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+
+/* レスポンシブ */
+@media (max-width: 640px) {
+  .case-header { flex-direction: column; }
+  .comp-hero-stats { gap: 24px; }
+}
+
+  </style>
+</head>
+<body>
+
+<!-- ナビゲーション（共通） -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark">PTA</span>
+      <span class="logo-text">適正化推進委員会</span>
+    </a>
+    <nav class="header-nav" id="header-nav">
+      <a href="index.html" class="nav-link">トップ</a>
+      <a href="guide-parent.html" class="nav-link">保護者の方へ</a>
+      <a href="guide-pta.html" class="nav-link">PTA役員の方へ</a>
+      <a href="reality.html" class="nav-link">実態調査</a>
+      <a href="board-responses.html" class="nav-link">教委回答</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- =============================================
+     HERO
+     ============================================= -->
+<section class="comp-hero">
+  <div class="wrap">
+    <div class="comp-hero-kicker">Field Report — 現場実例</div>
+    <h1>現場で実際に起きている<br>PTA運営実例</h1>
+    <p class="comp-hero-lead">
+      「学校の書類だから仕方ない」「みんなやっているから」——そんな空気の中で、全国のPTAでコンプライアンス違反が日常的に行われています。実際に流通した書類・文書をもとに、問題の構造を解説します。
+    </p>
+    <div class="comp-hero-stats">
+      <div class="comp-hero-stat">
+        <div class="comp-hero-stat-num">5</div>
+        <div class="comp-hero-stat-label">主要違反類型</div>
+      </div>
+      <div class="comp-hero-stat">
+        <div class="comp-hero-stat-num">3+</div>
+        <div class="comp-hero-stat-label">関連法令</div>
+      </div>
+      <div class="comp-hero-stat">
+        <div class="comp-hero-stat-num">多数</div>
+        <div class="comp-hero-stat-label">全国の事例</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     アンカーナビ
+     ============================================= -->
+<nav class="anchor-nav">
+  <div class="anchor-nav-inner">
+    <a href="#minashi" class="anchor-link"><span class="anchor-num">01</span>みなし加入</a>
+    <a href="#daiko" class="anchor-link"><span class="anchor-num">02</span>代行徴収</a>
+    <a href="#kojin" class="anchor-link"><span class="anchor-num">03</span>個人情報</a>
+    <a href="#kyoshoku" class="anchor-link"><span class="anchor-num">04</span>教職員強制</a>
+    <a href="#furi" class="anchor-link"><span class="anchor-num">05</span>非加入者差別</a>
+  </div>
+</nav>
+
+<!-- =============================================
+     CASE 01 — みなし加入
+     ============================================= -->
+<section class="case-section" id="minashi">
+  <div class="case-wrap">
+    <div class="case-header">
+      <div class="case-num-badge"><span class="n">01</span><span class="label">CASE</span></div>
+      <div class="case-title-block">
+        <div class="case-violation-tag">⚠ 強制加入・自由権侵害</div>
+        <h2 class="case-title">「断れない構造」で全員加入させる入学書類</h2>
+        <p class="case-subtitle">みなし加入 / 意思確認なし入会</p>
+      </div>
+    </div>
+
+    <div class="doc-annotate-wrap">
+      <!-- 書類モック -->
+      <div class="doc-mock">
+        <div class="doc-mock-header">実際に配布された書類の再現（構造・文言を再現）</div>
+        <div class="doc-mock-body">
+          <div class="doc-mock-title-row">令和○年度 入学にあたってのご提出書類</div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">①緊急連絡カード</span>
+            <span class="doc-field-value">同封の用紙に記入し提出</span>
+          </div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">②保健調査票</span>
+            <span class="doc-field-value">同封の用紙に記入し提出</span>
+          </div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">③給食申込書</span>
+            <span class="doc-field-value">希望する場合は提出</span>
+          </div>
+          <div class="doc-highlight-section">
+            <div class="doc-field-row" style="border:none;padding:4px 0;">
+              <span class="doc-field-label">④PTA入会届</span>
+              <span class="doc-field-value doc-red-box">同封の用紙に記入し提出してください</span>
+            </div>
+            <div class="doc-note">※ PTAは任意団体ですが、学校教育活動へのご協力をお願いしています。</div>
+          </div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">⑤口座振替依頼書</span>
+            <span class="doc-field-value">学校納付金・<span class="doc-field-highlight">PTA会費</span>の引き落とし用</span>
+          </div>
+          <div class="doc-note" style="margin-top:12px">提出期限：○月○日（入学式当日）<br>※書類は封筒に入れてまとめてご提出ください</div>
+        </div>
+      </div>
+      <!-- アノテーション -->
+      <div class="annotation-list">
+        <div class="annotation-item">
+          <div class="annotation-icon red">🚫</div>
+          <div class="annotation-text">
+            <div class="annotation-title">「提出してください」＝断れない空気の形成</div>
+            <div class="annotation-body">他の必須書類と同じ体裁で封入され、提出を当然視する文言になっています。加入しない選択肢が書類上に存在しません。</div>
+            <span class="annotation-law">結社の自由（憲法21条）</span>
+          </div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-icon red">🚫</div>
+          <div class="annotation-text">
+            <div class="annotation-title">口座振替依頼書にPTA会費が同梱</div>
+            <div class="annotation-body">学校の公費納入と同じ振替口座でPTA会費を設定させることで、加入の意思確認なしに引き落とし同意を取っています。</div>
+            <span class="annotation-law">消費者契約法4条・民法95条（錯誤）</span>
+          </div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-icon orange">⚠️</div>
+          <div class="annotation-text">
+            <div class="annotation-title">「任意団体ですが」という曖昧な注記</div>
+            <div class="annotation-body">任意である旨を一行補記するだけで、実質的な加入義務化の構造は変わりません。明確な「加入しない」選択肢の提示が必要です。</div>
+          </div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-icon orange">⚠️</div>
+          <div class="annotation-text">
+            <div class="annotation-title">入学式当日の提出期限設定</div>
+            <div class="annotation-body">入学式という心理的プレッシャーの高い場で即日提出を求めることで、熟慮・拒否する機会を奪っています。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="law-box">
+      <div class="law-box-title">📚 関連する法令・通知</div>
+      <div class="law-box-body">
+        PTAへの加入は任意であり、強制加入は<strong>日本国憲法第21条（結社の自由）</strong>に抵触します。文部科学省も「PTAへの加入・不加入は保護者の意思に委ねられる」と繰り返し通知しています。加入の有無について、入学書類上に明確に選択肢を示すことが求められます。
+        <br><br>
+        <span class="law-tag">憲法21条</span>
+        <span class="law-tag">文科省通知</span>
+        <span class="law-tag">消費者契約法</span>
+      </div>
+    </div>
+    <div class="evidence-banner">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      同様の書類は全国多数の小中学校で確認されています。保護者からの情報提供によって収集した実例をもとに再現しています。
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     CASE 02 — 代行徴収
+     ============================================= -->
+<section class="case-section" id="daiko">
+  <div class="case-wrap">
+    <div class="case-header">
+      <div class="case-num-badge"><span class="n">02</span><span class="label">CASE</span></div>
+      <div class="case-title-block">
+        <div class="case-violation-tag">⚠ 不透明な金銭徴収</div>
+        <h2 class="case-title">学校が「公費」と混ぜてPTA会費を強制徴収</h2>
+        <p class="case-subtitle">代行徴収 / 公私混同 / 未加入者からの徴収</p>
+      </div>
+    </div>
+
+    <div class="doc-annotate-wrap">
+      <div class="doc-mock">
+        <div class="doc-mock-header">学校から配布された口座振替通知の再現</div>
+        <div class="doc-mock-body">
+          <div class="doc-mock-title-row">令和○年度 学校納付金 口座振替のご案内</div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">振替日</span>
+            <span class="doc-field-value">毎月○日（年間12回）</span>
+          </div>
+          <div style="margin: 10px 0 4px; font-size: .78rem; font-weight: 700; color: #374151;">【振替内訳】</div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">給食費</span>
+            <span class="doc-field-value">月額 4,200円</span>
+          </div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">教材費</span>
+            <span class="doc-field-value">月額 500円</span>
+          </div>
+          <div class="doc-highlight-section">
+            <div class="doc-field-row" style="border:none;">
+              <span class="doc-field-label">PTA会費</span>
+              <span class="doc-field-value doc-red-box">月額 400円（年間4,800円）</span>
+            </div>
+          </div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">合計</span>
+            <span class="doc-field-value" style="font-weight:700;">月額 5,100円</span>
+          </div>
+          <div class="doc-note" style="margin-top:10px">※ 口座残高不足の場合は手数料が発生します。引き落とし日までにご入金ください。</div>
+        </div>
+      </div>
+      <div class="annotation-list">
+        <div class="annotation-item">
+          <div class="annotation-icon red">🚫</div>
+          <div class="annotation-text">
+            <div class="annotation-title">公費（給食費・教材費）とPTA会費を同一口座で一括徴収</div>
+            <div class="annotation-body">学校が任意団体の会費を公費と同列に扱い代行徴収することは、加入強制の実態となります。未加入者や退会者からも引き落とされ続けるケースが多数報告されています。</div>
+            <span class="annotation-law">個人情報保護法・地方自治法</span>
+          </div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-icon red">🚫</div>
+          <div class="annotation-text">
+            <div class="annotation-title">加入確認なしに翌年度も自動継続</div>
+            <div class="annotation-body">年度更新時に退会の手続きを案内せず、入学時に設定した口座振替がそのまま継続されます。実質的な脱退困難状態を作り出しています。</div>
+            <span class="annotation-law">消費者契約法9条</span>
+          </div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-icon orange">⚠️</div>
+          <div class="annotation-text">
+            <div class="annotation-title">学校口座を使うことで「学校公認」の印象を醸成</div>
+            <div class="annotation-body">保護者は「学校が集めているのだから必須」と誤解します。学校とPTAは別組織であることを明示する義務があります。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="law-box">
+      <div class="law-box-title">📚 関連する法令・通知</div>
+      <div class="law-box-body">
+        文部科学省や各都道府県教育委員会は、学校徴収金とPTA会費の分離を求める通知を発出しています（例：東京都「学校徴収金ガイドライン」）。学校が代行徴収を行う場合でも、加入者・未加入者を明確に区別し、<strong>未加入者からは徴収しない</strong>仕組みが必要です。
+        <br><br>
+        <span class="law-tag">各教委ガイドライン</span>
+        <span class="law-tag">消費者契約法</span>
+        <span class="law-tag">民法不当利得返還</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     CASE 03 — 個人情報無断提供
+     ============================================= -->
+<section class="case-section" id="kojin">
+  <div class="case-wrap">
+    <div class="case-header">
+      <div class="case-num-badge"><span class="n">03</span><span class="label">CASE</span></div>
+      <div class="case-title-block">
+        <div class="case-violation-tag">⚠ 個人情報保護法違反</div>
+        <h2 class="case-title">保護者の住所・電話番号がPTAに無断で渡される</h2>
+        <p class="case-subtitle">個人情報の目的外利用・第三者提供</p>
+      </div>
+    </div>
+
+    <div class="doc-annotate-wrap">
+      <div class="doc-mock">
+        <div class="doc-mock-header">学校から提供されたPTA名簿の再現（情報は架空）</div>
+        <div class="doc-mock-body">
+          <div class="doc-mock-title-row">○○小学校PTA 会員名簿 令和○年度</div>
+          <div class="doc-field-row" style="font-size:.72rem; color:#9ca3af; border-bottom: 2px solid #374151; padding-bottom:6px;">
+            <span style="min-width:60px;">組</span>
+            <span style="min-width:80px;">児童氏名</span>
+            <span style="min-width:80px;">保護者氏名</span>
+            <span style="min-width:120px;">住所</span>
+            <span>電話番号</span>
+          </div>
+          <div class="doc-highlight-section" style="margin-top:8px;">
+            <div class="doc-field-row" style="border:none; font-size:.78rem;">
+              <span style="min-width:60px;">1年1組</span>
+              <span style="min-width:80px;">山田 太郎</span>
+              <span style="min-width:80px;">山田 花子</span>
+              <span style="min-width:120px;">○○市△△町1-2-3</span>
+              <span>090-XXXX-XXXX</span>
+            </div>
+            <div class="doc-field-row" style="border:none; font-size:.78rem;">
+              <span style="min-width:60px;">1年1組</span>
+              <span style="min-width:80px;">鈴木 次郎</span>
+              <span style="min-width:80px;">鈴木 良子</span>
+              <span style="min-width:120px;">○○市△△町4-5-6</span>
+              <span>090-XXXX-XXXX</span>
+            </div>
+          </div>
+          <div class="doc-note" style="margin-top:8px;">※ この名簿は学校から提供を受けた情報をもとに作成しています</div>
+        </div>
+      </div>
+      <div class="annotation-list">
+        <div class="annotation-item">
+          <div class="annotation-icon red">🚫</div>
+          <div class="annotation-text">
+            <div class="annotation-title">学校への提出情報がPTAに転用</div>
+            <div class="annotation-body">保護者が学校に提供した個人情報（住所・電話番号）は、学校運営目的のみに使用される前提です。PTA活動目的での利用は明確な目的外利用にあたります。</div>
+            <span class="annotation-law">個人情報保護法18条・23条</span>
+          </div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-icon red">🚫</div>
+          <div class="annotation-text">
+            <div class="annotation-title">本人の同意なしに第三者（PTA）へ提供</div>
+            <div class="annotation-body">個人情報保護法では、個人情報を第三者に提供するには原則として本人の同意が必要です。学校がPTAへ名簿を提供する行為は、この規定に違反します。</div>
+            <span class="annotation-law">個人情報保護法23条1項</span>
+          </div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-icon orange">⚠️</div>
+          <div class="annotation-text">
+            <div class="annotation-title">DV被害者・ストーカー被害者のリスク</div>
+            <div class="annotation-body">住所情報が複数の保護者に渡ることで、居所を秘匿している被害者が危険にさらされるケースがあります。実際に問題となった事例も存在します。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="law-box">
+      <div class="law-box-title">📚 関連する法令・通知</div>
+      <div class="law-box-body">
+        <strong>個人情報保護法第18条</strong>（利用目的の制限）および<strong>第23条</strong>（第三者提供の制限）により、本人の同意なく目的外利用・第三者提供をすることは違法となります。文部科学省も「学校が保有する児童生徒の個人情報をPTAに提供することは原則として許されない」との見解を示しています。
+        <br><br>
+        <span class="law-tag">個人情報保護法18条</span>
+        <span class="law-tag">個人情報保護法23条</span>
+        <span class="law-tag">文科省見解</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     CASE 04 — 教職員強制参加
+     ============================================= -->
+<section class="case-section" id="kyoshoku">
+  <div class="case-wrap">
+    <div class="case-header">
+      <div class="case-num-badge"><span class="n">04</span><span class="label">CASE</span></div>
+      <div class="case-title-block">
+        <div class="case-violation-tag">⚠ 労働法違反・強制加入</div>
+        <h2 class="case-title">教職員がPTA活動への参加を職務として強いられる</h2>
+        <p class="case-subtitle">職務命令によるPTA活動参加 / 時間外無償労働</p>
+      </div>
+    </div>
+
+    <div class="doc-annotate-wrap">
+      <div class="doc-mock">
+        <div class="doc-mock-header">学校内通知文の再現</div>
+        <div class="doc-mock-body">
+          <div class="doc-mock-title-row">PTA行事への教職員参加について（職員向け）</div>
+          <div style="font-size:.82rem; line-height:2; color:#374151;">
+            <p>来たる○月○日（土）のPTA運動会補助について、下記の通り担当を割り当てます。</p>
+            <div class="doc-highlight-section">
+              <p>各担任は担当クラスの競技進行を補助してください。<br>
+              参加は<span class="doc-red-box">職務の一環</span>として取り扱います。</p>
+            </div>
+            <p style="margin-top:10px;">なお、当日は<span class="doc-field-highlight">超過勤務手当は発生しません</span>。ご了承ください。</p>
+            <div class="doc-field-row" style="margin-top:8px;">
+              <span class="doc-field-label">集合時間</span>
+              <span class="doc-field-value">午前7時30分（通常登校より1時間早い）</span>
+            </div>
+            <div class="doc-field-row">
+              <span class="doc-field-label">解散予定</span>
+              <span class="doc-field-value">午後5時（通常より2時間超過）</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="annotation-list">
+        <div class="annotation-item">
+          <div class="annotation-icon red">🚫</div>
+          <div class="annotation-text">
+            <div class="annotation-title">「職務の一環」としてPTA活動を強制</div>
+            <div class="annotation-body">PTAは任意の民間団体です。学校管理職が職務命令でPTA活動への参加を強制することは、教職員の結社の自由を侵害します。</div>
+            <span class="annotation-law">憲法21条・労働基準法</span>
+          </div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-icon red">🚫</div>
+          <div class="annotation-text">
+            <div class="annotation-title">時間外・休日のPTA活動に超過勤務手当なし</div>
+            <div class="annotation-body">土曜日や時間外にPTA活動へ参加させ、賃金を支払わないことは労働基準法違反となります。「自発的参加」という名目でも、職務命令がある場合は対象となります。</div>
+            <span class="annotation-law">労働基準法37条</span>
+          </div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-icon orange">⚠️</div>
+          <div class="annotation-text">
+            <div class="annotation-title">教職員もPTA会員資格が自動付与される慣行</div>
+            <div class="annotation-body">教職員全員をPTA会員として当然視し、会費を徴収する学校も存在します。こちらも本人の同意なき加入として問題です。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="law-box">
+      <div class="law-box-title">📚 関連する法令・通知</div>
+      <div class="law-box-body">
+        <strong>労働基準法第37条</strong>は時間外・休日労働への割増賃金支払いを義務付けています。PTAが任意団体である以上、教職員のPTA活動参加も任意であり、職務命令で強制することはできません。文部科学省も教職員のPTA加入・活動参加は任意である旨を明確にしています。
+        <br><br>
+        <span class="law-tag">労働基準法37条</span>
+        <span class="law-tag">憲法21条</span>
+        <span class="law-tag">給特法</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     CASE 05 — 非加入者への不利益
+     ============================================= -->
+<section class="case-section" id="furi">
+  <div class="case-wrap">
+    <div class="case-header">
+      <div class="case-num-badge"><span class="n">05</span><span class="label">CASE</span></div>
+      <div class="case-title-block">
+        <div class="case-violation-tag">⚠ 差別的取扱い・憲法違反</div>
+        <h2 class="case-title">PTA非加入の子どもが学校行事に参加できない</h2>
+        <p class="case-subtitle">子どもへの不利益付与 / 間接的な加入強制</p>
+      </div>
+    </div>
+
+    <div class="doc-annotate-wrap">
+      <div class="doc-mock">
+        <div class="doc-mock-header">PTAから保護者へ配布されたプリントの再現</div>
+        <div class="doc-mock-body">
+          <div class="doc-mock-title-row">PTA主催 夏休みプール開放について</div>
+          <div style="font-size:.82rem; line-height:2; color:#374151;">
+            <p>標記の件について、下記の通り実施します。</p>
+            <div class="doc-field-row">
+              <span class="doc-field-label">日程</span>
+              <span class="doc-field-value">7月21日〜8月10日（平日）</span>
+            </div>
+            <div class="doc-field-row">
+              <span class="doc-field-label">対象</span>
+              <span class="doc-field-value">本校児童</span>
+            </div>
+            <div class="doc-highlight-section">
+              <div class="doc-field-row" style="border:none;">
+                <span class="doc-field-label">参加条件</span>
+                <span class="doc-field-value doc-red-box">PTA会員家庭の児童に限ります</span>
+              </div>
+            </div>
+            <div class="doc-note">※ PTAに未加入のご家庭は参加いただけません。加入をご希望の場合は担任まで。</div>
+          </div>
+        </div>
+      </div>
+      <div class="annotation-list">
+        <div class="annotation-item">
+          <div class="annotation-icon red">🚫</div>
+          <div class="annotation-text">
+            <div class="annotation-title">子どもへの不利益で保護者加入を事実上強制</div>
+            <div class="annotation-body">親の加入状況によって子どもが行事参加を制限されることは、加入しないと子どもが不利益を被るという間接的な強制です。子どもの最善の利益（児童の権利条約）に反します。</div>
+            <span class="annotation-law">児童の権利条約・憲法14条</span>
+          </div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-icon red">🚫</div>
+          <div class="annotation-text">
+            <div class="annotation-title">学校施設（プール）を非加入者排除に使用</div>
+            <div class="annotation-body">学校のプールは公共施設であり、PTA加入の有無によって使用を制限することは問題です。PTAが主催であっても、学校施設を使う以上は全校児童に開放すべきとの見解もあります。</div>
+            <span class="annotation-law">地方自治法238条の4</span>
+          </div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-icon orange">⚠️</div>
+          <div class="annotation-text">
+            <div class="annotation-title">「加入をご希望の場合は担任まで」という圧力</div>
+            <div class="annotation-body">担任教師を窓口にすることで、保護者は強い心理的プレッシャーを感じます。子どものために加入せざるを得ない状況が作り出されています。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="law-box">
+      <div class="law-box-title">📚 関連する法令・通知</div>
+      <div class="law-box-body">
+        <strong>子どもの権利条約第2条</strong>（差別の禁止）および<strong>第3条</strong>（子どもの最善の利益）に基づき、保護者の加入状況によって子どもを差別的に扱うことは認められません。文部科学省も、PTA加入の有無によって児童生徒が不利益を受けることがないよう周知を求めています。
+        <br><br>
+        <span class="law-tag">子どもの権利条約2条</span>
+        <span class="law-tag">子どもの権利条約3条</span>
+        <span class="law-tag">憲法14条</span>
+        <span class="law-tag">文科省通知</span>
+      </div>
+    </div>
+    <div class="evidence-banner">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      行事への参加制限のほか、通学班への参加拒否、PTA発行の記念品配布除外など、様々な形の不利益付与が報告されています。
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     まとめ・CTA
+     ============================================= -->
+<section class="comp-summary">
+  <div class="wrap">
+    <h2>これらの問題を解決するために</h2>
+    <p>
+      上記の5つの実例は、「悪意」というより「慣習」として長年続いてきたものです。しかし慣習であっても法令違反は法令違反です。保護者・PTA役員・学校管理職・教育委員会——それぞれの立場でできることがあります。
+    </p>
+    <div class="comp-cta-group">
+      <a href="guide-parent.html" class="btn-primary-white">保護者向けガイドを読む</a>
+      <a href="guide-pta.html" class="btn-outline-white">PTA役員向けガイドを読む</a>
+      <a href="board-responses.html" class="btn-outline-white">教委の回答を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- フッター（共通） -->
+<footer class="site-footer">
+  <div class="footer-inner wrap">
+    <div class="footer-logo">
+      <span class="logo-mark">PTA</span>
+      <span class="logo-text">適正化推進委員会</span>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html">トップ</a>
+      <a href="reality.html">実態調査</a>
+      <a href="compliance.html">現場実例</a>
+      <a href="guide-parent.html">保護者ガイド</a>
+      <a href="board-responses.html">教委回答</a>
+    </nav>
+    <p class="footer-copy">&copy; PTA適正化推進委員会</p>
+  </div>
+</footer>
+
+<script>
+const hdr = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  hdr.classList.toggle('scrolled', window.scrollY > 20);
+});
+const hbg = document.getElementById('hamburger');
+const nav = document.getElementById('header-nav');
+if (hbg) hbg.addEventListener('click', () => {
+  nav.classList.toggle('open');
+  hbg.classList.toggle('open');
+});
+</script>
+</body>
+</html>
