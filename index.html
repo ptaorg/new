@@ -959,7 +959,7 @@
    動画セクション
    ============================================= */
 .video-section {
-  background: linear-gradient(135deg, #fde8e8 0%, #fef2f2 100%);
+  background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
   padding: 80px 0 88px;
 }
 .video-section-head {
@@ -1078,7 +1078,7 @@
    ============================================= */
 .fieldcase-section {
   padding: 80px 0 88px;
-  background: #dce8f5;
+  background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
   position: relative;
   overflow: hidden;
 }
@@ -1209,11 +1209,15 @@
 }
 .fc-card:hover .fc-card-cta svg { transform: translateX(4px); }
 /* フルワイドCTAカード */
+.fieldcase-single {
+  max-width: 680px;
+  margin-inline: auto;
+}
 .fc-card-wide {
   grid-column: 1 / -1;
   flex-direction: row; align-items: center;
   padding: 28px 32px;
-  background: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.85);
   border-color: rgba(185,28,28,.25);
   gap: 24px;
 }
@@ -1222,11 +1226,11 @@
 }
 .fc-card-wide-text { flex: 1; }
 .fc-card-wide-title {
-  font-size: 1.05rem; font-weight: 800; color: #0c2d52;
-  margin-bottom: 6px;
+  font-size: 1.15rem; font-weight: 800; color: #0c2d52;
+  margin-bottom: 8px;
 }
 .fc-card-wide-desc {
-  font-size: .85rem; color: #4a6580; line-height: 1.7;
+  font-size: .95rem; color: #3a5272; line-height: 1.75;
 }
 .fc-card-wide-btn {
   flex-shrink: 0;
@@ -1240,6 +1244,103 @@
 .fc-card-wide:hover .fc-card-wide-btn {
   background: #991b1b; transform: scale(1.03);
 }
+
+/* =============================================
+   正しいPTA運営のあり方セクション
+   ============================================= */
+.proper-section {
+  padding: 80px 0 88px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+.proper-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.proper-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 4px 16px; border-radius: 999px;
+  background: rgba(21,128,61,.1); border: 1px solid rgba(21,128,61,.3);
+  font-size: .7rem; font-weight: 900; letter-spacing: .14em;
+  text-transform: uppercase; color: #15803d;
+  margin-bottom: 16px;
+}
+.proper-kicker::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: #15803d;
+}
+.proper-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  font-weight: 900; color: #0f4c2a;
+  line-height: 1.3; margin-bottom: 14px;
+}
+.proper-lead {
+  font-size: clamp(.88rem, 1.3vw, 1rem);
+  color: #1f5c38; line-height: 1.8;
+  max-width: 620px; margin-inline: auto;
+}
+.proper-single {
+  max-width: 680px;
+  margin-inline: auto;
+}
+.proper-card {
+  background: #fff;
+  border: 1px solid rgba(21,128,61,.2);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none; color: inherit;
+  display: flex; flex-direction: column;
+  transition: box-shadow .25s, transform .25s, border-color .25s;
+}
+.proper-card:hover {
+  box-shadow: 0 10px 32px rgba(21,128,61,.18);
+  transform: translateY(-4px);
+  border-color: rgba(21,128,61,.45);
+}
+.proper-card-img-wrap {
+  position: relative;
+  aspect-ratio: 16/7;
+  overflow: hidden;
+}
+.proper-card-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+.proper-card:hover .proper-card-img-wrap img { transform: scale(1.04); }
+.proper-card-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(15,76,42,.2) 0%, rgba(15,76,42,.55) 100%);
+}
+.proper-card-img-label {
+  position: absolute; bottom: 14px; left: 16px;
+  background: rgba(21,128,61,.85);
+  color: #fff; font-size: .68rem; font-weight: 900;
+  letter-spacing: .1em; padding: 4px 12px; border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+.proper-card-body {
+  padding: 24px 26px 26px;
+}
+.proper-card-title {
+  font-size: 1.1rem; font-weight: 800; color: #0f4c2a;
+  line-height: 1.4; margin-bottom: 10px;
+}
+.proper-card-desc {
+  font-size: .88rem; color: #374151; line-height: 1.75;
+  margin-bottom: 16px;
+}
+.proper-card-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .85rem; font-weight: 700; color: #15803d;
+}
+.proper-card-cta svg {
+  width: 14px; height: 14px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform .2s;
+}
+.proper-card:hover .proper-card-cta svg { transform: translateX(4px); }
 
 /* =============================================
    立場別入り口セクション
@@ -1507,9 +1608,9 @@
       </h1>
       <p class="hero-lead">
         PTA適正化推進委員会は、全国のPTA運営における<strong style="color:#1a6fc4">法的問題を独自に調査</strong>し、その結果を<strong style="color:#1a6fc4">一次資料として広く無料公開</strong>している市民活動団体です。<br><br>
-        PTAは本来、<strong style="color:#0f6b3c">入退会が自由</strong>であり学校から独立した任意の社会教育関係団体です。近年、保護者のライフスタイルが多様化し、社会全体のコンプライアンス意識も高まりを見せていますが、実際の学校現場では、<strong style="color:#b91c1c">事実上の強制加入</strong>や<strong style="color:#b91c1c">個人情報の無断提供</strong>、<strong style="color:#b91c1c">公私混同</strong>など、法令やルールを逸脱した運用が依然として常態化しています。<br><br>
-        当委員会の目的は、PTA組織の廃止ではありません。<strong style="color:#0f6b3c">任意加入の原則</strong>、適法な個人情報保護、透明性の高い会費徴収、そして教職員の服務規律といった「<strong style="color:#0f6b3c">本来守るべき法令やルールが遵守される状態（適法化）</strong>」を実現することにあります。<br><br>
-        全国<strong style="color:#1a6fc4">100以上の教育委員会への照会</strong>、厳密な公文書開示請求、および多角的な法令分析を通じて収集した<strong style="color:#1a6fc4">事実のみを発信</strong>しています。保護者から教育行政まで、PTAに関わるすべての人々が、慣例や推測ではなく<strong style="color:#7c3aed">「法的根拠」に基づいた判断と行動</strong>ができる社会を目指しています。
+        PTAは本来、入退会が自由であり学校から独立した任意の社会教育関係団体です。近年、保護者のライフスタイルが多様化し、社会全体のコンプライアンス意識も高まりを見せていますが、実際の学校現場では、<strong style="color:#b91c1c">事実上の強制加入</strong>や<strong style="color:#b91c1c">個人情報の無断提供</strong>、<strong style="color:#b91c1c">公私混同</strong>など、法令やルールを逸脱した運用が依然として常態化しています。<br><br>
+        当委員会の目的は、PTA組織の廃止ではありません。任意加入の原則、適法な個人情報保護、透明性の高い会費徴収、そして教職員の服務規律といった「本来守るべき法令やルールが遵守される状態（適法化）」を実現することにあります。<br><br>
+        全国<strong style="color:#1a6fc4">100以上の教育委員会への照会</strong>、厳密な公文書開示請求、および多角的な法令分析を通じて収集した<strong style="color:#1a6fc4">事実のみを発信</strong>しています。保護者から教育行政まで、PTAに関わるすべての人々が、慣例や推測ではなく「法的根拠」に基づいた判断と行動ができる社会を目指しています。
       </p>
       <div class="hero-flash">
         <span class="flash-badge">最新</span>
@@ -1659,6 +1760,33 @@
 </section>
 
 <!-- =========================================
+     正しいPTA運営のあり方
+     ========================================= -->
+<section class="proper-section">
+  <div class="wrap">
+    <div class="proper-head">
+      <div class="proper-kicker">Best Practice — 適正運営ガイド</div>
+      <h2 class="proper-title">正しいPTA運営のあり方</h2>
+      <p class="proper-lead">問題の指摘にとどまらず、「ではどうすればよいのか」を示します。法令に基づいた正しい運営の手順・文例を解説します。</p>
+    </div>
+    <div class="proper-single">
+      <a href="proper-management.html" class="proper-card proper-card-img-type">
+        <div class="proper-card-img-wrap">
+          <img src="assets/img/glasses-book.png" alt="正しいPTA運営" loading="lazy">
+          <div class="proper-card-img-overlay"></div>
+          <div class="proper-card-img-label">Best Practice — 適正運営ガイド</div>
+        </div>
+        <div class="proper-card-body">
+          <h3 class="proper-card-title">正しいPTA運営のあり方を読む</h3>
+          <p class="proper-card-desc">任意加入・会費徴収・個人情報・教職員との関係など、法令に基づく正しい運営の手順と文例を解説します。</p>
+          <span class="proper-card-cta">詳しく見る <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
      最新更新・掲載情報
      ========================================= -->
 <section class="updates-section">
@@ -1732,17 +1860,16 @@
 
         <div>
           <h3>PTA適正化推進委員会</h3>
-          <a href="https://yokomusubi.city.yokohama.lg.jp/organizations/detail/f69c7ad2-cf21-4dfa-87bb-9c891874eb6b/" target="_blank" rel="noopener noreferrer" class="yokomusubi-card">
-            <img src="assets/yokomusubi.png" alt="よこむすび">
-            <span class="yokomusubi-tagline">磯子区「よこむすび」掲載団体</span>
-            <span class="yokomusubi-meta">登録番号：磯子12406</span>
-            <span class="yokomusubi-meta">分類番号：12-4（市民活動・社会教育推進）</span>
-          </a>
           <div class="footer-contact">
             <p>〒235-0021<br>神奈川県横浜市磯子区岡村8-17-5-301</p>
             <p><strong>070-9012-7772</strong></p>
             <p><a href="mailto:info@ptaorg.com">info@ptaorg.com</a></p>
           </div>
+          <a href="https://yokomusubi.city.yokohama.lg.jp/organizations/detail/f69c7ad2-cf21-4dfa-87bb-9c891874eb6b/" target="_blank" rel="noopener noreferrer" class="yokomusubi-img-link">
+            <img src="assets/yokomusubi.png" alt="よこむすび">
+          </a>
+          <p class="yokomusubi-tagline-out">磯子区「よこむすび」掲載団体</p>
+          <p class="yokomusubi-meta-out">登録番号：磯子12406　分類番号：12-4（市民活動・社会教育推進）</p>
         </div>
 
         <div>

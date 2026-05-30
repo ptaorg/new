@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <title>正しいPTA運営のあり方 | PTA適正化推進委員会</title>
+  <meta name="description" content="任意加入の実現・適法な会費徴収・個人情報の適正管理・教職員との適切な関係——法令に基づく正しいPTA運営のあり方を解説します。">
+  <link rel="canonical" href="https://ptaorg.github.io/proper-management.html">
+  <meta property="og:title" content="正しいPTA運営のあり方 | PTA適正化推進委員会">
+  <meta property="og:description" content="法令に基づく正しいPTA運営のあり方を解説します。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ptaorg.github.io/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+
+/* =============================================
+   HERO
+   ============================================= */
+.pm-hero {
+  background: linear-gradient(135deg, #0f4c2a 0%, #166534 100%);
+  padding: 80px 0 72px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.pm-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.pm-hero-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 18px; border-radius: 999px;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+  font-size: .72rem; font-weight: 900; letter-spacing: .14em;
+  text-transform: uppercase; color: #86efac;
+  margin-bottom: 24px; position: relative;
+}
+.pm-hero-kicker::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: #86efac; animation: blink 2s ease infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.7)} }
+.pm-hero h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.7rem);
+  font-weight: 900; line-height: 1.3; color: #fff;
+  margin-bottom: 20px; position: relative;
+}
+.pm-hero-lead {
+  font-size: clamp(.9rem, 1.4vw, 1.05rem);
+  color: rgba(255,255,255,.82); line-height: 1.9;
+  max-width: 680px; margin-inline: auto; position: relative;
+}
+
+/* =============================================
+   アンカーナビ
+   ============================================= */
+.anchor-nav {
+  background: #fff;
+  border-bottom: 2px solid #f0f4f8;
+  position: sticky; top: 0; z-index: 80;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+.anchor-nav-inner {
+  display: flex; overflow-x: auto; scrollbar-width: none;
+  width: min(calc(100% - 40px), 900px); margin-inline: auto;
+}
+.anchor-nav-inner::-webkit-scrollbar { display: none; }
+.anchor-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 14px 18px; white-space: nowrap;
+  font-size: .8rem; font-weight: 800; color: #6b7280;
+  text-decoration: none; border-bottom: 3px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.anchor-link:hover { color: #15803d; border-color: #15803d; }
+.anchor-link .anchor-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #dcfce7; color: #15803d;
+  font-size: .7rem; font-weight: 900; flex-shrink: 0;
+}
+
+/* =============================================
+   共通セクション
+   ============================================= */
+.pm-section {
+  padding: 80px 0;
+  border-bottom: 1px solid #f0f4f8;
+}
+.pm-section:nth-child(even) { background: #f8fffe; }
+.pm-wrap {
+  width: min(calc(100% - 40px), 900px);
+  margin-inline: auto;
+}
+.pm-section-header {
+  display: flex; align-items: flex-start; gap: 20px;
+  margin-bottom: 40px;
+}
+.pm-num-badge {
+  flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%;
+  background: #15803d; color: #fff;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  font-weight: 900; line-height: 1;
+}
+.pm-num-badge .n { font-size: 1.3rem; }
+.pm-num-badge .lbl { font-size: .5rem; letter-spacing: .05em; opacity: .8; }
+.pm-good-tag {
+  display: inline-block;
+  padding: 2px 10px; border-radius: 4px;
+  background: #dcfce7; color: #15803d;
+  font-size: .72rem; font-weight: 800; letter-spacing: .08em;
+  border: 1px solid #86efac; margin-bottom: 8px;
+}
+.pm-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 900; color: #111827; line-height: 1.3; margin-bottom: 6px;
+}
+.pm-subtitle { font-size: .9rem; color: #6b7280; }
+
+/* ステップグリッド */
+.pm-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.pm-step {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+.pm-step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #15803d; color: #fff;
+  font-size: .75rem; font-weight: 900;
+  margin-bottom: 10px;
+}
+.pm-step-title {
+  font-size: .9rem; font-weight: 700; color: #111827; margin-bottom: 6px;
+}
+.pm-step-body {
+  font-size: .82rem; color: #4b5563; line-height: 1.7;
+}
+
+/* NG→OK 比較表 */
+.pm-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+@media (max-width: 600px) { .pm-compare { grid-template-columns: 1fr; } }
+.pm-ng, .pm-ok {
+  border-radius: 10px; padding: 18px 20px;
+}
+.pm-ng { background: #fff5f5; border: 1.5px solid #fecaca; }
+.pm-ok { background: #f0fdf4; border: 1.5px solid #86efac; }
+.pm-compare-label {
+  font-size: .72rem; font-weight: 900; letter-spacing: .1em;
+  margin-bottom: 10px;
+}
+.pm-ng .pm-compare-label { color: #b91c1c; }
+.pm-ok .pm-compare-label { color: #15803d; }
+.pm-compare-item {
+  display: flex; gap: 8px; font-size: .83rem;
+  color: #374151; line-height: 1.6; margin-bottom: 6px;
+}
+.pm-compare-item::before { flex-shrink: 0; margin-top: 2px; }
+.pm-ng .pm-compare-item::before { content: '✗'; color: #b91c1c; font-weight: 700; }
+.pm-ok .pm-compare-item::before { content: '✓'; color: #15803d; font-weight: 700; }
+
+/* 法令ボックス */
+.pm-law-box {
+  background: linear-gradient(135deg, #eff6ff, #f0f9ff);
+  border: 1px solid #bfdbfe;
+  border-left: 4px solid #2563eb;
+  border-radius: 0 10px 10px 0;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+}
+.pm-law-box-title { font-size: .75rem; font-weight: 900; color: #1e40af; letter-spacing: .08em; margin-bottom: 8px; }
+.pm-law-box-body { font-size: .85rem; line-height: 1.8; color: #1e3a5f; }
+.law-tag {
+  display: inline-block; padding: 2px 10px; border-radius: 4px;
+  background: #dbeafe; color: #1e40af;
+  font-size: .7rem; font-weight: 800; margin: 2px;
+}
+
+/* テンプレートボックス */
+.pm-template {
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.pm-template-header {
+  background: #f3f4f6; border-bottom: 1px solid #d1d5db;
+  padding: 8px 16px; font-size: .72rem; color: #6b7280;
+  display: flex; align-items: center; gap: 8px;
+}
+.pm-template-header::before {
+  content: ''; display: inline-block;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #34d399;
+  box-shadow: 14px 0 0 #60a5fa, 28px 0 0 #a78bfa;
+}
+.pm-template-body {
+  padding: 18px 20px;
+  font-size: .83rem; line-height: 2; color: #374151;
+}
+.pm-template-highlight {
+  background: #dcfce7; border-radius: 3px; padding: 0 4px;
+  color: #15803d; font-weight: 700;
+}
+
+/* まとめCTA */
+.pm-summary {
+  background: linear-gradient(135deg, #0f4c2a, #166534);
+  color: #fff; padding: 72px 0 80px; text-align: center;
+}
+.pm-summary h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 900; margin-bottom: 20px;
+}
+.pm-summary p {
+  font-size: .95rem; line-height: 1.9; color: rgba(255,255,255,.8);
+  max-width: 620px; margin-inline: auto; margin-bottom: 36px;
+}
+.pm-cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-white { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: #166534; font-weight: 800; font-size: .9rem; padding: 14px 28px; border-radius: 8px; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.2); }
+.btn-outline-w { display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,.5); color: #fff; font-weight: 700; font-size: .9rem; padding: 13px 28px; border-radius: 8px; text-decoration: none; transition: border-color .2s, background .2s; }
+.btn-outline-w:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+
+  </style>
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark">PTA</span>
+      <span class="logo-text">適正化推進委員会</span>
+    </a>
+    <nav class="header-nav" id="header-nav">
+      <a href="index.html" class="nav-link">トップ</a>
+      <a href="guide-parent.html" class="nav-link">保護者の方へ</a>
+      <a href="guide-pta.html" class="nav-link">PTA役員の方へ</a>
+      <a href="compliance.html" class="nav-link">現場実例</a>
+      <a href="board-responses.html" class="nav-link">教委回答</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="pm-hero">
+  <div class="wrap">
+    <div class="pm-hero-kicker">Best Practice — 適正運営ガイド</div>
+    <h1>正しいPTA運営のあり方</h1>
+    <p class="pm-hero-lead">
+      問題のある慣行を指摘するだけでなく、では「どうすればよいのか」を示します。任意加入・適法な会費徴収・個人情報保護・教職員との関係——法令に基づいた正しい運営の手順と文例を解説します。
+    </p>
+  </div>
+</section>
+
+<!-- アンカーナビ -->
+<nav class="anchor-nav">
+  <div class="anchor-nav-inner">
+    <a href="#ninni" class="anchor-link"><span class="anchor-num">01</span>任意加入の実現</a>
+    <a href="#kaihi" class="anchor-link"><span class="anchor-num">02</span>会費徴収の適正化</a>
+    <a href="#kojin" class="anchor-link"><span class="anchor-num">03</span>個人情報の適正管理</a>
+    <a href="#kyoshoku" class="anchor-link"><span class="anchor-num">04</span>教職員との適切な関係</a>
+  </div>
+</nav>
+
+<!-- =============================================
+     01 任意加入の実現
+     ============================================= -->
+<section class="pm-section" id="ninni">
+  <div class="pm-wrap">
+    <div class="pm-section-header">
+      <div class="pm-num-badge"><span class="n">01</span><span class="lbl">STEP</span></div>
+      <div>
+        <div class="pm-good-tag">✔ 適正運営</div>
+        <h2 class="pm-title">入退会が自由な「任意加入」の正しい実現</h2>
+        <p class="pm-subtitle">オプトイン方式 / 脱退の自由 / 加入強制の禁止</p>
+      </div>
+    </div>
+
+    <div class="pm-steps">
+      <div class="pm-step">
+        <div class="pm-step-num">1</div>
+        <div class="pm-step-title">入学時の書類を分離する</div>
+        <div class="pm-step-body">PTA入会届は学校の必須書類とは<strong>別封筒・別日程</strong>で配布し、未提出でも不利益が生じないことを明記します。</div>
+      </div>
+      <div class="pm-step">
+        <div class="pm-step-num">2</div>
+        <div class="pm-step-title">加入・不加入の選択肢を明示する</div>
+        <div class="pm-step-body">「加入する／加入しない」を同じ書類上で選択できる<strong>オプトイン形式</strong>の入会届を使います。</div>
+      </div>
+      <div class="pm-step">
+        <div class="pm-step-num">3</div>
+        <div class="pm-step-title">退会手続きを明文化する</div>
+        <div class="pm-step-body">規約に「いつでも退会できる」旨と退会届の手順を明記。<strong>年度更新時に継続意思を確認</strong>する仕組みも有効です。</div>
+      </div>
+      <div class="pm-step">
+        <div class="pm-step-num">4</div>
+        <div class="pm-step-title">非会員への不利益扱いを禁止する</div>
+        <div class="pm-step-body">PTA主催行事への参加可否・通学班・配布物などで<strong>会員・非会員を差別しない</strong>ことを内規に明記します。</div>
+      </div>
+    </div>
+
+    <div class="pm-compare">
+      <div class="pm-ng">
+        <div class="pm-compare-label">❌ NG — よくある問題のある方法</div>
+        <div class="pm-compare-item">学校の必須書類と同封で「提出してください」</div>
+        <div class="pm-compare-item">断るための欄がない（全員加入前提）</div>
+        <div class="pm-compare-item">退会の方法が規約に書かれていない</div>
+        <div class="pm-compare-item">非会員の子が行事参加・通学班から除外される</div>
+      </div>
+      <div class="pm-ok">
+        <div class="pm-compare-label">✅ OK — 適正な方法</div>
+        <div class="pm-compare-item">PTA書類は別封筒・入学式後に配布</div>
+        <div class="pm-compare-item">「加入する／加入しない」両方の選択肢を記載</div>
+        <div class="pm-compare-item">規約に退会手続きを明記・年度確認あり</div>
+        <div class="pm-compare-item">非会員も全行事・全サービスに平等に参加可</div>
+      </div>
+    </div>
+
+    <div class="pm-template">
+      <div class="pm-template-header">入会届サンプル文例</div>
+      <div class="pm-template-body">
+        <strong>○○小学校PTA 入会届</strong><br><br>
+        PTA（保護者と教職員の任意団体）への加入は任意です。加入・不加入にかかわらず、お子様の学校生活に不利益が生じることは一切ありません。<br><br>
+        □ <span class="pm-template-highlight">加入します</span>（会費：月額○○円／口座振替）<br>
+        □ 加入しません<br><br>
+        ※加入後も、いつでも退会できます。退会をご希望の場合はPTA事務局までご連絡ください。
+      </div>
+    </div>
+
+    <div class="pm-law-box">
+      <div class="pm-law-box-title">📚 根拠法令・通知</div>
+      <div class="pm-law-box-body">
+        PTAへの加入は<strong>日本国憲法第21条（結社の自由）</strong>により任意です。文部科学省も「加入・不加入は保護者の意思に委ねられる」と繰り返し通知しています。
+        <br><span class="law-tag">憲法21条</span><span class="law-tag">文科省通知</span><span class="law-tag">社会教育法</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     02 会費徴収の適正化
+     ============================================= -->
+<section class="pm-section" id="kaihi">
+  <div class="pm-wrap">
+    <div class="pm-section-header">
+      <div class="pm-num-badge"><span class="n">02</span><span class="lbl">STEP</span></div>
+      <div>
+        <div class="pm-good-tag">✔ 適正運営</div>
+        <h2 class="pm-title">適法な会費徴収と未加入者への返還</h2>
+        <p class="pm-subtitle">学校徴収金との分離 / 同意に基づく徴収 / 脱退時の返還</p>
+      </div>
+    </div>
+
+    <div class="pm-steps">
+      <div class="pm-step">
+        <div class="pm-step-num">1</div>
+        <div class="pm-step-title">学校徴収金と完全に分離する</div>
+        <div class="pm-step-body">給食費・教材費とPTA会費は<strong>別口座・別の振替手続き</strong>にします。学校の口座をPTA会費の徴収に使うことは原則禁止です。</div>
+      </div>
+      <div class="pm-step">
+        <div class="pm-step-num">2</div>
+        <div class="pm-step-title">加入者のみから徴収する</div>
+        <div class="pm-step-body">口座振替はPTA加入に同意した保護者のみ対象。<strong>退会届提出後は翌月から引き落とし停止</strong>する仕組みを明確にします。</div>
+      </div>
+      <div class="pm-step">
+        <div class="pm-step-num">3</div>
+        <div class="pm-step-title">会計を透明化・公開する</div>
+        <div class="pm-step-body">年間予算・決算報告を<strong>全保護者に配布</strong>（非会員含む）。使途が不明な支出・慣例的な繰越金の積み立ては見直します。</div>
+      </div>
+      <div class="pm-step">
+        <div class="pm-step-num">4</div>
+        <div class="pm-step-title">過去の誤徴収は返還する</div>
+        <div class="pm-step-body">未加入者や退会後に誤って徴収した会費は<strong>全額返還</strong>します。時効（5年）が成立していない範囲で対応します。</div>
+      </div>
+    </div>
+
+    <div class="pm-compare">
+      <div class="pm-ng">
+        <div class="pm-compare-label">❌ NG — よくある問題のある方法</div>
+        <div class="pm-compare-item">給食費と同じ口座でPTA会費を一括引き落とし</div>
+        <div class="pm-compare-item">退会しても引き落とし停止の手続きが案内されない</div>
+        <div class="pm-compare-item">決算報告を役員だけで共有・非会員には非開示</div>
+        <div class="pm-compare-item">余剰金を毎年積み立て・使途不明</div>
+      </div>
+      <div class="pm-ok">
+        <div class="pm-compare-label">✅ OK — 適正な方法</div>
+        <div class="pm-compare-item">PTA会費は別口座・別振替手続きで加入者のみ</div>
+        <div class="pm-compare-item">退会届提出後は翌月から自動停止</div>
+        <div class="pm-compare-item">予算・決算は全保護者に配布・ウェブ公開</div>
+        <div class="pm-compare-item">翌年度繰越額の上限を規約で設定</div>
+      </div>
+    </div>
+
+    <div class="pm-law-box">
+      <div class="pm-law-box-title">📚 根拠法令・通知</div>
+      <div class="pm-law-box-body">
+        各都道府県教育委員会の「学校徴収金ガイドライン」では学校徴収金とPTA会費の分離を求めています。未加入者からの徴収は<strong>不当利得（民法703条）</strong>として返還義務が生じます。
+        <br><span class="law-tag">民法703条（不当利得）</span><span class="law-tag">各教委ガイドライン</span><span class="law-tag">消費者契約法</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     03 個人情報の適正管理
+     ============================================= -->
+<section class="pm-section" id="kojin">
+  <div class="pm-wrap">
+    <div class="pm-section-header">
+      <div class="pm-num-badge"><span class="n">03</span><span class="lbl">STEP</span></div>
+      <div>
+        <div class="pm-good-tag">✔ 適正運営</div>
+        <h2 class="pm-title">個人情報の適正な収集・管理・廃棄</h2>
+        <p class="pm-subtitle">利用目的の明示 / 第三者提供の禁止 / 安全管理</p>
+      </div>
+    </div>
+
+    <div class="pm-steps">
+      <div class="pm-step">
+        <div class="pm-step-num">1</div>
+        <div class="pm-step-title">PTAが直接・同意を得て収集する</div>
+        <div class="pm-step-body">学校から個人情報の提供を受けるのではなく、<strong>PTA入会届に個人情報収集の同意欄</strong>を設け、加入者から直接収集します。</div>
+      </div>
+      <div class="pm-step">
+        <div class="pm-step-num">2</div>
+        <div class="pm-step-title">利用目的を明示する</div>
+        <div class="pm-step-body">「PTA活動の連絡・名簿作成のみに使用し、第三者に提供しない」と<strong>明確に記載</strong>。目的外利用は行いません。</div>
+      </div>
+      <div class="pm-step">
+        <div class="pm-step-num">3</div>
+        <div class="pm-step-title">名簿の取り扱いを厳格にする</div>
+        <div class="pm-step-body">名簿の配布は役員のみ・施錠保管。<strong>紙名簿の全保護者配布は廃止</strong>し、デジタル連絡ツール（LINE等）への移行を検討します。</div>
+      </div>
+      <div class="pm-step">
+        <div class="pm-step-num">4</div>
+        <div class="pm-step-title">退会者・卒業生の情報は速やかに廃棄する</div>
+        <div class="pm-step-body">退会・卒業時点で個人情報を<strong>シュレッダー処理またはデータ削除</strong>。保存期間を規約に明記します。</div>
+      </div>
+    </div>
+
+    <div class="pm-compare">
+      <div class="pm-ng">
+        <div class="pm-compare-label">❌ NG — よくある問題のある方法</div>
+        <div class="pm-compare-item">学校からPTA名簿用に住所・電話番号を入手</div>
+        <div class="pm-compare-item">全保護者に紙の名簿を配布（非会員の情報も掲載）</div>
+        <div class="pm-compare-item">卒業後も個人情報をPTAで保管し続ける</div>
+        <div class="pm-compare-item">役員引き継ぎ時に個人情報の管理ルールがない</div>
+      </div>
+      <div class="pm-ok">
+        <div class="pm-compare-label">✅ OK — 適正な方法</div>
+        <div class="pm-compare-item">入会届でPTAが直接・同意を得て収集</div>
+        <div class="pm-compare-item">名簿は役員限定・施錠保管・全員配布廃止</div>
+        <div class="pm-compare-item">退会・卒業時に速やかに廃棄（規約明記）</div>
+        <div class="pm-compare-item">個人情報管理規程を制定・引き継ぎ時に確認</div>
+      </div>
+    </div>
+
+    <div class="pm-law-box">
+      <div class="pm-law-box-title">📚 根拠法令・通知</div>
+      <div class="pm-law-box-body">
+        <strong>個人情報保護法第18条</strong>（利用目的の制限）・<strong>第23条</strong>（第三者提供の制限）・<strong>第20条</strong>（安全管理措置）が適用されます。100人以上の個人情報を扱う団体は個人情報取扱事業者として法律の義務を負います。
+        <br><span class="law-tag">個人情報保護法18条</span><span class="law-tag">個人情報保護法23条</span><span class="law-tag">個人情報保護法20条</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     04 教職員との適切な関係
+     ============================================= -->
+<section class="pm-section" id="kyoshoku">
+  <div class="pm-wrap">
+    <div class="pm-section-header">
+      <div class="pm-num-badge"><span class="n">04</span><span class="lbl">STEP</span></div>
+      <div>
+        <div class="pm-good-tag">✔ 適正運営</div>
+        <h2 class="pm-title">教職員との適切な関係・服務規律の遵守</h2>
+        <p class="pm-subtitle">加入の任意性 / 勤務時間内活動の廃止 / 管理職関与の排除</p>
+      </div>
+    </div>
+
+    <div class="pm-steps">
+      <div class="pm-step">
+        <div class="pm-step-num">1</div>
+        <div class="pm-step-title">教職員の加入は完全に任意とする</div>
+        <div class="pm-step-body">教職員をPTA会員として自動加入させるのをやめ、<strong>保護者と同じく任意加入</strong>に変更します。加入しない教職員に不利益を与えません。</div>
+      </div>
+      <div class="pm-step">
+        <div class="pm-step-num">2</div>
+        <div class="pm-step-title">PTA活動を勤務時間外に設定しない</div>
+        <div class="pm-step-body">PTA主催行事は<strong>教職員の勤務時間外の参加を求めない</strong>設計にします。どうしても必要な場合は代休・時間外手当の適切な処理を確認します。</div>
+      </div>
+      <div class="pm-step">
+        <div class="pm-step-num">3</div>
+        <div class="pm-step-title">学校管理職がPTA運営に介入しない</div>
+        <div class="pm-step-body">PTAの役員選出・予算・行事計画は保護者が主体的に決定し、<strong>校長・教頭が職務命令でPTA活動を指示する</strong>ことをなくします。</div>
+      </div>
+      <div class="pm-step">
+        <div class="pm-step-num">4</div>
+        <div class="pm-step-title">学校との役割分担を明確にする</div>
+        <div class="pm-step-body">PTAと学校の協力関係は維持しつつ、<strong>財務・個人情報・意思決定は独立</strong>して行います。学校施設使用は正式な手続きを経ます。</div>
+      </div>
+    </div>
+
+    <div class="pm-compare">
+      <div class="pm-ng">
+        <div class="pm-compare-label">❌ NG — よくある問題のある方法</div>
+        <div class="pm-compare-item">教職員全員をPTA会員として会費徴収</div>
+        <div class="pm-compare-item">校長の職務命令でPTA行事への参加を義務化</div>
+        <div class="pm-compare-item">PTA役員選考に管理職が介入・事実上の指名</div>
+        <div class="pm-compare-item">学校がPTA名義の書類を配布・回収代行</div>
+      </div>
+      <div class="pm-ok">
+        <div class="pm-compare-label">✅ OK — 適正な方法</div>
+        <div class="pm-compare-item">教職員加入は任意・会費徴収なし（不加入が基本）</div>
+        <div class="pm-compare-item">PTA行事は教職員の時間外参加を求めない設計</div>
+        <div class="pm-compare-item">役員選出は保護者の自主的な選挙・推薦</div>
+        <div class="pm-compare-item">PTA書類は学校と切り離してPTAが直接配布</div>
+      </div>
+    </div>
+
+    <div class="pm-law-box">
+      <div class="pm-law-box-title">📚 根拠法令・通知</div>
+      <div class="pm-law-box-body">
+        教職員の時間外労働には<strong>労働基準法第37条</strong>による割増賃金が必要です（公立教員は給特法が適用されますが、本来業務外の活動は対象外）。文部科学省も教職員のPTA加入・活動は任意であると明確にしています。
+        <br><span class="law-tag">労働基準法37条</span><span class="law-tag">給特法</span><span class="law-tag">文科省通知</span><span class="law-tag">憲法21条</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- まとめ・CTA -->
+<section class="pm-summary">
+  <div class="wrap">
+    <h2>適正なPTA運営を、今日から始めましょう</h2>
+    <p>
+      「今までそうだったから」では通用しない時代になっています。小さな一歩——入会届の書式変更、会費口座の分離——から始めることができます。当委員会は、適正化に取り組むPTAを全力で支援します。
+    </p>
+    <div class="pm-cta-group">
+      <a href="guide-pta.html" class="btn-white">PTA役員向けガイドを読む</a>
+      <a href="compliance.html" class="btn-outline-w">問題事例を確認する</a>
+      <a href="board-responses.html" class="btn-outline-w">教委の見解を見る</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner wrap">
+    <div class="footer-logo">
+      <span class="logo-mark">PTA</span>
+      <span class="logo-text">適正化推進委員会</span>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html">トップ</a>
+      <a href="proper-management.html">正しい運営</a>
+      <a href="compliance.html">現場実例</a>
+      <a href="guide-pta.html">PTA役員ガイド</a>
+      <a href="board-responses.html">教委回答</a>
+    </nav>
+    <p class="footer-copy">&copy; PTA適正化推進委員会</p>
+  </div>
+</footer>
+
+<script>
+const hdr = document.getElementById('site-header');
+window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 20); });
+const hbg = document.getElementById('hamburger');
+const nav = document.getElementById('header-nav');
+if (hbg) hbg.addEventListener('click', () => { nav.classList.toggle('open'); hbg.classList.toggle('open'); });
+</script>
+</body>
+</html>

@@ -154,7 +154,11 @@ button,input,select,textarea{font:inherit}
 .yokomusubi-card img{height:52px;width:auto;align-self:flex-start}
 .yokomusubi-tagline{color:#1a3a52;font-size:.82rem;font-weight:700;margin-top:4px}
 .yokomusubi-meta{color:#555;font-size:.74rem}
-.footer-contact{margin-top:16px;display:flex;flex-direction:column;gap:7px}
+.footer-contact{margin-top:12px;margin-bottom:16px;display:flex;flex-direction:column;gap:7px}
+.yokomusubi-img-link{display:inline-block;margin-top:4px}
+.yokomusubi-img-link img{height:48px;width:auto;display:block}
+.yokomusubi-tagline-out{color:rgba(255,255,255,.85);font-size:.78rem;font-weight:700;margin-top:8px}
+.yokomusubi-meta-out{color:rgba(255,255,255,.55);font-size:.7rem;margin-top:3px;line-height:1.5}
 /* SNS cards column */
 .footer-sns-sub{font-size:.79rem;color:rgba(255,255,255,.48);margin:-4px 0 14px;line-height:1.5}
 .footer-sns-cards{display:flex;flex-direction:column;gap:8px}
