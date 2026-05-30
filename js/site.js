@@ -5,6 +5,7 @@ const SITE_INDEX=[
   {title:'保護者の方へ',url:'guide-parent.html',desc:'入会・会費・個人情報。絵で直感的に理解できるガイド。みなし加入 退会 返還請求 テンプレートPDF'},
   {title:'PTA役員の方へ',url:'guide-pta.html',desc:'就任直後の確認・適正化ロードマップ・PDF雛形。役員 リスク 会計 入会届'},
   {title:'教育委員会・学校の方へ',url:'guide-board.html',desc:'職務専念義務・渉外業務・覚書問題。校長 教頭 教職員 地公法35条'},
+  {title:'教委向け分離指針',url:'edu-board-separation.html',desc:'学校とPTAの線引きを校長任せにしない。教育委員会通知 校長会資料 PTA直接徴収 会員管理 分離通知'},
   {title:'研究者・記者の方へ',url:'guide-research.html',desc:'全国公文書・教委回答・一次資料へのアクセスガイド。取材 問い合わせ'},
   {title:'教育委員会の回答',url:'board-responses.html',desc:'全国の教育委員会への照会結果・地図。全国50自治体 強制加入違法 横浜市通知'},
   {title:'全国資料館',url:'national-archive.html',desc:'開示請求で収集した全国のPTA関連公文書。入会届 会費 名簿 覚書'},
