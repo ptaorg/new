@@ -2,15 +2,10 @@
 
 Place redacted evidence images for `compliance.html` in this directory.
 
-The page currently uses non-loading placeholders with `data-image-src` values such as:
+Raw source images may be kept locally under `assets/compliance/raw/` while processing, but must not be committed or referenced from HTML because this repository is served by GitHub Pages. The `raw/` directory is ignored except for its `.gitignore`.
 
-- `assets/compliance/case01-minashi-join.jpg`
-- `assets/compliance/case02-bundled-fee.jpg`
-- `assets/compliance/case03-personal-data.jpg`
-- `assets/compliance/case04-school-contact-tool.jpg`
-- `assets/compliance/case05-staff-pta-work.jpg`
-- `assets/compliance/case06-facilities-printing.jpg`
-- `assets/compliance/case07-nonmember-fee.jpg`
-- `assets/compliance/case08-child-disadvantage.jpg`
+Public page images must live under `assets/compliance/redacted/`.
+
+The school contact-tool case intentionally remains a non-loading placeholder until a safely redacted source image is available.
 
 Before publishing real documents, redact names, addresses, phone numbers, class details, account details, signatures, seals, and any other identifiable personal information.

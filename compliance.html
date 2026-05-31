@@ -10,7 +10,7 @@
   <meta name="description" content="みなし加入、学校徴収金との抱き合わせ徴収、個人情報提供、学校連絡ツール、教職員関与、施設利用、非会員対応、児童への不利益を、実物書類の確認観点から整理します。">
   <link rel="canonical" href="https://ptaorg.github.io/compliance.html">
   <meta property="og:title" content="PTA運営の現場実例 | PTA適正化推進委員会">
-  <meta property="og:description" content="PTA運営上の現場実例を8類型で整理し、問題点・法的論点・確認すべき資料を示します。">
+  <meta property="og:description" content="PTA運営上の現場実例を9類型で整理し、問題点・法的論点・確認すべき資料を示します。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://ptaorg.github.io/assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -283,6 +283,44 @@
       margin-top: 10px;
       padding-left: 12px;
       border-left: 3px solid rgba(212,175,55,.75);
+    }
+    .case-evidence-gallery {
+      display: grid;
+      gap: 14px;
+    }
+    .case-evidence-gallery figure {
+      margin: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .case-evidence-gallery img {
+      width: 100%;
+      height: auto;
+      background: #f8fafc;
+    }
+    .case-evidence-gallery figcaption {
+      padding: 10px 12px 12px;
+      border-left: 0;
+      border-top: 1px solid var(--line);
+      margin: 0;
+      color: var(--text-soft);
+      font-size: .78rem;
+      line-height: 1.65;
+    }
+    .publication-note {
+      width: min(calc(100% - 40px), 1040px);
+      margin: 0 auto;
+      padding: 18px 20px;
+      border: 1px solid #fde68a;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      background: #fffbeb;
+      color: #4b5563;
+      font-size: .9rem;
+      line-height: 1.85;
     }
     .case-body {
       display: grid;
@@ -586,11 +624,11 @@
     <div>
       <h1>PTA運営上の現場実例を、<br>書類から確認する</h1>
       <p class="compliance-hero-lead">
-        PTAの問題は、抽象的な「任意か強制か」だけでは見えません。入学書類、徴収金通知、名簿、学校連絡ツール、職員向け文書、施設利用記録など、現場の書類にどのような構造が表れているかを8類型で整理します。
+        PTAの問題は、抽象的な「任意か強制か」だけでは見えません。入学書類、徴収金通知、名簿、学校連絡ツール、役員選出書類、職員向け文書、施設利用記録など、現場の書類にどのような構造が表れているかを9類型で整理します。
       </p>
     </div>
     <div class="hero-count" aria-label="掲載類型数">
-      <span class="hero-count-num">8</span>
+      <span class="hero-count-num">9</span>
       <span class="hero-count-label">PTA運営で確認すべき主要類型</span>
     </div>
   </div>
@@ -627,6 +665,9 @@
       </div>
     </div>
   </div>
+  <div class="publication-note">
+    掲載している資料画像は、提供資料をもとに、学校名・個人名・連絡先等を加工したものです。このページの目的は、特定の学校や個人を非難することではなく、PTA運営において全国的に生じやすい制度上の問題を可視化することにあります。個別事案の適法性は、文書の作成経緯、配布方法、本人同意の有無、学校の関与、教育委員会の運用基準等によって判断されるため、本ページでは「問題となる構造」を中心に整理しています。
+  </div>
 </section>
 
 <nav class="case-anchor-nav" aria-label="現場実例のページ内ナビゲーション">
@@ -635,10 +676,11 @@
     <a href="#case02" class="case-anchor-link"><span>02</span>抱き合わせ徴収</a>
     <a href="#case03" class="case-anchor-link"><span>03</span>個人情報提供</a>
     <a href="#case04" class="case-anchor-link"><span>04</span>学校連絡ツール</a>
-    <a href="#case05" class="case-anchor-link"><span>05</span>教職員関与</a>
-    <a href="#case06" class="case-anchor-link"><span>06</span>施設・印刷・配布</a>
-    <a href="#case07" class="case-anchor-link"><span>07</span>協力金・特定</a>
-    <a href="#case08" class="case-anchor-link"><span>08</span>児童への不利益</a>
+    <a href="#case05" class="case-anchor-link"><span>05</span>役員選出</a>
+    <a href="#case06" class="case-anchor-link"><span>06</span>学校経由事務</a>
+    <a href="#case07" class="case-anchor-link"><span>07</span>施設・印刷・配布</a>
+    <a href="#case08" class="case-anchor-link"><span>08</span>協力金・特定</a>
+    <a href="#case09" class="case-anchor-link"><span>09</span>不利益・差別</a>
   </div>
 </nav>
 
@@ -652,19 +694,22 @@
         入学・転入時に、入会申込書や同意確認を経ないまま「保護者はPTA会員」として扱う類型です。任意団体であるPTAへの加入を、学校生活の手続と一体に見せることで、加入しない選択肢が事実上消えます。
       </p>
       <div class="case-layout">
-        <figure class="case-figure" data-image-src="assets/compliance/case01-minashi-join.jpg">
-          <div class="case-placeholder">
-            <span class="placeholder-label">画像差し替え予定</span>
-            <div class="placeholder-title">入学書類一式・PTA加入案内・提出封筒</div>
-            <code class="placeholder-path">assets/compliance/case01-minashi-join.jpg</code>
-          </div>
-          <figcaption>実物書類は、学校名・児童名・保護者名などの個人情報部分を加工して掲載予定です。</figcaption>
-        </figure>
+        <div class="case-figure case-evidence-gallery">
+          <figure>
+            <img src="assets/compliance/redacted/case-01-minashi-deemed-membership.png" alt="不提出をPTA入会扱いとする趣旨の実例資料" loading="lazy">
+            <figcaption>提供資料をもとに作成。提出がない場合にPTA入会扱いとする趣旨の記載がある資料です。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/compliance/redacted/case-01-enrollment-equals-membership.png" alt="入学と同時にPTA加入とする趣旨の実例資料" loading="lazy">
+            <figcaption>入学とPTA加入を一体のものとして説明する構造が読み取れる資料です。</figcaption>
+          </figure>
+        </div>
         <div class="case-body">
           <div class="case-block problem">
             <h3>問題点解説</h3>
             <ul class="issue-list">
               <li>入会申込書がない、または「提出しない場合は加入しない」と読める選択肢がない。</li>
+              <li>不提出を入会意思とみなし、加入しない意思表示をしなければ加入扱いにしている。</li>
               <li>PTA会費の口座振替依頼書が、学校徴収金の書類と同じ束に入っている。</li>
               <li>「全家庭」「原則加入」「ご協力ください」という文言で、任意加入であることが十分に伝わらない。</li>
             </ul>
@@ -718,14 +763,16 @@
         給食費、教材費、修学旅行積立金などの学校徴収金と同じ通知・同じ口座振替でPTA会費を集める類型です。学校費用とPTA会費の境界が見えにくくなり、非会員からも徴収される危険があります。
       </p>
       <div class="case-layout">
-        <figure class="case-figure" data-image-src="assets/compliance/case02-bundled-fee.jpg">
-          <div class="case-placeholder">
-            <span class="placeholder-label">画像差し替え予定</span>
-            <div class="placeholder-title">学校徴収金通知・口座振替明細・PTA会費欄</div>
-            <code class="placeholder-path">assets/compliance/case02-bundled-fee.jpg</code>
-          </div>
-          <figcaption>実物書類は、口座番号、児童名、学校名などの個人情報部分を加工して掲載予定です。</figcaption>
-        </figure>
+        <div class="case-figure case-evidence-gallery">
+          <figure>
+            <img src="assets/compliance/redacted/case-02-school-expenses-pta-fee.png" alt="PTA会費を学校諸経費と併せて納入するとする実例資料" loading="lazy">
+            <figcaption>学校名・個人名等を加工。PTA会費を学校の諸経費の支払いに併せて納入する趣旨の記載がある資料です。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/compliance/redacted/case-02-pta-funded-school-clerical-work.png" alt="PTA会費を財源とする事務と学校手続の境界に関する実例資料" loading="lazy">
+            <figcaption>PTA会費を財源とする事務員が、学校関係手続に関わる構造が読み取れる資料です。</figcaption>
+          </figure>
+        </div>
         <div class="case-body">
           <div class="case-block problem">
             <h3>問題点解説</h3>
@@ -733,6 +780,7 @@
               <li>PTA会費が「学校納付金」の内訳に入り、学校の費用であるかのように見える。</li>
               <li>加入者・非加入者の区別がないまま一律引落しされる。</li>
               <li>返金や停止の窓口が学校事務室になり、PTAの独立性が曖昧になる。</li>
+              <li>PTA会費を財源とする事務と学校徴収金事務が一体化し、非会員対応に差が出る可能性がある。</li>
             </ul>
           </div>
           <p class="strong-note">
@@ -784,14 +832,20 @@
         学校が保有する児童・保護者の氏名、住所、電話番号、きょうだい情報、クラス情報などを、本人同意なくPTAへ渡す類型です。公立学校の場合、個人情報保護法69条を中心に確認する必要があります。
       </p>
       <div class="case-layout">
-        <figure class="case-figure" data-image-src="assets/compliance/case03-personal-data.jpg">
-          <div class="case-placeholder">
-            <span class="placeholder-label">画像差し替え予定</span>
-            <div class="placeholder-title">PTA名簿・地区委員名簿・学校からの提供資料</div>
-            <code class="placeholder-path">assets/compliance/case03-personal-data.jpg</code>
-          </div>
-          <figcaption>実物書類は、児童・保護者の氏名、住所、電話番号、地区名などの個人情報部分を加工して掲載予定です。</figcaption>
-        </figure>
+        <div class="case-figure case-evidence-gallery">
+          <figure>
+            <img src="assets/compliance/redacted/case-03-home-visit-address-sharing.png" alt="住所情報を用いた訪問を示す実例資料" loading="lazy">
+            <figcaption>学校名・個人名等を加工。住所情報を用いて保護者宅を訪問する構造が読み取れる資料です。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/compliance/redacted/case-07-cooperation-fee-school-roster.png" alt="学校からクラス名簿の提供を受けている旨の実例資料" loading="lazy">
+            <figcaption>学校からクラス名簿の提供を受けている旨の記載がある資料です。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/compliance/redacted/case-05-family-info-exemption-mark.png" alt="家庭情報一覧表を執行部が確認する趣旨の実例資料" loading="lazy">
+            <figcaption>家庭情報一覧表や免除履歴を役員選出に用いる構造が読み取れる資料です。</figcaption>
+          </figure>
+        </div>
         <div class="case-body">
           <div class="case-block problem">
             <h3>問題点解説</h3>
@@ -799,6 +853,7 @@
               <li>学校へ提出した情報が、PTA活動のために使われることが事前に説明されていない。</li>
               <li>本人同意の書面や、同意しない選択肢がない。</li>
               <li>PTA役員、地区委員、学年委員など複数人に名簿が共有され、管理責任が曖昧になる。</li>
+              <li>住所、加入・非加入、家庭事情、役員履歴などがPTA活動のために広く扱われる。</li>
             </ul>
           </div>
           <p class="strong-note">
@@ -855,11 +910,11 @@
       <div class="case-layout">
         <figure class="case-figure" data-image-src="assets/compliance/case04-school-contact-tool.jpg">
           <div class="case-placeholder">
-            <span class="placeholder-label">画像差し替え予定</span>
+            <span class="placeholder-label">資料確認中</span>
             <div class="placeholder-title">学校連絡アプリ画面・PTA配信本文・送信者表示</div>
             <code class="placeholder-path">assets/compliance/case04-school-contact-tool.jpg</code>
           </div>
-          <figcaption>実物画面は、児童名、クラス、送信者名、端末情報などの個人情報部分を加工して掲載予定です。</figcaption>
+          <figcaption>今回の提供資料内には学校連絡アプリ等の明確な資料を確認できなかったため、画像掲載は保留しています。</figcaption>
         </figure>
         <div class="case-body">
           <div class="case-block problem">
@@ -914,40 +969,56 @@
   <section class="case-section" id="case05">
     <div class="case-wrap">
       <div class="case-kicker">Case 05</div>
-      <h2 class="case-title">教職員のPTA業務化・職専免処理</h2>
+      <h2 class="case-title">役員・委員を「くじ引き」や「免除審査」で決める</h2>
       <p class="case-lead">
-        教員や事務職員が、勤務時間中にPTA会費管理、配布物作成、役員連絡、会議準備、行事運営を行う類型です。労基法37条違反と即断するのではなく、服務、校務分掌、職務専念義務、職専免、給特法との関係で整理します。
+        PTA活動は、本来、加入した会員が任意に参加する活動です。しかし現場では、「在学中に1人1回」「家族1役」「欠席者もくじ引き対象」「提出しない場合は了承扱い」など、役員・委員就任を事実上義務化する運用が見られます。さらに、免除を受けるために、妊娠、障害、疾病、ひとり親、乳児、不登校、転居予定などの家庭事情を申告させる例もあります。
       </p>
       <div class="case-layout">
-        <figure class="case-figure" data-image-src="assets/compliance/case05-staff-pta-work.jpg">
-          <div class="case-placeholder">
-            <span class="placeholder-label">画像差し替え予定</span>
-            <div class="placeholder-title">職員向けPTA担当表・校務分掌表・職専免申請書</div>
-            <code class="placeholder-path">assets/compliance/case05-staff-pta-work.jpg</code>
-          </div>
-          <figcaption>実物書類は、教職員名、学校名、印影、個別役職などの個人情報部分を加工して掲載予定です。</figcaption>
-        </figure>
+        <div class="case-figure case-evidence-gallery">
+          <figure>
+            <img src="assets/compliance/redacted/case-05-lottery-duty-selection.png" alt="PTA役員選出におけるくじ引き運用の実例資料" loading="lazy">
+            <figcaption>欠席者・未提出者も選出対象とする趣旨の記載がある資料です。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/compliance/redacted/case-05-exemption-application-school-route.png" alt="PTA委員免除申請を学校経由で提出させる実例資料" loading="lazy">
+            <figcaption>学校名・個人名等を加工。免除申請を学校長・副校長等の学校経由で扱う構造が読み取れる資料です。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/compliance/redacted/case-05-patrol-exemption-family-status.png" alt="PTA活動免除のために家庭事情を記入させる調査票の実例資料" loading="lazy">
+            <figcaption>妊娠・未就学児・転居予定などの家庭事情を免除判断に用いる構造が読み取れる資料です。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/compliance/redacted/case-05-selection-notice-deemed-acceptance.png" alt="受諾書未提出でも了承扱いとする実例資料" loading="lazy">
+            <figcaption>提出がない場合も了承したものとして進める趣旨の記載がある資料です。</figcaption>
+          </figure>
+        </div>
         <div class="case-body">
           <div class="case-block problem">
             <h3>問題点解説</h3>
             <ul class="issue-list">
-              <li>PTA事務が校務分掌表に当然のように組み込まれている。</li>
-              <li>職専免の申請・承認記録がない、または包括的で活動内容が特定されていない。</li>
-              <li>PTAの団体運営事務と、学校としての連絡調整業務が混在している。</li>
+              <li>PTA活動が任意ではなく義務のように扱われている。</li>
+              <li>欠席者や未提出者も役員選出対象になる。</li>
+              <li>電話に出ない、書類を出さない場合に承諾扱いされる。</li>
+              <li>免除申請のために妊娠、障害、疾病、不登校、ひとり親などのセンシティブな情報を提出させている。</li>
+              <li>PTA執行部が免除可否を審査し、役員経験や免除履歴を家庭単位で管理している。</li>
+              <li>学校長、副校長、担任など学校職員が提出先・連絡先として関与している。</li>
             </ul>
           </div>
           <div class="case-block law">
             <h3>法的論点</h3>
             <p>
-              地方公務員法35条は、職員が勤務時間中、職務に専念する義務を定めています。PTAは学校とは別の社会教育関係団体であるため、教職員がPTAの内部事務を行う場合、それが公務として位置づけられるのか、職専免が必要なのか、根拠確認が必要です。
+              役員・委員就任も、本人の明示的な同意を前提に整理すべきです。未回答や欠席を承諾とみなす運用は、PTAの任意性や民法上の意思表示との関係で問題となります。
             </p>
             <p>
-              教員については給特法により時間外勤務手当・休日勤務手当の扱いに特別な制度があるため、「PTA行事に関わったから直ちに労基法37条違反」とは整理できません。ただし、任意団体の事務を職務として無限定に担わせる運用は、不適切運用となり得ます。
+              免除制は「できない理由」を証明させる制度になりやすく、妊娠、障害、疾病、家庭事情、子どもの状況など、任意団体が取得すべきでない情報まで集める危険があります。学校職員を提出先にする場合は、学校とPTAの分離、個人情報保護、職務専念義務との関係も確認が必要です。
             </p>
+            <div class="law-tags"><span>任意加入原則</span><span>民法上の意思表示</span><span>消費者契約法</span><span>個人情報保護</span><span>要配慮個人情報</span><span>社会教育法12条</span></div>
+          </div>
+          <div class="case-block">
+            <h3>改善方向</h3>
             <p>
-              社会教育法12条は、国・地方公共団体が社会教育関係団体に不当に統制的支配を及ぼし、またはその事業に干渉してはならないと定めています。学校側がPTA運営を実質的に担う場合、この境界も問題となります。
+              くじ引きや未回答承諾扱いをやめ、参加可能な人が明示的に引き受ける制度へ改める必要があります。免除制ではなく「参加できる範囲で参加する」制度にし、妊娠、障害、疾病、家庭事情などを提出させない運用が望まれます。
             </p>
-            <div class="law-tags"><span>地方公務員法35条</span><span>職務専念義務</span><span>職専免</span><span>給特法</span><span>社会教育法12条</span></div>
           </div>
         </div>
       </div>
@@ -955,25 +1026,25 @@
         <div>
           <h4>確認すべき資料</h4>
           <ul>
-            <li>校務分掌表・PTA担当表</li>
-            <li>職専免申請書・承認簿</li>
-            <li>PTA業務の時間・内容記録</li>
+            <li>役員選出通知・委員選出カード</li>
+            <li>くじ引き実施要領・免除申請書</li>
+            <li>家庭情報一覧表・役員経験管理表</li>
           </ul>
         </div>
         <div>
           <h4>関係する論点ページ</h4>
           <ul>
-            <li><a href="personnel.html">教職員関与</a></li>
-            <li><a href="facilities.html">施設利用</a></li>
-            <li><a href="administrative-materials.html">行政資料整理</a></li>
+            <li><a href="membership.html">入会手続</a></li>
+            <li><a href="privacy.html">個人情報</a></li>
+            <li><a href="guide-pta.html">PTA役員向けガイド</a></li>
           </ul>
         </div>
         <div>
           <h4>教育委員会・学校に確認すべきこと</h4>
           <ul>
-            <li>PTA業務を公務と整理する根拠は何か。</li>
-            <li>職専免の対象・時間・承認者は特定されているか。</li>
-            <li>校務分掌とPTA内部事務をどう切り分けているか。</li>
+            <li>学校が役員選出書類の配布・回収・審査に関与していないか。</li>
+            <li>未回答や欠席を承諾扱いしていないか。</li>
+            <li>家庭事情や要配慮情報を提出させていないか。</li>
           </ul>
         </div>
       </div>
@@ -983,19 +1054,86 @@
   <section class="case-section" id="case06">
     <div class="case-wrap">
       <div class="case-kicker">Case 06</div>
+      <h2 class="case-title">教職員・学校経由のPTA事務</h2>
+      <p class="case-lead">
+        PTA書類を学校の提出物と一緒に回収したり、教職員が勤務時間中にPTA会費管理、配布物作成、役員連絡、会議準備を行ったりする類型です。服務、校務分掌、職務専念義務、職専免、学校とPTAの分離の観点で整理します。
+      </p>
+      <div class="case-layout">
+        <div class="case-figure case-evidence-gallery">
+          <figure>
+            <img src="assets/compliance/redacted/case-06-pta-document-submitted-with-school-docs.png" alt="PTA書類を学校書類と一緒に提出させる趣旨の実例資料" loading="lazy">
+            <figcaption>学校名・個人名等を加工。PTA書類を学校の書類と一緒に提出させる趣旨の記載がある資料です。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/compliance/redacted/case-05-exemption-application-school-route.png" alt="PTA免除申請を学校経由で扱う実例資料" loading="lazy">
+            <figcaption>学校長・副校長など学校側の経路を通じてPTA書類が扱われる構造が読み取れる資料です。</figcaption>
+          </figure>
+        </div>
+        <div class="case-body">
+          <div class="case-block problem">
+            <h3>問題点解説</h3>
+            <ul class="issue-list">
+              <li>PTA書類が学校の提出物と同じ封筒・同じ提出先で扱われ、任意団体の手続と学校手続が混同される。</li>
+              <li>PTA事務が校務分掌や担任業務のように扱われる。</li>
+              <li>職専免の申請・承認記録がない、または包括的で活動内容が特定されていない。</li>
+              <li>PTAの内部事務と、学校としての連絡調整業務が混在している。</li>
+            </ul>
+          </div>
+          <div class="case-block law">
+            <h3>法的論点</h3>
+            <p>
+              地方公務員法35条は、職員が勤務時間中、職務に専念する義務を定めています。PTAは学校とは別の社会教育関係団体であるため、教職員がPTAの内部事務を行う場合、それが公務として位置づけられるのか、職専免が必要なのか、根拠確認が必要です。
+            </p>
+            <p>
+              教員については給特法により時間外勤務や休日勤務の扱いに特別な制度があるため、PTA行事への関与を一般的な時間外労働の枠組みだけで即断するのは適切ではありません。ただし、任意団体の事務を職務として無限定に担わせる運用は、不適切運用となり得ます。
+            </p>
+            <div class="law-tags"><span>地方公務員法35条</span><span>職務専念義務</span><span>職専免</span><span>校務分掌</span><span>給特法</span><span>社会教育法12条</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-actions">
+        <div>
+          <h4>確認すべき資料</h4>
+          <ul>
+            <li>校務分掌表・PTA担当表</li>
+            <li>学校が配布・回収したPTA書類</li>
+            <li>職専免申請書・承認簿</li>
+          </ul>
+        </div>
+        <div>
+          <h4>関係する論点ページ</h4>
+          <ul>
+            <li><a href="personnel.html">教職員関与</a></li>
+            <li><a href="edu-board-separation.html">教委向け分離指針</a></li>
+            <li><a href="administrative-materials.html">行政資料整理</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>教育委員会・学校に確認すべきこと</h4>
+          <ul>
+            <li>PTA業務を公務と整理する根拠は何か。</li>
+            <li>学校がPTA書類の提出先になっていないか。</li>
+            <li>校務分掌とPTA内部事務をどう切り分けているか。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section" id="case07">
+    <div class="case-wrap">
+      <div class="case-kicker">Case 07</div>
       <h2 class="case-title">学校施設・印刷機・児童経由配布の利用</h2>
       <p class="case-lead">
         PTA室、会議室、職員室の印刷機、学校の用紙、児童経由の配布ルートをPTA活動に使う類型です。学校教育上の支障、使用許可、費用負担、公私の境界を確認する必要があります。
       </p>
       <div class="case-layout">
-        <figure class="case-figure" data-image-src="assets/compliance/case06-facilities-printing.jpg">
-          <div class="case-placeholder">
-            <span class="placeholder-label">画像差し替え予定</span>
-            <div class="placeholder-title">施設使用申請・印刷依頼票・児童配布プリント</div>
-            <code class="placeholder-path">assets/compliance/case06-facilities-printing.jpg</code>
-          </div>
-          <figcaption>実物書類は、学校名、担当者名、児童名、印影などの個人情報部分を加工して掲載予定です。</figcaption>
-        </figure>
+        <div class="case-figure case-evidence-gallery">
+          <figure>
+            <img src="assets/compliance/redacted/case-06-pta-document-submitted-with-school-docs.png" alt="PTA書類を学校提出物と同じ経路で扱う実例資料" loading="lazy">
+            <figcaption>学校名・個人名等を加工。PTA書類が学校提出物と同じ経路で扱われる構造が読み取れる資料です。</figcaption>
+          </figure>
+        </div>
         <div class="case-body">
           <div class="case-block problem">
             <h3>問題点解説</h3>
@@ -1046,22 +1184,20 @@
     </div>
   </section>
 
-  <section class="case-section" id="case07">
+  <section class="case-section" id="case08">
     <div class="case-wrap">
-      <div class="case-kicker">Case 07</div>
+      <div class="case-kicker">Case 08</div>
       <h2 class="case-title">非会員への協力金・非会員特定</h2>
       <p class="case-lead">
         PTAに加入しない家庭へ「協力金」「実費負担」「記念品代」などを求めたり、非会員家庭を役員・委員・担任が把握できる形で共有したりする類型です。任意性と個人情報管理の両面で注意が必要です。
       </p>
       <div class="case-layout">
-        <figure class="case-figure" data-image-src="assets/compliance/case07-nonmember-fee.jpg">
-          <div class="case-placeholder">
-            <span class="placeholder-label">画像差し替え予定</span>
-            <div class="placeholder-title">協力金依頼文・非会員一覧・実費請求文書</div>
-            <code class="placeholder-path">assets/compliance/case07-nonmember-fee.jpg</code>
-          </div>
-          <figcaption>実物書類は、非会員家庭、児童名、地区名、連絡先などの個人情報部分を加工して掲載予定です。</figcaption>
-        </figure>
+        <div class="case-figure case-evidence-gallery">
+          <figure>
+            <img src="assets/compliance/redacted/case-07-cooperation-fee-school-roster.png" alt="活動支援金と学校名簿提供に関する実例資料" loading="lazy">
+            <figcaption>学校名・個人名等を加工。活動支援金の依頼、全児童対象、学校からクラス名簿の提供を受けている旨の記載がある資料です。</figcaption>
+          </figure>
+        </div>
         <div class="case-body">
           <div class="case-block problem">
             <h3>問題点解説</h3>
@@ -1112,28 +1248,27 @@
     </div>
   </section>
 
-  <section class="case-section" id="case08">
+  <section class="case-section" id="case09">
     <div class="case-wrap">
-      <div class="case-kicker">Case 08</div>
-      <h2 class="case-title">非加入児童への不利益・差別的取扱い</h2>
+      <div class="case-kicker">Case 09</div>
+      <h2 class="case-title">非加入・退会による不利益、差別的取扱い</h2>
       <p class="case-lead">
-        保護者がPTAに加入していないことを理由に、児童が行事、記念品、登校班、見守り、学校施設を使う活動から除外される類型です。保護者の団体加入と子どもの学校生活を結びつける点が大きな問題です。
+        保護者がPTAに加入していない、または退会することを理由に、児童が行事、記念品、登校班、見守り、学校施設を使う活動から除外される、または不利益が列挙され退会をためらわせる類型です。保護者の団体加入と子どもの学校生活を結びつける点が大きな問題です。
       </p>
       <div class="case-layout">
-        <figure class="case-figure" data-image-src="assets/compliance/case08-child-disadvantage.jpg">
-          <div class="case-placeholder">
-            <span class="placeholder-label">画像差し替え予定</span>
-            <div class="placeholder-title">行事案内・記念品配布通知・登校班関連文書</div>
-            <code class="placeholder-path">assets/compliance/case08-child-disadvantage.jpg</code>
-          </div>
-          <figcaption>実物書類は、児童名、保護者名、地区名、学校名などの個人情報部分を加工して掲載予定です。</figcaption>
-        </figure>
+        <div class="case-figure case-evidence-gallery">
+          <figure>
+            <img src="assets/compliance/redacted/case-08-withdrawal-disadvantage-confirmation.png" alt="退会に伴う不利益を列挙する形式の実例資料" loading="lazy">
+            <figcaption>提供資料をもとに作成。退会に伴う不利益を列挙する形式の資料です。出所・使用実態を断定せず、同種書式が使われた場合の問題構造として扱います。</figcaption>
+          </figure>
+        </div>
         <div class="case-body">
           <div class="case-block problem">
             <h3>問題点解説</h3>
             <ul class="issue-list">
               <li>「PTA会員家庭の児童に限る」という条件で、児童の参加や配布物を制限する。</li>
               <li>学校施設や学校行事と一体化した活動で、非加入児童だけ扱いを変える。</li>
+              <li>退会に伴う不利益を列挙することで、退会の自由に萎縮効果を与える。</li>
               <li>子どもへの不利益を通じて、保護者に加入を迫る構造になる。</li>
             </ul>
           </div>
