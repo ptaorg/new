@@ -974,30 +974,55 @@
         <h2 class="section-title">学校とPTAの役割分担</h2>
         <p class="section-lead">地方公務員法第35条は、職員が職務に専念する義務を規定します。教職員がPTA事務を担うことは、この義務に照らして整理が必要です。</p>
 
-        <div class="duty-diagram">
-          <div class="duty-col duty-col-school">
-            <h3>🏫 学校（公務員）</h3>
-            <div class="duty-item duty-item-school"><span class="duty-ok">✓</span>教育課程の実施</div>
-            <div class="duty-item duty-item-school"><span class="duty-ok">✓</span>生徒指導・学級経営</div>
-            <div class="duty-item duty-item-school"><span class="duty-ok">✓</span>保護者との個人面談</div>
-            <div class="duty-item duty-item-school"><span class="duty-ok">✓</span><strong>渉外業務（PTA↔学校の連絡調整）</strong></div>
-            <div style="height:1px;background:rgba(255,255,255,.18);margin:12px 0"></div>
-            <div class="duty-item duty-item-school"><span class="duty-ng">✗</span>PTA会費の徴収・管理</div>
-            <div class="duty-item duty-item-school"><span class="duty-ng">✗</span>PTA配布物の配布・回収</div>
-            <div class="duty-item duty-item-school"><span class="duty-ng">✗</span>PTA名簿の管理・作成補助</div>
-            <div class="duty-item duty-item-school"><span class="duty-ng">✗</span>PTA印刷物の印刷作業</div>
+        <!-- 2カラム図解 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin:32px 0;border-radius:14px;overflow:hidden;box-shadow:0 4px 28px rgba(0,0,0,.10)">
+
+          <!-- 学校カラム -->
+          <div style="background:#1e3a5f;padding:28px 24px;color:#fff">
+            <div style="font-size:1.05rem;font-weight:900;margin-bottom:20px;display:flex;align-items:center;gap:8px">🏫<span>学校（公務員）</span></div>
+
+            <div style="font-size:.7rem;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">✅ 本来の職務</div>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:18px">
+              <div style="display:flex;gap:9px;font-size:.88rem;line-height:1.5"><span style="color:#86efac;font-weight:900;flex-shrink:0">✓</span>教育課程の実施</div>
+              <div style="display:flex;gap:9px;font-size:.88rem;line-height:1.5"><span style="color:#86efac;font-weight:900;flex-shrink:0">✓</span>生徒指導・学級経営</div>
+              <div style="display:flex;gap:9px;font-size:.88rem;line-height:1.5"><span style="color:#86efac;font-weight:900;flex-shrink:0">✓</span>保護者との個人面談</div>
+              <div style="display:flex;gap:9px;font-size:.88rem;line-height:1.5"><span style="color:#86efac;font-weight:900;flex-shrink:0">✓</span><strong style="color:#fff">渉外業務（校長等が窓口）</strong></div>
+            </div>
+
+            <div style="height:1px;background:rgba(255,255,255,.15);margin-bottom:18px"></div>
+
+            <div style="font-size:.7rem;font-weight:700;color:#fca5a5;letter-spacing:.08em;margin-bottom:10px">🚫 教職員が担ってはならないもの</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;gap:9px;font-size:.88rem;line-height:1.5"><span style="color:#f87171;font-weight:900;flex-shrink:0">✗</span>PTA会費の徴収・管理</div>
+              <div style="display:flex;gap:9px;font-size:.88rem;line-height:1.5"><span style="color:#f87171;font-weight:900;flex-shrink:0">✗</span>PTA配布物の配布・回収</div>
+              <div style="display:flex;gap:9px;font-size:.88rem;line-height:1.5"><span style="color:#f87171;font-weight:900;flex-shrink:0">✗</span>PTA名簿の管理・作成補助</div>
+              <div style="display:flex;gap:9px;font-size:.88rem;line-height:1.5"><span style="color:#f87171;font-weight:900;flex-shrink:0">✗</span>PTA印刷物の印刷作業</div>
+            </div>
           </div>
+
+          <!-- PTAカラム -->
+          <div style="background:#f8fafc;border:2px solid #e2e8f0;border-left:none;padding:28px 24px">
+            <div style="font-size:1.05rem;font-weight:900;margin-bottom:20px;display:flex;align-items:center;gap:8px;color:var(--navy)">🤝<span>PTA（任意団体）</span></div>
+
+            <div style="font-size:.7rem;font-weight:700;color:#15803d;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">✅ PTAが独自に行うこと</div>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:18px">
+              <div style="display:flex;gap:9px;font-size:.88rem;color:var(--text);line-height:1.5"><span style="color:#15803d;font-weight:900;flex-shrink:0">✓</span>独自の入会届・名簿管理</div>
+              <div style="display:flex;gap:9px;font-size:.88rem;color:var(--text);line-height:1.5"><span style="color:#15803d;font-weight:900;flex-shrink:0">✓</span>独立した会費口座・会計</div>
+              <div style="display:flex;gap:9px;font-size:.88rem;color:var(--text);line-height:1.5"><span style="color:#15803d;font-weight:900;flex-shrink:0">✓</span>PTAによる配布・連絡</div>
+              <div style="display:flex;gap:9px;font-size:.88rem;color:var(--text);line-height:1.5"><span style="color:#15803d;font-weight:900;flex-shrink:0">✓</span>PTAが独立して意思決定</div>
+            </div>
+
+            <div style="height:1px;background:var(--line);margin-bottom:16px"></div>
+            <p style="font-size:.84rem;color:var(--text-soft);line-height:1.75;margin:0">学校から完全に独立した任意団体として機能する。学校との接点は<strong>渉外業務（校長等の窓口）に限定</strong>され、教職員が個別にPTA業務を肩代わりすることは職務専念義務違反となる。</p>
+          </div>
+        </div>
+
+        <!-- 接点バー -->
+        <div style="background:#eff6ff;border:2px solid #bfdbfe;border-radius:10px;padding:14px 20px;display:flex;align-items:center;gap:14px;margin-bottom:32px">
+          <span style="font-size:1.4rem;flex-shrink:0">⇄</span>
           <div>
-            <div class="duty-bridge"><strong>渉外業務のみ</strong>唯一の公式接点</div>
-          </div>
-          <div class="duty-col duty-col-pta">
-            <h3>🤝 PTA（任意団体）</h3>
-            <div class="duty-item duty-item-pta"><span class="duty-ok">✓</span>独自の入会届・名簿管理</div>
-            <div class="duty-item duty-item-pta"><span class="duty-ok">✓</span>独立した会費口座・会計</div>
-            <div class="duty-item duty-item-pta"><span class="duty-ok">✓</span>PTAによる配布・連絡</div>
-            <div class="duty-item duty-item-pta"><span class="duty-ok">✓</span>PTAが独立して意思決定</div>
-            <div style="height:1px;background:var(--line);margin:12px 0"></div>
-            <p style="font-size:.84rem;color:var(--text-soft);line-height:1.7">学校から完全に独立した任意団体として機能する。渉外業務の窓口（校長等）を通じてのみ学校と接点を持つ。</p>
+            <div style="font-weight:900;color:#1d4ed8;font-size:.92rem;margin-bottom:3px">唯一の公式接点：渉外業務（校長等が窓口）</div>
+            <div style="font-size:.8rem;color:#3b82f6;line-height:1.6">校長等が対応窓口として対応する範囲に限定。教職員がPTA業務を個別に肩代わりすることは地方公務員法第35条（職務専念義務）に抵触する。</div>
           </div>
         </div>
 
