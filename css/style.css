@@ -557,3 +557,80 @@ button,input,select,textarea{font:inherit}
   .page-banner-title { font-size: 1.2rem; }
   .page-banner-content { padding-bottom: 22px; }
 }
+
+/* === Principal liability evidence block === */
+.principal-liability-note {
+  max-width: 900px;
+  margin: 28px auto 34px;
+  color: var(--text, #334155);
+}
+
+.principal-liability-note p {
+  margin: 0 0 1rem;
+  font-size: .98rem;
+  line-height: 1.95;
+}
+
+.principal-liability-note ul {
+  margin: .25rem 0 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: .45rem;
+}
+
+.principal-liability-note li {
+  font-size: .94rem;
+  line-height: 1.75;
+}
+
+.principal-liability-evidence {
+  max-width: 680px;
+  margin: 1.8rem auto;
+  padding: 1rem;
+  border: 1px solid rgba(11, 42, 74, 0.14);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(11, 42, 74, 0.08);
+}
+
+.principal-liability-evidence img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid rgba(11, 42, 74, 0.12);
+}
+
+.principal-liability-evidence figcaption {
+  margin-top: .85rem;
+  font-size: .88rem;
+  line-height: 1.8;
+  color: #4b5563;
+}
+
+@media (max-width: 640px) {
+  .principal-liability-note {
+    margin: 24px 0 28px;
+  }
+
+  .principal-liability-note p {
+    font-size: .94rem;
+  }
+
+  .principal-liability-note ul {
+    padding-left: 1rem;
+  }
+
+  .principal-liability-evidence {
+    margin: 1.5rem 0;
+    padding: .85rem;
+    border-radius: 14px;
+  }
+
+  .principal-liability-evidence img {
+    width: 86%;
+    max-width: 280px;
+  }
+}

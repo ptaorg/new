@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260601-guide-board">
   <style>
     /* 章の折りたたみ */
     .chapter-block{
@@ -1284,7 +1284,7 @@
           <!-- 警告ヘッダー -->
           <div style="background:#b91c1c;padding:10px 20px;display:flex;align-items:center;gap:10px">
             <span style="font-size:1.1rem">🚨</span>
-            <span style="font-size:.72rem;font-weight:900;color:#fff;letter-spacing:.1em;text-transform:uppercase">実際に起きた刑事事件──2024年 大分</span>
+            <span style="font-size:.72rem;font-weight:900;color:#fff;letter-spacing:.1em;text-transform:uppercase">参考資料として確認すべき事案──大分</span>
           </div>
           <!-- 新聞風コンテンツ -->
           <div style="padding:22px 24px">
@@ -1294,19 +1294,54 @@
               <span style="background:rgba(185,28,28,.3);border:1px solid #b91c1c;color:#fca5a5;font-size:.68rem;font-weight:900;padding:2px 9px;border-radius:4px;letter-spacing:.05em">個人情報の無断提供</span>
             </div>
             <div style="font-size:1.25rem;font-weight:900;color:#fff;line-height:1.45;margin-bottom:14px;font-family:'Noto Serif JP',serif">
-              秘義務違反の疑いで<br>
+              守秘義務違反の疑いで<br>
               <span style="color:#fca5a5">校長を書類送検</span>
             </div>
             <div style="font-size:.84rem;color:rgba(255,255,255,.75);line-height:1.9;margin-bottom:16px">
-              大分中央警察署は、大分市内の小学校長（50代男性）を<strong style="color:#fff">地方公務員法違反（守秘義務違反）</strong>の疑いで書類送検。校長は昨年4月、保護者アンケートで収集した児童・保護者の個人情報（氏名・住所・電話番号）を、PTAへ無断で提供していた。保護者が1月に刑事告訴し、書類送検に至った。
+              提供資料では、大分市内の小学校長が<strong style="color:#fff">地方公務員法違反（守秘義務違反）</strong>の疑いで書類送検されたと報じられています。学校が保護者アンケートで収集した児童・保護者の個人情報（氏名・住所・電話番号）を、本人同意なくPTAへ提供した疑いがあるとされています。
             </div>
             <!-- 母親コメント -->
             <div style="background:rgba(255,255,255,.06);border-left:3px solid #fca5a5;border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:14px">
               <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-bottom:5px">保護者（被害者）のコメント</div>
               <p style="font-size:.88rem;color:#fef2f2;line-height:1.8;margin:0">「<strong>任意団体で学校とは別組織</strong>のPTAに、学校として個人情報を提供するのはおかしい」</p>
             </div>
-            <div style="font-size:.73rem;color:rgba(255,255,255,.35);text-align:right">大分合同新聞（2024年）より要約</div>
+            <div style="font-size:.73rem;color:rgba(255,255,255,.45);text-align:right">提供資料をもとに概要整理。書類送検は有罪確定を意味するものではありません。</div>
           </div>
+        </div>
+
+        <div class="principal-liability-note">
+          <p>
+            校長は、PTAそのものを指揮監督する立場ではありません。しかし、学校が保有する児童・保護者情報、学校職員の勤務、学校施設、学校配布物、学校連絡ツールをPTAのために利用させるかどうかについては、学校管理者として確認責任を負います。
+          </p>
+          <p>
+            PTAは任意団体であるため、学校が保有する名簿、住所、電話番号、学級情報、保護者連絡先等をPTAへ提供する場合には、単に「PTA活動だから」という理由では足りません。利用目的、本人同意、提供先、提供項目、記録の有無を確認する必要があります。
+          </p>
+          <p>
+            特に、公立学校が保有する児童・保護者情報をPTAへ提供する場面では、個人情報保護法第69条の目的外利用・目的外提供の問題として整理する必要があります。また、学校職員が職務上知り得た情報をPTA活動に流用する場合、服務上の守秘義務や職務専念義務との関係も問題となり得ます。
+          </p>
+
+          <figure id="principal-liability-evidence" class="principal-liability-evidence">
+            <img
+              src="assets/guide-board/principal-liability-news.png"
+              alt="学校がPTA等に児童・保護者情報を提供した事案について、校長が守秘義務違反の疑いで書類送検されたと報じる新聞記事の参考画像"
+              loading="lazy"
+            >
+            <figcaption>
+              提供資料。学校が保有する児童・保護者情報をPTA等へ提供した事案について、校長が守秘義務違反の疑いで書類送検されたと報じる記事。書類送検は有罪確定を意味するものではありません。ここでは、校長が管理する学校保有個人情報の取扱いが、服務・守秘義務・個人情報保護上の問題となり得ることを示す参考資料として掲載しています。
+            </figcaption>
+          </figure>
+
+          <p>
+            したがって、校長は「PTAのことだから学校は関係ない」と整理するのではなく、少なくとも次の事項を確認する必要があります。
+          </p>
+          <ul>
+            <li>学校が保有する児童・保護者情報をPTAへ提供しているか。</li>
+            <li>提供している場合、本人同意、利用目的、提供項目、提供記録があるか。</li>
+            <li>PTA名簿、地区班、役員選出、登校班、当番表に学校情報が使われていないか。</li>
+            <li>担任、教頭、事務職員などがPTA文書の配布・回収・集計に関与していないか。</li>
+            <li>学校連絡アプリや学校メールをPTA連絡に使っていないか。</li>
+            <li>PTA会費、協力金、役員選出を学校手続と混同していないか。</li>
+          </ul>
         </div>
 
         <!-- リスクエスカレーション図 -->
