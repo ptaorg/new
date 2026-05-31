@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260601-pta-officers">
+  <link rel="stylesheet" href="css/style.css?v=20260601-pta-officers-fold">
   <style>
     /* 就任直後フロー */
     .onboard-section{background:#fff;padding:80px 0}
@@ -923,7 +923,7 @@
       </div>
     </section>
 
-    <section class="officer-visual-guide" id="visual-guide">
+    <section class="officer-visual-guide has-disclosures" id="visual-guide">
       <div class="wrap">
         <div class="section-kicker">Visual Guide</div>
         <h2>図解で確認するPTA運営の適正化</h2>
@@ -935,7 +935,13 @@
         </p>
 
         <div class="officer-visual-list">
-          <article class="officer-visual-card">
+          <details class="officer-visual-card" id="officer-visual-chapter-1">
+            <summary class="officer-visual-disclosure-toggle">
+              <span class="officer-visual-summary-label">第1章</span>
+              <span class="officer-visual-summary-title">学校とPTAは別の団体です</span>
+              <span class="officer-visual-summary-state" aria-hidden="true"></span>
+            </summary>
+            <div class="officer-visual-panel">
             <div class="officer-visual-text">
               <span class="officer-visual-label">01</span>
               <h3>学校とPTAは別の団体です</h3>
@@ -950,9 +956,16 @@
               <img src="assets/pta-officers/separate-school-pta.jpeg" alt="学校とPTAを別団体として整理する図解" width="1024" height="572" loading="lazy">
               <figcaption>PTA説明と学校行事を分ける必要性を示す図解。</figcaption>
             </figure>
-          </article>
+            </div>
+          </details>
 
-          <article class="officer-visual-card">
+          <details class="officer-visual-card" id="officer-visual-chapter-2">
+            <summary class="officer-visual-disclosure-toggle">
+              <span class="officer-visual-summary-label">第2章</span>
+              <span class="officer-visual-summary-title">このような運営をしていませんか？</span>
+              <span class="officer-visual-summary-state" aria-hidden="true"></span>
+            </summary>
+            <div class="officer-visual-panel">
             <div class="officer-visual-text">
               <span class="officer-visual-label">02</span>
               <h3>このような運営をしていませんか？</h3>
@@ -967,9 +980,16 @@
               <img src="assets/pta-officers/problematic-operation-checklist.jpeg" alt="PTA運営上の点検項目を示す図解" width="1024" height="572" loading="lazy">
               <figcaption>任意加入や学校分離の観点から確認したい運用例。</figcaption>
             </figure>
-          </article>
+            </div>
+          </details>
 
-          <article class="officer-visual-card">
+          <details class="officer-visual-card" id="officer-visual-chapter-3">
+            <summary class="officer-visual-disclosure-toggle">
+              <span class="officer-visual-summary-label">第3章</span>
+              <span class="officer-visual-summary-title">入会申込書を作りましょう</span>
+              <span class="officer-visual-summary-state" aria-hidden="true"></span>
+            </summary>
+            <div class="officer-visual-panel">
             <div class="officer-visual-text">
               <span class="officer-visual-label">03</span>
               <h3>入会申込書を作りましょう</h3>
@@ -984,9 +1004,16 @@
               <img src="assets/pta-officers/membership-application-form.jpeg" alt="PTA入会申込書の必要性を示す図解" width="1024" height="572" loading="lazy">
               <figcaption>本人の明示的な入会意思を記録する必要性を示す図解。</figcaption>
             </figure>
-          </article>
+            </div>
+          </details>
 
-          <article class="officer-visual-card">
+          <details class="officer-visual-card" id="officer-visual-chapter-4">
+            <summary class="officer-visual-disclosure-toggle">
+              <span class="officer-visual-summary-label">第4章</span>
+              <span class="officer-visual-summary-title">会費の集め方</span>
+              <span class="officer-visual-summary-state" aria-hidden="true"></span>
+            </summary>
+            <div class="officer-visual-panel">
             <div class="officer-visual-text">
               <span class="officer-visual-label">04</span>
               <h3>会費の集め方</h3>
@@ -1001,9 +1028,16 @@
               <img src="assets/pta-officers/fee-collection-direct.jpeg" alt="PTA会費を学校徴収金と分けて直接集める図解" width="1024" height="572" loading="lazy">
               <figcaption>学校徴収金とPTA会費を分ける運用を示す図解。</figcaption>
             </figure>
-          </article>
+            </div>
+          </details>
 
-          <article class="officer-visual-card">
+          <details class="officer-visual-card" id="officer-visual-chapter-5">
+            <summary class="officer-visual-disclosure-toggle">
+              <span class="officer-visual-summary-label">第5章</span>
+              <span class="officer-visual-summary-title">配布物の配布・回収について</span>
+              <span class="officer-visual-summary-state" aria-hidden="true"></span>
+            </summary>
+            <div class="officer-visual-panel">
             <div class="officer-visual-text">
               <span class="officer-visual-label">05</span>
               <h3>配布物の配布・回収について</h3>
@@ -1018,9 +1052,16 @@
               <img src="assets/pta-officers/distribution-and-collection.jpeg" alt="PTA配布物を学校経由ではなく直接通知へ移行する図解" width="1024" height="572" loading="lazy">
               <figcaption>PTA配布物をPTA自身の連絡手段へ移す考え方を示す図解。</figcaption>
             </figure>
-          </article>
+            </div>
+          </details>
 
-          <article class="officer-visual-card">
+          <details class="officer-visual-card" id="officer-visual-chapter-6">
+            <summary class="officer-visual-disclosure-toggle">
+              <span class="officer-visual-summary-label">第6章</span>
+              <span class="officer-visual-summary-title">会計管理の適正化</span>
+              <span class="officer-visual-summary-state" aria-hidden="true"></span>
+            </summary>
+            <div class="officer-visual-panel">
             <div class="officer-visual-text">
               <span class="officer-visual-label">06</span>
               <h3>会計管理の適正化</h3>
@@ -1035,9 +1076,16 @@
               <img src="assets/pta-officers/accounting-management.jpeg" alt="PTA会計をPTA自身で管理する図解" width="1024" height="572" loading="lazy">
               <figcaption>PTA会計と学校会計を分けて管理する必要性を示す図解。</figcaption>
             </figure>
-          </article>
+            </div>
+          </details>
 
-          <article class="officer-visual-card">
+          <details class="officer-visual-card" id="officer-visual-chapter-7">
+            <summary class="officer-visual-disclosure-toggle">
+              <span class="officer-visual-summary-label">第7章</span>
+              <span class="officer-visual-summary-title">活動の決め方</span>
+              <span class="officer-visual-summary-state" aria-hidden="true"></span>
+            </summary>
+            <div class="officer-visual-panel">
             <div class="officer-visual-text">
               <span class="officer-visual-label">07</span>
               <h3>活動の決め方</h3>
@@ -1052,9 +1100,16 @@
               <img src="assets/pta-officers/activity-selection-reform.jpeg" alt="PTA活動を強制ではなく必要性から見直す図解" width="1024" height="572" loading="lazy">
               <figcaption>活動と役員数をゼロベースで見直す考え方を示す図解。</figcaption>
             </figure>
-          </article>
+            </div>
+          </details>
 
-          <article class="officer-visual-card">
+          <details class="officer-visual-card" id="officer-visual-chapter-8">
+            <summary class="officer-visual-disclosure-toggle">
+              <span class="officer-visual-summary-label">第8章</span>
+              <span class="officer-visual-summary-title">PTA役員に学校管理職が入っていませんか？</span>
+              <span class="officer-visual-summary-state" aria-hidden="true"></span>
+            </summary>
+            <div class="officer-visual-panel">
             <div class="officer-visual-text">
               <span class="officer-visual-label">08</span>
               <h3>PTA役員に学校管理職が入っていませんか？</h3>
@@ -1069,9 +1124,16 @@
               <img src="assets/pta-officers/no-school-manager-officers.jpeg" alt="PTA主要ポストに学校管理職が入る運用を見直す図解" width="1024" height="572" loading="lazy">
               <figcaption>学校管理職のPTA役職就任を見直す必要性を示す図解。</figcaption>
             </figure>
-          </article>
+            </div>
+          </details>
 
-          <article class="officer-visual-card">
+          <details class="officer-visual-card" id="officer-visual-chapter-9">
+            <summary class="officer-visual-disclosure-toggle">
+              <span class="officer-visual-summary-label">第9章</span>
+              <span class="officer-visual-summary-title">総会は対面開催が原則です</span>
+              <span class="officer-visual-summary-state" aria-hidden="true"></span>
+            </summary>
+            <div class="officer-visual-panel">
             <div class="officer-visual-text">
               <span class="officer-visual-label">09</span>
               <h3>総会は対面開催が原則です</h3>
@@ -1086,9 +1148,16 @@
               <img src="assets/pta-officers/general-meeting-in-person.jpeg" alt="PTA総会の対面開催と議論の重要性を示す図解" width="1024" height="572" loading="lazy">
               <figcaption>会員が説明を受け、意見を述べて決める過程の重要性を示す図解。</figcaption>
             </figure>
-          </article>
+            </div>
+          </details>
 
-          <article class="officer-visual-card">
+          <details class="officer-visual-card" id="officer-visual-chapter-10">
+            <summary class="officer-visual-disclosure-toggle">
+              <span class="officer-visual-summary-label">第10章</span>
+              <span class="officer-visual-summary-title">勇気を持って気高いPTAへ</span>
+              <span class="officer-visual-summary-state" aria-hidden="true"></span>
+            </summary>
+            <div class="officer-visual-panel">
             <div class="officer-visual-text">
               <span class="officer-visual-label">10</span>
               <h3>勇気を持って気高いPTAへ</h3>
@@ -1103,9 +1172,16 @@
               <img src="assets/pta-officers/voluntary-pta-culture.jpeg" alt="自発的に参加するPTA文化へ移行する図解" width="1024" height="572" loading="lazy">
               <figcaption>自発的な参加を軸にしたPTA運営への転換を示す図解。</figcaption>
             </figure>
-          </article>
+            </div>
+          </details>
 
-          <article class="officer-visual-card officer-visual-card-wide">
+          <details class="officer-visual-card officer-visual-card-wide" id="officer-visual-chapter-11">
+            <summary class="officer-visual-disclosure-toggle">
+              <span class="officer-visual-summary-label">第11章</span>
+              <span class="officer-visual-summary-title">PTAコンプライアンスの全体構造</span>
+              <span class="officer-visual-summary-state" aria-hidden="true"></span>
+            </summary>
+            <div class="officer-visual-panel">
             <div class="officer-visual-text">
               <span class="officer-visual-label">11</span>
               <h3>PTAコンプライアンスの全体構造</h3>
@@ -1120,7 +1196,8 @@
               <img src="assets/pta-officers/compliance-structure.jpeg" alt="PTAコンプライアンスの全体構造を示す図解" width="1376" height="768" loading="lazy">
               <figcaption>入会申込、記録、会費請求、学校関与の分離を全体構造として整理した図解。</figcaption>
             </figure>
-          </article>
+            </div>
+          </details>
         </div>
 
         <div class="officer-visual-related">
@@ -1545,67 +1622,6 @@
   </footer>
   <script src="js/site.js"></script>
   <script>
-  // 図解ガイドを第1章〜第11章の折りたたみ表示にする
-  (function(){
-    var guide = document.querySelector('.officer-visual-guide');
-    if (!guide) return;
-
-    var cards = guide.querySelectorAll('.officer-visual-card');
-    if (!cards.length) return;
-
-    guide.classList.add('has-disclosures');
-
-    cards.forEach(function(card, index){
-      if (card.querySelector('.officer-visual-disclosure-toggle')) return;
-
-      var text = card.querySelector('.officer-visual-text');
-      var figure = card.querySelector('.officer-visual-figure');
-      var heading = text ? text.querySelector('h3') : null;
-      if (!text || !figure || !heading) return;
-
-      var panel = document.createElement('div');
-      panel.className = 'officer-visual-panel';
-      panel.id = 'officer-visual-chapter-' + (index + 1);
-      card.insertBefore(panel, text);
-      panel.appendChild(text);
-      panel.appendChild(figure);
-
-      var toggle = document.createElement('button');
-      toggle.type = 'button';
-      toggle.className = 'officer-visual-disclosure-toggle';
-      toggle.setAttribute('aria-controls', panel.id);
-
-      var label = document.createElement('span');
-      label.className = 'officer-visual-summary-label';
-      label.textContent = '第' + (index + 1) + '章';
-
-      var title = document.createElement('span');
-      title.className = 'officer-visual-summary-title';
-      title.textContent = heading.textContent;
-
-      var state = document.createElement('span');
-      state.className = 'officer-visual-summary-state';
-
-      toggle.appendChild(label);
-      toggle.appendChild(title);
-      toggle.appendChild(state);
-      card.insertBefore(toggle, panel);
-
-      function setOpen(open) {
-        card.classList.toggle('is-open', open);
-        card.classList.toggle('is-collapsed', !open);
-        panel.hidden = !open;
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        state.textContent = open ? '閉じる' : '開く';
-      }
-
-      setOpen(false);
-      toggle.addEventListener('click', function(){
-        setOpen(toggle.getAttribute('aria-expanded') !== 'true');
-      });
-    });
-  })();
-
   // 役員向けチェックリスト（cl20）
   document.querySelectorAll('.cl20-item').forEach(function(item){
     item.addEventListener('click', function(){

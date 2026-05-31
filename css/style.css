@@ -884,10 +884,19 @@ button,input,select,textarea{font:inherit}
   color: var(--navy, #0b2a4a);
   cursor: pointer;
   text-align: left;
+  list-style: none;
 }
 
 .officer-visual-disclosure-toggle:hover {
   background: #f8fafc;
+}
+
+.officer-visual-disclosure-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.officer-visual-disclosure-toggle::marker {
+  content: "";
 }
 
 .officer-visual-summary-label {
@@ -927,10 +936,18 @@ button,input,select,textarea{font:inherit}
   flex-shrink: 0;
 }
 
-.officer-visual-card.is-open .officer-visual-summary-state {
+.officer-visual-summary-state::before {
+  content: "開く";
+}
+
+.officer-visual-card[open] .officer-visual-summary-state {
   border-color: rgba(212, 175, 55, .5);
   background: rgba(212, 175, 55, .12);
   color: #7a5c00;
+}
+
+.officer-visual-card[open] .officer-visual-summary-state::before {
+  content: "閉じる";
 }
 
 .officer-visual-panel {
@@ -939,6 +956,10 @@ button,input,select,textarea{font:inherit}
   gap: 1.75rem;
   align-items: center;
   padding: 0 1.5rem 1.5rem;
+}
+
+.officer-visual-card:not([open]) > .officer-visual-panel {
+  display: none;
 }
 
 .officer-visual-panel[hidden] {
