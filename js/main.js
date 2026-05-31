@@ -48,9 +48,18 @@ window.onclick = (e) => {
 // Hamburger logic
 const hamburger = document.getElementById('hamburger');
 const mobileOverlay = document.getElementById('mobileOverlay');
-if(hamburger) {
-    hamburger.onclick = () => mobileOverlay.style.display = 'flex';
-    document.getElementById('closeOverlay').onclick = () => mobileOverlay.style.display = 'none';
+const closeOverlay = document.getElementById('closeOverlay');
+if(hamburger && mobileOverlay) {
+    hamburger.onclick = () => {
+        mobileOverlay.classList.add('is-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+    };
+    if(closeOverlay) {
+        closeOverlay.onclick = () => {
+            mobileOverlay.classList.remove('is-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        };
+    }
 }
 
 // e-Gov linker (auto-adds icons)

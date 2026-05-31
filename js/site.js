@@ -9,6 +9,7 @@ const SITE_INDEX=[
   {title:'研究者・記者の方へ',url:'guide-research.html',desc:'全国公文書・教委回答・一次資料へのアクセスガイド。取材 問い合わせ'},
   {title:'教育委員会の回答',url:'board-responses.html',desc:'全国の教育委員会への照会結果・地図。全国50自治体 強制加入違法 横浜市通知'},
   {title:'全国資料館',url:'national-archive.html',desc:'開示請求で収集した全国のPTA関連公文書。入会届 会費 名簿 覚書'},
+  {title:'PTA運営の現場実例',url:'compliance.html',desc:'みなし加入 抱き合わせ徴収 個人情報提供 学校連絡ツール 教職員関与 施設利用 非会員対応 児童への不利益'},
   {title:'論考・調査報告',url:'journal.html',desc:'法律論考・調査報告・行政動向の分析。スライド 会費徴収パラドックス'},
   {title:'監査システム',url:'audit/index.html',desc:'5軸・3立場でPTA運営のリスクを自動診断。保護者 役員 学校管理職'},
   {title:'入会手続・オプトアウト',url:'membership.html',desc:'みなし加入・オプトアウト方式の法的無効性。民法522条 不当利得 沈黙は承諾ではない'},
