@@ -634,3 +634,358 @@ button,input,select,textarea{font:inherit}
     max-width: 280px;
   }
 }
+
+/* === PTA officer visual guide === */
+.officer-visual-guide {
+  padding: 4rem 0;
+  background: #f8fafc;
+}
+
+.officer-visual-guide .section-kicker {
+  color: #7a5c00;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+
+.officer-visual-guide h2 {
+  margin: 0 0 1rem;
+  color: var(--navy, #0b2a4a);
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
+  line-height: 1.32;
+}
+
+.officer-visual-lead,
+.officer-visual-note {
+  max-width: 860px;
+  line-height: 1.9;
+}
+
+.officer-visual-lead {
+  margin: 0;
+  color: var(--text, #1a1a1a);
+  font-size: 1rem;
+}
+
+.officer-visual-note {
+  margin: 1rem 0 0;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid var(--gold, #d4af37);
+  border-radius: 0 12px 12px 0;
+  background: #fff;
+  color: var(--text-soft, #4b5563);
+  font-size: .92rem;
+}
+
+.officer-visual-list {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.officer-visual-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 460px);
+  gap: 1.75rem;
+  align-items: center;
+  padding: 1.5rem;
+  border: 1px solid rgba(11, 42, 74, .12);
+  border-radius: var(--radius, 16px);
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(11, 42, 74, .08);
+}
+
+.officer-visual-card:nth-child(even) {
+  grid-template-columns: minmax(280px, 460px) minmax(0, 1fr);
+}
+
+.officer-visual-card:nth-child(even) .officer-visual-text {
+  order: 2;
+}
+
+.officer-visual-card:nth-child(even) .officer-visual-figure {
+  order: 1;
+}
+
+.officer-visual-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  background: var(--navy, #0b2a4a);
+  color: #fff;
+  font-weight: 900;
+  margin-bottom: .75rem;
+}
+
+.officer-visual-text h3 {
+  margin: 0 0 .75rem;
+  color: var(--navy, #0b2a4a);
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.35;
+}
+
+.officer-visual-text p {
+  margin: 0;
+  color: var(--text, #1a1a1a);
+  line-height: 1.9;
+}
+
+.officer-visual-text ul {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+  line-height: 1.9;
+  color: var(--text, #1a1a1a);
+}
+
+.officer-visual-text li + li {
+  margin-top: .3rem;
+}
+
+.officer-visual-figure {
+  margin: 0;
+}
+
+.officer-visual-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(11, 42, 74, .12);
+  background: #fff;
+}
+
+.officer-visual-figure figcaption {
+  margin-top: .65rem;
+  font-size: .86rem;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.officer-visual-related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  margin-top: 2rem;
+}
+
+.officer-visual-related a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: .55rem .9rem;
+  border: 1px solid rgba(11, 42, 74, .14);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--navy, #0b2a4a);
+  font-size: .9rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: var(--t, all .26s ease);
+}
+
+.officer-visual-related a:hover {
+  border-color: var(--gold, #d4af37);
+  box-shadow: var(--shadow-sm, 0 4px 16px rgba(5,17,31,.07));
+}
+
+.officer-visual-cta {
+  margin-top: 2rem;
+  padding: 1.75rem;
+  border-radius: var(--radius, 16px);
+  background: linear-gradient(135deg, var(--navy, #0b2a4a), var(--navy-3, #2d5a8e));
+  color: #fff;
+}
+
+.officer-visual-cta h3 {
+  margin: 0 0 .75rem;
+  color: var(--gold-lt, #f4e7a6);
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  line-height: 1.35;
+}
+
+.officer-visual-cta p {
+  max-width: 900px;
+  margin: 0;
+  color: rgba(255, 255, 255, .86);
+  line-height: 1.9;
+}
+
+.officer-visual-cta-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 860px) {
+  .officer-visual-card,
+  .officer-visual-card:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .officer-visual-card:nth-child(even) .officer-visual-text,
+  .officer-visual-card:nth-child(even) .officer-visual-figure {
+    order: initial;
+  }
+}
+
+@media (max-width: 640px) {
+  .officer-visual-guide {
+    padding: 2.5rem 0;
+  }
+
+  .officer-visual-card {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .officer-visual-note {
+    padding: .9rem 1rem;
+  }
+
+  .officer-visual-figure img {
+    border-radius: 10px;
+  }
+
+  .officer-visual-related a,
+  .officer-visual-cta-links a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .officer-visual-cta {
+    padding: 1.25rem;
+  }
+}
+
+/* === PTA officer visual guide disclosures === */
+.officer-visual-guide.has-disclosures .officer-visual-card {
+  display: block;
+  padding: 0;
+  overflow: hidden;
+}
+
+.officer-visual-disclosure-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  min-height: 4.5rem;
+  padding: 1.15rem 1.5rem;
+  border: 0;
+  background: #fff;
+  color: var(--navy, #0b2a4a);
+  cursor: pointer;
+  text-align: left;
+}
+
+.officer-visual-disclosure-toggle:hover {
+  background: #f8fafc;
+}
+
+.officer-visual-summary-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.2rem;
+  height: 2.3rem;
+  border-radius: 999px;
+  background: var(--navy, #0b2a4a);
+  color: #fff;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.officer-visual-summary-title {
+  flex: 1;
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.officer-visual-summary-state {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.8rem;
+  min-height: 2rem;
+  padding: .25rem .7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 42, 74, .16);
+  background: #f8fafc;
+  color: var(--text-soft, #4b5563);
+  font-size: .82rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.officer-visual-card.is-open .officer-visual-summary-state {
+  border-color: rgba(212, 175, 55, .5);
+  background: rgba(212, 175, 55, .12);
+  color: #7a5c00;
+}
+
+.officer-visual-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 460px);
+  gap: 1.75rem;
+  align-items: center;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.officer-visual-panel[hidden] {
+  display: none !important;
+}
+
+.officer-visual-guide.has-disclosures .officer-visual-card:nth-child(even) .officer-visual-panel {
+  grid-template-columns: minmax(280px, 460px) minmax(0, 1fr);
+}
+
+.officer-visual-guide.has-disclosures .officer-visual-text > .officer-visual-label,
+.officer-visual-guide.has-disclosures .officer-visual-text > h3 {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .officer-visual-panel,
+  .officer-visual-guide.has-disclosures .officer-visual-card:nth-child(even) .officer-visual-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .officer-visual-guide.has-disclosures .officer-visual-card:nth-child(even) .officer-visual-text,
+  .officer-visual-guide.has-disclosures .officer-visual-card:nth-child(even) .officer-visual-figure {
+    order: initial;
+  }
+}
+
+@media (max-width: 640px) {
+  .officer-visual-disclosure-toggle {
+    align-items: flex-start;
+    gap: .75rem;
+    padding: 1rem;
+  }
+
+  .officer-visual-summary-label {
+    min-width: 3.7rem;
+    height: 2.05rem;
+    font-size: .86rem;
+  }
+
+  .officer-visual-summary-state {
+    min-width: 3.2rem;
+    font-size: .76rem;
+  }
+
+  .officer-visual-panel {
+    gap: 1rem;
+    padding: 0 1rem 1rem;
+  }
+}
