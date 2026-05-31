@@ -149,6 +149,7 @@
     @media(max-width:720px){
       #faq-list .faq-body{padding-left:24px!important}
       .roadmap-3col{grid-template-columns:1fr!important}
+      .roadmap-grid{grid-template-columns:1fr!important}
     }
     .mini-link{display:inline-flex;align-items:center;gap:8px;margin-top:14px;color:var(--navy);font-weight:900;text-decoration:none;border-bottom:2px solid var(--gold)}
     .mini-link:hover{color:var(--gold)}
@@ -1766,9 +1767,12 @@
         <h2 class="section-title">年間是正ロードマップ<br>——4フェーズで段階的に</h2>
         <p class="section-lead">適正化は一気に完成させる必要はありません。4フェーズで段階的に進め、各学校が無理なく移行できるよう設計してください。横浜市は令和7年12月通知から翌年度の実施に向けたロードマップを示しています。</p>
 
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px">
-          <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;border-top:4px solid var(--navy)">
-            <div style="font-size:.7rem;font-weight:900;letter-spacing:.06em;color:var(--navy);margin-bottom:8px">フェーズ0〜1ヶ月</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px" class="roadmap-grid">
+          <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;border-top:4px solid var(--navy);position:relative">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+              <span style="background:var(--navy);color:#fff;font-size:.72rem;font-weight:900;border-radius:20px;padding:2px 10px">STEP 1</span>
+              <span style="font-size:.7rem;font-weight:700;color:var(--text-soft)">0〜1ヶ月</span>
+            </div>
             <div style="font-size:.95rem;font-weight:900;color:var(--navy);margin-bottom:14px">通知・ベースライン確立</div>
             <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
               <li style="display:flex;gap:7px;font-size:.85rem;color:var(--text);line-height:1.65"><span style="color:var(--navy);font-weight:700;flex-shrink:0">→</span>教委から各学校へ方針通知の発出</li>
@@ -1776,8 +1780,11 @@
               <li style="display:flex;gap:7px;font-size:.85rem;color:var(--text);line-height:1.65"><span style="color:var(--navy);font-weight:700;flex-shrink:0">→</span>校長・教頭を対象とした研修の実施</li>
             </ul>
           </div>
-          <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;border-top:4px solid #3b82f6">
-            <div style="font-size:.7rem;font-weight:900;letter-spacing:.06em;color:#1d4ed8;margin-bottom:8px">フェーズ1〜3ヶ月</div>
+          <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;border-top:4px solid #3b82f6;position:relative">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+              <span style="background:#3b82f6;color:#fff;font-size:.72rem;font-weight:900;border-radius:20px;padding:2px 10px">STEP 2</span>
+              <span style="font-size:.7rem;font-weight:700;color:var(--text-soft)">1〜3ヶ月</span>
+            </div>
             <div style="font-size:.95rem;font-weight:900;color:var(--text);margin-bottom:14px">学校別実態調査</div>
             <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
               <li style="display:flex;gap:7px;font-size:.85rem;color:var(--text);line-height:1.65"><span style="color:#3b82f6;font-weight:700;flex-shrink:0">→</span>5領域ごとの実態調査・整理</li>
@@ -1785,8 +1792,11 @@
               <li style="display:flex;gap:7px;font-size:.85rem;color:var(--text);line-height:1.65"><span style="color:#3b82f6;font-weight:700;flex-shrink:0">→</span>各PTA会長への方針説明・協議</li>
             </ul>
           </div>
-          <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;border-top:4px solid #d97706">
-            <div style="font-size:.7rem;font-weight:900;letter-spacing:.06em;color:#d97706;margin-bottom:8px">フェーズ3〜6ヶ月</div>
+          <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;border-top:4px solid #d97706;position:relative">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+              <span style="background:#d97706;color:#fff;font-size:.72rem;font-weight:900;border-radius:20px;padding:2px 10px">STEP 3</span>
+              <span style="font-size:.7rem;font-weight:700;color:var(--text-soft)">3〜6ヶ月</span>
+            </div>
             <div style="font-size:.95rem;font-weight:900;color:var(--text);margin-bottom:14px">会費・名簿分離の実施</div>
             <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
               <li style="display:flex;gap:7px;font-size:.85rem;color:var(--text);line-height:1.65"><span style="color:#d97706;font-weight:700;flex-shrink:0">→</span>入会届の整備・独自名簿の構築</li>
@@ -1794,8 +1804,11 @@
               <li style="display:flex;gap:7px;font-size:.85rem;color:var(--text);line-height:1.65"><span style="color:#d97706;font-weight:700;flex-shrink:0">→</span>学校アプリのPTA通知配信の停止</li>
             </ul>
           </div>
-          <div style="background:#fff;border:1px solid #bbf7d0;border-radius:var(--radius);padding:22px;border-top:4px solid #15803d">
-            <div style="font-size:.7rem;font-weight:900;letter-spacing:.06em;color:#15803d;margin-bottom:8px">フェーズ6〜12ヶ月</div>
+          <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:var(--radius);padding:22px;border-top:4px solid #15803d;position:relative">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+              <span style="background:#15803d;color:#fff;font-size:.72rem;font-weight:900;border-radius:20px;padding:2px 10px">STEP 4</span>
+              <span style="font-size:.7rem;font-weight:700;color:var(--text-soft)">6〜12ヶ月</span>
+            </div>
             <div style="font-size:.95rem;font-weight:900;color:var(--text);margin-bottom:14px">年間点検・継続改善</div>
             <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
               <li style="display:flex;gap:7px;font-size:.85rem;color:var(--text);line-height:1.65"><span style="color:#15803d;font-weight:700;flex-shrink:0">→</span>翌年度入会手続・案内文書の確認</li>
