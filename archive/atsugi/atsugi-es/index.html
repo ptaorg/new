@@ -10,6 +10,10 @@
 
     /* Evaluation status colors */
     .status-card{border:4px solid transparent}.eval-critical{background:#e60012!important;color:#fff!important;border:4px solid #e60012!important}.eval-problem{background:#f97316!important;color:#fff!important;border:4px solid #f97316!important}.eval-warning{background:#facc15!important;color:#0b2a4a!important;border:4px solid #facc15!important}.eval-insufficient{background:#fef3c7!important;color:#92400e!important;border:4px solid #f59e0b!important}.eval-good{background:#2563eb!important;color:#fff!important;border:4px solid #2563eb!important}.eval-pending{background:#dbeafe!important;color:#1e3a8a!important;border:4px solid #93c5fd!important}.status-card .archive-label,.status-card .archive-value,.status-card .l,.status-card .v{color:inherit!important}.status-card .archive-label,.status-card .l{opacity:.86}
+
+    /* Page PDF print controls */
+    .archive-school-author,.archive-print-note{line-height:1.85}.hero .archive-school-author,.archive-hero .archive-school-author{color:rgba(255,255,255,.88);font-weight:900;margin:0 0 16px}.archive-print-actions{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}.archive-print-button{appearance:none;border:0;border-radius:999px;background:#d6ae2b;color:#0b2a4a;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 20px;font:inherit;font-weight:900;box-shadow:0 10px 22px rgba(11,42,74,.14)}.archive-print-save-section .archive-print-button{margin-top:8px}.archive-existing-pdf{margin-top:16px}
+    @media print{body{background:#fff!important}.archive-print-button,.archive-print-actions,.archive-back,nav,footer{display:none!important}.archive-page,.p{width:100%!important;max-width:none!important;padding:0!important}.archive-hero,.hero{background:#fff!important;color:#000!important;border:2px solid #000!important;box-shadow:none!important}.archive-hero h1,.archive-hero p,.hero h1,.hero p{color:#000!important}.archive-section,.sec{box-shadow:none!important;border:1px solid #999!important;page-break-inside:avoid;break-inside:avoid}img{max-width:100%!important;page-break-inside:avoid;break-inside:avoid}.archive-tag,.tag,.status-card,.eval-critical,.eval-problem,.eval-warning,.eval-insufficient,.eval-good,.eval-pending{border:1px solid #333!important;background:#fff!important;color:#000!important}}
 </style>
 </head>
 <body>
@@ -19,6 +23,10 @@
     <section class="archive-hero">
       <div class="archive-kicker">ATSUGI 小学校</div>
       <h1>厚木小学校 PTA関連資料・評価</h1>
+      <p class="archive-school-author">作成主体：PTA適正化推進委員会</p>
+      <div class="archive-print-actions archive-print-top">
+        <button class="archive-print-button" type="button" onclick="window.print()">このページをPDF保存</button>
+      </div>
       <p>このページでは、PTA入会案内、PTA入会申込書、学校納入金・会費徴収資料等の確認状況を整理します。画像とPDFは、個人情報・印影・口座情報・QRコード等の確認が完了したものだけを掲載します。</p>
     </section>
 
@@ -65,9 +73,10 @@
       <p>PTA会員である保護者の名前・連絡先確認のためのカードは確認できるが、入会契約の成立を基礎づける申込・承諾の記録は確認できない。そのため、少なくとも提出資料のみからは、各保護者がPTAへの加入を申し込み、PTA側がこれを承諾したことを確認することはできない。</p>
     </section>
 
-    <section class="archive-section">
-      <h2>PDFダウンロード</h2>
-      <p class="archive-muted">評価書PDFは準備中です。</p>
+    <section class="archive-section archive-print-save-section">
+      <h2>このページをPDF保存</h2>
+      <p class="archive-print-note">このボタンを押すと、資料画像・確認できる事実・疑義フラグ・当委員会評価を含めた学校別ページ全体をPDFとして保存できます。ブラウザの印刷画面で「PDFに保存」を選択してください。</p>
+      <button class="archive-print-button" type="button" onclick="window.print()">このページをPDF保存</button>
     </section>
   </main>
 </body>

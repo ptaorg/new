@@ -219,6 +219,127 @@
   opacity: .86;
 }
 
+/* Page PDF print controls */
+.archive-school-author,
+.archive-print-note {
+  color: var(--text);
+  line-height: 1.85;
+}
+
+.archive-school-hero .archive-school-author {
+  color: rgba(255,255,255,.88);
+  font-weight: 900;
+  margin: 0 0 16px;
+}
+
+.archive-print-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+
+.archive-print-button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--navy);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 20px;
+  font: inherit;
+  font-weight: 900;
+  box-shadow: 0 10px 22px rgba(11,42,74,.14);
+}
+
+.archive-print-button:hover {
+  background: var(--gold-lt);
+}
+
+.archive-print-save-section .archive-print-button {
+  margin-top: 8px;
+}
+
+.archive-existing-pdf {
+  margin-top: 16px;
+}
+
+@media print {
+  body,
+  .archive-school-body {
+    background: #ffffff !important;
+  }
+
+  .archive-print-button,
+  .archive-print-actions,
+  .archive-school-back,
+  .archive-back,
+  nav,
+  footer {
+    display: none !important;
+  }
+
+  .archive-school-page,
+  .archive-page,
+  .p {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .archive-school-hero,
+  .archive-hero,
+  .hero {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    box-shadow: none !important;
+  }
+
+  .archive-school-hero h1,
+  .archive-school-hero p,
+  .archive-hero h1,
+  .archive-hero p,
+  .hero h1,
+  .hero p {
+    color: #000000 !important;
+  }
+
+  .archive-school-section,
+  .archive-section,
+  .sec {
+    box-shadow: none !important;
+    border: 1px solid #999 !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .archive-tag,
+  .tag,
+  .archive-school-flags span,
+  .status-card,
+  .eval-critical,
+  .eval-problem,
+  .eval-warning,
+  .eval-insufficient,
+  .eval-good,
+  .eval-pending {
+    border: 1px solid #333 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
 @media (max-width: 700px) {
   .archive-school-page {
     width: min(100% - 28px, 980px);
