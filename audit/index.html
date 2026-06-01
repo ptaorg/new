@@ -9,7 +9,7 @@
   <meta name="description" content="PTAの入会手続、会費徴収、個人情報、役員選出、学校関与について、立場別に確認できるセルフチェックツールです。">
   <link rel="canonical" href="https://ptaorg.github.io/audit/index.html">
   <meta property="og:title" content="PTA運営チェックアプリ | PTA適正化推進委員会">
-  <meta property="og:description" content="設問に答えるだけで、PTA運営の法的リスクを5段階で可視化します。">
+  <meta property="og:description" content="PTAの入会手続、会費徴収、個人情報、役員選出、学校関与について、立場別に確認できるセルフチェックです。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ptaorg.github.io/audit/index.html">
   <meta property="og:image" content="https://ptaorg.github.io/assets/og-image.png">
@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    /* ===== AUDIT SYSTEM — HEAVYWEIGHT REDESIGN ===== */
+    /* ===== OPERATION CHECK APP ===== */
 
     :root {
       --risk-0: #15803D;
@@ -812,8 +812,8 @@
       font-size: 1rem;
       color: var(--color-text);
       line-height: 2.05;
-      letter-spacing: .02em;
-      white-space: pre-wrap;
+      letter-spacing: 0;
+      white-space: normal;
       word-break: break-word;
     }
     .assessment-body h4 {
@@ -837,6 +837,95 @@
       float: left;
       line-height: 1;
       margin: 4px 10px 0 0;
+    }
+
+    .check-result-summary,
+    .check-result-risks,
+    .check-result-documents,
+    .check-result-actions,
+    .check-result-contacts,
+    .check-result-questions,
+    .check-result-links,
+    .check-result-note {
+      margin-top: 22px;
+      padding: 20px;
+      border: 1px solid rgba(10, 25, 47, .1);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .check-result-summary {
+      margin-top: 0;
+      background: linear-gradient(135deg, rgba(212,175,55,.12), rgba(255,255,255,.9));
+      border-color: rgba(212,175,55,.24);
+    }
+
+    .check-result-summary h2,
+    .check-result-risks h3,
+    .check-result-documents h3,
+    .check-result-actions h3,
+    .check-result-contacts h3,
+    .check-result-questions h3,
+    .check-result-links h3 {
+      margin: 0 0 10px;
+      color: var(--color-navy);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.08rem;
+      line-height: 1.45;
+    }
+
+    .check-result-summary p,
+    .check-result-note p {
+      margin: 0;
+      color: var(--color-text);
+      line-height: 1.85;
+    }
+
+    .check-result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .check-result-list,
+    .check-result-actions ol {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: var(--color-text);
+      line-height: 1.85;
+    }
+
+    .check-result-links ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-result-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border: 1px solid #dbe4ee;
+      border-radius: 999px;
+      background: #f8fafc;
+      color: var(--color-navy);
+      font-size: .84rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .check-result-links a:hover {
+      border-color: rgba(212,175,55,.55);
+      background: #fff;
+    }
+
+    .check-result-empty {
+      margin: 0;
+      color: var(--color-text-soft);
+      line-height: 1.75;
     }
 
     .assessment-loading {
@@ -1230,6 +1319,7 @@
       .audit-hero { padding: 64px 0 88px; background-attachment: scroll; }
       .mode-grid { grid-template-columns: 1fr; }
       .risk-count-grid { grid-template-columns: repeat(5, 1fr); gap: 4px; }
+      .check-result-grid { grid-template-columns: 1fr; }
       .q-card, .assessment-panel, .result-panel, .result-risk-banner { padding: 28px 22px; }
       .assessment-header { flex-direction: column; align-items: flex-start; }
       .audit-shell { margin-top: -48px; }
@@ -1312,9 +1402,9 @@
         <div class="audit-hero-eyebrow">Operation Check App</div>
         <h1>立場別に確認する<br><span class="accent">PTA運営チェックアプリ</span></h1>
         <p class="audit-hero-lede">
-          点数ではなく、<strong>危険度</strong>で伝える。設問に答えることで、あなたのPTAが抱える問題を
-          <strong>5段階のリスクレベル</strong>で可視化します。入会手続・個人情報・会費徴収・教職員関与・施設利用の5軸から、
-          民法・個人情報保護法・地方公務員法等に照らして確認します。
+          PTAの入会手続、会費徴収、個人情報、役員選出、学校関与について、立場別に確認できるセルフチェックです。
+          結果は個別事案の適法性を断定するものではありません。手元の文書や現在の運用を整理し、
+          どの点を学校・PTA・教育委員会に確認すべきかを把握するために利用してください。
         </p>
         <div class="audit-hero-meta">
           <div class="hero-meta-item">
@@ -1324,7 +1414,7 @@
             <strong>3</strong>立場別モード
           </div>
           <div class="hero-meta-item">
-            <strong>LV.0–4</strong>リスク評価
+            <strong>4段階</strong>確認結果
           </div>
         </div>
       </div>
@@ -1376,11 +1466,10 @@
           <span class="axis-link-arrow">→</span>
         </a>
         <div class="hero-legend-mini">
-          <div class="mini-lv"><div class="mini-lv-dot lv0"></div><div class="mini-lv-label">適正</div></div>
-          <div class="mini-lv"><div class="mini-lv-dot lv1"></div><div class="mini-lv-label">要注意</div></div>
-          <div class="mini-lv"><div class="mini-lv-dot lv2"></div><div class="mini-lv-label">要改善</div></div>
-          <div class="mini-lv"><div class="mini-lv-dot lv3"></div><div class="mini-lv-label">高リスク</div></div>
-          <div class="mini-lv"><div class="mini-lv-dot lv4"></div><div class="mini-lv-label">重大違法</div></div>
+          <div class="mini-lv"><div class="mini-lv-dot lv0"></div><div class="mini-lv-label">問題なしに近い</div></div>
+          <div class="mini-lv"><div class="mini-lv-dot lv1"></div><div class="mini-lv-label">確認が必要</div></div>
+          <div class="mini-lv"><div class="mini-lv-dot lv2"></div><div class="mini-lv-label">運用リスクあり</div></div>
+          <div class="mini-lv"><div class="mini-lv-dot lv3"></div><div class="mini-lv-label">早急な見直し</div></div>
         </div>
       </aside>
     </div>
@@ -1395,8 +1484,8 @@
         <span class="intro-section-kicker">Select Your Role</span>
         <h2 class="intro-section-title">立場を選んで運営チェックを始める</h2>
         <p class="intro-section-lead">
-          保護者・PTA役員・学校・教育委員会のそれぞれの視点から、異なる法的論点を問います。
-          匿名・無登録で、いつでも何度でもチェックできます。
+          保護者・PTA役員・学校・教育委員会のそれぞれの視点から、手元の文書や現在の運用を整理します。
+          個人名・学校名・住所・電話番号などは入力不要です。入力内容はこの端末上での確認にのみ使用し、送信・保存しません。
         </p>
       </div>
 
@@ -1414,8 +1503,7 @@
           </div>
           <div class="mode-card-body">
             <p class="mode-card-desc">
-              「入会した覚えがない」「会費の根拠が分からない」という疑問を、
-              民法・個人情報保護法の法的根拠から整理します。
+              手元のPTAプリントを見ながら、入会申込、会費徴収、個人情報、役員選出、学校経由提出の確認点を整理します。
             </p>
             <div class="mode-check-list">
               <div class="mode-check">入会届・みなし加入の確認</div>
@@ -1442,8 +1530,7 @@
           </div>
           <div class="mode-card-body">
             <p class="mode-card-desc">
-              善意で運営していても、現行の慣行が法的リスクを生んでいます。
-              役員個人に及ぶ責任を法的観点から点検します。
+              役員を責めるためではなく、次年度から保護者へ説明できる運営に直すための確認点を整理します。
             </p>
             <div class="mode-check-list">
               <div class="mode-check">加入案内・入会手続の方式</div>
@@ -1470,14 +1557,13 @@
           </div>
           <div class="mode-card-body">
             <p class="mode-card-desc">
-              教職員の服務義務・個人情報管理・施設利用・PTAへの関与について、
-              地公法・学校教育法の行政法的観点から確認します。
+              PTAを支配するためではなく、学校側の配布・回収、個人情報、会費徴収、連絡ツール利用の関与を点検します。
             </p>
             <div class="mode-check-list">
-              <div class="mode-check">教職員のPTA事務従事</div>
+              <div class="mode-check">学校職員のPTA固有事務関与</div>
               <div class="mode-check">個人情報の提供実態</div>
               <div class="mode-check">施設・設備の利用許可</div>
-              <div class="mode-check">学校名義の加入促進</div>
+              <div class="mode-check">学校手続との混在</div>
             </div>
             <div class="mode-start-btn">
               <span>学校・教育委員会向けチェックを開始する</span>
@@ -1551,8 +1637,8 @@
 
         <div class="assessment-footer">
           <p class="assessment-footer-note">
-            ※ 本評価書は入力されたチェック結果に基づき自動生成されたものであり、個別の法律相談に代わるものではありません。
-            重大な違法性が疑われる場合は、弁護士または行政機関へのご相談をお勧めします。
+            ※ このチェック結果は、個別事案の適法性を断定するものではありません。
+            手元の文書や現在の運用を整理し、どの点を確認すべきかを示すためのものです。
           </p>
           <button class="btn-regenerate" id="regenerateAssessment">
             <span>🔄</span><span>再生成</span>
@@ -1693,761 +1779,6 @@
 
   <script src="../js/law-data.js"></script>
   <script src="../js/site.js"></script>
-  <script>
-  // ===== AUDIT DB (5-level risk) =====
-  const AUDIT_DB = {
-    parent: [
-      {
-        cat: '入会契約', axis: 'membership', axisIcon: '📋',
-        q: '入会の意思確認は、どのような形で行われましたか。',
-        opts: [
-          { t: 'PTAが独自に用意した入会届を自ら記入・提出した。', level: 1, laws: ['civil-law'],
-            adv: '入会の意思表示として比較的明確です。ただしPTAの任意性・個人情報の利用目的・退会の自由が入会届に明記されていたか確認してください。',
-            links: [{ label: '入会手続の詳細', url: '../membership.html' }] },
-          { t: '非加入届を出さない限り会員とされる（オプトアウト）。', level: 3, laws: ['civil-law','constitution'],
-            adv: '【違法リスク高】民法上、沈黙は承諾とみなされません。民法522条の契約成立要件を欠き、横浜市教育委員会通知（学教第1965号）でも禁止されています。会費は不当利得として返還請求の対象です。',
-            links: [{ label: 'みなし加入の無効性', url: '../membership.html' }, { label: '横浜市通知の詳細', url: '../guide-board.html' }] },
-          { t: '意思確認なく、入学と同時に全員会員として扱われた。', level: 4, laws: ['civil-law','constitution'],
-            adv: '【重大違法】契約の申込み・承諾が存在せず、民法522条の契約成立要件を完全に欠きます。会費は不当利得（民法703条）として返還請求が可能です。全国の教育委員会も「不適切」と回答しています。',
-            links: [{ label: 'みなし加入の詳細', url: '../membership.html' }, { label: '保護者向けテンプレートPDF', url: '../guide-parent.html#pdf-dl' }] },
-          { t: '任意と言われたが、断りづらい雰囲気・説明だった。', level: 2, laws: ['constitution'],
-            adv: '任意性が形骸化している状態です。消費者契約法4条の「不利益事実の不告知」として、契約取消しの対象になり得ます。',
-            links: [{ label: '保護者の権利を確認', url: '../guide-parent.html' }] }
-        ]
-      },
-      {
-        cat: '個人情報', axis: 'privacy', axisIcon: '🔒',
-        q: 'PTA名簿や連絡先は、どのように準備されていますか。',
-        opts: [
-          { t: '入会届にPTA活動への情報提供に同意し、PTAへ直接提出した。', level: 0, laws: ['personal-info'],
-            adv: '直接収集かつ明示的同意あり。個人情報保護法上、最も適正な取得方法です。',
-            links: [] },
-          { t: '学校を通じた書面同意の上で情報が提供されている。', level: 1, laws: ['personal-info'],
-            adv: '同意の具体的な内容（利用目的・提供先・管理方法）が明示されているか確認が必要です。形式的な同意書では不十分な場合があります。',
-            links: [{ label: '個人情報提供の要件', url: '../privacy.html' }] },
-          { t: '学校の名簿がそのままPTAに渡されている。', level: 4, laws: ['personal-info'],
-            adv: '【重大違法】個人情報保護法第69条違反。学校（行政機関等）が本人同意なく第三者（PTA）へ提供することは原則禁止です。全国の教育委員会への照会でも「違法」との回答が得られています。',
-            links: [{ label: '個人情報問題の詳細', url: '../privacy.html' }, { label: '削除要請テンプレート', url: '../guide-parent.html#pdf-dl' }] },
-          { t: '誰がどの情報を持っているか把握できていない。', level: 2, laws: ['personal-info'],
-            adv: '情報の保有主体・利用目的・管理責任が不明な状態です。個人情報保護法上の安全管理措置義務（同法66条）を欠く可能性があります。',
-            links: [{ label: '個人情報問題の詳細', url: '../privacy.html' }] }
-        ]
-      },
-      {
-        cat: '会費徴収', axis: 'finance', axisIcon: '💰',
-        q: 'PTA会費は、どのように徴収されていますか。',
-        opts: [
-          { t: 'PTA独自口座に、会員が直接振り込みまたはPTAが集金している。', level: 0, laws: ['civil-law'],
-            adv: '学校会計と分離されており、公私の区別が明確です。最も適正な形式です。',
-            links: [] },
-          { t: '学校徴収金と一体だが、別途明確な委任契約書がある。', level: 1, laws: ['civil-law'],
-            adv: '委任契約の内容と、PTAへの入会契約が先行して成立していることが前提です。入会前に会費が引き落とされていないか確認してください。',
-            links: [{ label: '会費徴収の問題', url: '../fee-collection.html' }] },
-          { t: '給食費等と同じ口座から一括で引き落とされている。', level: 4, laws: ['civil-law'],
-            adv: '【重大違法】地方自治法235条の4第2項（私費保管禁止）・地方財政法4条の5（割当寄付禁止）に抵触します。また入会契約なく徴収された場合は民法113条（無権代理）・703条（不当利得）として返還請求が可能です。',
-            links: [{ label: '会費徴収問題の詳細', url: '../fee-collection.html' }, { label: '返還請求テンプレート', url: '../guide-parent.html#pdf-dl' }] },
-          { t: '現金を児童・生徒経由で担任が回収している。', level: 4, laws: ['local-public-service'],
-            adv: '【重大違法】地公法35条（職務専念義務）違反。教職員が勤務時間中に私的団体の集金を担う行為は、違法な利益供与（便宜供与）にあたります。金銭紛失時の責任帰属も重大なリスクです。',
-            links: [{ label: '教職員関与の問題', url: '../personnel.html' }] }
-        ]
-      },
-      {
-        cat: '学校関与', axis: 'personnel', axisIcon: '👩‍🏫',
-        q: 'PTA配布物や連絡は誰が担っていますか。',
-        opts: [
-          { t: 'PTA役員がすべて配布・送信している。', level: 0, laws: ['social-education'],
-            adv: '独立した任意団体として自律的に事務を担えています。最も適正な状態です。',
-            links: [] },
-          { t: '学校配布物にPTA文書が同封されることがある（年数回程度）。', level: 1, laws: ['social-education'],
-            adv: '学校文書と私的団体文書の境界が不明確になるリスクがあります。「PTAは任意団体である」旨の明示が伴っているか確認してください。',
-            links: [] },
-          { t: '担任が日常的にPTA文書を配布・回収している。', level: 3, laws: ['local-public-service'],
-            adv: '【違法リスク高】地公法35条（職務専念義務）違反。教職員が私的団体の実務を恒常的に担う構造は、職務専念義務違反・利益供与にあたります。',
-            links: [{ label: '教職員関与の詳細', url: '../personnel.html' }, { label: '渉外業務の範囲', url: '../guide-board.html' }] },
-          { t: '授業時間や学校行事を利用してPTA加入案内が行われる。', level: 4, laws: ['constitution','social-education'],
-            adv: '【重大違法】学校の公的権威・場を利用した私的団体への加入促進。任意性を根本的に損ない、消費者契約法上の「不当勧誘」にあたる可能性があります。',
-            links: [{ label: '入会手続の問題', url: '../membership.html' }, { label: '教育委員会への相談', url: '../board-responses.html' }] }
-        ]
-      },
-      {
-        cat: '施設・備品', axis: 'facilities', axisIcon: '🏫',
-        q: '学校の施設・備品はどのように利用していますか。',
-        opts: [
-          { t: 'PTA専用の施設・備品を使用し、使用料等を適切に負担している。', level: 0, laws: ['school-ed'],
-            adv: '公私の境界が明確に保たれています。',
-            links: [] },
-          { t: 'PTA室・印刷機等を使用するが、使用条件の書面化はない。', level: 1, laws: ['school-ed'],
-            adv: '学校教育法137条に基づく許可条件・費用負担を書面で整理することをお勧めします。',
-            links: [{ label: '施設利用の整理', url: '../facilities.html' }] },
-          { t: '学校の印刷機・光熱費を無償で常態的に使用している。', level: 3, laws: ['school-ed'],
-            adv: '地方自治法237条（公有財産の適正管理）・地方財政法上の問題があります。公有財産の無償使用は法的根拠が必要です。',
-            links: [{ label: '施設利用の詳細', url: '../facilities.html' }] },
-          { t: '学校電話・郵便をPTAの連絡に常態的に使用している。', level: 2, laws: ['school-ed'],
-            adv: '公費（学校の通信設備）を私的団体が使用することは、利用根拠と費用負担の整理が必要です。渉外業務の範囲内での利用かどうかを確認してください。',
-            links: [{ label: '渉外業務の範囲', url: '../guide-board.html' }] }
-        ]
-      }
-    ],
-    officer: [
-      {
-        cat: '入会手続', axis: 'membership', axisIcon: '📋',
-        q: '新入生への加入案内は、どの方式で行っていますか。',
-        opts: [
-          { t: '入会届提出者のみ登録するオプトイン方式。', level: 0, laws: ['civil-law'],
-            adv: '加入意思の明示を前提とする最も適正な方式です。横浜市通知（学教第1965号）に完全に対応しています。',
-            links: [] },
-          { t: '非加入届が出ない限り加入扱いにする。', level: 3, laws: ['civil-law', 'constitution'],
-            adv: '【違法リスク高】民法522条・消費者契約法に違反します。横浜市通知でも禁止されています。役員として継続している場合、不当利得の返還責任を問われる可能性があります。',
-            links: [{ label: '入会手続を適正化する', url: '../guide-pta.html' }, { label: '入会届の雛形', url: '../guide-pta.html#pdf-officer' }] },
-          { t: '学校名簿を基に当然に全員登録している。', level: 4, laws: ['civil-law', 'personal-info'],
-            adv: '【重大違法】加入意思確認の欠如（民法522条違反）と個人情報の目的外取得（個人情報保護法69条違反）が同時に発生しています。役員として早急に是正が必要です。',
-            links: [{ label: '就任直後チェックリスト', url: '../guide-pta.html#onboard' }, { label: '適正化ロードマップ', url: '../guide-pta.html#roadmap' }] },
-          { t: '実務担当者によって学校ごとに運用が違う。', level: 2, laws: ['civil-law'],
-            adv: '統一ルールがない状態です。役員として今期中に入会届様式を整備し、全員がオプトイン方式で運用するよう規程を定めてください。',
-            links: [{ label: '適正化ロードマップ', url: '../guide-pta.html#roadmap' }] }
-        ]
-      },
-      {
-        cat: '会計管理', axis: 'finance', axisIcon: '💰',
-        q: '会費や資金は、どのように管理していますか。',
-        opts: [
-          { t: 'PTA名義口座と役員が独立して管理・監査している。', level: 0, laws: ['civil-law'],
-            adv: '団体会計としての独立性と透明性が確保されています。',
-            links: [] },
-          { t: '学校事務室が実質的に管理・補助している。', level: 4, laws: ['local-public-service'],
-            adv: '【重大違法】地公法35条（職務専念義務）・地方自治法235条の4（私費保管禁止）に反します。学校が私費を保管・管理することは法的根拠がありません。役員として即時の分離が必要です。',
-            links: [{ label: '会費徴収の問題', url: '../fee-collection.html' }, { label: '会計規程の雛形', url: '../guide-pta.html#pdf-officer' }] },
-          { t: '会長個人の口座や通帳で管理している。', level: 4, laws: ['civil-law'],
-            adv: '【重大違法】会計責任の所在が著しく不明確で、横領事件の典型パターンです。退任後に前任者として追及される可能性があります。今期中にPTA名義口座への移行が必要です。',
-            links: [{ label: '会計規程の雛形', url: '../guide-pta.html#pdf-officer' }, { label: '適正化ロードマップ', url: '../guide-pta.html#roadmap' }] },
-          { t: '現金保管が多く、監査は形式的・未実施である。', level: 2, laws: ['civil-law'],
-            adv: '内部統制が弱く、不正・紛失時に役員個人が責任を問われるリスクがあります。外部監査または独立した内部監査体制を今期中に整備してください。',
-            links: [{ label: '就任直後チェックリスト', url: '../guide-pta.html#onboard' }] }
-        ]
-      },
-      {
-        cat: '学校依存', axis: 'personnel', axisIcon: '👩‍🏫',
-        q: '印刷・仕分け・配布・会計補助などの事務は誰が担っていますか。',
-        opts: [
-          { t: '役員・有償スタッフ・外注で処理している。', level: 0, laws: ['social-education'],
-            adv: '団体として自主的に事務処理を担えています。最も適正な状態です。',
-            links: [] },
-          { t: '教頭・事務職員に相当程度依存している。', level: 3, laws: ['local-public-service'],
-            adv: '【違法リスク高】地公法35条（職務専念義務）違反。教職員の公務と団体事務が混在しており、学校への違法な利益供与（便宜供与）にあたります。',
-            links: [{ label: '渉外業務の範囲', url: '../guide-board.html' }, { label: '適正化ロードマップ', url: '../guide-pta.html#roadmap' }] },
-          { t: '担任にクラス数分の配布物処理を依頼している。', level: 4, laws: ['local-public-service'],
-            adv: '【重大違法】恒常的な事務代行であり、地公法35条の職務専念義務違反が明確です。担任への依頼を今期中に全廃し、PTAが独自配布体制を整える必要があります。',
-            links: [{ label: '就任直後チェックリスト', url: '../guide-pta.html#onboard' }, { label: 'PDF雛形（覚書）', url: '../guide-pta.html#pdf-officer' }] },
-          { t: '繁忙期のみ学校の善意で支援を受ける。', level: 1, laws: ['social-education'],
-            adv: '一時的・例外的な支援であっても、恒常化すれば職務専念義務違反となります。学校との間で「渉外業務の範囲」を書面で明確にしておくことが重要です。',
-            links: [{ label: '渉外業務の定義', url: '../guide-board.html' }] }
-        ]
-      },
-      {
-        cat: '個人情報管理', axis: 'privacy', axisIcon: '🔒',
-        q: '役員・会員の個人情報はどのように管理していますか。',
-        opts: [
-          { t: '入会届で直接収集し、PTA独自の名簿として厳重に管理している。', level: 0, laws: ['personal-info'],
-            adv: 'PTAとして適正に個人情報を管理できています。退会時の即時削除も忘れずに。',
-            links: [] },
-          { t: '学校から提供を受けた名簿を使用しているが、同意は取得している。', level: 1, laws: ['personal-info'],
-            adv: '同意取得の方法（オプトインか否か）と利用目的の明示を確認してください。同意書が存在しても、目的外利用は禁止されます。',
-            links: [{ label: '個人情報管理の要件', url: '../privacy.html' }] },
-          { t: '学校名簿をそのまま使用しており、本人同意は確認していない。', level: 4, laws: ['personal-info'],
-            adv: '【重大違法】個人情報保護法69条違反の状態です。役員として即時の是正が必要です。入会届を整備し、PTAが直接収集する体制に移行してください。',
-            links: [{ label: '入会届の雛形', url: '../guide-pta.html#pdf-officer' }, { label: '個人情報問題の詳細', url: '../privacy.html' }] },
-          { t: 'クラウドサービス・LINEグループ等で管理しているが設定が不明確。', level: 2, laws: ['personal-info'],
-            adv: '個人情報の安全管理措置（個人情報保護法66条）として、アクセス権限・削除手順・漏洩時の対応を規程化する必要があります。',
-            links: [{ label: '個人情報管理の要件', url: '../privacy.html' }] }
-        ]
-      },
-      {
-        cat: '施設利用', axis: 'facilities', axisIcon: '🏫',
-        q: '学校施設・備品の利用状況はどうなっていますか。',
-        opts: [
-          { t: '使用許可・費用負担について学校と書面で合意している。', level: 0, laws: ['school-ed'],
-            adv: '学校教育法137条に沿った適正な利用です。覚書の内容が渉外業務の範囲を超えていないかも確認してください。',
-            links: [] },
-          { t: '使用しているが、費用負担・条件は口頭合意のみ。', level: 1, laws: ['school-ed'],
-            adv: '書面化が必要です。特に光熱費・備品消耗品費の負担を明記した覚書を作成してください。',
-            links: [{ label: '施設利用の整理', url: '../facilities.html' }, { label: '覚書の雛形', url: '../guide-pta.html#pdf-officer' }] },
-          { t: '学校印刷機・電話・備品を無償で常態的に使用している。', level: 3, laws: ['school-ed'],
-            adv: '地方自治法237条・地方財政法上の問題があります。使用料相当額の負担または代替手段（自前の機器）への移行が必要です。',
-            links: [{ label: '施設利用の詳細', url: '../facilities.html' }] },
-          { t: '学校からの無償支援を前提とした活動計画になっている。', level: 2, laws: ['school-ed'],
-            adv: '活動計画の前提を見直し、学校の協力なしで運営可能な体制を段階的に整備してください。',
-            links: [{ label: '適正化ロードマップ', url: '../guide-pta.html#roadmap' }] }
-        ]
-      }
-    ],
-    school: [
-      {
-        cat: '加入指導', axis: 'membership', axisIcon: '📋',
-        q: 'PTA加入についての学校側の関与はどの程度ですか。',
-        opts: [
-          { t: 'PTA加入はPTAが独自に案内し、学校は一切関与していない。', level: 0, laws: ['social-education'],
-            adv: 'PTAの任意性・独立性が保たれており、最も適正な状態です。',
-            links: [] },
-          { t: '入学説明会でPTAの案内を行う機会を提供している。', level: 1, laws: ['social-education'],
-            adv: '「PTAは任意団体であり、加入は保護者の自由な意思による」旨を明確に告知することが必要です。',
-            links: [{ label: '教育委員会向けガイド', url: '../guide-board.html' }] },
-          { t: '学校が加入を前提として保護者に説明・案内をしている。', level: 3, laws: ['constitution','social-education'],
-            adv: '【違法リスク高】学校の公的立場を利用して私的団体への加入を促す行為は、任意性を根本的に損ないます。全国の教育委員会への照会でも「不適切」との回答が得られています。',
-            links: [{ label: '教育委員会の回答', url: '../board-responses.html' }, { label: '横浜市通知の内容', url: '../guide-board.html' }] },
-          { t: '校長・教頭がPTA会長・役員を兼務または実質的に決定している。', level: 4, laws: ['social-education'],
-            adv: '【重大違法】社会教育関係団体の自律性（社会教育法10条）を完全に否定する統制的関与。地教行法23条上の教育委員会の監督責任も問われます。',
-            links: [{ label: '教育委員会向けガイド', url: '../guide-board.html' }] }
-        ]
-      },
-      {
-        cat: '個人情報', axis: 'privacy', axisIcon: '🔒',
-        q: '学校が保有する保護者・児童の情報をPTAに提供していますか。',
-        opts: [
-          { t: '一切提供していない。PTAが入会届で直接収集している。', level: 0, laws: ['personal-info'],
-            adv: '個人情報保護法上、最も適正な状態です。横浜市通知（学教第1965号）が求める形式に完全対応しています。',
-            links: [] },
-          { t: '書面による明確な本人同意（オプトイン）を確認の上、提供している。', level: 1, laws: ['personal-info'],
-            adv: '同意の取得方法・利用目的の明示・提供範囲が適切に設定されているか確認が必要です。',
-            links: [{ label: '個人情報提供の要件', url: '../privacy.html' }] },
-          { t: '学校名簿をPTAに渡している（同意の有無は不明確）。', level: 4, laws: ['personal-info'],
-            adv: '【重大違法】個人情報保護法69条違反。校長・教頭個人が不法行為責任を問われる可能性があります。熊本PTA裁判では校長の不法行為責任が追及されています。',
-            links: [{ label: '個人情報問題の詳細', url: '../privacy.html' }, { label: '司法の現実（判例）', url: '../cases.html#judicial-reality' }] },
-          { t: '保護者から学校へ提出された緊急連絡先をPTA用途に使用している。', level: 4, laws: ['personal-info'],
-            adv: '【重大違法】目的外利用（個人情報保護法61条・69条違反）。「緊急連絡先」として収集した情報を「PTA活動」に使用することは目的外利用として厳しく禁止されています。',
-            links: [{ label: '個人情報問題の詳細', url: '../privacy.html' }] }
-        ]
-      },
-      {
-        cat: '職務専念義務', axis: 'personnel', axisIcon: '👩‍🏫',
-        q: '勤務時間中に教職員がPTA事務を担っていますか。',
-        opts: [
-          { t: '教職員はPTA↔学校間の連絡調整（渉外業務）のみを担っている。', level: 0, laws: ['local-public-service'],
-            adv: '地公法35条に沿った唯一適正な関与形態です。渉外業務の範囲が書面で明確化されているとなお適正です。',
-            links: [{ label: '渉外業務の定義', url: '../guide-board.html' }] },
-          { t: 'PTA配布物の配布・回収を担任に依頼することがある。', level: 2, laws: ['local-public-service'],
-            adv: '継続的・恒常的になれば地公法35条違反です。PTAによる独自配布体制への移行を促してください。',
-            links: [{ label: '渉外業務の範囲', url: '../guide-board.html' }] },
-          { t: '事務職員がPTA会費の集計・処理を担っている。', level: 4, laws: ['local-public-service'],
-            adv: '【重大違法】地公法35条（職務専念義務）違反。私的団体の会計事務を公務員が担うことは違法な利益供与（便宜供与）にあたります。1964年行政実例も同様の解釈を示しています。',
-            links: [{ label: '教職員関与の問題', url: '../personnel.html' }, { label: '行政実例の整理', url: '../administrative-materials.html' }] },
-          { t: 'PTA役員の選出・調整を校長・教頭が実質的に行っている。', level: 4, laws: ['social-education','local-public-service'],
-            adv: '【重大違法】社会教育関係団体の自律性侵害（社会教育法10条）と職務専念義務違反が同時に成立します。教育委員会への報告義務が生じる可能性があります。',
-            links: [{ label: '教育委員会向けガイド', url: '../guide-board.html' }] }
-        ]
-      },
-      {
-        cat: '会費・施設', axis: 'finance', axisIcon: '💰',
-        q: 'PTA会費の徴収・施設利用について学校の関与はどの程度ですか。',
-        opts: [
-          { t: '会費徴収はPTAが独自に行い、施設利用は許可・費用負担を書面化している。', level: 0, laws: ['civil-law','school-ed'],
-            adv: '公私分離が明確に保たれており、最も適正な状態です。',
-            links: [] },
-          { t: '学校徴収金と別口座だが、引き落としの取りまとめを学校が行っている。', level: 2, laws: ['civil-law'],
-            adv: '取りまとめ行為も「代理」にあたります。PTAへの入会契約が先行して成立していることと、書面による委任の存在が必要です。',
-            links: [{ label: '会費徴収の問題', url: '../fee-collection.html' }] },
-          { t: 'PTA会費が給食費等と同一の引き落とし口座・明細に含まれている。', level: 4, laws: ['civil-law'],
-            adv: '【重大違法】地方自治法235条の4第2項（私費保管禁止）・民法113条（無権代理）に抵触します。校長が「無権代理人」として保護者から返還請求を受けた場合、個人責任が及ぶ可能性があります。',
-            links: [{ label: '会費徴収の問題', url: '../fee-collection.html' }, { label: '無権代理という時限爆弾', url: '../cases.html' }] },
-          { t: '学校施設・印刷機・電話をPTAが費用負担なしで恒常的に使用している。', level: 3, laws: ['school-ed'],
-            adv: '地方自治法237条・地方財政法上の問題があります。使用条件・費用負担を書面化し、他団体との公平性も確認が必要です。',
-            links: [{ label: '施設利用の詳細', url: '../facilities.html' }] }
-        ]
-      },
-      {
-        cat: '覚書・合意書', axis: 'facilities', axisIcon: '🤝',
-        q: '学校とPTAの役割分担は書面化されていますか。',
-        opts: [
-          { t: '渉外業務（連絡調整窓口）の範囲だけを定めた覚書がある。', level: 0, laws: ['social-education'],
-            adv: '最も適正な形式です。覚書の内容が渉外業務の範囲を超えて学校の関与を固定化していないか定期的に確認してください。',
-            links: [{ label: '渉外業務の定義', url: '../guide-board.html' }] },
-          { t: '役割分担の覚書があるが、教職員の事務代行も含まれている。', level: 3, laws: ['local-public-service'],
-            adv: '【違法リスク高】覚書に「学校が○○を担当する」と記載されていても、それが職務専念義務違反に該当する業務であれば、合意しても違法状態は解消されません。覚書の内容を見直してください。',
-            links: [{ label: '覚書問題の詳細', url: '../guide-board.html' }] },
-          { t: '書面化されておらず、慣例で運営している。', level: 2, laws: ['social-education'],
-            adv: '慣例は法的根拠になりません。渉外業務の範囲と費用負担を書面で明確化することが、学校・PTAの双方を守ることにつながります。',
-            links: [{ label: '教育委員会向けガイド', url: '../guide-board.html' }, { label: '覚書の雛形', url: '../guide-pta.html#pdf-officer' }] },
-          { t: '覚書はあるが、内容を把握している職員がいない。', level: 1, laws: ['social-education'],
-            adv: '書面があっても機能しなければ意味がありません。内容を全関係者で確認し、必要に応じて更新してください。',
-            links: [] }
-        ]
-      }
-    ]
-  };
-
-  // ===== RISK LEVEL CONFIG =====
-  const RISK_CONFIG = {
-    0: { label: '適正', shortLabel: 'LV.0', color: '#15803D', cls: 'lv0', barPct: 100 },
-    1: { label: '要注意', shortLabel: 'LV.1', color: '#2563EB', cls: 'lv1', barPct: 80 },
-    2: { label: '要改善', shortLabel: 'LV.2', color: '#D97706', cls: 'lv2', barPct: 55 },
-    3: { label: '違法リスク高', shortLabel: 'LV.3', color: '#C2410C', cls: 'lv3', barPct: 30 },
-    4: { label: '重大違法', shortLabel: 'LV.4', color: '#B91C1C', cls: 'lv4', barPct: 10 }
-  };
-
-  const AXIS_LABELS = {
-    membership: '契約性', privacy: '情報管理',
-    finance: '財務健全性', personnel: '服務規律', facilities: '公物管理'
-  };
-  const AXIS_ICONS = {
-    membership: '📋', privacy: '🔒',
-    finance: '💰', personnel: '👩‍🏫', facilities: '🏫'
-  };
-  const ROLE_LABELS = {
-    parent: '保護者', officer: 'PTA役員', school: '学校・教育委員会'
-  };
-
-  const MODE_ALIASES = {
-    parent: 'parent',
-    parents: 'parent',
-    guardian: 'parent',
-    officer: 'officer',
-    officers: 'officer',
-    'pta-officer': 'officer',
-    pta: 'officer',
-    board: 'school',
-    school: 'school',
-    schools: 'school',
-    'education-board': 'school',
-    'school-board': 'school',
-    admin: 'school'
-  };
-
-  function getRequestedMode() {
-    const params = new URLSearchParams(window.location.search);
-    const rawMode = params.get('mode') || window.location.hash.replace(/^#/, '');
-    if (!rawMode) return null;
-    return MODE_ALIASES[rawMode.trim().toLowerCase()] || null;
-  }
-
-  // ===== OVERALL RISK JUDGE =====
-  function judgeOverall(counts) {
-    if (counts[4] > 0) return {
-      level: 4, cls: 'lv4',
-      eyebrow: '⛔ 最優先是正',
-      title: '重大な法的違反が検出されました',
-      summary: '一つ以上の項目で、法的に重大な問題が確認されました。民法・個人情報保護法・地方公務員法等への抵触が明白であり、即時の対応が必要です。行政への相談・弁護士への確認を強く推奨します。'
-    };
-    if (counts[3] > 0) return {
-      level: 3, cls: 'lv3',
-      eyebrow: '⚠️ 法的リスク高',
-      title: '違法リスクが高い運用があります',
-      summary: '法令との整合性を欠く可能性が高い運用が含まれています。保護者からの照会・返還請求・教育委員会の是正指導がいつ来てもおかしくない状態です。慣例ではなく法的根拠に基づいた再設計が必要です。'
-    };
-    if (counts[2] > 0) return {
-      level: 2, cls: 'lv2',
-      eyebrow: '🟡 要改善',
-      title: '制度逸脱リスクがあります',
-      summary: '直ちに違法とまでは言い切れないものの、任意性・透明性・公私分離を弱める運用が含まれています。保護者の権利意識の高まりにより、いつ問題化してもおかしくありません。段階的な適正化を進めてください。'
-    };
-    if (counts[1] > 0) return {
-      level: 1, cls: 'lv1',
-      eyebrow: '🔵 要注意',
-      title: '改善の余地があります',
-      summary: '主要な項目は比較的適正ですが、一部に注意が必要な運用が見られます。横浜市通知等の最新の行政指針を踏まえた確認・改善を継続してください。'
-    };
-    return {
-      level: 0, cls: 'lv0',
-      eyebrow: '✅ 適正水準',
-      title: '適正運営に近い状態です',
-      summary: '主要論点において、契約性・自主性・公私分離が比較的明確に保たれています。引き続き横浜市通知等の最新動向を確認しながら適正運営を維持してください。'
-    };
-  }
-
-  // ===== APP =====
-  const App = {
-    role: null, entryRole: null, step: 0, answers: [],
-
-    init() {
-      document.querySelectorAll('[data-role]').forEach(btn =>
-        btn.addEventListener('click', () => this.start(btn.dataset.role)));
-      document.getElementById('restartAudit').addEventListener('click', () => this.reset());
-      document.getElementById('backToHome').addEventListener('click', () => window.location.href = '../index.html');
-      document.getElementById('shareResult').addEventListener('click', () => this.share());
-      const printBtn = document.getElementById('printResult');
-      if (printBtn) printBtn.addEventListener('click', () => window.print());
-      document.getElementById('prevQuestion').addEventListener('click', () => this.prev());
-      const regenBtn = document.getElementById('regenerateAssessment');
-      if (regenBtn) regenBtn.addEventListener('click', () => this.generateAssessment());
-      document.getElementById('modalClose').addEventListener('click', () =>
-        document.getElementById('lawModal').classList.remove('is-open'));
-      document.getElementById('lawModal').addEventListener('click', e => {
-        if (e.target === e.currentTarget) e.currentTarget.classList.remove('is-open');
-      });
-      const requestedMode = getRequestedMode();
-      if (requestedMode) {
-        this.entryRole = requestedMode;
-        this.start(requestedMode);
-      }
-    },
-
-    start(role) {
-      this.role = role; this.step = 0; this.answers = [];
-      this.toggle('intro', false); this.toggle('question', true); this.toggle('result', false);
-      this.renderQuestion();
-    },
-
-    reset() {
-      this.role = null; this.step = 0; this.answers = [];
-      if (this.entryRole) {
-        this.start(this.entryRole);
-        return;
-      }
-      this.toggle('intro', true); this.toggle('question', false); this.toggle('result', false);
-      const intro = document.getElementById('screen-intro');
-      if (intro) {
-        const top = intro.getBoundingClientRect().top + window.pageYOffset - 80;
-        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
-      }
-    },
-
-    toggle(name, show) {
-      const el = document.getElementById(`screen-${name}`);
-      if (el) el.classList.toggle('hidden', !show);
-    },
-
-    questions() { return AUDIT_DB[this.role] || []; },
-
-    renderQuestion() {
-      const qs = this.questions();
-      const q = qs[this.step];
-      if (!q) return;
-
-      const pct = (this.step / qs.length) * 100;
-      document.getElementById('progressFill').style.width = pct + '%';
-      document.getElementById('questionCounter').textContent = `${this.step + 1} / ${qs.length}`;
-      document.getElementById('questionCategory').textContent = `${q.axisIcon || ''} ${AXIS_LABELS[q.axis] || q.cat} — ${q.cat}`;
-      document.getElementById('questionText').textContent = q.q;
-
-      const container = document.getElementById('questionOptions');
-      container.innerHTML = '';
-      q.opts.forEach((opt, i) => {
-        const btn = document.createElement('button');
-        btn.className = 'q-option';
-        btn.innerHTML = `
-          <span class="q-option-mark">${i + 1}</span>
-          <span class="q-option-text">${opt.t}</span>`;
-        btn.addEventListener('click', () => {
-          this.answers[this.step] = { q, opt };
-          if (this.step < qs.length - 1) { this.step++; this.renderQuestion(); }
-          else this.finish();
-        });
-        container.appendChild(btn);
-      });
-
-      const prev = document.getElementById('prevQuestion');
-      prev.disabled = this.step === 0;
-      const qScreen = document.getElementById('screen-question');
-      if (qScreen) {
-        const top = qScreen.getBoundingClientRect().top + window.pageYOffset - 80;
-        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
-      }
-    },
-
-    prev() { if (this.step > 0) { this.step--; this.renderQuestion(); } },
-
-    finish() {
-      this.toggle('question', false);
-      this.toggle('result', true);
-      this.renderResult();
-      const shell = document.querySelector('.audit-shell');
-      if (shell) {
-        const top = shell.getBoundingClientRect().top + window.pageYOffset - 80;
-        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
-      }
-    },
-
-    renderResult() {
-      const counts = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 };
-      const axisMax = {};
-      this.answers.forEach(({ q, opt }) => {
-        counts[opt.level]++;
-        if (!(q.axis in axisMax) || opt.level > axisMax[q.axis]) axisMax[q.axis] = opt.level;
-      });
-
-      const overall = judgeOverall(counts);
-
-      // Banner
-      const banner = document.getElementById('riskBanner');
-      banner.className = `result-risk-banner ${overall.cls}`;
-      document.getElementById('bannerEyebrow').textContent = overall.eyebrow;
-      document.getElementById('bannerTitle').textContent = overall.title;
-      document.getElementById('bannerSummary').textContent = overall.summary;
-
-      // Banner counts
-      const bannerCounts = document.getElementById('bannerCounts');
-      bannerCounts.innerHTML = Object.entries(counts).map(([lv, cnt]) => {
-        if (cnt === 0) return '';
-        const rc = RISK_CONFIG[lv];
-        return `<div class="banner-count-chip">
-          <span class="banner-count-num">${cnt}</span>
-          <span>${rc.label}</span>
-        </div>`;
-      }).join('');
-
-      // Axis bars
-      const axisBars = document.getElementById('axisBars');
-      axisBars.innerHTML = Object.entries(AXIS_LABELS).map(([axis, label]) => {
-        const lv = axisMax[axis] ?? 0;
-        const rc = RISK_CONFIG[lv];
-        const pct = 100 - (lv * 22);
-        return `<div class="axis-bar-item">
-          <div class="axis-bar-head">
-            <div class="axis-bar-name">${AXIS_ICONS[axis]} ${label}</div>
-            <div class="axis-bar-risk-label" style="background:${rc.color}22; color:${rc.color};">${rc.label}</div>
-          </div>
-          <div class="axis-bar-track">
-            <div class="axis-bar-fill fill-${rc.cls}" style="width:${Math.max(8, pct)}%"></div>
-          </div>
-        </div>`;
-      }).join('');
-
-      // Count grid
-      const countGrid = document.getElementById('riskCountGrid');
-      countGrid.innerHTML = Object.entries(RISK_CONFIG).map(([lv, rc]) => `
-        <div class="risk-count-cell ${rc.cls}">
-          <div class="risk-count-num">${counts[lv]}</div>
-          <div class="risk-count-name">${rc.label}</div>
-        </div>`).join('');
-
-      // Answer details
-      const details = document.getElementById('resultDetails');
-      details.innerHTML = '';
-      this.answers.forEach(({ q, opt }) => {
-        const rc = RISK_CONFIG[opt.level];
-        const links = (opt.links || []).map(l =>
-          `<a href="${l.url}" class="answer-link" target="_blank" rel="noopener noreferrer">${l.label} →</a>`
-        ).join('');
-        const lawLinks = (opt.laws || []).map(key => {
-          const data = window.LAW_DATA?.[key];
-          if (!data) return '';
-          return `<button class="answer-link" onclick="App.openLaw('${key}')">⚖️ ${data.title}</button>`;
-        }).join('');
-
-        const card = document.createElement('div');
-        card.className = `answer-card ${rc.cls}`;
-        card.innerHTML = `
-          <div class="answer-card-head">
-            <div class="answer-cat">${AXIS_ICONS[q.axis]} ${q.cat}</div>
-            <div class="answer-risk-pill ${rc.cls}">${rc.shortLabel} ${rc.label}</div>
-          </div>
-          <div class="answer-choice">「${opt.t}」</div>
-          <div class="answer-advice">${opt.adv}</div>
-          ${lawLinks || links ? `<div class="answer-links">${lawLinks}${links}</div>` : ''}
-        `;
-        details.appendChild(card);
-      });
-
-      // Set date
-      const now = new Date();
-      const y = now.getFullYear();
-      const m = now.getMonth() + 1;
-      const d = now.getDate();
-      document.getElementById('assessmentDate').textContent = `${y}年${m}月${d}日`;
-
-      // Generate comprehensive assessment
-      this.generateAssessment();
-    },
-
-    // ===== COMPREHENSIVE ASSESSMENT GENERATION (CLIENT-SIDE TEMPLATE) =====
-    generateAssessment() {
-      const bodyEl = document.getElementById('assessmentBody');
-      const loadingEl = document.getElementById('assessmentLoading');
-      const regenBtn = document.getElementById('regenerateAssessment');
-
-      if (loadingEl) loadingEl.style.display = 'none';
-      if (regenBtn) regenBtn.disabled = false;
-
-      const counts = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 };
-      const axisProblems = {};
-      const criticalItems = [];
-      const illegalItems = [];
-      const actionLinks = new Set();
-
-      this.answers.forEach(({ q, opt }) => {
-        counts[opt.level]++;
-        if (!axisProblems[q.axis]) axisProblems[q.axis] = [];
-        axisProblems[q.axis].push({ cat: q.cat, level: opt.level, adv: opt.adv });
-        if (opt.level >= 4) {
-          criticalItems.push({ cat: q.cat, adv: opt.adv, links: opt.links || [] });
-          (opt.links || []).forEach(l => actionLinks.add(JSON.stringify(l)));
-        }
-        if (opt.level === 3) {
-          illegalItems.push({ cat: q.cat, adv: opt.adv, links: opt.links || [] });
-          (opt.links || []).forEach(l => actionLinks.add(JSON.stringify(l)));
-        }
-      });
-
-      const overall = judgeOverall(counts);
-      const hasLevel4 = counts[4] > 0;
-      const hasLevel3 = counts[3] > 0;
-      const hasLevel2 = counts[2] > 0;
-      const totalProblems = counts[4] + counts[3] + counts[2];
-      const roleLabel = ROLE_LABELS[this.role] || '';
-
-      // ===== 総評 =====
-      let summaryText = '';
-      if (hasLevel4) {
-        summaryText = `本チェックの結果、${roleLabel}の立場から見て<strong>重大な法的違反状態</strong>が検出されました。民法・個人情報保護法・地方公務員法に抵触する問題が複合的に存在し、このまま放置した場合、<strong>不当利得返還請求・損害賠償・刑事責任・懲戒処分</strong>が現実化するリスクがあります。`;
-      } else if (hasLevel3) {
-        summaryText = `本チェックの結果、<strong>違法リスクの高い運用</strong>が複数確認されました。現在は訴訟に至っていなくても、保護者の権利意識が高まるなかで、いつ照会・請求が来てもおかしくない状況です。法的根拠に基づいた運営への再設計が必要です。`;
-      } else if (hasLevel2) {
-        summaryText = `本チェックでは、主要な項目は比較的適正ですが、任意性・透明性・公私分離の観点で<strong>改善の余地</strong>がある運用が含まれています。段階的な適正化を進めることで、より堅牢な運営体制が構築できます。`;
-      } else {
-        summaryText = `本チェックでは、主要論点において<strong>比較的適正な運営</strong>が維持されています。横浜市通知など最新の行政指針を踏まえながら、現在の水準を継続してください。`;
-      }
-
-      // ===== 重大問題一覧 =====
-      let problemsHtml = '';
-      if (criticalItems.length > 0 || illegalItems.length > 0) {
-        const allProblems = [
-          ...criticalItems.map(i => ({ ...i, badge: '重大違法', badgeCls: 'lv4' })),
-          ...illegalItems.map(i => ({ ...i, badge: '違法リスク高', badgeCls: 'lv3' }))
-        ];
-        problemsHtml = `
-          <h4 style="color:#b91c1c;margin-top:20px;margin-bottom:10px;font-size:1rem;display:flex;align-items:center;gap:8px">
-            <span style="background:#fee2e2;border-radius:50%;width:24px;height:24px;display:inline-grid;place-items:center;font-size:.8rem">⛔</span>
-            検出された問題（${allProblems.length}件）
-          </h4>
-          <div style="display:flex;flex-direction:column;gap:10px">
-            ${allProblems.map(p => `
-              <div style="background:#fff5f5;border:1px solid #fecaca;border-left:4px solid #b91c1c;border-radius:10px;padding:14px 16px">
-                <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-                  <span style="font-size:.7rem;font-weight:900;padding:2px 8px;border-radius:999px;background:#fee2e2;color:#b91c1c">${p.badge}</span>
-                  <strong style="font-size:.9rem;color:#1e293b">${p.cat}</strong>
-                </div>
-                <p style="font-size:.87rem;color:#374151;line-height:1.75;margin:0">${p.adv}</p>
-                ${p.links && p.links.length ? `<div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px">${p.links.map(l => `<a href="${l.url}" style="font-size:.78rem;font-weight:800;color:#1d4ed8;text-decoration:none;padding:3px 9px;border-radius:999px;background:#eff6ff;border:1px solid #bfdbfe">${l.label} →</a>`).join('')}</div>` : ''}
-              </div>`).join('')}
-          </div>`;
-      }
-
-      // ===== 優先アクションリスト =====
-      let actionsHtml = '';
-      if (hasLevel4) {
-        actionsHtml = `
-          <h4 style="margin-top:20px;margin-bottom:10px;font-size:1rem">🗂️ 優先アクション（フェーズ別）</h4>
-          <div style="display:flex;flex-direction:column;gap:8px">
-            <div style="background:#fff;border:1.5px solid #fca5a5;border-radius:10px;padding:14px 16px">
-              <div style="font-size:.72rem;font-weight:900;color:#b91c1c;letter-spacing:.06em;margin-bottom:8px">⛔ 最優先（今週中）</div>
-              <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;margin:0;padding:0">
-                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#b91c1c;flex-shrink:0">1.</span>入会手続の即刻停止・オプトイン方式に切り替え</li>
-                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#b91c1c;flex-shrink:0">2.</span>学校名簿のPTAへの提供を即時停止</li>
-                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#b91c1c;flex-shrink:0">3.</span>教職員へのPTA事務依頼を即時停止</li>
-              </ul>
-            </div>
-            <div style="background:#fff;border:1.5px solid #fde68a;border-radius:10px;padding:14px 16px">
-              <div style="font-size:.72rem;font-weight:900;color:#92400e;letter-spacing:.06em;margin-bottom:8px">⚠️ 今期中（1〜3ヶ月）</div>
-              <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;margin:0;padding:0">
-                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#92400e;flex-shrink:0">4.</span>PTA独自口座を開設・学校徴収金から分離</li>
-                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#92400e;flex-shrink:0">5.</span>PTAが独自に入会届で情報を直接収集する体制を構築</li>
-                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#92400e;flex-shrink:0">6.</span>渉外業務の範囲を書面（覚書）で明確化</li>
-              </ul>
-            </div>
-            <div style="background:#fff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px">
-              <div style="font-size:.72rem;font-weight:900;color:#1d4ed8;letter-spacing:.06em;margin-bottom:8px">📋 中期（3〜6ヶ月）</div>
-              <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;margin:0;padding:0">
-                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#1d4ed8;flex-shrink:0">7.</span>会計規程・監査体制の整備</li>
-                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#1d4ed8;flex-shrink:0">8.</span>教育委員会に是正計画を提出・相談</li>
-                <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#1d4ed8;flex-shrink:0">9.</span>総会で規約を改正・適正化を宣言</li>
-              </ul>
-            </div>
-          </div>`;
-      } else if (hasLevel3) {
-        actionsHtml = `
-          <h4 style="margin-top:20px;margin-bottom:10px;font-size:1rem">🗂️ 優先アクション</h4>
-          <div style="background:#fff;border:1.5px solid #fde68a;border-radius:10px;padding:14px 16px">
-            <div style="font-size:.72rem;font-weight:900;color:#92400e;letter-spacing:.06em;margin-bottom:8px">今期中に対応が必要</div>
-            <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;margin:0;padding:0">
-              <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#92400e">→</span>問題項目の改善計画を文書化し、役員会に提出</li>
-              <li style="font-size:.87rem;color:#1e293b;display:flex;gap:8px"><span style="color:#92400e">→</span>入会方式をオプトインへ段階的に移行</li>
-              <li style="font-size:.87mg;color:#1e293b;display:flex;gap:8px"><span style="color:#92400e">→</span>教育委員会への状況説明・相談</li>
-            </ul>
-          </div>`;
-      } else {
-        actionsHtml = `
-          <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:14px 16px;margin-top:16px">
-            <div style="font-size:.87rem;color:#15803d;font-weight:700">✅ 現在の適正な運営状態を維持しながら、横浜市通知など最新の行政指針を年1回確認することをお勧めします。</div>
-          </div>`;
-      }
-
-      // ===== 罰則・リスク =====
-      let penaltyHtml = '';
-      if (hasLevel4) {
-        penaltyHtml = `
-          <h4 style="margin-top:20px;margin-bottom:10px;font-size:1rem;color:#7f1d1d">⚖️ このまま放置した場合の法的リスク</h4>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-            <div style="background:#fff5f5;border-radius:8px;padding:12px">
-              <div style="font-size:.72rem;font-weight:900;color:#b91c1c;margin-bottom:5px">民事リスク</div>
-              <div style="font-size:.83rem;color:#374151;line-height:1.6">不当利得返還請求（民法703条）<br>損害賠償請求（民法709条）<br>役員個人への賠償義務</div>
-            </div>
-            <div style="background:#fff5f5;border-radius:8px;padding:12px">
-              <div style="font-size:.72rem;font-weight:900;color:#b91c1c;margin-bottom:5px">刑事・行政リスク</div>
-              <div style="font-size:.83rem;color:#374151;line-height:1.6">個人情報保護法違反：1年以下懲役/100万円以下罰金<br>地公法違反による懲戒処分<br>教育委員会の是正指導</div>
-            </div>
-          </div>`;
-      } else if (hasLevel3) {
-        penaltyHtml = `
-          <div style="background:#fff5f5;border:1px solid #fecaca;border-radius:10px;padding:12px 16px;margin-top:16px">
-            <div style="font-size:.72rem;font-weight:900;color:#b91c1c;margin-bottom:6px">⚠️ 放置した場合のリスク</div>
-            <div style="font-size:.87rem;color:#374151;line-height:1.7">保護者からの照会・返還請求 / 教育委員会からの是正指導 / 役員個人への賠償リスク</div>
-          </div>`;
-      }
-
-      // ===== 参考リンク =====
-      const linkItems = [...actionLinks].map(s => JSON.parse(s));
-      let linksHtml = '';
-      if (linkItems.length > 0) {
-        linksHtml = `
-          <h4 style="margin-top:20px;margin-bottom:10px;font-size:1rem">📎 関連ページ・資料</h4>
-          <div style="display:flex;flex-wrap:wrap;gap:8px">
-            ${linkItems.map(l => `<a href="${l.url}" style="display:inline-flex;align-items:center;gap:5px;font-size:.82rem;font-weight:800;color:var(--navy);text-decoration:none;padding:7px 13px;border-radius:999px;background:#f1f5f9;border:1px solid #e2e8f0">${l.label} →</a>`).join('')}
-            <a href="../guide-pta.html#pdf-officer" style="display:inline-flex;align-items:center;gap:5px;font-size:.82rem;font-weight:800;color:#15803d;text-decoration:none;padding:7px 13px;border-radius:999px;background:#f0fdf4;border:1px solid #bbf7d0">📄 PDF雛形を入手する →</a>
-          </div>`;
-      }
-
-      const html = `
-        <div style="font-size:.95rem;color:#374151;line-height:1.9;margin-bottom:4px">${summaryText}</div>
-        ${problemsHtml}
-        ${penaltyHtml}
-        ${actionsHtml}
-        ${linksHtml}
-        <div style="margin-top:20px;padding:14px;background:#f8fafc;border-radius:10px;font-size:.8rem;color:#64748b;line-height:1.7">
-          ※ 本評価書は入力されたチェック結果に基づき自動生成されたものです。法律解釈は個別事情により異なります。重大な違法性が疑われる場合は弁護士または行政機関へご相談ください。
-        </div>`;
-
-      if (bodyEl) {
-        bodyEl.innerHTML = html;
-        bodyEl.style.display = 'block';
-      }
-    },
-
-
-    openLaw(key) {
-      const data = window.LAW_DATA?.[key];
-      const modal = document.getElementById('lawModal');
-      const body = document.getElementById('modalBody');
-      if (!data || !modal || !body) return;
-      const evidenceHtml = (data.evidence || []).map(item =>
-        `<a href="${item.url}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:8px;background:rgba(26,54,93,.08);color:var(--color-navy);font-weight:700;text-decoration:none;margin:4px;">${item.label} ↗</a>`
-      ).join('');
-      body.innerHTML = `
-        <h2 style="font-family:'Noto Serif JP',serif;color:var(--color-navy);margin-bottom:12px;">${data.title}</h2>
-        ${data.body}
-        ${evidenceHtml ? `<div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;">${evidenceHtml}</div>` : ''}`;
-      modal.classList.add('is-open');
-    },
-
-    share() {
-      const title = document.getElementById('bannerTitle').textContent;
-      const text = `【PTA運営チェック】\n判定: ${title}\n\nPTA適正化推進委員会の運営チェックアプリで確認しました。`;
-      window.open(
-        `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(location.href)}`,
-        '_blank', 'noopener'
-      );
-    }
-  };
-
-  window.App = App;
-  window.addEventListener('DOMContentLoaded', () => App.init());
-  </script>
+  <script src="check-app.js"></script>
 </body>
 </html>
