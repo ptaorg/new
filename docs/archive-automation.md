@@ -62,12 +62,20 @@ npm run generate:all
 個別に実行する場合:
 
 ```bash
+npm run sync:materials
+npm run sync:materials:write
 npm run generate:schools
 npm run generate:archive
 npm run generate:sitemap
 ```
 
 ## スクリプト
+
+- `scripts/sync-school-materials.js`
+  - `assets/archive/{自治体slug}/{school-slug}/` に置いた画像・PDFを検出し、学校別 JSON の `materials.sourceImages` と `materials.pdf` を更新します。
+  - 対象画像は `.png`, `.jpg`, `.jpeg`, `.webp` です。
+  - 対象PDFは `.pdf` です。PDFが1件だけある場合は `materials.pdf` に設定します。複数ある場合は、勝手に1件を選ばず警告だけを出します。
+  - `status`, `statusClass`, `confirmedFacts`, `unconfirmedPoints`, `riskFlags`, `evaluation`, `humanReviewRequired`, `lastReviewed` は変更しません。
 
 - `scripts/generate-school-pages.js`
   - `data/schools/*/*.json` を読み込み、学校別 HTML を生成します。
@@ -81,6 +89,52 @@ npm run generate:sitemap
 - `scripts/generate-sitemap.js`
   - 公開 HTML と JSON 由来の学校別 URL から `sitemap.xml` を生成します。
   - 正規 URL は `https://ptaorg.com/` を使います。
+
+## 資料画像・PDFの同期
+
+資料画像とPDFは、学校ごとに次のフォルダへ置きます。
+
+```text
+assets/archive/atsugi/{school-slug}/
+```
+
+例:
+
+```text
+assets/archive/atsugi/echi-es/01.png
+assets/archive/atsugi/echi-es/02.png
+assets/archive/atsugi/echi-es/original.pdf
+```
+
+dry-run では JSON を書き換えず、変更予定だけを表示します。
+
+```bash
+npm run sync:materials
+```
+
+問題がなければ write を実行します。
+
+```bash
+npm run sync:materials:write
+```
+
+通常、画像やPDFが見つからない学校については、既存JSONの参照を勝手に削除しません。存在しない画像参照を整理したい場合だけ、直接スクリプトに `--clean` を付けて実行します。
+
+```bash
+node scripts/sync-school-materials.js --dry-run --clean
+node scripts/sync-school-materials.js --write --clean
+```
+
+`sync-school-materials.js` は資料ファイルの同期補助であり、評価欄を自動変更するものではありません。評価文、疑義フラグ、確認できる事実、資料上確認できない点は、資料確認後に人がJSONへ反映してください。
+
+画像・PDFを置いた後の標準手順:
+
+1. `assets/archive/atsugi/{slug}/` に画像・PDFを置く
+2. `npm run sync:materials`
+3. 問題なければ `npm run sync:materials:write`
+4. `npm run generate:all`
+5. 画面で確認
+6. commit / push
 
 ## 手動確認が必要な項目
 
