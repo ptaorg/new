@@ -24,65 +24,64 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/archive-school.css">
+  <link rel="stylesheet" href="/css/archive.css">
 </head>
-<body class="archive-school-body">
+<body>
   <main class="archive-school-page">
-    <nav class="archive-school-back" aria-label="戻るリンク">
-      <a href="/national-archive.html#atsugi-schools">全国資料館へ戻る</a>
-    </nav>
+    <p><a class="archive-back" href="/national-archive.html">全国資料館へ戻る</a></p>
 
-    <header class="archive-school-hero">
-      <div class="archive-school-kicker">Atsugi 小学校</div>
+    <section class="archive-hero">
+      <div class="archive-kicker">ATSUGI 小学校</div>
       <h1>荻野小学校 PTA関連資料・評価</h1>
       <p class="archive-school-author">作成主体：PTA適正化推進委員会</p>
       <div class="archive-print-actions archive-print-top">
         <button class="archive-print-button" type="button" onclick="window.print()">このページをPDF保存</button>
       </div>
       <p>このページでは、PTA入会案内、PTA入会申込書、学校納入金・会費徴収資料等の確認状況を整理します。画像とPDFは、個人情報・印影・口座情報・QRコード等の確認が完了するまで掲載しません。</p>
-    </header>
+    </section>
 
-    <section class="archive-school-section">
+    <section class="archive-section">
       <h2>資料確認状況</h2>
-      <dl class="archive-school-status">
-        <div><dt>自治体</dt><dd>厚木市</dd></div>
-        <div><dt>学校区分</dt><dd>小学校</dd></div>
-        <div class="status-card eval-pending"><dt>評価状況</dt><dd>評価準備中</dd></div>
-      </dl>
+      <div class="archive-grid">
+        <div class="archive-box"><div class="archive-label">自治体</div><div class="archive-value">厚木市</div></div>
+        <div class="archive-box"><div class="archive-label">学校区分</div><div class="archive-value">小学校</div></div>
+        <div class="archive-box archive-status-card eval-pending"><div class="archive-label">評価状況</div><div class="archive-value">評価準備中</div></div>
+        <div class="archive-box"><div class="archive-label">確認資料</div><div class="archive-value">未確認</div></div>
+        <div class="archive-box"><div class="archive-label">入会申込書</div><div class="archive-value">未確認</div></div>
+        <div class="archive-box"><div class="archive-label">PDF</div><div class="archive-value">準備中</div></div>
+      </div>
     </section>
 
-    <section class="archive-school-section">
+    <section class="archive-section">
       <h2>資料画像</h2>
-      <p class="archive-school-placeholder">資料画像準備中</p>
+      <p class="archive-muted">資料画像準備中</p>
     </section>
 
-    <section class="archive-school-section">
+    <section class="archive-section">
       <h2>確認できる事実</h2>
       <ul>
           <li>資料確認後に記載します。</li>
         </ul>
     </section>
 
-    <section class="archive-school-section">
+    <section class="archive-section">
       <h2>資料上確認できない点</h2>
       <ul>
           <li>PTA入会案内、PTA入会申込書、学校納入金・会費徴収資料等を確認後に記載します。</li>
         </ul>
     </section>
 
-    <section class="archive-school-section">
+    <section class="archive-section">
       <h2>疑義フラグ</h2>
-      <div class="archive-school-flags">
-        <span>未評価</span>
-      </div>
+      <p><span class="archive-tag">未評価</span></p>
     </section>
 
-    <section class="archive-school-section">
+    <section class="archive-section">
       <h2>当委員会の評価</h2>
       <p>評価準備中</p>
     </section>
 
-    <section class="archive-school-section archive-print-save-section">
+    <section class="archive-section archive-print-save-section">
       <h2>このページをPDF保存</h2>
       <p class="archive-print-note">このボタンを押すと、資料画像・確認できる事実・疑義フラグ・当委員会評価を含めた学校別ページ全体をPDFとして保存できます。ブラウザの印刷画面で「PDFに保存」を選択してください。</p>
       <button class="archive-print-button" type="button" onclick="window.print()">このページをPDF保存</button>
