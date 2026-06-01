@@ -70,7 +70,7 @@
 .anchor-nav {
   background: #fff;
   border-bottom: 2px solid #f0f4f8;
-  position: sticky; top: 0; z-index: 80;
+  position: sticky; top: 74px; z-index: 120;
   box-shadow: 0 2px 10px rgba(0,0,0,.06);
 }
 .anchor-nav-inner {
@@ -256,24 +256,90 @@
 </head>
 <body>
 
-<header class="site-header" id="site-header">
-  <div class="header-inner">
-    <a href="index.html" class="site-logo">
-      <span class="logo-mark">PTA</span>
-      <span class="logo-text">適正化推進委員会</span>
+<!-- =========================================
+     ヘッダー
+     ========================================= -->
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="assets/popc-logo.png" alt="PTA適正化推進委員会ロゴ">
+      <span>PTA適正化推進委員会</span>
     </a>
-    <nav class="header-nav" id="header-nav">
+    <div class="header-search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" class="search-input" placeholder="キーワードで検索…" aria-label="サイト内検索">
+      <div class="search-results-dropdown"></div>
+    </div>
+    <nav class="desktop-nav" aria-label="主要ナビゲーション">
       <a href="index.html" class="nav-link">トップ</a>
-      <a href="guide-parent.html" class="nav-link">保護者の方へ</a>
-      <a href="guide-pta.html" class="nav-link">PTA役員の方へ</a>
-      <a href="compliance.html" class="nav-link">現場実例</a>
-      <a href="board-responses.html" class="nav-link">教委回答</a>
+      <div class="nav-item has-dropdown">
+        <a href="#" class="nav-link">立場別入り口</a>
+        <div class="mega-menu">
+          <div class="mega-col">
+            <h4>立場別ガイド</h4>
+            <ul>
+              <li><a href="guide-parent.html">保護者の方へ</a></li>
+              <li><a href="guide-pta.html">PTA役員の方へ</a></li>
+              <li><a href="guide-board.html">学校・教育委員会の方へ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-dropdown">
+        <a href="#" class="nav-link">資料</a>
+        <div class="mega-menu">
+          <div class="mega-col">
+            <h4>証拠資料</h4>
+            <ul>
+              <li><a href="board-responses.html">教育委員会の回答（約100件）</a></li>
+              <li><a href="national-archive.html">全国資料館</a></li>
+              <li><a href="administrative-materials.html">行政資料整理</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <h4>ガイド・ツール</h4>
+            <ul>
+              <li><a href="guideline.html">適正化ガイドライン</a></li>
+              <li><a href="audit/index.html">運営チェックアプリ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-dropdown">
+        <a href="#" class="nav-link">研究論考</a>
+        <div class="mega-menu">
+          <div class="mega-col">
+            <h4>研究・論考</h4>
+            <ul>
+              <li><a href="journal.html">論考・調査報告</a></li>
+              <li><a href="report.html">総合分析レポート</a></li>
+              <li><a href="law-map.html">法制度マップ</a></li>
+              <li><a href="cases.html">判例整理</a></li>
+              <li><a href="timeline.html">PTA制度史</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a href="mailto:info@ptaorg.com" class="nav-link">応援</a>
+      <a href="audit/index.html" class="btn-gold">⚙️ 運営チェック</a>
     </nav>
-    <button class="hamburger" id="hamburger" aria-label="メニュー">
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileOverlay">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
+<div class="mobile-overlay" id="mobileOverlay">
+  <a href="index.html" class="mobile-link"><span>Top</span>トップ</a>
+  <a href="guide-parent.html" class="mobile-link"><span>Parents</span>保護者の方へ</a>
+  <a href="guide-pta.html" class="mobile-link"><span>PTA Board</span>PTA役員の方へ</a>
+  <a href="guide-board.html" class="mobile-link"><span>School / Board</span>学校・教育委員会の方へ</a>
+  <a href="board-responses.html" class="mobile-link"><span>Evidence</span>教育委員会の回答（約100件）</a>
+  <a href="national-archive.html" class="mobile-link"><span>Archive</span>全国資料館</a>
+  <a href="journal.html" class="mobile-link"><span>Research</span>論考・調査報告</a>
+  <a href="audit/index.html" class="mobile-link"><span>Check</span>運営チェックアプリ</a>
+  <a href="mailto:info@ptaorg.com" class="mobile-link"><span>Support</span>応援・お問い合わせ</a>
+  <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
+</div>
 
 <!-- HERO -->
 <section class="pm-hero">
@@ -578,29 +644,95 @@
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="footer-inner wrap">
-    <div class="footer-logo">
-      <span class="logo-mark">PTA</span>
-      <span class="logo-text">適正化推進委員会</span>
-    </div>
-    <nav class="footer-nav">
-      <a href="index.html">トップ</a>
-      <a href="proper-management.html">正しい運営</a>
-      <a href="compliance.html">現場実例</a>
-      <a href="guide-pta.html">PTA役員ガイド</a>
-      <a href="board-responses.html">教委回答</a>
-    </nav>
-    <p class="footer-copy">&copy; PTA適正化推進委員会</p>
-  </div>
-</footer>
+<!-- =========================================
+     フッター
+     ========================================= -->
+<footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
 
-<script>
-const hdr = document.getElementById('site-header');
-window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 20); });
-const hbg = document.getElementById('hamburger');
-const nav = document.getElementById('header-nav');
-if (hbg) hbg.addEventListener('click', () => { nav.classList.toggle('open'); hbg.classList.toggle('open'); });
-</script>
+        <div>
+          <h3>PTA適正化推進委員会</h3>
+          <div class="footer-contact">
+            <p>〒235-0021<br>神奈川県横浜市磯子区岡村8-17-5-301</p>
+            <p><strong>070-9012-7772</strong></p>
+            <p><a href="mailto:info@ptaorg.com">info@ptaorg.com</a></p>
+          </div>
+          <a href="https://yokomusubi.city.yokohama.lg.jp/organizations/detail/f69c7ad2-cf21-4dfa-87bb-9c891874eb6b/" target="_blank" rel="noopener noreferrer" class="yokomusubi-img-link">
+            <img src="assets/yokomusubi.png" alt="よこむすび">
+          </a>
+          <p class="yokomusubi-tagline-out">磯子区「よこむすび」掲載団体</p>
+          <p class="yokomusubi-meta-out">登録番号：磯子12406　分類番号：12-4（市民活動・社会教育推進）</p>
+        </div>
+
+        <div>
+          <h4>公式発信</h4>
+          <p class="footer-sns-sub">最新資料・論考・動画はこちら</p>
+          <div class="footer-sns-cards">
+            <a href="https://x.com/jjjqqqxxx0852" target="_blank" rel="noopener" class="fsns-card fsns-x">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.836L2.25 2.25H8.08l4.263 5.636L18.244 2.25Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></svg>
+              <div>
+                <div class="fsns-name">X</div>
+                <div class="fsns-desc">速報・資料更新</div>
+              </div>
+            </a>
+            <a href="https://www.youtube.com/@PTA%E9%81%A9%E6%AD%A3%E5%8C%96%E6%8E%A8%E9%80%B2%E5%A7%94%E5%93%A1%E4%BC%9A" target="_blank" rel="noopener" class="fsns-card fsns-yt">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <div>
+                <div class="fsns-name">YouTube</div>
+                <div class="fsns-desc">動画で解説</div>
+              </div>
+            </a>
+            <a href="https://note.com/hiroshisatoh" target="_blank" rel="noopener" class="fsns-card fsns-note">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H4zm2 3h10v2H6V8zm0 4h10v2H6v-2zm0 4h6v2H6v-2z"/></svg>
+              <div>
+                <div class="fsns-name">note</div>
+                <div class="fsns-desc">論考・研究ノート</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4>立場別</h4>
+          <ul>
+            <li><a href="guide-parent.html">保護者</a></li>
+            <li><a href="guide-pta.html">PTA役員</a></li>
+            <li><a href="guide-board.html">教育委員会・学校</a></li>
+            <li><a href="guide-research.html">研究者・記者</a></li>
+            <li><a href="guide-board.html">教育委員会向け指針</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>論点</h4>
+          <ul>
+            <li><a href="membership.html">入会手続</a></li>
+            <li><a href="privacy.html">個人情報</a></li>
+            <li><a href="fee-collection.html">会費徴収</a></li>
+            <li><a href="personnel.html">教職員関与</a></li>
+            <li><a href="facilities.html">施設利用</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>資料・支援</h4>
+          <ul>
+            <li><a href="board-responses.html">教育委員会の回答</a></li>
+            <li><a href="national-archive.html">全国資料館</a></li>
+            <li><a href="journal.html">論考・調査報告</a></li>
+            <li><a href="report.html">総合分析レポート</a></li>
+            <li><a href="audit/index.html">運営チェックアプリ</a></li>
+            <li><a href="law-map.html">法制度マップ</a></li>
+            <li><a href="guideline.html">適正化ガイドライン</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <p class="copyright">© PTA適正化推進委員会</p>
+  </footer>
+
+<script src="js/site.js"></script>
 </body>
 </html>
