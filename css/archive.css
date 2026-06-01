@@ -293,6 +293,145 @@ body {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.36);
 }
 
+/* documents.html 資料ページ用 */
+.document-page {
+  width: min(100% - 32px, 1080px);
+  margin: 0 auto;
+  padding: 40px 0 72px;
+  color: #0f2742;
+}
+
+.document-hero {
+  background: #0b2a4a;
+  color: #ffffff;
+  border-radius: 22px;
+  padding: 42px 44px;
+  box-shadow: 0 20px 48px rgba(11, 42, 74, 0.18);
+  border-bottom: 5px solid #d6ae2b;
+  margin-bottom: 24px;
+}
+
+.document-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  line-height: 1.25;
+  margin: 0.35em 0;
+}
+
+.document-hero p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.document-hero .document-subtitle {
+  color: #f4d86b;
+  font-weight: 900;
+}
+
+.document-kicker {
+  color: #f4d86b;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.document-section {
+  background: #ffffff;
+  border: 1px solid #dce3ea;
+  border-radius: 20px;
+  padding: 28px;
+  margin: 24px 0;
+  box-shadow: 0 14px 32px rgba(15, 39, 66, 0.06);
+}
+
+.document-section-grid .document-section {
+  margin: 0;
+}
+
+.document-section h2 {
+  border-bottom: 2px solid #e3c56a;
+  padding-bottom: 10px;
+  color: #0b2a4a;
+  margin-top: 0;
+}
+
+.document-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.document-meta-box {
+  background: #f7f9fb;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.document-label {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #607184;
+}
+
+.document-value {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #0b2a4a;
+}
+
+.document-note {
+  color: #607184;
+  background: #f7f9fb;
+  border-left: 5px solid #d6ae2b;
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+
+.document-figure {
+  margin: 24px 0;
+  background: #ffffff;
+  border: 1px solid #dce3ea;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 10px 24px rgba(15, 39, 66, 0.05);
+}
+
+.document-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #dce3ea;
+  background: #ffffff;
+}
+
+.document-figure figcaption {
+  margin-top: 10px;
+  color: #607184;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.document-evaluation {
+  border-left: 6px solid #d6ae2b;
+  background: #fff8df;
+}
+
+.document-link-list {
+  padding-left: 1.2em;
+}
+
+.document-link-list a {
+  color: #0b376d;
+  font-weight: 800;
+}
+
+.document-section ul {
+  padding-left: 1.35em;
+}
+
+.document-section li {
+  margin: 0.45em 0;
+}
+
 /* スマホ */
 @media (max-width: 720px) {
   .archive-hero {
@@ -318,6 +457,23 @@ body {
 
   .atsugi-school-list .eval-badge {
     margin-top: 2px;
+  }
+
+  .document-page {
+    width: min(100% - 24px, 1080px);
+    padding: 28px 0 56px;
+  }
+
+  .document-hero {
+    padding: 30px 24px;
+  }
+
+  .document-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .document-section {
+    padding: 22px;
   }
 }
 
@@ -370,5 +526,35 @@ body {
     border: 1px solid #333;
     background: #ffffff !important;
     color: #000000 !important;
+  }
+
+  .document-page {
+    max-width: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .document-hero,
+  .document-section,
+  .document-figure {
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .document-hero {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #999 !important;
+  }
+
+  .document-hero p,
+  .document-kicker {
+    color: #000000 !important;
+  }
+
+  .document-figure img {
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 }

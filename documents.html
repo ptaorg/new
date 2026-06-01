@@ -22,6 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/archive.css">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D18ZSSLMH"></script>
@@ -131,15 +132,15 @@
     <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
   </div>
 
-  <main class="document-brief-page">
-    <article class="document-brief" id="documentRoot">
+  <main class="document-page">
+    <article id="documentRoot">
       <nav class="document-breadcrumb" aria-label="パンくず">
         <a href="index.html">トップ</a>
         <span>›</span>
         <span>資料解説</span>
       </nav>
-      <header class="document-brief-hero">
-        <p class="section-kicker">Official Document</p>
+      <header class="document-brief-hero document-hero">
+        <p class="section-kicker document-kicker">Official Document</p>
         <h1>資料解説</h1>
         <p>PTA運営に関する通知・公文書・PDF資料を、原文PDFを開く前に要点で確認できます。</p>
       </header>
@@ -204,6 +205,58 @@
       const relatedLinks = (items) => (items || []).map((item) =>
         `<a href="${escapeHtml(item.url)}">${escapeHtml(item.label)}</a>`
       ).join('');
+      const paragraphItems = (items) => (Array.isArray(items) ? items : [items]).filter(Boolean)
+        .map((item) => `<p>${escapeHtml(item)}</p>`).join('');
+      const metaItems = (doc) => (doc.metaItems || [
+        { label: '資料名', value: doc.documentName },
+        { label: '発出主体', value: doc.issuer },
+        { label: '日付', value: doc.date },
+        { label: '資料の種類', value: doc.type }
+      ]).map((item) => `
+        <div class="document-meta-item document-meta-box"><span class="document-label">${escapeHtml(item.label)}</span><strong class="document-value">${escapeHtml(item.value)}</strong></div>
+      `).join('');
+      const textSection = (title, paragraphs, className = '') => paragraphs ? `
+        <section class="document-point-list document-section ${className}" style="margin-top:18px">
+          <h2>${escapeHtml(title)}</h2>
+          ${paragraphItems(paragraphs)}
+        </section>
+      ` : '';
+      const imageSection = (doc) => {
+        if (!doc.images || !doc.images.length) return '';
+        const figures = doc.images.map((image) => `
+          <figure class="document-figure">
+            <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}">
+            <figcaption>${escapeHtml(image.caption)}</figcaption>
+          </figure>
+        `).join('');
+        return `
+          <section class="document-point-list document-section document-images" style="margin-top:18px">
+            <h2>${escapeHtml(doc.imagesTitle || '資料画像')}</h2>
+            ${doc.imagesNote ? `<p class="document-note">${escapeHtml(doc.imagesNote)}</p>` : ''}
+            ${figures}
+          </section>
+        `;
+      };
+      const originalSection = (doc) => {
+        const links = [];
+        if (doc.pdfUrl) {
+          links.push(`<a class="btn-gold" href="${escapeHtml(doc.pdfUrl)}" target="_blank" rel="noopener">${escapeHtml(doc.pdfLabel || `原文PDFを開く（${doc.pdfSize || '外部リンク'}）`)}</a>`);
+        }
+        links.push('<a class="btn-outline" href="documents.html">資料一覧へ戻る</a>');
+        return `
+          <section class="document-original document-section">
+            <h2>${escapeHtml(doc.originalTitle || '原文を確認する')}</h2>
+            <p>${escapeHtml(doc.originalNote || '詳細な文言や前後関係を確認する場合は、原文PDFを開いてください。引用・申入れ・照会等に使う場合は、必ず原文PDFも確認してください。')}</p>
+            <div class="source-card-actions">${links.join('')}</div>
+          </section>
+        `;
+      };
+      const relatedSection = (doc) => doc.related && doc.related.length && (!doc.keyPoints || !doc.keyPoints.length) ? `
+        <section class="document-point-list document-section" style="margin-top:18px">
+          <h2>${escapeHtml(doc.relatedTitle || '関連ページ')}</h2>
+          <div class="document-related-links">${relatedLinks(doc.related)}</div>
+        </section>
+      ` : '';
 
       function renderList(message) {
         const cards = Object.entries(docs).map(([docId, doc]) => `
@@ -216,12 +269,12 @@
           <nav class="document-breadcrumb" aria-label="パンくず">
             <a href="index.html">トップ</a><span>›</span><span>資料解説</span>
           </nav>
-          <header class="document-brief-hero">
-            <p class="section-kicker">Document Briefs</p>
+          <header class="document-brief-hero document-hero">
+            <p class="section-kicker document-kicker">Document Briefs</p>
             <h1>資料解説</h1>
             <p>${message ? escapeHtml(message) : '原文PDFを開く前に、PTA運営上どこを確認すべきかを整理しています。'}</p>
           </header>
-          <section class="document-list-panel" style="margin-top:18px">
+          <section class="document-list-panel document-section" style="margin-top:18px">
             <h2>資料を選ぶ</h2>
             <p>要点ページを確認したあと、必要な場合だけ原文PDFを開いてください。</p>
             <div class="document-list-grid">${cards}</div>
@@ -248,49 +301,41 @@
         <nav class="document-breadcrumb" aria-label="パンくず">
           <a href="index.html">トップ</a><span>›</span><a href="documents.html">資料解説</a><span>›</span><span>${escapeHtml(doc.title)}</span>
         </nav>
-        <header class="document-brief-hero">
-          <p class="section-kicker">${escapeHtml(doc.category)}</p>
+        <header class="document-brief-hero document-hero">
+          <p class="section-kicker document-kicker">${escapeHtml(doc.category)}</p>
           <h1>${escapeHtml(doc.title)}</h1>
+          ${doc.subtitle ? `<p class="document-subtitle">${escapeHtml(doc.subtitle)}</p>` : ''}
           <p>${escapeHtml(doc.intro)}</p>
-          <div class="document-meta-grid">
-            <div class="document-meta-item"><span>資料名</span><strong>${escapeHtml(doc.documentName)}</strong></div>
-            <div class="document-meta-item"><span>発出主体</span><strong>${escapeHtml(doc.issuer)}</strong></div>
-            <div class="document-meta-item"><span>日付</span><strong>${escapeHtml(doc.date)}</strong></div>
-            <div class="document-meta-item"><span>資料の種類</span><strong>${escapeHtml(doc.type)}</strong></div>
-          </div>
+          <div class="document-meta-grid">${metaItems(doc)}</div>
         </header>
 
+        ${imageSection(doc)}
+        ${textSection(doc.overviewTitle || '資料の概要', doc.overview)}
+
         <div class="document-section-grid">
-          <section class="document-summary-card">
-            <h2>この資料で確認できること</h2>
+          <section class="document-summary-card document-section">
+            <h2>${escapeHtml(doc.checksTitle || 'この資料で確認できること')}</h2>
             <ul>${listItems(doc.checks)}</ul>
           </section>
-          <section class="document-summary-card">
-            <h2>見るべき箇所</h2>
+          <section class="document-summary-card document-section">
+            <h2>${escapeHtml(doc.lookPointsTitle || '見るべき箇所')}</h2>
             <ul>${listItems(doc.lookPoints)}</ul>
           </section>
         </div>
 
-        <section class="document-point-list" style="margin-top:18px">
-          <h2>PTA問題との関係</h2>
-          <p>${escapeHtml(doc.relationship)}</p>
-        </section>
+        ${textSection(doc.relationshipTitle || 'PTA問題との関係', doc.relationship)}
+        ${textSection(doc.significanceTitle || 'PTA運営上の意義', doc.significance)}
 
-        <section class="document-point-list" style="margin-top:18px">
-          <h2>要点</h2>
+        ${doc.keyPoints && doc.keyPoints.length ? `<section class="document-point-list document-section" style="margin-top:18px">
+          <h2>${escapeHtml(doc.keyPointsTitle || '要点')}</h2>
           <ul>${listItems(doc.keyPoints)}</ul>
           <p class="pdf-link-note">このページの要約は、資料を読むための補助です。個別事案の適法性を断定するものではありません。</p>
           <div class="document-related-links">${relatedLinks(doc.related)}</div>
-        </section>
+        </section>` : ''}
 
-        <section class="document-original">
-          <h2>原文を確認する</h2>
-          <p>詳細な文言や前後関係を確認する場合は、原文PDFを開いてください。引用・申入れ・照会等に使う場合は、必ず原文PDFも確認してください。</p>
-          <div class="source-card-actions">
-            <a class="btn-gold" href="${escapeHtml(doc.pdfUrl)}" target="_blank" rel="noopener">原文PDFを開く（${escapeHtml(doc.pdfSize)}）</a>
-            <a class="btn-outline" href="documents.html">資料一覧へ戻る</a>
-          </div>
-        </section>
+        ${textSection(doc.evaluationTitle || '当委員会の評価', doc.evaluation, 'document-evaluation')}
+        ${relatedSection(doc)}
+        ${originalSection(doc)}
       `;
     }());
   </script>
