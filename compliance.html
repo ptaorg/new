@@ -20,14 +20,35 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
     .compliance-hero {
-      background:
-        linear-gradient(135deg, rgba(30,58,95,.96), rgba(22,38,62,.98) 54%, rgba(127,29,29,.9)),
-        radial-gradient(circle at 78% 18%, rgba(212,175,55,.26), transparent 32%);
+      position: relative;
+      overflow: hidden;
+      background: #0b2a4a;
       color: #fff;
       padding: 74px 0 58px;
       border-bottom: 1px solid rgba(212,175,55,.35);
     }
+    .compliance-hero-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .compliance-hero-bg-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.95);
+    }
+    .compliance-hero-bg-img::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(5,17,31,.76) 0%, rgba(5,17,31,.58) 52%, rgba(5,17,31,.36) 100%),
+        linear-gradient(180deg, rgba(5,17,31,.18) 0%, rgba(5,17,31,.42) 100%);
+    }
     .compliance-hero-inner {
+      position: relative;
+      z-index: 1;
       width: min(calc(100% - 40px), 1120px);
       margin-inline: auto;
       display: grid;
@@ -633,7 +654,10 @@
   <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
 </div>
 
-<section class="compliance-hero">
+<section class="compliance-hero compliance-hero--photo">
+  <div class="compliance-hero-bg-img" aria-hidden="true">
+    <img src="assets/slides/3.jpg" alt="" aria-hidden="true" loading="eager">
+  </div>
   <div class="compliance-hero-inner">
     <div>
       <h1>PTA運営の現場実例</h1>

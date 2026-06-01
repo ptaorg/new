@@ -1235,3 +1235,70 @@ button,input,select,textarea{font:inherit}
     justify-content: center;
   }
 }
+
+/* === Shared photo hero backgrounds === */
+.page-hero--photo {
+  position: relative;
+  overflow: hidden;
+  background: #0b2a4a;
+  color: #fff;
+}
+
+.page-hero--photo .page-hero-bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.page-hero--photo .page-hero-bg-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-hero--photo .page-hero-bg-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5, 17, 31, .62) 0%, rgba(5, 17, 31, .34) 42%, rgba(5, 17, 31, .12) 100%),
+    linear-gradient(180deg, rgba(5, 17, 31, .08) 0%, rgba(5, 17, 31, .22) 100%);
+}
+
+.page-hero--photo .page-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero--photo h1,
+.page-hero--photo p {
+  color: #fff;
+}
+
+.page-hero--photo h1 em {
+  color: var(--gold-lt);
+}
+
+.page-hero--photo .page-hero-kicker {
+  background: rgba(212, 175, 55, .18);
+  border: 1px solid rgba(212, 175, 55, .42);
+  color: var(--gold-lt);
+}
+
+.page-hero--photo .btn-outline {
+  color: #fff;
+  border-color: rgba(255, 255, 255, .5);
+}
+
+.page-hero--photo .btn-outline:hover {
+  background: rgba(255, 255, 255, .12);
+  border-color: rgba(255, 255, 255, .8);
+}
+
+@media (max-width: 720px) {
+  .page-hero--photo .page-hero-bg-img::after {
+    background:
+      linear-gradient(90deg, rgba(5, 17, 31, .70) 0%, rgba(5, 17, 31, .44) 60%, rgba(5, 17, 31, .22) 100%),
+      linear-gradient(180deg, rgba(5, 17, 31, .12) 0%, rgba(5, 17, 31, .30) 100%);
+  }
+}
