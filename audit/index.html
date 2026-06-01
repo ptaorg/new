@@ -50,16 +50,16 @@
       position: relative;
       padding: 96px 0 120px;
       overflow: hidden;
-      background:
-        radial-gradient(ellipse 62% 55% at 74% 28%, rgba(212,175,55,.16) 0%, transparent 62%),
-        linear-gradient(135deg, #071A33 0%, #12365D 58%, #071A33 100%);
+      background: #0b2a4a;
     }
     .audit-hero::before {
       content: '';
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 70% 60% at 80% 40%, rgba(212,175,55,.18) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 80% at 10% 80%, rgba(26,54,93,.45) 0%, transparent 55%);
+        linear-gradient(90deg, rgba(5,17,31,.46) 0%, rgba(5,17,31,.24) 48%, rgba(5,17,31,.08) 100%),
+        linear-gradient(180deg, rgba(255,255,255,.08) 0%, rgba(5,17,31,.12) 100%),
+        url('../assets/slides/1.jpg') center/cover;
+      filter: brightness(1.08) saturate(1.08);
     }
     .audit-hero::after {
       content: '';
@@ -717,7 +717,7 @@
       position: absolute;
       top: 0; right: 0;
       width: 240px; height: 240px;
-      background-image: url('../assets/img/documents.png');
+      background-image: url('../assets/slides/2.jpg');
       background-size: cover;
       background-position: center;
       opacity: .06;
@@ -1470,7 +1470,7 @@
         <!-- 保護者モード -->
         <button class="mode-card" data-role="parent">
           <div class="mode-card-image">
-            <img src="../assets/home/home-parent.webp" alt="子どもたちが明るい校庭で走っている様子">
+            <img src="../assets/slides/1.jpg" alt="明るい校舎の風景">
           </div>
           <div class="mode-card-body">
             <div class="mode-card-head">
@@ -1496,7 +1496,7 @@
         <!-- PTA役員モード -->
         <button class="mode-card" data-role="officer">
           <div class="mode-card-image">
-            <img src="../assets/img/meeting.png" alt="会議室で説明を聞いている様子">
+            <img src="../assets/slides/1.jpg" alt="明るい校舎の風景">
           </div>
           <div class="mode-card-body">
             <div class="mode-card-head">
@@ -1522,7 +1522,7 @@
         <!-- 学校管理職モード -->
         <button class="mode-card" data-role="school">
           <div class="mode-card-image">
-            <img src="../assets/img/classroom.png" alt="明るい教室の様子">
+            <img src="../assets/slides/2.jpg" alt="明るいプールの風景">
           </div>
           <div class="mode-card-body">
             <div class="mode-card-head">
