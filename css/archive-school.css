@@ -1,0 +1,159 @@
+/* Archive school detail pages */
+.archive-school-body {
+  background: #f8fafc;
+}
+
+.archive-school-page {
+  width: min(980px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 42px 0 80px;
+}
+
+.archive-school-back {
+  margin-bottom: 18px;
+}
+
+.archive-school-back a {
+  color: var(--navy);
+  font-size: .9rem;
+  font-weight: 800;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.archive-school-hero {
+  background: linear-gradient(135deg, #071a33 0%, #0b2a4a 68%, #113d6b 100%);
+  color: #fff;
+  border-bottom: 4px solid var(--gold);
+  border-radius: 18px;
+  padding: 42px;
+  margin-bottom: 26px;
+  box-shadow: 0 18px 42px rgba(11, 42, 74, .16);
+}
+
+.archive-school-kicker {
+  color: var(--gold-lt);
+  font-weight: 900;
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.archive-school-hero h1 {
+  color: #fff;
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.22;
+  margin: 0 0 14px;
+}
+
+.archive-school-hero p {
+  color: rgba(255,255,255,.86);
+  line-height: 1.9;
+  margin: 0;
+}
+
+.archive-school-section {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 26px 28px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.archive-school-section h2 {
+  color: var(--navy);
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.25rem;
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(212,175,55,.35);
+}
+
+.archive-school-section p,
+.archive-school-section li {
+  color: var(--text);
+  line-height: 1.85;
+  font-size: .96rem;
+}
+
+.archive-school-section ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.archive-school-status {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0;
+}
+
+.archive-school-status div {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.archive-school-status dt {
+  color: #64748b;
+  font-size: .76rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.archive-school-status dd {
+  color: var(--navy);
+  font-weight: 900;
+  margin: 0;
+}
+
+.archive-school-placeholder {
+  display: inline-flex;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #92400e !important;
+  font-weight: 900;
+}
+
+.archive-school-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.archive-school-flags span {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #24366f;
+  font-size: .82rem;
+  font-weight: 900;
+}
+
+@media (max-width: 700px) {
+  .archive-school-page {
+    width: min(100% - 28px, 980px);
+    padding-top: 28px;
+  }
+
+  .archive-school-hero {
+    padding: 30px 22px;
+    border-radius: 14px;
+  }
+
+  .archive-school-section {
+    padding: 22px 18px;
+  }
+
+  .archive-school-status {
+    grid-template-columns: 1fr;
+  }
+}
