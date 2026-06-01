@@ -212,6 +212,87 @@ body {
   vertical-align: middle;
 }
 
+.archive-evaluation-summary {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.archive-count-card {
+  border-radius: 16px;
+  padding: 16px;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(15, 39, 66, 0.06);
+}
+
+.archive-count-label {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.archive-count-card strong {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.archive-legend {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 12px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #dce3ea;
+  border-radius: 18px;
+  padding: 18px;
+  margin: 20px 0 28px;
+}
+
+.archive-legend span:not(.eval-badge) {
+  color: #4b5563;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.atsugi-school-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  min-height: 32px;
+  line-height: 1.75;
+}
+
+.atsugi-school-list .eval-badge {
+  margin-left: 0;
+}
+
+.page-hero--photo .page-hero-bg-img::after {
+  background:
+    linear-gradient(90deg, rgba(5, 17, 31, 0.68) 0%, rgba(5, 17, 31, 0.48) 48%, rgba(5, 17, 31, 0.28) 100%),
+    linear-gradient(180deg, rgba(5, 17, 31, 0.18) 0%, rgba(5, 17, 31, 0.38) 100%);
+}
+
+.page-hero h1,
+.page-hero p,
+.page-hero-kicker {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.38);
+}
+
+.archive-hero-stats {
+  background: rgba(5, 17, 31, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+
+.ahs-num,
+.ahs-label {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.36);
+}
+
 /* スマホ */
 @media (max-width: 720px) {
   .archive-hero {
@@ -220,6 +301,23 @@ body {
 
   .archive-grid {
     grid-template-columns: 1fr;
+  }
+
+  .archive-evaluation-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .archive-legend {
+    grid-template-columns: 1fr;
+  }
+
+  .atsugi-school-list li {
+    align-items: flex-start;
+    gap: 5px 10px;
+  }
+
+  .atsugi-school-list .eval-badge {
+    margin-top: 2px;
   }
 }
 
