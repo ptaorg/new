@@ -198,7 +198,7 @@
     share() {
       const score = document.getElementById('resultScore').textContent;
       const grade = document.getElementById('resultGrade').textContent;
-      const text = `【PTA運営チェック】\n判定：${grade}\nスコア：${score}\n運営チェックアプリで確認しました。`;
+      const text = `【PTAコンプライアンス監査】\n判定：${grade}\nスコア：${score}\nGitHub Pages公開用の監査システムで確認しました。`;
       const url = window.location.href;
       window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank', 'noopener');
     }
