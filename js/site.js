@@ -9,6 +9,7 @@ const SITE_INDEX=[
   {title:'研究者・記者の方へ',url:'guide-research.html',desc:'全国公文書・教委回答・一次資料へのアクセスガイド。取材 問い合わせ'},
   {title:'教育委員会の回答',url:'board-responses.html',desc:'76件以上の教育委員会回答・地図。強制加入 横浜市通知 個人情報 会費徴収'},
   {title:'全国資料館',url:'national-archive.html',desc:'開示請求で収集した全国のPTA関連公文書。入会届 会費 名簿 覚書'},
+  {title:'厚木市 PTA関連資料 先行整理',url:'archive/atsugi/',desc:'厚木市PTA関連資料17PDFの先行整理。入会申込書 会費徴収 個人情報 学校関与'},
   {title:'PTA運営の現場実例',url:'compliance.html',desc:'みなし加入 抱き合わせ徴収 個人情報提供 学校連絡ツール 教職員関与 施設利用 非会員対応 児童への不利益'},
   {title:'論考・調査報告',url:'journal.html',desc:'法律論考・調査報告・行政動向の分析。スライド 会費徴収パラドックス'},
   {title:'運営チェックアプリ',url:'audit/index.html',desc:'立場別にPTA運営の確認ポイントを整理。保護者 役員 学校管理職'},
@@ -26,11 +27,12 @@ function initSearch(){
   document.querySelectorAll('.search-input').forEach(input=>{
     const dd=input.closest('.header-search')?.querySelector('.search-results-dropdown');
     if(!dd)return;
+    const siteBase=document.documentElement.dataset.siteBase||'';
     input.addEventListener('input',()=>{
       const q=input.value.trim().toLowerCase();
       if(q.length<2){dd.classList.remove('is-open');return;}
       const hits=SITE_INDEX.filter(p=>p.title.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)).slice(0,6);
-      dd.innerHTML=hits.length?hits.map(p=>`<a href="${p.url}" class="srd-item"><div class="srd-item-title">${p.title}</div><div class="srd-item-desc">${p.desc}</div></a>`).join(''):`<div class="srd-empty">「${input.value}」に一致するページが見つかりません</div>`;
+      dd.innerHTML=hits.length?hits.map(p=>{const url=/^https?:/.test(p.url)?p.url:`${siteBase}${p.url}`;return `<a href="${url}" class="srd-item"><div class="srd-item-title">${p.title}</div><div class="srd-item-desc">${p.desc}</div></a>`;}).join(''):`<div class="srd-empty">「${input.value}」に一致するページが見つかりません</div>`;
       dd.classList.add('is-open');
     });
     document.addEventListener('click',e=>{if(!input.closest('.header-search').contains(e.target))dd.classList.remove('is-open');});
