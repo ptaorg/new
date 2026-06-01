@@ -68,6 +68,80 @@
       font-size:.86rem;font-weight:800;color:var(--navy);
     }
 
+    .atsugi-schools-section{
+      background:#f8fafc;
+      padding:64px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .atsugi-schools-head{
+      max-width:880px;
+      margin:0 auto 28px;
+      text-align:center;
+    }
+    .atsugi-schools-head p{
+      color:var(--text-soft);
+      font-size:.95rem;
+      line-height:1.9;
+      margin:0;
+    }
+    .atsugi-schools-note{
+      max-width:880px;
+      margin:20px auto 0;
+      padding:16px 18px;
+      border-left:4px solid var(--gold);
+      background:#fff;
+      color:#4b5563;
+      font-size:.9rem;
+      line-height:1.85;
+      border-radius:0 12px 12px 0;
+    }
+    .atsugi-school-groups{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      margin-top:28px;
+    }
+    .atsugi-school-group{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:24px;
+      box-shadow:var(--shadow-sm);
+    }
+    .atsugi-school-group h3{
+      font-family:'Noto Serif JP',serif;
+      color:var(--navy);
+      font-size:1.08rem;
+      margin:0 0 14px;
+      padding-bottom:10px;
+      border-bottom:2px solid rgba(212,175,55,.35);
+    }
+    .atsugi-school-list{
+      list-style:none;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px 18px;
+      margin:0;
+      padding:0;
+    }
+    .atsugi-school-list li{
+      color:var(--text);
+      font-size:.92rem;
+      line-height:1.55;
+      padding-left:14px;
+      position:relative;
+    }
+    .atsugi-school-list li::before{
+      content:'';
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:var(--gold);
+      position:absolute;
+      left:0;
+      top:.72em;
+    }
+
     .gs-section{
       background:linear-gradient(145deg,#1d4ed8,#2563eb);
       padding:72px 0;color:#fff;
@@ -93,8 +167,8 @@
     .gs-item{display:flex;gap:10px;margin-bottom:10px;font-size:.88rem;color:rgba(255,255,255,.88);line-height:1.6}
     .gs-check{color:var(--gold);flex-shrink:0}
 
-    @media(max-width:1000px){.cat-grid{grid-template-columns:1fr 1fr}.gs-inner{grid-template-columns:1fr}}
-    @media(max-width:640px){.cat-grid{grid-template-columns:1fr}}
+    @media(max-width:1000px){.cat-grid{grid-template-columns:1fr 1fr}.atsugi-school-groups{grid-template-columns:1fr}.gs-inner{grid-template-columns:1fr}}
+    @media(max-width:640px){.cat-grid{grid-template-columns:1fr}.atsugi-school-list{grid-template-columns:1fr}.atsugi-schools-section{padding:48px 0}.atsugi-school-group{padding:20px}}
 
     .page-hero{position:relative;overflow:hidden;}
     .page-hero-bg-img{
@@ -239,6 +313,66 @@
   </section>
 
   <main>
+
+    <!-- 厚木市 学校一覧 -->
+    <section class="atsugi-schools-section" id="atsugi-schools">
+      <div class="wrap">
+        <div class="section-center atsugi-schools-head">
+          <div class="section-kicker">Atsugi City</div>
+          <h2 class="section-title">厚木市 PTA関連資料</h2>
+          <p class="section-lead">厚木市について、今後、各学校ごとにPTA入会案内、PTA入会申込書、学校納入金・会費徴収資料等を整理して掲載します。現時点では、厚木市内の小学校・中学校一覧を先行掲載します。資料確認・評価が完了した学校から、順次、学校別ページまたは評価ページへリンクします。</p>
+        </div>
+        <div class="atsugi-school-groups" aria-label="厚木市内学校一覧">
+          <div class="atsugi-school-group">
+            <h3>厚木市小学校</h3>
+            <ul class="atsugi-school-list">
+              <li>厚木小学校</li>
+              <li>依知南小学校</li>
+              <li>北小学校</li>
+              <li>荻野小学校</li>
+              <li>三田小学校</li>
+              <li>清水小学校</li>
+              <li>小鮎小学校</li>
+              <li>玉川小学校</li>
+              <li>南毛利小学校</li>
+              <li>相川小学校</li>
+              <li>厚木第二小学校</li>
+              <li>緑ケ丘小学校</li>
+              <li>戸室小学校</li>
+              <li>愛甲小学校</li>
+              <li>妻田小学校</li>
+              <li>鳶尾小学校</li>
+              <li>毛利台小学校</li>
+              <li>上荻野小学校</li>
+              <li>飯山小学校</li>
+              <li>森の里小学校</li>
+              <li>依知小学校</li>
+              <li>戸田小学校</li>
+              <li>上依知小学校</li>
+            </ul>
+          </div>
+          <div class="atsugi-school-group">
+            <h3>厚木市中学校</h3>
+            <ul class="atsugi-school-list">
+              <li>厚木中学校</li>
+              <li>依知中学校</li>
+              <li>荻野中学校</li>
+              <li>睦合中学校</li>
+              <li>小鮎中学校</li>
+              <li>玉川中学校</li>
+              <li>南毛利中学校</li>
+              <li>東名中学校</li>
+              <li>林中学校</li>
+              <li>藤塚中学校</li>
+              <li>森の里中学校</li>
+              <li>睦合東中学校</li>
+              <li>相川中学校</li>
+            </ul>
+          </div>
+        </div>
+        <p class="atsugi-schools-note">補足：この一覧は、厚木市内の学校を母集団として整理するための基礎一覧です。今後、開示資料・入会案内・入会申込書・学校納入金資料等と突合し、資料あり／未確認／不存在回答／評価済みを分けて表示します。現時点では学校別HTMLページを作成していないため、学校名はリンクにしていません。</p>
+      </div>
+    </section>
 
     <!-- カテゴリ一覧 -->
     <section class="categories-section">
