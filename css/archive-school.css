@@ -122,6 +122,31 @@
   font-weight: 900;
 }
 
+.archive-school-images {
+  display: grid;
+  gap: 18px;
+}
+
+.archive-school-figure {
+  margin: 0;
+}
+
+.archive-school-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.archive-school-figure figcaption {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: .86rem;
+  line-height: 1.7;
+}
+
 .archive-school-flags {
   display: flex;
   flex-wrap: wrap;
