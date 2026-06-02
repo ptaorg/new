@@ -21,7 +21,12 @@
     "hasApplicationForm": "開示資料上確認できない",
     "applicationFormStatus": "開示資料上確認できない",
     "hasSchoolCollectionNotice": "未確認",
-    "sourceImages": [],
+    "sourceImages": [
+      {
+        "src": "/assets/archive/atsugi/kamiogino-es/01.png",
+        "caption": "資料画像1"
+      }
+    ],
     "pdfStatus": "準備中",
     "pdf": null
   },

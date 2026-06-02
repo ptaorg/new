@@ -21,7 +21,16 @@
     "hasApplicationForm": "未確認",
     "applicationFormStatus": "未確認",
     "hasSchoolCollectionNotice": "未確認",
-    "sourceImages": [],
+    "sourceImages": [
+      {
+        "src": "/assets/archive/atsugi/koayu-es/01.png",
+        "caption": "資料画像1"
+      },
+      {
+        "src": "/assets/archive/atsugi/koayu-es/02.png",
+        "caption": "資料画像2"
+      }
+    ],
     "pdfStatus": "準備中",
     "pdf": null
   },

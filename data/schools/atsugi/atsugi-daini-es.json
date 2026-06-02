@@ -21,7 +21,28 @@
     "hasApplicationForm": "未確認",
     "applicationFormStatus": "未確認",
     "hasSchoolCollectionNotice": "未確認",
-    "sourceImages": [],
+    "sourceImages": [
+      {
+        "src": "/assets/archive/atsugi/atsugi-daini-es/01.png",
+        "caption": "資料画像1"
+      },
+      {
+        "src": "/assets/archive/atsugi/atsugi-daini-es/02.png",
+        "caption": "資料画像2"
+      },
+      {
+        "src": "/assets/archive/atsugi/atsugi-daini-es/03.png",
+        "caption": "資料画像3"
+      },
+      {
+        "src": "/assets/archive/atsugi/atsugi-daini-es/04.png",
+        "caption": "資料画像4"
+      },
+      {
+        "src": "/assets/archive/atsugi/atsugi-daini-es/05.png",
+        "caption": "資料画像5"
+      }
+    ],
     "pdfStatus": "準備中",
     "pdf": null
   },

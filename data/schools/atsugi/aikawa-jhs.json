@@ -21,7 +21,44 @@
     "hasApplicationForm": "開示資料上確認できない",
     "applicationFormStatus": "開示資料上確認できない",
     "hasSchoolCollectionNotice": "未確認",
-    "sourceImages": [],
+    "sourceImages": [
+      {
+        "src": "/assets/archive/atsugi/aikawa-jhs/01.png",
+        "caption": "資料画像1"
+      },
+      {
+        "src": "/assets/archive/atsugi/aikawa-jhs/02.png",
+        "caption": "資料画像2"
+      },
+      {
+        "src": "/assets/archive/atsugi/aikawa-jhs/03.png",
+        "caption": "資料画像3"
+      },
+      {
+        "src": "/assets/archive/atsugi/aikawa-jhs/04.png",
+        "caption": "資料画像4"
+      },
+      {
+        "src": "/assets/archive/atsugi/aikawa-jhs/05.png",
+        "caption": "資料画像5"
+      },
+      {
+        "src": "/assets/archive/atsugi/aikawa-jhs/06.png",
+        "caption": "資料画像6"
+      },
+      {
+        "src": "/assets/archive/atsugi/aikawa-jhs/07.png",
+        "caption": "資料画像7"
+      },
+      {
+        "src": "/assets/archive/atsugi/aikawa-jhs/08.png",
+        "caption": "資料画像8"
+      },
+      {
+        "src": "/assets/archive/atsugi/aikawa-jhs/09.png",
+        "caption": "資料画像9"
+      }
+    ],
     "pdfStatus": "準備中",
     "pdf": null
   },
