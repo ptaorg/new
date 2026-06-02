@@ -77,6 +77,12 @@ npm run generate:sitemap
   - 対象PDFは `.pdf` です。PDFが1件だけある場合は `materials.pdf` に設定します。複数ある場合は、勝手に1件を選ばず警告だけを出します。
   - `status`, `statusClass`, `confirmedFacts`, `unconfirmedPoints`, `riskFlags`, `evaluation`, `humanReviewRequired`, `lastReviewed` は変更しません。
 
+- `scripts/convert-school-pdf-to-images.py`
+  - `assets/archive/{自治体slug}/{school-slug}/original.pdf` を読み込み、同じフォルダに `01.png`, `02.png`, `03.png` の形式で出力します。
+  - PyMuPDF (`fitz`) を使います。未導入の場合は `python -m pip install pymupdf` で導入してください。
+  - 既存画像は、`--overwrite` を明示しない限り上書きしません。
+  - このスクリプトはJSONを変更しません。JSONへの反映は `sync-school-materials.js` で行います。
+
 - `scripts/generate-school-pages.js`
   - `data/schools/*/*.json` を読み込み、学校別 HTML を生成します。
   - GA4 タグ、canonical、OGP / X カード meta、評価色、PDF 保存ボタンを出力します。
@@ -135,6 +141,44 @@ node scripts/sync-school-materials.js --write --clean
 4. `npm run generate:all`
 5. 画面で確認
 6. commit / push
+
+## PDFから画像を作る手順
+
+PDFから学校別ページ用の画像を作る場合は、まず学校フォルダに `original.pdf` を置きます。
+
+```text
+assets/archive/{citySlug}/{schoolSlug}/original.pdf
+```
+
+例:
+
+```bash
+python scripts/convert-school-pdf-to-images.py --city atsugi --school echi-es
+```
+
+デフォルトは 180 dpi です。解像度を変える場合は `--dpi` を指定します。
+
+```bash
+python scripts/convert-school-pdf-to-images.py --city atsugi --school echi-es --dpi 220
+```
+
+既存の `01.png` などがある場合、誤上書きを避けるため変換は停止します。既存画像を上書きする場合だけ、明示的に `--overwrite` を付けてください。
+
+```bash
+python scripts/convert-school-pdf-to-images.py --city atsugi --school echi-es --overwrite
+```
+
+PDF画像化後の標準手順:
+
+1. `assets/archive/{citySlug}/{schoolSlug}/original.pdf` を置く
+2. `python scripts/convert-school-pdf-to-images.py --city atsugi --school echi-es`
+3. `npm run sync:materials`
+4. `npm run sync:materials:write`
+5. `npm run generate:all`
+6. 画面確認
+7. commit / push
+
+PDF画像化は資料確認の補助であり、評価を自動確定するものではありません。AI評価案をそのまま確定評価扱いせず、掲載画像・PDF・評価文は必ず人間が確認してください。
 
 ## 手動確認が必要な項目
 
