@@ -256,6 +256,189 @@ body {
   line-height: 1.65;
 }
 
+.archive-library-section {
+  background: #ffffff;
+  padding: 58px 0;
+  border-bottom: 1px solid #dce3ea;
+}
+
+.archive-library-section--soft {
+  background: #f7f9fb;
+}
+
+.archive-library-note {
+  background: #ffffff;
+  border: 1px solid #dce3ea;
+  border-left: 5px solid #d6ae2b;
+  border-radius: 14px;
+  padding: 18px 20px;
+  color: #334155;
+  line-height: 1.9;
+  box-shadow: 0 10px 24px rgba(15, 39, 66, 0.05);
+}
+
+.archive-library-note ul {
+  margin: 0;
+  padding-left: 1.25em;
+}
+
+.archive-library-note li {
+  margin: 0.35em 0;
+}
+
+.archive-source-overview {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 28px 0 18px;
+}
+
+.archive-source-overview div {
+  background: #ffffff;
+  border: 1px solid #dce3ea;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(15, 39, 66, 0.05);
+}
+
+.archive-source-overview strong {
+  display: block;
+  color: #0b2a4a;
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.archive-source-overview span {
+  display: block;
+  color: #607184;
+  font-size: 0.86rem;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.archive-school-card-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.archive-school-card {
+  background: #ffffff;
+  border: 1px solid #dce3ea;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 8px 18px rgba(15, 39, 66, 0.045);
+}
+
+.archive-school-card-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.archive-school-card h4 {
+  margin: 0;
+  color: #0b2a4a;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.archive-school-card h4 a {
+  color: inherit;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.archive-school-card p {
+  margin: 4px 0 0;
+  color: #607184;
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.archive-school-card .eval-badge {
+  margin-left: 0;
+  flex-shrink: 0;
+}
+
+.archive-evidence-links {
+  margin-top: 10px;
+}
+
+.archive-source-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.archive-source-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid #dce3ea;
+  font-size: 0.76rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.archive-source-chip.is-present {
+  background: #eef7ff;
+  border-color: #93c5fd;
+  color: #0b376d;
+}
+
+.archive-source-chip.is-missing {
+  background: #f8fafc;
+  border-color: #e5e7eb;
+  color: #64748b;
+}
+
+a.archive-source-chip:hover {
+  text-decoration: underline;
+}
+
+.archive-related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.archive-related-card {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #dce3ea;
+  border-radius: 16px;
+  padding: 18px;
+  color: #0f2742;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(15, 39, 66, 0.05);
+}
+
+.archive-related-card strong {
+  display: block;
+  color: #0b2a4a;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.archive-related-card span {
+  display: block;
+  color: #607184;
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.archive-related-card:hover {
+  border-color: #d6ae2b;
+  transform: translateY(-2px);
+}
+
 .atsugi-school-list li {
   display: flex;
   flex-wrap: wrap;
@@ -813,6 +996,24 @@ body {
 
   .archive-evaluation-summary {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .archive-library-section {
+    padding: 42px 0;
+  }
+
+  .archive-source-overview,
+  .archive-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-school-card-main {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .archive-school-card .eval-badge {
+    align-self: flex-start;
   }
 
   .archive-legend {
