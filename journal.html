@@ -191,6 +191,22 @@
     .journal-layout .sidebar-card{border-radius:10px!important;box-shadow:0 8px 22px rgba(5,17,31,.06)!important;border-top:4px solid var(--navy)!important}
     @media (max-width:900px){.journal-layout .article-card{display:block!important}.journal-layout .ac-thumb{width:100%!important;height:160px!important}.journal-layout{grid-template-columns:1fr!important}}
   </style>
+<style id="stage31-breadcrumb-and-unbox">
+  .breadcrumb-bar{background:#fff;border-bottom:1px solid #d8dee8;}
+  .breadcrumb-inner{max-width:1120px;margin:0 auto;padding:11px 24px;font-size:.92rem;line-height:1.6;color:#475569;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+  .breadcrumb-inner a{color:#06c;text-decoration:none;}
+  .breadcrumb-inner a:hover{text-decoration:underline;}
+  .breadcrumb-inner .current{color:#334155;}
+  .document-breadcrumb{max-width:1120px;margin:0 auto 18px;padding:11px 0;font-size:.92rem;color:#475569;display:flex;gap:8px;align-items:center;flex-wrap:wrap;border-bottom:1px solid #d8dee8;}
+  .document-breadcrumb a{color:#06c;text-decoration:none;}
+  .document-breadcrumb a:hover{text-decoration:underline;}
+  .plain-prose-block{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;}
+  .unboxed-panel{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;}
+
+  .editorial-panel:not(.ed-resource-panel),
+  .documents-note.editorial-panel{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;}
+  .ed-resource-panel{box-shadow:none!important;border-radius:0!important;}
+</style>
 </head>
 <body class="journal-page">
 <div aria-label="活動支援のお願い" class="support-strip" role="complementary">
@@ -222,7 +238,6 @@
 <li><a href="guide-parent.html">保護者の方へ</a></li>
 <li><a href="guide-pta.html">PTA役員の方へ</a></li>
 <li><a href="guide-board.html">教育委員会・学校へ</a></li>
-<li><a href="guide-research.html">研究者・記者の方へ</a></li>
 </ul>
 </div>
 <div class="mega-col">
@@ -297,6 +312,7 @@
 <a class="mobile-link support-mobile-link" href="https://ptaorg.github.io/donate/"><span>Support</span>応援・寄付</a>
 <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
 </div>
+<nav aria-label="パンくず" class="breadcrumb-bar"><div class="breadcrumb-inner"><a href="index.html">トップ</a><span>›</span><a href="journal.html">研究論考</a><span>›</span><span class="current">論考・調査報告</span></div></nav>
 <section class="page-hero page-hero--photo">
 <div aria-hidden="true" class="page-hero-bg-img">
 <img alt="" aria-hidden="true" loading="eager" src="assets/slides/1.jpg"/>
@@ -314,7 +330,7 @@
 <section aria-labelledby="journal-intro-title" class="journal-intro">
 <h2 id="journal-intro-title">論考は、個別資料を制度問題として読み直すために置いています</h2>
 <p>PTA問題は、入会案内、名簿、会費、学校施設、教職員の関与が別々に起きているように見えて、実際には一つの運用構造としてつながっています。入会申込書が確認できないまま会員扱いされ、学校徴収金と同じ文書・口座でPTA会費が扱われ、学校が保有する児童・保護者情報を前提にPTA運営が進む場合、保護者団体の内部問題だけでは説明できません。</p>
-<p>このページの論考・調査報告は、行政回答や開示資料を単発のニュースとして並べるためではなく、任意加入、公私分離、個人情報保護、会費徴収、教職員の服務、学校施設利用という論点を相互に接続して読むためのものです。記事一覧に入る前に、まずどの論点がどこへつながるのかを意識して読むと、個別資料の意味が見えやすくなります。</p>
+<p>各論考・調査報告は、行政回答や開示資料を単発のニュースとして並べるものではなく、任意加入、公私分離、個人情報保護、会費徴収、教職員の服務、学校施設利用という論点を相互に接続して検討するために置いています。</p>
 <div class="editorial-bluebar">論考は、入会・名簿・徴収・学校関与を一本の流れとして読むための補助線です</div>
 <ol class="editorial-flow editorial-flow--compact journal-issue-flow">
 <li>入会申込書・加入意思確認記録の有無を確認する。</li>
@@ -323,30 +339,14 @@
 <li>教育委員会回答や行政通知と照合し、制度説明と現場資料のずれを見る。</li>
 </ol>
 </section>
-<nav aria-label="論考ページ内の目次" class="editorial-toc journal-toc">
-<div class="editorial-toc-title">目次</div>
-<ol>
-<li><a href="#articleList">掲載中の論考・調査報告</a></li>
-<li><a href="board-responses.html">教育委員会回答と照合する</a></li>
-<li><a href="national-archive.html">学校別資料で実態を確認する</a></li>
-<li><a href="https://ptaorg.github.io/ed/" target="_blank" rel="noopener">教育委員会向け実務指針・資料セット</a></li>
-</ol>
-</nav>
-
 <section class="editorial-panel ed-resource-panel" id="journal-ed-resource">
-  <div class="section-kicker">実務資料への接続</div>
-  <h2>論考を読んだ後は、教育委員会向け実務指針で根拠資料と通知モデルを確認する</h2>
-  <p>論考ページでは、公私分離、入会意思、個人情報、会費徴収、教職員関与、施設利用の考え方を整理しています。教育委員会が通知や全校点検を作る場合は、別ページの実務指針で、法令リンク、アーカイブ資料、通知モデル、入会申込記録モデルを確認できます。</p>
-  <div class="ed-link-buttons"><a href="https://ptaorg.github.io/ed/" target="_blank" rel="noopener">教育委員会向け実務指針を開く</a></div>
-</section>
-
-<section class="editorial-section" id="journal-reading-order">
-<h2>先に読むべき筋道</h2>
-<p>論考は、話題ごとの読み物ではなく、学校とPTAの境界を検討するための連続した資料です。最初に教育委員会の所掌を読み、次に会費徴収、個人情報、教職員関与、学校施設利用へ進むと、個別事例を「PTA内部の揉めごと」ではなく、学校が関与している公的手続の問題として整理しやすくなります。</p>
-<p>調査報告や行政回答は、結論を急ぐためではなく、自治体がどの範囲まで説明しているか、現場資料とどこでずれているかを確認するために置いています。</p>
+<div class="section-kicker">実務資料への接続</div>
+<h2>論考を読んだ後は、教育委員会向け実務指針で根拠資料と通知モデルを確認する</h2>
+<p>論考ページでは、公私分離、入会意思、個人情報、会費徴収、教職員関与、施設利用の考え方を整理しています。教育委員会が通知や全校点検を作る場合は、別ページの実務指針で、法令リンク、アーカイブ資料、通知モデル、入会申込記録モデルを確認できます。</p>
+<div class="ed-link-buttons"><a href="https://ptaorg.github.io/ed/" rel="noopener" target="_blank">教育委員会向け実務指針を開く</a></div>
 </section>
 <h2 class="journal-list-heading">論考目録</h2>
-<p class="journal-list-lead">以下はカード型の入口ではなく、本文で扱う論点へ進むための目録です。分類ボタンは検索補助にすぎず、記事の法的結論を単純化するものではありません。</p>
+<p class="journal-list-lead">掲載中の論考・調査報告です。分類ボタンは検索補助であり、記事の法的結論を単純化するものではありません。</p>
 <div class="category-bar">
 <button class="cat-btn active" onclick="filterCat('all',this)">すべて</button>
 <button class="cat-btn" onclick="filterCat('ronko',this)">論考</button>
@@ -364,7 +364,6 @@
 <div class="ac-tags"><span class="ac-tag">教育委員会</span><span class="ac-tag">公私分離</span><span class="ac-tag">社会教育法12条</span><span class="ac-tag">学校管理責任</span></div>
 </div>
 </a>
-
 <a class="article-card ac-featured" data-cat="kaisetsu" href="fee-collection.html">
 <div class="ac-thumb" style="background:linear-gradient(145deg,#7f1d1d,#450a0a)">
 <img alt="会費" onerror="this.style.display='none'" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&amp;fit=crop&amp;w=400&amp;q=80"/>
@@ -716,7 +715,6 @@
 <li><a href="guide-parent.html">保護者</a></li>
 <li><a href="guide-pta.html">PTA役員</a></li>
 <li><a href="guide-board.html">教育委員会・学校</a></li>
-<li><a href="guide-research.html">研究者・記者</a></li>
 <li><a href="guide-board.html">教育委員会向け指針</a></li>
 </ul>
 </div>

@@ -1,27 +1,28 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-  <link rel="canonical" href="https://ptaorg.com/national-archive.html">
-  <meta property="og:title" content="全国資料館｜PTA適正化推進委員会">
-  <meta property="og:description" content="自治体・学校ごとのPTA関連資料、学校別評価、資料画像、PDF、一次資料URLを整理した公開アーカイブです。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ptaorg.com/national-archive.html">
-  <meta property="og:image" content="https://ptaorg.com/assets/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="全国資料館｜PTA適正化推進委員会">
-  <meta name="twitter:description" content="自治体・学校ごとのPTA関連資料、学校別評価、資料画像、PDF、一次資料URLを整理した公開アーカイブです。">
-  <meta name="twitter:image" content="https://ptaorg.com/assets/og-image.png">
-  <title>全国資料館｜PTA適正化推進委員会</title>
-  <meta name="description" content="自治体・学校ごとのPTA関連資料、学校別評価、資料画像、PDF、一次資料URLを整理した公開アーカイブです。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-  <link rel="stylesheet" href="/css/archive.css">
-  <style>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://ptaorg.com/national-archive.html" rel="canonical"/>
+<meta content="全国資料館｜PTA適正化推進委員会" property="og:title"/>
+<meta content="自治体・学校ごとのPTA関連資料、学校別評価、資料画像、PDF、一次資料URLを整理した公開アーカイブです。" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ptaorg.com/national-archive.html" property="og:url"/>
+<meta content="https://ptaorg.com/assets/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="全国資料館｜PTA適正化推進委員会" name="twitter:title"/>
+<meta content="自治体・学校ごとのPTA関連資料、学校別評価、資料画像、PDF、一次資料URLを整理した公開アーカイブです。" name="twitter:description"/>
+<meta content="https://ptaorg.com/assets/og-image.png" name="twitter:image"/>
+<title>全国資料館｜PTA適正化推進委員会</title>
+<meta content="自治体・学校ごとのPTA関連資料、学校別評価、資料画像、PDF、一次資料URLを整理した公開アーカイブです。" name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+<link href="/css/archive.css" rel="stylesheet"/>
+<style>
     .archive-hero-stats{
       display:flex;flex-wrap:wrap;gap:0;
       margin-top:28px;border-top:1px solid rgba(255,255,255,.12);padding-top:20px;
@@ -263,9 +264,8 @@
 @media(max-width:600px){.archive-map-pin{font-size:.66rem;padding:4px 6px}.archive-map-pin span{display:none}.archive-muni-list{grid-template-columns:1fr}}
 
 </style>
-
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0D18ZSSLMH"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0D18ZSSLMH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -273,1120 +273,1230 @@
 
   gtag('config', 'G-0D18ZSSLMH');
 </script>
+
+/* Stage32: municipality document accordions */
+.archive-map-section{padding-top:64px!important;}
+.archive-map-card h3{margin-top:0;}
+.archive-muni-accordion-section{padding:34px 0 72px;background:#fff;}
+.archive-muni-accordion-section .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+.archive-muni-detail{border-top:1px solid var(--line);background:#fff;}
+.archive-muni-detail:last-child{border-bottom:1px solid var(--line);}
+.archive-muni-detail&gt;summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 4px;font-weight:900;color:var(--navy);font-size:1.12rem;}
+.archive-muni-detail&gt;summary::-webkit-details-marker{display:none;}
+.archive-muni-detail&gt;summary::after{content:'＋';font-weight:900;color:var(--gold);font-size:1.25rem;}
+.archive-muni-detail[open]&gt;summary::after{content:'−';}
+.archive-muni-summary-meta{font-size:.78rem;color:var(--text-soft);font-weight:800;white-space:nowrap;}
+.archive-muni-detail-body{padding:0 4px 26px;}
+.archive-muni-detail-body&gt;p{max-width:880px;line-height:1.95;}
+.archive-school-name-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px 12px;margin:16px 0 24px;}
+.archive-school-name-grid span{display:block;border-left:3px solid #d8a300;background:#f8fafc;padding:8px 10px;font-size:.9rem;font-weight:800;color:#23334d;}
+.archive-muni-subhead{font-size:.92rem;color:#475569;font-weight:900;margin:18px 0 8px;border-bottom:1px solid #d8dee8;padding-bottom:6px;}
+.archive-source-small{font-size:.78rem;color:#64748b;margin-top:10px;}
+.archive-status-note{border-left:5px solid var(--gold);background:#fff8df;padding:14px 16px;margin:16px 0 22px;line-height:1.85;}
+.atsugi-schools-section{padding-top:20px!important;}
+.atsugi-schools-head .section-kicker,.atsugi-schools-head .section-title{display:none;}
+.atsugi-schools-head p{max-width:920px;margin-left:0;margin-right:0;text-align:left;}
+.archive-evaluation-summary,.archive-legend{box-shadow:none!important;}
+@media(max-width:800px){.archive-school-name-grid{grid-template-columns:1fr 1fr}.archive-muni-detail&gt;summary{align-items:flex-start;flex-direction:column}.archive-muni-summary-meta{white-space:normal}}
+@media(max-width:520px){.archive-school-name-grid{grid-template-columns:1fr}}
+
+<style id="stage31-breadcrumb-and-unbox">
+  .breadcrumb-bar{background:#fff;border-bottom:1px solid #d8dee8;}
+  .breadcrumb-inner{max-width:1120px;margin:0 auto;padding:11px 24px;font-size:.92rem;line-height:1.6;color:#475569;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+  .breadcrumb-inner a{color:#06c;text-decoration:none;}
+  .breadcrumb-inner a:hover{text-decoration:underline;}
+  .breadcrumb-inner .current{color:#334155;}
+  .document-breadcrumb{max-width:1120px;margin:0 auto 18px;padding:11px 0;font-size:.92rem;color:#475569;display:flex;gap:8px;align-items:center;flex-wrap:wrap;border-bottom:1px solid #d8dee8;}
+  .document-breadcrumb a{color:#06c;text-decoration:none;}
+  .document-breadcrumb a:hover{text-decoration:underline;}
+  .plain-prose-block{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;}
+  .unboxed-panel{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;}
+
+  .editorial-panel:not(.ed-resource-panel),
+  .documents-note.editorial-panel{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;}
+  .ed-resource-panel{box-shadow:none!important;border-radius:0!important;}
+</style>
 </head>
 <body class="national-archive-page">
-  
-<div class="support-strip" role="complementary" aria-label="活動支援のお願い">
-  <div class="support-strip-inner">
-    <span class="support-strip-label">応援のお願い</span>
-    <span class="support-strip-text">公文書開示、資料整理、Web公開を続けるため、寄付・カンパでのご支援をお願いします。</span>
-    <a class="support-strip-link" href="https://ptaorg.github.io/donate/">応援ページへ</a>
-  </div>
+<div aria-label="活動支援のお願い" class="support-strip" role="complementary">
+<div class="support-strip-inner">
+<span class="support-strip-label">応援のお願い</span>
+<span class="support-strip-text">公文書開示、資料整理、Web公開を続けるため、寄付・カンパでのご支援をお願いします。</span>
+<a class="support-strip-link" href="https://ptaorg.github.io/donate/">応援ページへ</a>
+</div>
 </div>
 <header class="site-header">
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="assets/popc-logo.png" alt="PTA適正化推進委員会">
-        <span>PTA適正化推進委員会</span>
-      </a>
-      <div class="header-search">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="text" class="search-input" placeholder="キーワードで検索…" aria-label="サイト内検索">
-        <div class="search-results-dropdown"></div>
-      </div>
-      <nav class="desktop-nav" aria-label="主要ナビゲーション">
-        <a href="index.html" class="nav-link">トップ</a>
-        <div class="nav-item has-dropdown">
-          <a href="#" class="nav-link">立場別</a>
-          <div class="mega-menu">
-            <div class="mega-col">
-              <h4>入口</h4>
-              <ul>
-                <li><a href="guide-parent.html">保護者の方へ</a></li>
-                <li><a href="guide-pta.html">PTA役員の方へ</a></li>
-                <li><a href="guide-board.html">教育委員会・学校へ</a></li>
-                <li><a href="guide-research.html">研究者・記者の方へ</a></li>
-              </ul>
-            </div>
-            <div class="mega-col">
-              <h4>ツール</h4>
-              <ul>
-                <li><a href="audit/index.html">運営チェックアプリ</a></li>
-                <li><a href="guideline.html">適正化ガイドライン</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="nav-item has-dropdown">
-          <a href="#" class="nav-link">論点</a>
-          <div class="mega-menu">
-            <div class="mega-col">
-              <h4>主要論点</h4>
-              <ul>
-                <li><a href="membership.html">入会手続・オプトアウト</a></li>
-                <li><a href="privacy.html">個人情報提供</a></li>
-                <li><a href="fee-collection.html">会費徴収</a></li>
-                <li><a href="personnel.html">教職員関与</a></li>
-                <li><a href="facilities.html">施設利用</a></li>
-              </ul>
-            </div>
-            <div class="mega-col">
-              <h4>制度整理</h4>
-              <ul>
-                <li><a href="law-map.html">法制度マップ</a></li>
-                <li><a href="cases.html">判例整理</a></li>
-                <li><a href="timeline.html">PTA制度史</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="nav-item has-dropdown">
-          <a href="#" class="nav-link">資料</a>
-          <div class="mega-menu">
-            <div class="mega-col">
-              <h4>資料</h4>
-              <ul>
-                <li><a href="board-responses.html">教育委員会の回答</a></li>
-                <li><a href="national-archive.html">全国資料館</a></li>
-                <li><a href="journal.html">論考・調査報告</a></li>
-              </ul>
-            </div>
-            <div class="mega-col">
-              <h4>分析</h4>
-              <ul>
-                <li><a href="report.html">総合分析レポート</a></li>
-                <li><a href="administrative-materials.html">行政資料整理</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <a href="https://ptaorg.github.io/donate/" class="nav-link support-nav-link">応援</a>
-        <a href="audit/index.html" class="btn-gold">運営チェック</a>
-      </nav>
-      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileOverlay">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-  <div class="mobile-overlay" id="mobileOverlay">
-    <a href="index.html" class="mobile-link"><span>Home</span>トップページ</a>
-    <a href="guide-parent.html" class="mobile-link"><span>Guide</span>保護者の方へ</a>
-    <a href="guide-pta.html" class="mobile-link"><span>Guide</span>PTA役員の方へ</a>
-    <a href="guide-board.html" class="mobile-link"><span>Guide</span>教育委員会・学校へ</a>
-    <a href="board-responses.html" class="mobile-link"><span>Data</span>教育委員会の回答</a>
-    <a href="national-archive.html" class="mobile-link"><span>Archive</span>全国資料館</a>
-    <a href="journal.html" class="mobile-link"><span>Journal</span>論考・調査報告</a>
-    <a href="audit/index.html" class="mobile-link"><span>Check</span>運営チェックアプリ</a>
-    <a href="https://ptaorg.github.io/donate/" class="mobile-link support-mobile-link"><span>Support</span>応援・寄付</a>
-  <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
-  </div>
-
-  <section class="page-hero page-hero--photo">
-    <div class="page-hero-bg-img" aria-hidden="true">
-      <img src="assets/slides/1.jpg" alt="" aria-hidden="true" loading="eager">
-    </div>
-    <div class="page-hero-inner">
-      <div class="page-hero-kicker">National Archive</div>
-      <h1>全国<em>資料館</em></h1>
-      <p>自治体・学校ごとのPTA関連資料、評価、根拠資料を整理する公開アーカイブです。PTAの入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答などを、実際の資料画像・PDF・一次資料への導線とあわせて確認できます。</p>
-      <div class="hero-actions">
-        <a href="#atsugi-schools" class="btn-gold">自治体別資料を見る</a>
-        <a href="documents.html" class="btn-outline">資料索引を見る</a>
-      </div>
-      <div class="archive-hero-stats">
-        <div class="ahs-item"><div class="ahs-num">掲載中</div><div class="ahs-label">段階的追加</div></div>
-        <div class="ahs-item"><div class="ahs-num">36校</div><div class="ahs-label">厚木市学校別ページ</div></div>
-        <div class="ahs-item"><div class="ahs-num">全国追加</div><div class="ahs-label">自治体別資料を順次掲載</div></div>
-        <div class="ahs-item"><div class="ahs-num">画像・PDF</div><div class="ahs-label">根拠資料導線</div></div>
-        <div class="ahs-item"><div class="ahs-num">6区分</div><div class="ahs-label">評価ラベル</div></div>
-      </div>
-    </div>
-  </section>
-
-  <main>
-
-    <section class="archive-library-section" id="archive-howto">
-      <div class="wrap">
-        <div class="section-kicker">How to Use</div>
-        <h2 class="section-title">この資料館で確認すること</h2>
-        <p class="section-lead">このページは、学校別・自治体別の実物資料を並べるだけのページではありません。各学校で、PTAへの入会意思確認がどのように行われているか、学校徴収金とPTA会費が分離されているか、学校が持つ児童・保護者情報がPTA運営に使われていないかを、実際の資料から確認するための資料館です。</p>
-        <div class="archive-library-note">
-          <p>現在、学校別ページとして整理済みなのは神奈川県厚木市の36校分ですが、この資料館は厚木市専用ページではありません。今後、いわき市、茨木市、亀岡市、久喜市、埼玉県、滋賀県・甲賀市、鹿児島市、射水市、神奈川県、仙台市、川口市、相模原市、太田区（表記確認中）、大東市、彦根市、扶桑町、豊橋市など、自治体別・都道府県別の資料を段階的に追加する前提で構成します。したがって、「全国資料館」という名称は、全国の資料を集積していくための分類名であり、現時点で全国すべての学校資料が掲載済みであるという意味ではありません。</p>
-          <p>資料を読むときは、入会案内があるかどうかだけでなく、入会申込書または加入意思確認記録があるかを必ず確認します。入会案内が存在しても、申込書が確認できない場合は、会員扱いの根拠が不明確な可能性があります。また、PTA会費が学校納入金と同じ文書・同じ口座・同じ引落し手続で扱われている場合、任意加入の説明が実質的に保護者へ伝わっているかを別途検討する必要があります。</p>
-          <p>評価は、掲載資料に基づく当委員会の整理です。評価だけを単独で読まず、必ず資料画像・PDF・一次資料URLの有無とあわせて確認してください。評価準備中の学校は、資料整理または人間確認が未完了です。資料が不足している学校は、追加資料の取得後に評価が変わる可能性があります。</p>
-        </div>
-      </div>
-    </section>
-
-
-
-    <section class="archive-library-section archive-library-section--soft" id="archive-reading-method">
-      <div class="wrap">
-        <div class="editorial-panel">
-          <div class="editorial-kicker">Reading Method</div>
-          <h2>学校別資料は、点数表ではなく運用構造を読むための資料です。</h2>
-          <p>資料館で見るべきなのは、単に「入会案内があるか」「会費額がいくらか」という表面ではありません。入会意思確認、学校徴収金、個人情報同意、学校配布、会費引落しが、どの順番で、誰の名義で、どの書類にまとめられているかを確認します。</p>
-          <p>たとえば、入会案内があっても入会申込書が確認できない場合、保護者の明示的な加入意思がどの資料で残されているのかが問題になります。学校納入金案内の中にPTA会費が同時に書かれている場合、保護者から見て学校費用と任意団体会費の区別がついていたかを検討する必要があります。</p>
-          <div class="editorial-matrix" aria-label="資料の読み方">
-            <div class="editorial-matrix-row">
-              <div class="editorial-matrix-term">入会案内のみ確認</div>
-              <div class="editorial-matrix-desc">任意加入を説明しているだけでは足りません。申込み・承諾・会員確定の記録が別にあるかを確認します。</div>
-            </div>
-            <div class="editorial-matrix-row">
-              <div class="editorial-matrix-term">申込書が未確認</div>
-              <div class="editorial-matrix-desc">「資料に無い」ことを直ちに違法認定するのではなく、開示対象外・未取得・未提出の可能性を分けます。ただし、会員扱いの根拠は弱くなります。</div>
-            </div>
-            <div class="editorial-matrix-row">
-              <div class="editorial-matrix-term">学校徴収金と一体表示</div>
-              <div class="editorial-matrix-desc">教材費等と同じ文書・口座・引落し日で扱われている場合、PTA会費が任意団体会費として明確に分離されていたかを確認します。</div>
-            </div>
-            <div class="editorial-matrix-row">
-              <div class="editorial-matrix-term">個人情報同意書あり</div>
-              <div class="editorial-matrix-desc">同意書があっても、PTAが本人から直接取得したものか、学校保有情報をPTAへ提供する同意なのかを分けて読みます。</div>
-            </div>
-          </div>
-          <div class="editorial-warning"><strong>注意：</strong>「評価準備中」「資料不足」「一次資料URL未確認」は、安全・適正を意味しません。資料整理または人間確認が終わっていないという表示です。評価ラベルだけで結論を出さず、学校別ページ・画像・PDFの有無とあわせて確認してください。</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="archive-library-section archive-library-section--soft" id="archive-evidence-policy">
-      <div class="wrap">
-        <div class="section-kicker">Evidence First</div>
-        <h2 class="section-title">評価と根拠資料の関係</h2>
-        <p class="section-lead">この資料館では、各学校の評価だけでなく、評価の根拠となる資料画像、元PDF、自治体・学校・教育委員会等の一次資料URLをできる限り併記します。</p>
-        <p class="archive-library-note">評価だけを単独で読むのではなく、必ず根拠資料とあわせて確認してください。元PDFや一次資料URLが未掲載のものは、その旨を明示し、確認可能な資料画像または学校別ページへの導線を表示します。</p>
-      </div>
-    </section>
-
-
-    <section class="archive-map-section" id="archive-national-map">
-      <div class="wrap">
-        <div class="section-kicker">National Map</div>
-        <h2 class="section-title">自治体別資料の掲載・整理状況マップ</h2>
-        <p class="section-lead">厚木市を最初の学校別ページ群として掲載しつつ、今後追加する自治体・都道府県単位の資料も、同じ資料館の中で扱います。地図は、どの地域の資料が掲載済み・整理中・追加予定なのかを確認するための入口です。</p>
-        <div class="archive-map-layout">
-          <div id="archiveJapanMap" aria-label="自治体別資料マップ">
-            <div class="archive-map-fallback" aria-hidden="true">
-              <a class="archive-map-pin" href="#atsugi-schools" style="--x:50%;--y:58%"><span>厚木市</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:60%;--y:47%"><span>いわき市</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:42%;--y:66%"><span>茨木市</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:42%;--y:62%"><span>亀岡市</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:55%;--y:53%"><span>久喜市</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:53%;--y:54%"><span>埼玉県</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:43%;--y:61%"><span>滋賀県</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:44%;--y:62%"><span>甲賀市</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:25%;--y:86%"><span>鹿児島市</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:46%;--y:51%"><span>射水市</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:51%;--y:57%"><span>神奈川県</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:58%;--y:40%"><span>仙台市</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:55%;--y:54%"><span>川口市</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:50%;--y:57%"><span>相模原市</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:54%;--y:56%"><span>太田区</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:42%;--y:65%"><span>大東市</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:44%;--y:60%"><span>彦根市</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:43%;--y:59%"><span>扶桑町</span></a>
-              <a class="archive-map-pin" href="#archive-upcoming" style="--x:45%;--y:66%"><span>豊橋市</span></a>
-            </div>
-          </div>
-          <div class="archive-map-card" id="archive-upcoming">
-            <h3>厚木市だけで終わらせないための枠組み</h3>
-            <p>今後追加する自治体は、厚木市とは別ページに散らすのではなく、同じ資料館の中で、自治体別・学校別・都道府県別に増やせる構造にします。</p>
-            <p>掲載単位は、学校別ページ、自治体単位の資料ページ、都道府県単位の監査・通知・回答ページの三層で整理します。</p>
-            <ul class="archive-muni-list">
-              <li>厚木市<span class="archive-muni-status">掲載済み：学校別36校</span></li>
-              <li>いわき市<span class="archive-muni-status">追加予定</span></li>
-              <li>茨木市<span class="archive-muni-status">追加予定</span></li>
-              <li>亀岡市<span class="archive-muni-status">追加予定</span></li>
-              <li>久喜市<span class="archive-muni-status">追加予定</span></li>
-              <li>埼玉県<span class="archive-muni-status">県単位資料</span></li>
-              <li>滋賀県・甲賀市<span class="archive-muni-status">県／市資料</span></li>
-              <li>鹿児島市<span class="archive-muni-status">追加予定</span></li>
-              <li>射水市<span class="archive-muni-status">追加予定</span></li>
-              <li>神奈川県<span class="archive-muni-status">県単位資料</span></li>
-              <li>仙台市<span class="archive-muni-status">追加予定</span></li>
-              <li>川口市<span class="archive-muni-status">追加予定</span></li>
-              <li>相模原市<span class="archive-muni-status">追加予定</span></li>
-              <li>太田区<span class="archive-muni-status">表記確認中</span></li>
-              <li>大東市<span class="archive-muni-status">追加予定</span></li>
-              <li>彦根市<span class="archive-muni-status">追加予定</span></li>
-              <li>扶桑町<span class="archive-muni-status">追加予定</span></li>
-              <li>豊橋市<span class="archive-muni-status">追加予定</span></li>
-            </ul>
-            <p class="archive-muni-note">注：この一覧は、今後の掲載枠を先に用意するための整理です。資料本文・PDF・画像を確認したものから順次、学校別ページまたは自治体別ページへ展開します。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ATSUGI_ARCHIVE_START -->
-    <!-- 厚木市 学校一覧 -->
-    <section class="atsugi-schools-section" id="atsugi-schools">
-      <div class="wrap">
-        <div class="section-center atsugi-schools-head">
-          <div class="section-kicker">Atsugi City / First Municipality</div>
-          <h2 class="section-title">神奈川県厚木市</h2>
-          <p class="section-lead">厚木市内の小学校・中学校について、PTA入会案内、PTA入会申込書、学校納入金・会費徴収資料等を学校別に整理しています。評価だけでなく、学校別ページ、資料画像、元PDF、一次資料URLの有無をあわせて確認してください。</p>
-        </div>
-        <div class="archive-source-overview" aria-label="厚木市資料根拠の掲載状況">
-          <div><strong>36校</strong><span>学校別ページ</span></div>
-          <div><strong>14校</strong><span>資料画像あり</span></div>
-          <div><strong>14校</strong><span>元PDFあり</span></div>
-          <div><strong>0校</strong><span>一次資料URLあり</span></div>
-        </div>
-        <div class="editorial-panel" style="margin:28px 0 24px">
-          <div class="editorial-kicker">Before List</div>
-          <h3>一覧は結論ではなく、追加確認の入口です</h3>
-          <p>学校名の横にある評価ラベルは、掲載済み資料から見える暫定整理です。資料画像、元PDF、一次資料URL、未掲載資料の有無を確認しないまま、評価だけを独り歩きさせないでください。特に「評価準備中」は問題なしを意味せず、資料整理または人間確認が未完了であることを示します。</p>
-          <p>確認の中心は、入会申込記録、学校徴収金案内、PTA会費の扱い、個人情報同意、学校配布・学校回収の関係です。学校別ページは、この順番で資料を読むための入口として使います。</p>
-        </div>
-        <div class="archive-evaluation-summary" aria-label="厚木市の評価別集計">
-          <div class="archive-count-card eval-critical">
-            <span class="archive-count-label">重大リスク</span>
-            <strong>3校</strong>
-          </div>
-          <div class="archive-count-card eval-problem">
-            <span class="archive-count-label">問題あり</span>
-            <strong>1校</strong>
-          </div>
-          <div class="archive-count-card eval-warning">
-            <span class="archive-count-label">要確認</span>
-            <strong>1校</strong>
-          </div>
-          <div class="archive-count-card eval-insufficient">
-            <span class="archive-count-label">資料不足</span>
-            <strong>0校</strong>
-          </div>
-          <div class="archive-count-card eval-good">
-            <span class="archive-count-label">適正化モデル</span>
-            <strong>0校</strong>
-          </div>
-          <div class="archive-count-card eval-pending">
-            <span class="archive-count-label">評価準備中</span>
-            <strong>31校</strong>
-          </div>
-        </div>
-        <div class="archive-legend" aria-label="評価バッジの説明">
-          <span class="eval-badge eval-critical">重大リスク</span>
-          <span>任意加入、入会意思確認、会費徴収、個人情報、学校関与等について重大な疑義がある状態。</span>
-          <span class="eval-badge eval-problem">問題あり</span>
-          <span>掲載資料上、運用上の問題または見直しを要する点が確認される状態。</span>
-          <span class="eval-badge eval-warning">要確認</span>
-          <span>一部資料は確認できるが、入会意思確認、会費徴収、学校関与等について追加確認を要する状態。</span>
-          <span class="eval-badge eval-insufficient">資料不足</span>
-          <span>判断に必要な資料が不足しており、追加資料の取得後に評価が変わる可能性がある状態。</span>
-          <span class="eval-badge eval-good">適正化モデル</span>
-          <span>任意加入、会費徴収、個人情報、非会員対応等について改善例として参照できる状態。</span>
-          <span class="eval-badge eval-pending">評価準備中</span>
-          <span>資料は掲載済みまたは準備中だが、評価が未確定の状態。</span>
-        </div>
-        <div class="atsugi-school-groups" aria-label="厚木市内学校一覧">
-          <div class="atsugi-school-group">
-            <h3>小学校</h3>
-            <div class="archive-school-card-list">
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/atsugi-es/">厚木小学校</a></h4>
-                    <p>小学校 ／ 確認資料：厚木小学校_06.pdf</p>
-                  </div>
-                  <span class="eval-badge eval-warning">要確認</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="厚木小学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/atsugi-es/01.png">資料画像あり（1枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/atsugi-es/#U539a#U6728#U5c0f#U5b66#U6821_06.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/echi-minami-es/">依知南小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="依知南小学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/kita-es/">北小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="北小学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/ogino-es/">荻野小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="荻野小学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/sanda-es/">三田小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="三田小学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/shimizu-es/">清水小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="清水小学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/shimizu-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/shimizu-es/#U6e05#U6c34#U5c0f#U5b66#U6821_07.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/koayu-es/">小鮎小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="小鮎小学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/koayu-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/koayu-es/#U5c0f#U9b8e#U5c0f#U5b66#U6821_08.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/tamagawa-es/">玉川小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="玉川小学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/nanmori-es/">南毛利小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="南毛利小学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/nanmori-es/01.png">資料画像あり（1枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/nanmori-es/#U5357#U6bdb#U5229#U5c0f#U5b66#U6821_09.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/aikawa-es/">相川小学校</a></h4>
-                    <p>小学校 ／ 確認資料：相川小学校 相談受付記録_01.pdf</p>
-                  </div>
-                  <span class="eval-badge eval-critical">重大リスク</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="相川小学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/aikawa-es/01.png">資料画像あり（3枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/aikawa-es/#U76f8#U5ddd#U5c0f#U5b66#U6821#U3000#U76f8#U8ac7#U53d7#U4ed8#U8a18#U9332_01.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/atsugi-daini-es/">厚木第二小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="厚木第二小学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/atsugi-daini-es/01.png">資料画像あり（5枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/atsugi-daini-es/#U539a#U6728#U7b2c#U4e8c#U5c0f#U5b66#U6821_05.pdf">元PDFあり（2件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/midorigaoka-es/">緑ケ丘小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="緑ケ丘小学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/tomuro-es/">戸室小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="戸室小学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/tomuro-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/tomuro-es/#U6238#U5ba4#U5c0f#U5b66#U6821_11.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/aiko-es/">愛甲小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="愛甲小学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/tsumada-es/">妻田小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="妻田小学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/tobio-es/">鳶尾小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="鳶尾小学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/tobio-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/tobio-es/#U9cf6#U5c3e#U5c0f#U5b66#U6821#U3000#U76f8#U8ac7#U53d7#U4ed8#U8a18#U9332_01.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/moridai-es/">毛利台小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="毛利台小学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/kamiogino-es/">上荻野小学校</a></h4>
-                    <p>小学校 ／ 確認資料：上荻野小学校_13.pdf</p>
-                  </div>
-                  <span class="eval-badge eval-problem">問題あり</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="上荻野小学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/kamiogino-es/01.png">資料画像あり（1枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/kamiogino-es/#U4e0a#U837b#U91ce#U5c0f#U5b66#U6821_13.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/iiyama-es/">飯山小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="飯山小学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/morinosato-es/">森の里小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="森の里小学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/echi-es/">依知小学校</a></h4>
-                    <p>小学校 ／ 確認資料：PTAカード（役員希望調査）</p>
-                  </div>
-                  <span class="eval-badge eval-critical">重大リスク</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="依知小学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/echi-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/echi-es/#U4f9d#U77e5#U5c0f#U5b66#U6821_0002.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/toda-es/">戸田小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="戸田小学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/toda-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/toda-es/#U6238#U7530#U5c0f#U5b66#U6821_01.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/kamiechi-es/">上依知小学校</a></h4>
-                    <p>小学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="上依知小学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/kamiechi-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/kamiechi-es/#U4e0a#U4f9d#U77e5#U5c0f#U5b66#U6821_01.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="atsugi-school-group">
-            <h3>中学校</h3>
-            <div class="archive-school-card-list">
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/atsugi-jhs/">厚木中学校</a></h4>
-                    <p>中学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="厚木中学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/echi-jhs/">依知中学校</a></h4>
-                    <p>中学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="依知中学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/ogino-jhs/">荻野中学校</a></h4>
-                    <p>中学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="荻野中学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/mutsuai-jhs/">睦合中学校</a></h4>
-                    <p>中学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="睦合中学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/mutsuai-jhs/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/mutsuai-jhs/#U7766#U5408#U4e2d#U5b66#U6821_01.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/koayu-jhs/">小鮎中学校</a></h4>
-                    <p>中学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="小鮎中学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/tamagawa-jhs/">玉川中学校</a></h4>
-                    <p>中学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="玉川中学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/nanmori-jhs/">南毛利中学校</a></h4>
-                    <p>中学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="南毛利中学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/tomei-jhs/">東名中学校</a></h4>
-                    <p>中学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="東名中学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/hayashi-jhs/">林中学校</a></h4>
-                    <p>中学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="林中学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/fujizuka-jhs/">藤塚中学校</a></h4>
-                    <p>中学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="藤塚中学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/morinosato-jhs/">森の里中学校</a></h4>
-                    <p>中学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="森の里中学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/mutsuai-higashi-jhs/">睦合東中学校</a></h4>
-                    <p>中学校 ／ 確認資料：未確認</p>
-                  </div>
-                  <span class="eval-badge eval-pending">評価準備中</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="睦合東中学校の根拠資料の有無">
-                  <div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-              <article class="archive-school-card">
-                <div class="archive-school-card-main">
-                  <div>
-                    <h4><a href="/archive/atsugi/aikawa-jhs/">相川中学校</a></h4>
-                    <p>中学校 ／ 確認資料：相川中学校 会議録_04.pdf</p>
-                  </div>
-                  <span class="eval-badge eval-critical">重大リスク</span>
-                </div>
-                <div class="archive-evidence-links" aria-label="相川中学校の根拠資料の有無">
-                  <div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/aikawa-jhs/01.png">資料画像あり（9枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/aikawa-jhs/#U76f8#U5ddd#U4e2d#U5b66#U6821#U3000#U4f1a#U8b70#U9332_04.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-        <p class="atsugi-schools-note">補足：この一覧は、厚木市内の学校を母集団として整理するための基礎一覧です。評価準備中の学校は、資料整理または人間確認が未完了です。資料画像・元PDF・一次資料URLの追加により、評価表示が変わる可能性があります。</p>
-      </div>
-    </section>
-    <!-- ATSUGI_ARCHIVE_END -->
-
-    <!-- カテゴリ一覧 -->
-    <section class="categories-section">
-      <div class="wrap">
-        <div class="section-center">
-          <div class="section-kicker">資料カテゴリ</div>
-          <h2 class="section-title">論点別に入る</h2>
-          <p class="section-lead">収集した資料は論点別に整理されています。各カテゴリから関連ページと原本PDFへアクセスできます。</p>
-        </div>
-        <div class="cat-grid">
-
-          <a href="membership.html" class="cat-card">
-            <div class="cat-top">
-              <div class="cat-icon" style="background:#dbeafe">✍️</div>
-              <div class="cat-meta">
-                <div class="cat-num">Category 01</div>
-                <div class="cat-name">入会手続資料</div>
-              </div>
-            </div>
-            <div class="cat-body">
-              <p>入会届・非加入届・入会案内・任意性説明文など。オプトイン/オプトアウトがどう記載されているかを実物で確認できます。</p>
-              <div class="cat-doc-list">
-                <div class="cat-doc-item">入会届（各自治体版）</div>
-                <div class="cat-doc-item">非加入届・退会届</div>
-                <div class="cat-doc-item">入会案内・説明文</div>
-              </div>
-            </div>
-            <div class="cat-link">入会手続の論点へ <span>→</span></div>
-          </a>
-
-          <a href="privacy.html" class="cat-card">
-            <div class="cat-top">
-              <div class="cat-icon" style="background:#dcfce7">🔒</div>
-              <div class="cat-meta">
-                <div class="cat-num">Category 02</div>
-                <div class="cat-name">個人情報資料</div>
-              </div>
-            </div>
-            <div class="cat-body">
-              <p>学校→PTAへの情報提供、名簿作成、同意取得に関する実物文書。どのような形式で情報が移転しているかを確認できます。</p>
-              <div class="cat-doc-list">
-                <div class="cat-doc-item">個人情報提供同意書</div>
-                <div class="cat-doc-item">PTA名簿（様式）</div>
-                <div class="cat-doc-item">緊急連絡先届兼名簿申請書</div>
-              </div>
-            </div>
-            <div class="cat-link">個人情報の論点へ <span>→</span></div>
-          </a>
-
-          <a href="fee-collection.html" class="cat-card">
-            <div class="cat-top">
-              <div class="cat-icon" style="background:#fef3c7">💰</div>
-              <div class="cat-meta">
-                <div class="cat-num">Category 03</div>
-                <div class="cat-name">会費徴収資料</div>
-              </div>
-            </div>
-            <div class="cat-body">
-              <p>引落依頼書・会費案内・会計報告・学校徴収金明細など。学校徴収金との混在実態を実物で把握できます。</p>
-              <div class="cat-doc-list">
-                <div class="cat-doc-item">学校徴収金内訳一覧</div>
-                <div class="cat-doc-item">PTA会費引落依頼書</div>
-                <div class="cat-doc-item">会計報告書（各校版）</div>
-              </div>
-            </div>
-            <div class="cat-link">会費徴収の論点へ <span>→</span></div>
-          </a>
-
-          <a href="personnel.html" class="cat-card">
-            <div class="cat-top">
-              <div class="cat-icon" style="background:#fce7f3">👩‍🏫</div>
-              <div class="cat-meta">
-                <div class="cat-num">Category 04</div>
-                <div class="cat-name">教職員関与資料</div>
-              </div>
-            </div>
-            <div class="cat-body">
-              <p>教職員がPTA事務に関与している実態を示す学校文書。職務専念義務との照合に使えます。</p>
-              <div class="cat-doc-list">
-                <div class="cat-doc-item">学校とPTAの覚書・合意書</div>
-                <div class="cat-doc-item">教職員のPTA業務分担表</div>
-                <div class="cat-doc-item">校長PTA関与状況報告</div>
-              </div>
-            </div>
-            <div class="cat-link">教職員関与の論点へ <span>→</span></div>
-          </a>
-
-          <a href="facilities.html" class="cat-card">
-            <div class="cat-top">
-              <div class="cat-icon" style="background:#f3e8ff">🏫</div>
-              <div class="cat-meta">
-                <div class="cat-num">Category 05</div>
-                <div class="cat-name">施設利用資料</div>
-              </div>
-            </div>
-            <div class="cat-body">
-              <p>PTA室・鍵・印刷機・光熱費に関する文書。学校教育法137条の許可条件と照らせます。</p>
-              <div class="cat-doc-list">
-                <div class="cat-doc-item">施設使用許可申請書</div>
-                <div class="cat-doc-item">PTA室使用規程</div>
-                <div class="cat-doc-item">光熱費・備品費の負担記録</div>
-              </div>
-            </div>
-            <div class="cat-link">施設利用の論点へ <span>→</span></div>
-          </a>
-
-          <a href="board-responses.html" class="cat-card">
-            <div class="cat-top">
-              <div class="cat-icon" style="background:#e0f2fe">🗾</div>
-              <div class="cat-meta">
-                <div class="cat-num">Category 06</div>
-                <div class="cat-name">教育委員会回答</div>
-              </div>
-            </div>
-            <div class="cat-body">
-              <p>全国の教育委員会への照会に対する公式回答。強制加入・名簿提供・職務専念義務についての行政見解が確認できます。</p>
-              <div class="cat-doc-list">
-                <div class="cat-doc-item">各自治体の照会回答文書</div>
-                <div class="cat-doc-item">横浜市通知（学教第1965号）</div>
-                <div class="cat-doc-item">文部科学省Q&A等</div>
-              </div>
-            </div>
-            <div class="cat-link">教委回答のページへ <span>→</span></div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 具体的な収集資料一覧 -->
-    <section style="background:#fff;padding:64px 0">
-      <div class="wrap">
-        <div class="section-center">
-          <div class="section-kicker">収集資料の概要</div>
-          <h2 class="section-title">実際に収集した文書の種類</h2>
-          <p class="section-lead">情報公開請求・直接収集・提供によって取得した主な文書種類です。学校別ページ、資料画像、元PDF、行政資料ページを行き来しながら確認できます。</p>
-        </div>
-
-        <div style="overflow-x:auto;margin-top:36px">
-          <table style="width:100%;border-collapse:collapse;font-size:.9rem">
-            <thead>
-              <tr style="background:var(--navy);color:#fff">
-                <th style="padding:12px 16px;text-align:left;font-weight:800;border-radius:10px 0 0 0">文書種類</th>
-                <th style="padding:12px 16px;text-align:left;font-weight:800">論点</th>
-                <th style="padding:12px 16px;text-align:left;font-weight:800">取得方法</th>
-                <th style="padding:12px 16px;text-align:left;font-weight:800;border-radius:0 10px 0 0">確認できること</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom:1px solid var(--line)">
-                <td style="padding:12px 16px;font-weight:700;color:var(--navy)">PTA入会届（各校版）</td>
-                <td style="padding:12px 16px"><span style="background:#dbeafe;color:#1e3a8a;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">入会手続</span></td>
-                <td style="padding:12px 16px;color:var(--text-soft)">情報公開請求</td>
-                <td style="padding:12px 16px;color:var(--text-soft)">オプトイン/アウトの実態・任意性の記載有無</td>
-              </tr>
-              <tr style="background:#f8fafc;border-bottom:1px solid var(--line)">
-                <td style="padding:12px 16px;font-weight:700;color:var(--navy)">個人情報同意書・名簿申請書</td>
-                <td style="padding:12px 16px"><span style="background:#cffafe;color:#164e63;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">個人情報</span></td>
-                <td style="padding:12px 16px;color:var(--text-soft)">情報公開請求</td>
-                <td style="padding:12px 16px;color:var(--text-soft)">同意の取得方法・利用目的の明示度</td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--line)">
-                <td style="padding:12px 16px;font-weight:700;color:var(--navy)">学校徴収金内訳一覧・引落依頼書</td>
-                <td style="padding:12px 16px"><span style="background:#ffedd5;color:#9a3412;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">会費徴収</span></td>
-                <td style="padding:12px 16px;color:var(--text-soft)">情報公開請求</td>
-                <td style="padding:12px 16px;color:var(--text-soft)">PTA会費と給食費等の混在の実態</td>
-              </tr>
-              <tr style="background:#f8fafc;border-bottom:1px solid var(--line)">
-                <td style="padding:12px 16px;font-weight:700;color:var(--navy)">学校とPTAの覚書・役割分担協定</td>
-                <td style="padding:12px 16px"><span style="background:#ede9fe;color:#4c1d95;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">教職員関与</span></td>
-                <td style="padding:12px 16px;color:var(--text-soft)">情報公開請求</td>
-                <td style="padding:12px 16px;color:var(--text-soft)">教職員の関与範囲の固定化・渉外業務の定義</td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--line)">
-                <td style="padding:12px 16px;font-weight:700;color:var(--navy)">教育委員会への照会回答文書</td>
-                <td style="padding:12px 16px"><span style="background:#dcfce7;color:#14532d;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">全論点</span></td>
-                <td style="padding:12px 16px;color:var(--text-soft)">直接照会</td>
-                <td style="padding:12px 16px;color:var(--text-soft)">各論点に対する行政の公式見解</td>
-              </tr>
-              <tr style="background:#f8fafc;border-bottom:1px solid var(--line)">
-                <td style="padding:12px 16px;font-weight:700;color:var(--navy)">横浜市通知「学教第1965号」</td>
-                <td style="padding:12px 16px"><span style="background:#fee2e2;color:#7f1d1d;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">全論点</span></td>
-                <td style="padding:12px 16px;color:var(--text-soft)">行政文書</td>
-                <td style="padding:12px 16px;color:var(--text-soft)">オプトイン方式・非会員差別禁止を整理する行政資料</td>
-              </tr>
-              <tr>
-                <td style="padding:12px 16px;font-weight:700;color:var(--navy)">PTA規約・会計規程（各校版）</td>
-                <td style="padding:12px 16px"><span style="background:#f0fdf4;color:#14532d;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">会費・役員</span></td>
-                <td style="padding:12px 16px;color:var(--text-soft)">情報公開請求・提供</td>
-                <td style="padding:12px 16px;color:var(--text-soft)">会計管理の方法・強制加入規定の有無</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div style="margin-top:24px;text-align:center">
-          <a href="#archive-related-pages" class="btn-navy">関連資料ページを見る</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="archive-library-section archive-library-section--soft" id="archive-related-pages">
-      <div class="wrap">
-        <div class="section-center">
-          <div class="section-kicker">Related Pages</div>
-          <h2 class="section-title">関連資料ページ</h2>
-          <p class="section-lead">全国資料館は学校別・自治体別の実物資料入口です。制度資料や教育委員会回答は、用途に応じて以下のページとあわせて確認してください。</p>
-        </div>
-        <div class="archive-related-grid">
-          <a href="documents.html" class="archive-related-card">
-            <strong>資料入口・索引ページ</strong>
-            <span>横浜市通知など、個別資料の画像付き解説へ進む入口です。</span>
-          </a>
-          <a href="administrative-materials.html" class="archive-related-card">
-            <strong>行政通知・公式PDF資料庫</strong>
-            <span>文科省、個人情報保護委員会、自治体通知などの公式資料を整理しています。</span>
-          </a>
-          <a href="board-responses.html" class="archive-related-card">
-            <strong>教育委員会回答データベース</strong>
-            <span>教育委員会への照会回答や自治体回答を確認するページです。</span>
-          </a>
-          <a href="guide-board.html" class="archive-related-card">
-            <strong>教育委員会向け実務点検ガイド</strong>
-            <span>学校関与、個人情報、会費徴収、施設利用の点検観点を整理しています。</span>
-          </a>
-          <a href="edu-board-separation.html" class="archive-related-card">
-            <strong>学校とPTAの分離原則・通知モデル</strong>
-            <span>学校と任意団体PTAの分離を説明する通知・文例の入口です。</span>
-          </a>
-          <a href="journal.html" class="archive-related-card">
-            <strong>論考・更新記事</strong>
-            <span>資料追加や制度整理に関する記事・更新情報を掲載します。</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 旧資料・補助資料 -->
-    <section class="gs-section">
-      <div class="wrap">
-        <div class="gs-inner">
-          <div>
-            <div class="section-kicker" style="background:rgba(212,175,55,.15);color:var(--gold-lt)">旧資料・補助資料</div>
-            <h2 class="section-title" style="color:#fff">旧資料サイトも補助的に参照できます</h2>
-            <p style="color:rgba(255,255,255,.82);font-size:1rem;line-height:1.85;margin-bottom:20px">学校別ページへの移行前に整理した資料は、補助資料として旧資料サイトにも残しています。現在の中核入口はこの全国資料館であり、学校別ページに掲載された資料画像・元PDF・一次資料URLの有無を優先して確認してください。</p>
-            <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer" class="btn-gold">旧資料サイトを補助的に確認する</a>
-          </div>
-          <div class="gs-card">
-            <div class="gs-card-header">
-              <div class="gs-icon">旧</div>
-              <div class="gs-card-title">旧資料サイト（外部）</div>
-            </div>
-            <div class="gs-item"><span class="gs-check">→</span>移行前に整理した資料の補助確認</div>
-            <div class="gs-item"><span class="gs-check">→</span>学校別ページ未整備資料の暫定参照</div>
-            <div class="gs-item"><span class="gs-check">→</span>現在ページの根拠資料欄と照合して利用</div>
-            <div class="gs-item"><span class="gs-check">→</span>未確認リンクは評価根拠として単独利用しない</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-
-        <div>
-          <h3>PTA適正化推進委員会</h3>
-          <a href="https://yokomusubi.city.yokohama.lg.jp/organizations/detail/f69c7ad2-cf21-4dfa-87bb-9c891874eb6b/" target="_blank" rel="noopener noreferrer" class="yokomusubi-card">
-            <img src="assets/yokomusubi.png" alt="よこむすび">
-            <span class="yokomusubi-tagline">磯子区「よこむすび」掲載団体</span>
-            <span class="yokomusubi-meta">登録番号：磯子12406</span>
-            <span class="yokomusubi-meta">分類番号：12-4（市民活動・社会教育推進）</span>
-          </a>
-          <div class="footer-contact">
-            <p>〒235-0021<br>神奈川県横浜市磯子区岡村8-17-5-301</p>
-            <p><strong>070-9012-7772</strong></p>
-            <p><a href="mailto:info@ptaorg.com">info@ptaorg.com</a></p>
-          </div>
-        </div>
-
-        <div>
-          <h4>公式発信</h4>
-          <p class="footer-sns-sub">最新資料・論考・動画はこちら</p>
-          <div class="footer-sns-cards">
-            <a href="https://x.com/jjjqqqxxx0852" target="_blank" rel="noopener" class="fsns-card fsns-x">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.836L2.25 2.25H8.08l4.263 5.636L18.244 2.25Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></svg>
-              <div>
-                <div class="fsns-name">X</div>
-                <div class="fsns-desc">速報・資料更新</div>
-              </div>
-            </a>
-            <a href="https://www.youtube.com/@PTA%E9%81%A9%E6%AD%A3%E5%8C%96%E6%8E%A8%E9%80%B2%E5%A7%94%E5%93%A1%E4%BC%9A" target="_blank" rel="noopener" class="fsns-card fsns-yt">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              <div>
-                <div class="fsns-name">YouTube</div>
-                <div class="fsns-desc">動画で解説</div>
-              </div>
-            </a>
-            <a href="https://note.com/hiroshisatoh" target="_blank" rel="noopener" class="fsns-card fsns-note">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H4zm2 3h10v2H6V8zm0 4h10v2H6v-2zm0 4h6v2H6v-2z"/></svg>
-              <div>
-                <div class="fsns-name">note</div>
-                <div class="fsns-desc">論考・研究ノート</div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <h4>立場別</h4>
-          <ul>
-            <li><a href="guide-parent.html">保護者</a></li>
-            <li><a href="guide-pta.html">PTA役員</a></li>
-            <li><a href="guide-board.html">教育委員会・学校</a></li>
-            <li><a href="guide-research.html">研究者・記者</a></li>
-            <li><a href="guide-board.html">教育委員会向け指針</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>論点</h4>
-          <ul>
-            <li><a href="membership.html">入会手続</a></li>
-            <li><a href="privacy.html">個人情報</a></li>
-            <li><a href="fee-collection.html">会費徴収</a></li>
-            <li><a href="personnel.html">教職員関与</a></li>
-            <li><a href="facilities.html">施設利用</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>資料・支援</h4>
-          <ul>
-            <li><a href="https://ptaorg.github.io/donate/">応援・寄付</a></li>
-            <li><a href="board-responses.html">教育委員会の回答</a></li>
-            <li><a href="national-archive.html">全国資料館</a></li>
-            <li><a href="journal.html">論考・調査報告</a></li>
-            <li><a href="report.html">総合分析レポート</a></li>
-            <li><a href="audit/index.html">運営チェックアプリ</a></li>
-            <li><a href="law-map.html">法制度マップ</a></li>
-            <li><a href="guideline.html">適正化ガイドライン</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  <div class="footer-support">
-    <div>
-      <strong>調査・資料公開の継続を応援してください</strong>
-      <p>いただいたご支援は、公文書開示、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
-    </div>
-    <a href="https://ptaorg.github.io/donate/">応援ページへ</a>
-  </div>
-    <p class="copyright">© PTA適正化推進委員会</p>
-  </footer>
-  
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<div class="nav-container">
+<a class="logo" href="index.html">
+<img alt="PTA適正化推進委員会" src="assets/popc-logo.png"/>
+<span>PTA適正化推進委員会</span>
+</a>
+<div class="header-search">
+<svg viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+<input aria-label="サイト内検索" class="search-input" placeholder="キーワードで検索…" type="text"/>
+<div class="search-results-dropdown"></div>
+</div>
+<nav aria-label="主要ナビゲーション" class="desktop-nav">
+<a class="nav-link" href="index.html">トップ</a>
+<div class="nav-item has-dropdown">
+<a class="nav-link" href="#">立場別</a>
+<div class="mega-menu">
+<div class="mega-col">
+<h4>入口</h4>
+<ul>
+<li><a href="guide-parent.html">保護者の方へ</a></li>
+<li><a href="guide-pta.html">PTA役員の方へ</a></li>
+<li><a href="guide-board.html">教育委員会・学校へ</a></li>
+</ul>
+</div>
+<div class="mega-col">
+<h4>ツール</h4>
+<ul>
+<li><a href="audit/index.html">運営チェックアプリ</a></li>
+<li><a href="guideline.html">適正化ガイドライン</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="nav-item has-dropdown">
+<a class="nav-link" href="#">論点</a>
+<div class="mega-menu">
+<div class="mega-col">
+<h4>主要論点</h4>
+<ul>
+<li><a href="membership.html">入会手続・オプトアウト</a></li>
+<li><a href="privacy.html">個人情報提供</a></li>
+<li><a href="fee-collection.html">会費徴収</a></li>
+<li><a href="personnel.html">教職員関与</a></li>
+<li><a href="facilities.html">施設利用</a></li>
+</ul>
+</div>
+<div class="mega-col">
+<h4>制度整理</h4>
+<ul>
+<li><a href="law-map.html">法制度マップ</a></li>
+<li><a href="cases.html">判例整理</a></li>
+<li><a href="timeline.html">PTA制度史</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="nav-item has-dropdown">
+<a class="nav-link" href="#">資料</a>
+<div class="mega-menu">
+<div class="mega-col">
+<h4>資料</h4>
+<ul>
+<li><a href="board-responses.html">教育委員会の回答</a></li>
+<li><a href="national-archive.html">全国資料館</a></li>
+<li><a href="journal.html">論考・調査報告</a></li>
+</ul>
+</div>
+<div class="mega-col">
+<h4>分析</h4>
+<ul>
+<li><a href="report.html">総合分析レポート</a></li>
+<li><a href="administrative-materials.html">行政資料整理</a></li>
+</ul>
+</div>
+</div>
+</div>
+<a class="nav-link support-nav-link" href="https://ptaorg.github.io/donate/">応援</a>
+<a class="btn-gold" href="audit/index.html">運営チェック</a>
+</nav>
+<button aria-controls="mobileOverlay" aria-expanded="false" aria-label="メニューを開く" class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</button>
+</div>
+</header>
+<div class="mobile-overlay" id="mobileOverlay">
+<a class="mobile-link" href="index.html"><span>Home</span>トップページ</a>
+<a class="mobile-link" href="guide-parent.html"><span>Guide</span>保護者の方へ</a>
+<a class="mobile-link" href="guide-pta.html"><span>Guide</span>PTA役員の方へ</a>
+<a class="mobile-link" href="guide-board.html"><span>Guide</span>教育委員会・学校へ</a>
+<a class="mobile-link" href="board-responses.html"><span>Data</span>教育委員会の回答</a>
+<a class="mobile-link" href="national-archive.html"><span>Archive</span>全国資料館</a>
+<a class="mobile-link" href="journal.html"><span>Journal</span>論考・調査報告</a>
+<a class="mobile-link" href="audit/index.html"><span>Check</span>運営チェックアプリ</a>
+<a class="mobile-link support-mobile-link" href="https://ptaorg.github.io/donate/"><span>Support</span>応援・寄付</a>
+<div class="close-overlay" id="closeOverlay">CLOSE ×</div>
+</div>
+<nav aria-label="パンくず" class="breadcrumb-bar"><div class="breadcrumb-inner"><a href="index.html">トップ</a><span>›</span><a href="documents.html">資料</a><span>›</span><span class="current">全国資料館</span></div></nav>
+<section class="page-hero page-hero--photo">
+<div aria-hidden="true" class="page-hero-bg-img">
+<img alt="" aria-hidden="true" loading="eager" src="assets/slides/1.jpg"/>
+</div>
+<div class="page-hero-inner">
+<div class="page-hero-kicker">National Archive</div>
+<h1>全国<em>資料館</em></h1>
+<p>自治体・学校ごとのPTA関連資料、評価、根拠資料を整理する公開アーカイブです。PTAの入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答などを、実際の資料画像・PDF・一次資料への導線とあわせて確認できます。</p>
+<div class="hero-actions">
+<a class="btn-gold" href="#archive-national-map">自治体別資料を見る</a>
+<a class="btn-outline" href="documents.html">資料索引を見る</a>
+</div>
+<div class="archive-hero-stats">
+<div class="ahs-item"><div class="ahs-num">掲載中</div><div class="ahs-label">段階的追加</div></div>
+<div class="ahs-item"><div class="ahs-num">学校別</div><div class="ahs-label">自治体ごとに追加</div></div>
+<div class="ahs-item"><div class="ahs-num">全国追加</div><div class="ahs-label">自治体別資料を順次掲載</div></div>
+<div class="ahs-item"><div class="ahs-num">画像・PDF</div><div class="ahs-label">根拠資料導線</div></div>
+<div class="ahs-item"><div class="ahs-num">6区分</div><div class="ahs-label">評価ラベル</div></div>
+</div>
+</div>
+</section>
+<main>
+<section class="archive-map-section" id="archive-national-map">
+<div class="wrap">
+<div class="section-kicker">National Map</div>
+<h2 class="section-title">自治体別実物文書マップ</h2>
+<p class="section-lead">地図または自治体名から、学校別・自治体別の実物文書へ入ります。PTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答などを、自治体単位で追加していきます。</p>
+<div class="archive-map-layout">
+<div aria-label="自治体別資料マップ" id="archiveJapanMap">
+<div aria-hidden="true" class="archive-map-fallback">
+<a class="archive-map-pin" href="#atsugi-schools" style="--x:50%;--y:58%"><span>厚木市</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:60%;--y:47%"><span>いわき市</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:42%;--y:66%"><span>茨木市</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:42%;--y:62%"><span>亀岡市</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:55%;--y:53%"><span>久喜市</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:53%;--y:54%"><span>埼玉県</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:43%;--y:61%"><span>滋賀県</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:44%;--y:62%"><span>甲賀市</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:25%;--y:86%"><span>鹿児島市</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:46%;--y:51%"><span>射水市</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:51%;--y:57%"><span>神奈川県</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:58%;--y:40%"><span>仙台市</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:55%;--y:54%"><span>川口市</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:50%;--y:57%"><span>相模原市</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:54%;--y:56%"><span>大田区</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:42%;--y:65%"><span>大東市</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:44%;--y:60%"><span>彦根市</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:43%;--y:59%"><span>扶桑町</span></a>
+<a class="archive-map-pin" href="#municipality-documents" style="--x:45%;--y:66%"><span>豊橋市</span></a>
+</div>
+</div>
+<div class="archive-map-card" id="archive-upcoming">
+<h3>自治体別文書へ入る</h3>
+<p>資料が入った自治体から、下の折りたたみ欄に学校名・文書名・学校別ページを追加します。まだ実物資料が入っていない自治体も、先に学校名の受け皿を置き、あとからPDF・画像・評価を差し込める形にしています。</p>
+<ul class="archive-muni-list">
+<li>厚木市<span class="archive-muni-status">学校別ページあり</span></li>
+<li>いわき市<span class="archive-muni-status">学校名欄を作成</span></li>
+<li>茨木市<span class="archive-muni-status">学校名欄を作成</span></li>
+<li>亀岡市<span class="archive-muni-status">学校名欄を作成</span></li>
+<li>久喜市<span class="archive-muni-status">学校名欄を作成</span></li>
+<li>甲賀市・彦根市・扶桑町・豊橋市・射水市・大東市<span class="archive-muni-status">学校名欄を作成</span></li>
+<li>仙台市・川口市・相模原市・鹿児島市<span class="archive-muni-status">大規模自治体枠</span></li>
+<li>埼玉県・滋賀県・神奈川県<span class="archive-muni-status">県単位資料枠</span></li>
+</ul>
+</div> </div>
+</div>
+</section>
+<section class="archive-muni-accordion-section" id="municipality-documents">
+<div class="wrap">
+<div class="section-kicker">Municipality Documents</div>
+<h2 class="section-title">自治体別の実物文書</h2>
+<p class="section-lead">自治体ごとに、実際に開示・入手したPTA関連文書を置いていきます。学校名の欄を先に作り、資料が入った学校からPDF・画像・評価を差し込みます。</p>
+<p class="archive-status-note">学校名は、公開情報から先に受け皿として置いています。資料本文・PDF・画像が入った学校から個別ページ化し、未確認の学校名や統廃合の有無は後続作業で修正します。</p>
+<details class="archive-muni-detail" id="archive-muni-福島いわき">
+<summary>福島県いわき市<span class="archive-muni-summary-meta">市立小学校67校・市立中学校39校。中学校名は公表情報から先行入力。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">中学校</div>
+<div class="archive-school-name-grid"><span>平第一中学校</span><span>平第二中学校</span><span>平第三中学校</span><span>藤間中学校</span><span>豊間中学校</span><span>草野中学校</span><span>赤井中学校</span><span>湯本第一中学校</span><span>湯本第二中学校</span><span>湯本第三中学校</span><span>磐崎中学校</span><span>小名浜第一中学校</span><span>小名浜第二中学校</span><span>泉中学校</span><span>江名中学校</span><span>内郷第一中学校</span><span>内郷第二中学校</span><span>内郷第三中学校</span><span>植田中学校</span><span>植田東中学校</span><span>錦中学校</span><span>勿来第一中学校</span><span>勿来第二中学校</span><span>川部中学校</span><span>上遠野中学校</span><span>入遠野中学校</span><span>四倉中学校</span><span>小川中学校</span><span>田人中学校</span><span>好間中学校</span><span>永井中学校</span><span>三和中学校</span><span>三阪中学校</span><span>差塩中学校</span><span>川前中学校</span><span>桶売中学校</span><span>小白井中学校</span><span>久之浜中学校</span><span>玉川中学校</span><span>中央台北中学校</span><span>中央台南中学校</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-大阪茨木">
+<summary>大阪府茨木市<span class="archive-muni-summary-meta">市立小学校32校・市立中学校14校。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">小学校</div>
+<div class="archive-school-name-grid"><span>茨木小学校</span><span>春日小学校</span><span>三島小学校</span><span>中条小学校</span><span>玉櫛小学校</span><span>安威小学校</span><span>玉島小学校</span><span>福井小学校</span><span>水尾小学校</span><span>郡小学校</span><span>太田小学校</span><span>沢池小学校</span><span>西小学校</span><span>西河原小学校</span><span>耳原小学校</span><span>穂積小学校</span><span>白川小学校</span><span>東小学校</span><span>豊川小学校</span><span>郡山小学校</span><span>彩都西小学校</span><span>葦原小学校</span><span>天王小学校</span><span>東奈良小学校</span><span>庄栄小学校</span><span>山手台小学校</span><span>清溪小学校</span><span>忍頂寺小学校</span><span>大池小学校</span><span>畑田小学校</span></div>
+<div class="archive-muni-subhead">中学校</div>
+<div class="archive-school-name-grid"><span>養精中学校</span><span>西中学校</span><span>東中学校</span><span>豊川中学校</span><span>南中学校</span><span>三島中学校</span><span>北中学校</span><span>東雲中学校</span><span>天王中学校</span><span>西陵中学校</span><span>平田中学校</span><span>北陵中学校</span><span>太田中学校</span><span>彩都西中学校</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-京都亀岡">
+<summary>京都府亀岡市<span class="archive-muni-summary-meta">市立小学校17校・市立中学校7校。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">小学校</div>
+<div class="archive-school-name-grid"><span>亀岡小学校</span><span>城西小学校</span><span>詳徳小学校</span><span>安詳小学校</span><span>つつじケ丘小学校</span><span>大井小学校</span><span>千代川小学校</span><span>保津小学校</span><span>吉川小学校</span><span>曽我部小学校</span><span>薭田野小学校</span><span>本梅小学校</span><span>畑野小学校</span><span>青野小学校</span><span>東本梅小学校</span><span>南つつじヶ丘小学校</span><span>亀岡川東学園</span></div>
+<div class="archive-muni-subhead">中学校</div>
+<div class="archive-school-name-grid"><span>亀岡中学校</span><span>南桑中学校</span><span>詳徳中学校</span><span>東輝中学校</span><span>大成中学校</span><span>育親中学校</span><span>亀岡川東学園</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-埼玉久喜">
+<summary>埼玉県久喜市<span class="archive-muni-summary-meta">市立小中学校の資料枠。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">小学校</div>
+<div class="archive-school-name-grid"><span>久喜小学校</span><span>太田小学校</span><span>江面小学校</span><span>清久小学校</span><span>本町小学校</span><span>青葉小学校</span><span>青毛小学校</span><span>久喜東小学校</span><span>栗橋小学校</span><span>栗橋南小学校</span><span>栗橋西小学校</span><span>鷲宮小学校</span><span>桜田小学校</span><span>上内小学校</span><span>砂原小学校</span><span>東鷲宮小学校</span><span>菖蒲小学校</span><span>小林小学校</span><span>三箇小学校</span><span>栢間小学校</span></div>
+<div class="archive-muni-subhead">中学校</div>
+<div class="archive-school-name-grid"><span>久喜中学校</span><span>久喜南中学校</span><span>久喜東中学校</span><span>太東中学校</span><span>栗橋東中学校</span><span>栗橋西中学校</span><span>鷲宮中学校</span><span>鷲宮東中学校</span><span>菖蒲中学校</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-滋賀甲賀">
+<summary>滋賀県甲賀市<span class="archive-muni-summary-meta">市立小中学校の資料枠。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">小学校</div>
+<div class="archive-school-name-grid"><span>水口小学校</span><span>綾野小学校</span><span>貴生川小学校</span><span>伴谷小学校</span><span>柏木小学校</span><span>佐山小学校</span><span>土山小学校</span><span>大野小学校</span><span>山内小学校</span><span>鮎河小学校</span><span>甲賀大原小学校</span><span>油日小学校</span><span>甲南第一小学校</span><span>甲南第二小学校</span><span>甲南第三小学校</span><span>甲南中部小学校</span><span>希望ケ丘小学校</span><span>信楽小学校</span><span>雲井小学校</span><span>小原小学校</span><span>朝宮小学校</span><span>多羅尾小学校</span></div>
+<div class="archive-muni-subhead">中学校</div>
+<div class="archive-school-name-grid"><span>水口中学校</span><span>城山中学校</span><span>土山中学校</span><span>甲賀中学校</span><span>甲南中学校</span><span>信楽中学校</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-鹿児島鹿児島">
+<summary>鹿児島県鹿児島市<span class="archive-muni-summary-meta">大規模自治体。学校名欄を先に置き、公式一覧確認後に分割追加。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">資料枠</div>
+<div class="archive-school-name-grid"><span>鹿児島市立小学校一覧欄</span><span>鹿児島市立中学校一覧欄</span><span>学校徴収金資料欄</span><span>PTA入会案内資料欄</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-富山射水">
+<summary>富山県射水市<span class="archive-muni-summary-meta">市立小中学校の資料枠。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">小学校</div>
+<div class="archive-school-name-grid"><span>新湊小学校</span><span>放生津小学校</span><span>作道小学校</span><span>片口小学校</span><span>堀岡小学校</span><span>塚原小学校</span><span>小杉小学校</span><span>太閤山小学校</span><span>中太閤山小学校</span><span>歌の森小学校</span><span>大門小学校</span><span>大島小学校</span><span>金山小学校</span><span>下村小学校</span></div>
+<div class="archive-muni-subhead">中学校</div>
+<div class="archive-school-name-grid"><span>新湊中学校</span><span>射北中学校</span><span>小杉中学校</span><span>小杉南中学校</span><span>大門中学校</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-宮城仙台">
+<summary>宮城県仙台市<span class="archive-muni-summary-meta">政令市。区別の学校名欄を先に置き、資料が入った区から展開。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">行政区</div>
+<div class="archive-school-name-grid"><span>青葉区</span><span>宮城野区</span><span>若林区</span><span>太白区</span><span>泉区</span></div>
+<div class="archive-muni-subhead">資料枠</div>
+<div class="archive-school-name-grid"><span>小学校一覧欄</span><span>中学校一覧欄</span><span>学校徴収金資料欄</span><span>PTA入会案内資料欄</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-埼玉川口">
+<summary>埼玉県川口市<span class="archive-muni-summary-meta">市立学校名欄。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">小学校</div>
+<div class="archive-school-name-grid"><span>安行小学校</span><span>安行東小学校</span><span>青木北小学校</span><span>青木中央小学校</span><span>朝日東小学校</span><span>朝日西小学校</span><span>舟戸小学校</span><span>原町小学校</span><span>東本郷小学校</span><span>東領家小学校</span><span>本町小学校</span><span>飯仲小学校</span><span>飯塚小学校</span><span>慈林小学校</span><span>上青木小学校</span><span>上青木南小学校</span><span>神根小学校</span><span>神根東小学校</span><span>木曽呂小学校</span><span>仲町小学校</span><span>並木小学校</span><span>根岸小学校</span><span>鳩ヶ谷小学校</span><span>里小学校</span><span>桜町小学校</span><span>辻小学校</span><span>中居小学校</span><span>南鳩ヶ谷小学校</span><span>領家小学校</span><span>幸町小学校</span><span>差間小学校</span><span>芝小学校</span><span>芝中央小学校</span><span>芝富士小学校</span><span>芝東小学校</span><span>芝樋ノ爪小学校</span><span>芝南小学校</span><span>芝西小学校</span><span>新郷小学校</span><span>新郷東小学校</span><span>新郷南小学校</span><span>十二月田小学校</span><span>戸塚小学校</span><span>戸塚綾瀬小学校</span><span>戸塚東小学校</span><span>戸塚北小学校</span><span>戸塚南小学校</span><span>柳崎小学校</span><span>在家小学校</span></div>
+<div class="archive-muni-subhead">中学校</div>
+<div class="archive-school-name-grid"><span>安行中学校</span><span>安行東中学校</span><span>青木中学校</span><span>榛松中学校</span><span>東中学校</span><span>上青木中学校</span><span>神根中学校</span><span>岸川中学校</span><span>北中学校</span><span>小谷場中学校</span><span>南中学校</span><span>元郷中学校</span><span>仲町中学校</span><span>西中学校</span><span>領家中学校</span><span>幸並中学校</span><span>芝中学校</span><span>芝東中学校</span><span>芝西中学校</span><span>芝園中学校</span><span>十二月田中学校</span><span>戸塚中学校</span><span>戸塚西中学校</span><span>在家中学校</span><span>鳩ヶ谷中学校</span><span>里中学校</span><span>八幡木中学校</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-神奈川相模原">
+<summary>神奈川県相模原市<span class="archive-muni-summary-meta">区別の市立小中学校名欄。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">中央区小学校</div>
+<div class="archive-school-name-grid"><span>青葉小学校</span><span>中央小学校</span><span>淵野辺小学校</span><span>淵野辺東小学校</span><span>富士見小学校</span><span>光が丘小学校</span><span>星が丘小学校</span><span>上溝小学校</span><span>上溝南小学校</span><span>向陽小学校</span><span>共和小学校</span><span>並木小学校</span><span>大野北小学校</span><span>小山小学校</span><span>清新小学校</span><span>新宿小学校</span><span>田名小学校</span><span>田名北小学校</span><span>弥栄小学校</span><span>陽光台小学校</span><span>横山小学校</span></div>
+<div class="archive-muni-subhead">中央区中学校</div>
+<div class="archive-school-name-grid"><span>中央中学校</span><span>上溝中学校</span><span>上溝南中学校</span><span>共和中学校</span><span>緑が丘中学校</span><span>大野北中学校</span><span>小山中学校</span><span>清新中学校</span><span>田名中学校</span><span>弥栄中学校</span><span>由野台中学校</span></div>
+<div class="archive-muni-subhead">緑区小学校</div>
+<div class="archive-school-name-grid"><span>相原小学校</span><span>旭小学校</span><span>千木良小学校</span><span>藤野小学校</span><span>藤野北小学校</span><span>藤野南小学校</span><span>橋本小学校</span><span>広田小学校</span><span>川尻小学校</span><span>桂北小学校</span><span>広陵小学校</span><span>串川小学校</span><span>九沢小学校</span><span>宮上小学校</span><span>中野小学校</span><span>根小屋小学校</span><span>二本松小学校</span><span>大沢小学校</span><span>大島小学校</span><span>作の口小学校</span><span>湘南小学校</span><span>当麻田小学校</span><span>鳥屋小学校</span><span>津久井中央小学校</span><span>内郷小学校</span></div>
+<div class="archive-muni-subhead">緑区中学校</div>
+<div class="archive-school-name-grid"><span>相原中学校</span><span>旭中学校</span><span>藤野中学校</span><span>北相中学校</span><span>串川中学校</span><span>中沢中学校</span><span>中野中学校</span><span>大沢中学校</span><span>相模丘中学校</span><span>鳥屋中学校</span><span>内出中学校</span><span>内郷中学校</span></div>
+<div class="archive-muni-subhead">南区小学校</div>
+<div class="archive-school-name-grid"><span>新磯小学校</span><span>麻溝小学校</span><span>双葉小学校</span><span>上鶴間小学校</span><span>鹿島台小学校</span><span>くぬぎ台小学校</span><span>緑台小学校</span><span>南大野小学校</span><span>もえぎ台小学校</span><span>大野小学校</span><span>大野台小学校</span><span>大野台中央小学校</span><span>大沼小学校</span><span>相模台小学校</span><span>桜台小学校</span><span>相武台小学校</span><span>東林小学校</span><span>鶴の台小学校</span><span>鶴園小学校</span><span>若草小学校</span><span>若松小学校</span><span>谷口小学校</span><span>谷口台小学校</span><span>夢の丘小学校</span></div>
+<div class="archive-muni-subhead">南区中学校</div>
+<div class="archive-school-name-grid"><span>麻溝台中学校</span><span>上鶴間中学校</span><span>大野台中学校</span><span>大野南中学校</span><span>相模台中学校</span><span>新町中学校</span><span>相武台中学校</span><span>相陽中学校</span><span>東林中学校</span><span>鵜野森中学校</span><span>若草中学校</span><span>谷口中学校</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-東京都大田">
+<summary>東京都大田区<span class="archive-muni-summary-meta">「大田区」は表記上は通常「大田区」。太田市を指す場合は別枠に変更。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">資料枠</div>
+<div class="archive-school-name-grid"><span>大田区立小学校一覧欄</span><span>大田区立中学校一覧欄</span><span>学校徴収金資料欄</span><span>PTA入会案内資料欄</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-大阪大東">
+<summary>大阪府大東市<span class="archive-muni-summary-meta">公立小学校12校・中学校8校。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">資料枠</div>
+<div class="archive-school-name-grid"><span>大東市立小学校一覧欄</span><span>大東市立中学校一覧欄</span><span>学校徴収金資料欄</span><span>PTA入会案内資料欄</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-滋賀彦根">
+<summary>滋賀県彦根市<span class="archive-muni-summary-meta">市立小中学校の資料枠。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">小学校</div>
+<div class="archive-school-name-grid"><span>城東小学校</span><span>城西小学校</span><span>城南小学校</span><span>平田小学校</span><span>城北小学校</span><span>佐和山小学校</span><span>旭森小学校</span><span>城陽小学校</span><span>金城小学校</span><span>鳥居本小学校</span><span>稲枝東小学校</span><span>稲枝西小学校</span><span>稲枝北小学校</span><span>若葉小学校</span><span>河瀬小学校</span><span>亀山小学校</span><span>高宮小学校</span></div>
+<div class="archive-muni-subhead">中学校</div>
+<div class="archive-school-name-grid"><span>東中学校</span><span>西中学校</span><span>中央中学校</span><span>南中学校</span><span>彦根中学校</span><span>稲枝中学校</span><span>鳥居本中学校</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-愛知扶桑">
+<summary>愛知県扶桑町<span class="archive-muni-summary-meta">町立小学校4校・中学校2校。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">小学校</div>
+<div class="archive-school-name-grid"><span>柏森小学校</span><span>高雄小学校</span><span>山名小学校</span><span>扶桑東小学校</span></div>
+<div class="archive-muni-subhead">中学校</div>
+<div class="archive-school-name-grid"><span>扶桑中学校</span><span>扶桑北中学校</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-愛知豊橋">
+<summary>愛知県豊橋市<span class="archive-muni-summary-meta">公立小学校52校・中学校22校。学校名欄を先に置き、資料が入った学校から個別化。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">資料枠</div>
+<div class="archive-school-name-grid"><span>豊橋市立小学校一覧欄</span><span>豊橋市立中学校一覧欄</span><span>学校徴収金資料欄</span><span>PTA入会案内資料欄</span></div>
+</div>
+</details>
+<details class="archive-muni-detail" id="archive-muni-単位資料">
+<summary>県単位資料<span class="archive-muni-summary-meta">県立学校、監査、通知、教育委員会回答などを県単位で置く枠。</span></summary>
+<div class="archive-muni-detail-body">
+<p>ここに、当該自治体のPTA入会案内、入会申込書、学校徴収金案内、会費徴収資料、個人情報同意書、教育委員会回答、学校別評価を順次入れます。実物資料が入った学校から、学校別ページまたは資料画像・PDFへのリンクを追加します。</p>
+<div class="archive-muni-subhead">都道府県</div>
+<div class="archive-school-name-grid"><span>埼玉県</span><span>滋賀県</span><span>神奈川県</span></div>
+</div>
+</details>
+</div>
+</section>
+<!-- ATSUGI_ARCHIVE_START -->
+<!-- 厚木市 学校一覧 -->
+<section class="atsugi-schools-section" id="atsugi-schools">
+<div class="wrap">
+<details class="archive-muni-detail atsugi-detail" open="">
+<summary>神奈川県厚木市<span class="archive-muni-summary-meta">学校別ページ36校</span></summary>
+<div class="archive-muni-detail-body">
+<div class="section-center atsugi-schools-head">
+<div class="section-kicker">Atsugi City</div>
+<h2 class="section-title">神奈川県厚木市</h2>
+<p class="section-lead">厚木市内の小学校・中学校について、PTA入会案内、PTA入会申込書、学校納入金・会費徴収資料等を学校別に整理しています。評価だけでなく、学校別ページ、資料画像、元PDF、一次資料URLの有無をあわせて確認してください。</p>
+</div>
+<div aria-label="厚木市資料根拠の掲載状況" class="archive-source-overview">
+<div><strong>36校</strong><span>学校別ページ</span></div>
+<div><strong>14校</strong><span>資料画像あり</span></div>
+<div><strong>14校</strong><span>元PDFあり</span></div>
+<div><strong>0校</strong><span>一次資料URLあり</span></div>
+</div>
+<div aria-label="厚木市の評価別集計" class="archive-evaluation-summary">
+<div class="archive-count-card eval-critical">
+<span class="archive-count-label">重大リスク</span>
+<strong>3校</strong>
+</div>
+<div class="archive-count-card eval-problem">
+<span class="archive-count-label">問題あり</span>
+<strong>1校</strong>
+</div>
+<div class="archive-count-card eval-warning">
+<span class="archive-count-label">要確認</span>
+<strong>1校</strong>
+</div>
+<div class="archive-count-card eval-insufficient">
+<span class="archive-count-label">資料不足</span>
+<strong>0校</strong>
+</div>
+<div class="archive-count-card eval-good">
+<span class="archive-count-label">適正化モデル</span>
+<strong>0校</strong>
+</div>
+<div class="archive-count-card eval-pending">
+<span class="archive-count-label">評価準備中</span>
+<strong>31校</strong>
+</div>
+</div>
+<div aria-label="評価バッジの説明" class="archive-legend">
+<span class="eval-badge eval-critical">重大リスク</span>
+<span>任意加入、入会意思確認、会費徴収、個人情報、学校関与等について重大な疑義がある状態。</span>
+<span class="eval-badge eval-problem">問題あり</span>
+<span>掲載資料上、運用上の問題または見直しを要する点が確認される状態。</span>
+<span class="eval-badge eval-warning">要確認</span>
+<span>一部資料は確認できるが、入会意思確認、会費徴収、学校関与等について追加確認を要する状態。</span>
+<span class="eval-badge eval-insufficient">資料不足</span>
+<span>判断に必要な資料が不足しており、追加資料の取得後に評価が変わる可能性がある状態。</span>
+<span class="eval-badge eval-good">適正化モデル</span>
+<span>任意加入、会費徴収、個人情報、非会員対応等について改善例として参照できる状態。</span>
+<span class="eval-badge eval-pending">評価準備中</span>
+<span>資料は掲載済みまたは準備中だが、評価が未確定の状態。</span>
+</div>
+<div aria-label="厚木市内学校一覧" class="atsugi-school-groups">
+<div class="atsugi-school-group">
+<h3>小学校</h3>
+<div class="archive-school-card-list">
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/atsugi-es/">厚木小学校</a></h4>
+<p>小学校 ／ 確認資料：厚木小学校_06.pdf</p>
+</div>
+<span class="eval-badge eval-warning">要確認</span>
+</div>
+<div aria-label="厚木小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/atsugi-es/01.png">資料画像あり（1枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/atsugi-es/#U539a#U6728#U5c0f#U5b66#U6821_06.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/echi-minami-es/">依知南小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="依知南小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/kita-es/">北小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="北小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/ogino-es/">荻野小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="荻野小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/sanda-es/">三田小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="三田小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/shimizu-es/">清水小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="清水小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/shimizu-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/shimizu-es/#U6e05#U6c34#U5c0f#U5b66#U6821_07.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/koayu-es/">小鮎小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="小鮎小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/koayu-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/koayu-es/#U5c0f#U9b8e#U5c0f#U5b66#U6821_08.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/tamagawa-es/">玉川小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="玉川小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/nanmori-es/">南毛利小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="南毛利小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/nanmori-es/01.png">資料画像あり（1枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/nanmori-es/#U5357#U6bdb#U5229#U5c0f#U5b66#U6821_09.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/aikawa-es/">相川小学校</a></h4>
+<p>小学校 ／ 確認資料：相川小学校 相談受付記録_01.pdf</p>
+</div>
+<span class="eval-badge eval-critical">重大リスク</span>
+</div>
+<div aria-label="相川小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/aikawa-es/01.png">資料画像あり（3枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/aikawa-es/#U76f8#U5ddd#U5c0f#U5b66#U6821#U3000#U76f8#U8ac7#U53d7#U4ed8#U8a18#U9332_01.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/atsugi-daini-es/">厚木第二小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="厚木第二小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/atsugi-daini-es/01.png">資料画像あり（5枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/atsugi-daini-es/#U539a#U6728#U7b2c#U4e8c#U5c0f#U5b66#U6821_05.pdf">元PDFあり（2件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/midorigaoka-es/">緑ケ丘小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="緑ケ丘小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/tomuro-es/">戸室小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="戸室小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/tomuro-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/tomuro-es/#U6238#U5ba4#U5c0f#U5b66#U6821_11.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/aiko-es/">愛甲小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="愛甲小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/tsumada-es/">妻田小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="妻田小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/tobio-es/">鳶尾小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="鳶尾小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/tobio-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/tobio-es/#U9cf6#U5c3e#U5c0f#U5b66#U6821#U3000#U76f8#U8ac7#U53d7#U4ed8#U8a18#U9332_01.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/moridai-es/">毛利台小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="毛利台小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/kamiogino-es/">上荻野小学校</a></h4>
+<p>小学校 ／ 確認資料：上荻野小学校_13.pdf</p>
+</div>
+<span class="eval-badge eval-problem">問題あり</span>
+</div>
+<div aria-label="上荻野小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/kamiogino-es/01.png">資料画像あり（1枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/kamiogino-es/#U4e0a#U837b#U91ce#U5c0f#U5b66#U6821_13.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/iiyama-es/">飯山小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="飯山小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/morinosato-es/">森の里小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="森の里小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/echi-es/">依知小学校</a></h4>
+<p>小学校 ／ 確認資料：PTAカード（役員希望調査）</p>
+</div>
+<span class="eval-badge eval-critical">重大リスク</span>
+</div>
+<div aria-label="依知小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/echi-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/echi-es/#U4f9d#U77e5#U5c0f#U5b66#U6821_0002.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/toda-es/">戸田小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="戸田小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/toda-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/toda-es/#U6238#U7530#U5c0f#U5b66#U6821_01.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/kamiechi-es/">上依知小学校</a></h4>
+<p>小学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="上依知小学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/kamiechi-es/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/kamiechi-es/#U4e0a#U4f9d#U77e5#U5c0f#U5b66#U6821_01.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+</div>
+</div>
+<div class="atsugi-school-group">
+<h3>中学校</h3>
+<div class="archive-school-card-list">
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/atsugi-jhs/">厚木中学校</a></h4>
+<p>中学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="厚木中学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/echi-jhs/">依知中学校</a></h4>
+<p>中学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="依知中学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/ogino-jhs/">荻野中学校</a></h4>
+<p>中学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="荻野中学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/mutsuai-jhs/">睦合中学校</a></h4>
+<p>中学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="睦合中学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/mutsuai-jhs/01.png">資料画像あり（2枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/mutsuai-jhs/#U7766#U5408#U4e2d#U5b66#U6821_01.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/koayu-jhs/">小鮎中学校</a></h4>
+<p>中学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="小鮎中学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/tamagawa-jhs/">玉川中学校</a></h4>
+<p>中学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="玉川中学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/nanmori-jhs/">南毛利中学校</a></h4>
+<p>中学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="南毛利中学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/tomei-jhs/">東名中学校</a></h4>
+<p>中学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="東名中学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/hayashi-jhs/">林中学校</a></h4>
+<p>中学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="林中学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/fujizuka-jhs/">藤塚中学校</a></h4>
+<p>中学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="藤塚中学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/morinosato-jhs/">森の里中学校</a></h4>
+<p>中学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="森の里中学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/mutsuai-higashi-jhs/">睦合東中学校</a></h4>
+<p>中学校 ／ 確認資料：未確認</p>
+</div>
+<span class="eval-badge eval-pending">評価準備中</span>
+</div>
+<div aria-label="睦合東中学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><span class="archive-source-chip is-missing">資料画像未掲載</span><span class="archive-source-chip is-missing">元PDF未掲載</span><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+<article class="archive-school-card">
+<div class="archive-school-card-main">
+<div>
+<h4><a href="/archive/atsugi/aikawa-jhs/">相川中学校</a></h4>
+<p>中学校 ／ 確認資料：相川中学校 会議録_04.pdf</p>
+</div>
+<span class="eval-badge eval-critical">重大リスク</span>
+</div>
+<div aria-label="相川中学校の根拠資料の有無" class="archive-evidence-links">
+<div class="archive-source-status"><a class="archive-source-chip is-present" href="/assets/archive/atsugi/aikawa-jhs/01.png">資料画像あり（9枚）</a><a class="archive-source-chip is-present" href="/source-pdfs/atsugi/aikawa-jhs/#U76f8#U5ddd#U4e2d#U5b66#U6821#U3000#U4f1a#U8b70#U9332_04.pdf">元PDFあり（1件）</a><span class="archive-source-chip is-missing">一次資料URL未確認</span></div>
+</div>
+</article>
+</div>
+</div>
+</div>
+<p class="atsugi-schools-note">補足：この一覧は、厚木市内の学校を母集団として整理するための基礎一覧です。評価準備中の学校は、資料整理または人間確認が未完了です。資料画像・元PDF・一次資料URLの追加により、評価表示が変わる可能性があります。</p>
+</div>
+</details>
+</div>
+</section>
+<!-- ATSUGI_ARCHIVE_END -->
+<!-- カテゴリ一覧 -->
+<section class="categories-section">
+<div class="wrap">
+<div class="section-center">
+<div class="section-kicker">資料カテゴリ</div>
+<h2 class="section-title">論点別に入る</h2>
+<p class="section-lead">収集した資料は論点別に整理されています。各カテゴリから関連ページと原本PDFへアクセスできます。</p>
+</div>
+<div class="cat-grid">
+<a class="cat-card" href="membership.html">
+<div class="cat-top">
+<div class="cat-icon" style="background:#dbeafe">✍️</div>
+<div class="cat-meta">
+<div class="cat-num">Category 01</div>
+<div class="cat-name">入会手続資料</div>
+</div>
+</div>
+<div class="cat-body">
+<p>入会届・非加入届・入会案内・任意性説明文など。オプトイン/オプトアウトがどう記載されているかを実物で確認できます。</p>
+<div class="cat-doc-list">
+<div class="cat-doc-item">入会届（各自治体版）</div>
+<div class="cat-doc-item">非加入届・退会届</div>
+<div class="cat-doc-item">入会案内・説明文</div>
+</div>
+</div>
+<div class="cat-link">入会手続の論点へ <span>→</span></div>
+</a>
+<a class="cat-card" href="privacy.html">
+<div class="cat-top">
+<div class="cat-icon" style="background:#dcfce7">🔒</div>
+<div class="cat-meta">
+<div class="cat-num">Category 02</div>
+<div class="cat-name">個人情報資料</div>
+</div>
+</div>
+<div class="cat-body">
+<p>学校→PTAへの情報提供、名簿作成、同意取得に関する実物文書。どのような形式で情報が移転しているかを確認できます。</p>
+<div class="cat-doc-list">
+<div class="cat-doc-item">個人情報提供同意書</div>
+<div class="cat-doc-item">PTA名簿（様式）</div>
+<div class="cat-doc-item">緊急連絡先届兼名簿申請書</div>
+</div>
+</div>
+<div class="cat-link">個人情報の論点へ <span>→</span></div>
+</a>
+<a class="cat-card" href="fee-collection.html">
+<div class="cat-top">
+<div class="cat-icon" style="background:#fef3c7">💰</div>
+<div class="cat-meta">
+<div class="cat-num">Category 03</div>
+<div class="cat-name">会費徴収資料</div>
+</div>
+</div>
+<div class="cat-body">
+<p>引落依頼書・会費案内・会計報告・学校徴収金明細など。学校徴収金との混在実態を実物で把握できます。</p>
+<div class="cat-doc-list">
+<div class="cat-doc-item">学校徴収金内訳一覧</div>
+<div class="cat-doc-item">PTA会費引落依頼書</div>
+<div class="cat-doc-item">会計報告書（各校版）</div>
+</div>
+</div>
+<div class="cat-link">会費徴収の論点へ <span>→</span></div>
+</a>
+<a class="cat-card" href="personnel.html">
+<div class="cat-top">
+<div class="cat-icon" style="background:#fce7f3">👩‍🏫</div>
+<div class="cat-meta">
+<div class="cat-num">Category 04</div>
+<div class="cat-name">教職員関与資料</div>
+</div>
+</div>
+<div class="cat-body">
+<p>教職員がPTA事務に関与している実態を示す学校文書。職務専念義務との照合に使えます。</p>
+<div class="cat-doc-list">
+<div class="cat-doc-item">学校とPTAの覚書・合意書</div>
+<div class="cat-doc-item">教職員のPTA業務分担表</div>
+<div class="cat-doc-item">校長PTA関与状況報告</div>
+</div>
+</div>
+<div class="cat-link">教職員関与の論点へ <span>→</span></div>
+</a>
+<a class="cat-card" href="facilities.html">
+<div class="cat-top">
+<div class="cat-icon" style="background:#f3e8ff">🏫</div>
+<div class="cat-meta">
+<div class="cat-num">Category 05</div>
+<div class="cat-name">施設利用資料</div>
+</div>
+</div>
+<div class="cat-body">
+<p>PTA室・鍵・印刷機・光熱費に関する文書。学校教育法137条の許可条件と照らせます。</p>
+<div class="cat-doc-list">
+<div class="cat-doc-item">施設使用許可申請書</div>
+<div class="cat-doc-item">PTA室使用規程</div>
+<div class="cat-doc-item">光熱費・備品費の負担記録</div>
+</div>
+</div>
+<div class="cat-link">施設利用の論点へ <span>→</span></div>
+</a>
+<a class="cat-card" href="board-responses.html">
+<div class="cat-top">
+<div class="cat-icon" style="background:#e0f2fe">🗾</div>
+<div class="cat-meta">
+<div class="cat-num">Category 06</div>
+<div class="cat-name">教育委員会回答</div>
+</div>
+</div>
+<div class="cat-body">
+<p>全国の教育委員会への照会に対する公式回答。強制加入・名簿提供・職務専念義務についての行政見解が確認できます。</p>
+<div class="cat-doc-list">
+<div class="cat-doc-item">各自治体の照会回答文書</div>
+<div class="cat-doc-item">横浜市通知（学教第1965号）</div>
+<div class="cat-doc-item">文部科学省Q&amp;A等</div>
+</div>
+</div>
+<div class="cat-link">教委回答のページへ <span>→</span></div>
+</a>
+</div>
+</div>
+</section>
+<!-- 具体的な収集資料一覧 -->
+<section style="background:#fff;padding:64px 0">
+<div class="wrap">
+<div class="section-center">
+<div class="section-kicker">収集資料の概要</div>
+<h2 class="section-title">実際に収集した文書の種類</h2>
+<p class="section-lead">情報公開請求・直接収集・提供によって取得した主な文書種類です。学校別ページ、資料画像、元PDF、行政資料ページを行き来しながら確認できます。</p>
+</div>
+<div style="overflow-x:auto;margin-top:36px">
+<table style="width:100%;border-collapse:collapse;font-size:.9rem">
+<thead>
+<tr style="background:var(--navy);color:#fff">
+<th style="padding:12px 16px;text-align:left;font-weight:800;border-radius:10px 0 0 0">文書種類</th>
+<th style="padding:12px 16px;text-align:left;font-weight:800">論点</th>
+<th style="padding:12px 16px;text-align:left;font-weight:800">取得方法</th>
+<th style="padding:12px 16px;text-align:left;font-weight:800;border-radius:0 10px 0 0">確認できること</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--line)">
+<td style="padding:12px 16px;font-weight:700;color:var(--navy)">PTA入会届（各校版）</td>
+<td style="padding:12px 16px"><span style="background:#dbeafe;color:#1e3a8a;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">入会手続</span></td>
+<td style="padding:12px 16px;color:var(--text-soft)">情報公開請求</td>
+<td style="padding:12px 16px;color:var(--text-soft)">オプトイン/アウトの実態・任意性の記載有無</td>
+</tr>
+<tr style="background:#f8fafc;border-bottom:1px solid var(--line)">
+<td style="padding:12px 16px;font-weight:700;color:var(--navy)">個人情報同意書・名簿申請書</td>
+<td style="padding:12px 16px"><span style="background:#cffafe;color:#164e63;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">個人情報</span></td>
+<td style="padding:12px 16px;color:var(--text-soft)">情報公開請求</td>
+<td style="padding:12px 16px;color:var(--text-soft)">同意の取得方法・利用目的の明示度</td>
+</tr>
+<tr style="border-bottom:1px solid var(--line)">
+<td style="padding:12px 16px;font-weight:700;color:var(--navy)">学校徴収金内訳一覧・引落依頼書</td>
+<td style="padding:12px 16px"><span style="background:#ffedd5;color:#9a3412;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">会費徴収</span></td>
+<td style="padding:12px 16px;color:var(--text-soft)">情報公開請求</td>
+<td style="padding:12px 16px;color:var(--text-soft)">PTA会費と給食費等の混在の実態</td>
+</tr>
+<tr style="background:#f8fafc;border-bottom:1px solid var(--line)">
+<td style="padding:12px 16px;font-weight:700;color:var(--navy)">学校とPTAの覚書・役割分担協定</td>
+<td style="padding:12px 16px"><span style="background:#ede9fe;color:#4c1d95;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">教職員関与</span></td>
+<td style="padding:12px 16px;color:var(--text-soft)">情報公開請求</td>
+<td style="padding:12px 16px;color:var(--text-soft)">教職員の関与範囲の固定化・渉外業務の定義</td>
+</tr>
+<tr style="border-bottom:1px solid var(--line)">
+<td style="padding:12px 16px;font-weight:700;color:var(--navy)">教育委員会への照会回答文書</td>
+<td style="padding:12px 16px"><span style="background:#dcfce7;color:#14532d;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">全論点</span></td>
+<td style="padding:12px 16px;color:var(--text-soft)">直接照会</td>
+<td style="padding:12px 16px;color:var(--text-soft)">各論点に対する行政の公式見解</td>
+</tr>
+<tr style="background:#f8fafc;border-bottom:1px solid var(--line)">
+<td style="padding:12px 16px;font-weight:700;color:var(--navy)">横浜市通知「学教第1965号」</td>
+<td style="padding:12px 16px"><span style="background:#fee2e2;color:#7f1d1d;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">全論点</span></td>
+<td style="padding:12px 16px;color:var(--text-soft)">行政文書</td>
+<td style="padding:12px 16px;color:var(--text-soft)">オプトイン方式・非会員差別禁止を整理する行政資料</td>
+</tr>
+<tr>
+<td style="padding:12px 16px;font-weight:700;color:var(--navy)">PTA規約・会計規程（各校版）</td>
+<td style="padding:12px 16px"><span style="background:#f0fdf4;color:#14532d;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:800">会費・役員</span></td>
+<td style="padding:12px 16px;color:var(--text-soft)">情報公開請求・提供</td>
+<td style="padding:12px 16px;color:var(--text-soft)">会計管理の方法・強制加入規定の有無</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin-top:24px;text-align:center">
+<a class="btn-navy" href="#archive-related-pages">関連資料ページを見る</a>
+</div>
+</div>
+</section>
+<section class="archive-library-section archive-library-section--soft" id="archive-related-pages">
+<div class="wrap">
+<div class="section-center">
+<div class="section-kicker">Related Pages</div>
+<h2 class="section-title">関連資料ページ</h2>
+<p class="section-lead">全国資料館は学校別・自治体別の実物資料入口です。制度資料や教育委員会回答は、用途に応じて以下のページとあわせて確認してください。</p>
+</div>
+<div class="archive-related-grid">
+<a class="archive-related-card" href="documents.html">
+<strong>資料入口・索引ページ</strong>
+<span>横浜市通知など、個別資料の画像付き解説へ進む入口です。</span>
+</a>
+<a class="archive-related-card" href="administrative-materials.html">
+<strong>行政通知・公式PDF資料庫</strong>
+<span>文科省、個人情報保護委員会、自治体通知などの公式資料を整理しています。</span>
+</a>
+<a class="archive-related-card" href="board-responses.html">
+<strong>教育委員会回答データベース</strong>
+<span>教育委員会への照会回答や自治体回答を確認するページです。</span>
+</a>
+<a class="archive-related-card" href="guide-board.html">
+<strong>教育委員会向け実務点検ガイド</strong>
+<span>学校関与、個人情報、会費徴収、施設利用の点検観点を整理しています。</span>
+</a>
+<a class="archive-related-card" href="edu-board-separation.html">
+<strong>学校とPTAの分離原則・通知モデル</strong>
+<span>学校と任意団体PTAの分離を説明する通知・文例の入口です。</span>
+</a>
+<a class="archive-related-card" href="journal.html">
+<strong>論考・更新記事</strong>
+<span>資料追加や制度整理に関する記事・更新情報を掲載します。</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 旧資料・補助資料 -->
+<section class="gs-section">
+<div class="wrap">
+<div class="gs-inner">
+<div>
+<div class="section-kicker" style="background:rgba(212,175,55,.15);color:var(--gold-lt)">旧資料・補助資料</div>
+<h2 class="section-title" style="color:#fff">旧資料サイトも補助的に参照できます</h2>
+<p style="color:rgba(255,255,255,.82);font-size:1rem;line-height:1.85;margin-bottom:20px">学校別ページへの移行前に整理した資料は、補助資料として旧資料サイトにも残しています。現在の中核入口はこの全国資料館であり、学校別ページに掲載された資料画像・元PDF・一次資料URLの有無を優先して確認してください。</p>
+<a class="btn-gold" href="https://sites.google.com/view/ptatekiseika/" rel="noopener noreferrer" target="_blank">旧資料サイトを補助的に確認する</a>
+</div>
+<div class="gs-card">
+<div class="gs-card-header">
+<div class="gs-icon">旧</div>
+<div class="gs-card-title">旧資料サイト（外部）</div>
+</div>
+<div class="gs-item"><span class="gs-check">→</span>移行前に整理した資料の補助確認</div>
+<div class="gs-item"><span class="gs-check">→</span>学校別ページ未整備資料の暫定参照</div>
+<div class="gs-item"><span class="gs-check">→</span>現在ページの根拠資料欄と照合して利用</div>
+<div class="gs-item"><span class="gs-check">→</span>未確認リンクは評価根拠として単独利用しない</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-grid">
+<div>
+<h3>PTA適正化推進委員会</h3>
+<a class="yokomusubi-card" href="https://yokomusubi.city.yokohama.lg.jp/organizations/detail/f69c7ad2-cf21-4dfa-87bb-9c891874eb6b/" rel="noopener noreferrer" target="_blank">
+<img alt="よこむすび" src="assets/yokomusubi.png"/>
+<span class="yokomusubi-tagline">磯子区「よこむすび」掲載団体</span>
+<span class="yokomusubi-meta">登録番号：磯子12406</span>
+<span class="yokomusubi-meta">分類番号：12-4（市民活動・社会教育推進）</span>
+</a>
+<div class="footer-contact">
+<p>〒235-0021<br/>神奈川県横浜市磯子区岡村8-17-5-301</p>
+<p><strong>070-9012-7772</strong></p>
+<p><a href="mailto:info@ptaorg.com">info@ptaorg.com</a></p>
+</div>
+</div>
+<div>
+<h4>公式発信</h4>
+<p class="footer-sns-sub">最新資料・論考・動画はこちら</p>
+<div class="footer-sns-cards">
+<a class="fsns-card fsns-x" href="https://x.com/jjjqqqxxx0852" rel="noopener" target="_blank">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.836L2.25 2.25H8.08l4.263 5.636L18.244 2.25Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"></path></svg>
+<div>
+<div class="fsns-name">X</div>
+<div class="fsns-desc">速報・資料更新</div>
+</div>
+</a>
+<a class="fsns-card fsns-yt" href="https://www.youtube.com/@PTA%E9%81%A9%E6%AD%A3%E5%8C%96%E6%8E%A8%E9%80%B2%E5%A7%94%E5%93%A1%E4%BC%9A" rel="noopener" target="_blank">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+<div>
+<div class="fsns-name">YouTube</div>
+<div class="fsns-desc">動画で解説</div>
+</div>
+</a>
+<a class="fsns-card fsns-note" href="https://note.com/hiroshisatoh" rel="noopener" target="_blank">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H4zm2 3h10v2H6V8zm0 4h10v2H6v-2zm0 4h6v2H6v-2z"></path></svg>
+<div>
+<div class="fsns-name">note</div>
+<div class="fsns-desc">論考・研究ノート</div>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h4>立場別</h4>
+<ul>
+<li><a href="guide-parent.html">保護者</a></li>
+<li><a href="guide-pta.html">PTA役員</a></li>
+<li><a href="guide-board.html">教育委員会・学校</a></li>
+<li><a href="guide-board.html">教育委員会向け指針</a></li>
+</ul>
+</div>
+<div>
+<h4>論点</h4>
+<ul>
+<li><a href="membership.html">入会手続</a></li>
+<li><a href="privacy.html">個人情報</a></li>
+<li><a href="fee-collection.html">会費徴収</a></li>
+<li><a href="personnel.html">教職員関与</a></li>
+<li><a href="facilities.html">施設利用</a></li>
+</ul>
+</div>
+<div>
+<h4>資料・支援</h4>
+<ul>
+<li><a href="https://ptaorg.github.io/donate/">応援・寄付</a></li>
+<li><a href="board-responses.html">教育委員会の回答</a></li>
+<li><a href="national-archive.html">全国資料館</a></li>
+<li><a href="journal.html">論考・調査報告</a></li>
+<li><a href="report.html">総合分析レポート</a></li>
+<li><a href="audit/index.html">運営チェックアプリ</a></li>
+<li><a href="law-map.html">法制度マップ</a></li>
+<li><a href="guideline.html">適正化ガイドライン</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer-support">
+<div>
+<strong>調査・資料公開の継続を応援してください</strong>
+<p>いただいたご支援は、公文書開示、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
+</div>
+<a href="https://ptaorg.github.io/donate/">応援ページへ</a>
+</div>
+<p class="copyright">© PTA適正化推進委員会</p>
+</footer>
+<script crossorigin="" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function(){
   var pins=[
@@ -1404,7 +1514,7 @@
     {name:'仙台市',lat:38.27,lng:140.87,href:'#archive-upcoming',status:'追加予定'},
     {name:'川口市',lat:35.81,lng:139.72,href:'#archive-upcoming',status:'追加予定'},
     {name:'相模原市',lat:35.57,lng:139.37,href:'#archive-upcoming',status:'追加予定'},
-    {name:'太田区（表記確認中）',lat:35.56,lng:139.72,href:'#archive-upcoming',status:'表記確認中'},
+    {name:'大田区（表記確認中）',lat:35.56,lng:139.72,href:'#archive-upcoming',status:'表記確認中'},
     {name:'大東市',lat:34.71,lng:135.62,href:'#archive-upcoming',status:'追加予定'},
     {name:'彦根市',lat:35.27,lng:136.26,href:'#archive-upcoming',status:'追加予定'},
     {name:'扶桑町',lat:35.36,lng:136.91,href:'#archive-upcoming',status:'追加予定'},
@@ -1421,6 +1531,5 @@
   window.addEventListener('load',function(){setTimeout(init,700);});
 })();
 </script>
-
 <script src="js/site.js"></script>
 </body></html>
