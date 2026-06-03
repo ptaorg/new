@@ -253,6 +253,70 @@
 .btn-outline-w { display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,.5); color: #fff; font-weight: 700; font-size: .9rem; padding: 13px 28px; border-radius: 8px; text-decoration: none; transition: border-color .2s, background .2s; }
 .btn-outline-w:hover { border-color: #fff; background: rgba(255,255,255,.08); }
 
+
+/* 読み物としての導入ブロック */
+.pm-editorial-intro {
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 46px 0 34px;
+}
+.pm-editorial-intro .pm-intro-panel {
+  background: #fff;
+  border: 1px solid rgba(5,17,31,.10);
+  border-radius: 16px;
+  padding: 30px 34px;
+  box-shadow: 0 14px 36px rgba(5,17,31,.08);
+}
+.pm-intro-band {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(90deg,#061a44,#0b5cab);
+  color: #fff;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  margin-bottom: 18px;
+}
+.pm-editorial-intro p {
+  font-size: .95rem;
+  line-height: 2.05;
+  color: #334155;
+  margin: 0 0 16px;
+}
+.pm-principle-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+.pm-principle {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #0d2044;
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.pm-principle strong {
+  display: block;
+  color: #0d2044;
+  font-size: .92rem;
+  margin-bottom: 6px;
+}
+.pm-principle span {
+  display: block;
+  color: #475569;
+  font-size: .82rem;
+  line-height: 1.75;
+}
+@media (max-width: 760px) {
+  .pm-editorial-intro .pm-intro-panel { padding: 24px 20px; }
+  .pm-principle-grid { grid-template-columns: 1fr; }
+}
+
+
   </style>
 
 <!-- Google tag (gtag.js) -->
@@ -265,7 +329,7 @@
   gtag('config', 'G-0D18ZSSLMH');
 </script>
 </head>
-<body>
+<body class="proper-management-page">
 
 <!-- =========================================
      ヘッダー
@@ -352,6 +416,8 @@
   <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
 </div>
 
+<main class="pm-main">
+
 <!-- HERO -->
 <section class="pm-hero">
   <div class="wrap">
@@ -362,6 +428,24 @@
     </p>
   </div>
 </section>
+
+<!-- 読み物としての導入 -->
+<section class="pm-editorial-intro" aria-labelledby="pm-intro-title">
+  <div class="pm-wrap">
+    <div class="pm-intro-panel">
+      <div class="pm-intro-band">制度を整えるための基本線</div>
+      <h2 id="pm-intro-title" class="pm-title">PTAを続けるなら、学校の事務とPTAの団体事務を分けることが出発点です。</h2>
+      <p>PTAを「なくすか、続けるか」という感情論だけで整理すると、現場の問題は残ります。必要なのは、加入の意思確認、会費の請求、個人情報の取得、役員選出、学校施設の利用を、それぞれ誰の権限と責任で行うのかを明確にすることです。</p>
+      <p>PTAは学校とは別の任意団体です。したがって、入会届はPTAが受け、会費はPTAが請求し、名簿はPTAが会員本人から直接取得します。学校は、教育活動・就学事務・安全管理のために保有する情報や徴収手続を、PTA運営の便宜のために流用しない。この分離を前提にしてこそ、保護者の自由意思と学校運営の公正性を両立できます。</p>
+      <div class="pm-principle-grid" aria-label="適正運営の三原則">
+        <div class="pm-principle"><strong>加入は契約として扱う</strong><span>入会案内だけで会員扱いにせず、申込みと承諾の記録を残します。</span></div>
+        <div class="pm-principle"><strong>金銭は学校徴収金と分ける</strong><span>PTA会費を教材費・給食費等と同じ手続で当然徴収しないようにします。</span></div>
+        <div class="pm-principle"><strong>情報は本人から直接取得する</strong><span>学校保有情報に頼らず、PTA自身が利用目的を示して取得します。</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- アンカーナビ -->
 <nav class="anchor-nav">
@@ -569,8 +653,8 @@
     <div class="pm-law-box">
       <div class="pm-law-box-title">📚 根拠法令・通知</div>
       <div class="pm-law-box-body">
-        <strong>個人情報保護法第18条</strong>（利用目的の制限）・<strong>第23条</strong>（第三者提供の制限）・<strong>第20条</strong>（安全管理措置）が適用されます。100人以上の個人情報を扱う団体は個人情報取扱事業者として法律の義務を負います。
-        <br><span class="law-tag">個人情報保護法18条</span><span class="law-tag">個人情報保護法23条</span><span class="law-tag">個人情報保護法20条</span>
+        PTAが会員名簿や連絡先を管理する場合は、PTA自身が利用目的を明示し、必要な範囲で本人から直接取得し、安全に管理する必要があります。公立学校が保有する児童・保護者情報をPTAへ渡す場面では、学校側について個人情報保護法第69条（利用及び提供の制限）による目的外利用・目的外提供の制約が問題になります。「学校が持っているからPTAでも使える」という整理はできません。
+        <br><span class="law-tag">学校側：個人情報保護法69条</span><span class="law-tag">PTA側：利用目的の明示</span><span class="law-tag">PTA側：安全管理</span><span class="law-tag">PTA側：本人から直接取得</span>
       </div>
     </div>
   </div>
@@ -598,8 +682,8 @@
       </div>
       <div class="pm-step">
         <div class="pm-step-num">2</div>
-        <div class="pm-step-title">PTA活動を勤務時間外に設定しない</div>
-        <div class="pm-step-body">PTA主催行事は<strong>教職員の勤務時間外の参加を求めない</strong>設計にします。どうしても必要な場合は代休・時間外手当の適切な処理を確認します。</div>
+        <div class="pm-step-title">教職員に勤務時間外参加を求めない</div>
+        <div class="pm-step-body">PTA主催行事は、教職員が当然に参加する前提にせず、<strong>勤務時間外の参加を求めない</strong>設計にします。どうしても学校業務として関与させる場合は、職務命令・服務・勤務時間処理の根拠を確認します。</div>
       </div>
       <div class="pm-step">
         <div class="pm-step-num">3</div>
@@ -654,6 +738,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- =========================================
      フッター
