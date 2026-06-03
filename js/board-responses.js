@@ -4,6 +4,36 @@
   const DATA = window.PTA_BOARD_RESPONSE_INDEX || {};
 
   /* ─────────────────────────────────────────────
+     地図上に後付けされた赤い手動ピンの抑制
+     通常のLeaflet地図が動く場合は重ね表示を消し、
+     Leafletが使えない場合の代替表示だけ紺＋金にする。
+  ───────────────────────────────────────────── */
+  function injectMapPinFix() {
+    if (document.getElementById('board-response-map-pin-fix')) return;
+    const style = document.createElement('style');
+    style.id = 'board-response-map-pin-fix';
+    style.textContent = `
+      #responseMap.leaflet-container .manual-map-pin-layer{
+        display:none!important;
+      }
+      .manual-map-pin{
+        background:#1e3a5f!important;
+        color:#fff!important;
+        border:1px solid rgba(212,175,55,.9)!important;
+        box-shadow:0 8px 18px rgba(15,39,66,.22)!important;
+      }
+      .manual-map-pin::before{
+        color:#d4af37!important;
+      }
+      .manual-map-pin:hover{
+        background:#2d5a8e!important;
+        color:#fff!important;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  /* ─────────────────────────────────────────────
      都道府県マッピング (76自治体)
   ───────────────────────────────────────────── */
   const PREF = {
@@ -272,8 +302,11 @@
       const targetId = ansId(m.no);
 
       const marker = L.circleMarker(m.coordinates, {
-        radius: 7, color: '#1d4ed8', fillColor: '#1d4ed8',
-        fillOpacity: 0.82, weight: 2
+        radius: 7,
+        color: '#1e3a5f',
+        fillColor: '#d4af37',
+        fillOpacity: 0.88,
+        weight: 2
       });
 
       marker.bindTooltip(
@@ -321,6 +354,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    injectMapPinFix();
     renderIndex();
     renderBodies();
     initMap();
