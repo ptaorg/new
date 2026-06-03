@@ -1,4 +1,4 @@
-/* PTA適正化推進委員会 — site.js v7 */
+/* PTA適正化推進委員会 — site.js v8 */
 const SITE_INDEX=[
   {title:'トップページ',url:'index.html',desc:'サイト全体の入口。今何が起きているか、立場別ガイド、監査システム。みなし加入 強制加入 横領 個人情報'},
   {title:'静岡市・9200人分個人情報無断提供事案',url:'shizuoka-incident.html',desc:'2026年4月発覚。静岡市立20校で保護者の同意なく個人情報をPTAに提供。教育長「法律と学校文化にずれ」。構造的分析。'},
@@ -65,6 +65,25 @@ function initChecklist(){
     box.addEventListener('click',()=>{box.classList.toggle('checked');box.textContent=box.classList.contains('checked')?'✓':'';});
   });
 }
+function injectGuideBoardAccordionStyles(){
+  if(document.getElementById('guide-board-accordion-style'))return;
+  const style=document.createElement('style');
+  style.id='guide-board-accordion-style';
+  style.textContent=`
+    .gb-accordion{background:transparent;border:0;margin:0;padding:0}
+    .gb-accordion>summary{list-style:none;cursor:pointer;position:relative;display:block;padding:0 92px 0 0}
+    .gb-accordion>summary::-webkit-details-marker{display:none}
+    .gb-accordion>summary::after{content:'開く';position:absolute;right:0;top:50%;transform:translateY(-50%);background:#17345c;color:#fff;border-radius:999px;padding:8px 16px;font-size:.82rem;font-weight:900;letter-spacing:.03em;box-shadow:0 8px 18px rgba(15,39,66,.16)}
+    .gb-accordion[open]>summary::after{content:'閉じる';background:#b45309}
+    .gb-accordion>summary:hover .section-title{color:#0f2f57}
+    .gb-accordion>summary .section-kicker{margin-bottom:10px}
+    .gb-accordion>summary .section-title{margin:0;max-width:none;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px;text-decoration-color:var(--gold)}
+    .gb-accordion-body{margin-top:26px}
+    .gb-accordion .statute-quote,.gb-accordion .document-figure{margin-top:20px}
+    @media(max-width:720px){.gb-accordion>summary{padding-right:0;padding-bottom:52px}.gb-accordion>summary::after{left:0;right:auto;top:auto;bottom:0;transform:none}.gb-accordion>summary .section-title{font-size:clamp(1.22rem,6vw,1.72rem)}}
+  `;
+  document.head.appendChild(style);
+}
 function initBoardContractSection(){
   const isGuideBoard=location.pathname.endsWith('/guide-board.html')||location.pathname.endsWith('guide-board.html');
   if(!isGuideBoard||document.getElementById('pta-contract-entry'))return;
@@ -73,8 +92,12 @@ function initBoardContractSection(){
   article137.insertAdjacentHTML('beforebegin',[
     '<section class="board-guide-section article137-focus" id="pta-contract-entry" aria-labelledby="pta-contract-entry-title">',
     '<div class="wrap">',
+    '<details class="gb-accordion">',
+    '<summary>',
     '<div class="section-kicker">入会意思確認の基本</div>',
-    '<h2 class="section-title" id="pta-contract-entry-title" style="font-size:clamp(.95rem,2.4vw,1.42rem);line-height:1.45;white-space:nowrap;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px">PTAの入会は、学校手続ではなく契約行為である</h2>',
+    '<h2 class="section-title" id="pta-contract-entry-title">PTAの入会は、学校手続ではなく契約行為である</h2>',
+    '</summary>',
+    '<div class="gb-accordion-body">',
     '<p class="section-lead">PTAが学校とは別の任意団体である以上、保護者が会員になるには、PTA側からの加入条件の提示と、保護者本人による明示的な承諾が必要です。学校への入学、児童の在籍、学級名簿への記載は、それ自体ではPTA入会の意思表示にはなりません。</p>',
     '<div class="article137-lead">',
     '<p>教育委員会・学校管理職が最初に確認すべき点は、PTAへの加入を「入学に伴って当然に発生する地位」と扱っていないかどうかです。PTAは学校とは別の任意団体であり、保護者が会員になるためには、PTA側が会則、会費、活動内容、個人情報の利用目的、退会方法などを示し、保護者本人がそれを理解したうえで加入する意思を表示する必要があります。</p>',
@@ -100,7 +123,39 @@ function initBoardContractSection(){
     '<p class="article137-note">学校管理職は、PTAの内部運営を支配するのではなく、学校が関与している範囲について、契約成立の確認を曖昧にしていないかを点検する必要があります。</p>',
     '</div>',
     '</div>',
+    '</details>',
+    '</div>',
     '</section>'
   ].join(''));
 }
-document.addEventListener('DOMContentLoaded',()=>{initSearch();initHamburger();initMegaMenu();initFAQ();initChecklist();initBoardContractSection();});
+function wrapGuideBoardSectionAsAccordion(sectionId,newTitle){
+  const section=document.getElementById(sectionId);
+  if(!section||section.querySelector(':scope > .wrap > .gb-accordion'))return;
+  section.classList.remove('workstyle-focus');
+  section.classList.add('article137-focus');
+  const wrap=section.querySelector(':scope > .wrap');
+  if(!wrap)return;
+  const kicker=wrap.querySelector(':scope > .section-kicker');
+  const title=wrap.querySelector(':scope > .section-title');
+  if(!kicker||!title)return;
+  if(newTitle)title.textContent=newTitle;
+  const details=document.createElement('details');
+  details.className='gb-accordion';
+  const summary=document.createElement('summary');
+  summary.appendChild(kicker);
+  summary.appendChild(title);
+  const body=document.createElement('div');
+  body.className='gb-accordion-body';
+  while(wrap.firstChild){body.appendChild(wrap.firstChild)}
+  details.appendChild(summary);
+  details.appendChild(body);
+  wrap.replaceChildren(details);
+}
+function initGuideBoardSectionAccordions(){
+  const isGuideBoard=location.pathname.endsWith('/guide-board.html')||location.pathname.endsWith('guide-board.html');
+  if(!isGuideBoard)return;
+  injectGuideBoardAccordionStyles();
+  wrapGuideBoardSectionAsAccordion('article137-school-use');
+  wrapGuideBoardSectionAsAccordion('workstyle-reform-boundary','文部科学省の働き方改革3分類から、PTA事務を学校・教師の仕事にしない');
+}
+document.addEventListener('DOMContentLoaded',()=>{initSearch();initHamburger();initMegaMenu();initFAQ();initChecklist();injectGuideBoardAccordionStyles();initBoardContractSection();initGuideBoardSectionAccordions();});
