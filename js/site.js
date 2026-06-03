@@ -1,4 +1,4 @@
-/* PTA適正化推進委員会 — site.js v14 */
+/* PTA適正化推進委員会 — site.js v15 */
 const SITE_INDEX=[
   {title:'トップページ',url:'index.html',desc:'サイト全体の入口。今何が起きているか、立場別ガイド、監査システム。みなし加入 強制加入 横領 個人情報'},
   {title:'静岡市・9200人分個人情報無断提供事案',url:'shizuoka-incident.html',desc:'2026年4月発覚。静岡市立20校で保護者の同意なく個人情報をPTAに提供。教育長「法律と学校文化にずれ」。構造的分析。'},
@@ -32,8 +32,12 @@ function initFAQ(){document.querySelectorAll('.faq-item').forEach(item=>{const q
 function initChecklist(){document.querySelectorAll('.check-box').forEach(box=>{box.addEventListener('click',()=>{box.classList.toggle('checked');box.textContent=box.classList.contains('checked')?'✓':''})})}
 function initEduBoardSeparationOpenLayout(){if(!isEduBoardSeparationPage()||document.getElementById('edu-open-layout-style'))return;const style=document.createElement('style');style.id='edu-open-layout-style';style.textContent=`
   .edu-page{background:#fff!important;padding:56px 0 80px!important}
-  .edu-layout{width:min(calc(100% - 44px),1180px)!important;grid-template-columns:240px minmax(0,1fr)!important;gap:44px!important}
-  .edu-article{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
+  .edu-layout{width:min(calc(100% - 44px),1180px)!important;display:grid!important;grid-template-columns:1fr!important;gap:0!important;align-items:start!important}
+  .edu-toc{position:static!important;top:auto!important;margin:0 0 44px!important;background:#fff!important;border:0!important;border-left:7px solid var(--gold)!important;border-radius:0 18px 18px 0!important;box-shadow:none!important;padding:20px 22px!important}
+  .edu-toc h2{margin:0 0 12px!important;font-size:.9rem!important;color:var(--navy)!important;letter-spacing:.05em!important}
+  .edu-toc a{display:inline-flex!important;align-items:center!important;margin:0 8px 8px 0!important;padding:7px 12px!important;border:1px solid #dbe4ee!important;border-radius:999px!important;background:#f8fafc!important;color:var(--navy)!important;font-size:.82rem!important;font-weight:800!important;line-height:1.4!important;text-decoration:none!important}
+  .edu-toc a:hover{background:var(--orange)!important;border-color:var(--orange)!important;color:#fff!important}
+  .edu-article{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;width:100%!important;max-width:none!important}
   .edu-article section{margin-bottom:54px!important;padding-bottom:46px!important;border-bottom:1px solid #e5e7eb!important;scroll-margin-top:104px}
   .edu-article section:last-child{border-bottom:0!important;margin-bottom:0!important;padding-bottom:0!important}
   .edu-article h2{border-bottom:0!important;padding-bottom:0!important;position:relative;margin-bottom:22px!important}
@@ -43,12 +47,11 @@ function initEduBoardSeparationOpenLayout(){if(!isEduBoardSeparationPage()||docu
   .notice-model,.script-box,.edu-caution,.law-explain-item,.transition-item,.flow-item,.reference-list a,.edu-voices-card{border-radius:0 14px 14px 0!important;box-shadow:none!important}
   .transition-item,.flow-item,.law-explain-item,.reference-list a,.edu-voices-card{background:#fff!important;border-left:4px solid rgba(212,175,55,.55)!important}
   .edu-table-wrap,.edu-voices-table-wrap{border-radius:0!important;box-shadow:none!important;border-left:0!important;border-right:0!important}
-  .edu-toc{border-radius:0 16px 16px 0!important;border-left:5px solid var(--gold)!important;box-shadow:none!important}
   .edu-final{border-radius:0 18px 18px 0!important;border-left:7px solid var(--gold)!important;box-shadow:none!important}
   .edu-card,.edu-card.strong{border-radius:0 16px 16px 0!important;box-shadow:none!important;border-left:6px solid var(--gold)!important}
-  .edu-article a:hover,.edu-toc a:hover{color:var(--orange)!important}
+  .edu-article a:hover{color:var(--orange)!important}
   @media(max-width:920px){.edu-layout{grid-template-columns:1fr!important}.edu-article{padding:0!important}.edu-toc{position:static!important}}
-  @media(max-width:640px){.edu-page{padding:36px 0 56px!important}.edu-layout{width:min(calc(100% - 28px),1180px)!important}.edu-article section{margin-bottom:42px!important;padding-bottom:36px!important}}
+  @media(max-width:640px){.edu-page{padding:36px 0 56px!important}.edu-layout{width:min(calc(100% - 28px),1180px)!important}.edu-toc{margin-bottom:34px!important;padding:18px 16px!important}.edu-toc a{display:flex!important;margin-right:0!important}.edu-article section{margin-bottom:42px!important;padding-bottom:36px!important}}
 `;document.head.appendChild(style)}
 function injectGuideBoardAccordionStyles(){if(document.getElementById('guide-board-accordion-style'))return;const style=document.createElement('style');style.id='guide-board-accordion-style';style.textContent=`
   a:hover,.nav-link:hover,.mega-col a:hover,.srd-item:hover .srd-item-title,.mini-link:hover,.municipal-voice-list a:hover,.board-guide-links a:hover,.footer a:hover,.ed-link-buttons a:hover,.article137-response-examples a:hover,.workstyle-source-box a:hover,.consumer-source-box a:hover{color:var(--orange)!important}
