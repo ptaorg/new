@@ -141,7 +141,17 @@
     </div>
   </section>
 
-  <section class="admin-materials-section admin-materials-note">
+  <nav class="editorial-toc" aria-label="行政資料ページ内の目次">
+    <div class="editorial-toc-title">目次</div>
+    <ol>
+      <li><a href="#admin-use">このページの使い方</a></li>
+      <li><a href="#admin-source-types">資料の性格を混同しない</a></li>
+      <li><a href="#pdf-list">主要PDF資料一覧</a></li>
+      <li><a href="#source-candidates">追加取込候補（確認中）</a></li>
+    </ol>
+  </nav>
+
+  <section class="admin-materials-section admin-materials-note editorial-panel editorial-panel--gold" id="admin-use">
     <h2>このページの使い方</h2>
     <ul>
       <li>PTA運営の適正化に関する一次資料・行政資料への入口として利用するページです。</li>
@@ -149,6 +159,18 @@
       <li>掲載資料そのものと、当委員会による整理・評価は区別して読んでください。</li>
       <li>資料の追加・更新により、掲載内容や整理の位置づけが変わる可能性があります。</li>
     </ul>
+  </section>
+
+  <section class="admin-materials-section admin-materials-note editorial-panel" id="admin-source-types">
+    <h2>資料の性格を混同しない</h2>
+    <p>このページに置く資料は、すべて同じ重みではありません。国や自治体の通知、個人情報保護委員会資料、教育委員会回答、自治体マニュアル、学術論文・研究資料は、それぞれ発出主体、対象、拘束力、現行性が異なります。申入書や照会文で引用する場合は、発出元、日付、対象制度、現在も参照可能な資料かどうかを確認してください。</p>
+    <p>とくに、PTA会費、学校徴収金、教職員の兼職兼業、職務専念義務、学校施設利用は、資料の一部だけを切り出すと誤読しやすい領域です。公式資料で確認できる事実と、当委員会による評価・解説は分けて扱います。</p>
+    <div class="editorial-bluebar">引用前に、資料の発出主体・日付・対象制度・現行性を確認します</div>
+    <div class="editorial-matrix" aria-label="資料種別ごとの読み方">
+      <div class="editorial-matrix-row"><div class="editorial-matrix-term">国・委員会資料</div><div class="editorial-matrix-desc">制度解釈や一般的整理を確認する資料。個別学校の運用実態を直接証明するものではありません。</div></div>
+      <div class="editorial-matrix-row"><div class="editorial-matrix-term">自治体通知</div><div class="editorial-matrix-desc">当該自治体の学校向け運用指示として重要。ただし、通知後に現場で徹底されているかは別資料で確認します。</div></div>
+      <div class="editorial-matrix-row"><div class="editorial-matrix-term">研究論文・参考資料</div><div class="editorial-matrix-desc">制度理解を補う資料。申入書で用いる場合は、公式資料と区別して位置づけます。</div></div>
+    </div>
   </section>
 
   <section class="admin-materials-section">
@@ -175,6 +197,7 @@
 
   <section class="admin-materials-section" id="pdf-list">
     <h2>主要PDF資料一覧</h2>
+    <p>以下のPDFは、PTA運営の各論点を検討する際の根拠資料・補助資料です。資料名だけで判断せず、どの資料が任意加入、個人情報、学校徴収金、教職員関与、施設利用のどの論点に関係するのかを確認してください。</p>
     <p class="admin-materials-muted">PDFファイル名はURLで扱いやすい半角英数字に変更し、元ファイル名は各カードに表示しています。学校徴収金公会計化通知は、ZIP内の2ファイルが同一ハッシュだったため1本のみ掲載しています。</p>
     <div class="admin-materials-grid">
       <article class="pdf-card">
@@ -278,7 +301,7 @@
 
   <section class="admin-materials-section" id="source-candidates">
     <h2>追加取込候補（確認中）</h2>
-    <p>以下は、Google Drive上で確認したPDF候補の一覧です。現時点ではPDF本体をこのZIPに同梱していないため、この表では<strong>確定掲載資料ではなく、確認中の資料候補</strong>として扱います。本文引用や申入書への引用に使う場合は、PDF原本、発出主体、発出日、現行性、重複の有無を確認してください。</p>
+    <p>以下は、PDFとしてサイト内に同梱済みの資料と、Google Drive上の候補として確認中の資料を並べた確認表です。本文引用や申入書への引用に使う場合は、サイト内PDFの有無だけで判断せず、PDF原本、発出主体、発出日、現行性、重複の有無を確認してください。</p>
     <p>特に、文部科学省通知、個人情報保護委員会資料、横浜市教育委員会通知は優先度Aとして整理しています。一方、自治体マニュアルや研究資料は、公式資料・参考資料・補助資料を混同しないよう、掲載時に区分を明記する必要があります。</p>
     <div style="overflow-x:auto;margin-top:18px">
       <table style="width:100%;border-collapse:collapse;font-size:.9rem;line-height:1.7;background:#fff">
@@ -297,14 +320,14 @@
           <td>横浜市通知</td>
           <td><strong>横浜市教育委員会通知 学教第1965号（yokohama-notice-1965.pdf）</strong><br><span style="color:#64748b">自治体公式通知PDF候補</span></td>
           <td>PTA任意加入、個人情報同意、未加入家庭配慮、会費説明、学校とPTAの関係</td>
-          <td><a href="https://drive.google.com/file/d/1f1QSbyS8UtsRnRAFct9z0lnKlad_p8ci" target="_blank" rel="noopener">Google Drive候補</a><br><span style="color:#64748b">PDF本体未同梱。Drive候補確認。</span></td>
+          <td><a href="/assets/documents/administrative-materials/yokohama-notice-1965.pdf" target="_blank" rel="noopener">サイト内PDF</a><br><span style="color:#64748b">Drive候補も併せて確認。発出主体・現行性の確認が必要。</span></td>
         </tr>
 <tr>
           <td>A</td>
           <td>個人情報</td>
           <td><strong>第353回個人情報保護委員会資料3</strong><br><span style="color:#64748b">個人情報保護委員会資料PDF</span></td>
           <td>学校からPTAへの個人情報提供、同意取得、第三者提供・目的外利用</td>
-          <td><a href="https://drive.google.com/file/d/1ZgAu-we_1MUUQOMrICl0-PqxrHBQQbDc" target="_blank" rel="noopener">Google Drive候補</a><br><span style="color:#64748b">PDF本体未同梱。Drive候補確認。</span></td>
+          <td><a href="/assets/documents/administrative-materials/ppc-pta-personal-information-material-353.pdf" target="_blank" rel="noopener">サイト内PDF</a><br><span style="color:#64748b">Drive候補と内容照合。重複可能性の確認が必要。</span></td>
         </tr>
 <tr>
           <td>A</td>
