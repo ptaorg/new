@@ -1,4 +1,4 @@
-/* PTA適正化推進委員会 — site.js v8 */
+/* PTA適正化推進委員会 — site.js v9 */
 const SITE_INDEX=[
   {title:'トップページ',url:'index.html',desc:'サイト全体の入口。今何が起きているか、立場別ガイド、監査システム。みなし加入 強制加入 横領 個人情報'},
   {title:'静岡市・9200人分個人情報無断提供事案',url:'shizuoka-incident.html',desc:'2026年4月発覚。静岡市立20校で保護者の同意なく個人情報をPTAに提供。教育長「法律と学校文化にずれ」。構造的分析。'},
@@ -80,7 +80,15 @@ function injectGuideBoardAccordionStyles(){
     .gb-accordion>summary .section-title{margin:0;max-width:none;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px;text-decoration-color:var(--gold)}
     .gb-accordion-body{margin-top:26px}
     .gb-accordion .statute-quote,.gb-accordion .document-figure{margin-top:20px}
-    @media(max-width:720px){.gb-accordion>summary{padding-right:0;padding-bottom:52px}.gb-accordion>summary::after{left:0;right:auto;top:auto;bottom:0;transform:none}.gb-accordion>summary .section-title{font-size:clamp(1.22rem,6vw,1.72rem)}}
+    .municipal-voices-evidence{margin-top:30px;background:#fff;border:1px solid #dbe4ee;border-left:7px solid var(--gold);border-radius:0 18px 18px 0;box-shadow:0 12px 28px rgba(15,39,66,.06);overflow:hidden}
+    .municipal-voices-evidence>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 24px;background:#fff8df;color:var(--navy);font-weight:900;line-height:1.55}
+    .municipal-voices-evidence>summary::-webkit-details-marker{display:none}
+    .municipal-voices-evidence>summary::after{content:'開く';flex-shrink:0;background:#17345c;color:#fff;border-radius:999px;padding:7px 14px;font-size:.78rem;font-weight:900}
+    .municipal-voices-evidence[open]>summary::after{content:'閉じる';background:#b45309}
+    .municipal-voices-evidence>summary span{display:block;font-size:1.05rem}
+    .municipal-voices-evidence>summary small{display:block;margin-top:3px;color:#64748b;font-size:.82rem;font-weight:700}
+    .municipal-voices-evidence .municipal-voice-list{margin:0;padding:0 24px 18px;border-top:1px solid #e2e8f0}
+    @media(max-width:720px){.gb-accordion>summary{padding-right:0;padding-bottom:52px}.gb-accordion>summary::after{left:0;right:auto;top:auto;bottom:0;transform:none}.gb-accordion>summary .section-title{font-size:clamp(1.22rem,6vw,1.72rem)}.municipal-voices-evidence>summary{display:block}.municipal-voices-evidence>summary::after{display:inline-block;margin-top:12px}}
   `;
   document.head.appendChild(style);
 }
@@ -128,6 +136,25 @@ function initBoardContractSection(){
     '</section>'
   ].join(''));
 }
+function initMunicipalVoicesPlacement(){
+  const isGuideBoard=location.pathname.endsWith('/guide-board.html')||location.pathname.endsWith('guide-board.html');
+  if(!isGuideBoard)return;
+  const section=document.getElementById('municipal-voices');
+  const contract=document.getElementById('pta-contract-entry');
+  if(!section||!contract)return;
+  section.classList.add('article137-focus');
+  if(section.nextElementSibling!==contract){contract.parentNode.insertBefore(section,contract)}
+  const wrap=section.querySelector(':scope > .wrap');
+  const list=wrap?.querySelector('.municipal-voice-list');
+  if(!wrap||!list||list.closest('.municipal-voices-evidence'))return;
+  const details=document.createElement('details');
+  details.className='municipal-voices-evidence';
+  const summary=document.createElement('summary');
+  summary.innerHTML='<div><span>実際の市民の声20</span><small>各自治体の公式ページに掲載された相談・苦情の実例を開いて確認する</small></div>';
+  list.parentNode.insertBefore(details,list);
+  details.appendChild(summary);
+  details.appendChild(list);
+}
 function wrapGuideBoardSectionAsAccordion(sectionId,newTitle){
   const section=document.getElementById(sectionId);
   if(!section||section.querySelector(':scope > .wrap > .gb-accordion'))return;
@@ -158,4 +185,4 @@ function initGuideBoardSectionAccordions(){
   wrapGuideBoardSectionAsAccordion('article137-school-use');
   wrapGuideBoardSectionAsAccordion('workstyle-reform-boundary','文部科学省の働き方改革3分類から、PTA事務を学校・教師の仕事にしない');
 }
-document.addEventListener('DOMContentLoaded',()=>{initSearch();initHamburger();initMegaMenu();initFAQ();initChecklist();injectGuideBoardAccordionStyles();initBoardContractSection();initGuideBoardSectionAccordions();});
+document.addEventListener('DOMContentLoaded',()=>{initSearch();initHamburger();initMegaMenu();initFAQ();initChecklist();injectGuideBoardAccordionStyles();initBoardContractSection();initMunicipalVoicesPlacement();initGuideBoardSectionAccordions();});
