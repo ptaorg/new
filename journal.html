@@ -28,6 +28,38 @@
       gap:40px;
       padding:60px 0;
     }
+
+    .journal-intro{
+      background:#fff;border:1px solid var(--line);
+      border-left:5px solid var(--gold);
+      border-radius:18px;padding:30px 32px;margin-bottom:28px;
+      box-shadow:var(--shadow-sm);
+    }
+    .journal-intro h2{
+      font-family:'Noto Serif JP',serif;
+      font-size:1.45rem;font-weight:900;color:var(--navy);
+      margin:0 0 14px;
+    }
+    .journal-intro p{font-size:.96rem;line-height:2;color:var(--text);margin:0 0 12px;}
+    .journal-intro p:last-child{margin-bottom:0;}
+    .journal-reading-flow{
+      margin-top:22px;padding:20px 22px;border-radius:14px;
+      background:linear-gradient(180deg,rgba(5,17,31,.035),rgba(212,175,55,.055));
+      border:1px solid rgba(5,17,31,.08);
+    }
+    .journal-reading-flow h3{
+      font-family:'Noto Serif JP',serif;
+      color:var(--navy);font-size:1.05rem;margin:0 0 10px;
+    }
+    .journal-reading-flow ol{margin:0;padding-left:1.35em;color:var(--text);line-height:1.9;font-size:.93rem;}
+    .journal-reading-flow li+li{margin-top:4px;}
+    .journal-list-heading{
+      font-family:'Noto Serif JP',serif;
+      font-size:1.2rem;font-weight:900;color:var(--navy);
+      margin:0 0 8px;padding-top:4px;
+    }
+    .journal-list-lead{font-size:.9rem;line-height:1.85;color:var(--text-soft);margin:0 0 18px;}
+
     /* Category filter */
     .category-bar{
       display:flex;flex-wrap:wrap;gap:8px;
@@ -145,8 +177,23 @@
 
   gtag('config', 'G-0D18ZSSLMH');
 </script>
+
+  <style id="journal-editorial-design">
+    .journal-layout .journal-intro{border-radius:14px;border-left:0;border-top:6px solid var(--gold);box-shadow:0 12px 34px rgba(5,17,31,.10)}
+    .journal-layout .journal-intro h2{padding:12px 16px;border-radius:8px;background:#f3f6fa;border-left:5px solid var(--navy)}
+    .journal-layout .category-bar{padding:12px 0 20px;border-top:1px solid rgba(5,17,31,.08);border-bottom:1px solid rgba(5,17,31,.08);margin-bottom:28px}
+    .journal-layout .article-list{gap:14px}
+    .journal-layout .article-card{border-radius:10px!important;box-shadow:0 8px 22px rgba(5,17,31,.06)!important;border:1px solid rgba(5,17,31,.12)!important;border-left:5px solid var(--navy)!important;overflow:hidden!important;transform:none!important}
+    .journal-layout .article-card:hover{box-shadow:0 12px 32px rgba(5,17,31,.12)!important;border-left-color:var(--gold)!important}
+    .journal-layout .ac-thumb{width:170px!important;min-height:150px!important}
+    .journal-layout .ac-body{padding:22px 24px!important}
+    .journal-layout .ac-title{font-family:'Noto Serif JP',serif;line-height:1.55}
+    .journal-layout .ac-tags{opacity:.82}
+    .journal-layout .sidebar-card{border-radius:10px!important;box-shadow:0 8px 22px rgba(5,17,31,.06)!important;border-top:4px solid var(--navy)!important}
+    @media (max-width:900px){.journal-layout .article-card{display:block!important}.journal-layout .ac-thumb{width:100%!important;height:160px!important}.journal-layout{grid-template-columns:1fr!important}}
+  </style>
 </head>
-<body>
+<body class="journal-page">
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="logo">
@@ -259,6 +306,31 @@
     <div class="journal-layout">
       <!-- Main content -->
       <div>
+        <section class="journal-intro" aria-labelledby="journal-intro-title">
+          <h2 id="journal-intro-title">論考は、個別資料を制度問題として読み直すために置いています</h2>
+          <p>PTA問題は、入会案内、名簿、会費、学校施設、教職員の関与が別々に起きているように見えて、実際には一つの運用構造としてつながっています。入会申込書が確認できないまま会員扱いされ、学校徴収金と同じ文書・口座でPTA会費が扱われ、学校が保有する児童・保護者情報を前提にPTA運営が進む場合、保護者団体の内部問題だけでは説明できません。</p>
+          <p>このページの論考・調査報告は、行政回答や開示資料を単発のニュースとして並べるためではなく、任意加入、公私分離、個人情報保護、会費徴収、教職員の服務、学校施設利用という論点を相互に接続して読むためのものです。記事一覧に入る前に、まずどの論点がどこへつながるのかを意識して読むと、個別資料の意味が見えやすくなります。</p>
+          <div class="editorial-bluebar">論考は、入会・名簿・徴収・学校関与を一本の流れとして読むための補助線です</div>
+          <ol class="editorial-flow editorial-flow--compact journal-issue-flow">
+            <li>入会申込書・加入意思確認記録の有無を確認する。</li>
+            <li>学校徴収金案内や引落し資料を読み、PTA会費との混在を確認する。</li>
+            <li>学校保有情報、PTA名簿、学校連絡ツール、児童経由回収の関係を見る。</li>
+            <li>教育委員会回答や行政通知と照合し、制度説明と現場資料のずれを見る。</li>
+          </ol>
+        </section>
+
+        <nav class="editorial-toc journal-toc" aria-label="論考ページ内の目次">
+          <div class="editorial-toc-title">目次</div>
+          <ol>
+            <li><a href="#articleList">掲載中の論考・調査報告</a></li>
+            <li><a href="board-responses.html">教育委員会回答と照合する</a></li>
+            <li><a href="national-archive.html">学校別資料で実態を確認する</a></li>
+          </ol>
+        </nav>
+
+        <h2 class="journal-list-heading">論考目録</h2>
+        <p class="journal-list-lead">以下はカード型の入口ではなく、本文で扱う論点へ進むための目録です。分類ボタンは検索補助にすぎず、記事の法的結論を単純化するものではありません。</p>
+
         <div class="category-bar">
           <button class="cat-btn active" onclick="filterCat('all',this)">すべて</button>
           <button class="cat-btn" onclick="filterCat('ronko',this)">論考</button>
@@ -280,8 +352,8 @@
                 <span class="ac-reading">スライド 15枚</span>
                 <span style="background:#fee2e2;color:#b91c1c;font-size:.72rem;font-weight:900;padding:3px 10px;border-radius:999px">スライド資料</span>
               </div>
-              <div class="ac-title">PTA会費徴収のパラドックス——なぜ「自立」が教職員と保護者を守る唯一の道なのか</div>
-              <div class="ac-excerpt">良かれと思って続ける「学校による代行集金」が、今、教育現場を法的地雷原へと追い詰めている。職務専念義務・個人情報保護法・地方自治法——3つの法的障壁から「完全分離・自立」が唯一の解決策である根拠を15枚のスライドで解説します。</div>
+              <div class="ac-title">PTA会費徴収のパラドックス——なぜ「自立」が教職員と保護者を守る基本方向なのか</div>
+              <div class="ac-excerpt">良かれと思って続ける「学校による代行集金」が、今、教育現場を法的地雷原へと追い詰めている。職務専念義務・個人情報保護法・地方自治法——3つの法的障壁から「分離・自立」が重要になる理由を15枚のスライドで解説します。</div>
               <div class="ac-tags"><span class="ac-tag">会費徴収</span><span class="ac-tag">職務専念義務</span><span class="ac-tag">無権代理</span><span class="ac-tag">公私分離</span></div>
               <div style="margin-top:14px">
                 <button onclick="openSlideViewer()" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:var(--navy);color:#fff;font-weight:800;font-size:.86rem;border:none;cursor:pointer">▶ スライドを見る（15枚）</button>
@@ -299,7 +371,7 @@
                 <span class="ac-reading">読了 約8分</span>
               </div>
               <div class="ac-title">川崎市モデルも横浜市モデルも「詰み」——学校代行維持論の構造的限界</div>
-              <div class="ac-excerpt">学校代行を維持しようとする2つのアプローチがいずれも法的・実務的に破綻する理由を解説。守ろうとするほど首が絞まる構造と、唯一の解である「完全分離」を論じます。</div>
+              <div class="ac-excerpt">学校代行を維持しようとする2つのアプローチがいずれも法的・実務的に破綻する理由を解説。守ろうとするほど首が絞まる構造と、基本方向としての「分離」を論じます。</div>
               <div class="ac-tags"><span class="ac-tag">川崎市モデル</span><span class="ac-tag">横浜市モデル</span><span class="ac-tag">完全分離</span></div>
             </div>
           </a>
@@ -331,7 +403,7 @@
                 <span style="background:#fef3c7;color:#92400e;font-size:.72rem;font-weight:900;padding:3px 10px;border-radius:999px">注目</span>
               </div>
               <div class="ac-title">PTAの適正化に向けた課題と提言 ——全国調査と法制度分析に基づく包括的報告</div>
-              <div class="ac-excerpt">約50自治体への情報公開請求・全国教育委員会への照会・PTA規約・実物文書の収集をもとに、PTAを取り巻く制度的問題を包括的に整理し、適正化の方向性を提言します。</div>
+              <div class="ac-excerpt">教育委員会回答・情報公開請求・PTA規約・実物文書の収集をもとに、PTAを取り巻く制度的問題を包括的に整理し、適正化の方向性を提言します。</div>
               <div class="ac-tags"><span class="ac-tag">入会手続</span><span class="ac-tag">個人情報</span><span class="ac-tag">職務専念義務</span><span class="ac-tag">行政指針</span></div>
             </div>
           </a>
@@ -364,7 +436,7 @@
                 <span class="ac-reading">読了 約8分</span>
                 <span style="background:#fee2e2;color:#b91c1c;font-size:.72rem;font-weight:900;padding:3px 10px;border-radius:999px">事案分析</span>
               </div>
-              <div class="ac-title">静岡市立20校・9,200人分の個人情報が無断提供——「完全分離済」と回答していた市で発覚した矛盾の構造</div>
+              <div class="ac-title">静岡市立20校・9,200人分の個人情報が根拠不明の提供——「完全分離済」と回答していた市で発覚した矛盾の構造</div>
               <div class="ac-excerpt">「教職員の関与ゼロ・公務外」と照会回答していた静岡市で、市内20校・約9,200人分の児童生徒の個人情報が保護者の同意なくPTAに提供されていたことが判明。教育長「法律と学校文化にずれ」発言の意味と、5論点同時整理の必要性を分析。</div>
               <div class="ac-tags"><span class="ac-tag">静岡市</span><span class="ac-tag">個人情報</span><span class="ac-tag">9200人</span><span class="ac-tag">構造的問題</span></div>
             </div>
@@ -381,9 +453,9 @@
                 <span class="ac-reading">読了 約12分</span>
                 <span style="background:#dbeafe;color:#1e3a8a;font-size:.72rem;font-weight:900;padding:3px 10px;border-radius:999px">新着</span>
               </div>
-              <div class="ac-title">令和8年度照会（全国97自治体）分析——3類型に分かれた行政の公式見解</div>
-              <div class="ac-excerpt">「PTA会費徴収への教職員の関与をどう整理しているか」7問照会に対する全国97自治体の回答を分析。静岡市「教職員の関与ゼロ・完全分離済」、厚木市「PTAの独自徴収が最もふさわしい」から、川崎市・仙台市「委任契約で校務化継続」まで、行政の対応が3類型に分かれることが判明。委任契約モデルが抱える根本矛盾も解説。</div>
-              <div class="ac-tags"><span class="ac-tag">全国97自治体</span><span class="ac-tag">7問照会</span><span class="ac-tag">静岡市</span><span class="ac-tag">川崎市モデル</span><span class="ac-tag">3類型</span></div>
+              <div class="ac-title">教育委員会回答から見る行政見解の分岐——完全分離型・委任継続型・実態未整理型</div>
+              <div class="ac-excerpt">教育委員会回答を、学校関与を断つ完全分離型、委任契約等で学校処理を残す型、実態把握が不十分な型に分けて読みます。回答文だけでなく、学校別資料・徴収資料・職務専念義務の扱いと照合することが重要です。</div>
+              <div class="ac-tags"><span class="ac-tag">教育委員会回答</span><span class="ac-tag">類型分析</span><span class="ac-tag">静岡市</span><span class="ac-tag">川崎市モデル</span><span class="ac-tag">3類型</span></div>
             </div>
           </a>
 
@@ -397,8 +469,8 @@
                 <span class="ac-date">2025年11月</span>
                 <span class="ac-reading">読了 約15分</span>
               </div>
-              <div class="ac-title">全国50自治体照会報告——「強制加入は適法」と回答した教育委員会はゼロ</div>
-              <div class="ac-excerpt">全国50以上の教育委員会への照会で得られた回答を論点別に集計・分析します。入会手続・個人情報・会費・教職員関与の4論点について、行政の公式見解をまとめます。</div>
+              <div class="ac-title">教育委員会照会報告——「強制加入は適法」と明言する回答が出にくい理由</div>
+              <div class="ac-excerpt">教育委員会への照会で得られた回答を論点別に読みます。入会手続・個人情報・会費・教職員関与について、一般論としての回答と、学校現場の実態に踏み込んだ回答を分けて確認します。</div>
               <div class="ac-tags"><span class="ac-tag">全国調査</span><span class="ac-tag">教育委員会</span><span class="ac-tag">一次資料</span></div>
             </div>
           </a>
@@ -413,8 +485,8 @@
                 <span class="ac-date">2025年12月</span>
                 <span class="ac-reading">読了 約8分</span>
               </div>
-              <div class="ac-title">横浜市教育委員会通知「学教第1965号」の意義——全国初のオプトイン義務化</div>
-              <div class="ac-excerpt">令和7年12月に発出された横浜市教委通知を解説します。全国初のオプトイン義務化通知として何を規定し、他自治体への波及をどう読むか。通知全文への参照付き。</div>
+              <div class="ac-title">横浜市教育委員会通知「学教第1965号」の意義——オプトイン方式への整理</div>
+              <div class="ac-excerpt">横浜市教委通知とされる資料を解説します。オプトイン方式への整理として何を示し、他自治体が参照する場合にどこを確認すべきかを読みます。通知全文への参照付き。</div>
               <div class="ac-tags"><span class="ac-tag">横浜市通知</span><span class="ac-tag">オプトイン</span><span class="ac-tag">行政指針</span></div>
             </div>
           </a>
@@ -493,8 +565,8 @@
 
   // スライドビューワー
   const SLIDES = [
-    { title: 'PTA会費徴収のパラドックス', sub: 'なぜ「自立」が教職員と保護者を守る唯一の道なのか' },
-    { title: '理想と現実の対比：2つの「集金ルート」', sub: '適正（青の道）と違法（赤の道）の分岐' },
+    { title: 'PTA会費徴収のパラドックス', sub: 'なぜ「自立」が教職員と保護者を守る基本方向なのか' },
+    { title: '理想と現実の対比：2つの「集金ルート」', sub: '適正な分離ルートと問題化しやすい一体徴収ルート' },
     { title: '善意の罠①：「第二の財布」への構造的依存', sub: '公費不足がPTAを学校の財布にしている実態' },
     { title: '善意の罠②：「抱き合わせ徴収」という錯覚', sub: '「ラク」の代償——短期的な便宜が生む法的リスク' },
     { title: '代行集金が激突する「3つの法的障壁」', sub: '労働の壁・情報の壁・財務の壁' },
@@ -504,7 +576,7 @@
     { title: '法理的破綻：「無権代理」という時限爆弾', sub: '入会契約のない状態での徴収は無権代理' },
     { title: '司法が突きつける現実：法廷では通用しない「慣例」', sub: '熊本PTA裁判・鹿児島地裁の事例' },
     { title: 'パラドックスの完成：代行システムは「詰み」の状態', sub: '川崎市モデルも横浜市モデルも破綻する理由' },
-    { title: '唯一の解決策：「完全分離」というパラダイムシフト', sub: 'Before & After——公と私を切り離す' },
+    { title: '主要な解決方向：「分離」というパラダイムシフト', sub: 'Before & After——公と私を切り離す' },
     { title: '「自立」を可能にする現代のスマート集金', sub: 'キャッシュレス・ネットバンク口座で役員の負担を減らす' },
     { title: '適正化へのロードマップ：3つのステップ', sub: '加入の任意性明示→個人情報自立管理→集金システム分離' },
     { title: '自立こそが、最大の「学校支援」', sub: '健全で対等なパートナーシップへ' },

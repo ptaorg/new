@@ -515,14 +515,30 @@
 
     <main class="issue-main">
 
+
+      <section class="editorial-brief fee-editorial-brief" aria-labelledby="fee-reading-order">
+        <div class="editorial-brief-band">会費徴収・学校徴収金の読み方</div>
+        <div class="editorial-brief-body">
+          <h2 id="fee-reading-order">問題は「金額」ではなく、学校の徴収手続にPTA会費が混ざることです</h2>
+          <p>PTA会費が数百円であっても、学校徴収金と同じ通知、同じ口座、同じ引落し、同じ未納管理で扱われると、保護者からは学校への支払いに見えます。任意団体の会費であること、会員だけが負担すること、学校が取得した口座情報をPTA目的に使っていないことを分けて確認する必要があります。</p>
+          <div class="editorial-brief-grid">
+            <div class="editorial-brief-point"><span>1</span><strong>通知</strong><p>学校徴収金通知の中にPTA会費が混在していないかを確認します。</p></div>
+            <div class="editorial-brief-point"><span>2</span><strong>口座</strong><p>学校用の口座振替情報をPTA会費に流用していないかを見ます。</p></div>
+            <div class="editorial-brief-point"><span>3</span><strong>委任</strong><p>学校が代理徴収する根拠、範囲、会員確認が記録されているかを確認します。</p></div>
+            <div class="editorial-brief-point"><span>4</span><strong>分離</strong><p>最終的にはPTAが会員から直接徴収する設計へ移行します。</p></div>
+          </div>
+        </div>
+      </section>
+
+
       <!-- ===== SLIDE INFOGRAPHIC: 2ルートフローチャート ===== -->
       <section class="issue-section" id="slide-flow" style="scroll-margin-top:100px">
         <div class="section-eyebrow">図解</div>
-        <h2>2つの「集金ルート」——適正と違法の分岐点</h2>
+        <h2>2つの「集金ルート」——適正運用と問題運用の分岐点</h2>
         <p>会費徴収の問題を理解するには、まず「本来あるべき姿」と「現実に行われていること」の対比から入るのが分かりやすいです。</p>
 
         <svg width="100%" viewBox="0 0 760 480" role="img" style="max-width:760px;display:block;margin:28px auto 8px">
-          <title>2つの集金ルート：適正（青）と違法（赤）の対比フローチャート</title>
+          <title>2つの集金ルート：適正運用（青）と問題運用（赤）の対比フローチャート</title>
           <defs>
             <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
               <path d="M2 1L8 5L2 9" fill="none" stroke="#1d4ed8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -581,12 +597,12 @@
           <line x1="580" y1="228" x2="580" y2="398" stroke="#b91c1c" stroke-width="2.5" marker-end="url(#arrow-red)"/>
           <rect x="460" y="400" width="240" height="54" rx="10" fill="#b91c1c" stroke="#7f1d1d" stroke-width="1"/>
           <text x="580" y="426" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="14" font-weight="900" fill="#fff">学校に集金代行依頼</text>
-          <text x="580" y="444" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="14" font-weight="900" fill="#fecaca">［× 違法リスク高］</text>
+          <text x="580" y="444" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="14" font-weight="900" fill="#fecaca">［× 問題リスク高］</text>
 
           <!-- 下部まとめテキスト -->
           <rect x="40" y="420" width="300" height="48" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
           <text x="190" y="440" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="12" fill="#1e3a8a">現在の多くのPTAが歩む「赤の道」は</text>
-          <text x="190" y="458" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="12" font-weight="700" fill="#1e40af">最初から法的破綻を抱えています</text>
+          <text x="190" y="458" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="12" font-weight="700" fill="#1e40af">最初から根拠確認が必要です</text>
         </svg>
 
         <p style="font-size:.84rem;color:var(--text-soft);text-align:center;margin-bottom:32px">スライド資料「PTA会費徴収のパラドックス」第2スライドより</p>
@@ -603,19 +619,19 @@
           <div class="triple-card t1">
             <div class="triple-num">問題 1 — 民法</div>
             <h4>無権代理による徴収の無効</h4>
-            <p>学校とPTAの間に正式な委任契約がない場合、学校によるPTA会費徴収は「無権代理」（民法113条）として無効。会費は不当利得（703条）として返還義務が生じます。</p>
+            <p>学校とPTAの間に正式な委任契約がない場合、学校によるPTA会費徴収は代理権の有無が問題になります。会員本人の入会・支払根拠を説明できなければ、不当利得返還の問題にもつながります。</p>
             <span class="triple-law">民法 113条・703条</span>
           </div>
           <div class="triple-card t2">
             <div class="triple-num">問題 2 — 財務法規</div>
             <h4>公私会計の混在と割当寄付</h4>
-            <p>学校徴収金（準公金）とPTA会費（私金）を同口座・同請求書で扱うことは、地方自治法の公私峻別原則に反します。事実上の強制徴収は地方財政法4条の5の割当寄付禁止にも抵触し得ます。</p>
+            <p>学校徴収金とPTA会費を同じ通知・同じ引落しで扱うことは、公私会計の分離を不明確にします。任意加入団体の会費が事実上の学校支払いに見える場合、地方財政法上の割当的寄附の問題にも接続します。</p>
             <span class="triple-law">地方財政法 4条の5</span>
           </div>
           <div class="triple-card t3">
             <div class="triple-num">問題 3 — 個人情報</div>
             <h4>口座情報の目的外利用</h4>
-            <p>学校が教育目的で取得した口座情報を、PTAという別団体の会費徴収に使用することは、個人情報保護法第69条（目的外利用の制限）に抵触します。</p>
+            <p>学校が教育目的で取得した口座情報を、PTAという別団体の会費徴収に使用する運用は、個人情報保護法第69条の目的外利用・提供との関係で確認が必要です。</p>
             <span class="triple-law">個人情報保護法 69条</span>
           </div>
         </div>
@@ -623,7 +639,7 @@
         <div class="alert-block danger">
           <div class="alert-icon">🚨</div>
           <div>
-            <p><strong>全国の教育委員会の認識：</strong>当委員会が実施した全国照会で、「委任契約のない代理徴収は無権代理に該当する可能性が高い」と複数の教育委員会が回答しています。藤沢市・小田原市・相模原市・大崎市・東秩父村など多数が是正の必要性を認めました。</p>
+            <p><strong>教育委員会回答の読み方：</strong>掲載回答の中には、学校によるPTA会費徴収について、委任、本人同意、会員確認、学校徴収金との分離を確認すべきとする趣旨の回答があります。自治体名や件数を引用する場合は、回答本文と資料を照合してください。</p>
           </div>
         </div>
       </section>
@@ -928,7 +944,7 @@
         <div class="alert-block info">
           <div class="alert-icon">💡</div>
           <div>
-            <p><strong>現実的な移行の進め方：</strong>「形式的厳格化（業務委託契約・同意書取得）」を徹底しようとすると、却って教職員の事務負担が激増するという逆説が生じます。同意書の不備・未提出者への個別対応・徴収リストの修正など、「適法化のために新たな業務を教職員に課す」本末転倒な状態になりかねません。「完全分離（独自徴収）」こそが、教職員を不必要な事務と法的リスクから解放する唯一の根本解決策です。</p>
+            <p><strong>現実的な移行の進め方：</strong>「形式的厳格化（業務委託契約・同意書取得）」を徹底しようとすると、却って教職員の事務負担が激増するという逆説が生じます。同意書の不備・未提出者への個別対応・徴収リストの修正など、「適法化のために新たな業務を教職員に課す」本末転倒な状態になりかねません。「分離（PTAによる独自徴収）」は、教職員を不必要な事務と法的リスクから解放する有力な根本整理です。</p>
           </div>
         </div>
       </section>

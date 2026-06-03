@@ -144,12 +144,39 @@
         <h1>資料・文書一覧</h1>
         <p>PTA運営の適正化に関する資料、通知、ガイドライン、行政文書、研究資料を整理しています。このページは単なるリンク集ではなく、資料をどう読み、どの事実を確認するかを整理する入口です。</p>
       </header>
-      <section class="documents-section documents-note">
+      <nav class="editorial-toc" aria-label="資料ページ内の目次">
+        <div class="editorial-toc-title">目次</div>
+        <ol>
+          <li><a href="#documents-reading-policy">資料を読むときの基本方針</a></li>
+          <li><a href="#documents-absence">資料は「ないもの」も読む</a></li>
+          <li><a href="#documents-order">まず確認する資料の順番</a></li>
+          <li><a href="#source-candidates">追加資料候補の扱い</a></li>
+        </ol>
+      </nav>
+      <section class="documents-section documents-note editorial-panel editorial-panel--gold" id="documents-reading-policy">
         <h2>資料を読むときの基本方針</h2>
         <p>PTA関係資料を読むときは、表面上の説明文だけで判断せず、入会意思確認、個人情報の取得・提供、会費徴収、学校関与の4点を分けて確認します。特に、入会案内があるのに入会申込書が確認できない場合、会員扱いの根拠がどこにあるのかを慎重に見ます。</p>
+        <p>学校徴収金案内、PTA会費引落し資料、入会案内、個人情報同意書は、単独で読むのではなく相互に照合します。PTA会費が学校納入金と同じ口座・同じ時期・同じ文書で案内されている場合、保護者が学校費用の一部として受け取る余地がないかを確認します。</p>
         <p>このサイトでは、行政通知、教育委員会回答、学校別の実物資料、当委員会の論考を分けて掲載します。公式資料そのものと、当委員会の評価・解説は区別して読んでください。</p>
       </section>
-      <section class="documents-section documents-note" id="source-candidates">
+
+      <section class="documents-section editorial-section" id="documents-absence">
+        <h2>資料は「あるもの」だけでなく「ないもの」も読む</h2>
+        <p>PTA資料の確認では、提出された文書だけでなく、提出されていない文書の意味も重要です。たとえば、入会案内が配布されていても入会申込書や加入意思確認記録が確認できない場合、任意加入の説明が形式上存在するだけで、会員扱いの根拠が別途必要になります。</p>
+        <p>また、個人情報同意書がある場合でも、それが本人からPTAへ直接提出されたものなのか、学校が保有する児童・保護者情報をPTAへ渡すための同意なのかで意味が変わります。学校配布、児童経由回収、学校連絡ツール、学校徴収金との一体処理は、それぞれ学校関与の有無を確認する材料になります。</p>
+      </section>
+
+      <section class="documents-section editorial-section" id="documents-order">
+        <h2>まず確認する資料の順番</h2>
+        <div class="editorial-bluebar">資料は一枚ずつではなく、入会・名簿・徴収・学校関与の流れで読みます</div>
+        <ol class="editorial-flow">
+          <li><strong>入会申込書・加入意思確認記録</strong>を確認し、会員扱いの根拠が明示されているかを見る。</li>
+          <li><strong>学校徴収金案内・口座振替資料</strong>を確認し、PTA会費が学校費用と一体に見える運用になっていないかを見る。</li>
+          <li><strong>個人情報同意・名簿・連絡ツール</strong>を確認し、学校保有情報がPTA運営に使われていないかを見る。</li>
+          <li><strong>教育委員会回答・行政通知</strong>と照合し、制度上の説明と現場資料の記載が一致しているかを見る。</li>
+        </ol>
+      </section>
+      <section class="documents-section documents-note editorial-panel editorial-panel--gold" id="source-candidates">
         <h2>追加資料候補の扱い</h2>
         <p>Google Drive上で確認したPDF候補については、確認中の資料候補として別管理しています。PDF本体、発出主体、発出日、現行性、重複の有無を確認できるまでは、確定資料として本文に組み込まず、候補一覧として区別します。</p>
         <p>候補には、横浜市教育委員会通知、個人情報保護委員会資料、文部科学省の学校徴収金公会計化通知、学校関係団体に関する兼職兼業・会計処理通知、学校教育法137条関係資料などが含まれます。</p>
@@ -325,18 +352,38 @@
             <h1>資料・文書一覧</h1>
             <p>${message ? escapeHtml(message) : 'PTA運営の適正化に関する資料、通知、ガイドライン、行政文書、研究資料を整理しています。このページは単なるリンク集ではなく、資料をどう読み、どの事実を確認するかを整理する入口です。'}</p>
           </header>
+          <nav class="editorial-toc" aria-label="資料ページ内の目次">
+            <div class="editorial-toc-title">目次</div>
+            <ol>
+              <li><a href="#documents-reading-policy">資料を読むときの基本方針</a></li>
+              <li><a href="#documents-absence">資料は「ないもの」も読む</a></li>
+              <li><a href="#documents-order">まず確認する資料の順番</a></li>
+              <li><a href="#source-candidates">追加資料候補の扱い</a></li>
+            </ol>
+          </nav>
 
-          <section class="documents-section documents-note">
+          <section class="documents-section documents-note editorial-panel editorial-panel--gold" id="documents-reading-policy">
             <h2>資料を読むときの基本方針</h2>
             <p>PTA関係資料を読むときは、表面上の説明文だけで判断せず、入会意思確認、個人情報の取得・提供、会費徴収、学校関与の4点を分けて確認します。特に、入会案内があるのに入会申込書が確認できない場合、会員扱いの根拠がどこにあるのかを慎重に見ます。</p>
             <p>学校徴収金案内、PTA会費引落し資料、入会案内、個人情報同意書は、単独で読むのではなく相互に照合します。たとえば、PTA会費が学校納入金と同じ口座・同じ時期・同じ文書で案内されている場合、保護者がPTA会費を学校費用の一部と受け取る余地がないかを確認します。</p>
             <p>このサイトでは、行政通知、教育委員会回答、学校別の実物資料、当委員会の論考を分けて掲載します。公式資料そのものと、当委員会の評価・解説は区別して読んでください。</p>
           </section>
 
-          <section class="documents-section">
+          <section class="documents-section editorial-section" id="documents-absence">
+            <h2>資料は「あるもの」だけでなく「ないもの」も読む</h2>
+            <p>PTA資料の確認では、提出された文書だけでなく、提出されていない文書の意味も重要です。入会案内が配布されていても入会申込書や加入意思確認記録が確認できない場合、任意加入の説明が形式上存在するだけで、会員扱いの根拠が別途必要になります。</p>
+            <p>個人情報同意書についても、本人がPTAへ直接提出した情報なのか、学校が保有する児童・保護者情報をPTAへ提供するための同意なのかを分けて読みます。学校配布、児童経由回収、学校連絡ツール、学校徴収金との一体処理は、それぞれ学校関与の有無を確認する材料になります。</p>
+          </section>
+
+          <section class="documents-section editorial-section" id="documents-order">
             <h2>まず確認する資料の順番</h2>
-            <p>最初に見るべきなのは、PTAへの入会申込書または加入意思を確認できる記録です。次に、学校が保有する児童・保護者情報がPTAに提供されているか、またはPTA活動に利用されているかを確認します。そのうえで、PTA会費が学校徴収金と分離されているか、教職員が勤務時間中にどの程度PTA事務を担っているかを見ます。</p>
-            <p>この順番で読むと、単なる「説明不足」なのか、任意加入の前提そのものが崩れているのか、学校関与によって保護者の自由意思が見えにくくなっているのかを整理しやすくなります。</p>
+            <div class="editorial-bluebar">資料は一枚ずつではなく、入会・名簿・徴収・学校関与の流れで読みます</div>
+            <ol class="editorial-flow">
+              <li><strong>入会申込書・加入意思確認記録</strong>を確認し、会員扱いの根拠が明示されているかを見る。</li>
+              <li><strong>学校徴収金案内・口座振替資料</strong>を確認し、PTA会費が学校費用と一体に見える運用になっていないかを見る。</li>
+              <li><strong>個人情報同意・名簿・連絡ツール</strong>を確認し、学校保有情報がPTA運営に使われていないかを見る。</li>
+              <li><strong>教育委員会回答・行政通知</strong>と照合し、制度上の説明と現場資料の記載が一致しているかを見る。</li>
+            </ol>
           </section>
 
           <section class="documents-section">
@@ -350,7 +397,7 @@
           </section>
 
 
-          <section class="documents-section documents-note" id="source-candidates">
+          <section class="documents-section documents-note editorial-panel editorial-panel--gold" id="source-candidates">
             <h2>追加資料候補の扱い</h2>
             <p>Google Drive上で確認したPDF候補については、確認中の資料候補として別管理しています。PDF本体、発出主体、発出日、現行性、重複の有無を確認できるまでは、確定資料として本文に組み込まず、候補一覧として区別します。</p>
             <p>候補には、横浜市教育委員会通知、個人情報保護委員会資料、文部科学省の学校徴収金公会計化通知、学校関係団体に関する兼職兼業・会計処理通知、学校教育法137条関係資料などが含まれます。</p>
