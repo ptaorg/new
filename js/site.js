@@ -1,4 +1,4 @@
-/* PTA適正化推進委員会 — site.js v3 */
+/* PTA適正化推進委員会 — site.js v4 */
 const SITE_INDEX=[
   {title:'トップページ',url:'index.html',desc:'サイト全体の入口。今何が起きているか、立場別ガイド、監査システム。みなし加入 強制加入 横領 個人情報'},
   {title:'静岡市・9200人分個人情報無断提供事案',url:'shizuoka-incident.html',desc:'2026年4月発覚。静岡市立20校で保護者の同意なく個人情報をPTAに提供。教育長「法律と学校文化にずれ」。構造的分析。'},
@@ -65,4 +65,24 @@ function initChecklist(){
     box.addEventListener('click',()=>{box.classList.toggle('checked');box.textContent=box.classList.contains('checked')?'✓':'';});
   });
 }
-document.addEventListener('DOMContentLoaded',()=>{initSearch();initHamburger();initMegaMenu();initFAQ();initChecklist();});
+function initBoardContractSection(){
+  const isGuideBoard=location.pathname.endsWith('/guide-board.html')||location.pathname.endsWith('guide-board.html');
+  if(!isGuideBoard||document.getElementById('pta-contract-entry'))return;
+  const lead=document.querySelector('#board-first-reading .section-lead');
+  if(!lead)return;
+  lead.insertAdjacentHTML('afterend',[
+    '<section id="pta-contract-entry" aria-labelledby="pta-contract-entry-title" style="margin:28px 0 8px;padding:30px 32px;background:linear-gradient(145deg,#fff,#f8fafc);border:1px solid #dbe4ee;border-left:7px solid var(--gold);border-radius:0 18px 18px 0;box-shadow:0 12px 28px rgba(15,39,66,.06)">',
+    '<div class="section-kicker" style="margin-bottom:10px">入会意思確認の基本</div>',
+    '<h2 id="pta-contract-entry-title" style="font-family:\'Noto Serif JP\',serif;color:var(--navy);font-size:clamp(1.35rem,3vw,1.85rem);line-height:1.55;margin:0 0 18px">PTAの入会は、学校手続ではなく契約行為である</h2>',
+    '<div class="chapter-content plain-prose-block" style="padding:0;margin:0">',
+    '<p>教育委員会・学校管理職が最初に確認すべき点は、PTAへの加入を「入学に伴って当然に発生する地位」と扱っていないかどうかです。PTAは学校とは別の任意団体であり、保護者が会員になるためには、PTA側が会則、会費、活動内容、個人情報の利用目的、退会方法などを示し、保護者本人がそれを理解したうえで加入する意思を表示する必要があります。入学、在籍、児童の所属、学級名簿への記載は、それ自体ではPTA入会の意思表示にはなりません。</p>',
+    '<p>民法上、契約は、契約の内容を示してその締結を申し入れる意思表示に対して、相手方が承諾をしたときに成立するという構造を取ります。PTA入会でいえば、PTA又はPTAの委任を受けた者が「この団体に、この会則・会費・取扱条件で加入してください」と申込みの対象を具体的に示し、保護者が「加入します」と承諾することが必要です。したがって、入会申込書、オンライン申込記録、同意取得記録など、申込みと承諾を後から確認できる資料がない運用は、会員資格、会費請求、議決権、役員選出、個人情報利用の根拠を不安定にします。</p>',
+    '<p>消費者契約法上も、PTAが任意団体であることは契約法の外に置かれる理由にはなりません。同法は、消費者と事業者との間に情報量・交渉力の格差があることを前提に、消費者契約の申込み又は承諾の意思表示を保護する枠組みを置いています。保護者個人が、学校内で、入学説明会や学級配布物を通じて、学校手続と一体に見える形で加入を求められる場合、保護者は「加入しないと子どもに不利益があるのではないか」と受け止めやすく、自由意思による承諾が曖昧になります。</p>',
+    '<p>そのため、学校がPTA入会案内を配布する場合でも、本文上は「学校への提出書類」ではなく「PTAへの任意加入の申込み」であることを明記しなければなりません。未提出を加入承諾とみなす方式、退会届を出さなければ会員と扱う方式、非加入の意思表示を求めるオプトアウト方式、学校徴収金の口座振替にPTA会費を混在させる方式は、契約成立の確認を曖昧にし、消費者契約法上の誤認・困惑の問題を生じさせます。</p>',
+    '<p>結論として、教育委員会が点検すべき実務は明確です。各学校について、PTA入会案内が任意加入であることを正面から説明しているか、保護者本人の明示的な加入申込みを取得しているか、PTA会費の徴収対象者が申込記録と一致しているか、学校が未加入家庭を把握・抽出する運用になっていないかを確認する必要があります。入会記録がない場合は、「全員が会員だった」と扱うのではなく、入会の根拠を確認できない状態として、徴収・名簿利用・役員選出の前提を見直すべきです。</p>',
+    '<div style="margin-top:22px;padding:18px 20px;background:#fff8df;border:1px solid rgba(212,175,55,.42);border-radius:14px;color:#4b3a12;line-height:1.85;font-size:.94rem"><strong style="display:block;color:var(--navy);margin-bottom:6px">学校管理職向けの確認事項</strong>入会申込記録のない保護者からPTA会費を徴収していないか。学校の配布・回収・口座振替・連絡ツールが、保護者に「PTA加入は学校手続の一部」と誤認させる形になっていないか。まずここを点検してください。</div>',
+    '</div>',
+    '</section>'
+  ].join(''));
+}
+document.addEventListener('DOMContentLoaded',()=>{initSearch();initHamburger();initMegaMenu();initFAQ();initChecklist();initBoardContractSection();});
