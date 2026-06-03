@@ -74,7 +74,15 @@
 </script>
 </head>
 <body>
-  <header class="site-header">
+  
+<div class="support-strip" role="complementary" aria-label="活動支援のお願い">
+  <div class="support-strip-inner">
+    <span class="support-strip-label">応援のお願い</span>
+    <span class="support-strip-text">公文書開示、資料整理、Web公開を継続するため、寄付・カンパでのご支援をお願いします。</span>
+    <a class="support-strip-link" href="https://ptaorg.github.io/donate/">支援ページへ</a>
+  </div>
+</div>
+<header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="logo">
         <img src="assets/popc-logo.png" alt="PTA適正化推進委員会">
@@ -151,6 +159,7 @@
             </div>
           </div>
         </div>
+        <a href="https://ptaorg.github.io/donate/" class="nav-link support-nav-link">応援</a>
         <a href="audit/index.html" class="btn-gold">運営チェック</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileOverlay">
@@ -167,7 +176,8 @@
     <a href="national-archive.html" class="mobile-link"><span>Archive</span>全国資料館</a>
     <a href="journal.html" class="mobile-link"><span>Journal</span>論考・調査報告</a>
     <a href="audit/index.html" class="mobile-link"><span>Check</span>運営チェックアプリ</a>
-    <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
+    <a href="https://ptaorg.github.io/donate/" class="mobile-link support-mobile-link"><span>Support</span>応援・寄付</a>
+  <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
   </div>
 
   <section class="page-hero page-hero--photo">
@@ -210,8 +220,19 @@
       </div>
     </section>
 
+    <section class="editorial-panel" id="personnel-work-scope-note">
+      <h2>教職員の職務を明確にする資料は、PTA事務の線引きにも使えます</h2>
+      <p>学校現場では、保護者対応、地域連携、学校運営協議会、学校行事の調整など、教職員が関わるべき周辺業務があります。そのため、「PTAと連絡を取ったら直ちに問題」という整理ではなく、学校教育上必要な連絡調整と、PTAという別団体の内部事務代行を分けて見る必要があります。</p>
+      <p>教職員の標準的な職務や学校管理規則の整備に関する資料は、この線引きを考える材料になります。学校が担うべき職務を明確にするほど、PTA会計、PTA名簿、役員選出、会費徴収、印刷・封入などを勤務時間内に恒常処理する根拠は説明しにくくなります。</p>
+      <div class="editorial-matrix" aria-label="教職員関与の線引き">
+        <div class="editorial-matrix-row"><div class="editorial-matrix-term">学校側の連絡調整</div><div class="editorial-matrix-desc">学校行事、施設使用、安全管理、保護者への学校連絡など、学校管理上必要な範囲。</div></div>
+        <div class="editorial-matrix-row"><div class="editorial-matrix-term">PTA側の内部事務</div><div class="editorial-matrix-desc">会員管理、会費徴収、会計、役員選出、広報紙編集、総会資料作成など、PTAが自ら処理すべき範囲。</div></div>
+        <div class="editorial-matrix-row"><div class="editorial-matrix-term">境界領域</div><div class="editorial-matrix-desc">配布、校内掲示、連絡ツール利用、施設利用許可は、根拠・対象・目的・個人情報利用を記録して確認します。</div></div>
+      </div>
+    </section>
+
     <section class="pg-section">
-      <p>「担任の先生がPTA封筒を配ってくれる」「事務室で会費の集計をしてもらっている」——多くの学校でこれが当たり前になっていますが、これらは<strong>地方公務員法第35条（職務専念義務）違反の疑いが濃い行為</strong>です。悪意があったわけではなく、長年の慣行として定着してきたものですが、制度上の問題は変わりません。このページでは、何が問題なのか・何はよくて何はダメなのか・どう改善するかを整理します。</p>
+      <p>「担任の先生がPTA封筒を配ってくれる」「事務室で会費の集計をしてもらっている」——多くの学校でこれが当たり前になっていますが、これらは<strong>地方公務員法第35条（職務専念義務）との関係で、職務上の根拠を確認すべき行為</strong>です。悪意があったわけではなく、長年の慣行として定着してきたものですが、制度上の線引きは必要です。このページでは、何が問題なのか・何はよくて何はダメなのか・どう改善するかを整理します。</p>
     </section>
 
     <!-- 時計インフォグラフィック -->
@@ -532,6 +553,7 @@
         <div>
           <h4>資料・支援</h4>
           <ul>
+            <li><a href="https://ptaorg.github.io/donate/">応援・寄付</a></li>
             <li><a href="board-responses.html">教育委員会の回答</a></li>
             <li><a href="national-archive.html">全国資料館</a></li>
             <li><a href="journal.html">論考・調査報告</a></li>
@@ -544,6 +566,13 @@
 
       </div>
     </div>
+  <div class="footer-support">
+    <div>
+      <strong>調査・資料公開の継続を応援してください</strong>
+      <p>いただいたご支援は、公文書開示、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
+    </div>
+    <a href="https://ptaorg.github.io/donate/">応援ページへ</a>
+  </div>
     <p class="copyright">© PTA適正化推進委員会</p>
   </footer>
   <script src="js/site.js"></script>

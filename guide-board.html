@@ -217,7 +217,15 @@
 </script>
 </head>
 <body>
-  <header class="site-header">
+  
+<div class="support-strip" role="complementary" aria-label="活動支援のお願い">
+  <div class="support-strip-inner">
+    <span class="support-strip-label">応援のお願い</span>
+    <span class="support-strip-text">公文書開示、資料整理、Web公開を継続するため、寄付・カンパでのご支援をお願いします。</span>
+    <a class="support-strip-link" href="https://ptaorg.github.io/donate/">支援ページへ</a>
+  </div>
+</div>
+<header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="logo">
         <img src="assets/popc-logo.png" alt="PTA適正化推進委員会">
@@ -295,6 +303,7 @@
             </div>
           </div>
         </div>
+        <a href="https://ptaorg.github.io/donate/" class="nav-link support-nav-link">応援</a>
         <a href="audit/index.html" class="btn-gold">運営チェック</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileOverlay">
@@ -312,7 +321,8 @@
     <a href="national-archive.html" class="mobile-link"><span>Archive</span>全国資料館</a>
     <a href="journal.html" class="mobile-link"><span>Journal</span>論考・調査報告</a>
     <a href="audit/index.html" class="mobile-link"><span>Check</span>運営チェックアプリ</a>
-    <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
+    <a href="https://ptaorg.github.io/donate/" class="mobile-link support-mobile-link"><span>Support</span>応援・寄付</a>
+  <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
   </div>
 
   <section class="page-hero page-hero--photo">
@@ -934,47 +944,7 @@
               </div>
               </div>
             </a>
-
-            <a href="https://zen-p.net/tp/p441.html" target="_blank" rel="noopener"
-               style="display:block;background:var(--bg);border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;text-decoration:none;transition:border-color .2s,box-shadow .2s"
-               onmouseover="this.style.borderColor='var(--navy)'" onmouseout="this.style.borderColor='#e2e8f0'">
-              <img src="assets/og_zenp_privacy.jpg" alt="" style="width:100%;height:110px;object-fit:cover;object-position:0 5%;display:block;border-bottom:1px solid #e2e8f0" loading="lazy">
-              <div style="padding:10px 13px;display:flex;gap:9px;align-items:flex-start">
-              <span style="font-size:1.1rem;flex-shrink:0;margin-top:1px">📋</span>
-              <div>
-                <div style="font-size:.72rem;font-weight:700;color:var(--text-soft);margin-bottom:3px">全国PTA連絡協議会</div>
-                <div style="font-size:.88rem;font-weight:700;color:var(--navy);line-height:1.4">未加入世帯の把握と個人情報</div>
-              </div>
-              </div>
-            </a>
-
-            <a href="https://zen-p.net/tp/p301.html" target="_blank" rel="noopener"
-               style="display:block;background:var(--bg);border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;text-decoration:none;transition:border-color .2s,box-shadow .2s"
-               onmouseover="this.style.borderColor='var(--navy)'" onmouseout="this.style.borderColor='#e2e8f0'">
-              <img src="assets/og_zenp_inin.jpg" alt="" style="width:100%;height:110px;object-fit:cover;object-position:0 5%;display:block;border-bottom:1px solid #e2e8f0" loading="lazy">
-              <div style="padding:10px 13px;display:flex;gap:9px;align-items:flex-start">
-              <span style="font-size:1.1rem;flex-shrink:0;margin-top:1px">📋</span>
-              <div>
-                <div style="font-size:.72rem;font-weight:700;color:var(--text-soft);margin-bottom:3px">全国PTA連絡協議会</div>
-                <div style="font-size:.88rem;font-weight:700;color:var(--navy);line-height:1.4">PTA事務の学校委託</div>
-              </div>
-              </div>
-            </a>
-
-            <a href="https://zen-p.net/spta/p413.html" target="_blank" rel="noopener"
-               style="display:block;background:var(--bg);border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;text-decoration:none;transition:border-color .2s,box-shadow .2s"
-               onmouseover="this.style.borderColor='var(--navy)'" onmouseout="this.style.borderColor='#e2e8f0'">
-              <img src="assets/og_zenp_nyukai.jpg" alt="" style="width:100%;height:110px;object-fit:cover;object-position:0 5%;display:block;border-bottom:1px solid #e2e8f0" loading="lazy">
-              <div style="padding:10px 13px;display:flex;gap:9px;align-items:flex-start">
-              <span style="font-size:1.1rem;flex-shrink:0;margin-top:1px">📋</span>
-              <div>
-                <div style="font-size:.72rem;font-weight:700;color:var(--text-soft);margin-bottom:3px">全国PTA連絡協議会</div>
-                <div style="font-size:.88rem;font-weight:700;color:var(--navy);line-height:1.4">任意加入と加入意思確認</div>
-              </div>
-              </div>
-            </a>
-
-          </div>
+</div>
         </div>
 
       </div>
@@ -2456,6 +2426,7 @@
         <div>
           <h4>資料・支援</h4>
           <ul>
+            <li><a href="https://ptaorg.github.io/donate/">応援・寄付</a></li>
             <li><a href="board-responses.html">教育委員会の回答</a></li>
             <li><a href="national-archive.html">全国資料館</a></li>
             <li><a href="journal.html">論考・調査報告</a></li>
@@ -2468,6 +2439,13 @@
 
       </div>
     </div>
+  <div class="footer-support">
+    <div>
+      <strong>調査・資料公開の継続を応援してください</strong>
+      <p>いただいたご支援は、公文書開示、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
+    </div>
+    <a href="https://ptaorg.github.io/donate/">応援ページへ</a>
+  </div>
     <p class="copyright">© PTA適正化推進委員会</p>
   </footer>
   <script src="js/site.js"></script>

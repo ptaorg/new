@@ -34,7 +34,15 @@
 </script>
 </head>
 <body>
-  <header class="site-header">
+  
+<div class="support-strip" role="complementary" aria-label="活動支援のお願い">
+  <div class="support-strip-inner">
+    <span class="support-strip-label">応援のお願い</span>
+    <span class="support-strip-text">公文書開示、資料整理、Web公開を継続するため、寄付・カンパでのご支援をお願いします。</span>
+    <a class="support-strip-link" href="https://ptaorg.github.io/donate/">支援ページへ</a>
+  </div>
+</div>
+<header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="logo">
         <img src="assets/popc-logo.png" alt="PTA適正化推進委員会">
@@ -111,6 +119,7 @@
             </div>
           </div>
         </div>
+        <a href="https://ptaorg.github.io/donate/" class="nav-link support-nav-link">応援</a>
         <a href="audit/index.html" class="btn-gold">運営チェック</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileOverlay">
@@ -127,7 +136,8 @@
     <a href="national-archive.html" class="mobile-link"><span>Archive</span>全国資料館</a>
     <a href="journal.html" class="mobile-link"><span>Journal</span>論考・調査報告</a>
     <a href="audit/index.html" class="mobile-link"><span>Check</span>運営チェックアプリ</a>
-    <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
+    <a href="https://ptaorg.github.io/donate/" class="mobile-link support-mobile-link"><span>Support</span>応援・寄付</a>
+  <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
   </div>
 <main class="admin-materials-page">
   <section class="admin-materials-hero">
@@ -146,6 +156,7 @@
     <ol>
       <li><a href="#admin-use">このページの使い方</a></li>
       <li><a href="#admin-source-types">資料の性格を混同しない</a></li>
+      <li><a href="#reference-expansion">参考資料の使い方</a></li>
       <li><a href="#pdf-list">主要PDF資料一覧</a></li>
       <li><a href="#source-candidates">追加取込候補（確認中）</a></li>
     </ol>
@@ -193,6 +204,17 @@
       <p>通知本文および別紙画像を掲載し、任意加入、個人情報、未加入家庭への配慮、会費徴収、学校とPTAの関係性を確認できるページです。PDF原本とあわせて、本文のどこを見るべきかを整理しています。</p>
     </div>
     <a class="pdf-download-button" href="/documents.html?id=yokohama-notice">画像付き解説を見る</a>
+  </section>
+
+  <section class="admin-materials-section admin-materials-note editorial-panel" id="reference-expansion">
+    <h2>参考資料は、論点を広げる材料として使う</h2>
+    <p>この資料庫では、公式通知や法令だけでなく、研究論文、報道、自治体の制度ページ、学校徴収金のシステム化資料、教職員の職務整理に関する解説資料も、論点を広げる材料として扱います。すべてを同じ重みの根拠にするのではなく、「どの論点を補う資料か」を明確にして読むことが重要です。</p>
+    <div class="editorial-matrix" aria-label="参考資料の使い方">
+      <div class="editorial-matrix-row"><div class="editorial-matrix-term">研究論文</div><div class="editorial-matrix-desc">PTAの包摂・排除、地域共同体、保護者の心理的圧力など、法令だけでは説明しにくい背景を補います。</div></div>
+      <div class="editorial-matrix-row"><div class="editorial-matrix-term">報道記事</div><div class="editorial-matrix-desc">会計不祥事、名簿提供、学校関与など、制度上のリスクが現実化した事例として読みます。</div></div>
+      <div class="editorial-matrix-row"><div class="editorial-matrix-term">自治体ページ</div><div class="editorial-matrix-desc">学校徴収金、公会計化、収納システム、教職員の職務整理など、制度設計の比較材料として使います。</div></div>
+      <div class="editorial-matrix-row"><div class="editorial-matrix-term">公式通知・法令</div><div class="editorial-matrix-desc">最終的な根拠資料として使う場合は、発出主体、日付、対象、現行性、本文そのものを確認します。</div></div>
+    </div>
   </section>
 
   <section class="admin-materials-section" id="pdf-list">
@@ -530,6 +552,7 @@
         <div>
           <h4>資料・支援</h4>
           <ul>
+            <li><a href="https://ptaorg.github.io/donate/">応援・寄付</a></li>
             <li><a href="board-responses.html">教育委員会の回答</a></li>
             <li><a href="national-archive.html">全国資料館</a></li>
             <li><a href="journal.html">論考・調査報告</a></li>
@@ -542,6 +565,13 @@
 
       </div>
     </div>
+  <div class="footer-support">
+    <div>
+      <strong>調査・資料公開の継続を応援してください</strong>
+      <p>いただいたご支援は、公文書開示、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
+    </div>
+    <a href="https://ptaorg.github.io/donate/">応援ページへ</a>
+  </div>
     <p class="copyright">© PTA適正化推進委員会</p>
   </footer>
   <script src="js/site.js"></script>
