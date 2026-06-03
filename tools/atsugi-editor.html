@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>厚木市 学校別ページ編集補助ツール | PTA適正化推進委員会</title>
+  <style>
+    :root{--navy:#0f2742;--blue:#1e3a5f;--gold:#d4af37;--orange:#ea580c;--bg:#f4f6f9;--line:#dbe4ee;--text:#1f2937;--muted:#64748b}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif;line-height:1.7}.tool-header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:34px 24px}.tool-header-inner{max-width:1180px;margin:0 auto}.tool-header a{color:#fef3c7}.tool-kicker{font-size:.76rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}.tool-header h1{margin:0 0 10px;font-size:clamp(1.55rem,4vw,2.4rem);line-height:1.35}.tool-header p{margin:0;color:rgba(255,255,255,.82);max-width:900px}.tool-layout{max-width:1180px;margin:0 auto;padding:28px 20px 56px;display:grid;grid-template-columns:420px 1fr;gap:22px}.panel{background:#fff;border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:0 16px 16px 0;box-shadow:0 12px 28px rgba(15,39,66,.06);padding:22px}.panel h2{font-size:1.08rem;color:var(--navy);margin:0 0 14px}.field{margin-bottom:14px}.field label{display:block;font-weight:800;color:var(--navy);font-size:.86rem;margin-bottom:5px}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;background:#fff;color:var(--text)}.field textarea{min-height:92px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.dropzone{border:2px dashed #cbd5e1;border-radius:16px;background:#f8fafc;padding:24px;text-align:center;color:var(--muted);cursor:pointer;transition:.15s}.dropzone.dragover{border-color:var(--orange);background:#fff7ed;color:#9a3412}.dropzone strong{display:block;color:var(--navy);font-size:1rem;margin-bottom:4px}.preview-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.preview-item{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}.preview-item img{display:block;width:100%;height:130px;object-fit:contain;background:#f8fafc}.preview-item input{border:0;border-top:1px solid var(--line);border-radius:0;font-size:.8rem}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.btn{border:0;border-radius:999px;padding:10px 16px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.btn-primary{background:var(--orange);color:#fff}.btn-navy{background:var(--navy);color:#fff}.btn-light{background:#e2e8f0;color:#0f172a}.btn:hover{filter:brightness(.95)}.output{width:100%;min-height:460px;border:1px solid var(--line);border-radius:14px;padding:16px;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;white-space:pre;overflow:auto;background:#0b1220;color:#dbeafe}.note{font-size:.84rem;color:var(--muted);background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0}.warn{background:#fff7ed;border-color:#fed7aa;color:#7c2d12}.mini-preview{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:14px}.mini-preview h3{margin:0 0 8px;color:var(--navy)}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{background:#fff8df;border:1px solid #ead28b;color:#7c5b00;border-radius:999px;padding:3px 9px;font-size:.78rem;font-weight:800}@media(max-width:920px){.tool-layout{grid-template-columns:1fr}.preview-list{grid-template-columns:1fr 1fr}}@media(max-width:560px){.two,.preview-list{grid-template-columns:1fr}.panel{padding:18px}.tool-layout{padding:18px 14px 42px}}
+  </style>
+</head>
+<body>
+  <header class="tool-header">
+    <div class="tool-header-inner">
+      <div class="tool-kicker">Atsugi Archive Editor</div>
+      <h1>厚木市 学校別ページ編集補助ツール</h1>
+      <p>画像をドラッグ＆ドロップし、学校別ページ用のHTMLを生成する補助画面です。GitHubへ自動保存はしません。生成したHTMLをコピーして、該当する <code>archive/atsugi/&lt;slug&gt;/index.html</code> に貼り付けて使います。</p>
+    </div>
+  </header>
+
+  <main class="tool-layout">
+    <section class="panel" aria-label="入力欄">
+      <h2>1. 基本情報</h2>
+      <div class="two">
+        <div class="field"><label for="schoolName">学校名</label><input id="schoolName" value="厚木小学校"></div>
+        <div class="field"><label for="slug">slug</label><input id="slug" value="atsugi-es"></div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="city">自治体</label><input id="city" value="厚木市"></div>
+        <div class="field"><label for="schoolType">学校区分</label><select id="schoolType"><option>小学校</option><option>中学校</option><option>その他</option></select></div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="status">評価状況</label><select id="status"><option>要確認</option><option>重大な疑義</option><option>疑義あり</option><option>一部確認</option><option>適正化確認</option></select></div>
+        <div class="field"><label for="pdfName">確認資料名</label><input id="pdfName" value="厚木小学校_06.pdf"></div>
+      </div>
+      <div class="field"><label for="ogDesc">OGP・説明文</label><textarea id="ogDesc">PTA会員確認カードとみられる資料を確認。入会契約の成立を基礎づける申込・承諾の記録は資料上確認できません。</textarea></div>
+
+      <h2>2. 画像</h2>
+      <div id="dropzone" class="dropzone" tabindex="0">
+        <strong>画像をここにドラッグ＆ドロップ</strong>
+        PNG / JPG / WebP を複数追加できます。クリックして選択もできます。
+        <input id="imageInput" type="file" accept="image/*" multiple hidden>
+      </div>
+      <div class="preview-list" id="previewList"></div>
+      <p class="note warn">注意：ドラッグした画像ファイル自体はGitHubにアップロードされません。生成HTML内では <code>/assets/archive/atsugi/&lt;slug&gt;/01.png</code> のようなパスを出力します。画像ファイルは別途その場所へアップロードしてください。</p>
+
+      <h2>3. 本文</h2>
+      <div class="field"><label for="facts">確認できる事実（1行1項目）</label><textarea id="facts">「PTA会員確認カード」とみられる資料を確認した。
+同資料には、PTA会員である保護者の氏名・連絡先等を確認する趣旨の記載がある。
+資料上、保護者情報の記入欄が確認できる。</textarea></div>
+      <div class="field"><label for="missing">資料上確認できない点（1行1項目）</label><textarea id="missing">PTA入会申込書は、開示資料上確認できない。
+保護者がPTAへの加入を申し込んだことを示す申込・承諾の記録は確認できない。
+PTA会員であることを前提にした確認カードと、入会申込書との関係は確認できない。</textarea></div>
+      <div class="field"><label for="flags">疑義フラグ（1行1項目）</label><textarea id="flags">入会申込書不在疑い
+加入前提表現疑い
+会員資格確認方法不明</textarea></div>
+      <div class="field"><label for="evaluation">当委員会の評価</label><textarea id="evaluation">PTA会員である保護者の名前・連絡先確認のためのカードは確認できるが、入会契約の成立を基礎づける申込・承諾の記録は確認できない。そのため、少なくとも提出資料のみからは、各保護者がPTAへの加入を申し込み、PTA側がこれを承諾したことを確認することはできない。</textarea></div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="generateBtn" type="button">HTML生成</button>
+        <button class="btn btn-navy" id="copyBtn" type="button">コピー</button>
+        <button class="btn btn-light" id="downloadBtn" type="button">index.htmlで保存</button>
+      </div>
+      <p class="note">保存先の目安：<code>archive/atsugi/<span id="pathPreview">atsugi-es</span>/index.html</code></p>
+    </section>
+
+    <section class="panel" aria-label="出力欄">
+      <h2>生成HTML</h2>
+      <textarea id="output" class="output" spellcheck="false"></textarea>
+      <div class="mini-preview" id="miniPreview">
+        <h3>プレビュー要約</h3>
+        <p>まだ生成していません。</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const $ = id => document.getElementById(id);
+    const state = { images: [] };
+    const esc = s => String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    const lines = s => String(s || '').split(/\r?\n/).map(v => v.trim()).filter(Boolean);
+    const pad2 = n => String(n).padStart(2,'0');
+    const slugify = s => String(s || '').trim().toLowerCase().replace(/[^a-z0-9-]+/g,'-').replace(/^-+|-+$/g,'') || 'school-page';
+
+    function renderPreviews(){
+      const box = $('previewList');
+      box.innerHTML = '';
+      state.images.forEach((img, i) => {
+        const item = document.createElement('div');
+        item.className = 'preview-item';
+        item.innerHTML = `<img src="${img.dataUrl}" alt="preview"><input value="${esc(img.caption || '資料画像' + (i+1))}" aria-label="画像説明">`;
+        item.querySelector('input').addEventListener('input', e => { img.caption = e.target.value; generate(); });
+        box.appendChild(item);
+      });
+    }
+
+    function addFiles(files){
+      [...files].filter(f => f.type.startsWith('image/')).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = e => {
+          state.images.push({ name:file.name, dataUrl:e.target.result, caption:'資料画像' + (state.images.length + 1) });
+          renderPreviews();
+          generate();
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function sectionList(title, items){
+      return `<section class="archive-section">\n      <h2>${esc(title)}</h2>\n      <ul>\n${items.map(v => `        <li>${esc(v)}</li>`).join('\n')}\n      </ul>\n    </section>`;
+    }
+
+    function figureHtml(slug){
+      const imgs = state.images.length ? state.images : [{caption:'資料画像1'}];
+      return imgs.map((img, i) => {
+        const src = `/assets/archive/atsugi/${slug}/${pad2(i+1)}.png`;
+        const cap = img.caption || `資料画像${i+1}`;
+        return `      <figure class="archive-figure">\n        <img src="${src}" alt="${esc($('schoolName').value)} ${esc(cap)}">\n        <figcaption>${esc(cap)}</figcaption>\n      </figure>`;
+      }).join('\n');
+    }
+
+    function generate(){
+      const schoolName = $('schoolName').value.trim() || '学校名未設定';
+      const slug = slugify($('slug').value);
+      $('slug').value = slug;
+      $('pathPreview').textContent = slug;
+      const city = $('city').value.trim() || '厚木市';
+      const schoolType = $('schoolType').value;
+      const status = $('status').value;
+      const pdfName = $('pdfName').value.trim() || '未設定';
+      const ogDesc = $('ogDesc').value.trim() || `${schoolName}のPTA関連資料について整理したページです。`;
+      const facts = lines($('facts').value);
+      const missing = lines($('missing').value);
+      const flags = lines($('flags').value);
+      const evaluation = $('evaluation').value.trim();
+      const ogImage = `https://ptaorg.com/assets/ogp/atsugi/${slug}.png`;
+      const url = `https://ptaorg.com/archive/atsugi/${slug}/`;
+      const statusClass = status.includes('重大') ? 'eval-danger' : status.includes('疑義') ? 'eval-warning' : status.includes('適正') ? 'eval-ok' : 'eval-warning';
+
+      const html = `<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${esc(schoolName)} PTA関連資料・評価 | PTA適正化推進委員会</title>
+  <meta name="description" content="${esc(schoolName)}のPTA関連資料について、確認できる事実、資料上確認できない点、当委員会の評価を整理したページです。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="PTA適正化推進委員会">
+  <meta property="og:title" content="${esc(schoolName)} PTA関連資料・評価">
+  <meta property="og:description" content="${esc(ogDesc)}">
+  <meta property="og:url" content="${url}">
+  <meta property="og:image" content="${ogImage}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="${esc(schoolName)} PTA関連資料・評価">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${esc(schoolName)} PTA関連資料・評価">
+  <meta name="twitter:description" content="${esc(ogDesc)}">
+  <meta name="twitter:image" content="${ogImage}">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="canonical" href="${url}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/archive.css">
+</head>
+<body>
+  <main class="archive-school-page">
+    <p><a class="archive-back" href="/national-archive.html">全国資料館へ戻る</a></p>
+
+    <section class="archive-hero">
+      <div class="archive-kicker">ATSUGI ${esc(schoolType)}</div>
+      <h1>${esc(schoolName)} PTA関連資料・評価</h1>
+      <p class="archive-school-author">作成主体：PTA適正化推進委員会</p>
+      <div class="archive-print-actions archive-print-top">
+        <button class="archive-print-button" type="button" onclick="window.print()">このページをPDF保存</button>
+      </div>
+      <p>このページでは、PTA入会案内、PTA入会申込書、学校納入金・会費徴収資料等の確認状況を整理します。画像とPDFは、個人情報・印影・口座情報・QRコード等の確認が完了したものだけを掲載します。</p>
+    </section>
+
+    <section class="archive-section">
+      <h2>資料確認状況</h2>
+      <div class="archive-grid">
+        <div class="archive-box"><div class="archive-label">自治体</div><div class="archive-value">${esc(city)}</div></div>
+        <div class="archive-box"><div class="archive-label">学校区分</div><div class="archive-value">${esc(schoolType)}</div></div>
+        <div class="archive-box archive-status-card ${statusClass}"><div class="archive-label">評価状況</div><div class="archive-value">${esc(status)}</div></div>
+        <div class="archive-box"><div class="archive-label">確認資料</div><div class="archive-value">${esc(pdfName)}</div></div>
+        <div class="archive-box"><div class="archive-label">入会申込書</div><div class="archive-value">開示資料上確認できない</div></div>
+        <div class="archive-box"><div class="archive-label">PDF</div><div class="archive-value">準備中</div></div>
+      </div>
+    </section>
+
+    <section class="archive-section">
+      <h2>資料画像</h2>
+${figureHtml(slug)}
+    </section>
+
+    ${sectionList('確認できる事実', facts)}
+
+    ${sectionList('資料上確認できない点', missing)}
+
+    <section class="archive-section">
+      <h2>疑義フラグ</h2>
+      <p>${flags.map(v => `<span class="archive-tag">${esc(v)}</span>`).join('\n ')}</p>
+    </section>
+
+    <section class="archive-section">
+      <h2>当委員会の評価</h2>
+      <p>${esc(evaluation)}</p>
+    </section>
+
+    <section class="archive-section archive-print-save-section">
+      <h2>このページをPDF保存</h2>
+      <p class="archive-print-note">このボタンを押すと、資料画像・確認できる事実・疑義フラグ・当委員会評価を含めた学校別ページ全体をPDFとして保存できます。ブラウザの印刷画面で「PDFに保存」を選択してください。</p>
+      <button class="archive-print-button" type="button" onclick="window.print()">このページをPDF保存</button>
+    </section>
+  </main>
+</body>
+</html>`;
+
+      $('output').value = html;
+      $('miniPreview').innerHTML = `<h3>${esc(schoolName)} / ${esc(status)}</h3><p>保存先：<code>archive/atsugi/${slug}/index.html</code></p><p>画像：${state.images.length || 1}枚想定</p><div class="tags">${flags.map(v=>`<span class="tag">${esc(v)}</span>`).join('')}</div>`;
+      return html;
+    }
+
+    const dz = $('dropzone');
+    dz.addEventListener('click', () => $('imageInput').click());
+    dz.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' ') $('imageInput').click(); });
+    dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('dragover'); });
+    dz.addEventListener('dragleave', () => dz.classList.remove('dragover'));
+    dz.addEventListener('drop', e => { e.preventDefault(); dz.classList.remove('dragover'); addFiles(e.dataTransfer.files); });
+    $('imageInput').addEventListener('change', e => addFiles(e.target.files));
+    document.querySelectorAll('input,textarea,select').forEach(el => el.addEventListener('input', generate));
+    $('generateBtn').addEventListener('click', generate);
+    $('copyBtn').addEventListener('click', async () => { generate(); await navigator.clipboard.writeText($('output').value); alert('生成HTMLをコピーしました。'); });
+    $('downloadBtn').addEventListener('click', () => { const html = generate(); const blob = new Blob([html], {type:'text/html;charset=utf-8'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'index.html'; a.click(); URL.revokeObjectURL(a.href); });
+    generate();
+  </script>
+</body>
+</html>
