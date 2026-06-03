@@ -1,4 +1,4 @@
-/* PTA適正化推進委員会 — site.js v9 */
+/* PTA適正化推進委員会 — site.js v10 */
 const SITE_INDEX=[
   {title:'トップページ',url:'index.html',desc:'サイト全体の入口。今何が起きているか、立場別ガイド、監査システム。みなし加入 強制加入 横領 個人情報'},
   {title:'静岡市・9200人分個人情報無断提供事案',url:'shizuoka-incident.html',desc:'2026年4月発覚。静岡市立20校で保護者の同意なく個人情報をPTAに提供。教育長「法律と学校文化にずれ」。構造的分析。'},
@@ -70,12 +70,17 @@ function injectGuideBoardAccordionStyles(){
   const style=document.createElement('style');
   style.id='guide-board-accordion-style';
   style.textContent=`
+    a:hover,.nav-link:hover,.mega-col a:hover,.srd-item:hover .srd-item-title,.mini-link:hover,.municipal-voice-list a:hover,.board-guide-links a:hover,.footer a:hover,.ed-link-buttons a:hover{color:var(--orange)!important}
+    .btn-gold:hover,.btn-navy:hover,.btn-outline:hover,.ed-deep-link:hover,.support-strip-link:hover,.gb-accordion>summary:hover::after,.municipal-voices-evidence>summary:hover::after{background:var(--orange)!important;border-color:var(--orange)!important;color:#fff!important}
+    .gb-accordion>summary:hover .section-title,.municipal-voices-evidence>summary:hover span,.article137-table tr:hover td,.action-item:hover strong,.board-guide-card:hover strong,.edu-voices-example:hover h3{color:var(--orange)!important}
+    .board-guide-card:hover,.action-item:hover,.edu-voices-example:hover,.key-materials-grid>a:hover,.municipal-voices-evidence:hover{border-color:var(--orange)!important;box-shadow:0 14px 32px rgba(194,65,12,.16)!important}
+    .article137-table tr:hover td{background:#fff7ed!important}
     .gb-accordion{background:transparent;border:0;margin:0;padding:0}
     .gb-accordion>summary{list-style:none;cursor:pointer;position:relative;display:block;padding:0 92px 0 0}
     .gb-accordion>summary::-webkit-details-marker{display:none}
     .gb-accordion>summary::after{content:'開く';position:absolute;right:0;top:50%;transform:translateY(-50%);background:#17345c;color:#fff;border-radius:999px;padding:8px 16px;font-size:.82rem;font-weight:900;letter-spacing:.03em;box-shadow:0 8px 18px rgba(15,39,66,.16)}
     .gb-accordion[open]>summary::after{content:'閉じる';background:#b45309}
-    .gb-accordion>summary:hover .section-title{color:#0f2f57}
+    .gb-accordion>summary:hover .section-title{color:var(--orange)!important}
     .gb-accordion>summary .section-kicker{margin-bottom:10px}
     .gb-accordion>summary .section-title{margin:0;max-width:none;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px;text-decoration-color:var(--gold)}
     .gb-accordion-body{margin-top:26px}
