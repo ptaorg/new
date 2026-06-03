@@ -7,9 +7,9 @@ const SITE_INDEX=[
   {title:'教育委員会・学校の方へ',url:'guide-board.html',desc:'職務専念義務・渉外業務・覚書問題。校長 教頭 教職員 地公法35条'},
   {title:'教委向け分離指針',url:'edu-board-separation.html',desc:'学校とPTAの線引きを校長任せにしない。教育委員会通知 校長会資料 PTA直接徴収 会員管理 分離通知'},
   {title:'研究者・記者の方へ',url:'guide-research.html',desc:'全国公文書・教委回答・一次資料へのアクセスガイド。取材 問い合わせ'},
-  {title:'資料入口・索引',url:'documents.html',desc:'教育委員会回答DB、学校別・自治体別資料館、行政通知・公式PDF資料庫、論考への総合入口。'},
-  {title:'教育委員会回答DB',url:'board-responses.html',desc:'全国76自治体・111件の教育委員会回答・地図。強制加入 みなし加入 個人情報 会費徴収 横浜市通知'},
-  {title:'学校別・自治体別資料館',url:'national-archive.html',desc:'開示請求で収集した全国のPTA関連公文書。入会届 会費 名簿 覚書'},
+  {title:'資料・文書一覧',url:'documents.html',desc:'資料入口。行政通知 教育委員会回答 全国資料館 論点別資料 入会申込書 個人情報 会費徴収'},
+  {title:'教育委員会の回答',url:'board-responses.html',desc:'76自治体・111件の分類済み回答。任意加入 個人情報 会費徴収 教職員関与 横浜市通知'},
+  {title:'全国資料館',url:'national-archive.html',desc:'開示請求で収集した全国のPTA関連公文書。入会届 会費 名簿 覚書'},
   {title:'PTA運営の現場実例',url:'compliance.html',desc:'みなし加入 抱き合わせ徴収 個人情報提供 学校連絡ツール 教職員関与 施設利用 非会員対応 児童への不利益'},
   {title:'論考・調査報告',url:'journal.html',desc:'法律論考・調査報告・行政動向の分析。スライド 会費徴収パラドックス'},
   {title:'監査システム',url:'audit/index.html',desc:'5軸・3立場でPTA運営のリスクを自動診断。保護者 役員 学校管理職'},
@@ -20,7 +20,7 @@ const SITE_INDEX=[
   {title:'施設利用',url:'facilities.html',desc:'学校教育法137条・公私境界の整理。PTA室 コピー機 光熱費 鍵'},
   {title:'法制度マップ',url:'law-map.html',desc:'憲法・民法・個人情報保護法・地公法・地方財政法の論点別整理。条文 e-Gov'},
   {title:'判例整理',url:'cases.html',desc:'PTA関連の裁判例・学説の整理。熊本地裁 大阪地裁 黙示の承諾'},
-  {title:'行政通知・公式PDF資料庫',url:'administrative-materials.html',desc:'文科省通知・教委回答・行政実例の整理。1964年行政実例 横浜市通知'},
+  {title:'行政資料整理',url:'administrative-materials.html',desc:'文科省通知・教委回答・行政実例の整理。1964年行政実例 横浜市通知'},
   {title:'総合分析レポート',url:'report.html',desc:'全国調査に基づく構造分析・提言。法的枠組み 歴史 適正化の方向性'},
 ];
 function initSearch(){
