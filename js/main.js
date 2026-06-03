@@ -7,7 +7,8 @@ const legacySiteIndex = [
   { title: 'PTA役員の方へ', url: 'guide-pta.html', desc: 'PTA役員が運営を適正化するための確認事項。入会記録、会計、個人情報、学校との分離。' },
   { title: '教育委員会・学校の方へ', url: 'guide-board.html', desc: '学校が関与する範囲を点検する行政・学校管理職向けの説明。' },
   { title: '全国の教育委員会の回答', url: 'board-responses.html', desc: '全国の教育委員会からの回答を整理。任意加入、会費徴収、個人情報、学校関与。' },
-  { title: '実際のPTA文書', url: 'documents.html', desc: '入会案内、申込書、会費徴収、学校徴収金、名簿、通知、学校別資料への入口。' },
+  { title: '実際のPTA文書', url: 'national-archive.html', desc: '日本地図から、厚木市など自治体別・学校別の実際のPTA文書を確認する入口。' },
+  { title: '資料・文書解説', url: 'documents.html', desc: 'PTA資料を読む際の確認観点を整理した解説ページ。' },
   { title: '研究ノート・論考', url: 'journal.html', desc: 'PTA運営の法的構造、行政対応、判例、法制度、調査報告の論考。' },
   { title: '応援', url: 'https://ptaorg.github.io/donate/', desc: '公文書開示、資料整理、Web公開を継続するための支援。' },
   { title: '情報提供', url: 'mailto:info@ptaorg.com', desc: 'PTA文書、教育委員会回答、学校配布物などの情報提供窓口。' }
@@ -32,7 +33,7 @@ function initLegacyUnifiedNavigation() {
         </div>
       </div>
       <a class="nav-link" href="board-responses.html">教育委員会回答</a>
-      <a class="nav-link" href="documents.html">実際のPTA文書</a>
+      <a class="nav-link" href="national-archive.html">実際のPTA文書</a>
       <div class="nav-item has-dropdown">
         <a class="nav-link" href="journal.html">研究ノート</a>
         <div class="mega-menu">
@@ -69,7 +70,7 @@ function initLegacyUnifiedNavigation() {
       <a class="mobile-link" href="guide-pta.html"><span>PTA Board</span>PTA役員の方へ</a>
       <a class="mobile-link" href="guide-board.html"><span>School / Board</span>教育委員会・学校の方へ</a>
       <a class="mobile-link" href="board-responses.html"><span>Responses</span>教育委員会回答</a>
-      <a class="mobile-link" href="documents.html"><span>Documents</span>実際のPTA文書</a>
+      <a class="mobile-link" href="national-archive.html"><span>Documents</span>実際のPTA文書</a>
       <a class="mobile-link" href="journal.html"><span>Research</span>研究ノート・論考</a>
       <a class="mobile-link support-mobile-link" href="https://ptaorg.github.io/donate/"><span>Support</span>応援・寄付</a>
       <a class="mobile-link" href="mailto:info@ptaorg.com"><span>Contact</span>お問い合わせ・情報提供</a>
