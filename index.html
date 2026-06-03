@@ -1508,6 +1508,129 @@
 .home-hero-photo-triptych figcaption{position:absolute;left:12px;right:12px;bottom:10px;z-index:1;color:#fff;font-size:.78rem;font-weight:900;text-shadow:0 2px 10px rgba(0,0,0,.55);letter-spacing:.03em;}
 @media(max-width:760px){.home-hero-photo-triptych{grid-template-columns:1fr;gap:10px}.home-hero-photo-triptych figure,.home-hero-photo-triptych figure:first-child{min-height:178px;grid-row:auto}}
 
+
+
+/* Stage34: top hero restored as a compact full-photo slideshow.
+   The hero is visual navigation only; body text starts after this block. */
+.home-photo-hero{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  min-height:340px;
+  height:clamp(340px, 42vw, 470px);
+  max-height:470px;
+  background:#08213d;
+  border-top:1px solid rgba(212,175,55,.55);
+}
+.home-photo-hero .hero-slideshow,
+.home-photo-hero .slide{
+  position:absolute;
+  inset:0;
+}
+.home-photo-hero .slide{
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity 1.8s ease;
+  will-change:opacity, transform;
+}
+.home-photo-hero .slide.is-active{opacity:1;}
+.home-photo-hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(90deg, rgba(5,17,31,.38) 0%, rgba(5,17,31,.18) 42%, rgba(5,17,31,.04) 78%),
+    linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.02) 48%, rgba(5,17,31,.10) 100%);
+  pointer-events:none;
+}
+.home-photo-hero-inner{
+  position:relative;
+  z-index:2;
+  width:min(calc(100% - 40px), 1100px);
+  height:100%;
+  margin-inline:auto;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding:34px 0 42px;
+}
+.home-photo-hero-kicker{
+  display:inline-flex;
+  align-items:center;
+  padding:6px 14px;
+  border-radius:999px;
+  background:rgba(212,175,55,.18);
+  border:1px solid rgba(212,175,55,.45);
+  color:#fff2a8;
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+  text-shadow:0 1px 5px rgba(5,17,31,.42);
+}
+.home-photo-hero-title{
+  max-width:760px;
+  margin:0;
+  font-family:'Noto Serif JP', serif;
+  font-size:clamp(2rem, 4.2vw, 3.5rem);
+  font-weight:900;
+  line-height:1.22;
+  letter-spacing:-.035em;
+  color:#fff;
+  text-shadow:0 3px 14px rgba(5,17,31,.45);
+}
+.home-photo-hero-title span{color:#fff2a8;}
+.home-photo-hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:26px;
+}
+.home-photo-hero-actions a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:10px 20px;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:.9rem;
+  font-weight:900;
+  line-height:1;
+  box-shadow:0 8px 24px rgba(5,17,31,.22);
+}
+.home-photo-hero-actions .primary{
+  background:var(--gold, #d4af37);
+  color:var(--navy, #05172f);
+}
+.home-photo-hero-actions .secondary{
+  color:#fff;
+  border:1px solid rgba(255,255,255,.55);
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(6px);
+}
+.home-photo-hero .slide-nav{
+  right:28px;
+  bottom:22px;
+  z-index:4;
+}
+.home-photo-hero .slide-bottom-fade{
+  height:44px;
+  z-index:3;
+  background:linear-gradient(to bottom, transparent 0%, #fff 100%);
+}
+@media (max-width: 760px){
+  .home-photo-hero{height:390px; min-height:390px; max-height:none;}
+  .home-photo-hero-inner{width:min(calc(100% - 28px), 1100px); padding:28px 0 42px;}
+  .home-photo-hero-title{font-size:clamp(1.72rem, 8vw, 2.45rem);}
+  .home-photo-hero-actions{gap:9px; margin-top:22px;}
+  .home-photo-hero-actions a{min-height:40px; padding:10px 16px; font-size:.84rem;}
+  .home-photo-hero .slide-nav{right:16px; bottom:16px;}
+}
+
 </style>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0D18ZSSLMH"></script>
@@ -1628,26 +1751,24 @@
 <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
 </div>
 <main>
-<section aria-labelledby="top-hero-title" class="pta-top-hero">
-<div aria-hidden="true" class="hero-slideshow" id="heroSlideshow">
-<div class="slide kb1 is-active" style="background-image:url('assets/slides/1.jpg')"></div>
-<div class="slide kb2" style="background-image:url('assets/slides/2.jpg')"></div>
-<div class="slide kb3" style="background-image:url('assets/slides/3.jpg')"></div>
-</div>
-<div class="pta-top-hero-content">
-<div class="pta-top-hero-copy">
-<div class="pta-top-hero-kicker">Research · Evidence · Legal Compliance</div>
-<h1 class="pta-top-hero-title" id="top-hero-title">PTAを、<br/>任意加入の原則と<br/><span class="gold">法令に基づく運営</span>へ。</h1>
-<p class="pta-top-hero-lead">入会意思、会費徴収、個人情報、教職員関与の根拠が見えにくくなったPTA運営を、公文書・教育委員会回答・法令資料から整理します。</p>
-<div aria-label="トップページの主要導線" class="pta-top-hero-actions">
-<a class="primary" href="guide-parent.html">保護者として読む</a>
-<a class="secondary" href="guide-board.html">学校・教育委員会向け</a>
-<a class="secondary" href="national-archive.html">資料を見る</a>
-</div>
-</div>
-</div>
-<div aria-label="トップ画像切り替え" class="slide-nav" id="slideNav"></div>
-<div aria-hidden="true" class="slide-bottom-fade"></div>
+<section class="home-photo-hero" aria-labelledby="top-hero-title">
+  <div class="hero-slideshow" id="heroSlideshow" aria-hidden="true">
+    <div class="slide kb1 is-active" style="background-image:url('assets/slides/1.jpg')"></div>
+    <div class="slide kb2" style="background-image:url('assets/slides/2.jpg')"></div>
+    <div class="slide kb3" style="background-image:url('assets/slides/3.jpg')"></div>
+  </div>
+  <div class="home-photo-hero-overlay" aria-hidden="true"></div>
+  <div class="home-photo-hero-inner">
+    <div class="home-photo-hero-kicker">Research · Evidence · Legal Compliance</div>
+    <h1 id="top-hero-title" class="home-photo-hero-title">PTAを、任意加入の原則と<br><span>法令に基づく運営</span>へ。</h1>
+    <div class="home-photo-hero-actions" aria-label="トップページの主要導線">
+      <a class="primary" href="guide-parent.html">保護者として読む</a>
+      <a class="secondary" href="guide-board.html">学校・教育委員会向け</a>
+      <a class="secondary" href="national-archive.html">資料を見る</a>
+    </div>
+  </div>
+  <div class="slide-nav" id="slideNav" aria-label="トップ画像切り替え"></div>
+  <div class="slide-bottom-fade" aria-hidden="true"></div>
 </section>
 <section aria-labelledby="home-reading-title" class="home-reading-section" style="background:#fff;padding:72px 0;border-top:1px solid rgba(5,17,31,.08);border-bottom:1px solid rgba(5,17,31,.08)">
 <div class="wrap" style="max-width:980px">
