@@ -19,6 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
   <link rel="stylesheet" href="/css/archive.css">
   <style>
     .archive-hero-stats{
@@ -242,7 +243,26 @@
       .atsugi-school-list li{align-items:flex-start;gap:5px 10px}
       .atsugi-school-list .eval-badge{display:inline-flex;margin-top:2px}
     }
-  </style>
+  
+/* Stage29: national archive expansion map */
+.archive-map-section{background:#fff;padding:68px 0;border-bottom:1px solid var(--line);}
+.archive-map-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:28px;align-items:start;margin-top:28px;}
+#archiveJapanMap{height:520px;border:1px solid var(--line);border-radius:18px;background:#e5e7eb;box-shadow:var(--shadow-md);overflow:hidden;position:relative;}
+.archive-map-fallback{position:absolute;inset:0;background:linear-gradient(145deg,#eef2ff,#f8fafc);display:block;}
+.archive-map-pin{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-100%);display:inline-flex;align-items:center;gap:5px;background:#b91c1c;color:#fff!important;border-radius:999px;padding:5px 8px;font-size:.74rem;font-weight:900;text-decoration:none;box-shadow:0 8px 18px rgba(15,23,42,.24);white-space:nowrap;z-index:2;}
+.archive-map-pin::before{content:'●';font-size:.65rem;}
+.archive-map-fallback::before{content:'日本地図（掲載・整理予定自治体）';position:absolute;left:22px;top:18px;color:#1f2937;font-weight:900;font-size:.92rem;}
+.archive-map-card{background:#fffdf8;border:1px solid #e8dfc9;border-radius:16px;padding:22px 24px;box-shadow:var(--shadow-sm);}
+.archive-map-card h3{font-family:'Noto Serif JP',serif;color:var(--navy);font-size:1.12rem;margin:0 0 12px;}
+.archive-map-card p{font-size:.9rem;line-height:1.85;color:var(--text);margin:0 0 12px;}
+.archive-muni-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0 0;padding:0;list-style:none;}
+.archive-muni-list li{border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px 10px;font-size:.82rem;font-weight:800;color:var(--navy);}
+.archive-muni-status{display:block;font-size:.68rem;color:var(--text-soft);font-weight:700;margin-top:2px;}
+.archive-muni-note{font-size:.78rem!important;color:var(--text-soft)!important;border-top:1px solid var(--line);padding-top:12px;margin-top:14px!important;}
+@media(max-width:900px){.archive-map-layout{grid-template-columns:1fr}#archiveJapanMap{height:430px}.archive-muni-list{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.archive-map-pin{font-size:.66rem;padding:4px 6px}.archive-map-pin span{display:none}.archive-muni-list{grid-template-columns:1fr}}
+
+</style>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D18ZSSLMH"></script>
@@ -376,6 +396,7 @@
       <div class="archive-hero-stats">
         <div class="ahs-item"><div class="ahs-num">掲載中</div><div class="ahs-label">段階的追加</div></div>
         <div class="ahs-item"><div class="ahs-num">36校</div><div class="ahs-label">厚木市学校別ページ</div></div>
+        <div class="ahs-item"><div class="ahs-num">全国追加</div><div class="ahs-label">自治体別資料を順次掲載</div></div>
         <div class="ahs-item"><div class="ahs-num">画像・PDF</div><div class="ahs-label">根拠資料導線</div></div>
         <div class="ahs-item"><div class="ahs-num">6区分</div><div class="ahs-label">評価ラベル</div></div>
       </div>
@@ -390,7 +411,7 @@
         <h2 class="section-title">この資料館で確認すること</h2>
         <p class="section-lead">このページは、学校別・自治体別の実物資料を並べるだけのページではありません。各学校で、PTAへの入会意思確認がどのように行われているか、学校徴収金とPTA会費が分離されているか、学校が持つ児童・保護者情報がPTA運営に使われていないかを、実際の資料から確認するための資料館です。</p>
         <div class="archive-library-note">
-          <p>現在、学校別ページとして整理済みなのは神奈川県厚木市の36校分です。他自治体資料は段階的に追加する前提です。したがって、「全国資料館」という名称は、全国の資料を集積していくための分類名であり、現時点で全国すべての学校資料が掲載済みであるという意味ではありません。</p>
+          <p>現在、学校別ページとして整理済みなのは神奈川県厚木市の36校分ですが、この資料館は厚木市専用ページではありません。今後、いわき市、茨木市、亀岡市、久喜市、埼玉県、滋賀県・甲賀市、鹿児島市、射水市、神奈川県、仙台市、川口市、相模原市、太田区（表記確認中）、大東市、彦根市、扶桑町、豊橋市など、自治体別・都道府県別の資料を段階的に追加する前提で構成します。したがって、「全国資料館」という名称は、全国の資料を集積していくための分類名であり、現時点で全国すべての学校資料が掲載済みであるという意味ではありません。</p>
           <p>資料を読むときは、入会案内があるかどうかだけでなく、入会申込書または加入意思確認記録があるかを必ず確認します。入会案内が存在しても、申込書が確認できない場合は、会員扱いの根拠が不明確な可能性があります。また、PTA会費が学校納入金と同じ文書・同じ口座・同じ引落し手続で扱われている場合、任意加入の説明が実質的に保護者へ伝わっているかを別途検討する必要があります。</p>
           <p>評価は、掲載資料に基づく当委員会の整理です。評価だけを単独で読まず、必ず資料画像・PDF・一次資料URLの有無とあわせて確認してください。評価準備中の学校は、資料整理または人間確認が未完了です。資料が不足している学校は、追加資料の取得後に評価が変わる可能性があります。</p>
         </div>
@@ -438,12 +459,72 @@
       </div>
     </section>
 
+
+    <section class="archive-map-section" id="archive-national-map">
+      <div class="wrap">
+        <div class="section-kicker">National Map</div>
+        <h2 class="section-title">自治体別資料の掲載・整理状況マップ</h2>
+        <p class="section-lead">厚木市を最初の学校別ページ群として掲載しつつ、今後追加する自治体・都道府県単位の資料も、同じ資料館の中で扱います。地図は、どの地域の資料が掲載済み・整理中・追加予定なのかを確認するための入口です。</p>
+        <div class="archive-map-layout">
+          <div id="archiveJapanMap" aria-label="自治体別資料マップ">
+            <div class="archive-map-fallback" aria-hidden="true">
+              <a class="archive-map-pin" href="#atsugi-schools" style="--x:50%;--y:58%"><span>厚木市</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:60%;--y:47%"><span>いわき市</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:42%;--y:66%"><span>茨木市</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:42%;--y:62%"><span>亀岡市</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:55%;--y:53%"><span>久喜市</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:53%;--y:54%"><span>埼玉県</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:43%;--y:61%"><span>滋賀県</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:44%;--y:62%"><span>甲賀市</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:25%;--y:86%"><span>鹿児島市</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:46%;--y:51%"><span>射水市</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:51%;--y:57%"><span>神奈川県</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:58%;--y:40%"><span>仙台市</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:55%;--y:54%"><span>川口市</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:50%;--y:57%"><span>相模原市</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:54%;--y:56%"><span>太田区</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:42%;--y:65%"><span>大東市</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:44%;--y:60%"><span>彦根市</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:43%;--y:59%"><span>扶桑町</span></a>
+              <a class="archive-map-pin" href="#archive-upcoming" style="--x:45%;--y:66%"><span>豊橋市</span></a>
+            </div>
+          </div>
+          <div class="archive-map-card" id="archive-upcoming">
+            <h3>厚木市だけで終わらせないための枠組み</h3>
+            <p>今後追加する自治体は、厚木市とは別ページに散らすのではなく、同じ資料館の中で、自治体別・学校別・都道府県別に増やせる構造にします。</p>
+            <p>掲載単位は、学校別ページ、自治体単位の資料ページ、都道府県単位の監査・通知・回答ページの三層で整理します。</p>
+            <ul class="archive-muni-list">
+              <li>厚木市<span class="archive-muni-status">掲載済み：学校別36校</span></li>
+              <li>いわき市<span class="archive-muni-status">追加予定</span></li>
+              <li>茨木市<span class="archive-muni-status">追加予定</span></li>
+              <li>亀岡市<span class="archive-muni-status">追加予定</span></li>
+              <li>久喜市<span class="archive-muni-status">追加予定</span></li>
+              <li>埼玉県<span class="archive-muni-status">県単位資料</span></li>
+              <li>滋賀県・甲賀市<span class="archive-muni-status">県／市資料</span></li>
+              <li>鹿児島市<span class="archive-muni-status">追加予定</span></li>
+              <li>射水市<span class="archive-muni-status">追加予定</span></li>
+              <li>神奈川県<span class="archive-muni-status">県単位資料</span></li>
+              <li>仙台市<span class="archive-muni-status">追加予定</span></li>
+              <li>川口市<span class="archive-muni-status">追加予定</span></li>
+              <li>相模原市<span class="archive-muni-status">追加予定</span></li>
+              <li>太田区<span class="archive-muni-status">表記確認中</span></li>
+              <li>大東市<span class="archive-muni-status">追加予定</span></li>
+              <li>彦根市<span class="archive-muni-status">追加予定</span></li>
+              <li>扶桑町<span class="archive-muni-status">追加予定</span></li>
+              <li>豊橋市<span class="archive-muni-status">追加予定</span></li>
+            </ul>
+            <p class="archive-muni-note">注：この一覧は、今後の掲載枠を先に用意するための整理です。資料本文・PDF・画像を確認したものから順次、学校別ページまたは自治体別ページへ展開します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ATSUGI_ARCHIVE_START -->
     <!-- 厚木市 学校一覧 -->
     <section class="atsugi-schools-section" id="atsugi-schools">
       <div class="wrap">
         <div class="section-center atsugi-schools-head">
-          <div class="section-kicker">Atsugi City</div>
+          <div class="section-kicker">Atsugi City / First Municipality</div>
           <h2 class="section-title">神奈川県厚木市</h2>
           <p class="section-lead">厚木市内の小学校・中学校について、PTA入会案内、PTA入会申込書、学校納入金・会費徴収資料等を学校別に整理しています。評価だけでなく、学校別ページ、資料画像、元PDF、一次資料URLの有無をあわせて確認してください。</p>
         </div>
@@ -1304,5 +1385,42 @@
   </div>
     <p class="copyright">© PTA適正化推進委員会</p>
   </footer>
-  <script src="js/site.js"></script>
+  
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+(function(){
+  var pins=[
+    {name:'厚木市',lat:35.44,lng:139.36,href:'#atsugi-schools',status:'掲載済み'},
+    {name:'いわき市',lat:37.05,lng:140.89,href:'#archive-upcoming',status:'追加予定'},
+    {name:'茨木市',lat:34.82,lng:135.57,href:'#archive-upcoming',status:'追加予定'},
+    {name:'亀岡市',lat:35.01,lng:135.57,href:'#archive-upcoming',status:'追加予定'},
+    {name:'久喜市',lat:36.06,lng:139.67,href:'#archive-upcoming',status:'追加予定'},
+    {name:'埼玉県',lat:35.86,lng:139.65,href:'#archive-upcoming',status:'県単位資料'},
+    {name:'滋賀県',lat:35.02,lng:135.86,href:'#archive-upcoming',status:'県単位資料'},
+    {name:'甲賀市',lat:34.97,lng:136.17,href:'#archive-upcoming',status:'追加予定'},
+    {name:'鹿児島市',lat:31.60,lng:130.55,href:'#archive-upcoming',status:'追加予定'},
+    {name:'射水市',lat:36.73,lng:137.10,href:'#archive-upcoming',status:'追加予定'},
+    {name:'神奈川県',lat:35.45,lng:139.64,href:'#archive-upcoming',status:'県単位資料'},
+    {name:'仙台市',lat:38.27,lng:140.87,href:'#archive-upcoming',status:'追加予定'},
+    {name:'川口市',lat:35.81,lng:139.72,href:'#archive-upcoming',status:'追加予定'},
+    {name:'相模原市',lat:35.57,lng:139.37,href:'#archive-upcoming',status:'追加予定'},
+    {name:'太田区（表記確認中）',lat:35.56,lng:139.72,href:'#archive-upcoming',status:'表記確認中'},
+    {name:'大東市',lat:34.71,lng:135.62,href:'#archive-upcoming',status:'追加予定'},
+    {name:'彦根市',lat:35.27,lng:136.26,href:'#archive-upcoming',status:'追加予定'},
+    {name:'扶桑町',lat:35.36,lng:136.91,href:'#archive-upcoming',status:'追加予定'},
+    {name:'豊橋市',lat:34.77,lng:137.39,href:'#archive-upcoming',status:'追加予定'}
+  ];
+  function init(){
+    var el=document.getElementById('archiveJapanMap');
+    if(!el || !window.L || el._leaflet_id) return;
+    el.innerHTML='';
+    var map=L.map('archiveJapanMap',{scrollWheelZoom:false}).setView([36.2,137.8],5);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+    pins.forEach(function(p){L.marker([p.lat,p.lng]).addTo(map).bindPopup('<strong>'+p.name+'</strong><br>'+p.status+'<br><a href="'+p.href+'">資料枠へ</a>');});
+  }
+  window.addEventListener('load',function(){setTimeout(init,700);});
+})();
+</script>
+
+<script src="js/site.js"></script>
 </body></html>
