@@ -34,6 +34,135 @@
   }
 
   /* ─────────────────────────────────────────────
+     自治体索引前：参考になる回答例
+  ───────────────────────────────────────────── */
+  function injectGoodAnswerExamples() {
+    if (document.getElementById('goodAnswerExamples')) return;
+    const indexSection = document.getElementById('municipality-index');
+    if (!indexSection) return;
+
+    if (!document.getElementById('good-answer-examples-style')) {
+      const style = document.createElement('style');
+      style.id = 'good-answer-examples-style';
+      style.textContent = `
+        .good-answer-examples-section{
+          background:#fff;
+          padding:58px 0 60px;
+          border-bottom:1px solid var(--line);
+        }
+        .good-answer-examples-section .section-lead{
+          max-width:900px;
+        }
+        .good-answer-note{
+          max-width:920px;
+          margin:22px 0 28px;
+          padding:18px 20px;
+          background:#fffdf3;
+          border:1px solid #f1df9b;
+          border-left:6px solid var(--gold);
+          border-radius:0 14px 14px 0;
+          color:#374151;
+          font-size:.93rem;
+          line-height:1.9;
+        }
+        .good-answer-list{
+          list-style:none;
+          margin:0;
+          padding:0;
+          display:grid;
+          gap:14px;
+          max-width:980px;
+        }
+        .good-answer-list li{
+          background:#fff;
+          border:1px solid #dbe4ee;
+          border-left:6px solid #1e3a5f;
+          border-radius:0 14px 14px 0;
+          padding:20px 22px;
+        }
+        .good-answer-list h3{
+          margin:0 0 8px;
+          color:var(--navy);
+          font-family:'Noto Serif JP',serif;
+          font-size:1.08rem;
+          line-height:1.45;
+        }
+        .good-answer-list h3 span{
+          display:inline-flex;
+          margin-left:8px;
+          padding:2px 8px;
+          border-radius:999px;
+          background:#fef3c7;
+          color:#7a4b00;
+          font-family:'Noto Sans JP',sans-serif;
+          font-size:.72rem;
+          font-weight:900;
+          vertical-align:middle;
+        }
+        .good-answer-list p{
+          margin:0;
+          color:#334155;
+          font-size:.92rem;
+          line-height:1.9;
+        }
+        .good-answer-list a{
+          display:inline-flex;
+          margin-top:10px;
+          color:var(--navy);
+          font-size:.84rem;
+          font-weight:900;
+          text-decoration:none;
+          border-bottom:2px solid var(--gold);
+        }
+        .good-answer-list a:hover{
+          color:var(--orange);
+          border-bottom-color:var(--orange);
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    const section = document.createElement('section');
+    section.className = 'good-answer-examples-section';
+    section.id = 'goodAnswerExamples';
+    section.innerHTML = `
+      <div class="wrap">
+        <h2 class="section-title">参考になる回答例</h2>
+        <p class="section-lead">回答本文の中には、単に「PTAは任意団体」と述べるだけでなく、入会申込書による意思確認、個人情報の取扱い、会費徴収の委任関係、学校施設利用や学校協力の見直しにまで踏み込むものがあります。自治体索引を見る前に、比較の基準になる回答例を確認してください。</p>
+        <div class="good-answer-note">特に重要なのは、PTA内部を教育委員会が支配するという話ではなく、学校が提供している協力範囲を点検している点です。学校施設、学校配布、学校徴収、学校保有情報、教職員関与は、PTA内部の問題ではなく、学校側の管理判断として整理できます。</div>
+        <ol class="good-answer-list">
+          <li>
+            <h3>徳島市 <span>施設利用・学校協力</span></h3>
+            <p>学校教育法137条に基づく学校施設の目的外使用について、団体の利用目的・態様を含めて「学校教育上の支障」を判断すると整理しています。入学説明会等でのPTA案内についても、学校教育活動と混同され、加入への圧力が生じないよう配慮が必要と述べ、是正措置が講じられない団体への措置検討にも触れています。</p>
+            <a href="#ans-42">徳島市の回答本文へ</a>
+          </li>
+          <li>
+            <h3>魚沼市 <span>施設利用・入会申込書</span></h3>
+            <p>PTA入会には保護者の申込みとPTAの承諾が望ましい、入会申込書の提出が望ましい、学校による会費徴収は無権代理に該当すると回答しています。さらに、PTAが学校施設を利用するためにも、PTAの適切な運用を指導していくと述べています。</p>
+            <a href="#ans-75">魚沼市の回答本文へ</a>
+          </li>
+          <li>
+            <h3>利根町 <span>申込書・同意書</span></h3>
+            <p>PTA入会は、学校からの説明、書面等による保護者の意思表示、PTAの承諾によって成立すると整理しています。申込書や同意書等による加入意思の確認が必要であり、徴収していない場合は是正の必要性を伝え、指導・助言を行うとしています。</p>
+            <a href="#ans-13">利根町の回答本文へ</a>
+          </li>
+          <li>
+            <h3>兵庫県西脇市 <span>みなし入会否定</span></h3>
+            <p>PTAは任意加入の団体であり、入会には保護者の明確な申込み意思表示とPTAの承諾が必要であると整理しています。意思確認をしないまま児童生徒の入学をもって自動的に会員とする「みなし入会」方式では、契約が成立しているとは判断できないと明示しています。</p>
+            <a href="#ans-12">兵庫県西脇市の回答本文へ</a>
+          </li>
+          <li>
+            <h3>兵庫県 <span>入会届・委任状</span></h3>
+            <p>PTAは任意団体であり、入退会は自由であるため、みなし入会は不適切と整理しています。会費徴収等の事務処理については書面による委任状が必要であり、入会についても書面等による入会届を整備し、意思確認が必要であるとしています。</p>
+            <a href="#ans-11">兵庫県の回答本文へ</a>
+          </li>
+        </ol>
+      </div>
+    `;
+    indexSection.parentNode.insertBefore(section, indexSection);
+  }
+
+  /* ─────────────────────────────────────────────
      都道府県マッピング (76自治体)
   ───────────────────────────────────────────── */
   const PREF = {
@@ -355,6 +484,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     injectMapPinFix();
+    injectGoodAnswerExamples();
     renderIndex();
     renderBodies();
     initMap();
