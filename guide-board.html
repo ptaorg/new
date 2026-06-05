@@ -284,6 +284,72 @@
 <meta property="og:image" content="https://ptaorg.com/assets/og-image-popc-en.png" />
 <meta property="og:image:secure_url" content="https://ptaorg.com/assets/og-image-popc-en.png" />
 <meta name="twitter:image" content="https://ptaorg.com/assets/og-image-popc-en.png" />
+<style id="guide-board-direct-fix-20260605">
+body.guide-board-direct-fixed { background:#fff!important; }
+body.guide-board-direct-fixed #board-first-reading { display:none!important; }
+body.guide-board-direct-fixed main,
+body.guide-board-direct-fixed .board-guide-section,
+body.guide-board-direct-fixed section { background:#fff!important; }
+body.guide-board-direct-fixed #board-bluf-v22,
+body.guide-board-direct-fixed #board-fact-accordion-v31,
+body.guide-board-direct-fixed .board-guide-section > .wrap,
+body.guide-board-direct-fixed .board-guide-section .wrap {
+  width:min(calc(100% - 48px),1120px)!important;
+  max-width:1120px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  box-sizing:border-box!important;
+}
+body.guide-board-direct-fixed #board-bluf-v22 { margin-bottom:10px!important; }
+body.guide-board-direct-fixed .board-fact-accordion { padding:0!important;margin:0 auto 10px!important; }
+body.guide-board-direct-fixed .board-guide-section { padding:0!important;margin:0!important;border:0!important; }
+body.guide-board-direct-fixed .board-auto-accordion {
+  width:100%!important;
+  background:#fff!important;
+  border:1px solid #dbe4ee!important;
+  border-radius:14px!important;
+  margin:0 auto 10px!important;
+  overflow:hidden!important;
+  box-shadow:0 8px 22px rgba(15,39,66,.05)!important;
+}
+body.guide-board-direct-fixed .board-auto-accordion summary {
+  font-family:'Noto Serif JP',serif!important;
+  font-size:clamp(1.45rem,2.6vw,2.15rem)!important;
+  line-height:1.42!important;
+  font-weight:900!important;
+  color:#1e3a5f!important;
+  border-left:7px solid #1d4ed8!important;
+  padding:20px 24px!important;
+  cursor:pointer!important;
+  list-style:none!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  background:#fff!important;
+  gap:18px!important;
+}
+body.guide-board-direct-fixed .board-auto-accordion summary::-webkit-details-marker { display:none!important; }
+body.guide-board-direct-fixed .board-auto-accordion summary::after {
+  content:'＋';
+  font-family:system-ui,sans-serif!important;
+  font-size:1.45rem!important;
+  color:#1d4ed8!important;
+  font-weight:900!important;
+  flex-shrink:0!important;
+}
+body.guide-board-direct-fixed .board-auto-accordion[open] summary::after { content:'−'; }
+body.guide-board-direct-fixed .board-auto-accordion[open] summary { background:#f8fafc!important;border-bottom:1px solid #e2e8f0!important; }
+body.guide-board-direct-fixed .board-auto-accordion .chapter-content { padding:22px 28px 26px!important;line-height:1.95!important;color:#1e293b!important; }
+body.guide-board-direct-fixed .board-auto-accordion .section-kicker { display:none!important; }
+@media(max-width:780px) {
+  body.guide-board-direct-fixed #board-bluf-v22,
+  body.guide-board-direct-fixed #board-fact-accordion-v31,
+  body.guide-board-direct-fixed .board-guide-section > .wrap,
+  body.guide-board-direct-fixed .board-guide-section .wrap { width:min(calc(100% - 32px),1120px)!important; }
+  body.guide-board-direct-fixed .board-auto-accordion summary { font-size:1.28rem!important;padding:17px 18px!important; }
+  body.guide-board-direct-fixed .board-auto-accordion .chapter-content { padding:18px 18px 22px!important; }
+}
+</style>
 </head>
 <body>
 <div aria-label="活動支援のお願い" class="support-strip" role="complementary">
@@ -2425,4 +2491,79 @@
 <p class="copyright">© PTA適正化推進委員会</p>
 </footer>
 <script src="js/site.js"></script>
+<script id="guide-board-direct-fix-script-20260605">
+document.addEventListener('DOMContentLoaded', function() {
+  document.body.classList.add('guide-board-direct-fixed');
+
+  var original = document.getElementById('board-first-reading');
+  if (original) original.style.display = 'none';
+
+  var bluf = document.getElementById('board-bluf-v22');
+  if (!bluf) {
+    var hero = document.querySelector('.page-hero');
+    bluf = document.createElement('section');
+    bluf.className = 'pta-panel';
+    bluf.id = 'board-bluf-v22';
+    bluf.innerHTML = '<div class="pta-kicker">For school boards</div><h2>問題はPTAの存在ではなく、学校手続に溶け込むことです。</h2><p class="pta-quote">入会、名簿、徴収、会計、連絡、役員選出を学校から切り離せば、多くのリスクは同時にほどけます。</p><div class="pta-list"><div class="pta-check">入会申込記録を、会員ごとに確認できますか。</div><div class="pta-check">PTA会費徴収に、学校徴収金・学校口座・学校保有情報を使っていませんか。</div><div class="pta-check">PTA名簿、役員候補者名簿、連絡網を学校保有情報から作っていませんか。</div><div class="pta-check">教職員が勤務時間中にPTA会計、集金、名簿、役員選出、未納督促をしていませんか。</div></div>';
+    if (hero) hero.insertAdjacentElement('afterend', bluf);
+    else document.querySelector('main').insertAdjacentElement('afterbegin', bluf);
+  }
+
+  var fact = document.getElementById('board-fact-accordion-v31');
+  if (!fact) {
+    fact = document.createElement('section');
+    fact.className = 'board-fact-accordion';
+    fact.id = 'board-fact-accordion-v31';
+    fact.innerHTML = '<details class="board-auto-accordion"><summary>教育委員会は、法令論の前に「学校が関与した事実」を確認する</summary><div class="chapter-content"><p>PTAが任意団体であることと、学校・教育委員会が関係部分を点検すべきことは矛盾しません。PTA内部の役員選任や行事内容を教育委員会が支配することはできませんが、学校がPTAの加入案内、書類回収、名簿提供、会費徴収、連絡配信、教職員の事務従事に関わる場合、その関与部分は学校管理上の問題になります。</p><p>教育委員会が最初に確認すべきなのは、「PTAが何をしているか」ではなく、「学校が何をしているか」です。学校がPTA入会案内を入学説明会で配布しているのか、担任や学年職員が入会申込書を回収しているのか、学校徴収金の案内にPTA会費が含まれているのか、学校の連絡ツールでPTA通知を配信しているのか、学校が保有する名簿情報がPTAに渡っているのかを、事実として確認する必要があります。</p><p>この確認をしないまま「PTAは任意団体なので教育委員会は関与しない」と整理すると、学校が任意団体のために行っている事務、保護者に学校手続と誤認させる運用、個人情報の目的外利用、教職員の服務上の取扱いが見えなくなります。</p></div></details>';
+  }
+  bluf.insertAdjacentElement('afterend', fact);
+
+  var ids = ['worktime-duty-v22','article137-school-use','board-responsibility-essay','board-ed-resource-set','municipal-voices','board-checklist','board-response-policy'];
+  ids.forEach(function(id) {
+    var sec = document.getElementById(id);
+    if (!sec) return;
+    var wrap = sec.querySelector('.wrap') || sec;
+    if (wrap.querySelector(':scope > .board-auto-accordion')) return;
+    var titleEl = wrap.querySelector('.section-title') || wrap.querySelector('h2,h3');
+    if (!titleEl) return;
+    var title = titleEl.textContent.trim();
+    var details = document.createElement('details');
+    details.className = 'board-auto-accordion';
+    var summary = document.createElement('summary');
+    summary.textContent = title;
+    var content = document.createElement('div');
+    content.className = 'chapter-content';
+    Array.from(wrap.childNodes).forEach(function(node) {
+      if (node.nodeType === 1 && (node.classList.contains('section-kicker') || node.classList.contains('section-title') || node === titleEl)) return;
+      content.appendChild(node);
+    });
+    details.appendChild(summary);
+    details.appendChild(content);
+    wrap.innerHTML = '';
+    wrap.appendChild(details);
+  });
+
+  Array.from(document.querySelectorAll('main section h2, main section h3')).forEach(function(h) {
+    if (!h.textContent.includes('3分類と学校徴収金通知から')) return;
+    var sec = h.closest('section');
+    if (!sec) return;
+    var wrap = sec.querySelector('.wrap') || sec;
+    if (wrap.querySelector(':scope > .board-auto-accordion')) return;
+    var details = document.createElement('details');
+    details.className = 'board-auto-accordion';
+    var summary = document.createElement('summary');
+    summary.textContent = h.textContent.trim();
+    var content = document.createElement('div');
+    content.className = 'chapter-content';
+    Array.from(wrap.childNodes).forEach(function(node) {
+      if (node.nodeType === 1 && (node.classList.contains('section-kicker') || node.classList.contains('section-title') || node === h)) return;
+      content.appendChild(node);
+    });
+    details.appendChild(summary);
+    details.appendChild(content);
+    wrap.innerHTML = '';
+    wrap.appendChild(details);
+  });
+});
+</script>
 </body></html>
