@@ -1,0 +1,191 @@
+name: Patch guide-board materials contrast
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch-materials-contrast:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch guide-board material card contrast
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          p = Path('guide-board.html')
+          s = p.read_text(encoding='utf-8')
+          style_id = 'guide-board-materials-contrast-20260605'
+          style = f'''<style id="{style_id}">
+          /* 一次資料カード：白背景でも読めるようにコントラスト補正 */
+          body.guide-board-direct-fixed .key-materials-section,
+          .key-materials-section {{
+            background:#fff!important;
+            color:#1e293b!important;
+            padding:64px 0!important;
+            border-top:1px solid #d8e0ec!important;
+            border-bottom:1px solid #d8e0ec!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-section .wrap,
+          .key-materials-section .wrap {{
+            width:min(calc(100% - 48px),1120px)!important;
+            max-width:1120px!important;
+            margin-left:auto!important;
+            margin-right:auto!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-section .section-kicker,
+          .key-materials-section .section-kicker {{
+            color:#0f2742!important;
+            background:#fff8df!important;
+            border:1px solid #d6a724!important;
+            border-radius:999px!important;
+            padding:5px 12px!important;
+            display:inline-flex!important;
+            font-weight:900!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-section .section-title,
+          .key-materials-section .section-title {{
+            color:#0f2742!important;
+            text-shadow:none!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-section .section-lead,
+          .key-materials-section .section-lead {{
+            color:#334155!important;
+            font-size:.96rem!important;
+            line-height:1.9!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-grid,
+          .key-materials-grid {{
+            display:grid!important;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr))!important;
+            gap:24px!important;
+            margin-top:30px!important;
+            align-items:stretch!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-grid > a,
+          .key-materials-grid > a {{
+            display:flex!important;
+            flex-direction:column!important;
+            background:#ffffff!important;
+            color:#1e293b!important;
+            border:2px solid #c8d4e3!important;
+            border-radius:18px!important;
+            overflow:hidden!important;
+            text-decoration:none!important;
+            box-shadow:0 12px 26px rgba(15,39,66,.10)!important;
+            min-height:100%!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-grid > a:hover,
+          .key-materials-grid > a:hover {{
+            border-color:#1d4ed8!important;
+            box-shadow:0 16px 34px rgba(15,39,66,.16)!important;
+            transform:translateY(-2px)!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-grid > a > img,
+          .key-materials-grid > a > img {{
+            width:100%!important;
+            height:176px!important;
+            object-fit:cover!important;
+            object-position:0 8%!important;
+            display:block!important;
+            background:#eef2f7!important;
+            border-bottom:2px solid #dbe4ee!important;
+            filter:none!important;
+            opacity:1!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-grid > a > div,
+          .key-materials-grid > a > div {{
+            padding:18px 20px 20px!important;
+            color:#1e293b!important;
+            background:#fff!important;
+            display:flex!important;
+            flex-direction:column!important;
+            flex:1 1 auto!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-grid > a > div span,
+          .key-materials-grid > a > div span {{
+            opacity:1!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-grid > a > div > div:first-child span:last-child,
+          .key-materials-grid > a > div > div:first-child span:last-child {{
+            color:#0f2742!important;
+            background:#fff3bf!important;
+            border:1px solid #d6a724!important;
+            box-shadow:none!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-grid > a > div > div:nth-child(2),
+          .key-materials-grid > a > div > div:nth-child(2) {{
+            color:#0f2742!important;
+            font-size:1.02rem!important;
+            font-weight:900!important;
+            line-height:1.55!important;
+            margin-bottom:8px!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-grid > a > div > div:nth-child(3),
+          .key-materials-grid > a > div > div:nth-child(3) {{
+            color:#334155!important;
+            font-size:.9rem!important;
+            line-height:1.75!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-grid > a > div > div:last-child,
+          .key-materials-grid > a > div > div:last-child {{
+            margin-top:auto!important;
+            padding-top:14px!important;
+            color:#0f2742!important;
+            font-size:.86rem!important;
+            font-weight:900!important;
+            text-decoration:underline!important;
+            text-underline-offset:4px!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-section a,
+          .key-materials-section a {{
+            color:#0f2742!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-section a[rel="noopener"],
+          .key-materials-section a[rel="noopener"] {{
+            background:#f8fafc!important;
+            border-color:#cbd5e1!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div,
+          .key-materials-section a[rel="noopener"] div {{
+            color:#1e293b!important;
+          }}
+          body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
+          .key-materials-section a[rel="noopener"] div div {{
+            color:#1e293b!important;
+          }}
+          @media(max-width:720px) {{
+            body.guide-board-direct-fixed .key-materials-section .wrap,
+            .key-materials-section .wrap {{ width:min(calc(100% - 32px),1120px)!important; }}
+            body.guide-board-direct-fixed .key-materials-grid,
+            .key-materials-grid {{ grid-template-columns:1fr!important;gap:18px!important; }}
+            body.guide-board-direct-fixed .key-materials-grid > a > img,
+            .key-materials-grid > a > img {{ height:156px!important; }}
+          }}
+          </style>'''
+
+          if style_id not in s:
+              s = s.replace('</head>', style + '\n</head>')
+
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Remove workflow and commit
+        run: |
+          rm -f .github/workflows/patch-guide-board-materials-contrast.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add guide-board.html .github/workflows/patch-guide-board-materials-contrast.yml
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "教育委員会ページ一次資料カードの視認性を改善"
+            git push
+          fi
