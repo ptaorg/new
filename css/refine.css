@@ -32,3 +32,23 @@ h2, h3,
   --shadow-md: 0 8px 26px rgba(5,17,31,.09);
   --shadow-lg: 0 18px 46px rgba(5,17,31,.13);
 }
+
+/* 6) 既存HTML側に残った空セクション・不要な余白だけを非表示 */
+.entry-section:empty,
+section.entry-section:empty,
+section:empty{
+  display:none !important;
+}
+
+/* 7) 本文資料サイトとして、カード過多に見えやすい箇所の圧を下げる */
+.card, .article-card, .rel-card, .key-card, .fieldcase-card{
+  box-shadow: var(--shadow-sm) !important;
+}
+.card:hover, .article-card:hover, .rel-card:hover, .key-card:hover, .fieldcase-card:hover{
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* 8) 行政資料・論考ページの本文幅を読みやすく保つ */
+.article-body, .plain-prose-block, .chapter-content, .officer-prose{
+  line-height: 1.95;
+}
