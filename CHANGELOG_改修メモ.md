@@ -59,34 +59,55 @@
 - 「癒着」等の強すぎる語句の表示上補正
 - 「公務には変わりません」「構造的にできません」の表示上緩和
 
-## 未直接反映
+### timeline.html / shizuoka-incident.html / guideline.html / compliance.html
 
-以下のHTMLは、ローカル作業用ファイルでは修正確認済みだが、GitHubコネクタが部分パッチではなく全文差し替え方式のため、本文欠落リスクを避けてまだ直接上書きしていない。
+SNSクローラー向けに、静的HTML本体へXカード画像まわりのメタタグと `css/refine.css?v=refine1` の読み込みを直接反映した。
 
-- `timeline.html`
-- `shizuoka-incident.html`
-- `guideline.html`
-- `compliance.html`
-- `index.html`
-- `guide-board.html`
-- `guide-parent.html`
-- `guide-pta.html`
-- `membership.html`
-- `fee-collection.html`
-- `report.html`
-- `PTA運営適正化ガイドブック_第4版_改訂本文.html`
+- `twitter:image:alt` を追加
+- `css/refine.css?v=refine1` を読み込み
+- canonical 周辺の整形
+- 本文、章立て、リンク、画像、ナビゲーションは変更していない
+
+### index.html
+
+トップページに残っていた空の `entry-section` をHTML本体から削除した。
+
+- 削除は空セクション2行のみ
+- 本文、リンク、画像、ナビゲーションは変更していない
+
+### PTA運営適正化ガイドブック_第4版_改訂本文.html
+
+ガイドブック本文HTMLについて、表示時補正に頼らずHTML本体へ直接反映した。
+
+- 表紙タイトルを `h1 class="cover-title"` に修正
+- 表紙サブタイトルを行政向け説明資料として通りやすい表現へ調整
+- 「癒着」表現を「公私混同」等へ調整
+- 本文の論理、章立て、リンク、CSS、JSは変更していない
+
+## 確認済み
+
+- `main` は最新コミットに一致している
+- open PR は残っていない
+- `index.html` の空 `entry-section` は `main` 上で削除済み
+- ガイドブック本文HTMLは `main` 上で `h1` 化・表現調整済み
+- `guide-board.html` には、確認時点で「癒着」「公務には変わりません」「構造的にできません」は残っていない
 
 ## 残課題
-
-### 静的HTML本体への twitter:image 追加
-
-`timeline.html`、`shizuoka-incident.html`、`guideline.html`、`compliance.html` は、ローカル作業用ファイルでは `twitter:image` と `twitter:image:alt` の追加を確認済み。
-
-ただし、SNSクローラー向けメタタグはJavaScript補修では不十分な場合があるため、最終的にはHTML本体へ直接反映するのが望ましい。
 
 ### ブラウザ表示確認
 
 ブラウザ表示確認は未実施。作業環境側でブラウザ実行が管理者制限により止まるため、できたとは記録しない。
+
+最低限、以下の公開URLを目視確認する必要がある。
+
+- `https://ptaorg.github.io/`
+- `https://ptaorg.github.io/PTA運営適正化ガイドブック_第4版_改訂本文.html`
+- `https://ptaorg.github.io/timeline.html`
+- `https://ptaorg.github.io/compliance.html`
+
+### 作業ブランチ整理
+
+今回の作業で作成した `fix/...` ブランチは、main反映後の確認が終わってから削除する。
 
 ### 画像ファイル
 
