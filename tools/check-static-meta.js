@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 const fs=require('fs');
-const targets=['timeline.html','shizuoka-incident.html','guideline.html','compliance.html','documents.html','contact.html','board-responses.html'];
+// SNSクローラー向けメタタグをHTML本体に直接追加する対象4ページのみ検査する。
+// documents.html は旧URL互換ページで site.js を読まないため対象外。
+const targets=['timeline.html','shizuoka-incident.html','guideline.html','compliance.html'];
 const count=(re,s)=>{const m=s.match(re);return m?m.length:0};
 let failed=false;
 for(const file of targets){
