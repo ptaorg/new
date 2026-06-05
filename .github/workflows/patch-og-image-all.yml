@@ -1,0 +1,94 @@
+name: Patch OGP image all
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch-og-image:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch HTML OGP image tags
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          IMG = 'https://ptaorg.com/assets/og-image-popc-en.png'
+          SKIP_DIRS = {'.git', '.github', 'node_modules'}
+
+          def should_skip(path: Path) -> bool:
+              return any(part in SKIP_DIRS for part in path.parts)
+
+          def upsert_meta(head: str, attr: str, name: str, content: str) -> str:
+              if attr == 'property':
+                  pat = re.compile(r'<meta\s+property=["\']' + re.escape(name) + r'["\']\s+content=["\'][^"\']*["\']\s*/?>', re.I)
+                  tag = f'<meta property="{name}" content="{content}" />'
+              else:
+                  pat = re.compile(r'<meta\s+name=["\']' + re.escape(name) + r'["\']\s+content=["\'][^"\']*["\']\s*/?>', re.I)
+                  tag = f'<meta name="{name}" content="{content}" />'
+              if pat.search(head):
+                  return pat.sub(tag, head)
+              # Insert after og:url / twitter:description where possible, otherwise before </head>
+              if attr == 'property' and name == 'og:image':
+                  anchor = re.search(r'<meta\s+property=["\']og:url["\'][^>]*>\s*', head, re.I)
+              elif attr == 'property' and name == 'og:image:secure_url':
+                  anchor = re.search(r'<meta\s+property=["\']og:image["\'][^>]*>\s*', head, re.I)
+              elif attr == 'name' and name == 'twitter:image':
+                  anchor = re.search(r'<meta\s+name=["\']twitter:description["\'][^>]*>\s*', head, re.I)
+              else:
+                  anchor = None
+              if anchor:
+                  return head[:anchor.end()] + tag + '\n' + head[anchor.end():]
+              close = re.search(r'</head>', head, re.I)
+              if close:
+                  return head[:close.start()] + tag + '\n' + head[close.start():]
+              return head + '\n' + tag
+
+          changed = []
+          for p in Path('.').rglob('*.html'):
+              if should_skip(p):
+                  continue
+              s = p.read_text(encoding='utf-8', errors='ignore')
+              if '<head' not in s.lower() or '</head>' not in s.lower():
+                  continue
+              lower = s.lower()
+              head_end = lower.find('</head>') + len('</head>')
+              head = s[:head_end]
+              rest = s[head_end:]
+              new_head = head
+              new_head = upsert_meta(new_head, 'property', 'og:image', IMG)
+              new_head = upsert_meta(new_head, 'property', 'og:image:secure_url', IMG)
+              new_head = upsert_meta(new_head, 'name', 'twitter:image', IMG)
+              # Ensure basic sizes for summary_large_image cards if missing.
+              if 'property="og:image:width"' not in new_head and "property='og:image:width'" not in new_head:
+                  new_head = upsert_meta(new_head, 'property', 'og:image:width', '1200')
+              if 'property="og:image:height"' not in new_head and "property='og:image:height'" not in new_head:
+                  new_head = upsert_meta(new_head, 'property', 'og:image:height', '630')
+              if new_head != head:
+                  p.write_text(new_head + rest, encoding='utf-8')
+                  changed.append(str(p))
+
+          print('\n'.join(changed))
+          print(f'changed={len(changed)}')
+          PY
+
+      - name: Remove workflow and commit
+        run: |
+          rm -f .github/workflows/patch-og-image-all.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "全HTMLのOGP画像URLをPOPC画像に統一"
+            git push
+          fi
