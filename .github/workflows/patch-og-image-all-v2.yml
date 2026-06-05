@@ -1,0 +1,107 @@
+name: Patch OGP image all v2
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch-og-image:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch HTML OGP image tags, any attribute order
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          IMG = 'https://ptaorg.com/assets/og-image-popc-en.png'
+          SKIP_DIRS = {'.git', '.github', 'node_modules'}
+          TARGETS = [
+              ('property', 'og:image', f'<meta property="og:image" content="{IMG}" />'),
+              ('property', 'og:image:secure_url', f'<meta property="og:image:secure_url" content="{IMG}" />'),
+              ('name', 'twitter:image', f'<meta name="twitter:image" content="{IMG}" />'),
+              ('property', 'og:image:width', '<meta property="og:image:width" content="1200" />'),
+              ('property', 'og:image:height', '<meta property="og:image:height" content="630" />'),
+          ]
+
+          meta_re = re.compile(r'<meta\b[^>]*>', re.I)
+
+          def has_attr(tag, attr, value):
+              return re.search(r'\b' + re.escape(attr) + r'\s*=\s*(["\'])' + re.escape(value) + r'\1', tag, re.I) is not None
+
+          def replace_or_insert(head, attr, value, new_tag):
+              found = False
+              def repl(m):
+                  nonlocal found
+                  tag = m.group(0)
+                  if has_attr(tag, attr, value):
+                      found = True
+                      return new_tag
+                  return tag
+              head2 = meta_re.sub(repl, head)
+              if found:
+                  return head2
+
+              # Insert in a sensible position.
+              if attr == 'property' and value == 'og:image':
+                  anchor_values = [('property', 'og:url')]
+              elif attr == 'property' and value == 'og:image:secure_url':
+                  anchor_values = [('property', 'og:image')]
+              elif attr == 'name' and value == 'twitter:image':
+                  anchor_values = [('name', 'twitter:description')]
+              elif attr == 'property' and value in ('og:image:width', 'og:image:height'):
+                  anchor_values = [('property', 'og:image:secure_url'), ('property', 'og:image')]
+              else:
+                  anchor_values = []
+
+              metas = list(meta_re.finditer(head2))
+              for a_attr, a_value in anchor_values:
+                  for m in reversed(metas):
+                      if has_attr(m.group(0), a_attr, a_value):
+                          return head2[:m.end()] + '\n' + new_tag + head2[m.end():]
+
+              close = re.search(r'</head>', head2, re.I)
+              if close:
+                  return head2[:close.start()] + new_tag + '\n' + head2[close.start():]
+              return head2 + '\n' + new_tag
+
+          changed = []
+          for p in sorted(Path('.').rglob('*.html')):
+              if any(part in SKIP_DIRS for part in p.parts):
+                  continue
+              s = p.read_text(encoding='utf-8', errors='ignore')
+              m = re.search(r'</head>', s, re.I)
+              if not m:
+                  continue
+              head, rest = s[:m.end()], s[m.end():]
+              new_head = head
+              for attr, value, tag in TARGETS:
+                  new_head = replace_or_insert(new_head, attr, value, tag)
+              if new_head != head:
+                  p.write_text(new_head + rest, encoding='utf-8')
+                  changed.append(str(p))
+
+          print('changed files:')
+          print('\n'.join(changed))
+          print(f'changed={len(changed)}')
+          PY
+
+      - name: Remove workflow and commit
+        run: |
+          rm -f .github/workflows/patch-og-image-all-v2.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "全HTMLのOGP画像URLをPOPC画像に統一 v2"
+            git push
+          fi
