@@ -1,4 +1,4 @@
-/* site.js v58 safe loader */
+/* site.js v59 safe loader */
 (function(){
   function baseInit(){
     var names=['addGlobalStyle','removeTopDonation','initPrimaryNavigation','initCompliancePageFixes','initParentCompliancePreview','initParentBoardResponsesPreview','initCommonFooter','initCompatibilityFixes','initMegaMenu','initMobileNav','initSearch','initFAQ','initChecklist','initPageClasses'];
@@ -91,7 +91,7 @@
     if(!note)return;
     note.className='pbr-goodnote';
     note.dataset.rewritten='1';
-    note.innerHTML='<p>ここで見てほしいのは、単に「回答がある」ということではありません。複数の教育委員会が、PTA加入について「保護者の意思確認が必要」という前提を明確に示している点です。</p><p>たとえば兵庫県西脇市は、PTAは任意加入団体であり、入会には保護者の明確な申込みとPTAの承諾が必要で、意思確認をしない「みなし入会」では契約成立と判断できないと回答しています。利根町も、学校からPTA加入について説明し、書面等による保護者の意思表示を確認し、PTAの承諾によって入会契約が成立すると整理しています。</p><p>つまり、入学しただけで自動的にPTA会員になる、断らなければ加入したものと扱う、という運用は、少なくともこれらの回答が示す考え方とは合いません。</p>';
+    note.innerHTML='<p>ここで見てほしいのは、単に「回答がある」ということではありません。各地の教育委員会が、PTA加入・会費徴収・学校協力について、法令上の整理を示している点です。</p><p><strong>兵庫県西脇市の回答例。</strong>西脇市は、PTAは任意加入団体であり、入会には保護者の明確な申込みとPTAの承諾が必要で、意思確認をしない「みなし入会」では契約成立と判断できないと回答しています。つまり、入学しただけで自動的にPTA会員になる、断らなければ加入したものと扱う、という運用は、この考え方とは合いません。</p><p><strong>利根町の回答例。</strong>利根町は、PTA加入について、学校から説明し、書面等による保護者の意思表示を確認し、PTAの承諾によって入会契約が成立すると整理しています。さらに、PTA運営に法令違反が懸念される場合には、学校施設の提供や学校による会費徴収への協力を停止することもあり得る、という趣旨の回答をしています。</p><blockquote>法令違反が懸念されるときは、学校による施設提供や会費徴収への協力を停止する措置を講ずることもあることを伝え、指導、助言を行っていきたいと考えております。</blockquote><p>これは、PTAが法令どおりに運営されない場合、学校や教育委員会の協力は当然に続くものではない、という重要な意味を持ちます。</p>';
     var top=note.closest('.pbr-top');
     if(top && top.parentNode && note.parentNode!==top.parentNode){
       top.insertAdjacentElement('afterend', note);
@@ -99,7 +99,7 @@
     if(!document.getElementById('pbr-goodnote-style')){
       var st=document.createElement('style');
       st.id='pbr-goodnote-style';
-      st.textContent='.pbr-goodnote{display:block;width:100%;max-width:none;box-sizing:border-box;margin:4px 0 28px;padding:0;border:0;background:transparent;color:var(--text);font-size:.98rem;line-height:1.95}.pbr-goodnote p{max-width:none;margin:0 0 12px;color:var(--text)}.pbr-goodnote p:last-child{margin-bottom:0;font-weight:700;color:var(--navy)}';
+      st.textContent='.pbr-goodnote{display:block;width:100%;max-width:none;box-sizing:border-box;margin:4px 0 28px;padding:0;border:0;background:transparent;color:var(--text);font-size:.98rem;line-height:1.95}.pbr-goodnote p{max-width:none;margin:0 0 12px;color:var(--text)}.pbr-goodnote p:last-child{margin-bottom:0;font-weight:700;color:var(--navy)}.pbr-goodnote blockquote{margin:14px 0 16px;padding:14px 18px;border-left:5px solid var(--gold);background:#fffaf0;color:var(--navy);font-family:"Noto Serif JP",serif;font-weight:700;line-height:1.9}';
       document.head.appendChild(st);
     }
   }
