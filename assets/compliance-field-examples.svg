@@ -1,3 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="662" viewBox="0 0 900 662" role="img" aria-label="PTA運営の現場実例">
-  <image width="900" height="662" href="data:image/webp;base64,UklGRhqsAABXRUJQVlA4IA6sAADwnQKdASqEA5YCPqlQokymJKQiJQuWaSg4gW3iaRN5kVC5AgAoQbPgeYD5pHnlANetguyA8GfBC0Df9NE1ugf4fZD9uGqZ9v5ys+/qftgZt69ZqN9nQT/OZne3N7PWk5ZqWZVeAAAAA"/>
+<rect width="900" height="662" fill="#f8fafc"/>
+<text x="45" y="62" font-family="serif" font-size="30" font-weight="700" fill="#0f2e52">みなし加入・全員加入扱い</text>
+<text x="45" y="100" font-family="sans-serif" font-size="14" fill="#334155">入学・転入時に、入会申込書や同意確認を経ないまま保護者をPTA会員として扱う類型です。</text>
+<rect x="45" y="145" width="360" height="220" rx="10" fill="#fff" stroke="#d9e2ef"/>
+<rect x="70" y="175" width="305" height="120" fill="#efe2a5" stroke="#d6c67a"/>
+<rect x="100" y="235" width="245" height="42" fill="none" stroke="#ef4444" stroke-width="3"/>
+<text x="70" y="342" font-family="sans-serif" font-size="12" fill="#475569">提出がない場合にPTA会員扱いとする趣旨の記載がある資料です。</text>
+<rect x="45" y="385" width="360" height="170" rx="10" fill="#fff" stroke="#d9e2ef"/>
+<text x="165" y="432" font-family="serif" font-size="26" font-weight="700" fill="#444">PTA会費と用途</text>
+<rect x="120" y="460" width="230" height="48" fill="none" stroke="#ef4444" stroke-width="3"/>
+<text x="70" y="532" font-family="sans-serif" font-size="12" fill="#475569">入学とPTA加入を一体のものとして説明する構造が読み取れる資料です。</text>
+<rect x="435" y="145" width="420" height="178" rx="16" fill="#fff" stroke="#d9e2ef"/>
+<text x="462" y="180" font-family="sans-serif" font-size="19" font-weight="700" fill="#0f2e52">どこが問題か</text>
+<circle cx="465" cy="218" r="5" fill="#b91c1c"/><text x="485" y="224" font-family="sans-serif" font-size="14" fill="#334155">入会申込書がない。</text>
+<circle cx="465" cy="258" r="5" fill="#b91c1c"/><text x="485" y="264" font-family="sans-serif" font-size="14" fill="#334155">不提出を加入意思とみなしている。</text>
+<circle cx="465" cy="298" r="5" fill="#b91c1c"/><text x="485" y="304" font-family="sans-serif" font-size="14" fill="#334155">学校徴収金の書類と同じ束に入っている。</text>
+<rect x="435" y="345" width="420" height="72" fill="#fff5f5" stroke="#fca5a5"/>
+<text x="455" y="374" font-family="sans-serif" font-size="16" font-weight="700" fill="#991b1b">入会申込や明確な承諾なしに会員として扱う運用は、</text>
+<text x="455" y="398" font-family="sans-serif" font-size="16" font-weight="700" fill="#991b1b">PTA会員契約の成立を前提にできません。</text>
+<rect x="435" y="440" width="420" height="120" rx="16" fill="#fff" stroke="#d9e2ef"/>
+<text x="462" y="475" font-family="sans-serif" font-size="18" font-weight="700" fill="#0f2e52">関係する法令・制度</text>
+<text x="462" y="510" font-family="sans-serif" font-size="14" fill="#334155">契約は申込みと承諾によって成立します。</text>
+<rect x="462" y="528" width="74" height="28" rx="14" fill="#eff6ff" stroke="#bfdbfe"/><text x="476" y="547" font-family="sans-serif" font-size="12" fill="#1d4ed8">民法522条</text>
+<rect x="545" y="528" width="74" height="28" rx="14" fill="#eff6ff" stroke="#bfdbfe"/><text x="559" y="547" font-family="sans-serif" font-size="12" fill="#1d4ed8">憲法21条</text>
+<rect x="628" y="528" width="104" height="28" rx="14" fill="#eff6ff" stroke="#bfdbfe"/><text x="638" y="547" font-family="sans-serif" font-size="12" fill="#1d4ed8">消費者契約法4条</text>
 </svg>
