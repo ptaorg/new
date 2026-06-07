@@ -1,5 +1,5 @@
-/* PTA適正化推進委員会 — site.js v40 */
-const SUPPORT_URL='/donate/';
+/* PTA適正化推進委員会 — site.js v41 */
+const SUPPORT_URL='/support.html';
 const CONTACT_URL='/contact.html';
 const path=location.pathname;
 const isPage=n=>(path==='/'&&n==='index.html')||path.endsWith('/'+n)||path.endsWith(n);
@@ -22,9 +22,9 @@ const SITE_INDEX=[
  ['応援・寄付',SUPPORT_URL,'公文書開示、資料整理、Web公開への支援。']
 ];
 function addGlobalStyle(){
- if(document.getElementById('pta-v40-style'))return;
+ if(document.getElementById('pta-v41-style'))return;
  const s=document.createElement('style');
- s.id='pta-v40-style';
+ s.id='pta-v41-style';
  s.textContent=`
  .support-strip,.support-banner,.top-support,.donation-strip{display:none!important}.desktop-nav{gap:14px!important}.desktop-nav>.btn-gold{display:none!important}.entry-section:empty{display:none!important}
  .desktop-nav .support-nav-link{display:inline-flex;align-items:center;justify-content:center;min-width:56px;min-height:56px;border-radius:999px;background:#ea580c!important;color:#fff!important;font-weight:900!important;text-decoration:none!important;box-shadow:0 10px 24px rgba(234,88,12,.22)}
@@ -41,7 +41,7 @@ function initPrimaryNavigation(){
  if(d)d.innerHTML='<a class="nav-link" href="/index.html">トップ</a><div class="nav-item has-dropdown"><a class="nav-link" href="#">立場別</a><div class="mega-menu"><div class="mega-col"><h4>立場別</h4><ul><li><a href="/guide-parent.html">保護者の方へ</a></li><li><a href="/guide-pta.html">PTA役員の方へ</a></li><li><a href="/guide-board.html">教育委員会・学校の方へ</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="#">資料・データ</a><div class="mega-menu"><div class="mega-col"><h4>一次資料</h4><ul><li><a href="/board-responses.html">教育委員会の回答</a></li><li><a href="/national-archive.html">全国資料館</a></li><li><a href="/administrative-materials.html">行政資料整理</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="/journal.html">研究</a><div class="mega-menu"><div class="mega-col"><h4>論考・整理</h4><ul><li><a href="/journal.html">論考・調査報告</a></li><li><a href="/report.html">総合分析レポート</a></li><li><a href="/law-map.html">法制度マップ</a></li><li><a href="/cases.html">判例整理</a></li><li><a href="/timeline.html">PTA制度史</a></li></ul></div><div class="mega-col"><h4>論点別</h4><ul><li><a href="/membership.html">入会手続</a></li><li><a href="/privacy.html">個人情報</a></li><li><a href="/fee-collection.html">会費徴収</a></li><li><a href="/personnel.html">教職員関与</a></li><li><a href="/facilities.html">施設利用</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="#">ツール</a><div class="mega-menu"><div class="mega-col"><h4>点検用</h4><ul><li><a href="/audit/index.html">運営チェックアプリ</a></li><li><a href="/guideline.html">適正化ガイドライン</a></li></ul></div></div></div><a class="nav-link support-nav-link" href="'+SUPPORT_URL+'">応援</a>';
  const m=document.getElementById('mobileOverlay');
  if(m)m.innerHTML='<a class="mobile-link" href="/index.html"><span>Top</span>トップ</a><a class="mobile-link" href="/guide-parent.html"><span>Parents</span>保護者の方へ</a><a class="mobile-link" href="/guide-pta.html"><span>PTA Board</span>PTA役員の方へ</a><a class="mobile-link" href="/guide-board.html"><span>School Board</span>教育委員会・学校へ</a><a class="mobile-link" href="/board-responses.html"><span>Data</span>教育委員会の回答</a><a class="mobile-link" href="/national-archive.html"><span>Archive</span>全国資料館</a><a class="mobile-link" href="/administrative-materials.html"><span>Materials</span>行政資料整理</a><a class="mobile-link" href="/journal.html"><span>Journal</span>論考・調査報告</a><a class="mobile-link" href="/audit/index.html"><span>Check</span>運営チェックアプリ</a><a class="mobile-link support-mobile-link" href="'+SUPPORT_URL+'"><span>Support</span>応援・寄付</a><div class="close-overlay" id="closeOverlay">CLOSE ×</div>';
- document.querySelectorAll('a[href="/support.html"],a[href="support.html"],a[href="https://ptaorg.com/support.html"]').forEach(a=>a.setAttribute('href',SUPPORT_URL));
+ document.querySelectorAll('a[href="/donate/"],a[href="donate/"],a[href="https://ptaorg.com/donate/"]').forEach(a=>a.setAttribute('href',SUPPORT_URL));
 }
 function initMegaMenu(){document.querySelectorAll('.nav-item.has-dropdown>.nav-link').forEach(link=>link.addEventListener('click',e=>{const item=link.closest('.nav-item');if(link.getAttribute('href')==='#')e.preventDefault();item.classList.toggle('is-open');document.querySelectorAll('.nav-item.is-open').forEach(i=>{if(i!==item)i.classList.remove('is-open')})}));document.addEventListener('click',e=>{if(!e.target.closest('.nav-item'))document.querySelectorAll('.nav-item.is-open').forEach(i=>i.classList.remove('is-open'))})}
 function initMobileNav(){const h=document.getElementById('hamburger');const m=document.getElementById('mobileOverlay');if(!h||!m)return;const close=()=>{m.classList.remove('is-open');h.classList.remove('is-active');h.setAttribute('aria-expanded','false')};h.addEventListener('click',()=>{const open=!m.classList.contains('is-open');m.classList.toggle('is-open',open);h.classList.toggle('is-active',open);h.setAttribute('aria-expanded',open?'true':'false')});m.addEventListener('click',e=>{if(e.target.id==='closeOverlay'||e.target.classList.contains('mobile-link'))close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()})}
@@ -52,7 +52,7 @@ function initCompatibilityFixes(){
  if(!document.querySelector('link[href^="/css/refine.css"],link[href^="css/refine.css"]')){const l=document.createElement('link');l.rel='stylesheet';l.href='/css/refine.css?v=refine1';document.head.appendChild(l)}
  document.querySelectorAll('link[rel="canonical"]').forEach((el,i)=>{if(i>0)el.remove()});
  if(document.querySelector('meta[name="twitter:card"]')&&!document.querySelector('meta[name="twitter:image"]')){const m=document.createElement('meta');m.name='twitter:image';m.content='https://ptaorg.com/assets/og-image-popc-en.png';document.head.appendChild(m)}
- const map={'guide-board.html#responses':'board-responses.html#municipality-index','board-responses.html#yokohama':'board-responses.html#municipality-index','guide-parent.html#templates':'guide-parent.html#pdf-dl','guide-board.html#yokohama':'administrative-materials.html#ed-resource-set','administrative-materials.html#admin-table':'administrative-materials.html#source-candidates','/support.html':SUPPORT_URL,'support.html':SUPPORT_URL,'https://ptaorg.com/support.html':SUPPORT_URL};
+ const map={'guide-board.html#responses':'board-responses.html#municipality-index','board-responses.html#yokohama':'board-responses.html#municipality-index','guide-parent.html#templates':'guide-parent.html#pdf-dl','guide-board.html#yokohama':'administrative-materials.html#ed-resource-set','administrative-materials.html#admin-table':'administrative-materials.html#source-candidates','/donate/':SUPPORT_URL,'donate/':SUPPORT_URL,'https://ptaorg.com/donate/':SUPPORT_URL};
  document.querySelectorAll('a[href]').forEach(a=>{const h=a.getAttribute('href');if(map[h])a.setAttribute('href',map[h])});
  if(location.hash&&document.getElementById(location.hash.slice(1)))setTimeout(()=>document.getElementById(location.hash.slice(1)).scrollIntoView(),60);
 }
