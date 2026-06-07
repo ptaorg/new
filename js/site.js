@@ -1,4 +1,4 @@
-/* PTA適正化推進委員会 — site.js v47 */
+/* PTA適正化推進委員会 — site.js v48 */
 const SUPPORT_URL='/support.html';
 const CONTACT_URL='/contact.html';
 const path=location.pathname;
@@ -23,9 +23,9 @@ const SITE_INDEX=[
  ['応援・寄付',SUPPORT_URL,'公文書開示、資料整理、Web公開への支援。']
 ];
 function addGlobalStyle(){
- if(document.getElementById('pta-v47-style'))return;
+ if(document.getElementById('pta-v48-style'))return;
  const s=document.createElement('style');
- s.id='pta-v47-style';
+ s.id='pta-v48-style';
  s.textContent=`
  .support-strip,.support-banner,.top-support,.donation-strip{display:none!important}.desktop-nav{gap:14px!important}.desktop-nav>.btn-gold{display:none!important}.entry-section:empty{display:none!important}
  .desktop-nav .support-nav-link{display:inline-flex;align-items:center;justify-content:center;min-width:56px;min-height:56px;border-radius:999px;background:#ea580c!important;color:#fff!important;font-weight:900!important;text-decoration:none!important;box-shadow:0 10px 24px rgba(234,88,12,.22)}
@@ -36,7 +36,8 @@ function addGlobalStyle(){
  .parent-page .mc-section{background:#f4f8fc!important;color:var(--navy)!important;border-top:1px solid #e8edf4;border-bottom:1px solid #e8edf4}.parent-page .mc-section .section-title{color:var(--navy)!important}.parent-page .mc-section p{color:#27496f!important}.parent-page .mc-section .section-kicker{background:rgba(212,175,55,.18)!important;border:1px solid rgba(212,175,55,.35)!important;color:#7a5c00!important}.parent-page .mc-panel{background:#fff!important;border:1px solid #d8e0ea!important;box-shadow:var(--shadow-sm);color:var(--navy)!important}.parent-page .mc-panel>p{color:#27496f!important}.parent-page .mc-meter{background:#eef4fb!important;border:1px solid #d8e0ea!important}.parent-page .mc-count{background:var(--gold)!important;color:var(--navy)!important}.parent-page .mc-meter-text{color:#27496f!important}.parent-page .mc-meter-text b{color:var(--navy)!important}.parent-page .mc-option{background:#f8fafc!important;border:1px solid #d8e0ea!important}.parent-page .mc-option:hover{background:#eef4fb!important}.parent-page .mc-option strong{color:var(--navy)!important}.parent-page .mc-option span{color:var(--text-soft)!important}.parent-page .mc-app-link{color:var(--navy)!important;border-bottom-color:rgba(15,39,66,.28)!important}.parent-page #checker-result>div{background:#fff!important;border:1px solid #d8e0ea!important;color:var(--navy)!important}.parent-page #checker-result div,.parent-page #checker-result p{color:var(--text)!important}.parent-page #checker-result a{color:var(--navy)!important}.parent-page #checker-result a[style*="background:var(--gold)"]{background:var(--gold)!important;color:var(--navy)!important}.parent-page #checker-result a:not([style*="background:var(--gold)"]){background:#f8fafc!important;color:var(--navy)!important;border:1px solid #d8e0ea!important}
  .parent-page .pdf-section{background:#f4f8fc!important;color:var(--navy)!important;border-top:1px solid #e8edf4;border-bottom:1px solid #e8edf4}.parent-page .pdf-section .section-title{color:var(--navy)!important}.parent-page .pdf-section .section-lead{color:#27496f!important}.parent-page .pdf-section .section-kicker{background:rgba(212,175,55,.18)!important;border:1px solid rgba(212,175,55,.35)!important;color:#7a5c00!important}.parent-page .pdf-card{background:#fff!important;border:1px solid #d8e0ea!important;box-shadow:var(--shadow-sm)}.parent-page .pdf-card h3{color:var(--navy)!important}.parent-page .pdf-card p{color:var(--text-soft)!important}
  .parent-compliance-jump{background:#fff;padding:70px 0 76px;border-top:1px solid #e8edf4;border-bottom:1px solid #e8edf4}.parent-compliance-jump .pcj-wrap{width:min(calc(100% - 40px),1100px);margin-inline:auto;display:grid;grid-template-columns:minmax(0,.86fr) minmax(360px,1.14fr);gap:34px;align-items:center}.pcj-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;color:#8a6a10;font-size:.76rem;font-weight:900;letter-spacing:.08em}.pcj-kicker:before{content:'';width:28px;height:2px;background:var(--gold)}.pcj-title{font-family:'Noto Serif JP',serif;color:var(--navy);font-size:clamp(1.55rem,3vw,2.35rem);line-height:1.36;margin:0 0 14px}.pcj-text{color:var(--text-soft);font-size:.98rem;line-height:1.95;margin:0 0 18px}.pcj-list{margin:0 0 24px;padding:0;list-style:none;display:grid;gap:8px}.pcj-list li{position:relative;padding-left:20px;color:var(--text);font-size:.92rem;line-height:1.75}.pcj-list li:before{content:'・';position:absolute;left:0;color:var(--gold);font-weight:900}.pcj-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.pcj-btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 20px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:900;box-shadow:0 10px 24px rgba(15,39,66,.16)}.pcj-btn:hover{background:#16395e;color:#fff;transform:translateY(-1px)}.pcj-note{font-size:.78rem;color:var(--text-soft);line-height:1.6}.pcj-preview{position:relative;height:470px;border:1px solid #d8e0ea;border-radius:18px;background:#f8fafc;box-shadow:0 18px 44px rgba(5,17,31,.14);overflow:hidden}.pcj-browserbar{height:38px;display:flex;align-items:center;gap:7px;padding:0 14px;background:#0f2742;color:rgba(255,255,255,.72);font-size:.72rem;font-weight:800}.pcj-browserbar i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.42);display:inline-block}.pcj-framebox{position:absolute;left:0;right:0;top:38px;bottom:0;overflow:hidden;background:#fff}.pcj-framebox iframe{position:absolute;left:0;top:0;width:1280px;height:1120px;border:0;transform:scale(.50);transform-origin:top left;pointer-events:none}.pcj-preview-mask{position:absolute;left:0;right:0;bottom:0;height:92px;background:linear-gradient(180deg,rgba(255,255,255,0),#fff);pointer-events:none}.pcj-preview-link{position:absolute;right:18px;bottom:18px;z-index:2;display:inline-flex;padding:9px 15px;border-radius:999px;background:var(--gold);color:var(--navy);font-weight:900;text-decoration:none;box-shadow:0 8px 18px rgba(0,0,0,.13)}
- @media(max-width:900px){.parent-compliance-jump{padding:56px 0}.parent-compliance-jump .pcj-wrap{grid-template-columns:1fr}.pcj-preview{height:360px}.pcj-framebox iframe{width:1050px;transform:scale(.42)}}
+ .parent-board-response-jump{background:#fff;padding:70px 0 76px;border-top:1px solid #e8edf4;border-bottom:1px solid #e8edf4}.pbr-wrap{width:min(calc(100% - 40px),1100px);margin-inline:auto}.pbr-top{display:grid;grid-template-columns:minmax(0,.92fr) minmax(360px,1.08fr);gap:34px;align-items:start;margin-bottom:28px}.pbr-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;color:#8a6a10;font-size:.76rem;font-weight:900;letter-spacing:.08em}.pbr-kicker:before{content:'';width:28px;height:2px;background:var(--gold)}.pbr-title{font-family:'Noto Serif JP',serif;color:var(--navy);font-size:clamp(1.55rem,3vw,2.35rem);line-height:1.36;margin:0 0 14px}.pbr-lead{color:#27496f;font-size:.98rem;line-height:1.95;margin:0 0 22px}.pbr-btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 20px;border-radius:8px;background:var(--navy);color:#fff;text-decoration:none;font-weight:900;box-shadow:0 10px 24px rgba(15,39,66,.16)}.pbr-btn:hover{background:#16395e;color:#fff;transform:translateY(-1px)}.pbr-map-preview{position:relative;height:340px;border:1px solid #d8e0ea;border-radius:18px;background:#f8fafc;box-shadow:0 18px 44px rgba(5,17,31,.14);overflow:hidden}.pbr-browserbar{height:38px;display:flex;align-items:center;gap:7px;padding:0 14px;background:#0f2742;color:rgba(255,255,255,.72);font-size:.72rem;font-weight:800}.pbr-browserbar i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.42);display:inline-block}.pbr-framebox{position:absolute;left:0;right:0;top:38px;bottom:0;overflow:hidden;background:#fff}.pbr-framebox iframe{position:absolute;left:0;top:0;width:1180px;height:880px;border:0;transform:scale(.54);transform-origin:top left;pointer-events:none}.pbr-map-link{position:absolute;right:18px;bottom:18px;z-index:2;display:inline-flex;padding:9px 15px;border-radius:8px;background:var(--navy);color:#fff;font-weight:900;text-decoration:none;box-shadow:0 8px 18px rgba(0,0,0,.13)}.pbr-examples{display:grid;gap:14px}.pbr-response-item{background:#fffdf8;border:1px solid #e8dfc9;border-radius:12px;padding:20px 22px}.pbr-muni-name{font-family:'Noto Serif JP',serif;font-size:1.05rem;font-weight:900;color:var(--navy);margin-bottom:4px}.pbr-meta{font-size:.82rem;color:var(--text-soft);margin-bottom:10px}.pbr-response-item summary{cursor:pointer;list-style:none;font-size:.88rem;font-weight:700;color:var(--navy);padding:6px 0;user-select:none}.pbr-response-item summary::-webkit-details-marker{display:none}.pbr-response-item details[open] summary{margin-bottom:10px}.pbr-body{font-size:.91rem;line-height:1.85;color:var(--text);white-space:pre-wrap;border-top:1px solid var(--line);padding-top:12px}.pbr-back{margin-top:14px;font-size:.8rem;color:var(--navy);font-weight:700}.pbr-note{max-width:920px;margin:24px 0 0;padding:18px 20px;background:#fffdf3;border:1px solid #f1df9b;border-left:6px solid var(--gold);border-radius:0 14px 14px 0;color:#374151;font-size:.93rem;line-height:1.9}
+ @media(max-width:900px){.parent-compliance-jump{padding:56px 0}.parent-compliance-jump .pcj-wrap,.pbr-top{grid-template-columns:1fr}.pcj-preview{height:360px}.pcj-framebox iframe{width:1050px;transform:scale(.42)}.pbr-map-preview{height:300px}.pbr-framebox iframe{width:980px;transform:scale(.42)}}
  @media(max-width:780px){.desktop-nav{gap:8px!important}.nav-link{font-size:.82rem!important}}
  `;
  document.head.appendChild(s);
@@ -64,6 +65,80 @@ function initParentCompliancePreview(){
  section.innerHTML='<div class="pcj-wrap"><div class="pcj-copy"><div class="pcj-kicker">資料で確認する</div><h2 class="pcj-title" id="pcj-title">実物の書類を見ると、問題点はもっと分かります。</h2><p class="pcj-text">このページで見た相談は、現実の入会案内、会費徴収通知、名簿提供、役員選出資料の中に現れます。別ページでは、現場で使われる書類を類型別に並べ、どこを確認すればよいかを整理しています。</p><ul class="pcj-list"><li>みなし加入・全員加入扱い</li><li>学校徴収金とPTA会費の抱き合わせ徴収</li><li>学校からPTAへの個人情報提供</li></ul><div class="pcj-actions"><a class="pcj-btn" href="/compliance.html">現場実例ページを全部見る →</a><span class="pcj-note">右側はページ冒頭の縮小プレビューです。</span></div></div><div class="pcj-preview" aria-label="PTA運営の現場実例ページの縮小プレビュー"><div class="pcj-browserbar"><i></i><i></i><i></i><span>ptaorg.com/compliance.html</span></div><div class="pcj-framebox"><iframe src="/compliance.html#case01" loading="lazy" title="PTA運営の現場実例ページのプレビュー" tabindex="-1"></iframe></div><div class="pcj-preview-mask"></div><a class="pcj-preview-link" href="/compliance.html">全部を見る</a></div></div>';
  anchor.insertAdjacentElement('afterend',section);
 }
+function initParentBoardResponsesPreview(){
+ if(!isPage('guide-parent.html'))return;
+ if(document.querySelector('.parent-board-response-jump'))return;
+ const anchor=document.querySelector('.parent-compliance-jump')||document.querySelector('.case-foot');
+ if(!anchor)return;
+ const section=document.createElement('section');
+ section.className='parent-board-response-jump';
+ section.setAttribute('aria-labelledby','pbr-title');
+ section.innerHTML=`<div class="pbr-wrap"><div class="pbr-top"><div class="pbr-copy"><div class="pbr-kicker">教育委員会回答</div><h2 class="pbr-title" id="pbr-title">全国教育委員会への照会結果</h2><p class="pbr-lead">PTAの入会、会費徴収、個人情報、学校関与、施設利用などについて、各地の教育委員会から得られた回答を自治体別・論点別に整理しています。</p><a class="pbr-btn" href="/board-responses.html">教育委員会の回答ページへ進む →</a><div class="pbr-note">下の回答例は、実際の回答ページと同じ考え方で、回答本文をアコーディオンで開く形にしています。本文は要約せず、そのまま掲載しています。</div></div><div class="pbr-map-preview" aria-label="回答自治体マップの縮小プレビュー"><div class="pbr-browserbar"><i></i><i></i><i></i><span>ptaorg.com/board-responses.html</span></div><div class="pbr-framebox"><iframe src="/board-responses.html#responseMap" loading="lazy" title="回答自治体マップのプレビュー" tabindex="-1"></iframe></div><a class="pbr-map-link" href="/board-responses.html">全部を見る</a></div></div><div class="pbr-examples"><article class="pbr-response-item" id="parent-sample-nishiwaki"><div class="pbr-muni-name">兵庫県西脇市</div><div class="pbr-meta">分類：A:6項目 ／ 回答日：未確認</div><details><summary>回答本文を読む</summary><div class="pbr-body">【情報提供】兵庫県西脇市教育委員会の回答
+
+1. PTAの入会契約の成立要件に関する法的見解について
+
+PTAは任意加入の団体であり、保護者個人の自由な意思に基づいて加入するものです。
+
+入会には、保護者の方の明確な申し込みの意思表示と、PTAの承諾が必要です。
+
+ご指摘の、保護者の意思確認をせずに児童・生徒の入学をもって自動的に会員とする、いわゆる「みなし入会」方式では、契約が成立しているとは判断できません。
+
+2. 学校によるPTA会費の徴収行為が無権代理に該当するかについて
+
+学校がPTA会費を徴収する行為は、原則としてPTAとの間で代理権に関する契約（委任契約など）を締結した上で行われるべきものと考えます。
+
+契約関係のない状態で学校が代行徴収を行うことは、法的な問題を生じさせる可能性があると認識しています。
+
+3. 入会申込書による保護者および教職員の明確な意思確認の必要性について
+
+PTAが任意加入の団体である以上、入会手続きにおいては、保護者の方の明確な入会意思を確認することが不可欠です。書面による入会申込書や同意書は、その意思を確実に確認できる一つの有効な方法ですが、これに限定されるものではありません。
+
+例えば、新学期当初の保護者会等の場で、PTAの活動内容や会費、入退会は任意である旨を明確に説明し、その場で口頭による入会意思を確認する方法や、PTAのウェブサイトや専用システムを通じて、入会に関する説明を十分に行った上で、保護者が自らの意思で入会の意思表示を行う電子フォームを導入する方法も考えられます。ただし、口頭の場合、確認の記録を適切に残す必要があります。
+
+どのような方法を採用するにしても、重要なのは、保護者の方が入会を強制されていると感じることなく、PTAの活動内容や入会に伴う会費や役員活動などを十分に理解した上で、自らの自由な意思で入会を選択できるように配慮することが必要と考えます。
+
+本市としましては、各学校やPTAに対し、地域の実情に応じた柔軟な方法を取り入れつつ、保護者の明確な意思確認が確実に行われるよう指導してまいります。
+
+4. 個人情報保護法に基づく児童名簿・連絡個票の利用目的逸脱について
+
+児童・生徒の個人情報は、学校教育の目的にのみ使用されるべきものです。
+
+保護者の同意なく、PTA会費の徴収といった目的外に利用することは、個人情報保護法に抵触する可能性があると認識しています。
+
+引き続き、PTAの活動への情報提供に関して、保護者の明確な同意を得るよう学校を指導してまいります。
+
+5. PTAの運用に関する教育委員会の是正指導責任について
+
+ご指摘の通り、地方教育行政法第19条に基づき、教育委員会は所管する学校に対する管理・監督義務を負っています。
+
+一方で、PTAは「学校教育法第137条」に基づき、学校の設置者である教育委員会の管理する施設を使用する機会が認められている任意団体です。
+
+PTA活動は学校教育活動とは区別されるべきものですが、学校施設の使用や教職員が運営に関与している実態を踏まえると、学校教育に支障をきたす可能性は否定できません。
+
+PTAの運営が学校教育に支障をきたすような不適切な状況にあると判断される場合、その是正について、教育委員会が学校に指導を行うことは、不当な干渉にはあたらないものと認識しております。
+
+6. 任意加入・法令遵守が確保されるまでの暫定的措置に関する方針について
+
+PTAの運営に関して、保護者の権利を保護し、法令遵守を確保することは、学校と教育委員会の責務です。
+
+入会手続きや個人情報の取り扱いなど、PTAの運営が適正に行われているかを確認し、必要に応じて学校と連携しながら改善を促します。</div></details><div class="pbr-back">▲ 自治体索引へ戻る</div></article><article class="pbr-response-item" id="parent-sample-tone"><div class="pbr-muni-name">利根町</div><div class="pbr-meta">分類：A:6項目 ／ 回答日：未確認</div><details><summary>回答本文を読む</summary><div class="pbr-body">(茨城県利根町教育委員会）PTA入会に関する法的見解・照会６項目の回答について
+
+1. PTAの入会契約の成立要件に関する法的見解について
+→PTAの入会に関しましては、学校からPTAの入会について説明をし、書面等による保護者の意思表示を確認し、PTAの承諾によって入会契約が成立するものと考えております。
+2. 学校によるPTA会費の徴収行為が無権代理に該当するかについて
+→学校が正式な代理権を持たずにPTAの業務を代行している場合は無権代理に該当すると考えております。学校がPTAとPTA会費の徴収業務の準委任契約を結び、正式な代理権を持ってPTAの業務を代行するものと考えております。
+3. 入会申込書による保護者および教職員の明確な意思確認の必要性について
+→契約の成立には、申込書や同意書等の加入意思の確認が必要と考えております。申込書や同意書の徴収していない場合は、是正の必要性を伝え、指導、助言を行っていきたいと考えております。
+4. 個人情報保護法に基づく児童名簿・連絡個票の利用目的逸脱について
+→学校が正式な代理権を持たずに、保護者の同意なく児童生徒の名簿等の個人情報をPTAで使用することは適切ではないと考えております。個人情報を適切に管理するように指導、助言を行っていきたいと考えております。
+5. PTAの運用に関する教育委員会の是正指導責任について
+→学校が会費徴収や施設利用について、不適切な運用をしている場合は、是正指導をする必要があると考えております。
+6. 任意加入・法令遵守が確保されるまでの暫定的措置に関する方針について
+→法令違反が懸念されるときは、学校による施設提供や会費徴収への協力を停止する措置を講ずることもあることを伝え、指導、助言を行っていきたいと考えております。
+利根町教育委員会
+指導課 石井</div></details><div class="pbr-back">▲ 自治体索引へ戻る</div></article></div></div>`;
+ anchor.insertAdjacentElement('afterend',section);
+}
 function initCommonFooter(){
  const footer=document.querySelector('footer.footer');
  if(!footer)return;
@@ -83,4 +158,4 @@ function initCompatibilityFixes(){
  if(location.hash&&document.getElementById(location.hash.slice(1)))setTimeout(()=>document.getElementById(location.hash.slice(1)).scrollIntoView(),60);
 }
 function initPageClasses(){if(isPage('guide-board.html'))document.body.classList.add('guide-board-page');if(isPage('journal.html'))document.body.classList.add('journal-clean')}
-document.addEventListener('DOMContentLoaded',()=>{addGlobalStyle();removeTopDonation();initPrimaryNavigation();initCompliancePageFixes();initParentCompliancePreview();initCommonFooter();initCompatibilityFixes();initMegaMenu();initMobileNav();initSearch();initFAQ();initChecklist();initPageClasses()});
+document.addEventListener('DOMContentLoaded',()=>{addGlobalStyle();removeTopDonation();initPrimaryNavigation();initCompliancePageFixes();initParentCompliancePreview();initParentBoardResponsesPreview();initCommonFooter();initCompatibilityFixes();initMegaMenu();initMobileNav();initSearch();initFAQ();initChecklist();initPageClasses()});
