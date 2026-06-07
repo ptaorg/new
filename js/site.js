@@ -1,4 +1,4 @@
-/* site.js v53 safe loader */
+/* site.js v54 safe loader */
 (function(){
   function baseInit(){
     var names=['addGlobalStyle','removeTopDonation','initPrimaryNavigation','initCompliancePageFixes','initParentCompliancePreview','initParentBoardResponsesPreview','initCommonFooter','initCompatibilityFixes','initMegaMenu','initMobileNav','initSearch','initFAQ','initChecklist','initPageClasses'];
@@ -22,7 +22,11 @@
     block.innerHTML='<a class="home-role-entry-card" href="/guide-parent.html"><span class="home-role-entry-kicker">Parents</span><h3>&#20445;&#35703;&#32773;&#12398;&#26041;&#12408;</h3><p>&#20837;&#20250;&#12539;&#36864;&#20250;&#12539;&#20250;&#36027;&#12539;&#20491;&#20154;&#24773;&#22577;&#12395;&#12388;&#12356;&#12390;&#12289;&#12414;&#12378;&#20309;&#12434;&#30906;&#35469;&#12377;&#12427;&#12363;&#12434;&#25972;&#29702;&#12375;&#12414;&#12377;&#12290;</p><span class="home-role-entry-cta">&#20445;&#35703;&#32773;&#21521;&#12369;&#12460;&#12452;&#12489;&#12408; &#8594;</span></a><a class="home-role-entry-card" href="/guide-pta.html"><span class="home-role-entry-kicker">PTA</span><h3>PTA&#24441;&#21729;&#12398;&#26041;&#12408;</h3><p>&#20837;&#20250;&#35352;&#37682;&#12289;&#20250;&#36027;&#24500;&#21454;&#12289;&#20491;&#20154;&#24773;&#22577;&#12289;&#23398;&#26657;&#12392;&#12398;&#20998;&#38626;&#12434;&#23455;&#21209;&#12392;&#12375;&#12390;&#28857;&#26908;&#12375;&#12414;&#12377;&#12290;</p><span class="home-role-entry-cta">&#24441;&#21729;&#21521;&#12369;&#12460;&#12452;&#12489;&#12408; &#8594;</span></a><a class="home-role-entry-card" href="/guide-board.html"><span class="home-role-entry-kicker">Board</span><h3>&#25945;&#32946;&#22996;&#21729;&#20250;&#12539;&#23398;&#26657;&#12398;&#26041;&#12408;</h3><p>&#21517;&#31807;&#12289;&#24500;&#21454;&#12289;&#37197;&#24067;&#12289;&#26045;&#35373;&#12289;&#25945;&#32887;&#21729;&#38306;&#19982;&#12398;&#31684;&#22258;&#12434;&#30906;&#35469;&#12375;&#12414;&#12377;&#12290;</p><span class="home-role-entry-cta">&#23398;&#26657;&#12539;&#25945;&#22996;&#21521;&#12369;&#12460;&#12452;&#12489;&#12408; &#8594;</span></a>';
     title.insertAdjacentElement('afterend',block);
   }
-  function local(){pdfLinks();topCards();}
+  function loadArchiveNotice(){
+    if(!location.pathname.endsWith('/national-archive.html'))return;
+    var x=document.createElement('script');x.src='/js/archive-notice.js?v=1';document.head.appendChild(x);
+  }
+  function local(){pdfLinks();topCards();loadArchiveNotice();}
   var s=document.createElement('script');
   s.src='/js/site-v48-original.js?v=48';
   s.onload=function(){if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){baseInit();local();},{once:true});}else{baseInit();local();}};
