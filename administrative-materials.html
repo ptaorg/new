@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
@@ -24,6 +23,9 @@
 <link href="css/style.css" rel="stylesheet"/>
 <link href="/css/archive.css" rel="stylesheet"/>
 <title>行政資料・通知資料｜PTA適正化推進委員会</title>
+<style>
+.admin-materials-page{background:#f6f8fb;color:#172033}.admin-materials-hero{max-width:1120px;margin:0 auto;padding:44px 24px 22px}.admin-materials-kicker{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#1e3a5f;margin:0 0 8px}.admin-materials-hero h1{font-size:clamp(2rem,4vw,3.1rem);line-height:1.18;margin:0 0 12px;color:#0f2742}.admin-materials-subtitle{font-size:1.05rem;font-weight:700;color:#334155;margin:0 0 10px}.admin-materials-hero p:not(.admin-materials-kicker):not(.admin-materials-subtitle){max-width:860px;line-height:1.9;margin:0;color:#475569}.materials-index{max-width:1120px;margin:0 auto 18px;padding:0 24px 18px;display:flex;gap:10px 18px;flex-wrap:wrap;border-bottom:1px solid #dbe3ee}.materials-index a{color:#0f4c81;text-decoration:underline;text-underline-offset:3px;font-weight:700;font-size:.92rem}.materials-list{max-width:1120px;margin:0 auto;padding:6px 24px 64px}.materials-note{margin:0 0 26px;padding:12px 16px;border-left:5px solid #c49a2c;background:#fffdf7;line-height:1.8;color:#475569}.materials-category{margin:34px 0 44px;padding-top:16px;border-top:3px solid #183656}.materials-category h2{font-size:1.45rem;line-height:1.35;margin:0 0 10px;color:#0f2742}.materials-category p{margin:0 0 14px;color:#64748b;line-height:1.8}.materials-table-wrap{overflow-x:auto;background:transparent}.materials-table{width:100%;border-collapse:collapse;background:#fff;font-size:.92rem;line-height:1.65}.materials-table th{background:#123453;color:#fff;text-align:left;font-size:.86rem;padding:10px 12px;border-right:1px solid rgba(255,255,255,.16);white-space:nowrap}.materials-table td{vertical-align:top;padding:12px;border-bottom:1px solid #dbe3ee}.materials-table tr:nth-child(even) td{background:#f8fafc}.materials-table td:first-child{font-weight:800;color:#0f2742;white-space:nowrap}.materials-table a{font-weight:800;color:#0f4c81;text-decoration:underline;text-underline-offset:3px}.materials-table small{display:block;color:#64748b;line-height:1.55;margin-top:3px}.materials-data-links{margin-top:30px;padding-top:18px;border-top:1px solid #dbe3ee;color:#475569}.materials-data-links a{font-weight:800;color:#0f4c81;text-decoration:underline;text-underline-offset:3px}@media(max-width:720px){.admin-materials-hero{padding:32px 18px 18px}.materials-index{padding:0 18px 16px}.materials-list{padding:4px 18px 48px}.materials-table{font-size:.84rem}.materials-table th,.materials-table td{padding:9px 10px}}
+</style>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0D18ZSSLMH"></script>
 <script>
@@ -148,355 +150,140 @@
 <section class="admin-materials-hero">
 <p class="admin-materials-kicker">Administrative Materials</p>
 <h1>行政資料・通知資料</h1>
-<p class="admin-materials-subtitle">PTA運営の適正化に関する行政資料・通知・照会・制度文書の資料庫</p>
-<p>PTAの任意加入、個人情報の取扱い、学校徴収金とPTA会費の分離、学校とPTAの関係、施設利用、教職員のPTA事務関与などについて、行政・教育委員会・学校関係者が確認すべき資料を整理しています。</p>
-<div class="admin-materials-actions">
-<a class="pdf-download-button" href="#pdf-list">資料候補を見る</a>
-<a class="admin-materials-download admin-materials-download--light" href="/documents.html?id=yokohama-notice">横浜市通知の画像付き解説へ</a>
-</div>
+<p class="admin-materials-subtitle">PTA運営の適正化に関係する行政資料・通知・法令本文を分類別に並べています。</p>
+<p>ここでは長い解説やカード型の導線を置かず、資料名、使いどころ、確認状況だけを一覧できるようにしています。Google Drive候補は、正式引用前にPDF本文、発出主体、発出日、現行性、重複の有無を確認してください。</p>
 </section>
-<nav aria-label="行政資料ページ内の目次" class="editorial-toc">
-<div class="editorial-toc-title">目次</div>
-<ol>
-<li><a href="#admin-use">このページの使い方</a></li>
-<li><a href="#admin-source-types">資料の性格を混同しない</a></li>
-<li><a href="#ed-resource-set">教育委員会向け根拠資料セット</a></li>
-<li><a href="#reference-expansion">参考資料の使い方</a></li>
-<li><a href="#admin-issue-routes">資料候補と論点ページの接続</a></li><li><a href="#pdf-list">主要PDF資料一覧</a></li>
-<li><a href="#source-candidates">追加取込候補（確認中）</a></li>
-</ol>
+<nav aria-label="資料分類" class="materials-index">
+<a href="#yokohama">横浜市通知</a>
+<a href="#privacy">個人情報・PPC資料</a>
+<a href="#mext">文科省通知</a>
+<a href="#workstyle">働き方改革・教職員職務</a>
+<a href="#social-education">社会教育法</a>
+<a href="#school-education">学校教育法・施設利用</a>
+<a href="#fee">学校徴収金・会計</a>
+<a href="#consumer">消費者契約法</a>
+<a href="#research">研究・補助資料</a>
 </nav>
-<section class="admin-materials-section admin-materials-note editorial-panel editorial-panel--gold" id="admin-use">
-<h2>このページの使い方</h2>
-<ul>
-<li>PTA運営の適正化に関する一次資料・行政資料への入口として利用するページです。</li>
-<li>住民監査請求、開示請求、教育委員会照会、学校への申入れ等の準備資料として参照できます。</li>
-<li>掲載資料そのものと、当委員会による整理・評価は区別して読んでください。</li>
-<li>資料の追加・更新により、掲載内容や整理の位置づけが変わる可能性があります。</li>
-</ul>
-</section>
-
-<section class="admin-materials-section ed-resource-panel" id="ed-resource-set">
-  <div class="section-kicker">教育委員会向け根拠資料セット</div>
-  <h2>法令本文・アーカイブ資料・通知モデルの確認入口</h2>
-  <p>教育委員会向け実務指針ページには、社会教育法、学校教育法、地方教育行政の組織及び運営に関する法律、個人情報保護法、個人情報保護委員会の行政機関等編ガイドライン、地方公務員法、文部科学省掲載の地方公務員法第35条抄、国立国会図書館『地方公務員法実例判例集』、文部科学省「資料5 教員の職務について」、デジタル庁の学校における働き方改革ダッシュボードとデータ定義、民法、消費者契約法、消費者契約法逐条解説、地方自治法など、PTA運営の公私分離を検討するための資料確認入口を置いています。</p>
-  <p>この資料群は、単に法令を並べるためではなく、教育委員会が学校への通知、全校調査、照会回答、保護者説明を組み立てるときに、どの根拠を確認すべきかを示すためのものです。Wayback Machineや国立国会図書館等を経由しないと確認しにくい資料もあるため、実務上の入口として活用できます。</p>
-  <div class="ed-resource-list">
-    <div><strong>公私分離</strong><span>社会教育法、学校教育法、地方教育行政法を、PTA内部不干渉と学校管理責任の境界として読む。</span></div>
-    <div><strong>個人情報</strong><span>個人情報保護法と行政機関等編ガイドラインを、学校保有情報の目的外利用・提供の確認資料として読む。</span></div>
-    <div><strong>服務・働き方改革</strong><span>地方公務員法第35条、教員の職務、働き方改革資料を、PTA内部事務代行の線引きとして読む。</span></div>
-    <div><strong>契約・会費・会計</strong><span>民法、消費者契約法、逐条解説、地方自治法を、入会意思確認と会費徴収根拠の確認資料として読む。</span></div>
-  </div>
-  <div class="ed-link-buttons">
-    <a href="https://ptaorg.github.io/ed/" target="_blank" rel="noopener">教育委員会向け実務指針ページ</a>
-    <a href="https://ptaorg.github.io/ed/#sources" target="_blank" rel="noopener">一次資料・法令リンク</a>
-    <a href="https://ptaorg.github.io/ed/#templates" target="_blank" rel="noopener">通知モデル・様式</a>
-  </div>
-</section>
-
-<section class="admin-materials-section admin-materials-note editorial-panel" id="admin-source-types">
-<h2>資料の性格を混同しない</h2>
-<p>このページに置く資料は、すべて同じ重みではありません。国や自治体の通知、個人情報保護委員会資料、教育委員会回答、自治体マニュアル、学術論文・研究資料は、それぞれ発出主体、対象、拘束力、現行性が異なります。申入書や照会文で引用する場合は、発出元、日付、対象制度、現在も参照可能な資料かどうかを確認してください。</p>
-<p>とくに、PTA会費、学校徴収金、教職員の兼職兼業、職務専念義務、学校施設利用は、資料の一部だけを切り出すと誤読しやすい領域です。公式資料で確認できる事実と、当委員会による評価・解説は分けて扱います。</p>
-<div class="editorial-bluebar">引用前に、資料の発出主体・日付・対象制度・現行性を確認します</div>
-<div aria-label="資料種別ごとの読み方" class="editorial-matrix">
-<div class="editorial-matrix-row"><div class="editorial-matrix-term">国・委員会資料</div><div class="editorial-matrix-desc">制度解釈や一般的整理を確認する資料。個別学校の運用実態を直接証明するものではありません。</div></div>
-<div class="editorial-matrix-row"><div class="editorial-matrix-term">自治体通知</div><div class="editorial-matrix-desc">当該自治体の学校向け運用指示として重要。ただし、通知後に現場で徹底されているかは別資料で確認します。</div></div>
-<div class="editorial-matrix-row"><div class="editorial-matrix-term">研究論文・参考資料</div><div class="editorial-matrix-desc">制度理解を補う資料。申入書で用いる場合は、公式資料と区別して位置づけます。</div></div>
-</div>
-</section>
-<section class="admin-materials-section">
-<h2>資料カテゴリ</h2>
-<div class="admin-materials-category-grid">
-<span>A. 任意加入・入会手続</span>
-<span>B. 個人情報の取扱い</span>
-<span>C. 学校徴収金・PTA会費</span>
-<span>D. 学校とPTAの関係・施設利用</span>
-<span>E. 教職員のPTA事務関与</span>
-<span>F. 住民監査請求・行政照会</span>
-<span>G. 学術論文・参考研究</span>
-</div>
-</section>
-<section class="admin-materials-section admin-materials-feature">
-<div>
-<p class="admin-materials-kicker">Featured Document</p>
-<h2>横浜市「PTA運営の留意点について（通知）」画像付き解説ページ</h2>
-<p>通知本文および別紙画像を掲載し、任意加入、個人情報、未加入家庭への配慮、会費徴収、学校とPTAの関係性を確認できるページです。PDF原本とあわせて、本文のどこを見るべきかを整理しています。</p>
-</div>
-<a class="pdf-download-button" href="/documents.html?id=yokohama-notice">画像付き解説を見る</a>
-</section>
-<section class="admin-materials-section admin-materials-note editorial-panel" id="reference-expansion">
-<h2>参考資料は、論点を広げる材料として使う</h2>
-<p>この資料庫では、公式通知や法令だけでなく、研究論文、報道、自治体の制度ページ、学校徴収金のシステム化資料、教職員の職務整理に関する解説資料も、論点を広げる材料として扱います。すべてを同じ重みの根拠にするのではなく、「どの論点を補う資料か」を明確にして読むことが重要です。</p>
-<div aria-label="参考資料の使い方" class="editorial-matrix">
-<div class="editorial-matrix-row"><div class="editorial-matrix-term">研究論文</div><div class="editorial-matrix-desc">PTAの包摂・排除、地域共同体、保護者の心理的圧力など、法令だけでは説明しにくい背景を補います。</div></div>
-<div class="editorial-matrix-row"><div class="editorial-matrix-term">報道記事</div><div class="editorial-matrix-desc">会計不祥事、名簿提供、学校関与など、制度上のリスクが現実化した事例として読みます。</div></div>
-<div class="editorial-matrix-row"><div class="editorial-matrix-term">自治体ページ</div><div class="editorial-matrix-desc">学校徴収金、公会計化、収納システム、教職員の職務整理など、制度設計の比較材料として使います。</div></div>
-<div class="editorial-matrix-row"><div class="editorial-matrix-term">公式通知・法令</div><div class="editorial-matrix-desc">最終的な根拠資料として使う場合は、発出主体、日付、対象、現行性、本文そのものを確認します。</div></div>
-</div>
-</section>
-<section class="admin-materials-section admin-materials-note editorial-panel" id="admin-issue-routes">
-<h2>資料候補から各論点ページへ展開する</h2>
-<p>資料候補は、このページに置くだけでは意味がありません。学校徴収金資料は会費徴収ページへ、兼職兼業資料は教職員関与ページへ、137条資料は施設利用ページへ、個人情報保護委員会資料は個人情報ページへ接続して読むことで、各ページの論点が具体化します。</p>
-<div class="editorial-bluebar">資料庫はリンク集ではなく、各論点ページの根拠と補助線を集める場所です</div>
-<div aria-label="資料候補と展開先ページ" class="editorial-matrix">
-<div class="editorial-matrix-row"><div class="editorial-matrix-term">学校徴収金・公会計化</div><div class="editorial-matrix-desc"><a href="fee-collection.html">会費徴収ページ</a>で、学校徴収金の合理化とPTA会費抱合せを分けて説明する材料として使います。</div></div>
-<div class="editorial-matrix-row"><div class="editorial-matrix-term">兼職兼業・職専免</div><div class="editorial-matrix-desc"><a href="personnel.html">教職員関与ページ</a>で、学校の連絡調整とPTA内部事務代行の境界を説明する材料として使います。</div></div>
-<div class="editorial-matrix-row"><div class="editorial-matrix-term">学校教育法137条</div><div class="editorial-matrix-desc"><a href="facilities.html">施設利用ページ</a>で、校内会議、印刷、掲示、配布、PTA室利用を学校管理上の許可として整理する材料になります。</div></div>
-<div class="editorial-matrix-row"><div class="editorial-matrix-term">研究・報道・裁判資料</div><div class="editorial-matrix-desc"><a href="cases.html">判例・事例ページ</a>や<a href="reality.html">実態ページ</a>で、なぜ会計分離・入会記録・個人情報管理が必要かを説明する補助材料にします。</div></div>
-</div>
-</section>
-
-<section class="admin-materials-section" id="pdf-list">
-<h2>主要資料候補一覧</h2>
-<p>以下は、PTA運営の各論点を検討する際に参照できる資料候補です。現時点ではGoogle Drive上の候補資料を含むため、すべてをサイト内PDFとして確定扱いするのではなく、発出主体、発出日、現行性、重複の有無を確認しながら読む構成にしています。</p>
-<p class="admin-materials-muted">PDF本体をサイト内に同梱できていないものは、ローカルのダウンロードリンクではなく「Drive候補」として表示しています。正式掲載時には、PDF本体の取得、内容照合、重複整理、資料種別の確認を行います。</p>
-<div class="admin-materials-grid">
-<article class="pdf-card">
-<div class="pdf-card-meta">教育委員会通知・任意加入</div>
-<h3>横浜市教育委員会通知 学教第1965号「PTA運営の留意点について」</h3>
-<dl><div><dt>元ファイル名</dt><dd>横浜市教育委員会通知　学教第1965号.pdf</dd></div><div><dt>発出元</dt><dd>横浜市教育委員会</dd></div><div><dt>主な論点</dt><dd>任意加入／個人情報／未加入家庭への配慮／PTA会費／学校とPTAの関係</dd></div></dl>
-<p>横浜市が学校長等に宛てて示した、PTA運営上の留意点を整理した通知です。PTAが任意団体であること、加入の意思確認、個人情報の本人同意、未加入家庭への配慮、会費徴収時の説明責任などを確認できます。</p>
-<a class="pdf-download-button" href="https://drive.google.com/file/d/1f1QSbyS8UtsRnRAFct9z0lnKlad_p8ci" rel="noopener" target="_blank">Drive候補を確認</a>
-</article>
-<article class="pdf-card">
-<div class="pdf-card-meta">個人情報・公立学校とPTA</div>
-<h3>第353回個人情報保護委員会資料3</h3>
-<dl><div><dt>元ファイル名</dt><dd>第353回個人情報保護委員会資料3 -個人情報保護委員会-.pdf</dd></div><div><dt>発出元</dt><dd>個人情報保護委員会</dd></div><div><dt>主な論点</dt><dd>本人同意／利用目的／学校保有個人情報／PTAへの提供</dd></div></dl>
-<p>公立学校とPTAの間で個人情報を取り扱う際に、本人同意や利用目的、提供項目、記録の確認が重要となることを整理するための中核資料です。</p>
-<a class="pdf-download-button" href="https://drive.google.com/file/d/1ZgAu-we_1MUUQOMrICl0-PqxrHBQQbDc" rel="noopener" target="_blank">Drive候補を確認</a>
-</article>
-<article class="pdf-card">
-<div class="pdf-card-meta">学校徴収金・会費分離</div>
-<h3>学校徴収金の公会計化等の取組の一層の推進について（通知）</h3>
-<dl><div><dt>元ファイル名</dt><dd>学校徴収金の公会計化等の取組の一層の推進について（通知）.pdf</dd></div><div><dt>発出元</dt><dd>文部科学省</dd></div><div><dt>主な論点</dt><dd>学校徴収金／公会計化／PTA会費との分離／保護者負担</dd></div></dl>
-<p>学校徴収金を公会計化し、学校現場の会計処理や保護者負担の透明性を高めるための通知です。PTA会費を学校徴収金と混同しない整理に役立ちます。</p>
-<a class="pdf-download-button" href="https://drive.google.com/file/d/16cN8p-Ymv1Po-XKXZ4PfMysE34EWpZbo" rel="noopener" target="_blank">Drive候補を確認</a>
-</article>
-<article class="pdf-card">
-<div class="pdf-card-meta">兼職兼業・会計処理</div>
-<h3>学校関係団体が実施する事業に係る兼職兼業等の取扱い及び学校における会計処理の適正化についての留意事項</h3>
-<dl><div><dt>元ファイル名</dt><dd>文部科学省　通知　学校関係団体が実施する事業に係る兼職兼業等の取扱い及び学校における会計処理の適正化についての留意事項.pdf</dd></div><div><dt>発出元</dt><dd>文部科学省</dd></div><div><dt>主な論点</dt><dd>学校関係団体／兼職兼業／会計処理／教職員関与</dd></div></dl>
-<p>PTA等の学校関係団体が実施する事業に教職員が関わる場合の兼職兼業、服務、学校会計処理の整理を確認するための通知資料です。</p>
-<a class="pdf-download-button" href="https://drive.google.com/file/d/1Oxl7OVyEMReYY97LF2OrV_11waFWdUQE" rel="noopener" target="_blank">Drive候補を確認</a>
-</article>
-<article class="pdf-card">
-<div class="pdf-card-meta">点検・調査結果</div>
-<h3>PTA等学校関係団体が実施する事業に係る兼職兼業等の取扱い及び学校における会計処理の適正化についての点検・調査結果</h3>
-<dl><div><dt>元ファイル名</dt><dd>PTA等学校関係団体が実施する事業に係る兼職兼業等の取扱い及び学校における会計処理の適正化についての点検・調査結果について：文部科学省.pdf</dd></div><div><dt>発出元</dt><dd>文部科学省</dd></div><div><dt>主な論点</dt><dd>実態点検／兼職兼業／会計処理／学校関与</dd></div></dl>
-<p>学校関係団体の事業や会計処理に関する点検・調査結果です。通知が現場でどのように運用されているかを確認する補助資料として使えます。</p>
-<a class="pdf-download-button" href="https://drive.google.com/file/d/15lCVnKOwb33izYPK9JqoBr2uE70Pur3S" rel="noopener" target="_blank">Drive候補を確認</a>
-</article>
-<article class="pdf-card">
-<div class="pdf-card-meta">施設利用・学校教育法137条</div>
-<h3>文科省 137条について</h3>
-<dl><div><dt>元ファイル名</dt><dd>文科省　137条について.pdf</dd></div><div><dt>発出元</dt><dd>文部科学省</dd></div><div><dt>主な論点</dt><dd>学校施設利用／学校教育法137条／社会教育団体／目的外利用</dd></div></dl>
-<p>学校施設をPTA等が利用する場面で、学校教育法137条や施設利用許可の考え方を確認するための資料です。</p>
-<a class="pdf-download-button" href="https://drive.google.com/file/d/1whRTpAMLsWj8IK288bWOMmXSW8HjHipj" rel="noopener" target="_blank">Drive候補を確認</a>
-</article>
-<article class="pdf-card">
-<div class="pdf-card-meta">働き方改革・答申</div>
-<h3>文科省 答申平成31年</h3>
-<dl><div><dt>元ファイル名</dt><dd>文科省　答申平成31年.pdf</dd></div><div><dt>発出元</dt><dd>文部科学省関係資料</dd></div><div><dt>主な論点</dt><dd>学校における働き方改革／業務整理／教職員負担</dd></div></dl>
-<p>学校における働き方改革や教職員の業務整理を検討する際に、PTA事務が学校業務として扱われていないかを確認する補助資料です。</p>
-<a class="pdf-download-button" href="https://drive.google.com/file/d/18xjEMjYPwc37iQ2E7zU2Id23e1OxfDyZ" rel="noopener" target="_blank">Drive候補を確認</a>
-</article>
-<article class="pdf-card">
-<div class="pdf-card-meta">教員の職務</div>
-<h3>「教員の職務の位置づけ」について</h3>
-<dl><div><dt>元ファイル名</dt><dd>「教員の職務の位置づけ」について.pdf</dd></div><div><dt>発出元または著者</dt><dd>資料内記載を確認</dd></div><div><dt>主な論点</dt><dd>教員の職務／校務分掌／職務専念義務／PTA事務関与</dd></div></dl>
-<p>教員の職務や校務分掌の範囲を検討するための資料です。PTA事務を当然に学校職務として扱えるかを点検する際の参考になります。</p>
-<a class="pdf-download-button" href="https://drive.google.com/file/d/1MPq9_Mn88ipbrFdXUcg0ZTC1GyjAeaef" rel="noopener" target="_blank">Drive候補を確認</a>
-</article>
-<article class="pdf-card">
-<div class="pdf-card-meta">職務専念義務免除</div>
-<h3>公私協働時代における職務専念義務免除のあり方</h3>
-<dl><div><dt>元ファイル名</dt><dd>公私協働時代における職務専念義務免除のあり方　曽和俊文.pdf</dd></div><div><dt>著者</dt><dd>曽和俊文</dd></div><div><dt>主な論点</dt><dd>職務専念義務／職専免／公私協働／地方公務員</dd></div></dl>
-<p>公務員の職務専念義務免除について、制度の考え方を確認するための研究資料です。教職員がPTA活動へ関与する場合の整理に関係します。</p>
-<a class="pdf-download-button" href="https://drive.google.com/file/d/1DwhDDrxsFZuwCy8arJVphxiF7aqc64Pd" rel="noopener" target="_blank">Drive候補を確認</a>
-</article>
-<article class="pdf-card">
-<div class="pdf-card-meta">学術論文・任意加入</div>
-<h3>PTAの今日的課題─「任意加入」・「強制加入」に関する法学的・歴史学的考察</h3>
-<dl><div><dt>元ファイル名</dt><dd>PTA の今日的課題─「任意加入」・「強制加入」に 関する法学的・歴史学的考察　神野 潔a）　竹尾 和子b）.pdf</dd></div><div><dt>著者</dt><dd>神野潔・竹尾和子</dd></div><div><dt>主な論点</dt><dd>任意加入／強制加入／PTAの歴史／法学的整理</dd></div></dl>
-<p>PTAの任意加入・強制加入を法学的・歴史学的に検討した論文です。現場の運用を制度史と法的観点から整理する際の参考研究です。</p>
-<span aria-disabled="true" class="pdf-download-button pdf-download-button--muted">掲載候補として確認中</span>
-</article>
-</div>
-</section>
-<section class="admin-materials-section">
-<h2>資料候補リンク一覧</h2>
-<p>PDF本体をサイト内に配置する前の段階では、候補資料への外部リンクとして扱います。リンク先を開いたうえで、本文・発出主体・発出日・現行性を確認してから引用してください。</p>
-<ul class="admin-materials-download-list">
-<li><a href="https://drive.google.com/file/d/1f1QSbyS8UtsRnRAFct9z0lnKlad_p8ci" rel="noopener" target="_blank">横浜市教育委員会通知 学教第1965号</a></li>
-<li><a href="https://drive.google.com/file/d/1ZgAu-we_1MUUQOMrICl0-PqxrHBQQbDc" rel="noopener" target="_blank">第353回個人情報保護委員会資料3</a></li>
-<li><a href="https://drive.google.com/file/d/16cN8p-Ymv1Po-XKXZ4PfMysE34EWpZbo" rel="noopener" target="_blank">学校徴収金の公会計化等の取組の一層の推進について（通知）</a></li>
-<li><a href="https://drive.google.com/file/d/1Oxl7OVyEMReYY97LF2OrV_11waFWdUQE" rel="noopener" target="_blank">学校関係団体事業に係る兼職兼業等・会計処理適正化通知</a></li>
-<li><a href="https://drive.google.com/file/d/15lCVnKOwb33izYPK9JqoBr2uE70Pur3S" rel="noopener" target="_blank">兼職兼業等・会計処理適正化の点検・調査結果</a></li>
-<li><a href="https://drive.google.com/file/d/1whRTpAMLsWj8IK288bWOMmXSW8HjHipj" rel="noopener" target="_blank">学校教育法137条・学校施設利用関係資料候補</a></li>
-<li><a href="https://drive.google.com/file/d/18xjEMjYPwc37iQ2E7zU2Id23e1OxfDyZ" rel="noopener" target="_blank">平成31年中教審答申（学校における働き方改革関係）</a></li>
-<li><a href="https://drive.google.com/file/d/1MPq9_Mn88ipbrFdXUcg0ZTC1GyjAeaef" rel="noopener" target="_blank">教員の職務位置づけ資料候補</a></li>
-<li><a href="https://drive.google.com/file/d/1DwhDDrxsFZuwCy8arJVphxiF7aqc64Pd" rel="noopener" target="_blank">職務専念義務免除に関する参考研究</a></li>
-<li><span>PTAの今日的課題─任意加入・強制加入に関する考察（掲載候補として確認中）</span></li>
-</ul>
-</section>
-<section class="admin-materials-section" id="source-candidates">
-<h2>追加取込候補（確認中）</h2>
-<p>以下は、Google Drive上で確認した資料候補の整理表です。PDF本体はこのページとは別管理であり、まだサイト内PDFとして確定掲載していないものを含みます。本文引用や申入書への引用に使う場合は、PDF原本、発出主体、発出日、現行性、重複の有無を確認してください。</p>
-<p>特に、文部科学省通知、個人情報保護委員会資料、横浜市教育委員会通知は優先度Aとして整理しています。一方、自治体マニュアルや研究資料は、公式資料・参考資料・補助資料を混同しないよう、掲載時に区分を明記する必要があります。</p>
-<div style="overflow-x:auto;margin-top:18px">
-<table style="width:100%;border-collapse:collapse;font-size:.9rem;line-height:1.7;background:#fff">
-<thead>
-<tr style="background:#eef2f7;color:#1e3a5f;text-align:left">
-<th style="padding:10px;border:1px solid #dbe3ee;white-space:nowrap">優先度</th>
-<th style="padding:10px;border:1px solid #dbe3ee;white-space:nowrap">分類</th>
-<th style="padding:10px;border:1px solid #dbe3ee">資料名</th>
-<th style="padding:10px;border:1px solid #dbe3ee">使いどころ</th>
-<th style="padding:10px;border:1px solid #dbe3ee">確認状況</th>
-</tr>
-</thead>
+<div class="materials-list">
+<p class="materials-note">分類は資料整理上の便宜です。確認済みの公式PDF、Google Drive上の候補、重複確認が必要な資料が混在しています。</p>
+<section class="materials-category" id="yokohama">
+<h2>横浜市通知</h2>
+<div class="materials-table-wrap">
+<table class="materials-table">
+<thead><tr><th>優先度</th><th>資料名</th><th>使いどころ</th><th>確認状況</th></tr></thead>
 <tbody>
-<tr>
-<td>A</td>
-<td>横浜市通知</td>
-<td><strong>横浜市教育委員会通知 学教第1965号（yokohama-notice-1965.pdf）</strong><br/><span style="color:#64748b">自治体公式通知PDF候補</span></td>
-<td>PTA任意加入、個人情報同意、未加入家庭配慮、会費説明、学校とPTAの関係</td>
-<td><a href="https://drive.google.com/file/d/1f1QSbyS8UtsRnRAFct9z0lnKlad_p8ci" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">PDF本体の内容、発出主体、現行性の確認が必要。</span></td>
-</tr>
-<tr>
-<td>A</td>
-<td>個人情報</td>
-<td><strong>第353回個人情報保護委員会資料3</strong><br/><span style="color:#64748b">個人情報保護委員会資料PDF</span></td>
-<td>学校からPTAへの個人情報提供、同意取得、第三者提供・目的外利用</td>
-<td><a href="https://drive.google.com/file/d/1ZgAu-we_1MUUQOMrICl0-PqxrHBQQbDc" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">重複候補と内容照合が必要。</span></td>
-</tr>
-<tr>
-<td>A</td>
-<td>個人情報</td>
-<td><strong>ppc-pta-personal-information-material-353.pdf</strong><br/><span style="color:#64748b">個人情報保護委員会関連整理PDF</span></td>
-<td>PTA・学校個人情報ページ用候補。第353回資料との重複確認が必要</td>
-<td><a href="https://drive.google.com/file/d/16JgzzbA2XSmPG_khN626DbI6zk2i48wG" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">重複可能性あり。内容照合が必要。</span></td>
-</tr>
-<tr>
-<td>A</td>
-<td>学校徴収金</td>
-<td><strong>文部科学省 学校徴収金の公会計化等の取組の一層の推進について（通知）</strong><br/><span style="color:#64748b">文部科学省通知PDF</span></td>
-<td>学校徴収金の公会計化、学校・教師の負担軽減、学校以外が担うべき業務</td>
-<td><a href="https://drive.google.com/file/d/16cN8p-Ymv1Po-XKXZ4PfMysE34EWpZbo" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">テキスト抽出確認済み。</span></td>
-</tr>
-<tr>
-<td>B</td>
-<td>学校徴収金</td>
-<td><strong>宮崎市 学校納入金等取扱マニュアル.pdf</strong><br/><span style="color:#64748b">自治体マニュアルPDF</span></td>
-<td>学校納入金・団体会計処理の自治体比較資料</td>
-<td><a href="https://drive.google.com/file/d/1lZcnNTcq2x3mRY4vi2NaKmYn4Lv6ulI-" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">一次資料性・現行性の確認が必要。</span></td>
-</tr>
-<tr>
-<td>B</td>
-<td>学校徴収金</td>
-<td><strong>山梨県 PTA・積立金会計事務処理の手引.pdf</strong><br/><span style="color:#64748b">自治体/県資料PDF</span></td>
-<td>PTA会計・積立金会計を学校側が扱う制度整理の比較資料</td>
-<td><a href="https://drive.google.com/file/d/1dKrZ6Rvzzd_r1CgyPqvnJLnp_WgnFRHS" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">一次資料性・現行性の確認が必要。</span></td>
-</tr>
-<tr>
-<td>B</td>
-<td>学校徴収金</td>
-<td><strong>高松市 学校徴収金等取扱マニュアル.pdf</strong><br/><span style="color:#64748b">自治体マニュアルPDF</span></td>
-<td>学校徴収金・団体徴収金の自治体比較資料</td>
-<td><a href="https://drive.google.com/file/d/1RYSdUfBtYAC2fvwHUCBj2MkliyJraTag" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">一次資料性・現行性の確認が必要。</span></td>
-</tr>
-<tr>
-<td>B</td>
-<td>学校徴収金</td>
-<td><strong>つくば市立学校 学校徴収金取扱要項（ガイドライン）.pdf</strong><br/><span style="color:#64748b">自治体ガイドラインPDF</span></td>
-<td>学校徴収金にPTA会費等を含める運用比較、問題点整理</td>
-<td><a href="https://drive.google.com/file/d/1Sz7zRzB_9psV3OG4iLL-Id4REIgpkMZz" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">一次資料性・現行性の確認が必要。</span></td>
-</tr>
-<tr>
-<td>A</td>
-<td>兼職兼業・職専免</td>
-<td><strong>文部科学省 通知 学校関係団体が実施する事業に係る兼職兼業等の取扱い及び学校における会計処理の適正化についての留意事項.pdf</strong><br/><span style="color:#64748b">文部科学省通知PDF</span></td>
-<td>PTA等学校関係団体、兼職兼業、学校会計処理、教職員関与</td>
-<td><a href="https://drive.google.com/file/d/1Oxl7OVyEMReYY97LF2OrV_11waFWdUQE" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">Drive上のPDF候補を確認。</span></td>
-</tr>
-<tr>
-<td>A</td>
-<td>兼職兼業・職専免</td>
-<td><strong>PTA等学校関係団体が実施する事業に係る兼職兼業等の取扱い及び学校における会計処理の適正化についての点検・調査結果について：文部科学省.pdf</strong><br/><span style="color:#64748b">文部科学省調査結果PDF</span></td>
-<td>学校関係団体・PTA関連の兼職兼業、会計処理、点検調査</td>
-<td><a href="https://drive.google.com/file/d/15lCVnKOwb33izYPK9JqoBr2uE70Pur3S" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">Drive上のPDF候補を確認。</span></td>
-</tr>
-<tr>
-<td>B</td>
-<td>兼職兼業・職専免</td>
-<td><strong>横浜市 職専免.pdf</strong><br/><span style="color:#64748b">自治体資料PDF</span></td>
-<td>横浜市の職務専念義務免除関係資料の候補</td>
-<td><a href="https://drive.google.com/file/d/1P6mOXmP3Znb7PikvB5Xio6n9qiCr1Pit" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">重複候補あり。内容確認が必要。</span></td>
-</tr>
-<tr>
-<td>B</td>
-<td>兼職兼業・職専免</td>
-<td><strong>teacher-duty-positioning.pdf</strong><br/><span style="color:#64748b">教員職務位置づけ資料PDF</span></td>
-<td>教員の職務・職専免・学校外団体関与の補助資料</td>
-<td><a href="https://drive.google.com/file/d/1MPq9_Mn88ipbrFdXUcg0ZTC1GyjAeaef" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">Drive上のPDF候補を確認。</span></td>
-</tr>
-<tr>
-<td>B</td>
-<td>兼職兼業・職専免</td>
-<td><strong>公私協働時代における職務専念義務免除のあり方　曽和俊文.pdf</strong><br/><span style="color:#64748b">学術論文/研究資料PDF</span></td>
-<td>職専免制度の理論的補助資料。一次資料ではなく参考研究</td>
-<td><a href="https://drive.google.com/file/d/1DwhDDrxsFZuwCy8arJVphxiF7aqc64Pd" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">参考資料。一次資料とは分けて扱う。</span></td>
-</tr>
-<tr>
-<td>A</td>
-<td>施設利用・137条</td>
-<td><strong>mext-school-facility-article137-notice.pdf</strong><br/><span style="color:#64748b">文部科学省/学校施設利用関係PDF候補</span></td>
-<td>学校教育法137条、学校施設利用、PTA学校利用</td>
-<td><a href="https://drive.google.com/file/d/1whRTpAMLsWj8IK288bWOMmXSW8HjHipj" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">Drive上のPDF候補を確認。</span></td>
-</tr>
-<tr>
-<td>B</td>
-<td>施設利用・137条</td>
-<td><strong>文科省　137条について.pdf</strong><br/><span style="color:#64748b">文科省137条資料PDF候補</span></td>
-<td>学校教育法137条整理の補助資料</td>
-<td><a href="https://drive.google.com/file/d/1OadXcFqv8_IHz4eqIB91A-QyZKYmgVVy" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">mext-school-facility-article137-notice.pdfとの重複確認が必要。</span></td>
-</tr>
-<tr>
-<td>A</td>
-<td>働き方改革</td>
-<td><strong>文科省　答申平成31年.pdf</strong><br/><span style="color:#64748b">中央教育審議会答申PDF</span></td>
-<td>学校・教師が担う業務3分類、学校徴収金や地域対応等の前提資料</td>
-<td><a href="https://drive.google.com/file/d/18xjEMjYPwc37iQ2E7zU2Id23e1OxfDyZ" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">重複多数あり。1件だけ採用すればよい。</span></td>
-</tr>
-<tr>
-<td>B</td>
-<td>消費者契約法</td>
-<td><strong>消費者庁　消費者契約法逐条解説　事業者.pdf</strong><br/><span style="color:#64748b">消費者庁逐条解説PDF候補</span></td>
-<td>PTAの事業者性、消費者契約法上の説明・取消し・不当条項の検討補助資料</td>
-<td><a href="https://drive.google.com/file/d/10nqDa6HMOGYl3dGqHnCDml4sYifV3F2q" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">公式解説候補。全文・出典確認が必要。</span></td>
-</tr>
-<tr>
-<td>C</td>
-<td>自治労・文科省確認</td>
-<td><strong>自治労　文科省回答PDF.pdf</strong><br/><span style="color:#64748b">交渉記録/回答PDF</span></td>
-<td>PTA事務と教職員職務の関係を検討する補助資料</td>
-<td><a href="https://drive.google.com/file/d/1TF-K9TcRobnWak5nD0I_2jF_gFrCVlzy" rel="noopener" target="_blank">Google Drive候補</a><br/><span style="color:#64748b">補助資料。公式通知とは分ける。</span></td>
-</tr>
+<tr><td>A</td><td><a href="https://drive.google.com/file/d/1f1QSbyS8UtsRnRAFct9z0lnKlad_p8ci" rel="noopener" target="_blank">横浜市教育委員会通知 学教第1965号</a><small>yokohama-notice-1965.pdf</small></td><td>PTA任意加入、個人情報同意、未加入家庭配慮、会費説明、学校とPTAの関係。</td><td>Google Drive候補。PDF本体は別管理。</td></tr>
 </tbody>
 </table>
 </div>
-<p style="margin-top:16px">候補一覧の元データ：<a href="/source-candidates/source_candidates.csv">CSV</a> ／ <a href="/source-candidates/source_candidates.json">JSON</a> ／ <a href="/source-candidates/site_import_plan.md">サイト反映計画</a></p>
 </section>
-<section class="admin-materials-section">
-<h2>関連ページ</h2>
-<div class="admin-materials-related">
-<a href="/documents.html?id=yokohama-notice"><strong>横浜市通知の画像付き解説</strong><span>通知本文・別紙画像を確認</span></a>
-<a href="/documents.html"><strong>資料解説</strong><span>行政資料の要点整理</span></a>
-<a href="/board-responses.html"><strong>教育委員会の回答</strong><span>自治体ごとの回答資料</span></a>
-<a href="/national-archive.html"><strong>全国資料館</strong><span>学校別・自治体別資料</span></a>
-<a href="/law-map.html"><strong>法制度マップ</strong><span>条文と制度の関係</span></a>
+<section class="materials-category" id="privacy">
+<h2>個人情報・個人情報保護委員会（PPC）資料</h2>
+<div class="materials-table-wrap">
+<table class="materials-table">
+<thead><tr><th>優先度</th><th>資料名</th><th>使いどころ</th><th>確認状況</th></tr></thead>
+<tbody>
+<tr><td>A</td><td><a href="https://drive.google.com/file/d/1ZgAu-we_1MUUQOMrICl0-PqxrHBQQbDc" rel="noopener" target="_blank">第353回個人情報保護委員会資料3</a><small>個人情報保護委員会資料PDF</small></td><td>学校からPTAへの個人情報提供、同意取得、第三者提供・目的外利用。</td><td>Google Drive候補。重複候補との内容照合が必要。</td></tr>
+<tr><td>A</td><td><a href="https://drive.google.com/file/d/16JgzzbA2XSmPG_khN626DbI6zk2i48wG" rel="noopener" target="_blank">ppc-pta-personal-information-material-353.pdf</a><small>個人情報保護委員会関連整理PDF</small></td><td>PTA・学校個人情報ページ用候補。第353回資料との重複確認。</td><td>Google Drive候補。内容照合が必要。</td></tr>
+<tr><td>法令</td><td><a href="https://laws.e-gov.go.jp/law/415AC0000000057" rel="noopener" target="_blank">個人情報の保護に関する法律</a><small>e-Gov法令検索</small></td><td>公立学校が保有する個人情報の利用・提供制限を確認する条文入口。</td><td>公式法令本文。</td></tr>
+</tbody>
+</table>
 </div>
 </section>
+<section class="materials-category" id="mext">
+<h2>文部科学省通知・学校関係団体</h2>
+<div class="materials-table-wrap">
+<table class="materials-table">
+<thead><tr><th>優先度</th><th>資料名</th><th>使いどころ</th><th>確認状況</th></tr></thead>
+<tbody>
+<tr><td>A</td><td><a href="https://drive.google.com/file/d/16cN8p-Ymv1Po-XKXZ4PfMysE34EWpZbo" rel="noopener" target="_blank">学校徴収金の公会計化等の取組の一層の推進について（通知）</a><small>文部科学省通知PDF</small></td><td>学校徴収金の公会計化、学校・教師の負担軽減、学校以外が担うべき業務。</td><td>Google Drive候補。テキスト抽出確認済み。</td></tr>
+<tr><td>A</td><td><a href="https://drive.google.com/file/d/1Oxl7OVyEMReYY97LF2OrV_11waFWdUQE" rel="noopener" target="_blank">学校関係団体が実施する事業に係る兼職兼業等の取扱い及び学校における会計処理の適正化についての留意事項</a><small>文部科学省通知PDF</small></td><td>PTA等学校関係団体、兼職兼業、学校会計処理、教職員関与。</td><td>Google Drive候補。</td></tr>
+<tr><td>A</td><td><a href="https://drive.google.com/file/d/15lCVnKOwb33izYPK9JqoBr2uE70Pur3S" rel="noopener" target="_blank">PTA等学校関係団体が実施する事業に係る兼職兼業等の取扱い及び学校における会計処理の適正化についての点検・調査結果</a><small>文部科学省調査結果PDF</small></td><td>学校関係団体・PTA関連の兼職兼業、会計処理、点検調査。</td><td>Google Drive候補。</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="materials-category" id="workstyle">
+<h2>働き方改革・教職員職務</h2>
+<div class="materials-table-wrap">
+<table class="materials-table">
+<thead><tr><th>優先度</th><th>資料名</th><th>使いどころ</th><th>確認状況</th></tr></thead>
+<tbody>
+<tr><td>A</td><td><a href="https://drive.google.com/file/d/18xjEMjYPwc37iQ2E7zU2Id23e1OxfDyZ" rel="noopener" target="_blank">文科省 答申平成31年</a><small>中央教育審議会答申PDF</small></td><td>学校・教師が担う業務3分類、学校徴収金や地域対応等の前提資料。</td><td>Google Drive候補。重複多数あり、1件採用でよい。</td></tr>
+<tr><td>B</td><td><a href="https://drive.google.com/file/d/1MPq9_Mn88ipbrFdXUcg0ZTC1GyjAeaef" rel="noopener" target="_blank">teacher-duty-positioning.pdf</a><small>教員職務位置づけ資料PDF</small></td><td>教員の職務、職専免、学校外団体関与の補助資料。</td><td>Google Drive候補。</td></tr>
+<tr><td>法令</td><td><a href="https://laws.e-gov.go.jp/law/325AC0000000261" rel="noopener" target="_blank">地方公務員法</a><small>e-Gov法令検索</small></td><td>職務専念義務、服務規律、学校職員のPTA事務関与を確認する条文入口。</td><td>公式法令本文。</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="materials-category" id="social-education">
+<h2>社会教育法</h2>
+<div class="materials-table-wrap">
+<table class="materials-table">
+<thead><tr><th>区分</th><th>資料名</th><th>使いどころ</th><th>確認状況</th></tr></thead>
+<tbody>
+<tr><td>法令</td><td><a href="https://laws.e-gov.go.jp/law/324AC0000000207" rel="noopener" target="_blank">社会教育法</a><small>e-Gov法令検索</small></td><td>社会教育関係団体、社会教育法12条、教育委員会・学校による不当な統制的支配・干渉の禁止。</td><td>公式法令本文。</td></tr>
+<tr><td>関連</td><td><a href="law-map.html#social-education">法制度マップ：社会教育法</a><small>サイト内整理</small></td><td>PTAを社会教育関係団体として扱う場合の公私分離の論点確認。</td><td>サイト内解説。</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="materials-category" id="school-education">
+<h2>学校教育法・施設利用</h2>
+<div class="materials-table-wrap">
+<table class="materials-table">
+<thead><tr><th>優先度</th><th>資料名</th><th>使いどころ</th><th>確認状況</th></tr></thead>
+<tbody>
+<tr><td>法令</td><td><a href="https://laws.e-gov.go.jp/law/322AC0000000026" rel="noopener" target="_blank">学校教育法</a><small>e-Gov法令検索</small></td><td>学校教育法137条、学校施設の社会教育その他公共利用。</td><td>公式法令本文。</td></tr>
+<tr><td>A</td><td><a href="https://drive.google.com/file/d/1whRTpAMLsWj8IK288bWOMmXSW8HjHipj" rel="noopener" target="_blank">mext-school-facility-article137-notice.pdf</a><small>文部科学省・学校施設利用関係PDF候補</small></td><td>学校教育法137条、学校施設利用、PTAによる学校施設利用。</td><td>Google Drive候補。</td></tr>
+<tr><td>B</td><td><a href="https://drive.google.com/file/d/1OadXcFqv8_IHz4eqIB91A-QyZKYmgVVy" rel="noopener" target="_blank">文科省 137条について.pdf</a><small>文科省137条資料PDF候補</small></td><td>学校教育法137条整理の補助資料。</td><td>上記候補との重複確認が必要。</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="materials-category" id="fee">
+<h2>学校徴収金・会計</h2>
+<div class="materials-table-wrap">
+<table class="materials-table">
+<thead><tr><th>優先度</th><th>資料名</th><th>使いどころ</th><th>確認状況</th></tr></thead>
+<tbody>
+<tr><td>A</td><td><a href="https://drive.google.com/file/d/16cN8p-Ymv1Po-XKXZ4PfMysE34EWpZbo" rel="noopener" target="_blank">学校徴収金の公会計化等の取組の一層の推進について（通知）</a><small>文部科学省通知PDF</small></td><td>学校徴収金とPTA会費を混同しないための前提資料。</td><td>Google Drive候補。テキスト抽出確認済み。</td></tr>
+<tr><td>B</td><td><a href="https://drive.google.com/file/d/1lZcnNTcq2x3mRY4vi2NaKmYn4Lv6ulI-" rel="noopener" target="_blank">宮崎市 学校納入金等取扱マニュアル.pdf</a><small>自治体マニュアルPDF</small></td><td>学校納入金・団体会計処理の自治体比較資料。</td><td>発出主体・現行性の確認が必要。</td></tr>
+<tr><td>B</td><td><a href="https://drive.google.com/file/d/1dKrZ6Rvzzd_r1CgyPqvnJLnp_WgnFRHS" rel="noopener" target="_blank">山梨県 PTA・積立金会計事務処理の手引.pdf</a><small>自治体・県資料PDF</small></td><td>PTA会計・積立金会計を学校側が扱う制度整理の比較資料。</td><td>発出主体・現行性の確認が必要。</td></tr>
+<tr><td>B</td><td><a href="https://drive.google.com/file/d/1RYSdUfBtYAC2fvwHUCBj2MkliyJraTag" rel="noopener" target="_blank">高松市 学校徴収金等取扱マニュアル.pdf</a><small>自治体マニュアルPDF</small></td><td>学校徴収金・団体徴収金の自治体比較資料。</td><td>発出主体・現行性の確認が必要。</td></tr>
+<tr><td>B</td><td><a href="https://drive.google.com/file/d/1Sz7zRzB_9psV3OG4iLL-Id4REIgpkMZz" rel="noopener" target="_blank">つくば市立学校 学校徴収金取扱要項（ガイドライン）.pdf</a><small>自治体ガイドラインPDF</small></td><td>学校徴収金にPTA会費等を含める運用比較、問題点整理。</td><td>発出主体・現行性の確認が必要。</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="materials-category" id="consumer">
+<h2>消費者契約法・契約</h2>
+<div class="materials-table-wrap">
+<table class="materials-table">
+<thead><tr><th>優先度</th><th>資料名</th><th>使いどころ</th><th>確認状況</th></tr></thead>
+<tbody>
+<tr><td>法令</td><td><a href="https://laws.e-gov.go.jp/law/129AC0000000089" rel="noopener" target="_blank">民法</a><small>e-Gov法令検索</small></td><td>入会の申込みと承諾、契約成立の整理。</td><td>公式法令本文。</td></tr>
+<tr><td>法令</td><td><a href="https://laws.e-gov.go.jp/law/412AC0000000061" rel="noopener" target="_blank">消費者契約法</a><small>e-Gov法令検索</small></td><td>PTA入会説明、会費徴収、不利益告知、不当条項の検討。</td><td>公式法令本文。</td></tr>
+<tr><td>B</td><td><a href="https://drive.google.com/file/d/10nqDa6HMOGYl3dGqHnCDml4sYifV3F2q" rel="noopener" target="_blank">消費者庁 消費者契約法逐条解説 事業者.pdf</a><small>消費者庁逐条解説PDF候補</small></td><td>PTAの事業者性、消費者契約法上の説明・取消し・不当条項の検討補助資料。</td><td>公式解説候補。全文・出典確認が必要。</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="materials-category" id="research">
+<h2>研究・補助資料</h2>
+<div class="materials-table-wrap">
+<table class="materials-table">
+<thead><tr><th>優先度</th><th>資料名</th><th>使いどころ</th><th>確認状況</th></tr></thead>
+<tbody>
+<tr><td>B</td><td><a href="https://drive.google.com/file/d/1DwhDDrxsFZuwCy8arJVphxiF7aqc64Pd" rel="noopener" target="_blank">公私協働時代における職務専念義務免除のあり方　曽和俊文.pdf</a><small>学術論文・研究資料PDF</small></td><td>職専免制度の理論的補助資料。一次資料とは分けて扱う。</td><td>Google Drive候補。</td></tr>
+<tr><td>C</td><td><a href="https://drive.google.com/file/d/1TF-K9TcRobnWak5nD0I_2jF_gFrCVlzy" rel="noopener" target="_blank">自治労 文科省回答PDF.pdf</a><small>交渉記録・回答PDF</small></td><td>PTA事務と教職員職務の関係を検討する補助資料。</td><td>補助資料。公式通知とは分ける。</td></tr>
+<tr><td>候補</td><td><span>PTAの今日的課題─「任意加入」・「強制加入」に関する法学的・歴史学的考察</span><small>神野潔・竹尾和子</small></td><td>PTAの任意加入・強制加入を法学的・歴史学的に検討する参考研究。</td><td>掲載候補として確認中。</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="materials-data-links">候補一覧の元データ：<a href="/source-candidates/source_candidates.csv">CSV</a> ／ <a href="/source-candidates/source_candidates.json">JSON</a> ／ <a href="/source-candidates/site_import_plan.md">サイト反映計画</a></div>
+</div>
 </main>
 <footer class="footer">
 <div class="footer-inner">
