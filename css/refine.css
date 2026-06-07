@@ -91,3 +91,19 @@ section:empty{
   margin-top: 4px !important;
   padding-top: 0 !important;
 }
+
+/* 10) フッター：応援ページ導線を最下部ではなくフッター先頭に出す */
+.footer .footer-inner{
+  display: flex !important;
+  flex-direction: column !important;
+}
+.footer .footer-support{
+  order: -1 !important;
+  margin: 0 0 30px !important;
+}
+.footer .footer-grid{
+  order: 0 !important;
+}
+.footer .copyright{
+  order: 1 !important;
+}
