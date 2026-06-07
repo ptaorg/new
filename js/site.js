@@ -1,4 +1,4 @@
-/* site.js v59 safe loader */
+/* site.js v60 safe loader */
 (function(){
   function baseInit(){
     var names=['addGlobalStyle','removeTopDonation','initPrimaryNavigation','initCompliancePageFixes','initParentCompliancePreview','initParentBoardResponsesPreview','initCommonFooter','initCompatibilityFixes','initMegaMenu','initMobileNav','initSearch','initFAQ','initChecklist','initPageClasses'];
@@ -78,6 +78,21 @@
     });
   }
 
+  function rebuildHomeReadingSection(){
+    var path=location.pathname;
+    if(!(path==='/' || path.endsWith('/index.html')))return;
+    var section=document.querySelector('.home-reading-section');
+    if(!section || section.dataset.rebuilt==='1')return;
+    section.dataset.rebuilt='1';
+    section.innerHTML='<div class="wrap home-lead-wrap"><div class="section-kicker">はじめに</div><h2 class="section-title" id="home-reading-title">PTAを「学校の一部」として扱わないために。</h2><div class="home-lead-prose"><p>PTAは、保護者と教職員が任意に参加する民間の任意団体です。学校教育を支える活動であっても、入会、会費、名簿、役員選出、連絡、会計処理は、学校の手続とは分けて考える必要があります。</p><p>問題は、PTAが存在することそのものではありません。入学や進級の手続、学校徴収金、学校の名簿、学校連絡ツール、教職員の勤務時間の中にPTAの事務が溶け込み、保護者が「任意加入であること」「断れること」「会費を支払う根拠」を確認できなくなることです。</p><p>このサイトでは、保護者、PTA役員、学校・教育委員会のそれぞれの立場から、どこを確認し、どのように公私の境界を整えるべきかを、一次資料と法令に基づいて整理しています。</p></div><div class="home-role-grid" aria-label="立場別入口"><a class="home-role-card" href="/guide-parent.html"><span class="home-role-label">保護者の方へ</span><h3>入会した覚えがない、会費を止めたい、断ると子どもが心配。</h3><p>まずは、入会意思、会費徴収、個人情報、役員選出のどこを確認すればよいかを整理します。</p><span class="home-role-cta">保護者向けガイドを読む →</span></a><a class="home-role-card" href="/guide-pta.html"><span class="home-role-label">PTA役員の方へ</span><h3>善意の活動を、強制や不透明な運営にしないために。</h3><p>入会申込、会費徴収、名簿管理、学校との役割分担を、役員を責めずに点検します。</p><span class="home-role-cta">役員向けガイドを読む →</span></a><a class="home-role-card" href="/guide-board.html"><span class="home-role-label">学校・教育委員会の方へ</span><h3>学校が協力できる範囲と、止めるべき範囲を分ける。</h3><p>名簿提供、学校徴収金、連絡ツール、教職員関与、施設利用を行政実務として整理します。</p><span class="home-role-cta">学校・教委向けガイドを読む →</span></a></div></div>';
+    if(!document.getElementById('home-rebuilt-style')){
+      var st=document.createElement('style');
+      st.id='home-rebuilt-style';
+      st.textContent='.home-reading-section{background:#fff!important;padding:76px 0 82px!important}.home-lead-wrap{max-width:1080px!important}.home-lead-prose{max-width:900px;margin:22px 0 34px}.home-lead-prose p{font-size:1rem;line-height:2.05;color:var(--text);margin:0 0 16px}.home-role-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}.home-role-card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 24px 22px;box-shadow:var(--shadow-sm);transition:transform .18s,box-shadow .18s,border-color .18s}.home-role-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--gold)}.home-role-label{display:inline-flex;margin-bottom:13px;padding:4px 11px;border-radius:999px;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.34);color:#7a5c00;font-size:.72rem;font-weight:900;letter-spacing:.04em}.home-role-card h3{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:1.08rem;line-height:1.55;margin:0 0 10px}.home-role-card p{font-size:.9rem;line-height:1.85;color:var(--text-soft);margin:0 0 16px}.home-role-cta{font-size:.85rem;font-weight:900;color:var(--navy)}@media(max-width:860px){.home-role-grid{grid-template-columns:1fr}.home-lead-prose p{font-size:.96rem}}';
+      document.head.appendChild(st);
+    }
+  }
+
   function pdfLinks(){
     var cards=document.querySelectorAll('.parent-page .pdf-section .pdf-card');
     var ac='https://'+'acrobat'+'.'+'adobe'+'.'+'com/id/urn:aaid:sc:AP:';
@@ -119,6 +134,7 @@
   function local(){
     normalizeNavigation();
     normalizeLegacyLinks();
+    rebuildHomeReadingSection();
     pdfLinks();
     improveParentBoardResponseIntro();
     parentGuideConsultationBottom();
