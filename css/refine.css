@@ -52,3 +52,42 @@ section:empty{
 .article-body, .plain-prose-block, .chapter-content, .officer-prose{
   line-height: 1.95;
 }
+
+/* 9) 保護者ページ：相談の声の全文部分はカードではなく本文として読ませる */
+.parent-page .case-card.is-open{
+  box-shadow: var(--shadow-sm) !important;
+}
+.parent-page .case-answer,
+.parent-page .case-ans,
+.parent-page .case-reply{
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+.parent-page .case-ans{
+  padding: 20px 26px 30px !important;
+  border-top: 1px solid var(--line) !important;
+}
+.parent-page .case-quote{
+  background: transparent !important;
+  border: 0 !important;
+  border-left: 4px solid var(--gold) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 2px 0 2px 18px !important;
+  margin: 0 0 20px !important;
+}
+.parent-page .case-quote .qlabel{
+  color: var(--navy) !important;
+  margin-bottom: 8px !important;
+}
+.parent-page .case-quote p,
+.parent-page .case-reply p{
+  font-family: 'Noto Sans JP', system-ui, sans-serif !important;
+  font-size: .96rem !important;
+  line-height: 2 !important;
+}
+.parent-page .case-valid{
+  margin-top: 4px !important;
+  padding-top: 0 !important;
+}
