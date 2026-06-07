@@ -1,4 +1,4 @@
-/* PTA適正化推進委員会 — site.js v41 */
+/* PTA適正化推進委員会 — site.js v42 */
 const SUPPORT_URL='/support.html';
 const CONTACT_URL='/contact.html';
 const path=location.pathname;
@@ -22,9 +22,9 @@ const SITE_INDEX=[
  ['応援・寄付',SUPPORT_URL,'公文書開示、資料整理、Web公開への支援。']
 ];
 function addGlobalStyle(){
- if(document.getElementById('pta-v41-style'))return;
+ if(document.getElementById('pta-v42-style'))return;
  const s=document.createElement('style');
- s.id='pta-v41-style';
+ s.id='pta-v42-style';
  s.textContent=`
  .support-strip,.support-banner,.top-support,.donation-strip{display:none!important}.desktop-nav{gap:14px!important}.desktop-nav>.btn-gold{display:none!important}.entry-section:empty{display:none!important}
  .desktop-nav .support-nav-link{display:inline-flex;align-items:center;justify-content:center;min-width:56px;min-height:56px;border-radius:999px;background:#ea580c!important;color:#fff!important;font-weight:900!important;text-decoration:none!important;box-shadow:0 10px 24px rgba(234,88,12,.22)}
@@ -43,6 +43,11 @@ function initPrimaryNavigation(){
  if(m)m.innerHTML='<a class="mobile-link" href="/index.html"><span>Top</span>トップ</a><a class="mobile-link" href="/guide-parent.html"><span>Parents</span>保護者の方へ</a><a class="mobile-link" href="/guide-pta.html"><span>PTA Board</span>PTA役員の方へ</a><a class="mobile-link" href="/guide-board.html"><span>School Board</span>教育委員会・学校へ</a><a class="mobile-link" href="/board-responses.html"><span>Data</span>教育委員会の回答</a><a class="mobile-link" href="/national-archive.html"><span>Archive</span>全国資料館</a><a class="mobile-link" href="/administrative-materials.html"><span>Materials</span>行政資料整理</a><a class="mobile-link" href="/journal.html"><span>Journal</span>論考・調査報告</a><a class="mobile-link" href="/audit/index.html"><span>Check</span>運営チェックアプリ</a><a class="mobile-link support-mobile-link" href="'+SUPPORT_URL+'"><span>Support</span>応援・寄付</a><div class="close-overlay" id="closeOverlay">CLOSE ×</div>';
  document.querySelectorAll('a[href="/donate/"],a[href="donate/"],a[href="https://ptaorg.com/donate/"]').forEach(a=>a.setAttribute('href',SUPPORT_URL));
 }
+function initCommonFooter(){
+ const footer=document.querySelector('footer.footer');
+ if(!footer)return;
+ footer.innerHTML='<div class="footer-inner"><div class="footer-grid"><div><h3>PTA適正化推進委員会</h3><div class="footer-contact"><p>〒235-0021<br>神奈川県横浜市磯子区岡村8-17-5-301</p><p><strong>070-9012-7772</strong></p><p><a href="mailto:info@ptaorg.com">info@ptaorg.com</a></p></div></div><div><h4>立場別</h4><ul><li><a href="/guide-parent.html">保護者の方へ</a></li><li><a href="/guide-pta.html">PTA役員の方へ</a></li><li><a href="/guide-board.html">教育委員会・学校へ</a></li><li><a href="/guide-research.html">研究者・記者の方へ</a></li></ul></div><div><h4>論点</h4><ul><li><a href="/membership.html">入会手続</a></li><li><a href="/privacy.html">個人情報</a></li><li><a href="/fee-collection.html">会費徴収</a></li><li><a href="/personnel.html">教職員関与</a></li><li><a href="/facilities.html">施設利用</a></li></ul></div><div><h4>資料</h4><ul><li><a href="/board-responses.html">教育委員会の回答</a></li><li><a href="/national-archive.html">全国資料館</a></li><li><a href="/administrative-materials.html">行政資料整理</a></li><li><a href="/journal.html">論考・調査報告</a></li><li><a href="/report.html">総合分析レポート</a></li></ul></div><div><h4>連絡・支援</h4><ul><li><a href="/contact.html">お問い合わせ・情報提供</a></li><li><a href="/support.html">応援・寄付</a></li><li><a href="/audit/index.html">運営チェックアプリ</a></li><li><a href="/law-map.html">法制度マップ</a></li><li><a href="/guideline.html">適正化ガイドライン</a></li></ul></div></div><p class="copyright">© PTA適正化推進委員会</p></div>';
+}
 function initMegaMenu(){document.querySelectorAll('.nav-item.has-dropdown>.nav-link').forEach(link=>link.addEventListener('click',e=>{const item=link.closest('.nav-item');if(link.getAttribute('href')==='#')e.preventDefault();item.classList.toggle('is-open');document.querySelectorAll('.nav-item.is-open').forEach(i=>{if(i!==item)i.classList.remove('is-open')})}));document.addEventListener('click',e=>{if(!e.target.closest('.nav-item'))document.querySelectorAll('.nav-item.is-open').forEach(i=>i.classList.remove('is-open'))})}
 function initMobileNav(){const h=document.getElementById('hamburger');const m=document.getElementById('mobileOverlay');if(!h||!m)return;const close=()=>{m.classList.remove('is-open');h.classList.remove('is-active');h.setAttribute('aria-expanded','false')};h.addEventListener('click',()=>{const open=!m.classList.contains('is-open');m.classList.toggle('is-open',open);h.classList.toggle('is-active',open);h.setAttribute('aria-expanded',open?'true':'false')});m.addEventListener('click',e=>{if(e.target.id==='closeOverlay'||e.target.classList.contains('mobile-link'))close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()})}
 function initSearch(){document.querySelectorAll('.header-search').forEach(box=>{const input=box.querySelector('.search-input');const dd=box.querySelector('.search-results-dropdown');if(!input||!dd)return;input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();dd.innerHTML='';if(!q){dd.classList.remove('is-open');return}const hits=SITE_INDEX.filter(([title,url,desc])=>(title+url+desc).toLowerCase().includes(q)).slice(0,8);if(!hits.length){dd.innerHTML='<div class="search-result-item"><strong>該当なし</strong><span>別の語で検索してください。</span></div>'}else{hits.forEach(([title,url,desc])=>dd.insertAdjacentHTML('beforeend','<a class="search-result-item" href="'+url+'"><strong>'+title+'</strong><span>'+desc+'</span></a>'))}dd.classList.add('is-open')});document.addEventListener('click',e=>{if(!box.contains(e.target))dd.classList.remove('is-open')})})}
@@ -57,4 +62,4 @@ function initCompatibilityFixes(){
  if(location.hash&&document.getElementById(location.hash.slice(1)))setTimeout(()=>document.getElementById(location.hash.slice(1)).scrollIntoView(),60);
 }
 function initPageClasses(){if(isPage('guide-board.html'))document.body.classList.add('guide-board-page');if(isPage('journal.html'))document.body.classList.add('journal-clean')}
-document.addEventListener('DOMContentLoaded',()=>{addGlobalStyle();removeTopDonation();initPrimaryNavigation();initCompatibilityFixes();initMegaMenu();initMobileNav();initSearch();initFAQ();initChecklist();initPageClasses()});
+document.addEventListener('DOMContentLoaded',()=>{addGlobalStyle();removeTopDonation();initPrimaryNavigation();initCommonFooter();initCompatibilityFixes();initMegaMenu();initMobileNav();initSearch();initFAQ();initChecklist();initPageClasses()});
