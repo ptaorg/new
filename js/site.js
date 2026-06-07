@@ -1,4 +1,4 @@
-/* site.js v65 safe loader */
+/* site.js v66 safe loader */
 (function(){
   function baseInit(){
     var names=['addGlobalStyle','removeTopDonation','initPrimaryNavigation','initCompliancePageFixes','initParentCompliancePreview','initParentBoardResponsesPreview','initCommonFooter','initCompatibilityFixes','initMegaMenu','initMobileNav','initSearch','initFAQ','initChecklist','initPageClasses'];
@@ -39,6 +39,15 @@
     document.head.appendChild(st);
   }
 
+  function openGuidePtaTopBlocks(){
+    if(!location.pathname.endsWith('/guide-pta.html'))return;
+    if(document.getElementById('guide-pta-open-blocks-style'))return;
+    var st=document.createElement('style');
+    st.id='guide-pta-open-blocks-style';
+    st.textContent='#guidebook-text{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:56px 0 44px!important;margin:0!important}#guidebook-text>.wrap{max-width:860px!important;background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0!important}.editorial-brief.pta-editorial-brief{width:min(calc(100% - 40px),860px)!important;margin:0 auto 54px!important;padding:8px 0 0!important;background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}.editorial-brief.pta-editorial-brief .editorial-brief-body{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0!important}.editorial-brief.pta-editorial-brief .editorial-brief-band{margin-left:0!important}.editorial-brief.pta-editorial-brief .officer-action-list li{box-shadow:none!important}.gb-chapter{box-shadow:none!important}.gb-chapter-accordion{box-shadow:none!important}.gb-chapter-summary{box-shadow:none!important}';
+    document.head.appendChild(st);
+  }
+
   function rebuildHomeReadingSection(){
     var p=location.pathname;if(!(p==='/'||p.endsWith('/index.html')))return;
     var s=document.querySelector('.home-reading-section');if(!s||s.dataset.rebuilt==='1')return;
@@ -69,7 +78,7 @@
   function parentGuideConsultationBottom(){if(!location.pathname.endsWith('/guide-parent.html'))return;var soudan=document.getElementById('soudan');var main=document.querySelector('main');if(soudan&&main&&soudan.parentNode===main)main.appendChild(soudan);}
   function pdfLinks(){var cards=document.querySelectorAll('.parent-page .pdf-section .pdf-card');var ac='https://'+'acrobat'+'.'+'adobe'+'.'+'com/id/urn:aaid:sc:AP:';var pdfs=[ac+'ee52fff6-21cc-40c0-a631-bb9eafbca8c9',ac+'688231f9-f89a-45c4-a4c4-d29c85583a8b',ac+'36bed320-9ba2-4b4d-84fc-f90522a29e5b'];cards.forEach(function(card,i){var a=card.querySelector('a.pdf-btn');if(a&&pdfs[i]){a.href=pdfs[i];a.target='_blank';a.rel='noopener';a.textContent='PDF';}});}
   function loadArchiveNotice(){if(!location.pathname.endsWith('/national-archive.html'))return;var x=document.createElement('script');x.src='/js/archive-notice.js?v=1';document.head.appendChild(x);}
-  function local(){normalizeNavigation();normalizeLegacyLinks();rebuildHomeReadingSection();replaceHomeFieldcase();moveGuidePtaGuidebookFirst();pdfLinks();improveParentBoardResponseIntro();parentGuideConsultationBottom();loadArchiveNotice();initHomeEvidenceMap();enhanceBoardResponsesMap();}
+  function local(){normalizeNavigation();normalizeLegacyLinks();rebuildHomeReadingSection();replaceHomeFieldcase();moveGuidePtaGuidebookFirst();openGuidePtaTopBlocks();pdfLinks();improveParentBoardResponseIntro();parentGuideConsultationBottom();loadArchiveNotice();initHomeEvidenceMap();enhanceBoardResponsesMap();}
   function run(fn){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fn,{once:true});else fn();}
   captureBoardResponsesMapEarly();
   var s=document.createElement('script');s.src='/js/site-v48-original.js?v=48';s.onload=function(){run(function(){baseInit();local();});};s.onerror=function(){run(local);};document.head.appendChild(s);
