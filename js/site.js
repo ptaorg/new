@@ -1,4 +1,4 @@
-/* site.js v56 safe loader */
+/* site.js v57 safe loader */
 (function(){
   function baseInit(){
     var names=['addGlobalStyle','removeTopDonation','initPrimaryNavigation','initCompliancePageFixes','initParentCompliancePreview','initParentBoardResponsesPreview','initCommonFooter','initCompatibilityFixes','initMegaMenu','initMobileNav','initSearch','initFAQ','initChecklist','initPageClasses'];
@@ -85,6 +85,21 @@
     cards.forEach(function(card,i){var a=card.querySelector('a.pdf-btn');if(a&&pdfs[i]){a.href=pdfs[i];a.target='_blank';a.rel='noopener';a.textContent='PDF';}});
   }
 
+  function improveParentBoardResponseIntro(){
+    if(!location.pathname.endsWith('/guide-parent.html'))return;
+    var note=document.querySelector('.parent-board-response-jump .pbr-note');
+    if(!note || note.dataset.rewritten==='1')return;
+    note.className='pbr-goodnote';
+    note.dataset.rewritten='1';
+    note.innerHTML='<p>ここで見てほしいのは、単に「回答がある」ということではありません。複数の教育委員会が、PTA加入について「保護者の意思確認が必要」という前提を明確に示している点です。</p><p>たとえば兵庫県西脇市は、PTAは任意加入団体であり、入会には保護者の明確な申込みとPTAの承諾が必要で、意思確認をしない「みなし入会」では契約成立と判断できないと回答しています。利根町も、学校からPTA加入について説明し、書面等による保護者の意思表示を確認し、PTAの承諾によって入会契約が成立すると整理しています。</p><p>つまり、入学しただけで自動的にPTA会員になる、断らなければ加入したものと扱う、という運用は、少なくともこれらの回答が示す考え方とは合いません。</p>';
+    if(!document.getElementById('pbr-goodnote-style')){
+      var st=document.createElement('style');
+      st.id='pbr-goodnote-style';
+      st.textContent='.pbr-goodnote{margin-top:20px;padding:0;border:0;background:transparent;color:var(--text);font-size:.96rem;line-height:1.95}.pbr-goodnote p{margin:0 0 12px;color:var(--text)}.pbr-goodnote p:last-child{margin-bottom:0;font-weight:700;color:var(--navy)}';
+      document.head.appendChild(st);
+    }
+  }
+
   function parentGuideConsultationBottom(){
     if(!location.pathname.endsWith('/guide-parent.html'))return;
     var soudan=document.getElementById('soudan');
@@ -101,6 +116,7 @@
     normalizeNavigation();
     normalizeLegacyLinks();
     pdfLinks();
+    improveParentBoardResponseIntro();
     parentGuideConsultationBottom();
     loadArchiveNotice();
   }
