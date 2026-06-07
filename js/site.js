@@ -1,4 +1,4 @@
-/* site.js v61 safe loader */
+/* site.js v62 safe loader */
 (function(){
   function baseInit(){
     var names=['addGlobalStyle','removeTopDonation','initPrimaryNavigation','initCompliancePageFixes','initParentCompliancePreview','initParentBoardResponsesPreview','initCommonFooter','initCompatibilityFixes','initMegaMenu','initMobileNav','initSearch','initFAQ','initChecklist','initPageClasses'];
@@ -64,7 +64,6 @@
         '</ul></div></div></div>'+
         '<a class="nav-link support-nav-link" href="'+supportUrl+'">応援</a>';
     }
-
     var mobile=document.getElementById('mobileOverlay');
     if(mobile){
       mobile.innerHTML =
@@ -82,7 +81,6 @@
         '<a class="mobile-link support-mobile-link" href="'+supportUrl+'"><span>Support</span>応援・寄付</a>'+
         '<div class="close-overlay" id="closeOverlay">CLOSE ×</div>';
     }
-
     try{ if(typeof window.initMegaMenu==='function') window.initMegaMenu(); }
     catch(e){ console.error('site nav bind failed:', e); }
   }
@@ -120,6 +118,25 @@
     }
   }
 
+  function moveGuidePtaGuidebookFirst(){
+    if(!location.pathname.endsWith('/guide-pta.html'))return;
+    var main=document.querySelector('main');
+    if(!main)return;
+    var section=document.getElementById('guidebook-text');
+    if(!section){
+      var heads=document.querySelectorAll('h1,h2,h3');
+      for(var i=0;i<heads.length;i++){
+        if((heads[i].textContent||'').indexOf('PTA役員が知るべきこと')!==-1){
+          section=heads[i].closest('section')||heads[i].closest('article')||heads[i].parentElement;
+          break;
+        }
+      }
+    }
+    if(!section || section.dataset.movedToTop==='1')return;
+    section.dataset.movedToTop='1';
+    if(main.firstElementChild!==section)main.insertBefore(section,main.firstElementChild);
+  }
+
   function pdfLinks(){
     var cards=document.querySelectorAll('.parent-page .pdf-section .pdf-card');
     var ac='https://'+'acrobat'+'.'+'adobe'+'.'+'com/id/urn:aaid:sc:AP:';
@@ -135,9 +152,7 @@
     note.dataset.rewritten='1';
     note.innerHTML='<p>ここで見てほしいのは、単に「回答がある」ということではありません。各地の教育委員会が、PTA加入・会費徴収・学校協力について、法令上の整理を示している点です。</p><p><strong>兵庫県西脇市の回答例。</strong>西脇市は、PTAは任意加入団体であり、入会には保護者の明確な申込みとPTAの承諾が必要で、意思確認をしない「みなし入会」では契約成立と判断できないと回答しています。つまり、入学しただけで自動的にPTA会員になる、断らなければ加入したものと扱う、という運用は、この考え方とは合いません。</p><p><strong>利根町の回答例。</strong>利根町は、PTA加入について、学校から説明し、書面等による保護者の意思表示を確認し、PTAの承諾によって入会契約が成立すると整理しています。さらに、PTA運営に法令違反が懸念される場合には、学校施設の提供や学校による会費徴収への協力を停止することもあり得る、という趣旨の回答をしています。</p><blockquote>法令違反が懸念されるときは、学校による施設提供や会費徴収への協力を停止する措置を講ずることもあることを伝え、指導、助言を行っていきたいと考えております。</blockquote><p>これは、PTAが法令どおりに運営されない場合、学校や教育委員会の協力は当然に続くものではない、という重要な意味を持ちます。</p>';
     var top=note.closest('.pbr-top');
-    if(top && top.parentNode && note.parentNode!==top.parentNode){
-      top.insertAdjacentElement('afterend', note);
-    }
+    if(top && top.parentNode && note.parentNode!==top.parentNode){top.insertAdjacentElement('afterend', note);}
     if(!document.getElementById('pbr-goodnote-style')){
       var st=document.createElement('style');
       st.id='pbr-goodnote-style';
@@ -152,148 +167,30 @@
     var main=document.querySelector('main');
     if(soudan&&main&&soudan.parentNode===main){main.appendChild(soudan);}
   }
-
-  function loadArchiveNotice(){
-    if(!location.pathname.endsWith('/national-archive.html'))return;
-    var x=document.createElement('script');x.src='/js/archive-notice.js?v=1';document.head.appendChild(x);
-  }
-
-  function loadCssOnce(id,href){
-    if(document.getElementById(id))return;
-    var l=document.createElement('link');l.id=id;l.rel='stylesheet';l.href=href;document.head.appendChild(l);
-  }
-
-  function loadScriptOnce(id,src,done){
-    var existing=document.getElementById(id);
-    if(existing){
-      if(existing.dataset.loaded==='1')done&&done();
-      else existing.addEventListener('load',function(){done&&done();},{once:true});
-      return;
-    }
-    var s=document.createElement('script');s.id=id;s.src=src;s.onload=function(){s.dataset.loaded='1';done&&done();};document.head.appendChild(s);
-  }
-
-  function ensureLeaflet(done){
-    loadCssOnce('leaflet-css-dynamic','https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
-    if(window.L){done&&done();return;}
-    loadScriptOnce('leaflet-js-dynamic','https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',done);
-  }
-
-  function ensureBoardResponseData(done){
-    if(window.PTA_BOARD_RESPONSE_INDEX){done&&done();return;}
-    loadScriptOnce('board-response-data-dynamic','/data/board-responses-index.js',done);
-  }
-
-  function markerIcon(color){
-    return L.icon({
-      iconUrl:'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-'+color+'.png',
-      shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-      iconSize:[13,21],
-      iconAnchor:[6.5,21],
-      popupAnchor:[0,-20],
-      shadowSize:[21,21]
-    });
-  }
-
+  function loadArchiveNotice(){if(!location.pathname.endsWith('/national-archive.html'))return;var x=document.createElement('script');x.src='/js/archive-notice.js?v=1';document.head.appendChild(x);}
+  function loadCssOnce(id,href){if(document.getElementById(id))return;var l=document.createElement('link');l.id=id;l.rel='stylesheet';l.href=href;document.head.appendChild(l);}
+  function loadScriptOnce(id,src,done){var existing=document.getElementById(id);if(existing){if(existing.dataset.loaded==='1')done&&done();else existing.addEventListener('load',function(){done&&done();},{once:true});return;}var s=document.createElement('script');s.id=id;s.src=src;s.onload=function(){s.dataset.loaded='1';done&&done();};document.head.appendChild(s);}
+  function ensureLeaflet(done){loadCssOnce('leaflet-css-dynamic','https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');if(window.L){done&&done();return;}loadScriptOnce('leaflet-js-dynamic','https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',done);}
+  function ensureBoardResponseData(done){if(window.PTA_BOARD_RESPONSE_INDEX){done&&done();return;}loadScriptOnce('board-response-data-dynamic','/data/board-responses-index.js',done);}
+  function markerIcon(color){return L.icon({iconUrl:'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-'+color+'.png',shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',iconSize:[13,21],iconAnchor:[6.5,21],popupAnchor:[0,-20],shadowSize:[21,21]});}
   function responseId(no){return 'ans-'+no;}
-
   function addMergedPinsToMap(map,opts){
-    if(!map || !window.L || map._ptaMergedPinsAdded)return;
-    map._ptaMergedPinsAdded=true;
-    addMergedEvidenceStyles();
-    var data=window.PTA_BOARD_RESPONSE_INDEX||{};
-    var munis=data.municipalities||[];
-    var blueIcon=markerIcon('blue');
-    var redIcon=markerIcon('red');
-    var blueNames={};
-    var group=L.featureGroup();
-
-    if(opts&&opts.removeCircleMarkers){
-      map.eachLayer(function(layer){
-        if(layer instanceof L.CircleMarker){try{map.removeLayer(layer);}catch(e){}}
-      });
-    }
-
-    munis.forEach(function(m){
-      if(!Array.isArray(m.coordinates))return;
-      blueNames[m.municipality]=true;
-      var popup='<strong>'+m.municipality+'</strong><br><small>教育委員会回答</small>';
-      if(opts&&opts.home){popup+='<br><a href="/board-responses.html#'+responseId(m.no)+'">回答本文へ</a>';}
-      var marker=L.marker(m.coordinates,{icon:blueIcon,title:m.municipality,zIndexOffset:100}).addTo(map).bindPopup(popup);
-      if(opts&&opts.scrollBlue){
-        marker.on('click',function(){
-          var target=document.getElementById(responseId(m.no));
-          if(!target)return;
-          target.scrollIntoView({behavior:'smooth',block:'start'});
-          var det=target.querySelector('details');
-          if(det&&!det.open)det.open=true;
-        });
-      }
-      group.addLayer(marker);
-    });
-
-    TRIP_LOCATIONS.forEach(function(loc){
-      var lat=loc.lat;
-      var lng=loc.lng;
-      if(blueNames[loc.name])lng=lng+0.035;
-      var marker=L.marker([lat,lng],{icon:redIcon,title:loc.name,zIndexOffset:250}).addTo(map).bindPopup('<strong>'+loc.name+'</strong><br><small>公文書開示請求・教育委員会訪問先</small>');
-      group.addLayer(marker);
-    });
-
-    if(group.getLayers().length){
-      try{map.fitBounds(group.getBounds().pad(0.08));}catch(e){}
-    }
+    if(!map||!window.L||map._ptaMergedPinsAdded)return;map._ptaMergedPinsAdded=true;addMergedEvidenceStyles();
+    var data=window.PTA_BOARD_RESPONSE_INDEX||{};var munis=data.municipalities||[];var blueIcon=markerIcon('blue');var redIcon=markerIcon('red');var blueNames={};var group=L.featureGroup();
+    if(opts&&opts.removeCircleMarkers){map.eachLayer(function(layer){if(layer instanceof L.CircleMarker){try{map.removeLayer(layer);}catch(e){}}});}
+    munis.forEach(function(m){if(!Array.isArray(m.coordinates))return;blueNames[m.municipality]=true;var popup='<strong>'+m.municipality+'</strong><br><small>教育委員会回答</small>';if(opts&&opts.home){popup+='<br><a href="/board-responses.html#'+responseId(m.no)+'">回答本文へ</a>';}var marker=L.marker(m.coordinates,{icon:blueIcon,title:m.municipality,zIndexOffset:100}).addTo(map).bindPopup(popup);if(opts&&opts.scrollBlue){marker.on('click',function(){var target=document.getElementById(responseId(m.no));if(!target)return;target.scrollIntoView({behavior:'smooth',block:'start'});var det=target.querySelector('details');if(det&&!det.open)det.open=true;});}group.addLayer(marker);});
+    TRIP_LOCATIONS.forEach(function(loc){var lat=loc.lat;var lng=loc.lng;if(blueNames[loc.name])lng=lng+0.035;var marker=L.marker([lat,lng],{icon:redIcon,title:loc.name,zIndexOffset:250}).addTo(map).bindPopup('<strong>'+loc.name+'</strong><br><small>公文書開示請求・教育委員会訪問先</small>');group.addLayer(marker);});
+    if(group.getLayers().length){try{map.fitBounds(group.getBounds().pad(0.08));}catch(e){}}
   }
-
-  function initHomeEvidenceMap(){
-    var path=location.pathname;
-    if(!(path==='/' || path.endsWith('/index.html')))return;
-    var el=document.getElementById('homeEvidenceMap');
-    if(!el || el.dataset.initialized==='1')return;
-    el.dataset.initialized='1';
-    ensureBoardResponseData(function(){
-      ensureLeaflet(function(){
-        if(!window.L)return;
-        var map=L.map(el,{scrollWheelZoom:false}).setView([36.2,138.2],5);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
-        addMergedPinsToMap(map,{home:true});
-      });
-    });
-  }
-
-  function captureBoardResponsesMapEarly(){
-    if(!location.pathname.endsWith('/board-responses.html'))return;
-    if(!window.L || !L.map || L.map.__ptaCaptureWrapped)return;
-    var original=L.map;
-    var wrapped=function(id,options){
-      var map=original.apply(this,arguments);
-      if(id==='responseMap' || (id&&id.id==='responseMap'))window.PTA_RESPONSE_MAP=map;
-      return map;
-    };
-    wrapped.__ptaCaptureWrapped=true;
-    L.map=wrapped;
-  }
-
-  function enhanceBoardResponsesMap(){
-    if(!location.pathname.endsWith('/board-responses.html'))return;
-    var map=window.PTA_RESPONSE_MAP;
-    var title=document.querySelector('.map-section .section-title');
-    var lead=document.querySelector('.map-section .section-lead');
-    if(title)title.textContent='照会回答・公文書開示請求マップ';
-    if(lead)lead.textContent='青は教育委員会回答、赤は公文書開示請求・訪問先です。青ピンをクリックすると該当自治体の回答本文へ移動します。';
-    var note=document.querySelector('.map-note');
-    if(note)note.textContent='座標は自治体所在地の概略位置です。回答自治体と請求先が重なる場合は、表示上わずかにずらしています。';
-    var mapEl=document.getElementById('responseMap');
-    if(mapEl && !document.getElementById('boardMapLegend')){
-      mapEl.insertAdjacentHTML('afterend','<div class="board-map-legend" id="boardMapLegend"><span class="blue"><i></i>教育委員会回答</span><span class="red"><i></i>公文書開示請求・訪問先</span></div>');
-    }
-    if(map)addMergedPinsToMap(map,{removeCircleMarkers:true,scrollBlue:true});
-  }
+  function initHomeEvidenceMap(){var path=location.pathname;if(!(path==='/'||path.endsWith('/index.html')))return;var el=document.getElementById('homeEvidenceMap');if(!el||el.dataset.initialized==='1')return;el.dataset.initialized='1';ensureBoardResponseData(function(){ensureLeaflet(function(){if(!window.L)return;var map=L.map(el,{scrollWheelZoom:false}).setView([36.2,138.2],5);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors'}).addTo(map);addMergedPinsToMap(map,{home:true});});});}
+  function captureBoardResponsesMapEarly(){if(!location.pathname.endsWith('/board-responses.html'))return;if(!window.L||!L.map||L.map.__ptaCaptureWrapped)return;var original=L.map;var wrapped=function(id,options){var map=original.apply(this,arguments);if(id==='responseMap'||(id&&id.id==='responseMap'))window.PTA_RESPONSE_MAP=map;return map;};wrapped.__ptaCaptureWrapped=true;L.map=wrapped;}
+  function enhanceBoardResponsesMap(){if(!location.pathname.endsWith('/board-responses.html'))return;var map=window.PTA_RESPONSE_MAP;var title=document.querySelector('.map-section .section-title');var lead=document.querySelector('.map-section .section-lead');if(title)title.textContent='照会回答・公文書開示請求マップ';if(lead)lead.textContent='青は教育委員会回答、赤は公文書開示請求・訪問先です。青ピンをクリックすると該当自治体の回答本文へ移動します。';var note=document.querySelector('.map-note');if(note)note.textContent='座標は自治体所在地の概略位置です。回答自治体と請求先が重なる場合は、表示上わずかにずらしています。';var mapEl=document.getElementById('responseMap');if(mapEl&&!document.getElementById('boardMapLegend')){mapEl.insertAdjacentHTML('afterend','<div class="board-map-legend" id="boardMapLegend"><span class="blue"><i></i>教育委員会回答</span><span class="red"><i></i>公文書開示請求・訪問先</span></div>');}if(map)addMergedPinsToMap(map,{removeCircleMarkers:true,scrollBlue:true});}
 
   function local(){
     normalizeNavigation();
     normalizeLegacyLinks();
     rebuildHomeReadingSection();
+    moveGuidePtaGuidebookFirst();
     pdfLinks();
     improveParentBoardResponseIntro();
     parentGuideConsultationBottom();
@@ -301,14 +198,8 @@
     initHomeEvidenceMap();
     enhanceBoardResponsesMap();
   }
-
-  function runWhenReady(fn){
-    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fn,{once:true});
-    else fn();
-  }
-
+  function runWhenReady(fn){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fn,{once:true});else fn();}
   captureBoardResponsesMapEarly();
-
   var s=document.createElement('script');
   s.src='/js/site-v48-original.js?v=48';
   s.onload=function(){runWhenReady(function(){baseInit();local();});};
