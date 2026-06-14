@@ -1,7 +1,7 @@
 /* site.js v69 stable overlay */
 (function(){
   var initialPath=location.pathname+location.search;
-  var allowAutoTop=true;
+  var allowAutoTop=!location.hash;
   try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }catch(e){}
   function forceTop(){
     if(!allowAutoTop) return;
@@ -19,8 +19,8 @@
     window.addEventListener(ev,function(){ allowAutoTop=false; },{once:true,passive:true});
   });
   window.addEventListener('hashchange',function(){ allowAutoTop=false; },{passive:true});
-  window.addEventListener('pageshow',function(){ if((location.pathname+location.search)===initialPath) forceTopBurst(2200); });
-  forceTopBurst(2600);
+  window.addEventListener('pageshow',function(){ if(!location.hash && (location.pathname+location.search)===initialPath) forceTopBurst(2200); });
+  if(!location.hash) forceTopBurst(2600);
 
   var TRIP_LOCATIONS=[
     {name:'札幌市',lat:43.0621,lng:141.3544},{name:'仙台市',lat:38.2682,lng:140.8694},{name:'いわき市',lat:37.0504,lng:140.8877},{name:'須賀川市',lat:37.2865,lng:140.3734},{name:'潮来市',lat:35.9344,lng:140.5453},{name:'久喜市',lat:36.0621,lng:139.6672},{name:'埼玉県',lat:35.8574,lng:139.6489},{name:'川口市',lat:35.8079,lng:139.7238},{name:'幸手市',lat:36.0747,lng:139.7247},{name:'越谷市',lat:35.8911,lng:139.7911},{name:'三鷹市',lat:35.6836,lng:139.5594},{name:'墨田区',lat:35.7129,lng:139.8015},{name:'江戸川区',lat:35.6783,lng:139.8711},{name:'足立区',lat:35.7750,lng:139.8044},{name:'厚木市',lat:35.4431,lng:139.3622},{name:'川崎市',lat:35.5302,lng:139.7029},{name:'海老名市',lat:35.4461,lng:139.3917},{name:'相模原市',lat:35.5714,lng:139.3736},{name:'神奈川県',lat:35.4478,lng:139.6425},{name:'茅ヶ崎市',lat:35.3323,lng:139.4061},{name:'長岡市',lat:37.4461,lng:138.8511},{name:'射水市',lat:36.7299,lng:137.0520},{name:'下諏訪町',lat:36.0728,lng:138.0877},{name:'各務原市',lat:35.4011,lng:136.8441},{name:'岐阜県',lat:35.3912,lng:136.7223},{name:'富士宮市',lat:35.2217,lng:138.6119},{name:'静岡市',lat:34.9756,lng:138.3828},{name:'一宮市',lat:35.3047,lng:136.7978},{name:'名古屋市',lat:35.1815,lng:136.9066},{name:'安城市',lat:34.9594,lng:137.0864},{name:'愛知県',lat:35.1802,lng:136.9066},{name:'愛西市',lat:35.1500,lng:136.7275},{name:'扶桑町',lat:35.3583,lng:136.9111},{name:'豊橋市',lat:34.7692,lng:137.3914},{name:'豊田市',lat:35.0825,lng:137.1561},{name:'長久手市',lat:35.1611,lng:137.0503},{name:'三重県',lat:34.7303,lng:136.5086},{name:'大津市',lat:35.0178,lng:135.8547},{name:'彦根市',lat:35.2744,lng:136.2597},{name:'甲賀市',lat:34.9656,lng:136.1692},{name:'野洲市',lat:35.1189,lng:136.0275},{name:'亀岡市',lat:35.0356,lng:135.5739},{name:'京都市',lat:35.0116,lng:135.7681},{name:'交野市',lat:34.7861,lng:135.6811},{name:'大阪市',lat:34.6937,lng:135.5023},{name:'枚方市',lat:34.8161,lng:135.6500},{name:'茨木市',lat:34.8164,lng:135.5683},{name:'高槻市',lat:34.8486,lng:135.6175},{name:'姫路市',lat:34.8150,lng:134.6853},{name:'岡山市',lat:34.6551,lng:133.9196},{name:'岡山県',lat:34.6618,lng:133.9350},{name:'広島市',lat:34.3853,lng:132.4553},{name:'徳島市',lat:34.0711,lng:134.5517},{name:'北九州市',lat:33.8833,lng:130.8833},{name:'宗像市',lat:33.8050,lng:130.5414},{name:'長崎市',lat:32.7503,lng:129.8777},{name:'熊本市',lat:32.8031,lng:130.7078},{name:'大分県',lat:33.2381,lng:131.6125},{name:'鹿児島市',lat:31.5967,lng:130.5572}
