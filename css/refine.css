@@ -1,15 +1,3 @@
-/* refine.css */
-h2, h3,
-.section-title, .fieldcase-title, .proper-title,
-.editorial-brief-body h2, .board-guide-section h2, .officer-core-section h2{font-weight:700!important;letter-spacing:.005em}
-.section-kicker{font-weight:700!important;letter-spacing:.08em}
-.chapter-content strong,.officer-prose strong,.plain-prose-block strong,.section-lead strong,p strong{font-weight:600}
-.section-title{margin-bottom:16px}.chapter-content p,.officer-prose p,.plain-prose-block p{margin:0 0 1em}.chapter-content p:last-child,.officer-prose p:last-child,.plain-prose-block p:last-child{margin-bottom:0}.section-lead{margin-bottom:18px}
+/* refine.css reset */
 :root{--shadow-sm:0 3px 12px rgba(5,17,31,.06);--shadow-md:0 8px 26px rgba(5,17,31,.09);--shadow-lg:0 18px 46px rgba(5,17,31,.13)}
-.entry-section:empty,section.entry-section:empty,section:empty{display:none!important}
-.card,.article-card,.rel-card,.key-card,.fieldcase-card{box-shadow:var(--shadow-sm)!important}.card:hover,.article-card:hover,.rel-card:hover,.key-card:hover,.fieldcase-card:hover{box-shadow:var(--shadow-md)!important}
-.article-body,.plain-prose-block,.chapter-content,.officer-prose{line-height:1.95}
-.parent-page .case-card.is-open{box-shadow:var(--shadow-sm)!important}.parent-page .case-answer,.parent-page .case-ans,.parent-page .case-reply{background:transparent!important;box-shadow:none!important;border-radius:0!important}.parent-page .case-ans{padding:20px 26px 30px!important;border-top:1px solid var(--line)!important}.parent-page .case-quote{background:transparent!important;border:0!important;border-left:4px solid var(--gold)!important;border-radius:0!important;box-shadow:none!important;padding:2px 0 2px 18px!important;margin:0 0 20px!important}.parent-page .case-quote .qlabel{color:var(--navy)!important;margin-bottom:8px!important}.parent-page .case-quote p,.parent-page .case-reply p{font-family:'Noto Sans JP',system-ui,sans-serif!important;font-size:.96rem!important;line-height:2!important}.parent-page .case-valid{margin-top:4px!important;padding-top:0!important}
-.footer .footer-inner{display:flex!important;flex-direction:column!important}.footer .footer-support{order:-1!important;margin:0 0 30px!important}.footer .footer-grid{order:0!important}.footer .copyright{order:1!important}
-#ed-resource-set,section#ed-resource-set,.ed-resource-panel,#careful-legal-language,section#careful-legal-language,#source-note,section#source-note{display:none!important}
-.editorial-section,.thesis-section,.thesis-lead-section{max-width:100%}
+h2,h3,.section-title{font-weight:700!important;letter-spacing:.005em}.section-kicker{font-weight:700!important;letter-spacing:.08em}.article-body,.plain-prose-block,.chapter-content,.officer-prose{line-height:1.95}.editorial-section,.thesis-section,.thesis-lead-section{max-width:100%}
