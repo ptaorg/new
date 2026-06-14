@@ -1,3 +1,4 @@
 /* refine.css reset */
 :root{--shadow-sm:0 3px 12px rgba(5,17,31,.06);--shadow-md:0 8px 26px rgba(5,17,31,.09);--shadow-lg:0 18px 46px rgba(5,17,31,.13)}
-h2,h3,.section-title{font-weight:700!important;letter-spacing:.005em}.section-kicker{font-weight:700!important;letter-spacing:.08em}.article-body,.plain-prose-block,.chapter-content,.officer-prose{line-height:1.95}.editorial-section,.thesis-section,.thesis-lead-section{max-width:100%}
+h2,h3,.section-title{font-weight:700;letter-spacing:.005em}.section-kicker{font-weight:700;letter-spacing:.08em}.article-body,.plain-prose-block,.chapter-content,.officer-prose{line-height:1.95}.thesis-section,.thesis-lead-section{max-width:100%}
+[id="ed-resource-set"]{max-width:920px;margin-left:auto;margin-right:auto}
