@@ -1,4 +1,4 @@
-/* site.js v69 stable overlay */
+/* site.js v70 mobile navigation fix */
 (function(){
   var initialPath=location.pathname+location.search;
   var allowAutoTop=!location.hash;
@@ -81,8 +81,108 @@
     });
   };
 
+
+
+  function mobileNavHtml(){
+    return [
+      '<button type="button" class="mobile-close-btn" id="closeOverlay" aria-label="メニューを閉じる">CLOSE ×</button>',
+      '<div class="mobile-menu-group">',
+      '<div class="mobile-menu-label">主要入口</div>',
+      '<a class="mobile-link" href="/index.html"><span>Top</span>トップ</a>',
+      '<a class="mobile-link" href="/guide-parent.html"><span>Parents</span>保護者の方へ</a>',
+      '<a class="mobile-link" href="/guide-pta.html"><span>PTA Board</span>PTA役員の方へ</a>',
+      '<a class="mobile-link" href="/guide-board.html"><span>School / Board</span>教育委員会・学校へ</a>',
+      '</div>',
+      '<div class="mobile-menu-group">',
+      '<div class="mobile-menu-label">教育委員会向け</div>',
+      '<a class="mobile-link" href="/jp/"><span>Board Materials</span>教委向け分離資料</a>',
+      '<a class="mobile-link" href="/edu-board-separation.html"><span>Separation</span>学校とPTAの分離指針</a>',
+      '<a class="mobile-link" href="/board-responses.html"><span>Responses</span>教育委員会の回答</a>',
+      '</div>',
+      '<div class="mobile-menu-group">',
+      '<div class="mobile-menu-label">資料・論考</div>',
+      '<a class="mobile-link" href="/documents.html"><span>Index</span>資料入口・索引</a>',
+      '<a class="mobile-link" href="/national-archive.html"><span>Archive</span>全国資料館</a>',
+      '<a class="mobile-link" href="/administrative-materials.html"><span>Official PDFs</span>行政通知・公式PDF</a>',
+      '<a class="mobile-link" href="/journal.html"><span>Journal</span>論考・調査報告</a>',
+      '<a class="mobile-link" href="/audit/index.html"><span>Check</span>運営チェックアプリ</a>',
+      '</div>',
+      '<div class="mobile-menu-group mobile-menu-bottom">',
+      '<a class="mobile-link" href="/contact.html"><span>Contact</span>お問い合わせ・情報提供</a>',
+      '<a class="mobile-link support-mobile-link" href="/support.html"><span>Support</span>応援・寄付</a>',
+      '</div>'
+    ].join('');
+  }
+
+  function stabilizeMobileNavigation(){
+    var h0=document.getElementById('hamburger');
+    var m0=document.getElementById('mobileOverlay');
+    if(!h0||!m0) return;
+    addStyle('mobile-nav-stable-v70',
+      'body.mobile-nav-lock{position:fixed!important;left:0;right:0;width:100%;overflow:hidden!important;touch-action:none!important}' +
+      '.mobile-overlay{position:fixed!important;inset:0!important;z-index:5000!important;display:none!important;flex-direction:column!important;justify-content:flex-start!important;align-items:center!important;gap:10px!important;padding:calc(18px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom))!important;background:rgba(5,17,31,.92)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}' +
+      '.mobile-overlay.is-open{display:flex!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}' +
+      '.mobile-menu-group{width:min(100%,430px);display:flex;flex-direction:column;gap:8px;margin:0 0 8px!important}' +
+      '.mobile-menu-label{color:rgba(255,255,255,.78)!important;font-size:.76rem!important;font-weight:900!important;letter-spacing:.08em!important;margin:8px 4px 0!important}' +
+      '.mobile-link{width:100%!important;display:block!important;background:rgba(255,255,255,.98)!important;border:1px solid rgba(255,255,255,.18)!important;border-radius:14px!important;padding:13px 16px!important;text-decoration:none!important;color:#0f2742!important;font-weight:900!important;line-height:1.45!important;box-shadow:0 8px 22px rgba(0,0,0,.13)!important}' +
+      '.mobile-link span{display:block!important;font-size:.68rem!important;letter-spacing:.08em!important;text-transform:uppercase!important;color:#64748b!important;margin:0 0 2px!important}' +
+      '.mobile-link.support-mobile-link{background:#ea580c!important;color:#fff!important}.mobile-link.support-mobile-link span{color:rgba(255,255,255,.80)!important}' +
+      '.mobile-close-btn,.close-overlay{width:min(100%,430px)!important;display:block!important;position:sticky!important;top:0!important;z-index:2!important;margin:0 0 8px!important;padding:12px 16px!important;border-radius:999px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(15,39,66,.94)!important;color:#fff!important;text-align:center!important;font-weight:900!important;letter-spacing:.06em!important;cursor:pointer!important}' +
+      '.hamburger.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}.hamburger.is-active span:nth-child(2){opacity:0!important}.hamburger.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}.hamburger span{transition:transform .18s ease,opacity .18s ease!important}' +
+      '@media(max-width:860px){.site-header{z-index:4900!important}.nav-container{min-height:64px!important}.hamburger{display:inline-flex!important;position:relative!important;z-index:5100!important}.desktop-nav{display:none!important}.header-search{display:none!important}}' +
+      '@media(min-width:861px){.mobile-overlay{display:none!important}.hamburger{display:none!important}}'
+    );
+
+    var h=h0.cloneNode(true);
+    var m=m0.cloneNode(false);
+    h0.parentNode.replaceChild(h,h0);
+    m0.parentNode.replaceChild(m,m0);
+    m.id='mobileOverlay';
+    m.className='mobile-overlay';
+    m.setAttribute('aria-hidden','true');
+    m.innerHTML=mobileNavHtml();
+    h.setAttribute('aria-controls','mobileOverlay');
+    h.setAttribute('aria-expanded','false');
+    h.setAttribute('aria-label','メニューを開く');
+    h.classList.remove('is-active');
+
+    var savedY=0;
+    function openMenu(){
+      savedY=window.scrollY||window.pageYOffset||0;
+      allowAutoTop=false;
+      m.classList.add('is-open');
+      h.classList.add('is-active');
+      h.setAttribute('aria-expanded','true');
+      h.setAttribute('aria-label','メニューを閉じる');
+      m.setAttribute('aria-hidden','false');
+      document.body.style.top='-'+savedY+'px';
+      document.body.classList.add('mobile-nav-lock');
+      setTimeout(function(){ var c=m.querySelector('#closeOverlay'); if(c&&c.focus) c.focus({preventScroll:true}); },0);
+    }
+    function closeMenu(){
+      var locked=document.body.classList.contains('mobile-nav-lock');
+      m.classList.remove('is-open');
+      h.classList.remove('is-active');
+      h.setAttribute('aria-expanded','false');
+      h.setAttribute('aria-label','メニューを開く');
+      m.setAttribute('aria-hidden','true');
+      document.body.classList.remove('mobile-nav-lock');
+      document.body.style.top='';
+      if(locked){ try{ window.scrollTo(0,savedY); }catch(e){} }
+    }
+    h.addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      if(m.classList.contains('is-open')) closeMenu(); else openMenu();
+    });
+    m.addEventListener('click',function(e){
+      if(e.target===m || e.target.id==='closeOverlay' || (e.target.closest && e.target.closest('a.mobile-link'))) closeMenu();
+    });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape' && m.classList.contains('is-open')) closeMenu(); });
+    window.addEventListener('resize',function(){ if(window.innerWidth>860 && m.classList.contains('is-open')) closeMenu(); },{passive:true});
+  }
   function baseInit(){
-    ['addGlobalStyle','removeTopDonation','initPrimaryNavigation','initCompliancePageFixes','initParentCompliancePreview','initParentBoardResponsesPreview','initCommonFooter','initCompatibilityFixes','initMegaMenu','initMobileNav','initSearch','initFAQ','initChecklist','initPageClasses'].forEach(function(n){
+    ['addGlobalStyle','removeTopDonation','initCompliancePageFixes','initParentCompliancePreview','initParentBoardResponsesPreview','initCommonFooter','initCompatibilityFixes','initSearch','initFAQ','initChecklist','initPageClasses'].forEach(function(n){
       try{ if(typeof window[n]==='function') window[n](); }catch(e){ console.error('site init failed:',n,e); }
     });
   }
@@ -171,12 +271,12 @@
   function loadArchiveNotice(){ if(location.pathname.endsWith('/national-archive.html')) loadScript('archive-notice-dynamic','/js/archive-notice.js?v=1'); }
 
   function local(){
-    normalizeNavigation(); normalizeLinks(); rebuildHomeReadingSection(); replaceHomeFieldcase(); fixGuidePta(); improveParentResponseIntro(); parentConsultationBottom(); pdfLinks(); loadArchiveNotice(); initHomeMap(); forceTopBurst(2200);
+    normalizeNavigation(); stabilizeMobileNavigation(); normalizeLinks(); rebuildHomeReadingSection(); replaceHomeFieldcase(); fixGuidePta(); improveParentResponseIntro(); parentConsultationBottom(); pdfLinks(); loadArchiveNotice(); initHomeMap(); forceTopBurst(2200);
   }
 
   var original=document.createElement('script');
   original.src='/js/site-v48-original.js?v=48';
-  original.onload=function(){ ready(function(){ baseInit(); local(); setTimeout(fixGuidePta,250); setTimeout(function(){forceTopBurst(1800);},300); }); };
-  original.onerror=function(){ ready(function(){ local(); setTimeout(function(){forceTopBurst(1800);},300); }); };
+  original.onload=function(){ ready(function(){ baseInit(); local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(fixGuidePta,250); setTimeout(function(){ stabilizeMobileNavigation(); forceTopBurst(1800); },300); }); };
+  original.onerror=function(){ ready(function(){ local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(function(){ stabilizeMobileNavigation(); forceTopBurst(1800); },300); }); };
   document.head.appendChild(original);
 })();
