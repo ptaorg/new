@@ -31,6 +31,56 @@
   function loadCss(id,href){ if(document.getElementById(id)) return; var l=document.createElement('link'); l.id=id; l.rel='stylesheet'; l.href=href; document.head.appendChild(l); }
   function loadScript(id,src,cb){ var old=document.getElementById(id); if(old){ if(old.dataset.loaded==='1') cb&&cb(); else old.addEventListener('load',function(){ cb&&cb(); },{once:true}); return; } var s=document.createElement('script'); s.id=id; s.src=src; s.onload=function(){ s.dataset.loaded='1'; cb&&cb(); }; document.head.appendChild(s); }
 
+
+  /* --- サイト内検索（軽量実装・2026-06統一整理で復旧） --- */
+  var SITE_INDEX=[
+    ['トップ','/index.html','PTA適正化推進委員会の全体像'],
+    ['資料入口・索引','/documents.html','公開資料への入口を1ページに整理'],
+    ['保護者の方へ','/guide-parent.html','入会した覚えがない・会費の根拠が分からない場合の確認手順'],
+    ['PTA役員の方へ','/guide-pta.html','引き継いだ運営を適法に直す実務手順'],
+    ['学校・教育委員会の方へ','/guide-board.html','確認すべき5領域と初動チェック'],
+    ['研究者・記者の方へ','/guide-research.html','調査・取材のための資料案内'],
+    ['教委向け分離指針','/edu-board-separation.html','学校とPTAの線引きを示す実務整理'],
+    ['教委向け分離資料（/jp/）','/jp/','配布用ガイドラインPDF・通知ひな形・実態調査票'],
+    ['PTAの適正化とは','/proper-management.html','適正化の定義と七つの基本原則'],
+    ['適正化ガイドライン','/guideline.html','実務ガイドラインと書式テンプレート'],
+    ['適正化ガイドブック 第4版','/PTA運営適正化ガイドブック_第4版_改訂本文.html','総合ガイドブック本文（HTML版）'],
+    ['入会手続とオプトアウト','/membership.html','入会申込書・同意・みなし加入の論点'],
+    ['個人情報提供の問題','/privacy.html','学校名簿のPTA提供と個人情報保護法第69条'],
+    ['会費徴収と学校徴収金','/fee-collection.html','抱合せ徴収・代行徴収・公会計化'],
+    ['教職員関与と職務専念義務','/personnel.html','地方公務員法第35条と職専免の論点'],
+    ['施設利用と公私の境界','/facilities.html','学校教育法第137条と目的外使用許可'],
+    ['法制度マップ','/law-map.html','関連法令を論点別に整理'],
+    ['判例整理','/cases.html','PTA関連裁判例の争点別整理'],
+    ['PTA制度史','/timeline.html','占領期から現在までの制度変遷'],
+    ['教育委員会の回答','/board-responses.html','76自治体・111件の公式回答データベース'],
+    ['全国資料館','/national-archive.html','自治体別・学校別の実物文書アーカイブ'],
+    ['行政通知・公式PDF','/administrative-materials.html','横浜市通知・文科省通知・PPC資料'],
+    ['PTA運営の現場実例','/compliance.html','みなし加入・代行徴収・名簿提供の実例'],
+    ['静岡市9200人分個人情報事案','/shizuoka-incident.html','根拠確認事案の経緯と論点'],
+    ['論考・調査報告','/journal.html','個別テーマの掘り下げ'],
+    ['総合分析レポート','/report.html','PTA問題の5軸構造分析'],
+    ['なぜ教育委員会の所掌なのか','/education-board-responsibility.html','学校関与を点検すべき理由の論考'],
+    ['運営チェックアプリ','/audit/index.html','自校・自PTAのセルフチェック'],
+    ['お問い合わせ・情報提供','/contact.html','資料・情報の提供窓口'],
+    ['応援・寄付','/support.html','活動支援のお願い']
+  ];
+  window.initSearch=function(){
+    document.querySelectorAll('.header-search').forEach(function(box){
+      var input=box.querySelector('.search-input'); var dd=box.querySelector('.search-results-dropdown');
+      if(!input||!dd) return;
+      input.addEventListener('input',function(){
+        var q=input.value.trim().toLowerCase(); dd.innerHTML='';
+        if(!q){ dd.classList.remove('is-open'); return; }
+        var hits=SITE_INDEX.filter(function(r){ return (r[0]+' '+r[1]+' '+r[2]).toLowerCase().indexOf(q)>=0; }).slice(0,8);
+        if(!hits.length){ dd.innerHTML='<div class="search-result-item"><strong>該当なし</strong><span>別の語で検索してください。</span></div>'; }
+        else{ hits.forEach(function(r){ dd.insertAdjacentHTML('beforeend','<a class="search-result-item" href="'+r[1]+'"><strong>'+r[0]+'</strong><span>'+r[2]+'</span></a>'); }); }
+        dd.classList.add('is-open');
+      });
+      document.addEventListener('click',function(e){ if(!box.contains(e.target)) dd.classList.remove('is-open'); });
+    });
+  };
+
   function baseInit(){
     ['addGlobalStyle','removeTopDonation','initPrimaryNavigation','initCompliancePageFixes','initParentCompliancePreview','initParentBoardResponsesPreview','initCommonFooter','initCompatibilityFixes','initMegaMenu','initMobileNav','initSearch','initFAQ','initChecklist','initPageClasses'].forEach(function(n){
       try{ if(typeof window[n]==='function') window[n](); }catch(e){ console.error('site init failed:',n,e); }
@@ -41,11 +91,11 @@
     var supportUrl='/support.html';
     var d=document.querySelector('.desktop-nav');
     if(d){
-      d.innerHTML='<a class="nav-link" href="/index.html">トップ</a><div class="nav-item has-dropdown"><a class="nav-link" href="#">立場別</a><div class="mega-menu"><div class="mega-col"><h4>立場別</h4><ul><li><a href="/guide-parent.html">保護者の方へ</a></li><li><a href="/guide-pta.html">PTA役員の方へ</a></li><li><a href="/guide-board.html">教育委員会・学校の方へ</a></li><li><a href="/guide-research.html">研究者・記者の方へ</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="#">資料・データ</a><div class="mega-menu"><div class="mega-col"><h4>一次資料</h4><ul><li><a href="/board-responses.html">教育委員会の回答</a></li><li><a href="/national-archive.html">全国資料館</a></li><li><a href="/administrative-materials.html">行政資料整理</a></li><li><a href="/compliance.html">PTA運営の現場実例</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="/journal.html">研究</a><div class="mega-menu"><div class="mega-col"><h4>論考・整理</h4><ul><li><a href="/guide-research.html">研究者・記者の方へ</a></li><li><a href="/journal.html">論考・調査報告</a></li><li><a href="/report.html">総合分析レポート</a></li><li><a href="/law-map.html">法制度マップ</a></li><li><a href="/cases.html">判例整理</a></li><li><a href="/timeline.html">PTA制度史</a></li></ul></div><div class="mega-col"><h4>論点別</h4><ul><li><a href="/membership.html">入会手続</a></li><li><a href="/privacy.html">個人情報</a></li><li><a href="/fee-collection.html">会費徴収</a></li><li><a href="/personnel.html">教職員関与</a></li><li><a href="/facilities.html">施設利用</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="#">ツール</a><div class="mega-menu"><div class="mega-col"><h4>点検用</h4><ul><li><a href="/audit/index.html">運営チェックアプリ</a></li><li><a href="/guideline.html">適正化ガイドライン</a></li></ul></div></div></div><a class="nav-link support-nav-link" href="'+supportUrl+'">応援</a>';
+      d.innerHTML='<a class="nav-link" href="/index.html">トップ</a><div class="nav-item has-dropdown"><a class="nav-link" href="#">立場別</a><div class="mega-menu"><div class="mega-col"><h4>立場別</h4><ul><li><a href="/guide-parent.html">保護者の方へ</a></li><li><a href="/guide-pta.html">PTA役員の方へ</a></li><li><a href="/guide-board.html">教育委員会・学校の方へ</a></li><li><a href="/guide-research.html">研究者・記者の方へ</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="#">資料・データ</a><div class="mega-menu"><div class="mega-col"><h4>一次資料</h4><ul><li><a href="/board-responses.html">教育委員会の回答</a></li><li><a href="/national-archive.html">全国資料館</a></li><li><a href="/administrative-materials.html">行政通知・公式PDF</a></li><li><a href="/compliance.html">PTA運営の現場実例</a></li></ul></div><div class="mega-col"><h4>配布資料・索引</h4><ul><li><a href="/documents.html">資料入口・索引</a></li><li><a href="/jp/">教委向け分離資料</a></li><li><a href="/PTA運営適正化ガイドブック_第4版_改訂本文.html">適正化ガイドブック 第4版</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="/journal.html">研究</a><div class="mega-menu"><div class="mega-col"><h4>論考・整理</h4><ul><li><a href="/guide-research.html">研究者・記者の方へ</a></li><li><a href="/journal.html">論考・調査報告</a></li><li><a href="/report.html">総合分析レポート</a></li><li><a href="/law-map.html">法制度マップ</a></li><li><a href="/cases.html">判例整理</a></li><li><a href="/timeline.html">PTA制度史</a></li></ul></div><div class="mega-col"><h4>論点別</h4><ul><li><a href="/membership.html">入会手続</a></li><li><a href="/privacy.html">個人情報</a></li><li><a href="/fee-collection.html">会費徴収</a></li><li><a href="/personnel.html">教職員関与</a></li><li><a href="/facilities.html">施設利用</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="#">ツール</a><div class="mega-menu"><div class="mega-col"><h4>点検用</h4><ul><li><a href="/audit/index.html">運営チェックアプリ</a></li><li><a href="/guideline.html">適正化ガイドライン</a></li><li><a href="/edu-board-separation.html">教委向け分離指針</a></li></ul></div></div></div><a class="nav-link support-nav-link" href="'+supportUrl+'">応援</a>';
     }
     var m=document.getElementById('mobileOverlay');
     if(m){
-      m.innerHTML='<a class="mobile-link" href="/index.html"><span>Top</span>トップ</a><a class="mobile-link" href="/guide-parent.html"><span>Parents</span>保護者の方へ</a><a class="mobile-link" href="/guide-pta.html"><span>PTA Board</span>PTA役員の方へ</a><a class="mobile-link" href="/guide-board.html"><span>School Board</span>教育委員会・学校へ</a><a class="mobile-link" href="/guide-research.html"><span>Research</span>研究者・記者の方へ</a><a class="mobile-link" href="/board-responses.html"><span>Data</span>教育委員会の回答</a><a class="mobile-link" href="/national-archive.html"><span>Archive</span>全国資料館</a><a class="mobile-link" href="/administrative-materials.html"><span>Materials</span>行政資料整理</a><a class="mobile-link" href="/compliance.html"><span>Examples</span>現場実例</a><a class="mobile-link" href="/journal.html"><span>Journal</span>論考・調査報告</a><a class="mobile-link" href="/audit/index.html"><span>Check</span>運営チェックアプリ</a><a class="mobile-link support-mobile-link" href="'+supportUrl+'"><span>Support</span>応援・寄付</a><div class="close-overlay" id="closeOverlay">CLOSE ×</div>';
+      m.innerHTML='<a class="mobile-link" href="/index.html"><span>Top</span>トップ</a><a class="mobile-link" href="/guide-parent.html"><span>Parents</span>保護者の方へ</a><a class="mobile-link" href="/guide-pta.html"><span>PTA Board</span>PTA役員の方へ</a><a class="mobile-link" href="/guide-board.html"><span>School Board</span>教育委員会・学校へ</a><a class="mobile-link" href="/guide-research.html"><span>Research</span>研究者・記者の方へ</a><a class="mobile-link" href="/board-responses.html"><span>Data</span>教育委員会の回答</a><a class="mobile-link" href="/national-archive.html"><span>Archive</span>全国資料館</a><a class="mobile-link" href="/administrative-materials.html"><span>Materials</span>行政資料整理</a><a class="mobile-link" href="/compliance.html"><span>Examples</span>現場実例</a><a class="mobile-link" href="/documents.html"><span>Index</span>資料入口・索引</a><a class="mobile-link" href="/jp/"><span>Board</span>教委向け分離資料</a><a class="mobile-link" href="/journal.html"><span>Journal</span>論考・調査報告</a><a class="mobile-link" href="/audit/index.html"><span>Check</span>運営チェックアプリ</a><a class="mobile-link support-mobile-link" href="'+supportUrl+'"><span>Support</span>応援・寄付</a><div class="close-overlay" id="closeOverlay">CLOSE ×</div>';
     }
     try{ if(typeof window.initMegaMenu==='function') window.initMegaMenu(); }catch(e){}
   }

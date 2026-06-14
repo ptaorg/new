@@ -23,6 +23,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="css/style.css" rel="stylesheet"/>
+<link href="css/refine.css?v=refine2" rel="stylesheet"/>
 <style>
 
 /* =============================================
@@ -1675,7 +1676,7 @@
 <header class="site-header">
 <div class="nav-container">
 <a class="logo" href="index.html">
-<img alt="PTA適正化推進委員会ロゴ" src="assets/popc-logo.png"/>
+<img alt="PTA適正化推進委員会" src="assets/popc-logo.png"/>
 <span>PTA適正化推進委員会</span>
 </a>
 <div class="header-search">
@@ -1688,14 +1689,44 @@
 <a class="nav-link" href="proper-management.html">適正化とは</a>
 <a class="nav-link" href="edu-board-separation.html">教委向け分離指針</a>
 <div class="nav-item has-dropdown">
-<a class="nav-link" href="#">立場別入り口</a>
+<a class="nav-link" href="#">立場別</a>
 <div class="mega-menu">
 <div class="mega-col">
-<h4>立場別ガイド</h4>
+<h4>入口</h4>
 <ul>
 <li><a href="guide-parent.html">保護者の方へ</a></li>
 <li><a href="guide-pta.html">PTA役員の方へ</a></li>
-<li><a href="guide-board.html">学校・教育委員会の方へ</a></li>
+<li><a href="guide-board.html">教育委員会・学校へ</a></li>
+</ul>
+</div>
+<div class="mega-col">
+<h4>ツール</h4>
+<ul>
+<li><a href="audit/index.html">運営チェックアプリ</a></li>
+<li><a href="guideline.html">適正化ガイドライン</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="nav-item has-dropdown">
+<a class="nav-link" href="#">論点</a>
+<div class="mega-menu">
+<div class="mega-col">
+<h4>主要論点</h4>
+<ul>
+<li><a href="membership.html">入会手続・オプトアウト</a></li>
+<li><a href="privacy.html">個人情報提供</a></li>
+<li><a href="fee-collection.html">会費徴収</a></li>
+<li><a href="personnel.html">教職員関与</a></li>
+<li><a href="facilities.html">施設利用</a></li>
+</ul>
+</div>
+<div class="mega-col">
+<h4>制度整理</h4>
+<ul>
+<li><a href="law-map.html">法制度マップ</a></li>
+<li><a href="cases.html">判例整理</a></li>
+<li><a href="timeline.html">PTA制度史</a></li>
 </ul>
 </div>
 </div>
@@ -1708,35 +1739,22 @@
 <ul>
 <li><a href="board-responses.html">教育委員会の回答</a></li>
 <li><a href="national-archive.html">全国資料館</a></li>
-<li><a href="administrative-materials.html">行政資料整理</a></li>
+<li><a href="administrative-materials.html">行政通知・公式PDF</a></li>
+<li><a href="documents.html">資料入口・索引</a></li>
 </ul>
 </div>
 <div class="mega-col">
-<h4>ガイド・ツール</h4>
-<ul>
-<li><a href="guideline.html">適正化ガイドライン</a></li>
-<li><a href="audit/index.html">運営チェックアプリ</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="nav-item has-dropdown">
-<a class="nav-link" href="#">研究論考</a>
-<div class="mega-menu">
-<div class="mega-col">
-<h4>研究・論考</h4>
+<h4>分析・配布資料</h4>
 <ul>
 <li><a href="journal.html">論考・調査報告</a></li>
 <li><a href="report.html">総合分析レポート</a></li>
-<li><a href="law-map.html">法制度マップ</a></li>
-<li><a href="cases.html">判例整理</a></li>
-<li><a href="timeline.html">PTA制度史</a></li>
+<li><a href="jp/">教委向け分離資料</a></li>
 </ul>
 </div>
 </div>
 </div>
 <a class="nav-link support-nav-link" href="https://ptaorg.github.io/donate/">応援</a>
-<a class="btn-gold" href="audit/index.html">⚙️ 運営チェック</a>
+<a class="btn-gold" href="audit/index.html">運営チェック</a>
 </nav>
 <button aria-controls="mobileOverlay" aria-expanded="false" aria-label="メニューを開く" class="hamburger" id="hamburger">
 <span></span><span></span><span></span>
@@ -1744,15 +1762,16 @@
 </div>
 </header>
 <div class="mobile-overlay" id="mobileOverlay">
-<a class="mobile-link" href="index.html"><span>Top</span>トップ</a>
-<a class="mobile-link" href="proper-management.html"><span>Policy</span>適正化とは</a>
+<a class="mobile-link" href="index.html"><span>Home</span>トップページ</a>
 <a class="mobile-link" href="edu-board-separation.html"><span>Board</span>教委向け分離指針</a>
-<a class="mobile-link" href="guide-parent.html"><span>Parents</span>保護者の方へ</a>
-<a class="mobile-link" href="guide-pta.html"><span>PTA Board</span>PTA役員の方へ</a>
-<a class="mobile-link" href="guide-board.html"><span>School / Board</span>学校・教育委員会の方へ</a>
-<a class="mobile-link" href="board-responses.html"><span>Evidence</span>教育委員会の回答</a>
+<a class="mobile-link" href="guide-parent.html"><span>Guide</span>保護者の方へ</a>
+<a class="mobile-link" href="guide-pta.html"><span>Guide</span>PTA役員の方へ</a>
+<a class="mobile-link" href="guide-board.html"><span>Guide</span>教育委員会・学校へ</a>
+<a class="mobile-link" href="board-responses.html"><span>Data</span>教育委員会の回答</a>
 <a class="mobile-link" href="national-archive.html"><span>Archive</span>全国資料館</a>
-<a class="mobile-link" href="journal.html"><span>Research</span>論考・調査報告</a>
+<a class="mobile-link" href="journal.html"><span>Journal</span>論考・調査報告</a>
+<a class="mobile-link" href="documents.html"><span>Index</span>資料入口・索引</a>
+<a class="mobile-link" href="jp/"><span>Board</span>教委向け分離資料</a>
 <a class="mobile-link" href="audit/index.html"><span>Check</span>運営チェックアプリ</a>
 <a class="mobile-link support-mobile-link" href="https://ptaorg.github.io/donate/"><span>Support</span>応援・寄付</a>
 <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
@@ -1811,7 +1830,7 @@
 <div class="fieldcase-single">
 <a class="fc-card fc-card-wide" href="compliance.html">
 <div class="fc-card-wide-text">
-<div class="fc-card-wide-title">今、実際に何が行われているか</div>
+<div class="fc-card-wide-title">PTA運営の現場実例</div>
 <div class="fc-card-wide-desc">みなし加入、代行徴収、個人情報提供、教職員関与、非加入者の扱いを、実際の書類・文書をもとに確認します。</div>
 </div>
 <span class="fc-card-wide-btn">
@@ -1888,6 +1907,19 @@
 <!-- =========================================
      最新更新・掲載情報
      ========================================= -->
+<section class="home-reading-section" style="background:#fff;padding:64px 0;border-top:1px solid rgba(5,17,31,.08)">
+<div class="wrap" style="max-width:980px">
+<div class="section-kicker">How to Use</div>
+<h2 class="section-title">このサイトの歩き方</h2>
+<p class="section-lead" style="max-width:860px">立場別ガイドで全体像をつかみ、論点ページで問題を特定し、回答データベースと実物資料で根拠を確かめる——この三本柱の順に読み進められる構成です。</p>
+<figure style="margin:26px auto;max-width:920px"><img alt="図解：立場別ガイド、論点、証拠資料の三本柱の関係" loading="lazy" src="assets/diagrams/00-共通/00_サイトの三本柱.svg" style="display:block;width:100%;height:auto"/></figure>
+<div class="editorial-matrix" style="margin-top:8px">
+<div class="editorial-matrix-row"><div class="editorial-matrix-term">点検する</div><div class="editorial-matrix-desc"><a href="audit/index.html">運営チェックアプリ</a>で、自校・自PTAの運営を設問に沿って確認できます。</div></div>
+<div class="editorial-matrix-row"><div class="editorial-matrix-term">是正を求める</div><div class="editorial-matrix-desc"><a href="jp/">教育委員会・学校管理職向け分離資料（/jp/）</a>に、ガイドライン本文、通知ひな形、学校別実態調査票をPDF・Excelで用意しています。</div></div>
+<div class="editorial-matrix-row"><div class="editorial-matrix-term">資料を探す</div><div class="editorial-matrix-desc"><a href="documents.html">資料入口・索引</a>から、すべての公開資料へ直接移動できます。</div></div>
+</div>
+</div>
+</section>
 <section class="updates-section">
 <div class="wrap">
 <div class="section-center">
