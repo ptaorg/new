@@ -1,4 +1,4 @@
-/* site.js v70 mobile navigation fix */
+/* site.js v71 mobile navigation complete fix */
 (function(){
   var initialPath=location.pathname+location.search;
   var allowAutoTop=!location.hash;
@@ -118,7 +118,11 @@
     var h0=document.getElementById('hamburger');
     var m0=document.getElementById('mobileOverlay');
     if(!h0||!m0) return;
-    addStyle('mobile-nav-stable-v70',
+    if(h0.dataset.stableMobileNav==='v71' && m0.dataset.stableMobileNav==='v71'){
+      return;
+    }
+    addStyle('mobile-nav-stable-v71',
+      'html.mobile-nav-lock-root{overflow:hidden!important;overscroll-behavior:none!important}' +
       'body.mobile-nav-lock{position:fixed!important;left:0;right:0;width:100%;overflow:hidden!important;touch-action:none!important}' +
       '.mobile-overlay{position:fixed!important;inset:0!important;z-index:5000!important;display:none!important;flex-direction:column!important;justify-content:flex-start!important;align-items:center!important;gap:10px!important;padding:calc(18px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom))!important;background:rgba(5,17,31,.92)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}' +
       '.mobile-overlay.is-open{display:flex!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}' +
@@ -141,6 +145,8 @@
     m.className='mobile-overlay';
     m.setAttribute('aria-hidden','true');
     m.innerHTML=mobileNavHtml();
+    h.dataset.stableMobileNav='v71';
+    m.dataset.stableMobileNav='v71';
     h.setAttribute('aria-controls','mobileOverlay');
     h.setAttribute('aria-expanded','false');
     h.setAttribute('aria-label','メニューを開く');
@@ -156,6 +162,7 @@
       h.setAttribute('aria-label','メニューを閉じる');
       m.setAttribute('aria-hidden','false');
       document.body.style.top='-'+savedY+'px';
+      document.documentElement.classList.add('mobile-nav-lock-root');
       document.body.classList.add('mobile-nav-lock');
       setTimeout(function(){ var c=m.querySelector('#closeOverlay'); if(c&&c.focus) c.focus({preventScroll:true}); },0);
     }
@@ -167,6 +174,7 @@
       h.setAttribute('aria-label','メニューを開く');
       m.setAttribute('aria-hidden','true');
       document.body.classList.remove('mobile-nav-lock');
+      document.documentElement.classList.remove('mobile-nav-lock-root');
       document.body.style.top='';
       if(locked){ try{ window.scrollTo(0,savedY); }catch(e){} }
     }
@@ -181,6 +189,13 @@
     document.addEventListener('keydown',function(e){ if(e.key==='Escape' && m.classList.contains('is-open')) closeMenu(); });
     window.addEventListener('resize',function(){ if(window.innerWidth>860 && m.classList.contains('is-open')) closeMenu(); },{passive:true});
   }
+  function patchOriginalNavigationHooks(){
+    try{
+      window.initMobileNav=function(){ stabilizeMobileNavigation(); };
+      window.initPrimaryNavigation=function(){ normalizeNavigation(); stabilizeMobileNavigation(); };
+    }catch(e){}
+  }
+
   function baseInit(){
     ['addGlobalStyle','removeTopDonation','initCompliancePageFixes','initParentCompliancePreview','initParentBoardResponsesPreview','initCommonFooter','initCompatibilityFixes','initSearch','initFAQ','initChecklist','initPageClasses'].forEach(function(n){
       try{ if(typeof window[n]==='function') window[n](); }catch(e){ console.error('site init failed:',n,e); }
@@ -276,7 +291,7 @@
 
   var original=document.createElement('script');
   original.src='/js/site-v48-original.js?v=48';
-  original.onload=function(){ ready(function(){ baseInit(); local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(fixGuidePta,250); setTimeout(function(){ stabilizeMobileNavigation(); forceTopBurst(1800); },300); }); };
-  original.onerror=function(){ ready(function(){ local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(function(){ stabilizeMobileNavigation(); forceTopBurst(1800); },300); }); };
+  original.onload=function(){ patchOriginalNavigationHooks(); ready(function(){ baseInit(); local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(fixGuidePta,250); setTimeout(function(){ stabilizeMobileNavigation(); forceTopBurst(1800); },300); }); };
+  original.onerror=function(){ patchOriginalNavigationHooks(); ready(function(){ local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(function(){ stabilizeMobileNavigation(); forceTopBurst(1800); },300); }); };
   document.head.appendChild(original);
 })();
