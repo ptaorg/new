@@ -21,6 +21,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="css/style.css" rel="stylesheet"/>
+<link href="css/refine.css?v=refine2" rel="stylesheet"/>
 <style>
     .law-wrap{width:min(calc(100% - 40px),1100px);margin-inline:auto;padding:56px 0 96px}
 
@@ -168,7 +169,7 @@
 <div class="support-strip-inner">
 <span class="support-strip-label">応援のお願い</span>
 <span class="support-strip-text">公文書開示、資料整理、Web公開を継続するため、寄付・カンパでのご支援をお願いします。</span>
-<a class="support-strip-link" href="https://ptaorg.github.io/donate/">支援ページへ</a>
+<a class="support-strip-link" href="/support.html">支援ページへ</a>
 </div>
 </div>
 <header class="site-header">
@@ -201,6 +202,7 @@
 <h4>ツール</h4>
 <ul>
 <li><a href="audit/index.html">運営チェックアプリ</a></li>
+<li><a href="guideline.html">適正化ガイドライン</a></li>
 </ul>
 </div>
 </div>
@@ -232,23 +234,25 @@
 <a class="nav-link" href="#">資料</a>
 <div class="mega-menu">
 <div class="mega-col">
-<h4>資料</h4>
+<h4>証拠資料</h4>
 <ul>
 <li><a href="board-responses.html">教育委員会の回答</a></li>
 <li><a href="national-archive.html">全国資料館</a></li>
-<li><a href="journal.html">論考・調査報告</a></li>
+<li><a href="administrative-materials.html">行政通知・公式PDF</a></li>
+<li><a href="documents.html">資料入口・索引</a></li>
 </ul>
 </div>
 <div class="mega-col">
-<h4>分析</h4>
+<h4>分析・配布資料</h4>
 <ul>
+<li><a href="journal.html">論考・調査報告</a></li>
 <li><a href="report.html">総合分析レポート</a></li>
-<li><a href="administrative-materials.html">行政資料整理</a></li>
+<li><a href="jp/">教委向け分離資料</a></li>
 </ul>
 </div>
 </div>
 </div>
-<a class="nav-link support-nav-link" href="https://ptaorg.github.io/donate/">応援</a>
+<a class="nav-link support-nav-link" href="/support.html">応援</a>
 <a class="btn-gold" href="audit/index.html">運営チェック</a>
 </nav>
 <button aria-controls="mobileOverlay" aria-expanded="false" aria-label="メニューを開く" class="hamburger" id="hamburger">
@@ -265,8 +269,10 @@
 <a class="mobile-link" href="board-responses.html"><span>Data</span>教育委員会の回答</a>
 <a class="mobile-link" href="national-archive.html"><span>Archive</span>全国資料館</a>
 <a class="mobile-link" href="journal.html"><span>Journal</span>論考・調査報告</a>
+<a class="mobile-link" href="documents.html"><span>Index</span>資料入口・索引</a>
+<a class="mobile-link" href="jp/"><span>Board</span>教委向け分離資料</a>
 <a class="mobile-link" href="audit/index.html"><span>Check</span>運営チェックアプリ</a>
-<a class="mobile-link support-mobile-link" href="https://ptaorg.github.io/donate/"><span>Support</span>応援・寄付</a>
+<a class="mobile-link support-mobile-link" href="/support.html"><span>Support</span>応援・寄付</a>
 <div class="close-overlay" id="closeOverlay">CLOSE ×</div>
 </div>
 <nav aria-label="パンくず" class="breadcrumb-bar"><div class="breadcrumb-inner"><a href="index.html">トップ</a><span>›</span><a href="journal.html">論考</a><span>›</span><span class="current">教育委員会の所掌論考</span></div></nav>
@@ -301,6 +307,7 @@
 <p>この切り分けを行えば、任意団体の自主性を侵害せずに、学校とPTAの公私分離を進めることができます。</p>
 </div>
 </div>
+<figure class="diagram-figure" style="margin:26px auto;max-width:880px;background:#fff;border:1px solid #e3eaf2;border-radius:12px;padding:14px 14px 8px"><img src="assets/diagrams/06_教育委員会/04_監督責任から国家賠償へ.svg" alt="図解：学校関与を放置した場合に監督責任から国家賠償責任へ問題が発展する構造" loading="lazy" style="display:block;width:100%;height:auto"><figcaption style="color:#5f6b7a;font-size:.86rem;line-height:1.8;border-top:1px solid #eef2f7;margin-top:10px;padding-top:8px">学校がPTAのために行っている行為を確認しないままにすると、学校管理・服務・個人情報の監督責任の問題として教育委員会自身に返ってきます。</figcaption></figure>
 </section>
 <section class="thesis-section thesis-section-alt" id="five-areas">
 <div class="wrap">
@@ -337,11 +344,11 @@
 </ol>
 </div>
 </section>
-<section class="thesis-section" id="careful-legal-language">
+<section class="thesis-section" id="school-fact-check">
 <div class="wrap-narrow">
-<h2>法的主張は、強さよりも崩れにくさが重要である</h2>
-<p>PTA運営には、憲法上の結社の自由、民法上の契約成立、個人情報保護法上の保有個人情報の利用・提供制限、地方公務員法上の服務、学校教育法第137条の施設利用など、多数の法令が関係します。ただし、公開資料としては「直ちに違法」と断定するより、学校がどの根拠でその行為を行っているのかを問う構成の方が強くなります。</p>
-<p>入会申込記録がない、学校徴収金とPTA会費が一体処理されている、学校保有情報をPTA運営に使っている、教職員がPTA内部事務を勤務時間内に担っている。これらは、いずれも学校・教育委員会に説明を求めるべき事実です。説明ができない運用を、慣例だけで続けることが問題なのです。</p>
+<h2>教育委員会が確認すべき事実は明確です</h2>
+<p>確認の起点は、学校がPTAのどの事務に関与しているかです。入会案内、入会申込書の回収、会費徴収、学校名簿の利用・提供、学校連絡ツール、児童経由配布、教職員の勤務時間内事務、学校施設・印刷機・保管場所の利用を、学校側の記録と運用から確認してください。</p>
+<p>PTAが任意団体であることは、教育委員会が学校関与を点検しない理由になりません。学校が任意団体の本来事務を支えている場合、その部分は学校管理上の是正対象です。慣例で続いてきた運用でも、学校側が根拠を説明できないものは、停止・分離・明文化の対象になります。</p>
 <div class="thesis-related">
 <a href="guide-board.html">教育委員会向け実務点検へ</a>
 <a href="law-map.html">関連法令を確認する</a>
@@ -349,11 +356,11 @@
 </div>
 </div>
 </section>
-<section class="thesis-section thesis-note-section" id="source-note">
+<section class="thesis-section thesis-note-section" id="page-position">
 <div class="wrap-narrow">
-<h2>原論稿について</h2>
-<p>本ページは、PTA適正化推進委員会の研究ノート「PTA運営の法的構造と教育行政の監督責任—公私分離原則と社会教育法体系に基づく制度的再構成—」の問題意識を、教育委員会・学校管理職が読みやすいWeb論考として再構成したものです。</p>
-<p>原論稿が示した核心は、PTAを学校から排除することではありません。PTAを任意団体として尊重するためにこそ、学校が担う範囲とPTAが自ら担う範囲を分ける必要がある、という点にあります。</p>
+<h2>このページで確認すること</h2>
+<p>このページは、PTA内部の自治ではなく、学校側の関与を確認するための論点整理です。教育委員会・学校管理職は、PTAの役員人事や活動内容を支配するのではなく、学校が管理する資源と職員の行為を点検します。</p>
+<p>確認対象は、学校施設、学校名簿、学校徴収金、学校連絡ツール、児童経由配布、教職員の勤務時間、学校管理職のPTA役員兼任などです。これらを整理することが、PTAを任意団体として扱うための出発点です。</p>
 </div>
 </section>
 <section class="editorial-section ed-resource-panel" id="ed-resource-set">
@@ -368,9 +375,9 @@
 <div><strong>入会・会費</strong><span>民法、消費者契約法、消費者契約法逐条解説、地方自治法</span></div>
 </div>
 <div class="ed-link-buttons">
-<a href="https://ptaorg.github.io/ed/" rel="noopener" target="_blank">教育委員会向け実務指針を見る</a>
-<a href="https://ptaorg.github.io/ed/#sources" rel="noopener" target="_blank">一次資料・法令リンクを確認する</a>
-<a href="https://ptaorg.github.io/ed/#templates" rel="noopener" target="_blank">通知モデル・様式を見る</a>
+<a href="jp/" rel="noopener" target="_blank">教育委員会向け実務指針を見る</a>
+<a href="jp/#s14" rel="noopener" target="_blank">一次資料・法令リンクを確認する</a>
+<a href="jp/#s14" rel="noopener" target="_blank">通知モデル・様式を見る</a>
 </div>
 </section>
 <section class="thesis-section thesis-section-alt" id="issue-chain">
@@ -473,7 +480,7 @@
 <div>
 <h4>資料・支援</h4>
 <ul>
-<li><a href="https://ptaorg.github.io/donate/">応援・寄付</a></li>
+<li><a href="/support.html">応援・寄付</a></li>
 <li><a href="board-responses.html">教育委員会の回答</a></li>
 <li><a href="national-archive.html">全国資料館</a></li>
 <li><a href="journal.html">論考・調査報告</a></li>
@@ -490,7 +497,7 @@
 <strong>調査・資料公開の継続を応援してください</strong>
 <p>いただいたご支援は、公文書開示、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
 </div>
-<a href="https://ptaorg.github.io/donate/">応援ページへ</a>
+<a href="/support.html">応援ページへ</a>
 </div>
 <p class="copyright">© PTA適正化推進委員会</p>
 </footer>

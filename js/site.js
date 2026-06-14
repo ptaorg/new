@@ -218,7 +218,7 @@
   function normalizeLinks(){
     document.querySelectorAll('a[href]').forEach(function(a){
       var h=a.getAttribute('href'); if(!h) return;
-      if(h==='/donate/'||h==='donate/'||h==='https://ptaorg.com/donate/'||h==='https://ptaorg.github.io/donate/'||h==='https://ptaorg.github.io/donate') a.setAttribute('href','/support.html');
+      if(h==='/donate/'||h==='donate/'||h==='https://ptaorg.com/donate/'||h==='/support.html'||h==='/support.html') a.setAttribute('href','/support.html');
       if(h==='https://ptaorg.github.io/ed/'||h==='https://ptaorg.github.io/ed') a.setAttribute('href','https://ptaorg.com/ed');
     });
   }
