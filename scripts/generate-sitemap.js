@@ -3,6 +3,7 @@ const path = require("path");
 const { ROOT, SITE_ORIGIN, listSchoolData, writeFileIfChanged } = require("./archive-utils");
 
 const SKIP_DIRS = new Set([".git", ".claude", "assets", "css", "data", "js", "scripts", "tools"]);
+const SKIP_FILES = new Set(["404.html"]);
 const LASTMOD = "2026-06-02";
 
 function walkHtml(dir, files = []) {
@@ -11,6 +12,8 @@ function walkHtml(dir, files = []) {
       if (SKIP_DIRS.has(entry.name)) continue;
       walkHtml(path.join(dir, entry.name), files);
     } else if (entry.isFile() && entry.name.endsWith(".html")) {
+      const rel = path.relative(ROOT, path.join(dir, entry.name)).replace(/\\/g, "/");
+      if (SKIP_FILES.has(rel)) continue;
       files.push(path.join(dir, entry.name));
     }
   }
