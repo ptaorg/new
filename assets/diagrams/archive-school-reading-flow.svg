@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="300" viewBox="0 0 920 300" role="img" aria-labelledby="title desc">
+  <title id="title">学校別資料ページの読み方</title>
+  <desc id="desc">学校別資料を、一次資料、確認できる事実、法的論点、次の確認へ分けて読む流れ。</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#eef5fb"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0b2a4a"/>
+    </marker>
+  </defs>
+  <rect width="920" height="300" rx="20" fill="url(#paper)"/>
+  <rect x="28" y="28" width="864" height="244" rx="18" fill="#fff" stroke="#d6e0ea"/>
+  <g font-family="'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif">
+    <g transform="translate(58 72)">
+      <rect width="170" height="126" rx="16" fill="#f7f9fb" stroke="#cfd9e5"/>
+      <path d="M42 28h66l20 20v54H42z" fill="#fff" stroke="#0b2a4a" stroke-width="2"/>
+      <path d="M108 28v20h20" fill="none" stroke="#0b2a4a" stroke-width="2"/>
+      <text x="85" y="86" text-anchor="middle" font-size="18" font-weight="800" fill="#0b2a4a">一次資料</text>
+      <text x="85" y="112" text-anchor="middle" font-size="12" fill="#526274">文書・画像・回答日</text>
+    </g>
+    <line x1="244" y1="135" x2="318" y2="135" stroke="#0b2a4a" stroke-width="3" marker-end="url(#arrow)"/>
+    <g transform="translate(338 72)">
+      <rect width="170" height="126" rx="16" fill="#fffaf0" stroke="#d9c76e"/>
+      <circle cx="55" cy="59" r="24" fill="#d6ae2b"/>
+      <path d="M43 59l8 8 18-21" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="85" y="86" text-anchor="middle" font-size="18" font-weight="800" fill="#0b2a4a">確認事実</text>
+      <text x="85" y="112" text-anchor="middle" font-size="12" fill="#526274">書かれていること</text>
+    </g>
+    <line x1="524" y1="135" x2="598" y2="135" stroke="#0b2a4a" stroke-width="3" marker-end="url(#arrow)"/>
+    <g transform="translate(618 72)">
+      <rect width="170" height="126" rx="16" fill="#f2f7ff" stroke="#9fbbe1"/>
+      <path d="M56 37h58M85 37v60M62 97h46M45 64h80" stroke="#0b2a4a" stroke-width="5" stroke-linecap="round"/>
+      <text x="85" y="86" text-anchor="middle" font-size="18" font-weight="800" fill="#0b2a4a">法的論点</text>
+      <text x="85" y="112" text-anchor="middle" font-size="12" fill="#526274">入会・会費・情報</text>
+    </g>
+    <path d="M788 135c45 0 45 62 0 62H148c-45 0-45 42 0 42h608" fill="none" stroke="#d6ae2b" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="460" y="246" text-anchor="middle" font-size="15" font-weight="800" fill="#0b2a4a">未掲載・未確認の部分は、推測で埋めず「次に確認する事項」として扱う</text>
+  </g>
+</svg>

@@ -533,6 +533,79 @@ a.archive-source-chip:hover {
   margin-top: 0.7em;
 }
 
+.archive-reading-guide {
+  border-left: 6px solid #0b2a4a;
+}
+
+.archive-reading-guide h2 {
+  margin-top: 0;
+}
+
+.archive-reading-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  gap: 22px;
+  align-items: center;
+}
+
+.archive-reading-diagram {
+  margin: 0;
+  background: #f7f9fb;
+  border: 1px solid #dce3ea;
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.archive-reading-diagram img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: 12px;
+}
+
+.archive-reading-points {
+  display: grid;
+  gap: 12px;
+}
+
+.archive-reading-points p {
+  margin: 0;
+  color: #334155;
+  line-height: 1.85;
+}
+
+.archive-reading-points strong {
+  color: #0b2a4a;
+  font-weight: 900;
+}
+
+.archive-reading-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.archive-reading-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid #cbd7e4;
+  border-radius: 999px;
+  color: #0b376d;
+  background: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.archive-reading-links a:hover {
+  border-color: #d6ae2b;
+  background: #fffaf0;
+}
+
 .archive-related-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1165,6 +1238,7 @@ a.archive-source-chip:hover {
   }
 
   .archive-source-overview,
+  .archive-reading-layout,
   .archive-related-grid {
     grid-template-columns: 1fr;
   }
