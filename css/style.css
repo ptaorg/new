@@ -3127,3 +3127,90 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
   .ed-resource-list { grid-template-columns: 1fr; }
   .ed-link-buttons a { width: 100%; }
 }
+
+/* 2026-06-17: remove decorative labels site-wide.
+   Keep real form labels and table field names; hide only ornamental/category chips. */
+.page-hero-kicker,
+.issue-hero-eyebrow,
+.journal-eyebrow,
+.section-kicker,
+.section-eyebrow,
+.hero-kicker,
+.admin-materials-kicker,
+.page-banner-kicker,
+.audit-hero-eyebrow,
+.intro-section-kicker,
+.mode-card-kicker,
+.banner-eyebrow,
+.assessment-kicker,
+.contact-kicker,
+.support-kicker,
+.submission-eyebrow,
+.doc-pack-label,
+.action-pack-label,
+.rlc-label,
+.case-kicker,
+.case-badge,
+.toc-label,
+.report-source-label,
+.ce-label,
+.inline-source-badge,
+.fieldcase-kicker,
+.video-section-kicker,
+.reality-section-kicker,
+.entry-section-kicker,
+.homepage-method-label,
+.officer-visual-label,
+.officer-source-pdf-label,
+.law-quote-label,
+.lq-label,
+.lc-kicker,
+.support-strip-label,
+.home-photo-hero-kicker,
+.proper-kicker,
+.proper-card-img-label,
+.home-support-spot-label,
+.home-compact-kicker,
+.parent-lead-kicker,
+.parent-case-label,
+.reality-hero-kicker,
+.section-badge,
+.doc-mockup-label,
+.law-box-label,
+.incident-box-label,
+.rel-card-kicker,
+.tl-tag,
+.ac-tags,
+.ac-cat,
+.article-card .ac-meta span[style*="border-radius"],
+.update-tag,
+.issue-tags,
+.law-tags,
+.acc-sum-badges,
+.badge-jishu,
+.badge-iinkai,
+.badge-misei,
+.badge-special,
+.badge-violation,
+.hero-count-label,
+.placeholder-label,
+.archive-kicker,
+.archive-source-status,
+.mobile-link > span {
+  display: none !important;
+}
+
+.report-link-chip span {
+  display: none !important;
+}
+
+.archive-tag {
+  display: inline !important;
+  margin: 0 .35rem 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  color: inherit !important;
+  font-weight: 700 !important;
+}
