@@ -1,4 +1,4 @@
-/* site.js v81 mobile navigation complete fix */
+/* site.js v83 navigation/footer cleanup */
 (function(){
   var initialPath=location.pathname+location.search;
   var allowAutoTop=!location.hash;
@@ -328,7 +328,7 @@
   }
 
   var original=document.createElement('script');
-  original.src='/js/site-v48-original.js?v=58';
+  original.src='/js/site-v48-original.js?v=59';
   original.onload=function(){ patchOriginalNavigationHooks(); ready(function(){ baseInit(); local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(fixGuidePta,250); setTimeout(function(){ stabilizeMobileNavigation(); if(location.hash) scheduleHashScroll(); else forceTopBurst(1800); },300); }); };
   original.onerror=function(){ patchOriginalNavigationHooks(); ready(function(){ local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(function(){ stabilizeMobileNavigation(); if(location.hash) scheduleHashScroll(); else forceTopBurst(1800); },300); }); };
   document.head.appendChild(original);
