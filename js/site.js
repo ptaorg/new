@@ -88,7 +88,7 @@
     ['学校名簿・学校アプリ利用確認書','/guideline.html#tpl-school-info-stop','学校保有情報とPTA連絡利用の確認文書'],
     ['PTA非会員情報と協力金','/privacy.html#nonmember-info-impossibility','非会員名簿・協力金・実費徴収を学校情報に依存させない整理'],
     ['PTA個人情報取得・利用同意書','/guideline.html#tpl-info-consent','PTAが本人から直接情報を取得するための同意書'],
-    ['旧Google Sites由来の論点整理','/journal.html#google-sites-legacy-topics','消費者契約・非会員情報・公益性・学校徴収金を一次資料で再編集'],
+    ['主要論点の整理','/journal.html#core-topics','消費者契約・非会員情報・公益性・学校徴収金を一次資料で整理'],
     ['PTAと消費者契約法の関係','/journal/consumer-contract.html','PTA加入・会費請求を消費者契約法の定義、事業者性、説明、入会意思確認から整理'],
     ['PTAオプトアウト加入の無効性','/journal/optout-invalidity.html','退会届方式・みなし加入を入会意思、会費、個人情報、学校関与の連鎖で整理'],
     ['PTA非会員情報・協力金・学校名簿','/journal/nonmember-info.html','非会員名簿、協力金、学校アプリ、学校保有情報の利用を整理'],

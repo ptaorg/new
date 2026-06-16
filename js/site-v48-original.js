@@ -22,7 +22,7 @@ const SITE_INDEX=[
  ['PTA会費徴収分離申入書','/guideline.html#tpl-fee-separation','学校徴収金とPTA会費を分けるための提出文書。'],
  ['学校名簿・学校アプリ利用確認書','/guideline.html#tpl-school-info-stop','学校保有情報とPTA連絡利用の確認文書。'],
  ['PTA非会員情報と協力金','/privacy.html#nonmember-info-impossibility','非会員名簿、協力金、実費徴収を学校情報に依存させない整理。'],
- ['旧Google Sites由来の論点整理','/journal.html#google-sites-legacy-topics','消費者契約、非会員情報、公益性、学校徴収金を一次資料で再編集。'],
+ ['主要論点の整理','/journal.html#core-topics','消費者契約、非会員情報、公益性、学校徴収金を一次資料で整理。'],
  ['PTAと消費者契約法の関係','/journal/consumer-contract.html','PTA加入・会費請求を消費者契約法の定義、事業者性、説明、入会意思確認から整理。'],
  ['PTAオプトアウト加入の無効性','/journal/optout-invalidity.html','退会届方式・みなし加入を入会意思、会費、個人情報、学校関与の連鎖で整理。'],
  ['PTA非会員情報・協力金・学校名簿','/journal/nonmember-info.html','非会員名簿、協力金、学校アプリ、学校保有情報の利用を整理。'],
@@ -169,7 +169,7 @@ function initCompatibilityFixes(){
  if(!document.querySelector('link[href^="/css/refine.css"],link[href^="css/refine.css"]')){const l=document.createElement('link');l.rel='stylesheet';l.href='/css/refine.css?v=refine1';document.head.appendChild(l)}
  document.querySelectorAll('link[rel="canonical"]').forEach((el,i)=>{if(i>0)el.remove()});
  if(document.querySelector('meta[name="twitter:card"]')&&!document.querySelector('meta[name="twitter:image"]')){const m=document.createElement('meta');m.name='twitter:image';m.content='https://ptaorg.com/assets/og-image-popc-en.png';document.head.appendChild(m)}
- const map={'guide-board.html#responses':'board-responses.html#municipality-index','board-responses.html#yokohama':'board-responses.html#municipality-index','guide-parent.html#templates':'guide-parent.html#pdf-dl','guide-board.html#yokohama':'journal/yokohama-notice-1965.html','administrative-materials.html#admin-table':'administrative-materials.html#source-candidates','/donate/':SUPPORT_URL,'donate/':SUPPORT_URL,'https://ptaorg.com/donate/':SUPPORT_URL,'https://ptaorg.github.io/donate/':SUPPORT_URL};
+ const map={'guide-board.html#responses':'board-responses.html#municipality-index','board-responses.html#yokohama':'board-responses.html#municipality-index','guide-parent.html#templates':'guide-parent.html#pdf-dl','guide-board.html#yokohama':'journal/yokohama-notice-1965.html','administrative-materials.html#admin-table':'administrative-materials.html#yokohama','/donate/':SUPPORT_URL,'donate/':SUPPORT_URL,'https://ptaorg.com/donate/':SUPPORT_URL,'https://ptaorg.github.io/donate/':SUPPORT_URL};
  document.querySelectorAll('a[href]').forEach(a=>{const h=a.getAttribute('href');if(map[h])a.setAttribute('href',map[h])});
  if(location.hash){
   let id=location.hash.slice(1);
