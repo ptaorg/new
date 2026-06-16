@@ -5,20 +5,20 @@ window.PTA_DOCUMENTS = {
     documentName: "PTA運営の留意点について（通知）",
     issuer: "横浜市教育委員会",
     date: "令和7年（2025年）12月",
-    type: "教育委員会通知・別紙資料",
+    type: "教育委員会通知一式",
     category: "Official Document",
-    pdfUrl: "assets/docs/yokohama-notice-1965.pdf",
-    pdfLabel: "通知PDFを開く",
-    pdfSize: "PDF・約296KB",
-    intro: "横浜市が示した「PTA運営の留意点について（通知）」および別紙資料を整理したページです。PTAが任意団体であり、加入・活動・会費負担が保護者の自由意思に基づくべきこと、個人情報の適正な取扱い、未加入家庭への配慮、学校徴収金とPTA会費を扱う場合の注意点などを確認できます。",
+    pdfUrl: "assets/docs/yokohama-notice-1965-complete.pdf",
+    pdfLabel: "通知一式PDFを開く",
+    pdfSize: "PDF・約1.7MB",
+    intro: "横浜市が示した「PTA運営の留意点について（通知）」を、本文と別紙を含む一式として整理したページです。PTAが任意団体であり、加入・活動・会費負担が保護者の自由意思に基づくべきこと、個人情報の適正な取扱い、未加入家庭への配慮、学校徴収金とPTA会費を扱う場合の注意点などを確認できます。",
     metaItems: [
-      { label: "資料種別", value: "教育委員会通知・別紙資料" },
+      { label: "資料種別", value: "教育委員会通知一式" },
       { label: "自治体", value: "横浜市" },
       { label: "対象", value: "学校・PTA・保護者向け" },
       { label: "主な論点", value: "任意加入／個人情報／未加入家庭への配慮／会費徴収／学校とPTAの関係" }
     ],
     imagesTitle: "資料画像",
-    imagesNote: "以下は、横浜市「PTA運営の留意点について（通知）」および別紙資料の画像です。任意加入、個人情報、未加入家庭への配慮、PTA会費、学校とPTAの関係性に関する記載を確認できます。",
+    imagesNote: "以下は、横浜市「PTA運営の留意点について（通知）」一式の画像です。任意加入、個人情報、未加入家庭への配慮、PTA会費、学校とPTAの関係性に関する記載を確認できます。",
     images: [
       {
         src: "/assets/documents/yokohama-notice/01.png",
@@ -46,7 +46,7 @@ window.PTA_DOCUMENTS = {
         caption: "別紙2 PTA加入届および個人情報取扱同意書"
       }
     ],
-    overview: "本資料は、横浜市におけるPTA運営上の留意点を整理した通知および別紙資料です。PTAが任意団体であり、加入や活動参加が強制されるものではないこと、個人情報の取得・提供には適切な取扱いが必要であること、PTA未加入家庭の児童生徒に対する教育的配慮が必要であることなどが示されています。",
+    overview: "本資料は、横浜市におけるPTA運営上の留意点を整理した通知一式です。PTAが任意団体であり、加入や活動参加が強制されるものではないこと、個人情報の取得・提供には適切な取扱いが必要であること、PTA未加入家庭の児童生徒に対する教育的配慮が必要であることなどが示されています。",
     checksTitle: "確認できる事項",
     checks: [
       "PTAは任意団体であり、加入は任意であることを、入学式その他の機会で適正に周知する必要があること。",
@@ -83,15 +83,15 @@ window.PTA_DOCUMENTS = {
     ]
   },
   "yokohama-bessi": {
-    title: "横浜市通知 別紙の要点",
-    documentName: "横浜市教育委員会 学教第1965号 別紙",
+    title: "横浜市通知一式の要点",
+    documentName: "横浜市教育委員会 学教第1965号 一式",
     issuer: "横浜市教育委員会",
     date: "令和7年（2025年）12月",
-    type: "通知別紙・対応表・ひな型",
-    category: "Template / Attachment",
-    pdfUrl: "assets/docs/yokohama-bessi-1965.pdf",
-    pdfSize: "PDF・約1.4MB",
-    intro: "横浜市通知の別紙には、PTA加入届や個人情報取扱同意書のひな型など、現場運用に落とし込むための資料が含まれます。",
+    type: "通知本文・別紙一式",
+    category: "Official Document",
+    pdfUrl: "assets/docs/yokohama-notice-1965-complete.pdf",
+    pdfSize: "PDF・約1.7MB",
+    intro: "横浜市通知一式には、通知本文、対応表、PTA加入届や個人情報取扱同意書のひな型など、現場運用に落とし込むための資料が含まれます。",
     checks: [
       "加入届の様式に任意加入であることが明記されているか。",
       "個人情報の利用目的、提供先、取得項目が分かる形になっているか。",

@@ -11,7 +11,7 @@ const SITE_INDEX=[
  ['教育委員会の回答','/board-responses.html','教育委員会からの回答資料。'],
  ['全国資料館','/national-archive.html','自治体別・学校別のPTA実物文書アーカイブ。'],
  ['行政資料整理','/administrative-materials.html','文科省通知、個人情報保護委員会資料、法令本文等。'],
- ['横浜市教育委員会通知 学教第1965号','/journal/yokohama-notice-1965.html','通知本文、別紙1、別紙2を分けて整理した中核資料。'],
+ ['横浜市教育委員会通知 学教第1965号','/journal/yokohama-notice-1965.html','通知本文と別紙を一式で整理した中核資料。'],
  ['横浜市通知 別紙1・別紙2','/journal/yokohama-notice-1965.html','任意加入、個人情報、会費説明、加入届ひな型の確認ポイント。'],
  ['横浜市通知の要点','/membership.html#yokohama','オプトイン方式と3点セット移行の説明。'],
  ['PTA入会申込書がない場合','/membership.html#no-application-record','入会記録、同意、会費徴収、学校関与を確認する質問。'],
