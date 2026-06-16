@@ -27,6 +27,8 @@ const SITE_INDEX=[
  ['PTAオプトアウト加入の無効性','/journal/optout-invalidity.html','退会届方式・みなし加入を入会意思、会費、個人情報、学校関与の連鎖で整理。'],
  ['PTA非会員情報・協力金・学校名簿','/journal/nonmember-info.html','非会員名簿、協力金、学校アプリ、学校保有情報の利用を整理。'],
  ['学校徴収金とPTA会費を分ける理由','/journal/school-fee-separation.html','学校徴収金と任意団体会費を文書、口座、未納管理で分離する理由。'],
+ ['学校経由の第三者提供同意とPTA名簿','/journal/third-party-consent.html','学校書類の中でPTAへの個人情報提供同意を取る場合の提供先、項目、利用目的、加入意思との分離。'],
+ ['働き方改革から見たPTA会費代理徴収の限界','/journal/work-style-reform.html','学校徴収金の公会計化・学校経由しない支払いの流れからPTA会費と学校事務の分離を整理。'],
  ['PTA運営の現場実例','/compliance.html','みなし加入、抱き合わせ徴収、個人情報提供などを実物資料ベースで確認するページ。'],
  ['論考・調査報告','/journal.html','PTA運営の法的構造、行政対応、判例、制度史。'],
  ['総合分析レポート','/report.html','PTA運営に関する総合分析。'],

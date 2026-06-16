@@ -93,6 +93,8 @@
     ['PTAオプトアウト加入の無効性','/journal/optout-invalidity.html','退会届方式・みなし加入を入会意思、会費、個人情報、学校関与の連鎖で整理'],
     ['PTA非会員情報・協力金・学校名簿','/journal/nonmember-info.html','非会員名簿、協力金、学校アプリ、学校保有情報の利用を整理'],
     ['学校徴収金とPTA会費を分ける理由','/journal/school-fee-separation.html','学校徴収金と任意団体会費を文書、口座、未納管理で分離する理由'],
+    ['学校経由の第三者提供同意とPTA名簿','/journal/third-party-consent.html','学校書類の中でPTAへの個人情報提供同意を取る場合の提供先、項目、利用目的、加入意思との分離'],
+    ['働き方改革から見たPTA会費代理徴収の限界','/journal/work-style-reform.html','学校徴収金の公会計化・学校経由しない支払いの流れからPTA会費と学校事務の分離を整理'],
     ['PTA運営の現場実例','/compliance.html','みなし加入・代行徴収・名簿提供の実例'],
     ['静岡市9200人分個人情報事案','/shizuoka-incident.html','根拠確認事案の経緯と論点'],
     ['論考・調査報告','/journal.html','個別テーマの掘り下げ'],
@@ -326,7 +328,7 @@
   }
 
   var original=document.createElement('script');
-  original.src='/js/site-v48-original.js?v=57';
+  original.src='/js/site-v48-original.js?v=58';
   original.onload=function(){ patchOriginalNavigationHooks(); ready(function(){ baseInit(); local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(fixGuidePta,250); setTimeout(function(){ stabilizeMobileNavigation(); if(location.hash) scheduleHashScroll(); else forceTopBurst(1800); },300); }); };
   original.onerror=function(){ patchOriginalNavigationHooks(); ready(function(){ local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(function(){ stabilizeMobileNavigation(); if(location.hash) scheduleHashScroll(); else forceTopBurst(1800); },300); }); };
   document.head.appendChild(original);
