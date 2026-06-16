@@ -21,8 +21,33 @@ const STATUS_ORDER = [
   "要確認",
   "資料不足",
   "適正化モデル",
-  "評価準備中"
+  "未評価"
 ];
+
+function displayStatus(status) {
+  if (status === "評価準備中") return "未評価";
+  return status || "未評価";
+}
+
+function isPlaceholderText(value) {
+  const text = String(value ?? "").trim();
+  if (!text) return true;
+  return text === "評価準備中"
+    || text === "評価準備中です。"
+    || text === "資料確認後に記載します。"
+    || text.includes("確認後に記載");
+}
+
+function visibleTextItems(items) {
+  return Array.isArray(items)
+    ? items.map((item) => String(item ?? "").trim()).filter((item) => item && !isPlaceholderText(item))
+    : [];
+}
+
+function displayPdfStatus(value, pdfCount) {
+  if (value && value !== "準備中") return value;
+  return pdfCount ? `元PDF ${pdfCount}件` : "元PDF未掲載";
+}
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -135,13 +160,17 @@ module.exports = {
   STATUS_ORDER,
   GA_MEASUREMENT_ID,
   absoluteUrl,
+  displayPdfStatus,
+  displayStatus,
   escapeHtml,
   gaTag,
+  isPlaceholderText,
   listSchoolData,
   publicPathExists,
   readJson,
   sortSchools,
   statusClassFor,
   validateSchoolRecord,
+  visibleTextItems,
   writeFileIfChanged
 };

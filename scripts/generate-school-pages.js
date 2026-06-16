@@ -3,6 +3,8 @@ const path = require("path");
 const {
   ROOT,
   absoluteUrl,
+  displayPdfStatus,
+  displayStatus,
   escapeHtml,
   gaTag,
   listSchoolData,
@@ -10,11 +12,12 @@ const {
   sortSchools,
   statusClassFor,
   validateSchoolRecord,
+  visibleTextItems,
   writeFileIfChanged
 } = require("./archive-utils");
 
 function renderList(items, fallback) {
-  const values = Array.isArray(items) ? items.filter(Boolean) : [];
+  const values = visibleTextItems(items);
   if (!values.length) return `<p class="archive-muted">${escapeHtml(fallback)}</p>`;
   return `<ul>
 ${values.map((item) => `        <li>${escapeHtml(item)}</li>`).join("\n")}
@@ -22,14 +25,16 @@ ${values.map((item) => `        <li>${escapeHtml(item)}</li>`).join("\n")}
 }
 
 function renderParagraphs(items, fallback) {
-  const values = Array.isArray(items) ? items.filter(Boolean) : [];
+  const values = visibleTextItems(items);
   if (!values.length) return `<p class="archive-muted">${escapeHtml(fallback)}</p>`;
   return values.map((item) => `      <p>${escapeHtml(item)}</p>`).join("\n");
 }
 
 function renderTags(items) {
-  const values = Array.isArray(items) ? items.filter(Boolean) : [];
-  if (!values.length) return `<p><span class="archive-tag">評価準備中</span></p>`;
+  const values = Array.isArray(items)
+    ? [...new Set(items.filter(Boolean).map(displayStatus))]
+    : [];
+  if (!values.length) return `<p><span class="archive-tag">未評価</span></p>`;
   return `<p>${values.map((item) => `<span class="archive-tag">${escapeHtml(item)}</span>`).join("\n")}</p>`;
 }
 
@@ -146,7 +151,7 @@ function renderSourceEvidence(record) {
 
 function renderImages(record) {
   const images = sourceImages(record);
-  if (!images.length) return `      <p class="archive-muted">資料画像準備中</p>`;
+  if (!images.length) return `      <p class="archive-muted">資料画像は未掲載です。資料画像を掲載する場合は、個人情報・印影・口座情報・QRコード等を確認し、必要な伏せ処理を行います。</p>`;
   return images.map((image, index) => `      <figure class="archive-figure">
         <a class="archive-figure-link" href="${escapeHtml(image.src)}">
           <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || `${record.schoolName} 資料画像${index + 1}`)}" loading="lazy" decoding="async">
@@ -183,8 +188,8 @@ ${checkItems.map(([label, value]) => `        <li><strong>${escapeHtml(label)}</
 }
 
 function renderAssessmentPremise(record) {
-  const pendingNote = /^(未評価|評価準備中)$/.test(record.status)
-    ? "評価準備中のため、資料追加や人による確認後に評価状況・疑義フラグが変わる可能性があります。"
+  const pendingNote = displayStatus(record.status) === "未評価"
+    ? "学校別の個別評価は未実施です。現時点では、掲載資料の有無と確認すべき項目だけを示します。"
     : "評価状況は、掲載資料から確認できる運用上の疑義の強さを示すものです。特定の学校・PTAについて法令違反を断定するものではありません。";
   return `<p>${escapeHtml(pendingNote)}</p>
       <p>このページでは、資料に書かれている事実、資料だけでは確認できない点、当委員会の評価を分けて表示しています。未掲載資料、口頭説明、後日是正済みの運用までは反映できていない場合があります。</p>`;
@@ -192,7 +197,9 @@ function renderAssessmentPremise(record) {
 
 function renderSummary(record) {
   const summary = record.summary || "PTA関連資料の確認状況を整理しています。";
-  if (!sourceImages(record).length && !pdfLinks(record).length) return summary;
+  if (!sourceImages(record).length && !pdfLinks(record).length && !meaningfulDocuments(record).length) {
+    return "このページでは、資料の有無と確認すべき項目を整理しています。現時点では個別評価を行っていません。";
+  }
   return summary.replace(
     "画像とPDFは、個人情報・印影・口座情報・QRコード等の確認が完了するまで掲載しません。",
     "資料画像とPDFは、個人情報・印影・口座情報・QRコード等の確認が完了したものだけを掲載します。"
@@ -206,12 +213,11 @@ function renderSchoolPage(record) {
   const ogDescription = record.ogDescription || record.description || record.summary;
   const title = `${record.schoolName} PTA関連資料・評価 | PTA適正化推進委員会`;
   const description = record.description || `${record.schoolName}のPTA関連資料について、確認できる事実、資料上確認できない点、当委員会の評価を整理したページです。`;
-  const documentName = record.materials.documentName || (record.materials.confirmedDocuments || []).join("、") || "確認中";
+  const documentName = meaningfulDocuments(record).join("、") || "確認資料なし";
   const applicationStatus = record.materials.applicationFormStatus || record.materials.hasApplicationForm || "未確認";
   const pdfCount = pdfLinks(record).length;
-  const pdfStatus = record.materials.pdfStatus && record.materials.pdfStatus !== "準備中"
-    ? record.materials.pdfStatus
-    : (pdfCount ? `元PDF ${pdfCount}件` : "準備中");
+  const pdfStatus = displayPdfStatus(record.materials.pdfStatus, pdfCount);
+  const statusLabel = displayStatus(record.status);
 
   return `<!DOCTYPE html>
 <html lang="ja">
@@ -264,7 +270,7 @@ ${renderSupportStrip()}
       <div class="archive-grid">
         <div class="archive-box"><div class="archive-label">自治体</div><div class="archive-value">${escapeHtml(record.municipality)}</div></div>
         <div class="archive-box"><div class="archive-label">学校区分</div><div class="archive-value">${escapeHtml(record.schoolType)}</div></div>
-        <div class="archive-box archive-status-card ${escapeHtml(statusClass)}"><div class="archive-label">評価状況</div><div class="archive-value">${escapeHtml(record.status)}</div></div>
+        <div class="archive-box archive-status-card ${escapeHtml(statusClass)}"><div class="archive-label">評価状況</div><div class="archive-value">${escapeHtml(statusLabel)}</div></div>
         <div class="archive-box"><div class="archive-label">確認資料</div><div class="archive-value">${escapeHtml(documentName)}</div></div>
         <div class="archive-box"><div class="archive-label">入会申込書</div><div class="archive-value">${escapeHtml(applicationStatus)}</div></div>
         <div class="archive-box"><div class="archive-label">PDF</div><div class="archive-value">${escapeHtml(pdfStatus)}</div></div>
@@ -296,12 +302,12 @@ ${renderImages(record)}
 
     <section class="archive-section">
       <h2>確認できる事実</h2>
-      ${renderList(record.confirmedFacts, "資料確認後に記載します。")}
+      ${renderList(record.confirmedFacts, "現時点で掲載資料から断定できる個別事実はありません。")}
     </section>
 
     <section class="archive-section">
       <h2>資料上確認できない点</h2>
-      ${renderList(record.unconfirmedPoints, "資料確認後に記載します。")}
+      ${renderList(record.unconfirmedPoints, "入会案内、入会申込書、会費徴収、個人情報、学校関与の資料が必要です。")}
     </section>
 
     <section class="archive-section">
@@ -311,7 +317,7 @@ ${renderImages(record)}
 
     <section class="archive-section">
       <h2>当委員会の評価</h2>
-${renderParagraphs(record.evaluation, "評価準備中です。資料確認後に追記します。")}
+${renderParagraphs(record.evaluation, "個別評価は未実施です。掲載資料が確認できる場合は、資料名と確認事実を分けて評価します。")}
     </section>
 
     <section class="archive-section archive-print-save-section">

@@ -3,6 +3,7 @@ const path = require("path");
 const {
   ROOT,
   STATUS_ORDER,
+  displayStatus,
   escapeHtml,
   listSchoolData,
   publicPathExists,
@@ -17,7 +18,7 @@ const END = "<!-- ATSUGI_ARCHIVE_END -->";
 function countByStatus(records) {
   const counts = Object.fromEntries(STATUS_ORDER.map((status) => [status, 0]));
   for (const record of records) {
-    const key = record.status === "未評価" ? "評価準備中" : record.status;
+    const key = displayStatus(record.status);
     counts[key] = (counts[key] || 0) + 1;
   }
   return counts;
@@ -41,7 +42,7 @@ function renderLegend() {
     ["要確認", "一部資料は確認できるが、入会意思確認、会費徴収、学校関与等について追加確認を要する状態。"],
     ["資料不足", "判断に必要な資料が不足しており、追加資料の取得後に評価が変わる可能性がある状態。"],
     ["適正化モデル", "任意加入、会費徴収、個人情報、非会員対応等について改善例として参照できる状態。"],
-    ["評価準備中", "資料は掲載済みまたは準備中だが、評価が未確定の状態。"]
+    ["未評価", "学校別の個別評価は未実施の状態。資料の有無と確認すべき項目を先に示しています。"]
   ];
   return items.map(([status, description]) => `          <span class="eval-badge ${statusClassFor(status)}">${escapeHtml(status)}</span>
           <span>${escapeHtml(description)}</span>`).join("\n");
@@ -136,7 +137,7 @@ function renderSchoolCards(records, schoolType) {
       const nameHtml = fs.existsSync(pagePath)
         ? `<a href="${escapeHtml(record.basePath)}">${name}</a>`
         : `<span>${name}</span>`;
-      const status = record.status === "未評価" ? "評価準備中" : record.status;
+      const status = displayStatus(record.status);
       const documentName = record.materials?.documentName || "未確認";
       return `              <article class="archive-school-card">
                 <div class="archive-school-card-main">
@@ -193,7 +194,7 @@ ${renderSchoolCards(atsugiRecords, "中学校")}
             </div>
           </div>
         </div>
-        <p class="atsugi-schools-note">補足：この一覧は、厚木市内の学校を母集団として整理するための基礎一覧です。評価準備中の学校は、資料整理または人間確認が未完了です。資料画像・元PDF・一次資料URLの追加により、評価表示が変わる可能性があります。</p>
+        <p class="atsugi-schools-note">補足：この一覧は、厚木市内の学校を母集団として整理するための基礎一覧です。未評価の学校は、個別評価を行わず、資料画像・元PDF・一次資料URLの有無を先に示しています。</p>
       </div>
     </section>
 `;
