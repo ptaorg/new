@@ -25,6 +25,18 @@
   <link rel="stylesheet" href="css/style.css">
 <link href="css/refine.css?v=refine2" rel="stylesheet"/>
   <style>
+    :root {
+      --color-navy: var(--navy, #1e3a5f);
+      --color-navy-dark: #0a192f;
+      --color-gold: var(--gold, #d4af37);
+      --color-gold-light: var(--gold-lt, #f4e7a6);
+      --color-line: var(--line, #e5e7eb);
+      --color-text: var(--text, #1a1a1a);
+      --color-text-soft: var(--text-soft, #4b5563);
+      --color-surface-soft: #f8fafc;
+      --transition: var(--t, all .26s ease);
+    }
+
     /* ===== ISSUE PAGE SHARED STYLES ===== */
     .issue-hero {
       background: linear-gradient(135deg, #0A192F 0%, #1A365D 55%, #1e3f7a 100%);
@@ -498,25 +510,121 @@
     .three-set {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin: 24px 0;
+      gap: 18px;
+      margin: 28px 0 24px;
     }
     .three-set-item {
-      background: linear-gradient(145deg, var(--color-navy-dark), var(--color-navy));
-      border-radius: 20px;
-      padding: 24px;
-      text-align: center;
-      color: #fff;
+      background: #ffffff;
+      border: 1px solid #d8e2ee;
+      border-top: 5px solid var(--color-gold);
+      border-radius: 16px;
+      padding: 24px 22px;
+      text-align: left;
+      color: var(--color-text);
+      box-shadow: 0 14px 34px rgba(15,39,66,.08);
     }
     .ts-num {
-      font-size: 2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #0f2742;
+      border: 2px solid var(--color-gold);
+      font-size: 1.35rem;
       font-weight: 900;
-      color: var(--color-gold-light);
+      color: #ffffff;
       line-height: 1;
+      margin-bottom: 16px;
+    }
+    .ts-title { font-size: 1rem; font-weight: 900; color: #0f2742; margin-bottom: 8px; line-height: 1.45; }
+    .ts-body { font-size: .88rem; color: #334155; line-height: 1.78; font-weight: 600; }
+
+    .yokohama-notice-feature {
+      margin: 30px 0 0;
+      padding: clamp(22px, 3vw, 30px);
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-left: 8px solid #15803d;
+      border-radius: 18px;
+      box-shadow: 0 16px 38px rgba(21,128,61,.10);
+    }
+    .ynf-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #dcfce7;
+      color: #166534;
+      font-size: .74rem;
+      font-weight: 900;
+      letter-spacing: .07em;
+      text-transform: uppercase;
       margin-bottom: 12px;
     }
-    .ts-title { font-size: .97rem; font-weight: 800; margin-bottom: 8px; }
-    .ts-body { font-size: .83rem; color: rgba(255,255,255,.75); line-height: 1.65; }
+    .yokohama-notice-feature h4 {
+      margin: 0 0 10px;
+      color: #0f2742;
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      line-height: 1.45;
+      font-weight: 900;
+    }
+    .yokohama-notice-feature p {
+      margin: 0 0 14px;
+      color: #1f2937;
+      line-height: 1.9;
+      font-size: .96rem;
+    }
+    .ynf-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 18px;
+    }
+    .ynf-points li {
+      background: #ffffff;
+      border: 1px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 11px 13px;
+      color: #14532d;
+      font-size: .86rem;
+      line-height: 1.65;
+      font-weight: 800;
+    }
+    .ynf-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .ynf-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 15px;
+      border-radius: 10px;
+      background: #ffffff;
+      border: 1px solid #16a34a;
+      color: #14532d;
+      text-decoration: none;
+      font-size: .87rem;
+      font-weight: 900;
+      line-height: 1.4;
+      transition: var(--transition);
+    }
+    .ynf-actions a:first-child {
+      background: #15803d;
+      color: #ffffff;
+    }
+    .ynf-actions a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(21,128,61,.14);
+    }
 
     /* Related links */
     .related-links-section {
@@ -551,6 +659,8 @@
       .law-breakdown-grid { grid-template-columns: 1fr; }
       .conclusion-grid { grid-template-columns: 1fr; }
       .three-set { grid-template-columns: 1fr; }
+      .ynf-points { grid-template-columns: 1fr; }
+      .ynf-actions a { width: 100%; }
       .related-link-grid { grid-template-columns: 1fr; }
     }
 
@@ -588,7 +698,7 @@
 <div class="support-strip" role="complementary" aria-label="活動支援のお願い">
   <div class="support-strip-inner">
     <span class="support-strip-label">応援のお願い</span>
-    <span class="support-strip-text">公文書開示、資料整理、Web公開を続けるため、寄付・カンパでのご支援をお願いします。</span>
+    <span class="support-strip-text">資料取得、資料整理、Web公開を続けるため、寄付・カンパでのご支援をお願いします。</span>
     <a class="support-strip-link" href="/support.html">応援ページへ</a>
   </div>
 </div>
@@ -1071,7 +1181,7 @@
           </div>
         </div>
 
-        <h3 id="yokohama">教育委員会通知・回答を読むときの注意</h3>
+        <h3 id="yokohama">横浜市通知（学教第1965号）を中核資料として扱う</h3>
 
         <div class="case-block">
           <div class="case-block-head">
@@ -1079,9 +1189,9 @@
             <div class="case-name">教育委員会通知・回答<br>発出主体、日付、対象校、添付資料を確認</div>
           </div>
           <div class="case-body">
-            <p>一部の教育委員会では、PTA加入について申込式・意思確認式へ移行する方向の通知や回答が示されています。これは、個人情報保護、会費徴収、入会契約の根拠を分けて確認する行政判断の転換として読むことができます。個別の文書番号・対象校数・実施状況は、当該自治体の一次資料と照合して確認する必要があります。</p>
-            <div class="case-point">「オプトアウト方式ではコンプライアンスを維持できない」と行政が公式に認めたことを意味します。</div>
-            <div class="case-point">掲載中の教育委員会回答では、みなし加入を積極的に維持すべきだと明確に説明した回答は確認できません。回答本文の射程と学校現場の実態を照合して読む必要があります。</div>
+            <p>横浜市教育委員会通知（学教第1965号）は、PTA加入について、入会意思、個人情報、会費説明、未加入家庭への配慮を分けて整える資料として扱います。個別の文書番号、発出主体、対象、添付資料、現行性は、通知本文と別紙を照合して確認します。</p>
+            <div class="case-point">通知から直接確認する柱は、任意加入、加入届による意思確認、個人情報取扱同意、会費説明、未加入家庭への配慮です。</div>
+            <div class="case-point">この通知を他自治体や各学校へ当てはめる場合は、各PTAの会則、入会案内、学校配布文書、会費徴収資料と照合して扱います。</div>
           </div>
         </div>
       </section>
@@ -1137,10 +1247,36 @@
           </div>
         </div>
 
-        <div class="alert-block success">
-          <div class="alert-icon">✅</div>
-          <div>
-            <p><strong>横浜市教育委員会通知とされる資料は、移行説明の参考資料になります：</strong>「前例踏襲」への反発が懸念される場合、入会届による意思確認、個人情報の直接取得、会費徴収の分離といった方向性を説明する補助資料として使えます。ただし、引用する場合は通知本文、発出主体、対象校、現行性を確認したうえで、各PTAの規約・実務に合わせて整理する必要があります。</p>
+        <h3 id="no-application-record">入会申込書が確認できない場合に聞くこと</h3>
+        <div class="case-block">
+          <div class="case-block-head">
+            <span class="case-badge">照会事項</span>
+            <div class="case-name">「入会した覚えがない」を、確認できる質問に変換する</div>
+          </div>
+          <div class="case-body">
+            <p>入会申込書が見つからない場合、すぐに「違法」と断定するより、まず契約成立、個人情報、会費徴収、学校関与を分けて確認します。学校・PTA・教育委員会に照会する場合は、次の点を文書で確認してください。</p>
+            <div class="case-point">本人がPTAへ入会を申し込んだ書面、電子フォーム、口頭確認記録は存在するか。</div>
+            <div class="case-point">入会意思と個人情報利用同意を、同じ紙で一括処理していないか。利用目的・提供先・廃棄方法は説明されているか。</div>
+            <div class="case-point">PTA会費の請求・引落しが、入会申込の前に行われていないか。学校徴収金と同じ文書・口座で扱っていないか。</div>
+            <div class="case-point">学校が配布、回収、名簿提供、連絡ツール配信、未納確認に関与している場合、その根拠文書はあるか。</div>
+            <p><a href="guideline.html#tpl-board-inquiry" class="btn-navy" style="text-decoration:none;display:inline-flex;margin-top:10px">学校・教育委員会への照会書を使う</a></p>
+          </div>
+        </div>
+
+        <div class="yokohama-notice-feature">
+          <div class="ynf-label">横浜市通知を確認</div>
+          <h4>横浜市教育委員会通知（学教第1965号）は、3点セット移行を説明する中核資料です</h4>
+          <p>通知本文と別紙では、PTAの任意加入、加入届による意思確認、個人情報取扱同意、未加入家庭への配慮、学校徴収金とPTA会費を扱う場合の説明責任が整理されています。「前例どおり」ではなく、入会意思・個人情報・会費徴収を分けて確認する根拠資料として必ず参照してください。</p>
+          <ul class="ynf-points">
+            <li>加入届を使った意思確認</li>
+            <li>個人情報同意の分離取得</li>
+            <li>会費徴収と学校徴収金の整理</li>
+          </ul>
+          <div class="ynf-actions" aria-label="横浜市通知の資料リンク">
+            <a href="administrative-materials.html#yokohama">通知の整理を見る</a>
+            <a href="journal/yokohama-notice-1965.html">詳細ページを開く</a>
+            <a href="assets/docs/yokohama-notice-1965.pdf">通知PDFを開く</a>
+            <a href="assets/docs/yokohama-bessi-1965.pdf">別紙PDFを開く</a>
           </div>
         </div>
       </section>
@@ -1159,15 +1295,15 @@
             <strong>会費徴収と学校徴収金</strong>
             <span>無権代理・委任契約・不当利得返還</span>
           </a>
-          <a href="guide-parent.html#pdf-dl" class="related-link-card">
+          <a href="guideline.html#template-pack" class="related-link-card">
             <div class="rlc-label">テンプレート</div>
-            <strong>保護者向け照会・退会届</strong>
-            <span>すぐ使える書面テンプレート集</span>
+            <strong>根拠から使う文書パック</strong>
+            <span>入会申込書・同意書・照会書へ進む</span>
           </a>
-          <a href="administrative-materials.html#yokohama" class="related-link-card">
+          <a href="journal/yokohama-notice-1965.html" class="related-link-card">
             <div class="rlc-label">行政動向</div>
             <strong>横浜市通知の詳細分析</strong>
-            <span>通知の5つの柱・法的解釈</span>
+            <span>通知本文・別紙1・別紙2の確認ポイント</span>
           </a>
           <a href="cases.html" class="related-link-card">
             <div class="rlc-label">判例</div>
@@ -1255,7 +1391,7 @@
 
         <div style="margin-top:32px;text-align:center;display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
           <a href="audit/index.html" class="btn-navy">⚙️ 運営チェックアプリで状況を診断する</a>
-          <a href="guide-parent.html#pdf-dl" class="btn-soft">📄 照会書テンプレートを使う</a>
+          <a href="guideline.html#tpl-board-inquiry" class="btn-soft">📄 学校・教育委員会への照会書を使う</a>
           <a href="board-responses.html" class="btn-soft">全国教委の公式回答を見る</a>
         </div>
       </div>
@@ -1351,11 +1487,11 @@
   <div class="footer-support">
     <div>
       <strong>調査・資料公開の継続を応援してください</strong>
-      <p>いただいたご支援は、公文書開示、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
+      <p>いただいたご支援は、資料取得、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
     </div>
     <a href="/support.html">応援ページへ</a>
   </div>
     <p class="copyright">© PTA適正化推進委員会</p>
   </footer>
-  <script src="js/site.js"></script>
+  <script src="js/site.js?v=81"></script>
 </body></html>

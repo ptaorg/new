@@ -1,4 +1,4 @@
-/* site.js v71 mobile navigation complete fix */
+/* site.js v81 mobile navigation complete fix */
 (function(){
   var initialPath=location.pathname+location.search;
   var allowAutoTop=!location.hash;
@@ -18,9 +18,29 @@
   ['wheel','touchstart','keydown','mousedown'].forEach(function(ev){
     window.addEventListener(ev,function(){ allowAutoTop=false; },{once:true,passive:true});
   });
-  window.addEventListener('hashchange',function(){ allowAutoTop=false; },{passive:true});
+  function scrollToHashTarget(){
+    if(!location.hash) return;
+    var id=location.hash.slice(1);
+    try{ id=decodeURIComponent(id); }catch(e){}
+    if(!id) return;
+    var el=document.getElementById(id);
+    if(!el) return;
+    var parentDetails=el.closest&&el.closest('details');
+    if(parentDetails) parentDetails.open=true;
+    if(el.tagName&&el.tagName.toLowerCase()==='details') el.open=true;
+    allowAutoTop=false;
+    var header=document.querySelector('.site-header,.nav-container');
+    var offset=(header?header.getBoundingClientRect().height:0)+18;
+    var y=el.getBoundingClientRect().top+(window.pageYOffset||document.documentElement.scrollTop||0)-offset;
+    try{ window.scrollTo({top:Math.max(0,y),left:0,behavior:'auto'}); }catch(e){ try{ window.scrollTo(0,Math.max(0,y)); }catch(_){} }
+  }
+  function scheduleHashScroll(){
+    if(!location.hash) return;
+    [0,80,260,700,1400].forEach(function(ms){ setTimeout(scrollToHashTarget,ms); });
+  }
+  window.addEventListener('hashchange',function(){ allowAutoTop=false; scheduleHashScroll(); },{passive:true});
   window.addEventListener('pageshow',function(){ if(!location.hash && (location.pathname+location.search)===initialPath) forceTopBurst(2200); });
-  if(!location.hash) forceTopBurst(2600);
+  if(location.hash) scheduleHashScroll(); else forceTopBurst(2600);
 
   var TRIP_LOCATIONS=[
     {name:'札幌市',lat:43.0621,lng:141.3544},{name:'仙台市',lat:38.2682,lng:140.8694},{name:'いわき市',lat:37.0504,lng:140.8877},{name:'須賀川市',lat:37.2865,lng:140.3734},{name:'潮来市',lat:35.9344,lng:140.5453},{name:'久喜市',lat:36.0621,lng:139.6672},{name:'埼玉県',lat:35.8574,lng:139.6489},{name:'川口市',lat:35.8079,lng:139.7238},{name:'幸手市',lat:36.0747,lng:139.7247},{name:'越谷市',lat:35.8911,lng:139.7911},{name:'三鷹市',lat:35.6836,lng:139.5594},{name:'墨田区',lat:35.7129,lng:139.8015},{name:'江戸川区',lat:35.6783,lng:139.8711},{name:'足立区',lat:35.7750,lng:139.8044},{name:'厚木市',lat:35.4431,lng:139.3622},{name:'川崎市',lat:35.5302,lng:139.7029},{name:'海老名市',lat:35.4461,lng:139.3917},{name:'相模原市',lat:35.5714,lng:139.3736},{name:'神奈川県',lat:35.4478,lng:139.6425},{name:'茅ヶ崎市',lat:35.3323,lng:139.4061},{name:'長岡市',lat:37.4461,lng:138.8511},{name:'射水市',lat:36.7299,lng:137.0520},{name:'下諏訪町',lat:36.0728,lng:138.0877},{name:'各務原市',lat:35.4011,lng:136.8441},{name:'岐阜県',lat:35.3912,lng:136.7223},{name:'富士宮市',lat:35.2217,lng:138.6119},{name:'静岡市',lat:34.9756,lng:138.3828},{name:'一宮市',lat:35.3047,lng:136.7978},{name:'名古屋市',lat:35.1815,lng:136.9066},{name:'安城市',lat:34.9594,lng:137.0864},{name:'愛知県',lat:35.1802,lng:136.9066},{name:'愛西市',lat:35.1500,lng:136.7275},{name:'扶桑町',lat:35.3583,lng:136.9111},{name:'豊橋市',lat:34.7692,lng:137.3914},{name:'豊田市',lat:35.0825,lng:137.1561},{name:'長久手市',lat:35.1611,lng:137.0503},{name:'三重県',lat:34.7303,lng:136.5086},{name:'大津市',lat:35.0178,lng:135.8547},{name:'彦根市',lat:35.2744,lng:136.2597},{name:'甲賀市',lat:34.9656,lng:136.1692},{name:'野洲市',lat:35.1189,lng:136.0275},{name:'亀岡市',lat:35.0356,lng:135.5739},{name:'京都市',lat:35.0116,lng:135.7681},{name:'交野市',lat:34.7861,lng:135.6811},{name:'大阪市',lat:34.6937,lng:135.5023},{name:'枚方市',lat:34.8161,lng:135.6500},{name:'茨木市',lat:34.8164,lng:135.5683},{name:'高槻市',lat:34.8486,lng:135.6175},{name:'姫路市',lat:34.8150,lng:134.6853},{name:'岡山市',lat:34.6551,lng:133.9196},{name:'岡山県',lat:34.6618,lng:133.9350},{name:'広島市',lat:34.3853,lng:132.4553},{name:'徳島市',lat:34.0711,lng:134.5517},{name:'北九州市',lat:33.8833,lng:130.8833},{name:'宗像市',lat:33.8050,lng:130.5414},{name:'長崎市',lat:32.7503,lng:129.8777},{name:'熊本市',lat:32.8031,lng:130.7078},{name:'大分県',lat:33.2381,lng:131.6125},{name:'鹿児島市',lat:31.5967,lng:130.5572}
@@ -56,6 +76,23 @@
     ['教育委員会の回答','/board-responses.html','76自治体・111件の公式回答データベース'],
     ['全国資料館','/national-archive.html','自治体別・学校別の実物文書アーカイブ'],
     ['行政通知・公式PDF','/administrative-materials.html','横浜市通知・文科省通知・PPC資料'],
+    ['横浜市教育委員会通知 学教第1965号','/journal/yokohama-notice-1965.html','通知本文・別紙1・別紙2を分けて整理した中核資料'],
+    ['横浜市通知 別紙1・別紙2','/journal/yokohama-notice-1965.html','任意加入、個人情報、会費説明、加入届ひな型の確認ポイント'],
+    ['横浜市通知の要点','/membership.html#yokohama','オプトイン方式と3点セット移行の説明'],
+    ['PTA入会申込書がない場合','/membership.html#no-application-record','入会記録・同意・会費徴収・学校関与を確認する質問'],
+    ['法的根拠から使う文書パック','/documents.html#legal-template-pack','根拠資料・確認事項・提出文書をまとめた入口'],
+    ['提出文書キット','/submission-kit.html','学校・PTA・教育委員会への確認文、会費分離申入書、個人情報確認書、根拠整理メモ'],
+    ['主張と根拠の対応表','/claim-evidence-ledger.html','主張、根拠条文、公式資料、実物文書、提出文例を対応させる根拠台帳'],
+    ['学校・教育委員会への照会書','/guideline.html#tpl-board-inquiry','入会記録・名簿・会費・教職員関与・施設利用を確認するひな形'],
+    ['PTA会費徴収分離申入書','/guideline.html#tpl-fee-separation','学校徴収金とPTA会費を分けるための提出文書'],
+    ['学校名簿・学校アプリ利用確認書','/guideline.html#tpl-school-info-stop','学校保有情報とPTA連絡利用の確認文書'],
+    ['PTA非会員情報と協力金','/privacy.html#nonmember-info-impossibility','非会員名簿・協力金・実費徴収を学校情報に依存させない整理'],
+    ['PTA個人情報取得・利用同意書','/guideline.html#tpl-info-consent','PTAが本人から直接情報を取得するための同意書'],
+    ['旧Google Sites由来の論点整理','/journal.html#google-sites-legacy-topics','消費者契約・非会員情報・公益性・学校徴収金を一次資料で再編集'],
+    ['PTAと消費者契約法の関係','/journal/consumer-contract.html','PTA加入・会費請求を消費者契約法の定義、事業者性、説明、入会意思確認から整理'],
+    ['PTAオプトアウト加入の無効性','/journal/optout-invalidity.html','退会届方式・みなし加入を入会意思、会費、個人情報、学校関与の連鎖で整理'],
+    ['PTA非会員情報・協力金・学校名簿','/journal/nonmember-info.html','非会員名簿、協力金、学校アプリ、学校保有情報の利用を整理'],
+    ['学校徴収金とPTA会費を分ける理由','/journal/school-fee-separation.html','学校徴収金と任意団体会費を文書、口座、未納管理で分離する理由'],
     ['PTA運営の現場実例','/compliance.html','みなし加入・代行徴収・名簿提供の実例'],
     ['静岡市9200人分個人情報事案','/shizuoka-incident.html','根拠確認事案の経緯と論点'],
     ['論考・調査報告','/journal.html','個別テーマの掘り下げ'],
@@ -227,7 +264,7 @@
     var p=location.pathname; if(!(p==='/'||p.endsWith('/index.html'))) return;
     var s=document.querySelector('.home-reading-section'); if(!s||s.dataset.rebuilt==='1') return; s.dataset.rebuilt='1';
     addStyle('home-reading-v69','.home-reading-section{background:#fff!important;padding:76px 0 82px!important}.home-lead-wrap{max-width:1080px!important}.home-lead-prose{max-width:900px;margin:22px 0 24px}.home-lead-prose p{font-size:1rem;line-height:2.05;color:var(--text);margin:0 0 16px}.home-activity-note{margin:26px 0 24px;padding:22px 24px;border-left:6px solid var(--gold);background:#fffdf4;border-radius:0 14px 14px 0;line-height:1.95}.home-evidence-map-block{margin:28px 0 36px;padding:22px;background:#f8fafc;border:1px solid var(--line);border-radius:18px}.evidence-map{height:420px;border:1px solid var(--line);border-radius:14px;background:#e5e7eb;overflow:hidden}.map-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;color:var(--text-soft);font-size:.84rem}.map-legend span{display:inline-flex;align-items:center;gap:6px}.map-legend i{display:inline-block;width:10px;height:10px;border-radius:50%}.map-legend .blue i{background:#1d4ed8}.map-legend .red i{background:#b91c1c}.map-more-link{display:inline-flex;margin-top:14px;color:var(--navy);font-size:.86rem;font-weight:900;text-decoration:none;border-bottom:2px solid var(--gold)}.home-role-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}.home-role-card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow-sm);transition:.18s}.home-role-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--gold)}.home-role-label{display:inline-flex;margin-bottom:13px;padding:4px 11px;border-radius:999px;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.34);color:#7a5c00;font-size:.72rem;font-weight:900}.home-role-card h3{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:1.08rem;line-height:1.55;margin:0 0 10px}.home-role-card p{font-size:.9rem;line-height:1.85;color:var(--text-soft);margin:0 0 16px}.home-role-cta{font-size:.85rem;font-weight:900;color:var(--navy)}@media(max-width:860px){.home-role-grid{grid-template-columns:1fr}.evidence-map{height:340px}}');
-    s.innerHTML='<div class="wrap home-lead-wrap"><div class="section-kicker">はじめに</div><h2 class="section-title" id="home-reading-title">PTAを「学校の一部」として扱わないために。</h2><div class="home-lead-prose"><p>PTAは、保護者と教職員が任意に参加する民間の任意団体です。学校教育を支える活動であっても、入会、会費、名簿、役員選出、連絡、会計処理は、学校の手続とは分けて考える必要があります。</p><p>問題は、PTAが存在することそのものではありません。入学や進級の手続、学校徴収金、学校の名簿、学校連絡ツール、教職員の勤務時間の中にPTAの事務が溶け込み、保護者が「任意加入であること」「断れること」「会費を支払う根拠」を確認できなくなることです。</p><p>このサイトでは、保護者、PTA役員、学校・教育委員会のそれぞれの立場から、どこを確認し、どのように公私の境界を整えるべきかを、一次資料と法令に基づいて整理しています。</p></div><div class="home-activity-note"><p>当委員会は、全国の教育委員会にPTA運営の法的見解を照会し、回答を収集・整理しています。</p><p>あわせて、公文書開示請求により、全国の学校・教育委員会から数千校分規模のPTA関連書類を取得しています。</p><p>得られた回答と資料をもとに教育委員会へ是正を求め、横浜市では市内全500校でPTA入退会自由を前提とする扱いを実現しました。</p></div><div class="home-evidence-map-block"><h3>照会回答・公文書開示請求マップ</h3><p>青は教育委員会から回答を得ている自治体、赤は公文書開示請求を行い、必要に応じて教育委員会へ直接出向いている自治体です。</p><div class="evidence-map" id="homeEvidenceMap"></div><div class="map-legend"><span class="blue"><i></i>教育委員会回答</span><span class="red"><i></i>公文書開示請求・訪問先</span></div><a class="map-more-link" href="/board-responses.html">回答本文を見る →</a></div><div class="home-role-grid"><a class="home-role-card" href="/guide-parent.html"><span class="home-role-label">保護者の方へ</span><h3>入会した覚えがない、会費を止めたい、断ると子どもが心配。</h3><p>入会意思、会費徴収、個人情報、役員選出のどこを確認すればよいかを整理します。</p><span class="home-role-cta">保護者向けガイドを読む →</span></a><a class="home-role-card" href="/guide-pta.html"><span class="home-role-label">PTA役員の方へ</span><h3>善意の活動を、強制や不透明な運営にしないために。</h3><p>入会申込、会費徴収、名簿管理、学校との役割分担を点検します。</p><span class="home-role-cta">役員向けガイドを読む →</span></a><a class="home-role-card" href="/guide-board.html"><span class="home-role-label">学校・教育委員会の方へ</span><h3>学校が協力できる範囲と、止めるべき範囲を分ける。</h3><p>名簿提供、学校徴収金、連絡ツール、教職員関与、施設利用を行政実務として整理します。</p><span class="home-role-cta">学校・教委向けガイドを読む →</span></a></div></div>';
+    s.innerHTML='<div class="wrap home-lead-wrap"><div class="section-kicker">はじめに</div><h2 class="section-title" id="home-reading-title">PTAを「学校の一部」として扱わないために。</h2><div class="home-lead-prose"><p>PTAは、保護者と教職員が任意に参加する民間の任意団体です。学校教育を支える活動であっても、入会、会費、名簿、役員選出、連絡、会計処理は、学校の手続とは分けて考える必要があります。</p><p>問題は、PTAが存在することそのものではありません。入学や進級の手続、学校徴収金、学校の名簿、学校連絡ツール、教職員の勤務時間の中にPTAの事務が溶け込み、保護者が「任意加入であること」「断れること」「会費を支払う根拠」を確認できなくなることです。</p><p>このサイトでは、保護者、PTA役員、学校・教育委員会のそれぞれの立場から、どこを確認し、どのように公私の境界を整えるべきかを、一次資料と法令に基づいて整理しています。</p></div><div class="home-activity-note"><p>当委員会は、全国の教育委員会にPTA運営の法的見解を照会し、回答を収集・整理しています。</p><p>あわせて、独自の資料収集により、全国の学校・教育委員会から数千校分規模のPTA関連書類を取得しています。</p><p>得られた回答と資料をもとに教育委員会へ是正を求め、横浜市では市内全500校でPTA入退会自由を前提とする扱いを実現しました。</p></div><div class="home-evidence-map-block"><h3>照会回答・資料取得マップ</h3><p>青は教育委員会から回答を得ている自治体、赤は資料取得を行い、必要に応じて教育委員会へ直接出向いている自治体です。</p><div class="evidence-map" id="homeEvidenceMap"></div><div class="map-legend"><span class="blue"><i></i>教育委員会回答</span><span class="red"><i></i>資料取得・訪問先</span></div><a class="map-more-link" href="/board-responses.html">回答本文を見る →</a></div><div class="home-role-grid"><a class="home-role-card" href="/guide-parent.html"><span class="home-role-label">保護者の方へ</span><h3>入会した覚えがない、会費を止めたい、断ると子どもが心配。</h3><p>入会意思、会費徴収、個人情報、役員選出のどこを確認すればよいかを整理します。</p><span class="home-role-cta">保護者向けガイドを読む →</span></a><a class="home-role-card" href="/guide-pta.html"><span class="home-role-label">PTA役員の方へ</span><h3>善意の活動を、強制や不透明な運営にしないために。</h3><p>入会申込、会費徴収、名簿管理、学校との役割分担を点検します。</p><span class="home-role-cta">役員向けガイドを読む →</span></a><a class="home-role-card" href="/guide-board.html"><span class="home-role-label">学校・教育委員会の方へ</span><h3>学校が協力できる範囲と、止めるべき範囲を分ける。</h3><p>名簿提供、学校徴収金、連絡ツール、教職員関与、施設利用を行政実務として整理します。</p><span class="home-role-cta">学校・教委向けガイドを読む →</span></a></div></div>';
   }
 
   function replaceHomeFieldcase(){
@@ -259,9 +296,8 @@
 
   function pdfLinks(){
     var cards=document.querySelectorAll('.parent-page .pdf-section .pdf-card');
-    var ac='https://'+'acrobat'+'.'+'adobe'+'.'+'com/id/urn:aaid:sc:AP:';
-    var pdfs=[ac+'ee52fff6-21cc-40c0-a631-bb9eafbca8c9',ac+'688231f9-f89a-45c4-a4c4-d29c85583a8b',ac+'36bed320-9ba2-4b4d-84fc-f90522a29e5b'];
-    cards.forEach(function(card,i){var a=card.querySelector('a.pdf-btn'); if(a&&pdfs[i]){ a.href=pdfs[i]; a.target='_blank'; a.rel='noopener'; a.textContent='PDF'; }});
+    var pdfs=['/assets/pdf/pta-membership-inquiry.pdf','/assets/pdf/pta-withdrawal-notice.pdf','/assets/pdf/personal-data-deletion-request.pdf'];
+    cards.forEach(function(card,i){var a=card.querySelector('a.pdf-btn'); if(a&&pdfs[i]){ a.href=pdfs[i]; a.removeAttribute('target'); a.removeAttribute('rel'); a.textContent='PDFを開く'; }});
   }
 
   function initHomeMap(){
@@ -275,7 +311,7 @@
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
       var group=L.featureGroup(), blue=icon('blue'), red=icon('red'), data=window.PTA_BOARD_RESPONSE_INDEX||{}, munis=data.municipalities||[], blueNames={};
       munis.forEach(function(m){ if(!Array.isArray(m.coordinates))return; blueNames[m.municipality]=true; var mk=L.marker(m.coordinates,{icon:blue,title:m.municipality}).addTo(map).bindPopup('<strong>'+m.municipality+'</strong><br><small>教育委員会回答</small><br><a href="/board-responses.html#ans-'+m.no+'">回答本文へ</a>'); group.addLayer(mk); });
-      TRIP_LOCATIONS.forEach(function(loc){ var lng=blueNames[loc.name]?loc.lng+0.035:loc.lng; var mk=L.marker([loc.lat,lng],{icon:red,title:loc.name,zIndexOffset:250}).addTo(map).bindPopup('<strong>'+loc.name+'</strong><br><small>公文書開示請求・訪問先</small>'); group.addLayer(mk); });
+      TRIP_LOCATIONS.forEach(function(loc){ var lng=blueNames[loc.name]?loc.lng+0.035:loc.lng; var mk=L.marker([loc.lat,lng],{icon:red,title:loc.name,zIndexOffset:250}).addTo(map).bindPopup('<strong>'+loc.name+'</strong><br><small>資料取得・訪問先</small>'); group.addLayer(mk); });
       if(group.getLayers().length) map.fitBounds(group.getBounds().pad(0.08));
       forceTopBurst(1600);
     }
@@ -286,12 +322,12 @@
   function loadArchiveNotice(){ if(location.pathname.endsWith('/national-archive.html')) loadScript('archive-notice-dynamic','/js/archive-notice.js?v=1'); }
 
   function local(){
-    normalizeNavigation(); stabilizeMobileNavigation(); normalizeLinks(); rebuildHomeReadingSection(); replaceHomeFieldcase(); fixGuidePta(); improveParentResponseIntro(); parentConsultationBottom(); pdfLinks(); loadArchiveNotice(); initHomeMap(); forceTopBurst(2200);
+    normalizeNavigation(); stabilizeMobileNavigation(); normalizeLinks(); rebuildHomeReadingSection(); replaceHomeFieldcase(); fixGuidePta(); improveParentResponseIntro(); parentConsultationBottom(); pdfLinks(); loadArchiveNotice(); initHomeMap(); if(location.hash) scheduleHashScroll(); else forceTopBurst(2200);
   }
 
   var original=document.createElement('script');
-  original.src='/js/site-v48-original.js?v=48';
-  original.onload=function(){ patchOriginalNavigationHooks(); ready(function(){ baseInit(); local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(fixGuidePta,250); setTimeout(function(){ stabilizeMobileNavigation(); forceTopBurst(1800); },300); }); };
-  original.onerror=function(){ patchOriginalNavigationHooks(); ready(function(){ local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(function(){ stabilizeMobileNavigation(); forceTopBurst(1800); },300); }); };
+  original.src='/js/site-v48-original.js?v=57';
+  original.onload=function(){ patchOriginalNavigationHooks(); ready(function(){ baseInit(); local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(fixGuidePta,250); setTimeout(function(){ stabilizeMobileNavigation(); if(location.hash) scheduleHashScroll(); else forceTopBurst(1800); },300); }); };
+  original.onerror=function(){ patchOriginalNavigationHooks(); ready(function(){ local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(function(){ stabilizeMobileNavigation(); if(location.hash) scheduleHashScroll(); else forceTopBurst(1800); },300); }); };
   document.head.appendChild(original);
 })();

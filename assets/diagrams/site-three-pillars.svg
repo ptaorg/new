@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" width="760" height="500" font-family="'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif" role="img" aria-label="立場別ガイド、論点ページ、根拠資料を行き来して読む三本柱">
+  <rect x="1" y="1" width="758" height="498" rx="16" fill="#ffffff" stroke="#e7e2d6" stroke-width="1"/>
+  <text x="32" y="38" font-size="12" fill="#7a5d14" font-weight="700">共通 ｜ サイトの歩き方</text>
+  <line x1="32" y1="49" x2="184" y2="49" stroke="#bd9628" stroke-width="2"/>
+  <text x="32" y="76" font-size="21" fill="#1e3a5f" font-weight="700" font-family="'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif">三本柱で確認する</text>
+  <text x="32" y="102" font-size="13" fill="#5c6675">立場別ガイドで全体像をつかみ、論点ページで問題を特定し、一次資料で根拠を確認します。</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#bd9628"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#1e3a5f" flood-opacity=".12"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <rect x="46" y="154" width="196" height="198" rx="14" fill="#f7fbff" stroke="#cdd8e6"/>
+    <rect x="282" y="154" width="196" height="198" rx="14" fill="#fffdf6" stroke="#e5d5a1"/>
+    <rect x="518" y="154" width="196" height="198" rx="14" fill="#f7fbf8" stroke="#c9dfd0"/>
+  </g>
+
+  <circle cx="144" cy="190" r="24" fill="#1e3a5f"/>
+  <text x="144" y="198" font-size="20" fill="#fff" font-weight="700" text-anchor="middle" font-family="'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif">1</text>
+  <text x="144" y="238" font-size="18" fill="#1e3a5f" font-weight="700" text-anchor="middle" font-family="'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif">立場別ガイド</text>
+  <text x="144" y="270" font-size="12.5" fill="#3a4452" text-anchor="middle">保護者・PTA役員・学校</text>
+  <text x="144" y="292" font-size="12.5" fill="#3a4452" text-anchor="middle">それぞれの入口から読む</text>
+  <text x="144" y="325" font-size="11.5" fill="#5c6675" text-anchor="middle">guide-parent / guide-pta / guide-board</text>
+
+  <circle cx="380" cy="190" r="24" fill="#bd9628"/>
+  <text x="380" y="198" font-size="20" fill="#fff" font-weight="700" text-anchor="middle" font-family="'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif">2</text>
+  <text x="380" y="238" font-size="18" fill="#7a5d14" font-weight="700" text-anchor="middle" font-family="'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif">論点ページ</text>
+  <text x="380" y="270" font-size="12.5" fill="#3a4452" text-anchor="middle">入会・個人情報・会費</text>
+  <text x="380" y="292" font-size="12.5" fill="#3a4452" text-anchor="middle">教職員関与・施設利用を確認</text>
+  <text x="380" y="325" font-size="11.5" fill="#5c6675" text-anchor="middle">membership / privacy / fee-collection</text>
+
+  <circle cx="616" cy="190" r="24" fill="#1f7a45"/>
+  <text x="616" y="198" font-size="20" fill="#fff" font-weight="700" text-anchor="middle" font-family="'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif">3</text>
+  <text x="616" y="238" font-size="18" fill="#1f7a45" font-weight="700" text-anchor="middle" font-family="'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif">根拠資料</text>
+  <text x="616" y="270" font-size="12.5" fill="#3a4452" text-anchor="middle">教育委員会回答と実物資料で</text>
+  <text x="616" y="292" font-size="12.5" fill="#3a4452" text-anchor="middle">主張と事実を照合する</text>
+  <text x="616" y="325" font-size="11.5" fill="#5c6675" text-anchor="middle">board-responses / national-archive</text>
+
+  <line x1="252" y1="253" x2="272" y2="253" stroke="#bd9628" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="488" y1="253" x2="508" y2="253" stroke="#bd9628" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M616 366 C616 426 144 426 144 366" fill="none" stroke="#bd9628" stroke-width="3" stroke-dasharray="7 7" marker-end="url(#arrow)"/>
+  <text x="380" y="438" font-size="12.5" fill="#7a5d14" font-weight="700" text-anchor="middle">資料で疑問が出たら、立場別ガイドへ戻って読み直す</text>
+  <text x="32" y="474" font-size="11" fill="#5c6675">注：本図はサイト内の読解順序を示す案内図です。法令・行政回答・資料本文は各ページで確認してください。</text>
+</svg>

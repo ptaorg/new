@@ -4,13 +4,13 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>資料入口・索引 | PTA適正化推進委員会</title>
-<meta content="PTA適正化に関する一次資料、配布資料、回答データベース、行政通知への入口を一覧で案内します。旧documents.html?id=形式のURLにも対応します。" name="description"/>
+<meta content="PTA適正化に関する一次資料、法的根拠、提出用ひな形、回答データベース、行政通知への入口を一覧で案内します。旧documents.html?id=形式のURLにも対応します。" name="description"/>
 <link href="https://ptaorg.com/documents.html" rel="canonical"/>
 <meta content="PTA適正化推進委員会" property="og:site_name"/>
 <meta content="ja_JP" property="og:locale"/>
 <meta content="article" property="og:type"/>
 <meta content="資料入口・索引｜PTA適正化推進委員会" property="og:title"/>
-<meta content="PTA適正化に関する一次資料・配布資料・回答データベースへの入口を一覧で案内します。" property="og:description"/>
+<meta content="PTA適正化に関する一次資料・法的根拠・提出用ひな形・回答データベースへの入口を一覧で案内します。" property="og:description"/>
 <meta content="https://ptaorg.com/documents.html" property="og:url"/>
 <meta content="https://ptaorg.com/og-image-ptaorg-20260603.png" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
@@ -28,16 +28,30 @@
 .doc-item strong{display:block;color:#1e3a5f;font-size:1.02rem;margin-bottom:4px}
 .doc-item span{display:block;color:#64748b;font-size:.88rem;line-height:1.7}
 .doc-item.gold{border-left-color:#d4af37}
+.doc-sec.featured-pack{background:#f7fafc;border:1px solid #d8e0ec;border-top:4px solid #1e3a5f;border-radius:12px;padding:24px 26px 26px}
+.doc-pack-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:22px;align-items:start;margin-top:18px}
+.doc-pack-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.doc-pack-card{display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid #dbe4ee;border-left:4px solid #d4af37;border-radius:0 10px 10px 0;padding:16px 18px;min-height:100%}
+.doc-pack-label{font-size:.75rem;font-weight:900;color:#7c2d12;text-transform:uppercase}
+.doc-pack-card strong{color:#1e3a5f;font-size:1.02rem;line-height:1.45}
+.doc-pack-card p{margin:0;color:#475569;font-size:.91rem;line-height:1.8}
+.doc-pack-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.doc-pack-links a{display:inline-flex;align-items:center;border:1px solid #cbd5e1;border-radius:999px;padding:7px 12px;color:#1e3a5f;background:#fff;text-decoration:none;font-size:.82rem;font-weight:800}
+.doc-pack-links a:hover{background:#1e3a5f;color:#fff;border-color:#1e3a5f}
+.doc-diagram{margin:0;background:#fff;border:1px solid #dbe4ee;border-radius:10px;padding:12px}
+.doc-diagram img{display:block;width:100%;height:auto}
+.doc-diagram figcaption{font-size:.78rem;color:#64748b;line-height:1.7;margin-top:8px}
 .legacy-note{display:none;background:#fff7ed;border:1px solid #fed7aa;border-left:5px solid #b45309;border-radius:0 10px 10px 0;padding:14px 18px;margin:0 0 26px;color:#7c2d12}
 .legacy-note.is-active{display:block}
 .legacy-note a{display:inline-block;margin-top:8px;background:#1e3a5f;color:#fff;text-decoration:none;border-radius:999px;padding:8px 18px;font-weight:700}
+@media(max-width:900px){.doc-pack-layout{grid-template-columns:1fr}.doc-pack-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div aria-label="活動支援のお願い" class="support-strip" role="complementary">
 <div class="support-strip-inner">
 <span class="support-strip-label">応援のお願い</span>
-<span class="support-strip-text">公文書開示、資料整理、Web公開を続けるため、寄付・カンパでのご支援をお願いします。</span>
+<span class="support-strip-text">資料取得、資料整理、Web公開を続けるため、寄付・カンパでのご支援をお願いします。</span>
 <a class="support-strip-link" href="/support.html">応援ページへ</a>
 </div>
 </div>
@@ -166,6 +180,45 @@
 <a class="doc-item" href="board-responses.html"><strong>教育委員会回答データベース</strong><span>76自治体・111件。入会、会費、個人情報、学校関与に関する各教育委員会の公式回答を自治体別・論点別に収録。</span></a>
 <a class="doc-item" href="national-archive.html"><strong>全国資料館（学校別実物文書）</strong><span>自治体別・学校別のPTA配布文書アーカイブ。現在は厚木市36校の資料を中心に収録。</span></a>
 <a class="doc-item" href="administrative-materials.html"><strong>行政通知・公式PDF資料庫</strong><span>横浜市通知、文部科学省通知、個人情報保護委員会資料など、行政発出の根拠資料を整理。</span></a>
+<a class="doc-item gold" href="claim-evidence-ledger.html"><strong>主張と根拠の対応表</strong><span>法令、公式資料、実物文書、教育委員会回答、提出文例を対応させ、資料からどこまで言えるかを整理。</span></a>
+</div>
+</section>
+
+<section class="doc-sec featured-pack" id="legal-template-pack">
+<h2>法的根拠から使う文書パック</h2>
+<p>検索で来た人がすぐ動けるように、根拠資料、確認事項、提出文書、関連ページを一列につなげました。任意加入の一般論ではなく、学校関与・名簿・会費・施設利用の実態を確認するための入口です。</p>
+<div class="doc-item gold" style="margin:16px 0 0"><strong><a href="submission-kit.html" style="color:inherit;text-decoration:none">提出文書キット</a></strong><span>学校・PTA・教育委員会へ出す確認文、会費分離申入書、学校名簿・学校アプリ利用確認書、根拠整理メモを一つにまとめています。</span></div>
+<div class="doc-pack-layout">
+<div class="doc-pack-grid">
+<article class="doc-pack-card">
+<div class="doc-pack-label">入会意思・個人情報</div>
+<strong>加入届・個人情報同意書の3点セット</strong>
+<p>民法522条の申込み・承諾、個人情報保護法の利用目的・第三者提供、横浜市通知のオプトイン整理を一緒に確認します。</p>
+<div class="doc-pack-links"><a href="guideline.html#template-pack">使う順番</a><a href="journal/yokohama-notice-1965.html">横浜市通知</a><a href="privacy.html">個人情報</a></div>
+</article>
+<article class="doc-pack-card">
+<div class="doc-pack-label">教育委員会・学校照会</div>
+<strong>学校関与を確認する照会書</strong>
+<p>入会申込記録、学校名簿・連絡ツール、PTA会費徴収、教職員の事務従事、学校施設利用を、抽象論ではなく文書名で確認します。</p>
+<div class="doc-pack-links"><a href="guideline.html#tpl-board-inquiry">ひな形</a><a href="guide-board.html#school-involvement-action-plan">確認項目</a><a href="board-responses.html">回答例</a></div>
+</article>
+<article class="doc-pack-card">
+<div class="doc-pack-label">会費徴収・学校徴収金</div>
+<strong>PTA会費徴収分離申入書</strong>
+<p>学校徴収金とPTA会費を同じ文書・同じ口座・同じ未納管理で扱う運用について、学校徴収金公会計化とPTA会計処理通知を踏まえて確認します。</p>
+<div class="doc-pack-links"><a href="guideline.html#tpl-fee-separation">ひな形</a><a href="fee-collection.html">論点解説</a><a href="administrative-materials.html">公式資料</a></div>
+</article>
+<article class="doc-pack-card">
+<div class="doc-pack-label">施設利用・職務専念義務</div>
+<strong>PTA活動の校内利用・教職員関与チェック</strong>
+<p>学校教育法137条、社会教育法12条、地方公務員法35条を、印刷・保管・配布・会計・役員兼任などの実務に落として確認します。</p>
+<div class="doc-pack-links"><a href="facilities.html">施設利用</a><a href="personnel.html">教職員関与</a><a href="law-map.html">法制度マップ</a></div>
+</article>
+</div>
+<figure class="doc-diagram">
+<img alt="公式根拠から照会書・申入書へつなぐ流れ" loading="lazy" src="assets/diagrams/source-to-documents.svg"/>
+<figcaption>公式資料を引用して終わらせず、確認事項と提出文書に変換する流れです。</figcaption>
+</figure>
 </div>
 </section>
 
@@ -173,6 +226,8 @@
 <h2>配布資料・テンプレート</h2>
 <p>そのまま印刷・提出・配布できる形に整えた資料です。</p>
 <div class="doc-grid">
+<a class="doc-item gold" href="submission-kit.html"><strong>提出文書キット</strong><span>学校・PTA・教育委員会への確認文例、会費分離申入書、個人情報確認書、根拠整理メモ。</span></a>
+<a class="doc-item" href="claim-evidence-ledger.html"><strong>主張と根拠の対応表</strong><span>主張、根拠条文、公式資料、実物文書、提出文例を一列につなげ、断定を避けて精度を保つ台帳。</span></a>
 <a class="doc-item gold" href="jp/"><strong>教育委員会・学校管理職向け分離資料（/jp/）</strong><span>学校とPTAの分離原則を整理した行政向けガイドライン本文、通知ひな形、学校別実態調査票（PDF・Excel配布）。</span></a>
 <a class="doc-item" href="PTA運営適正化ガイドブック_第4版_改訂本文.html"><strong>PTA運営適正化ガイドブック 第4版</strong><span>保護者・役員・学校向けの総合ガイドブック本文（HTML版）。<a href="PTA運営適正化ガイドブック_第4版_改訂版.pdf">PDF版はこちら</a>。</span></a>
 <a class="doc-item" href="guideline.html"><strong>PTA運営適正化ガイドライン・書式テンプレート</strong><span>入会申込書、同意書、通知文など、適正運営に必要な書式のテンプレート集。</span></a>
@@ -283,7 +338,7 @@
 <div class="footer-support">
 <div>
 <strong>調査・資料公開の継続を応援してください</strong>
-<p>いただいたご支援は、公文書開示、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
+<p>いただいたご支援は、資料取得、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
 </div>
 <a href="/support.html">応援ページへ</a>
 </div>
@@ -291,8 +346,8 @@
 </footer>
 <script>
 const destinations = {
-  'yokohama-notice': ['administrative-materials.html#yokohama', '横浜市通知は、行政資料ページの横浜市通知欄に整理しています。'],
-  'yokohama-bessi': ['administrative-materials.html#yokohama', '横浜市通知の別紙・様式は、行政資料ページの横浜市通知欄に整理しています。'],
+  'yokohama-notice': ['journal/yokohama-notice-1965.html', '横浜市通知は、通知本文・別紙1・別紙2に分けて詳細ページで整理しています。'],
+  'yokohama-bessi': ['journal/yokohama-notice-1965.html', '横浜市通知の別紙・様式は、詳細ページで入会届と個人情報同意の根拠として整理しています。'],
   'ppc-personal-info': ['guide-board.html#key-materials', '個人情報保護委員会資料は、教育委員会向けガイドの根拠資料欄に整理しています。'],
   'mext-accounting-notice': ['guide-board.html#key-materials', '学校徴収金・会計関連資料は、教育委員会向けガイドの根拠資料欄に整理しています。'],
   'mext-koukaikkei-2025': ['guide-board.html#key-materials', '公会計化・学校徴収金関連資料は、教育委員会向けガイドの根拠資料欄に整理しています。'],
@@ -313,6 +368,6 @@ if (id) {
   document.getElementById('legacyNote').classList.add('is-active');
 }
 </script>
-<script defer="" src="js/site.js"></script>
+<script defer="" src="js/site.js?v=81"></script>
 </body>
 </html>

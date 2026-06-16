@@ -64,6 +64,13 @@ body {
   color: #0b2a4a;
 }
 
+.archive-section-lead {
+  margin: 0 0 18px;
+  color: #334155;
+  font-weight: 700;
+  line-height: 1.9;
+}
+
 .archive-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -107,9 +114,20 @@ body {
   margin: 18px 0;
 }
 
+.archive-figure-link {
+  display: block;
+  color: inherit;
+}
+
+.archive-figure-link img {
+  display: block;
+  height: auto;
+}
+
 .archive-figure img,
 .archive-section img {
   max-width: 100%;
+  height: auto;
   border-radius: 14px;
   border: 1px solid #dce3ea;
 }
@@ -160,9 +178,9 @@ body {
 }
 
 .eval-problem {
-  background: #f97316 !important;
+  background: #c2410c !important;
   color: #ffffff !important;
-  border-color: #f97316 !important;
+  border-color: #c2410c !important;
 }
 
 .eval-warning {
@@ -229,7 +247,7 @@ body {
 .archive-count-label {
   display: block;
   font-size: 0.9rem;
-  opacity: 0.9;
+  opacity: 1;
   margin-bottom: 4px;
 }
 
@@ -400,6 +418,119 @@ body {
 
 a.archive-source-chip:hover {
   text-decoration: underline;
+}
+
+.archive-source-list {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.archive-source-list li {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #dce3ea;
+  border-radius: 12px;
+  background: #f7f9fb;
+}
+
+.archive-source-list strong {
+  color: #0b2a4a;
+  font-weight: 900;
+}
+
+.archive-source-list span {
+  color: #334155;
+  overflow-wrap: anywhere;
+}
+
+.archive-source-list a {
+  color: #0b376d;
+  font-weight: 800;
+  text-underline-offset: 3px;
+}
+
+.archive-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.archive-evidence-card {
+  background: #f7f9fb;
+  border: 1px solid #dce3ea;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.archive-check-list {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: archive-check;
+}
+
+.archive-check-list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 14px 12px 52px;
+  border: 1px solid #dce3ea;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.archive-check-list li::before {
+  counter-increment: archive-check;
+  content: counter(archive-check);
+  position: absolute;
+  left: 14px;
+  top: 13px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #0b2a4a;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 0.82rem;
+}
+
+.archive-check-list strong {
+  color: #0b2a4a;
+  font-weight: 900;
+}
+
+.archive-check-list span {
+  color: #334155;
+  overflow-wrap: anywhere;
+}
+
+.archive-assessment-note {
+  border-left: 5px solid #d6ae2b;
+  border-radius: 14px;
+  background: #fffaf0;
+  padding: 18px 20px;
+  color: #334155;
+  line-height: 1.9;
+}
+
+.archive-assessment-note p {
+  margin: 0;
+}
+
+.archive-assessment-note p + p {
+  margin-top: 0.7em;
 }
 
 .archive-related-grid {
@@ -579,8 +710,10 @@ a.archive-source-chip:hover {
 
 .document-figure img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
+  margin-inline: auto;
   border-radius: 12px;
   border: 1px solid #dce3ea;
   background: #ffffff;
@@ -986,12 +1119,41 @@ a.archive-source-chip:hover {
 
 /* スマホ */
 @media (max-width: 720px) {
+  .support-strip-inner {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 6px 8px !important;
+    overflow-x: visible !important;
+    white-space: normal !important;
+  }
+
+  .support-strip-text {
+    flex: 1 1 220px !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+    line-height: 1.55 !important;
+  }
+
   .archive-hero {
     padding: 30px 24px;
   }
 
   .archive-grid {
     grid-template-columns: 1fr;
+  }
+
+  .archive-evidence-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-source-list li,
+  .archive-check-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .archive-check-list li {
+    padding-left: 52px;
   }
 
   .archive-evaluation-summary {

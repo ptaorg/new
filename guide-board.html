@@ -133,8 +133,10 @@
 
     /* Yokohama notice */
     .yk-notice-section{
-      background:linear-gradient(145deg,#2d5a8e,#3b6faa);
-      padding:72px 0;color:#fff;
+      background:#f8fafc;
+      padding:72px 0;color:#172033;
+      border-top:1px solid #dbe4ee;
+      border-bottom:1px solid #dbe4ee;
     }
     .yk-notice-card{
       background:rgba(255,255,255,.07);
@@ -142,6 +144,37 @@
       border-radius:var(--radius);padding:32px;
       max-width:820px;margin:32px auto 0;
     }
+    .yk-notice-section .section-title{color:var(--navy)!important}
+    .yk-notice-section .section-lead{color:#334155!important}
+    .yk-notice-section [style*="color:var(--gold-lt)"]{color:#fde68a!important}
+    .yk-notice-section > .wrap > div[style*="grid"] > div{
+      background:#fff!important;
+      border:1px solid #dbe4ee!important;
+      box-shadow:0 14px 34px rgba(15,39,66,.08);
+    }
+    .yk-case-body{background:#fff;color:#172033}
+    .yk-case-body div,
+    .yk-case-body p,
+    .yk-case-body span{color:#334155!important}
+    .yk-case-body strong{color:#0f2742!important}
+    .yk-case-body div[style*="color:var(--gold-lt)"],
+    .yk-case-body span[style*="color:var(--gold-lt)"]{color:#5f4300!important}
+    .yk-case-body strong[style*="color:var(--gold-lt)"]{color:#0f2742!important}
+    .yk-case-body div[style*="background:rgba(255,255,255,.07)"],
+    .yk-case-body div[style*="background:rgba(255,255,255,.1)"]{
+      background:#f8fafc!important;
+      border:1px solid #dbe4ee!important;
+    }
+    .yk-case-body div[style*="background:rgba(212,175,55"]{
+      background:#fff8df!important;
+      border-color:#e6c65a!important;
+    }
+    .yk-case-body a:not(.btn-gold){
+      color:#0f4c81!important;
+      background:#fff!important;
+      border-color:#cbd5e1!important;
+    }
+    .yk-case-body .btn-gold{color:var(--navy)!important}
 
     @media(max-width:900px){.duty-diagram{grid-template-columns:1fr;gap:16px}.duty-arrow{transform:rotate(90deg)}.scope-grid{grid-template-columns:1fr}.mou-compare{grid-template-columns:1fr}}
     .gb-2col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -503,7 +536,7 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 <div aria-label="活動支援のお願い" class="support-strip" role="complementary">
 <div class="support-strip-inner">
 <span class="support-strip-label">応援のお願い</span>
-<span class="support-strip-text">公文書開示、資料整理、Web公開を継続するため、寄付・カンパでのご支援をお願いします。</span>
+<span class="support-strip-text">資料取得、資料整理、Web公開を継続するため、寄付・カンパでのご支援をお願いします。</span>
 <a class="support-strip-link" href="/support.html">支援ページへ</a>
 </div>
 </div>
@@ -1036,7 +1069,7 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 <details class="chapter-block">
 <summary>第10章　教育委員会が講ずべき施策</summary>
 <div class="chapter-content">
-<p>「実態を知らなかった」では、開示請求・住民監査請求・訴訟が起きた後には通りません。今すぐ実態調査を始めることが訴訟リスク低減の第一歩です。</p>
+<p>「実態を知らなかった」では、保護者から学校関与の説明を求められたときに通りません。今すぐ実態調査を始めることが、紛争予防と説明責任を果たす第一歩です。</p>
 <p>是正の流れ：①各学校にPTA関係文書の提出・報告を求める→②入会申込記録の有無・校長教頭のPTA役員就任・個人情報提供・学校アプリ使用・会費一体徴収の実態を整理する→③消費者契約法・個人情報保護法・社会教育法・地方公務員法との整合性を法令上確認する→④校長・教頭研修を実施し、「学校とPTAの切り分け」を管理職の共通認識にする→⑤各学校・各PTAに対して、入会申込書の整備・学校関与の整理・連絡ツール使用の見直しを進める。</p>
 <p>社会教育法第12条は保護者への門前払いの道具ではありません。保護者から相談がある場合、「学校が関与している部分」については教育委員会の確認対象として受け付け、適切に対応することが必要です。</p>
 </div>
@@ -1109,8 +1142,8 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 <h2 class="section-title">根拠法令・行政通知・調査資料</h2>
 <p class="section-lead">このガイドブックで引用している文部科学省・個人情報保護委員会・横浜市教育委員会の一次資料を、原文PDFを開く前に要点で確認できます。</p>
 <div class="key-materials-grid">
-<a href="#key-materials" onmouseout="this.style.boxShadow='none';this.style.borderColor='#e2e8f0'" onmouseover="this.style.boxShadow='0 4px 20px rgba(30,58,95,.12)';this.style.borderColor='var(--navy)'" style="display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0;overflow:hidden;text-decoration:none;transition:box-shadow .2s,border-color .2s">
-<img alt="文部科学省通知 令和7年4月 学校徴収金公会計化" loading="lazy" src="assets/thumb_mext_koukaikkei.png" style="width:100%;height:160px;object-fit:cover;object-position:0 8%;display:block;border-bottom:1px solid #e2e8f0">
+<a href="administrative-materials.html#fee" onmouseout="this.style.boxShadow='none';this.style.borderColor='#e2e8f0'" onmouseover="this.style.boxShadow='0 4px 20px rgba(30,58,95,.12)';this.style.borderColor='var(--navy)'" style="display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0;overflow:hidden;text-decoration:none;transition:box-shadow .2s,border-color .2s">
+<img alt="文部科学省通知 令和7年4月 学校徴収金公会計化" loading="lazy" src="assets/thumb_mext_koukaikkei.png" style="width:100%;height:160px;object-fit:cover;object-position:0 8%;display:block;border-bottom:1px solid #e2e8f0"/>
 <div style="padding:16px 18px">
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
 <span style="font-size:1.5rem">📄</span>
@@ -1118,10 +1151,10 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 </div>
 <div style="font-weight:800;color:var(--navy);font-size:.95rem;line-height:1.5;margin-bottom:6px">学校徴収金の公会計化等の取組の一層の推進について</div>
 <div style="font-size:.8rem;color:var(--text-soft);line-height:1.6">教材費・校外活動費等を地方公共団体が管理する公会計化を推進。教師の業務負担軽減と透明性向上が目的。</div>
-<div style="margin-top:12px;font-size:.78rem;font-weight:700;color:var(--navy)">資料のポイントを見る</div>
+<div style="margin-top:12px;font-size:.78rem;font-weight:700;color:var(--navy)">学校徴収金・会計資料を見る</div>
 </div>
-</img></a>
-<a href="#key-materials" onmouseout="this.style.boxShadow='none';this.style.borderColor='#e2e8f0'" onmouseover="this.style.boxShadow='0 4px 20px rgba(30,58,95,.12)';this.style.borderColor='var(--navy)'" style="display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0;overflow:hidden;text-decoration:none;transition:box-shadow .2s,border-color .2s">
+</a>
+<a href="administrative-materials.html#mext" onmouseout="this.style.boxShadow='none';this.style.borderColor='#e2e8f0'" onmouseover="this.style.boxShadow='0 4px 20px rgba(30,58,95,.12)';this.style.borderColor='var(--navy)'" style="display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0;overflow:hidden;text-decoration:none;transition:box-shadow .2s,border-color .2s">
 <img alt="文部科学省通知 兼職兼業・会計処理適正化" loading="lazy" src="assets/thumb_mext_accounting.png" style="width:100%;height:160px;object-fit:cover;object-position:0 8%;display:block;border-bottom:1px solid #e2e8f0"/>
 <div style="padding:16px 18px">
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
@@ -1130,10 +1163,10 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 </div>
 <div style="font-weight:800;color:var(--navy);font-size:.95rem;line-height:1.5;margin-bottom:6px">学校関係団体に係る兼職兼業等の取扱い及び会計処理の適正化についての留意事項</div>
 <div style="font-size:.8rem;color:var(--text-soft);line-height:1.6">教職員がPTA等関係団体の業務を担う際の兼職兼業届出と、学校口座でのPTA会費管理の問題点を明示。</div>
-<div style="margin-top:12px;font-size:.78rem;font-weight:700;color:var(--navy)">資料のポイントを見る</div>
+<div style="margin-top:12px;font-size:.78rem;font-weight:700;color:var(--navy)">文科省通知を見る</div>
 </div>
 </a>
-<a href="#key-materials" onmouseout="this.style.boxShadow='none';this.style.borderColor='#e2e8f0'" onmouseover="this.style.boxShadow='0 4px 20px rgba(30,58,95,.12)';this.style.borderColor='var(--navy)'" style="display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0;overflow:hidden;text-decoration:none;transition:box-shadow .2s,border-color .2s">
+<a href="administrative-materials.html#mext" onmouseout="this.style.boxShadow='none';this.style.borderColor='#e2e8f0'" onmouseover="this.style.boxShadow='0 4px 20px rgba(30,58,95,.12)';this.style.borderColor='var(--navy)'" style="display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0;overflow:hidden;text-decoration:none;transition:box-shadow .2s,border-color .2s">
 <img alt="文部科学省 PTA兼職兼業・会計処理点検調査結果" loading="lazy" src="assets/thumb_mext_survey.png" style="width:100%;height:160px;object-fit:cover;object-position:0 8%;display:block;border-bottom:1px solid #e2e8f0"/>
 <div style="padding:16px 18px">
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
@@ -1142,10 +1175,10 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 </div>
 <div style="font-weight:800;color:var(--navy);font-size:.95rem;line-height:1.5;margin-bottom:6px">PTA等学校関係団体に係る兼職兼業等・会計処理適正化の点検・調査結果</div>
 <div style="font-size:.8rem;color:var(--text-soft);line-height:1.6">全国の学校で教職員がPTA業務を勤務時間中に行っている実態と、会計上の問題点を国が調査した結果。</div>
-<div style="margin-top:12px;font-size:.78rem;font-weight:700;color:var(--navy)">資料のポイントを見る</div>
+<div style="margin-top:12px;font-size:.78rem;font-weight:700;color:var(--navy)">文科省資料を見る</div>
 </div>
 </a>
-<a href="administrative-materials.html#yokohama" onmouseout="this.style.boxShadow='none';this.style.borderColor='#e2e8f0'" onmouseover="this.style.boxShadow='0 4px 20px rgba(30,58,95,.12)';this.style.borderColor='var(--navy)'" style="display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0;overflow:hidden;text-decoration:none;transition:box-shadow .2s,border-color .2s">
+<a href="journal/yokohama-notice-1965.html" onmouseout="this.style.boxShadow='none';this.style.borderColor='#e2e8f0'" onmouseover="this.style.boxShadow='0 4px 20px rgba(30,58,95,.12)';this.style.borderColor='var(--navy)'" style="display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0;overflow:hidden;text-decoration:none;transition:box-shadow .2s,border-color .2s">
 <img alt="横浜市教育委員会通知 学教第1965号" loading="lazy" src="assets/yokohama_notice_p1.png" style="width:100%;height:160px;object-fit:cover;object-position:0 8%;display:block;border-bottom:1px solid #e2e8f0"/>
 <div style="padding:16px 18px">
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
@@ -1154,10 +1187,10 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 </div>
 <div style="font-weight:800;color:var(--navy);font-size:.95rem;line-height:1.5;margin-bottom:6px">横浜市教育委員会通知 学教第1965号</div>
 <div style="font-size:.8rem;color:var(--text-soft);line-height:1.6">確認済みの包括的なPTA是正通知。オプトイン、個人情報、職専免、会費代行、連絡ツールの各論点を横断して確認できる。</div>
-<div style="margin-top:12px;font-size:.78rem;font-weight:700;color:var(--navy)">資料のポイントを見る</div>
+<div style="margin-top:12px;font-size:.78rem;font-weight:700;color:var(--navy)">通知本文・別紙の詳細を見る</div>
 </div>
 </a>
-<a href="#key-materials" onmouseout="this.style.boxShadow='none';this.style.borderColor='#e2e8f0'" onmouseover="this.style.boxShadow='0 4px 20px rgba(30,58,95,.12)';this.style.borderColor='var(--navy)'" style="display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0;overflow:hidden;text-decoration:none;transition:box-shadow .2s,border-color .2s">
+<a href="administrative-materials.html#privacy" onmouseout="this.style.boxShadow='none';this.style.borderColor='#e2e8f0'" onmouseover="this.style.boxShadow='0 4px 20px rgba(30,58,95,.12)';this.style.borderColor='var(--navy)'" style="display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0;overflow:hidden;text-decoration:none;transition:box-shadow .2s,border-color .2s">
 <img alt="個人情報保護委員会 学校とPTA間の個人情報" loading="lazy" src="assets/thumb_ppc_personal.png" style="width:100%;height:160px;object-fit:cover;object-position:0 8%;display:block;border-bottom:1px solid #e2e8f0"/>
 <div style="padding:16px 18px">
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
@@ -1166,10 +1199,10 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 </div>
 <div style="font-weight:800;color:var(--navy);font-size:.95rem;line-height:1.5;margin-bottom:6px">公立学校とPTAの間で個人情報のやり取りをするためのポイント</div>
 <div style="font-size:.8rem;color:var(--text-soft);line-height:1.6">国の第三者機関が「学校→PTA への個人情報提供に法的問題がある」と認定した公式文書。</div>
-<div style="margin-top:12px;font-size:.78rem;font-weight:700;color:var(--navy)">資料のポイントを見る</div>
+<div style="margin-top:12px;font-size:.78rem;font-weight:700;color:var(--navy)">PPC資料を見る</div>
 </div>
 </a>
-<a href="#key-materials" onmouseout="this.style.boxShadow='none';this.style.borderColor='#e2e8f0'" onmouseover="this.style.boxShadow='0 4px 20px rgba(30,58,95,.12)';this.style.borderColor='var(--navy)'" style="display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0;overflow:hidden;text-decoration:none;transition:box-shadow .2s,border-color .2s">
+<a href="administrative-materials.html#workstyle" onmouseout="this.style.boxShadow='none';this.style.borderColor='#e2e8f0'" onmouseover="this.style.boxShadow='0 4px 20px rgba(30,58,95,.12)';this.style.borderColor='var(--navy)'" style="display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0;overflow:hidden;text-decoration:none;transition:box-shadow .2s,border-color .2s">
 <img alt="中央教育審議会答申 平成31年 業務の3分類" loading="lazy" src="assets/thumb_mext_toshin.png" style="width:100%;height:160px;object-fit:cover;object-position:0 8%;display:block;border-bottom:1px solid #e2e8f0"/>
 <div style="padding:16px 18px">
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
@@ -1178,7 +1211,7 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 </div>
 <div style="font-weight:800;color:var(--navy);font-size:.95rem;line-height:1.5;margin-bottom:6px">中央教育審議会答申（平成31年1月）業務の3分類</div>
 <div style="font-size:.8rem;color:var(--text-soft);line-height:1.6">教師の業務を「基本・周辺・学校以外」の3分類で整理。PTA業務は「学校以外が担う業務」として明記。</div>
-<div style="margin-top:12px;font-size:.78rem;font-weight:700;color:var(--navy)">資料のポイントを見る</div>
+<div style="margin-top:12px;font-size:.78rem;font-weight:700;color:var(--navy)">働き方改革資料を見る</div>
 </div>
 </a>
 </div>
@@ -1277,7 +1310,7 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 <section class="yk-notice-section">
 <div class="wrap">
 <div class="section-center" style="margin-bottom:16px">
-<div class="section-kicker" style="background:rgba(212,175,55,.15);color:var(--gold-lt)">先進自治体の取り組み</div>
+<div class="section-kicker" style="background:#fff7d6;color:#73510a;border:1px solid rgba(212,175,55,.45)">先進自治体の取り組み</div>
 <h2 class="section-title" style="color:#fff">自治体が動き始めた<br/>最先端の是正事例</h2>
 <p class="section-lead" style="color:rgba(255,255,255,.78);margin-inline:auto;max-width:680px">教育委員会が学校とPTAの関係を制度として点検し、通知や回答で整理を示す例が出ています。ここでは、確認できる資料に基づき、入会意思確認、個人情報、会費徴収、教職員関与、連絡ツール利用を横断して読むための視点を整理します。個別自治体の通知は、そのまま全国一律の結論に置き換えるのではなく、発出主体、対象校、通知本文、添付資料を照合して参照する必要があります。</p>
 </div>
@@ -1293,7 +1326,7 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 </div>
 </div>
 <div onclick="this.previousElementSibling.style.display='block';this.style.display='none'" style="display:none;text-align:center;padding:8px 0;background:rgba(0,0,0,.3);cursor:pointer;font-size:.78rem;color:rgba(255,255,255,.5)">▲ 原本を表示</div>
-<div style="padding:28px 26px">
+<div class="yk-case-body" style="padding:28px 26px">
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
 <span style="font-size:1.6rem">🏙️</span>
 <div>
@@ -1350,8 +1383,8 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
               </div>
 </div>
 <!-- ダウンロードボタン2本 -->
-<a class="btn-gold" href="administrative-materials.html#yokohama" style="width:100%;text-align:center;display:block;box-sizing:border-box;margin-bottom:8px">本通知（学教第1965号）の要点を見る →</a>
-<a href="administrative-materials.html#yokohama" style="display:block;width:100%;text-align:center;box-sizing:border-box;padding:10px 16px;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.4);border-radius:8px;color:var(--gold-lt);font-weight:900;font-size:.88rem;text-decoration:none;margin-bottom:10px">別紙・ひな型の要点を見る →</a>
+<a class="btn-gold" href="journal/yokohama-notice-1965.html" style="width:100%;text-align:center;display:block;box-sizing:border-box;margin-bottom:8px">本通知（学教第1965号）の詳細を見る →</a>
+<a href="administrative-materials.html#yokohama" style="display:block;width:100%;text-align:center;box-sizing:border-box;padding:10px 16px;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.4);border-radius:8px;color:var(--gold-lt);font-weight:900;font-size:.88rem;text-decoration:none;margin-bottom:10px">通知PDF・別紙PDFを見る →</a>
 <a href="board-responses.html#municipality-index" style="display:block;text-align:center;font-size:.82rem;color:rgba(255,255,255,.6);text-decoration:underline">全国の教育委員会の回答を見る →</a>
 </div><!-- /padding wrapper -->
 </div>
@@ -1365,7 +1398,7 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 </div>
 </div>
 <div onclick="this.previousElementSibling.style.display='block';this.style.display='none'" style="display:none;text-align:center;padding:8px 0;background:rgba(0,0,0,.3);cursor:pointer;font-size:.78rem;color:rgba(255,255,255,.5)">▲ 原本を表示</div>
-<div style="padding:28px 26px">
+<div class="yk-case-body" style="padding:28px 26px">
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
 <span style="font-size:1.6rem">📋</span>
 <div>
@@ -1397,11 +1430,11 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 <div style="background:rgba(212,175,55,.08);border:1px dashed rgba(212,175,55,.4);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:.8rem;color:rgba(255,255,255,.75);line-height:1.6">
               📌 今後、PTA連絡協議会と協議しながらガイドライン・各種様式を作成予定。各単位PTAにも周知を図るとしている。
             </div>
-<a class="btn-gold" href="#municipal-voices" style="width:100%;text-align:center;display:block;box-sizing:border-box">厚木市通知の要点を見る →</a>
+<a class="btn-gold" href="assets/docs/atsugi-pta-notice-2026.pdf" style="width:100%;text-align:center;display:block;box-sizing:border-box">厚木市通知PDFを開く →</a>
 </div><!-- /padding wrapper -->
 </div>
 </div>
-<p style="text-align:center;font-size:.82rem;color:rgba(255,255,255,.5);margin-top:20px">これらの事例は、全国の教育委員会が是正を進める際の先例として参照できます。</p>
+<p style="text-align:center;font-size:.82rem;color:#475569;margin-top:20px">これらの事例は、全国の教育委員会が是正を進める際の先例として参照できます。</p>
 </div>
 </section>
 <!-- 職務専念義務の図解 -->
@@ -1612,7 +1645,7 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 <div style="display:flex;flex-direction:column;gap:10px">
 <div style="display:flex;align-items:flex-start;gap:9px;font-size:.88rem;color:var(--text);line-height:1.65"><span style="color:#1d4ed8;flex-shrink:0">▶</span>保護者がPTA問題を教委に相談すると「PTAは社会教育関係団体で独立した団体なので介入できない」と門前払い</div>
 <div style="display:flex;align-items:flex-start;gap:9px;font-size:.88rem;color:var(--text);line-height:1.65"><span style="color:#1d4ed8;flex-shrink:0">▶</span>PTA強制加入・会費不正について是正を求めると「PTAの内部問題」として拒絶</div>
-<div style="display:flex;align-items:flex-start;gap:9px;font-size:.88rem;color:var(--text);line-height:1.65"><span style="color:#1d4ed8;flex-shrink:0">▶</span>情報公開請求に対し「PTAは別団体なので文書は保有していない」と回答</div>
+<div style="display:flex;align-items:flex-start;gap:9px;font-size:.88rem;color:var(--text);line-height:1.65"><span style="color:#1d4ed8;flex-shrink:0">▶</span>学校が配布・回収・徴収に関与しているのに「PTAは別団体なので把握していない」と回答</div>
 </div>
 </div>
 <div style="background:#fff5f5;border:1px solid #fecaca;border-radius:var(--radius);padding:24px">
@@ -1905,7 +1938,7 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 <div class="wrap">
 <div class="section-kicker">点検チェックリスト</div>
 <h2 class="section-title">教育委員会・校長が確認すべき<br/>13の点検項目</h2>
-<p class="section-lead">「実態を知らなかった」では、開示請求・住民監査請求・訴訟が起きた後には通りません。各項目を確認し、是正が必要な箇所を把握してください。</p>
+<p class="section-lead">「実態を知らなかった」では、保護者や議会から学校関与の説明を求められたときに通りません。各項目を確認し、是正が必要な箇所を把握してください。</p>
 <div style="display:flex;gap:40px;align-items:flex-start;margin-top:40px;flex-wrap:wrap">
 <!-- 進捗インジケーター -->
 <div style="flex-shrink:0;text-align:center;width:140px;margin:0 auto">
@@ -2247,7 +2280,7 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 <div style="font-size:.74rem;font-weight:900;letter-spacing:.06em;color:var(--text-soft);margin-bottom:6px">参考モデル</div>
 <p style="font-size:.9rem;color:var(--text);margin:0;line-height:1.7">横浜市通知とされる資料では、段階的な移行を想定した整理が示されています。各自治体が参照する場合は、通知本文、添付資料、対象校、現行性を確認する必要があります。</p>
 </div>
-<a class="btn-navy" href="administrative-materials.html#yokohama" style="white-space:nowrap;flex-shrink:0">横浜市通知の要点を見る →</a>
+<a class="btn-navy" href="journal/yokohama-notice-1965.html" style="white-space:nowrap;flex-shrink:0">横浜市通知の詳細を見る →</a>
 </div>
 </div>
 </section>
@@ -2339,7 +2372,7 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 <div class="faq-body" style="display:none;padding:0 24px 24px;padding-left:72px">
 <p style="font-size:.93rem;color:var(--text);line-height:1.9;margin:0 0 14px"><strong>ありません。</strong>厚木市教育委員会は「PTAが独自に徴収することが最もふさわしい方法」と回答しており、学校代行徴収に法的位置づけはないと明言しています。慣習的に続けられているだけで、覚書・委任状があっても<strong>法的正当性を付与するものではありません</strong>。入会契約が存在しない状態での代行徴収は「無効な債権の集金代行」となり、学校・教育委員会双方にリスクが生じます。</p>
 <div style="background:#fff5f5;border-left:3px solid #b91c1c;padding:12px 16px;border-radius:0 var(--radius-sm) var(--radius-sm) 0">
-<p style="font-size:.88rem;color:#7f1d1d;margin:0;line-height:1.75">参照：厚木市教育委員会への情報公開請求（令和6年）回答文書</p>
+<p style="font-size:.88rem;color:#7f1d1d;margin:0;line-height:1.75">参照：厚木市教育委員会の令和6年回答文書</p>
 </div>
 </div>
 </div>
@@ -2386,7 +2419,7 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 <span class="faq-arrow" style="flex-shrink:0;font-size:1.2rem;color:var(--text-soft);transition:transform .25s">▼</span>
 </button>
 <div class="faq-body" style="display:none;padding:0 24px 24px;padding-left:72px">
-<p style="font-size:.93rem;color:var(--text);line-height:1.9;margin:0 0 14px"><strong>誠実に回答する義務があります。</strong>教育委員会への照会に対し不誠実な対応を行った自治体が後に情報公開請求で実態が明らかになるケース（静岡市等）があります。「管轄外」として逃げることは後の行政責任リスクを高めます。</p>
+<p style="font-size:.93rem;color:var(--text);line-height:1.9;margin:0 0 14px"><strong>誠実に回答する義務があります。</strong>教育委員会への照会に対し不十分な対応を行った自治体では、後から学校関与の実態が問題化することがあります。「管轄外」として逃げることは、行政責任の説明を難しくします。</p>
 <div style="background:#fffbeb;border:1px solid #fcd34d;border-radius:var(--radius-sm);padding:14px 18px">
 <p style="font-size:.88rem;color:#92400e;margin:0;line-height:1.8"><strong>注意：</strong>「PTAは民間団体なので教育委員会は関知しない」という回答だけでは、学校が配布・徴収・名簿提供・教職員事務に関与していた場合の説明として不足します。後から実態が判明したときに、学校関与を把握しながら点検しなかったのではないかと問われるリスクがあります。</p>
 </div>
@@ -2531,7 +2564,7 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 <div style="flex:1;background:#fff5f5;border:1px solid #fecaca;border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow-sm)">
 <div style="font-size:.75rem;font-weight:900;letter-spacing:.06em;color:#b91c1c;margin-bottom:8px">令和8年4月</div>
 <p style="font-size:.97rem;font-weight:700;color:var(--navy);margin:0 0 8px">大規模な個人情報提供の根拠確認が問題化</p>
-<p style="font-size:.9rem;color:var(--text-soft);margin:0;line-height:1.8">情報公開請求により、市立20校・9,200人分の児童名簿が保護者の同意なくPTAに提供されていた実態が明らかになった。</p>
+<p style="font-size:.9rem;color:var(--text-soft);margin:0;line-height:1.8">市立20校・9,200人分の児童名簿が、保護者の同意確認が不十分なままPTAに提供されていた実態が問題化した。</p>
 </div>
 </div>
 <!-- Step 3 -->
@@ -2641,13 +2674,13 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 <div class="footer-support">
 <div>
 <strong>調査・資料公開の継続を応援してください</strong>
-<p>いただいたご支援は、公文書開示、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
+<p>いただいたご支援は、資料取得、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
 </div>
 <a href="/support.html">応援ページへ</a>
 </div>
 <p class="copyright">© PTA適正化推進委員会</p>
 </footer>
-<script src="js/site.js"></script>
+<script src="js/site.js?v=81"></script>
 <script id="guide-board-direct-fix-script-20260605">
 document.addEventListener('DOMContentLoaded', function() {
   document.body.classList.add('guide-board-direct-fixed');

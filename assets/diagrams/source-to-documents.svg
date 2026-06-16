@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="430" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">公式根拠から提出文書へつなぐ流れ</title>
+  <desc id="desc">行政資料や法令を、確認事項、提出文書、是正結果へ順番につなぐ図解。</desc>
+  <defs>
+    <filter id="softShadow" x="-12%" y="-16%" width="124%" height="132%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#0f2742" flood-opacity=".12"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#1e3a5f"/>
+    </marker>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e3a5f"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="920" height="430" fill="#f6f8fb"/>
+  <rect x="34" y="28" width="852" height="76" rx="12" fill="url(#header)"/>
+  <text x="64" y="62" fill="#ffffff" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="22" font-weight="900">根拠は、提出文書に変換して初めて現場で使える</text>
+  <text x="64" y="88" fill="#dbeafe" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13">法令名だけで終わらせず、確認する事実と提出する文書へ落とし込む。</text>
+
+  <g filter="url(#softShadow)">
+    <rect x="54" y="145" width="170" height="150" rx="10" fill="#ffffff" stroke="#d8e0ec"/>
+    <rect x="54" y="145" width="170" height="38" rx="10" fill="#e8f1fb"/>
+    <text x="139" y="170" text-anchor="middle" fill="#1e3a5f" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="15" font-weight="900">1 公式根拠</text>
+    <text x="78" y="213" fill="#334155" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13" font-weight="700">・横浜市通知</text>
+    <text x="78" y="238" fill="#334155" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13" font-weight="700">・PPC資料</text>
+    <text x="78" y="263" fill="#334155" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13" font-weight="700">・文科省通知</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="274" y="145" width="170" height="150" rx="10" fill="#ffffff" stroke="#d8e0ec"/>
+    <rect x="274" y="145" width="170" height="38" rx="10" fill="#ecfdf5"/>
+    <text x="359" y="170" text-anchor="middle" fill="#166534" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="15" font-weight="900">2 確認事項</text>
+    <text x="298" y="213" fill="#334155" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13" font-weight="700">・入会申込の有無</text>
+    <text x="298" y="238" fill="#334155" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13" font-weight="700">・名簿提供の根拠</text>
+    <text x="298" y="263" fill="#334155" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13" font-weight="700">・会費徴収の経路</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="494" y="145" width="170" height="150" rx="10" fill="#ffffff" stroke="#d8e0ec"/>
+    <rect x="494" y="145" width="170" height="38" rx="10" fill="#fff7ed"/>
+    <text x="579" y="170" text-anchor="middle" fill="#9a3412" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="15" font-weight="900">3 提出文書</text>
+    <text x="518" y="213" fill="#334155" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13" font-weight="700">・入会3点セット</text>
+    <text x="518" y="238" fill="#334155" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13" font-weight="700">・学校照会書</text>
+    <text x="518" y="263" fill="#334155" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13" font-weight="700">・徴収分離申入書</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="714" y="145" width="170" height="150" rx="10" fill="#ffffff" stroke="#d8e0ec"/>
+    <rect x="714" y="145" width="170" height="38" rx="10" fill="#eef2ff"/>
+    <text x="799" y="170" text-anchor="middle" fill="#3730a3" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="15" font-weight="900">4 是正</text>
+    <text x="738" y="213" fill="#334155" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13" font-weight="700">・学校関与の分離</text>
+    <text x="738" y="238" fill="#334155" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13" font-weight="700">・本人同意の取得</text>
+    <text x="738" y="263" fill="#334155" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13" font-weight="700">・回答記録の保存</text>
+  </g>
+
+  <path d="M232 220 H262" stroke="#1e3a5f" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path d="M452 220 H482" stroke="#1e3a5f" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path d="M672 220 H702" stroke="#1e3a5f" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="54" y="328" width="830" height="58" rx="10" fill="#ffffff" stroke="#d4af37" stroke-width="2"/>
+  <text x="84" y="354" fill="#1e3a5f" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="14" font-weight="900">読み方</text>
+  <text x="84" y="376" fill="#475569" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="13">「任意加入です」で止めず、根拠資料、照会項目、提出文書、行政回答の保存までを一つの手順にする。</text>
+</svg>

@@ -8,7 +8,7 @@ window.LAW_DATA = {
       <p><a href="https://laws.e-gov.go.jp/law/415AC0000000057" target="_blank" rel="noopener noreferrer" class="egov-link">e-Govで条文を確認する</a></p>
     `,
     evidence: [
-      { label: '資料室：個人情報提供問題', url: 'https://sites.google.com/view/ptatekiseika/' },
+      { label: '個人情報ページ', url: '../privacy.html' },
       { label: '法制度マップ該当箇所', url: '../law-map.html#personal-info' }
     ]
   },
@@ -20,7 +20,7 @@ window.LAW_DATA = {
       <p><a href="https://laws.e-gov.go.jp/law/325AC0000000261" target="_blank" rel="noopener noreferrer" class="egov-link">e-Govで条文を確認する</a></p>
     `,
     evidence: [
-      { label: '資料室：学校関与・職務専念義務', url: 'https://sites.google.com/view/ptatekiseika/' },
+      { label: '教職員関与ページ', url: '../personnel.html' },
       { label: '法制度マップ該当箇所', url: '../law-map.html#local-public-service' }
     ]
   },
@@ -32,7 +32,7 @@ window.LAW_DATA = {
       <p><a href="https://laws.e-gov.go.jp/law/129AC0000000089" target="_blank" rel="noopener noreferrer" class="egov-link">e-Govで条文を確認する</a></p>
     `,
     evidence: [
-      { label: '資料室：入会届・オプトアウト問題', url: 'https://sites.google.com/view/ptatekiseika/' },
+      { label: '入会手続ページ', url: '../membership.html' },
       { label: 'オプトアウト問題ページ', url: '../membership.html' }
     ]
   },
@@ -45,7 +45,7 @@ window.LAW_DATA = {
     `,
     evidence: [
       { label: 'オプトアウト問題ページ', url: '../membership.html' },
-      { label: '資料室トップ', url: 'https://sites.google.com/view/ptatekiseika/' }
+      { label: '資料入口・索引', url: '../documents.html' }
     ]
   },
   'school-edu': {
@@ -56,7 +56,7 @@ window.LAW_DATA = {
       <p><a href="https://laws.e-gov.go.jp/law/322AC0000000026" target="_blank" rel="noopener noreferrer" class="egov-link">e-Govで条文を確認する</a></p>
     `,
     evidence: [
-      { label: '資料室：学校施設・PTA室問題', url: 'https://sites.google.com/view/ptatekiseika/' },
+      { label: '施設利用ページ', url: '../facilities.html' },
       { label: '法制度マップ該当箇所', url: '../law-map.html#school-edu' }
     ]
   },
@@ -69,7 +69,7 @@ window.LAW_DATA = {
     `,
     evidence: [
       { label: '法制度マップ該当箇所', url: '../law-map.html#social-education' },
-      { label: '資料室トップ', url: 'https://sites.google.com/view/ptatekiseika/' }
+      { label: '資料入口・索引', url: '../documents.html' }
     ]
   }
 };

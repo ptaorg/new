@@ -544,7 +544,7 @@
 .audio-arrow { font-size: 1.5rem; color: rgba(255,255,255,.4); flex-shrink: 0; }
 
 /* =============================================
-   DOCUMENTS — 公文書開示資料
+   DOCUMENTS — 収集資料
    ============================================= */
 .docs-section { background: #fff; padding: 100px 0; }
 .docs-visual {
@@ -867,6 +867,86 @@
   font-size: .87rem; font-weight: 800; text-decoration: none; transition: all .2s;
 }
 .support-btn-sub:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+
+/* ---- action pack section ---- */
+.action-pack-section {
+  background: #f7fafc;
+  padding: 84px 0 92px;
+  border-top: 1px solid rgba(5,17,31,.08);
+  border-bottom: 1px solid rgba(5,17,31,.08);
+}
+.action-pack-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 28px;
+  align-items: start;
+  margin-top: 34px;
+}
+.action-pack-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+}
+.action-pack-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 100%;
+  background: #fff;
+  border: 1px solid #dbe4ee;
+  border-left: 4px solid var(--navy);
+  border-radius: 0 10px 10px 0;
+  padding: 18px 20px;
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow .18s, transform .18s, border-color .18s;
+}
+.action-pack-card:hover {
+  border-left-color: var(--gold);
+  box-shadow: 0 10px 26px rgba(5,17,31,.10);
+  transform: translateY(-2px);
+}
+.action-pack-label {
+  font-size: .72rem;
+  font-weight: 900;
+  color: #7c2d12;
+  letter-spacing: .08em;
+}
+.action-pack-card strong {
+  font-size: 1.02rem;
+  color: var(--navy);
+  line-height: 1.48;
+}
+.action-pack-card span {
+  font-size: .88rem;
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+.action-pack-figure {
+  margin: 0;
+  background: #fff;
+  border: 1px solid #dbe4ee;
+  border-radius: 10px;
+  padding: 12px;
+}
+.action-pack-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.action-pack-figure figcaption {
+  margin-top: 8px;
+  font-size: .78rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+@media(max-width:960px){
+  .action-pack-layout { grid-template-columns: 1fr; }
+}
+@media(max-width:640px){
+  .action-pack-grid { grid-template-columns: 1fr; }
+  .action-pack-section { padding: 60px 0 68px; }
+}
 
 /* responsive for new sections */
 @media(max-width:1024px){
@@ -1666,7 +1746,7 @@
 <div aria-label="活動支援のお願い" class="support-strip" role="complementary">
 <div class="support-strip-inner">
 <span class="support-strip-label">応援のお願い</span>
-<span class="support-strip-text">公文書開示、資料整理、Web公開を続けるため、寄付・カンパでのご支援をお願いします。</span>
+<span class="support-strip-text">資料取得、資料整理、Web公開を続けるため、寄付・カンパでのご支援をお願いします。</span>
 <a class="support-strip-link" href="/support.html">応援ページへ</a>
 </div>
 </div>
@@ -1800,14 +1880,51 @@
 <div class="wrap" style="max-width:980px">
 <div class="section-kicker">Main Issue</div>
 <h2 class="section-title" id="home-reading-title">問題は、PTAがあることではなく、学校手続に溶け込んで見えなくなることです。</h2>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/00-共通/01_違法の連鎖.svg" alt="図解：違法の連鎖" loading="lazy" style="display:block;width:100%;height:auto"></figure>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/00-共通/02_学校とPTAの完全分離.svg" alt="図解：学校とPTAの完全分離" loading="lazy" style="display:block;width:100%;height:auto"></figure>
+<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/00-%E5%85%B1%E9%80%9A/01_%E9%81%95%E6%B3%95%E3%81%AE%E9%80%A3%E9%8E%96.svg" alt="図解：違法の連鎖" loading="eager" width="760" height="769" style="display:block;width:100%;height:auto"></figure>
+<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/00-%E5%85%B1%E9%80%9A/02_%E5%AD%A6%E6%A0%A1%E3%81%A8PTA%E3%81%AE%E5%AE%8C%E5%85%A8%E5%88%86%E9%9B%A2.svg" alt="図解：学校とPTAの完全分離" loading="eager" width="760" height="485" style="display:block;width:100%;height:auto"></figure>
 <p class="section-lead" style="max-width:860px">PTAは、保護者と教職員が任意に参加する団体です。その活動自体を否定する必要はありません。確認すべきなのは、入会意思、会費、名簿、連絡、配布、教職員の事務が、学校の手続や学校の資源にどこまで組み込まれているかです。</p>
 <div class="editorial-bluebar" style="margin-top:24px">任意団体として尊重するためにこそ、学校の業務、学校の情報、学校徴収金、学校施設との境界を明確にする。</div>
 <div aria-label="トップページの主要論点" class="editorial-matrix" style="margin-top:24px">
 <div class="editorial-matrix-row"><div class="editorial-matrix-term">入会</div><div class="editorial-matrix-desc">申込書や承諾記録がないまま、全家庭を会員扱いしていないか。</div></div>
 <div class="editorial-matrix-row"><div class="editorial-matrix-term">会費</div><div class="editorial-matrix-desc">学校徴収金とPTA会費が、同じ案内・同じ口座・同じ未納管理で処理されていないか。</div></div>
 <div class="editorial-matrix-row"><div class="editorial-matrix-term">情報・人・場所</div><div class="editorial-matrix-desc">学校保有情報、学校連絡ツール、教職員の勤務時間、学校施設が、PTA内部事務のために使われていないか。</div></div>
+</div>
+</div>
+</section>
+<section class="action-pack-section" id="action-pack">
+<div class="wrap" style="max-width:1080px">
+<div class="section-center">
+<div class="section-kicker">Evidence to Action</div>
+<h2 class="section-title">根拠を、照会書と申入書へ変換する</h2>
+<p class="section-lead">このサイトの強みは、任意加入の一般論ではなく、学校・教育委員会に確認できる文書へ落とし込むことです。まずは横浜市通知、公式資料、提出用ひな形をつなげて読んでください。</p>
+</div>
+<div class="action-pack-layout">
+<div class="action-pack-grid">
+<a class="action-pack-card" href="journal/yokohama-notice-1965.html">
+<span class="action-pack-label">Yokohama Notice</span>
+<strong>横浜市教育委員会通知を確認する</strong>
+<span>入会意思、個人情報同意、未加入家庭への配慮、会費説明を3点セットで読む中核資料です。</span>
+</a>
+<a class="action-pack-card" href="documents.html#legal-template-pack">
+<span class="action-pack-label">Document Pack</span>
+<strong>法的根拠から使う文書パック</strong>
+<span>法令・通知・確認事項・提出文書を一列につなげた入口です。</span>
+</a>
+<a class="action-pack-card" href="guideline.html#tpl-board-inquiry">
+<span class="action-pack-label">Inquiry Form</span>
+<strong>学校・教育委員会への照会書</strong>
+<span>入会記録、名簿、会費、教職員関与、施設利用を文書名で確認します。</span>
+</a>
+<a class="action-pack-card" href="journal.html#google-sites-legacy-topics">
+<span class="action-pack-label">Journal</span>
+<strong>旧Google Sites由来の論点整理</strong>
+<span>消費者契約、非会員情報、公益性、学校徴収金を一次資料ベースで再編集しています。</span>
+</a>
+</div>
+<figure class="action-pack-figure">
+<img alt="公式根拠から提出文書へつなぐ流れ" loading="lazy" src="assets/diagrams/source-to-documents.svg"/>
+<figcaption>公式資料は、確認質問と提出文書に変換して初めて現場で使いやすくなります。</figcaption>
+</figure>
 </div>
 </div>
 </section>
@@ -1861,7 +1978,7 @@
 </div>
 <div class="feature-duo-card-body">
 <h3>自治体・教育委員会の公式回答</h3>
-<p class="feature-duo-card-lead">76自治体・111件の分類済み回答を含む、教育委員会への照会・公文書開示請求によって得た行政の公式見解を収録しています。任意加入・個人情報提供・会費代行徴収・教職員関与など、論点ごとに自治体名・担当部署・回答年月を整理して掲載。「行政がどう認識しているか」を一次資料で確認できます。</p>
+<p class="feature-duo-card-lead">76自治体・111件の分類済み回答を含む、教育委員会への照会と資料収集によって得た行政の公式見解を収録しています。任意加入・個人情報提供・会費代行徴収・教職員関与など、論点ごとに自治体名・担当部署・回答年月を整理して掲載。「行政がどう認識しているか」を一次資料で確認できます。</p>
 <div class="feature-duo-card-cta">回答データベースを開く →</div>
 </div>
 </a>
@@ -1871,7 +1988,7 @@
 </div>
 <div class="feature-duo-card-body">
 <h3>全国の実際のPTA書類</h3>
-<p class="feature-duo-card-lead">情報公開請求・公文書開示請求によって各地の学校・教育委員会から入手した実物書類を公開しています。PTA規約・会費徴収文書・学校との覚書・職務専念義務免除申請書・会計決算書など、現場の実態を「慣習」ではなく実際の文書で確認できます。</p>
+<p class="feature-duo-card-lead">各地の学校・教育委員会から入手した実物書類を公開しています。PTA規約・会費徴収文書・学校との覚書・職務専念義務免除申請書・会計決算書など、現場の実態を「慣習」ではなく実際の文書で確認できます。</p>
 <div class="feature-duo-card-cta">全国資料館を開く →</div>
 </div>
 </a>
@@ -1912,7 +2029,7 @@
 <div class="section-kicker">How to Use</div>
 <h2 class="section-title">このサイトの歩き方</h2>
 <p class="section-lead" style="max-width:860px">立場別ガイドで全体像をつかみ、論点ページで問題を特定し、回答データベースと実物資料で根拠を確かめる——この三本柱の順に読み進められる構成です。</p>
-<figure style="margin:26px auto;max-width:920px"><img alt="図解：立場別ガイド、論点、証拠資料の三本柱の関係" loading="lazy" src="assets/diagrams/00-共通/00_サイトの三本柱.svg" style="display:block;width:100%;height:auto"/></figure>
+<figure style="margin:26px auto;max-width:920px"><img alt="図解：立場別ガイド、論点、証拠資料の三本柱の関係" decoding="async" height="500" loading="eager" src="assets/diagrams/site-three-pillars.svg" style="display:block;width:100%;height:auto" width="760"/></figure>
 <div class="editorial-matrix" style="margin-top:8px">
 <div class="editorial-matrix-row"><div class="editorial-matrix-term">点検する</div><div class="editorial-matrix-desc"><a href="audit/index.html">運営チェックアプリ</a>で、自校・自PTAの運営を設問に沿って確認できます。</div></div>
 <div class="editorial-matrix-row"><div class="editorial-matrix-term">是正を求める</div><div class="editorial-matrix-desc"><a href="jp/">教育委員会・学校管理職向け分離資料（/jp/）</a>に、ガイドライン本文、通知ひな形、学校別実態調査票をPDF・Excelで用意しています。</div></div>
@@ -2056,13 +2173,13 @@
 <div class="footer-support">
 <div>
 <strong>調査・資料公開の継続を応援してください</strong>
-<p>いただいたご支援は、公文書開示、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
+<p>いただいたご支援は、資料取得、資料整理、Web公開、自治体・学校への働きかけに活用します。</p>
 </div>
 <a href="/support.html">応援ページへ</a>
 </div>
 <p class="copyright">© PTA適正化推進委員会</p>
 </footer>
-<script src="js/site.js"></script>
+<script src="js/site.js?v=81"></script>
 <script>
 /* ==========================================
    Hero Slideshow — クロスフェード + Ken Burns

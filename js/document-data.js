@@ -7,9 +7,9 @@ window.PTA_DOCUMENTS = {
     date: "令和7年（2025年）12月",
     type: "教育委員会通知・別紙資料",
     category: "Official Document",
-    pdfUrl: "https://acrobat.adobe.com/id/urn:aaid:sc:AP:eea7f8a5-4a69-4bb6-ab8f-7550c036c5a8",
-    pdfLabel: "外部PDFを開く（Adobe Acrobat共有リンク）",
-    pdfSize: "外部リンク",
+    pdfUrl: "assets/docs/yokohama-notice-1965.pdf",
+    pdfLabel: "通知PDFを開く",
+    pdfSize: "PDF・約296KB",
     intro: "横浜市が示した「PTA運営の留意点について（通知）」および別紙資料を整理したページです。PTAが任意団体であり、加入・活動・会費負担が保護者の自由意思に基づくべきこと、個人情報の適正な取扱い、未加入家庭への配慮、学校徴収金とPTA会費を扱う場合の注意点などを確認できます。",
     metaItems: [
       { label: "資料種別", value: "教育委員会通知・別紙資料" },
@@ -307,7 +307,7 @@ window.PTA_DOCUMENTS = {
       "兼職兼業の扱い",
       "会計処理の適正化",
       "学校関係団体の範囲",
-      "点検結果の読み方"
+      "点検結果の確認ポイント"
     ],
     keyPoints: [
       "PTA業務の学校依存を点検する視点が得られます。",
@@ -389,7 +389,7 @@ window.PTA_DOCUMENTS = {
     ]
   },
   "guidebook-board": {
-    title: "学校・教育委員会向けガイドブックの読み方",
+    title: "学校・教育委員会向けガイドブックの確認ポイント",
     documentName: "PTA運営適正化ガイドブック 第4版",
     issuer: "PTA適正化推進委員会",
     date: "第4版",
@@ -423,7 +423,7 @@ window.PTA_DOCUMENTS = {
     ]
   },
   "guidebook-pta": {
-    title: "PTA役員向けガイドブックの読み方",
+    title: "PTA役員向けガイドブックの確認ポイント",
     documentName: "PTA役員向け運営適正化ガイドブック",
     issuer: "PTA適正化推進委員会",
     date: "第1版",
