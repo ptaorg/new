@@ -340,48 +340,166 @@ body.guide-board-direct-fixed .board-guide-section { padding:0!important;margin:
 body.guide-board-direct-fixed .board-auto-accordion {
   width:100%!important;
   background:#fff!important;
-  border:1px solid #dbe4ee!important;
-  border-radius:14px!important;
-  margin:0 auto 10px!important;
+  border:1px solid #d7dee8!important;
+  border-radius:8px!important;
+  margin:0 auto 8px!important;
   overflow:hidden!important;
-  box-shadow:0 8px 22px rgba(15,39,66,.05)!important;
+  box-shadow:none!important;
 }
 body.guide-board-direct-fixed .board-auto-accordion summary {
-  font-family:'Noto Serif JP',serif!important;
-  font-size:clamp(1.45rem,2.6vw,2.15rem)!important;
-  line-height:1.42!important;
-  font-weight:900!important;
-  color:#1e3a5f!important;
-  border-left:7px solid #1d4ed8!important;
-  padding:20px 24px!important;
+  font-family:'Noto Sans JP',sans-serif!important;
+  font-size:clamp(.96rem,1.25vw,1.08rem)!important;
+  line-height:1.55!important;
+  font-weight:800!important;
+  color:#172033!important;
+  border-left:0!important;
+  padding:14px 18px!important;
   cursor:pointer!important;
   list-style:none!important;
   display:flex!important;
   align-items:center!important;
   justify-content:space-between!important;
   background:#fff!important;
-  gap:18px!important;
+  gap:14px!important;
+  letter-spacing:0!important;
 }
 body.guide-board-direct-fixed .board-auto-accordion summary::-webkit-details-marker { display:none!important; }
 body.guide-board-direct-fixed .board-auto-accordion summary::after {
-  content:'＋';
+  content:''!important;
   font-family:system-ui,sans-serif!important;
-  font-size:1.45rem!important;
-  color:#1d4ed8!important;
-  font-weight:900!important;
+  width:18px!important;
+  height:18px!important;
   flex-shrink:0!important;
+  background:no-repeat center/18px 18px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E")!important;
+  transform:rotate(0deg)!important;
+  transition:transform .18s ease!important;
 }
-body.guide-board-direct-fixed .board-auto-accordion[open] summary::after { content:'−'; }
+body.guide-board-direct-fixed .board-auto-accordion[open] summary::after { transform:rotate(90deg)!important; }
 body.guide-board-direct-fixed .board-auto-accordion[open] summary { background:#f8fafc!important;border-bottom:1px solid #e2e8f0!important; }
-body.guide-board-direct-fixed .board-auto-accordion .chapter-content { padding:22px 28px 26px!important;line-height:1.95!important;color:#1e293b!important; }
+body.guide-board-direct-fixed .board-auto-accordion .chapter-content { padding:16px 20px 20px!important;line-height:1.85!important;color:#1e293b!important;font-size:.94rem!important; }
 body.guide-board-direct-fixed .board-auto-accordion .section-kicker { display:none!important; }
 @media(max-width:780px) {
   body.guide-board-direct-fixed #board-bluf-v22,
   body.guide-board-direct-fixed #board-fact-accordion-v31,
   body.guide-board-direct-fixed .board-guide-section > .wrap,
   body.guide-board-direct-fixed .board-guide-section .wrap { width:min(calc(100% - 32px),1120px)!important; }
-  body.guide-board-direct-fixed .board-auto-accordion summary { font-size:1.28rem!important;padding:17px 18px!important; }
-  body.guide-board-direct-fixed .board-auto-accordion .chapter-content { padding:18px 18px 22px!important; }
+  body.guide-board-direct-fixed .board-auto-accordion summary { font-size:.95rem!important;padding:13px 15px!important; }
+  body.guide-board-direct-fixed .board-auto-accordion .chapter-content { padding:16px 15px 18px!important; }
+}
+body.guide-board-direct-fixed .chapter-block {
+  border-color:#d7dee8!important;
+  border-radius:8px!important;
+  box-shadow:none!important;
+}
+body.guide-board-direct-fixed .chapter-block summary {
+  font-family:'Noto Sans JP',sans-serif!important;
+  font-size:.95rem!important;
+  line-height:1.55!important;
+  font-weight:800!important;
+  color:#172033!important;
+  border-left:0!important;
+  padding:13px 16px!important;
+  background:#fff!important;
+}
+body.guide-board-direct-fixed .chapter-block[open] summary {
+  background:#f8fafc!important;
+}
+body.guide-board-direct-fixed .chapter-block .chapter-content {
+  font-size:.93rem!important;
+  line-height:1.85!important;
+}
+#principal-liability {
+  background:#f8fafc!important;
+  padding:44px 0!important;
+  border-top:1px solid #d7dee8!important;
+  border-bottom:1px solid #d7dee8!important;
+}
+#principal-liability .section-kicker { display:none!important; }
+#principal-liability .section-title {
+  font-family:'Noto Sans JP',sans-serif!important;
+  font-size:clamp(1.45rem,2.3vw,2rem)!important;
+  line-height:1.45!important;
+  letter-spacing:0!important;
+  color:#172033!important;
+}
+#principal-liability .section-lead {
+  max-width:860px!important;
+  font-size:.96rem!important;
+}
+#principal-liability > .wrap > svg[role="img"],
+#principal-liability > .wrap > svg[role="img"] + p,
+#principal-liability > .wrap > svg[role="img"] + p + div,
+#principal-liability > .wrap > svg[role="img"] + p + div + div {
+  display:none!important;
+}
+.principal-risk-brief {
+  display:grid;
+  grid-template-columns:minmax(0,1.04fr) minmax(260px,.72fr);
+  gap:18px;
+  align-items:stretch;
+  margin:26px 0 26px;
+}
+.principal-risk-main,
+.principal-risk-evidence-card {
+  background:#fff;
+  border:1px solid #d7dee8;
+  border-radius:8px;
+  box-shadow:0 10px 24px rgba(15,39,66,.05);
+}
+.principal-risk-main {
+  padding:22px 24px;
+}
+.principal-risk-main h3 {
+  font-family:'Noto Sans JP',sans-serif;
+  color:#172033;
+  font-size:1.12rem;
+  line-height:1.55;
+  margin:0 0 10px;
+}
+.principal-risk-main p,
+.principal-risk-main li {
+  color:#334155;
+  font-size:.9rem;
+  line-height:1.85;
+}
+.principal-risk-main ul {
+  margin:14px 0 0;
+  padding-left:1.1rem;
+}
+.principal-risk-flow {
+  display:block;
+  width:100%;
+  height:auto;
+  margin:0 0 16px;
+}
+.principal-risk-caution {
+  margin:14px 0 0!important;
+  padding-top:12px;
+  border-top:1px solid #e2e8f0;
+  color:#64748b!important;
+  font-size:.82rem!important;
+}
+.principal-risk-evidence-card {
+  margin:0;
+  overflow:hidden;
+}
+.principal-risk-evidence-card img {
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:420px;
+  object-fit:cover;
+  object-position:top center;
+  background:#eef2f7;
+}
+.principal-risk-evidence-card figcaption {
+  padding:12px 14px;
+  color:#64748b;
+  font-size:.78rem;
+  line-height:1.65;
+}
+@media(max-width:840px) {
+  .principal-risk-brief { grid-template-columns:1fr; }
 }
 </style>
 <style id="guide-board-materials-contrast-20260605">
@@ -1714,40 +1832,45 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 </div>
 </section>
 <!-- 校長個人が負うリスク：エスカレーション図解 -->
-<section style="background:#fff;padding:72px 0">
+<section id="principal-liability" style="background:#fff;padding:72px 0">
 <div class="wrap">
-<div class="section-kicker" style="background:#fee2e2;color:#b91c1c">校長・教頭が知るべき個人リスク</div>
-<h2 class="section-title">「知らなかった」では済まされない<br/>校長個人が負う法的責任</h2>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/06_教育委員会/04_監督責任から国家賠償へ.svg" alt="図解：監督責任から国家賠償へ" loading="lazy" style="display:block;width:100%;height:auto"></figure>
-<p class="section-lead">問題状態を認識しながら放置した場合、学校管理・個人情報・服務の各面で説明責任が問われる可能性があります。個別裁判例は、事案の射程を確認して読む必要があります。</p>
-<!-- 実際の書類送検事例 -->
-<div style="background:#1a0a0a;border:2px solid #b91c1c;border-radius:14px;padding:0;overflow:hidden;margin:32px 0;box-shadow:0 8px 32px rgba(185,28,28,.25)">
-<!-- 警告ヘッダー -->
-<div style="background:#b91c1c;padding:10px 20px;display:flex;align-items:center;gap:10px">
-<span style="font-size:1.1rem">🚨</span>
-<span style="font-size:.72rem;font-weight:900;color:#fff;letter-spacing:.1em;text-transform:uppercase">参考資料として確認すべき事案──大分</span>
+<div class="section-kicker" style="background:#fee2e2;color:#b91c1c">管理者責任</div>
+<h2 class="section-title">学校保有情報の扱いは、校長の管理責任に直結する</h2>
+<p class="section-lead">学校がPTAの内部運営を支配する必要はありません。しかし、学校保有情報、学校連絡ツール、教職員の勤務、学校施設をPTA目的で使わせるかどうかは、学校管理上の判断です。ここを曖昧にすると、管理者個人の服務・情報管理リスクとして問題化します。</p>
+<div class="principal-risk-brief">
+<div class="principal-risk-main">
+<svg class="principal-risk-flow" role="img" viewbox="0 0 760 170" aria-label="学校保有情報がPTA目的に流れる場合のリスク">
+<defs>
+<marker id="principal-risk-arrow" markerheight="8" markerwidth="8" orient="auto" refx="7" refy="4" viewBox="0 0 8 8">
+<path d="M1 1 7 4 1 7" fill="none" stroke="#b91c1c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path>
+</marker>
+</defs>
+<rect x="20" y="26" width="180" height="88" rx="10" fill="#f8fafc" stroke="#cbd5e1"></rect>
+<text x="110" y="58" text-anchor="middle" fill="#172033" font-family="'Noto Sans JP', sans-serif" font-size="15" font-weight="800">学校保有情報</text>
+<text x="110" y="84" text-anchor="middle" fill="#64748b" font-family="'Noto Sans JP', sans-serif" font-size="12">氏名・住所・電話番号</text>
+<line x1="210" y1="70" x2="302" y2="70" stroke="#b91c1c" stroke-width="2.4" marker-end="url(#principal-risk-arrow)"></line>
+<rect x="314" y="26" width="180" height="88" rx="10" fill="#fff7ed" stroke="#fdba74"></rect>
+<text x="404" y="58" text-anchor="middle" fill="#172033" font-family="'Noto Sans JP', sans-serif" font-size="15" font-weight="800">PTA目的で利用</text>
+<text x="404" y="84" text-anchor="middle" fill="#9a3412" font-family="'Noto Sans JP', sans-serif" font-size="12">本人同意・提供記録が焦点</text>
+<line x1="504" y1="70" x2="596" y2="70" stroke="#b91c1c" stroke-width="2.4" marker-end="url(#principal-risk-arrow)"></line>
+<rect x="608" y="26" width="132" height="88" rx="10" fill="#fef2f2" stroke="#fca5a5"></rect>
+<text x="674" y="58" text-anchor="middle" fill="#7f1d1d" font-family="'Noto Sans JP', sans-serif" font-size="15" font-weight="800">服務リスク</text>
+<text x="674" y="84" text-anchor="middle" fill="#991b1b" font-family="'Noto Sans JP', sans-serif" font-size="12">守秘義務・管理責任</text>
+<text x="380" y="145" text-anchor="middle" fill="#475569" font-family="'Noto Sans JP', sans-serif" font-size="12">確認すべきことは、PTA内部ではなく、学校が保有情報をどう扱ったかです。</text>
+</svg>
+<h3>参考資料では、校長が守秘義務違反の疑いで書類送検された事案が報じられています。</h3>
+<p>大分市内の小学校長が、学校が保護者アンケートで収集した児童・保護者の個人情報を、本人同意なくPTAへ提供した疑いで書類送検されたとされています。書類送検は有罪確定を意味しませんが、学校が保有する情報をPTA目的に使う場合、個人情報保護だけでなく服務上の守秘義務も問題になることを示す資料です。</p>
+<ul>
+<li>学校が保有する情報をPTAへ渡した事実があるか。</li>
+<li>本人同意、利用目的、提供項目、提供記録を確認できるか。</li>
+<li>学校連絡ツールや担任回収で、PTA目的の利用が発生していないか。</li>
+</ul>
+<p class="principal-risk-caution">このページでは、個別事件の結論を断定せず、教育委員会・学校管理職が確認すべき管理上のリスクとして扱います。</p>
 </div>
-<!-- 新聞風コンテンツ -->
-<div style="padding:22px 24px">
-<div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap">
-<span style="background:rgba(185,28,28,.3);border:1px solid #b91c1c;color:#fca5a5;font-size:.68rem;font-weight:900;padding:2px 9px;border-radius:4px;letter-spacing:.05em">地方公務員法違反（守秘義務）</span>
-<span style="background:rgba(185,28,28,.3);border:1px solid #b91c1c;color:#fca5a5;font-size:.68rem;font-weight:900;padding:2px 9px;border-radius:4px;letter-spacing:.05em">書類送検</span>
-<span style="background:rgba(185,28,28,.3);border:1px solid #b91c1c;color:#fca5a5;font-size:.68rem;font-weight:900;padding:2px 9px;border-radius:4px;letter-spacing:.05em">個人情報提供の根拠確認</span>
-</div>
-<div style="font-size:1.25rem;font-weight:900;color:#fff;line-height:1.45;margin-bottom:14px;font-family:'Noto Serif JP',serif">
-              守秘義務違反の疑いで<br/>
-<span style="color:#fca5a5">校長を書類送検</span>
-</div>
-<div style="font-size:.84rem;color:rgba(255,255,255,.75);line-height:1.9;margin-bottom:16px">
-              提供資料では、大分市内の小学校長が<strong style="color:#fff">地方公務員法違反（守秘義務違反）</strong>の疑いで書類送検されたと報じられています。学校が保護者アンケートで収集した児童・保護者の個人情報（氏名・住所・電話番号）を、本人同意なくPTAへ提供した疑いがあるとされています。
-            </div>
-<!-- 母親コメント -->
-<div style="background:rgba(255,255,255,.06);border-left:3px solid #fca5a5;border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:14px">
-<div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-bottom:5px">保護者（被害者）のコメント</div>
-<p style="font-size:.88rem;color:#fef2f2;line-height:1.8;margin:0">「<strong>任意団体で学校とは別組織</strong>のPTAに、学校として個人情報を提供するのはおかしい」</p>
-</div>
-<div style="font-size:.73rem;color:rgba(255,255,255,.45);text-align:right">提供資料をもとに概要整理。書類送検は有罪確定を意味するものではありません。</div>
-</div>
+<figure class="principal-risk-evidence-card">
+<img alt="学校がPTA等に児童・保護者情報を提供した事案について、校長が守秘義務違反の疑いで書類送検されたと報じる新聞記事の参考画像" loading="lazy" src="assets/guide-board/principal-liability-news.png"/>
+<figcaption>提供資料。学校保有個人情報のPTA提供が、服務・守秘義務・個人情報保護上の問題になることを示す参考資料として掲載しています。</figcaption>
+</figure>
 </div>
 <div class="principal-liability-note">
 <p>
@@ -1759,12 +1882,6 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
 <p>
             特に、公立学校が保有する児童・保護者情報をPTAへ提供する場面では、個人情報保護法第69条の目的外利用・目的外提供の問題として整理する必要があります。また、学校職員が職務上知り得た情報をPTA活動に流用する場合、服務上の守秘義務や職務専念義務との関係も問題となり得ます。
           </p>
-<figure class="principal-liability-evidence" id="principal-liability-evidence">
-<img alt="学校がPTA等に児童・保護者情報を提供した事案について、校長が守秘義務違反の疑いで書類送検されたと報じる新聞記事の参考画像" loading="lazy" src="assets/guide-board/principal-liability-news.png"/>
-<figcaption>
-              提供資料。学校が保有する児童・保護者情報をPTA等へ提供した事案について、校長が守秘義務違反の疑いで書類送検されたと報じる記事。書類送検は有罪確定を意味するものではありません。ここでは、校長が管理する学校保有個人情報の取扱いが、服務・守秘義務・個人情報保護上の問題になることを示す資料として掲載しています。
-            </figcaption>
-</figure>
 <p>
             したがって、校長は「PTAのことだから学校は関係ない」と整理するのではなく、少なくとも次の事項を確認する必要があります。
           </p>
@@ -2704,9 +2821,13 @@ document.addEventListener('DOMContentLoaded', function() {
     fact = document.createElement('section');
     fact.className = 'board-fact-accordion';
     fact.id = 'board-fact-accordion-v31';
-    fact.innerHTML = '<details class="board-auto-accordion"><summary>教育委員会は、法令論の前に「学校が関与した事実」を確認する</summary><div class="chapter-content"><p>PTAが任意団体であることと、学校・教育委員会が関係部分を点検すべきことは矛盾しません。PTA内部の役員選任や行事内容を教育委員会が支配することはできませんが、学校がPTAの加入案内、書類回収、名簿提供、会費徴収、連絡配信、教職員の事務従事に関わる場合、その関与部分は学校管理上の問題になります。</p><p>教育委員会が最初に確認すべきなのは、「PTAが何をしているか」ではなく、「学校が何をしているか」です。学校がPTA入会案内を入学説明会で配布しているのか、担任や学年職員が入会申込書を回収しているのか、学校徴収金の案内にPTA会費が含まれているのか、学校の連絡ツールでPTA通知を配信しているのか、学校が保有する名簿情報がPTAに渡っているのかを、事実として確認する必要があります。</p><p>この確認をしないまま「PTAは任意団体なので教育委員会は関与しない」と整理すると、学校が任意団体のために行っている事務、保護者に学校手続と誤認させる運用、個人情報の目的外利用、教職員の服務上の取扱いが見えなくなります。</p></div></details>';
+    fact.innerHTML = '<details class="board-auto-accordion"><summary>まず確認するのは「学校が何をしたか」</summary><div class="chapter-content"><p>PTA内部の役員選任や活動内容を教育委員会が支配する必要はありません。確認対象は、学校がPTAのために行った配布、回収、徴収、名簿提供、連絡配信、教職員の事務従事です。</p><p>学校関与がある場合は、任意加入、個人情報、会費徴収、服務、施設利用の各論点が学校管理上の確認対象として残ります。「PTAは任意団体なので関与しない」という整理だけでは足りません。</p></div></details>';
   }
   bluf.insertAdjacentElement('afterend', fact);
+  var principal = document.getElementById('principal-liability');
+  if (principal && fact.nextElementSibling !== principal) {
+    fact.insertAdjacentElement('afterend', principal);
+  }
 
   var ids = ['worktime-duty-v22','article137-school-use','board-responsibility-essay','board-ed-resource-set','municipal-voices','board-checklist','board-response-policy'];
   ids.forEach(function(id) {
