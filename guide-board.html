@@ -676,6 +676,25 @@ body.guide-board-direct-fixed main summary:hover {
 body.guide-board-direct-fixed img {
   filter:none!important;
 }
+body.guide-board-direct-fixed .page-hero-kicker,
+body.guide-board-direct-fixed .pta-kicker,
+body.guide-board-direct-fixed main .section-kicker {
+  display:none!important;
+}
+body.guide-board-direct-fixed .scope-card-label,
+body.guide-board-direct-fixed .mou-col-label {
+  display:block!important;
+  margin:0 0 10px!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:#172033!important;
+  font-size:.92rem!important;
+  font-weight:800!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
 </style>
 </head>
 <body>
@@ -2829,6 +2848,17 @@ body.guide-board-direct-fixed img {
 <script id="guide-board-direct-fix-script-20260605">
 document.addEventListener('DOMContentLoaded', function() {
   document.body.classList.add('guide-board-direct-fixed');
+
+  Array.from(document.querySelectorAll('main div')).forEach(function(el) {
+    var text = el.textContent.trim();
+    var style = el.getAttribute('style') || '';
+    if ((text === 'FAQ' || text === 'CASE STUDY') && style.indexOf('border-radius:999px') !== -1) {
+      el.style.display = 'none';
+    }
+  });
+  Array.from(document.querySelectorAll('.page-hero-kicker,.pta-kicker,.section-kicker')).forEach(function(el) {
+    el.style.setProperty('display', 'none', 'important');
+  });
 
   var original = document.getElementById('board-first-reading');
   if (original) original.style.display = 'none';
