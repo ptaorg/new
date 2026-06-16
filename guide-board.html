@@ -444,7 +444,7 @@ body.guide-board-direct-fixed .chapter-block .chapter-content {
   background:#fff;
   border:1px solid #d7dee8;
   border-radius:8px;
-  box-shadow:0 10px 24px rgba(15,39,66,.05);
+  box-shadow:none;
 }
 .principal-risk-main {
   padding:22px 24px;
@@ -558,14 +558,14 @@ body.guide-board-direct-fixed .key-materials-grid > a,
   border-radius:18px!important;
   overflow:hidden!important;
   text-decoration:none!important;
-  box-shadow:0 12px 26px rgba(15,39,66,.10)!important;
+  box-shadow:none!important;
   min-height:100%!important;
 }
 body.guide-board-direct-fixed .key-materials-grid > a:hover,
 .key-materials-grid > a:hover {
   border-color:#1d4ed8!important;
-  box-shadow:0 16px 34px rgba(15,39,66,.16)!important;
-  transform:translateY(-2px)!important;
+  box-shadow:none!important;
+  transform:none!important;
 }
 body.guide-board-direct-fixed .key-materials-grid > a > img,
 .key-materials-grid > a > img {
@@ -647,6 +647,34 @@ body.guide-board-direct-fixed .key-materials-section a[rel="noopener"] div div,
   .key-materials-grid { grid-template-columns:1fr!important;gap:18px!important; }
   body.guide-board-direct-fixed .key-materials-grid > a > img,
   .key-materials-grid > a > img { height:156px!important; }
+}
+</style>
+<style id="guide-board-flat-depth-20260616">
+body.guide-board-direct-fixed {
+  --shadow-sm:none!important;
+  --shadow-md:none!important;
+  --shadow-lg:none!important;
+}
+body.guide-board-direct-fixed,
+body.guide-board-direct-fixed *,
+body.guide-board-direct-fixed *::before,
+body.guide-board-direct-fixed *::after {
+  box-shadow:none!important;
+  text-shadow:none!important;
+}
+body.guide-board-direct-fixed main a,
+body.guide-board-direct-fixed main button,
+body.guide-board-direct-fixed main summary {
+  transition:border-color .16s ease,background-color .16s ease,color .16s ease!important;
+}
+body.guide-board-direct-fixed main a:hover,
+body.guide-board-direct-fixed main button:hover,
+body.guide-board-direct-fixed main summary:hover {
+  box-shadow:none!important;
+  transform:none!important;
+}
+body.guide-board-direct-fixed img {
+  filter:none!important;
 }
 </style>
 </head>
