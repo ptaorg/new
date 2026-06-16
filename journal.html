@@ -184,6 +184,7 @@
     .journal-layout .category-bar{padding:12px 0 20px;border-top:1px solid rgba(5,17,31,.08);border-bottom:1px solid rgba(5,17,31,.08);margin-bottom:28px}
     .journal-layout .article-list{gap:14px}
     .journal-layout .article-card{border-radius:10px!important;box-shadow:0 8px 22px rgba(5,17,31,.06)!important;border:1px solid rgba(5,17,31,.12)!important;border-left:5px solid var(--navy)!important;overflow:hidden!important;transform:none!important}
+    .journal-layout .article-card.is-filter-hidden{display:none!important}
     .journal-layout .article-card:hover{box-shadow:0 12px 32px rgba(5,17,31,.12)!important;border-left-color:var(--gold)!important}
     .journal-layout .ac-thumb{width:170px!important;min-height:150px!important}
     .journal-layout .ac-body{padding:22px 24px!important}
@@ -428,6 +429,15 @@
 <div class="ac-tags"><span class="ac-tag">非会員情報</span><span class="ac-tag">協力金</span><span class="ac-tag">学校名簿</span><span class="ac-tag">学校アプリ</span></div>
 </div>
 </a>
+<a class="article-card ac-featured" data-cat="kaisetsu" href="journal/third-party-consent.html">
+<div class="ac-thumb" style="background:linear-gradient(145deg,#0f766e,#0b2a4a)"><span class="ac-cat">資料解説</span></div>
+<div class="ac-body">
+<div class="ac-meta"><span class="ac-date">2026年6月</span><span class="ac-reading">読了 約7分</span><span style="background:#dcfce7;color:#166534;font-size:.72rem;font-weight:900;padding:3px 10px;border-radius:999px">個人情報</span></div>
+<div class="ac-title">学校経由の第三者提供同意とPTA名簿——同意欄だけでは足りない</div>
+<div class="ac-excerpt">学校書類の中でPTAへの個人情報提供同意を取る場合に、提供先、提供項目、利用目的、加入意思との分離をどう確認するかを整理します。</div>
+<div class="ac-tags"><span class="ac-tag">第三者提供</span><span class="ac-tag">本人同意</span><span class="ac-tag">学校名簿</span><span class="ac-tag">加入意思</span></div>
+</div>
+</a>
 <a class="article-card ac-featured" data-cat="ronko" href="journal/school-fee-separation.html">
 <div class="ac-thumb" style="background:linear-gradient(145deg,#7f1d1d,#1e3a5f)"><span class="ac-cat">論考</span></div>
 <div class="ac-body">
@@ -435,6 +445,15 @@
 <div class="ac-title">学校徴収金とPTA会費を分ける理由——同じ通知・口座・未納管理に混ぜない</div>
 <div class="ac-excerpt">学校徴収金と任意団体会費の混在を、契約、会計、個人情報、教職員服務の観点から整理し、分離申入書へつなげます。</div>
 <div class="ac-tags"><span class="ac-tag">学校徴収金</span><span class="ac-tag">PTA会費</span><span class="ac-tag">公私会計分離</span><span class="ac-tag">分離申入書</span></div>
+</div>
+</a>
+<a class="article-card ac-featured" data-cat="ronko" href="journal/work-style-reform.html">
+<div class="ac-thumb" style="background:linear-gradient(145deg,#1e3a5f,#0f172a)"><span class="ac-cat">論考</span></div>
+<div class="ac-body">
+<div class="ac-meta"><span class="ac-date">2026年6月</span><span class="ac-reading">読了 約8分</span><span style="background:#dbeafe;color:#1e3a8a;font-size:.72rem;font-weight:900;padding:3px 10px;border-radius:999px">学校管理</span></div>
+<div class="ac-title">働き方改革から見たPTA会費代理徴収の限界——効率化ではなく分離へ</div>
+<div class="ac-excerpt">学校徴収金の公会計化・学校経由しない支払いの流れを踏まえ、PTA会費やPTA内部事務を学校に残すことの限界を整理します。</div>
+<div class="ac-tags"><span class="ac-tag">働き方改革</span><span class="ac-tag">学校徴収金</span><span class="ac-tag">PTA会費</span><span class="ac-tag">教職員関与</span></div>
 </div>
 </a>
 <a class="article-card ac-featured" data-cat="ronko" href="assets/documents/journal/pta-fee-collection-legal-analysis.pdf" rel="noopener" target="_blank">
@@ -631,11 +650,11 @@
 <div class="sidebar-card">
 <div class="sidebar-title">カテゴリ</div>
 <div class="sc-cat-list">
-<a class="sc-cat-item" onclick="filterCat('all',null)">すべて <span class="sc-cat-count">18</span></a>
-<a class="sc-cat-item" onclick="filterCat('ronko',null)">論考 <span class="sc-cat-count">10</span></a>
-<a class="sc-cat-item" onclick="filterCat('chosa',null)">調査報告 <span class="sc-cat-count">4</span></a>
+<a class="sc-cat-item" onclick="filterCat('all',null)">すべて <span class="sc-cat-count">19</span></a>
+<a class="sc-cat-item" onclick="filterCat('ronko',null)">論考 <span class="sc-cat-count">11</span></a>
+<a class="sc-cat-item" onclick="filterCat('chosa',null)">調査報告 <span class="sc-cat-count">3</span></a>
 <a class="sc-cat-item" onclick="filterCat('gyosei',null)">行政動向 <span class="sc-cat-count">1</span></a>
-<a class="sc-cat-item" onclick="filterCat('kaisetsu',null)">資料解説 <span class="sc-cat-count">3</span></a>
+<a class="sc-cat-item" onclick="filterCat('kaisetsu',null)">資料解説 <span class="sc-cat-count">4</span></a>
 </div>
 </div>
 <div class="sidebar-card">
@@ -656,11 +675,9 @@
     document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
     if(btn)btn.classList.add('active');
     document.querySelectorAll('.article-card').forEach(card=>{
-      if(cat==='all'||card.dataset.cat===cat){
-        card.style.display='flex';
-      } else {
-        card.style.display='none';
-      }
+      const visible = cat==='all'||card.dataset.cat===cat;
+      card.classList.toggle('is-filter-hidden', !visible);
+      card.style.display = '';
     });
   }
 
