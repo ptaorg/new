@@ -865,7 +865,85 @@
       <section class="issue-section" style="margin-bottom:48px">
         <div class="section-eyebrow">図解</div>
         <h2>「有効」と「無効」——入会同意の2つのルート</h2>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/01_入会手続/01_入会同意の2ルート.svg" alt="図解：入会同意の2つのルート" loading="lazy" style="display:block;width:100%;height:auto"></figure>
+<figure class="mb-fig" role="img" aria-label="有効（オプトイン）と無効（オプトアウト）の2ルート">
+<style>
+.mb-fig{margin:30px auto;max-width:880px}
+.mb{--ink:#070f20;--navy:#0d1c38;--navy-2:#13294b;--sub:#a6b6cd;--grn:#33b07a;--red:#e2584d;position:relative;border-radius:8px;overflow:hidden;color:#fff;font-family:'Noto Sans JP',sans-serif;background:radial-gradient(85% 55% at 8% -8%,rgba(51,176,122,.14),transparent 55%),radial-gradient(80% 55% at 95% 108%,rgba(226,88,77,.14),transparent 55%),linear-gradient(155deg,var(--ink),var(--navy) 62%,var(--navy-2));box-shadow:0 28px 56px -30px rgba(0,0,0,.75)}
+.mb::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.36;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:30px 30px;-webkit-mask:radial-gradient(120% 100% at 50% 0%,#000 55%,transparent);mask:radial-gradient(120% 100% at 50% 0%,#000 55%,transparent)}
+.mb .mb-cnr{position:absolute;width:22px;height:22px;border:1.5px solid rgba(255,255,255,.5);z-index:3}
+.mb .mb-cnr.tl{top:12px;left:12px;border-right:0;border-bottom:0}.mb .mb-cnr.tr{top:12px;right:12px;border-left:0;border-bottom:0}
+.mb .mb-cnr.bl{bottom:12px;left:12px;border-right:0;border-top:0}.mb .mb-cnr.br{bottom:12px;right:12px;border-left:0;border-top:0}
+.mb .mb-head{position:relative;z-index:2;padding:30px 36px 6px}
+.mb .mb-kick{display:inline-flex;align-items:center;gap:10px;font-size:.66rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;background:linear-gradient(90deg,var(--grn),#e0a83c,var(--red));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.mb .mb-kick i{height:2px;width:24px;border-radius:2px;background:linear-gradient(90deg,transparent,#e0a83c)}
+.mb .mb-title{font-family:'Noto Serif JP',serif;font-weight:900;font-size:clamp(1.4rem,3.6vw,2rem);margin:12px 0 0;line-height:1.25;color:#fff}
+.mb .mb-title em{font-style:normal;background:linear-gradient(100deg,var(--grn),#e0a83c,var(--red));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.mb .mb-body{position:relative;z-index:2;padding:18px 36px 6px}
+.mb .mb-cols{display:grid;grid-template-columns:1fr 40px 1fr;gap:14px;align-items:stretch}
+.mb .mb-panel{border-radius:14px;padding:16px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12)}
+.mb .mb-panel.good{border-color:rgba(51,176,122,.5);background:rgba(51,176,122,.08)}
+.mb .mb-panel.bad{border-color:rgba(226,88,77,.5);background:rgba(226,88,77,.08)}
+.mb .mb-ph{font-family:'Noto Serif JP',serif;font-weight:700;font-size:1.02rem;margin:0 0 12px;color:#fff}
+.mb .mb-pli{display:flex;gap:9px;align-items:flex-start;font-size:.85rem;color:var(--sub);line-height:1.55;margin:7px 0}
+.mb .mb-pli::before{content:"";flex-shrink:0;width:7px;height:7px;border-radius:50%;margin-top:6px}
+.mb .good .mb-pli::before{background:var(--grn)}.mb .bad .mb-pli::before{background:var(--red)}
+.mb .mb-verdict{margin-top:12px;font-weight:700;font-size:.84rem;border-radius:999px;padding:6px 13px;display:inline-block}
+.mb .good .mb-verdict{background:rgba(51,176,122,.16);color:#8fe0b4}.mb .bad .mb-verdict{background:rgba(226,88,77,.16);color:#f6aaa0}
+.mb .mb-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#e0a83c}
+.mb .mb-mid b{font-size:.6rem;letter-spacing:.16em;writing-mode:vertical-rl;font-weight:700}
+.mb .mb-mid svg{width:20px;height:20px;stroke:#e0a83c;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mb .mb-flow{position:relative}
+.mb .mb-rail{position:absolute;top:12px;bottom:12px;left:66px;width:2px;border-radius:2px}
+.mb .mb-node{position:relative;display:grid;grid-template-columns:54px 1fr;gap:20px;padding:13px 0;align-items:center}
+.mb .mb-node+.mb-node{border-top:1px solid rgba(255,255,255,.06)}
+.mb .mb-badge{grid-column:1;justify-self:center;z-index:2;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif JP',serif;font-weight:900;font-size:1rem;color:#fff;background:var(--c);box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 18%,transparent),0 6px 14px -4px color-mix(in srgb,var(--c) 65%,transparent)}
+.mb .mb-ntxt{grid-column:2;display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 12px}
+.mb .mb-nname{font-family:'Noto Serif JP',serif;font-weight:700;color:#fff;font-size:clamp(.97rem,2vw,1.1rem);line-height:1.4}
+.mb .mb-nsub{display:block;width:100%;color:var(--sub);font-size:.83rem;line-height:1.55}
+.mb .mb-law{flex-shrink:0;font-size:.66rem;font-weight:700;color:color-mix(in srgb,var(--c) 82%,#fff);border:1px solid color-mix(in srgb,var(--c) 55%,transparent);background:color-mix(in srgb,var(--c) 14%,transparent);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.mb .mb-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.mb .mb-step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-top:3px solid var(--c);border-radius:12px;padding:14px 13px}
+.mb .mb-snum{width:28px;height:28px;border-radius:50%;background:var(--c);color:#08101f;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:.85rem;margin-bottom:8px}
+.mb .mb-sname{font-family:'Noto Serif JP',serif;font-weight:700;color:#fff;font-size:.97rem;margin-bottom:4px}
+.mb .mb-sdesc{color:var(--sub);font-size:.8rem;line-height:1.5}
+.mb .mb-callout{margin-top:14px;background:rgba(224,168,60,.1);border:1px solid rgba(224,168,60,.35);border-radius:10px;padding:11px 14px;font-size:.83rem;color:#f0d9a6;line-height:1.6}
+.mb .mb-foot{position:relative;z-index:2;margin-top:10px;padding:18px 36px 26px;background:linear-gradient(0deg,rgba(0,0,0,.32),transparent);border-top:1px solid rgba(255,255,255,.12)}
+.mb .mb-concl{font-family:'Noto Serif JP',serif;font-weight:700;font-size:clamp(.95rem,2.1vw,1.1rem);margin:0;line-height:1.5}
+.mb .mb-concl em{font-style:normal;color:#f0d9a6}
+.mb .mb-src{margin:8px 0 0;font-size:.66rem;color:rgba(255,255,255,.45)}
+@media(max-width:640px){.mb .mb-head,.mb .mb-body,.mb .mb-foot{padding-left:18px;padding-right:18px}.mb .mb-cols{grid-template-columns:1fr;gap:10px}.mb .mb-mid{flex-direction:row}.mb .mb-mid b{writing-mode:horizontal-tb}.mb .mb-mid svg{transform:rotate(90deg)}.mb .mb-rail{left:42px}.mb .mb-node{grid-template-columns:34px 1fr;gap:13px}.mb .mb-badge{width:34px;height:34px;font-size:.85rem}.mb .mb-steps{grid-template-columns:1fr 1fr}}
+</style>
+<div class="mb">
+<span class="mb-cnr tl"></span><span class="mb-cnr tr"></span><span class="mb-cnr bl"></span><span class="mb-cnr br"></span>
+<div class="mb-head"><span class="mb-kick"><i></i>入会手続</span><div class="mb-title">「有効」と「無効」― <em>入会同意の2ルート</em></div></div>
+<div class="mb-body">
+<div class="mb-cols">
+<div class="mb-panel good">
+<p class="mb-ph">オプトイン（入会申込書）</p>
+<div class="mb-pli">本人が申込み、PTAが承諾する</div>
+<div class="mb-pli">契約が成立する（民法522条）</div>
+<div class="mb-pli">会員の範囲が明確になる</div>
+<div class="mb-pli">個人情報を本人から直接取得できる</div>
+<span class="mb-verdict">✓ 法的に有効</span>
+</div>
+<div class="mb-mid"><b>適正化</b><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+<div class="mb-panel bad">
+<p class="mb-ph">オプトアウト（みなし加入）</p>
+<div class="mb-pli">入学＝自動的に会員扱い</div>
+<div class="mb-pli">沈黙を承諾とみなす条項</div>
+<div class="mb-pli">契約は成立していない</div>
+<div class="mb-pli">消費者契約法上も無効の可能性</div>
+<span class="mb-verdict">✗ 法的に無効</span>
+</div>
+</div>
+</div>
+<div class="mb-foot">
+<p class="mb-concl">「沈黙は承諾ではない」。<em>入学をもって会員とみなす規定</em>は、消費者の不作為を承諾とみなすもので無効となりうる。</p>
+<p class="mb-src">出典：民法522条／消費者契約法10条・4条</p>
+</div>
+</div>
+</figure>
+
         <p>入会手続の適法性はシンプルな分岐で決まります。保護者が自発的に同意するか否か、それだけです。</p>
 
         <svg width="100%" viewBox="0 0 720 340" role="img" style="max-width:720px;display:block;margin:24px auto 6px">
@@ -932,7 +1010,28 @@
         <p>この入会手続の問題が他のすべての論点の<strong>起点</strong>になっています。入会の意思確認がないまま会員とされれば、会費徴収・個人情報利用・役員就任義務のすべてが「法的根拠のない状態」で行われることになるからです。</p>
 
         <h3 id="domino">連鎖的に問題化する構造——ドミノ倒しの無効性</h3>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/01_入会手続/02_無効の連鎖.svg" alt="図解：無効の連鎖" loading="lazy" style="display:block;width:100%;height:auto"></figure>
+<figure class="mb-fig" role="img" aria-label="みなし加入が崩す無効の連鎖">
+<div class="mb">
+<span class="mb-cnr tl"></span><span class="mb-cnr tr"></span><span class="mb-cnr bl"></span><span class="mb-cnr br"></span>
+<div class="mb-head"><span class="mb-kick"><i></i>入会手続</span><div class="mb-title">みなし加入が崩す <em>無効の連鎖</em></div></div>
+<div class="mb-body">
+<div class="mb-flow">
+<div class="mb-rail" style="background:linear-gradient(180deg,#e2483f,#ef8a3c,#e0619c,#9a79ea,#4e9be0,#13294b)"></div>
+<div class="mb-node" style="--c:#e2483f"><div class="mb-badge">起</div><div class="mb-ntxt"><span class="mb-nname">入会の意思確認がない（沈黙）</span><span class="mb-nsub">承諾の意思表示が存在しない。</span></div></div>
+<div class="mb-node" style="--c:#ef8a3c"><div class="mb-badge">1</div><div class="mb-ntxt"><span class="mb-nname">「みなし加入」条項は不当条項として無効</span><span class="mb-law">消費者契約法10条</span></div></div>
+<div class="mb-node" style="--c:#e0619c"><div class="mb-badge">2</div><div class="mb-ntxt"><span class="mb-nname">契約が成立せず、会員資格が法的に不明</span><span class="mb-law">民法522条</span></div></div>
+<div class="mb-node" style="--c:#9a79ea"><div class="mb-badge">3</div><div class="mb-ntxt"><span class="mb-nname">会費を徴収する法的根拠が消滅</span><span class="mb-law">民法703条</span></div></div>
+<div class="mb-node" style="--c:#4e9be0"><div class="mb-badge">4</div><div class="mb-ntxt"><span class="mb-nname">徴収済み会費は不当利得＝返還義務</span><span class="mb-law">民法703条</span></div></div>
+<div class="mb-node" style="--c:#13294b"><div class="mb-badge">結</div><div class="mb-ntxt"><span class="mb-nname">非加入扱い・子への不利益は新たな違法を生む</span><span class="mb-nsub">差別的取扱いの禁止。</span></div></div>
+</div>
+</div>
+<div class="mb-foot">
+<p class="mb-concl">みなし加入は単独の不備ではない。<em>入口が崩れると、会員資格・徴収根拠・返還義務まで連鎖的に崩れる</em>。</p>
+<p class="mb-src">出典：民法・消費者契約法／熊本地裁 平成28年2月25日判決ほか</p>
+</div>
+</div>
+</figure>
+
 
         <div class="domino-chain">
           <div class="domino-item">
@@ -1030,7 +1129,25 @@
       <section id="civil-law" class="issue-section">
         <div class="section-eyebrow">民法</div>
         <h2>民法上の無効性——「沈黙は承諾ではない」</h2>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/01_入会手続/03_契約の成立.svg" alt="図解：契約の成立" loading="lazy" style="display:block;width:100%;height:auto"></figure>
+<figure class="mb-fig" role="img" aria-label="契約はどう成立するか――申込みと承諾">
+<div class="mb">
+<span class="mb-cnr tl"></span><span class="mb-cnr tr"></span><span class="mb-cnr bl"></span><span class="mb-cnr br"></span>
+<div class="mb-head"><span class="mb-kick"><i></i>入会手続</span><div class="mb-title">契約はどう成立するか ― <em>申込みと承諾</em></div></div>
+<div class="mb-body">
+<div class="mb-steps">
+<div class="mb-step" style="--c:#f2a73c"><div class="mb-snum">1</div><div class="mb-sname">申込み</div><div class="mb-sdesc">保護者が入会申込書を提出する。</div></div>
+<div class="mb-step" style="--c:#ee6b58"><div class="mb-snum">2</div><div class="mb-sname">承諾</div><div class="mb-sdesc">PTAが受理・承認する。</div></div>
+<div class="mb-step" style="--c:#4e9be0"><div class="mb-snum">3</div><div class="mb-sname">契約成立</div><div class="mb-sdesc">会員関係が発生する（民法522条）。</div></div>
+<div class="mb-step" style="--c:#25b9a6"><div class="mb-snum">4</div><div class="mb-sname">会費の根拠</div><div class="mb-sdesc">契約にもとづき正当に徴収できる。</div></div>
+</div>
+<div class="mb-callout">※ 申込み・承諾のどちらかを欠けば契約は不成立。根拠なく徴収された会費は不当利得（民法703条）として返還義務が生じる。</div>
+</div>
+<div class="mb-foot">
+<p class="mb-src">出典：民法522条（契約の成立）・703条（不当利得）</p>
+</div>
+</div>
+</figure>
+
 
         <p>PTAと会員（保護者）の関係は、法的には「権利能力なき社団」の内部規約に基づく契約関係と解されます。したがってその入会プロセスの有効性は、民法の契約法理によって判断されなければなりません。</p>
 
@@ -1063,7 +1180,25 @@
       <section id="consumer" class="issue-section">
         <div class="section-eyebrow">消費者契約法</div>
         <h2>消費者契約法違反——PTAは「事業者」に該当する</h2>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/01_入会手続/04_消費者契約法と憲法.svg" alt="図解：消費者契約法と憲法" loading="lazy" style="display:block;width:100%;height:auto"></figure>
+<figure class="mb-fig" role="img" aria-label="PTAは事業者、保護者は消費者">
+<div class="mb">
+<span class="mb-cnr tl"></span><span class="mb-cnr tr"></span><span class="mb-cnr bl"></span><span class="mb-cnr br"></span>
+<div class="mb-head"><span class="mb-kick"><i></i>入会手続</span><div class="mb-title">PTAは「事業者」、保護者は <em>「消費者」</em></div></div>
+<div class="mb-body">
+<div class="mb-flow">
+<div class="mb-rail" style="background:linear-gradient(180deg,#f2a73c,#ee6b58,#9a79ea,#25b9a6)"></div>
+<div class="mb-node" style="--c:#f2a73c"><div class="mb-badge">1</div><div class="mb-ntxt"><span class="mb-nname">PTAの事業者該当性</span><span class="mb-nsub">継続的・反復的に役務を提供し会費を得る団体は「事業者」に当たる。</span></div></div>
+<div class="mb-node" style="--c:#ee6b58"><div class="mb-badge">2</div><div class="mb-ntxt"><span class="mb-nname">みなし加入条項は無効</span><span class="mb-law">消費者契約法10条</span><span class="mb-nsub">消費者の不作為を承諾とみなし、利益を一方的に害する条項。</span></div></div>
+<div class="mb-node" style="--c:#9a79ea"><div class="mb-badge">3</div><div class="mb-ntxt"><span class="mb-nname">不実告知等による取消権</span><span class="mb-law">消費者契約法4条</span><span class="mb-nsub">重要事項の不告知・誤認があれば意思表示を取り消せる。</span></div></div>
+<div class="mb-node" style="--c:#25b9a6"><div class="mb-badge">4</div><div class="mb-ntxt"><span class="mb-nname">「加入しない自由」</span><span class="mb-law">憲法21条</span><span class="mb-nsub">結社の自由は、加入を強制されない自由を含む。</span></div></div>
+</div>
+</div>
+<div class="mb-foot">
+<p class="mb-src">出典：消費者契約法10条・4条／日本国憲法21条</p>
+</div>
+</div>
+</figure>
+
 
         <h3 id="pta-as-operator">PTAの「事業者」該当性</h3>
         <p>PTA適正化推進委員会による調査および消費者庁との協議記録において、<strong>PTAが消費者契約法上の「事業者」に該当することは行政解釈上も確定</strong>しています。消費者庁『逐条解説 消費者契約法』の「その他の団体」の具体例として、民法上の組合や学会と並び「PTA」が明記されています。</p>
