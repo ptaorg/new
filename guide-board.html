@@ -1064,57 +1064,56 @@ body.guide-board-direct-fixed .mou-col-label {
 .rc5-head{display:flex;align-items:center;gap:12px}
 .rc5-no{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--navy,#1e3a5f);color:var(--gold-lt,#e8cd77);font-weight:900;font-size:.82rem;display:flex;align-items:center;justify-content:center}
 .rc5-axis{font-weight:900;color:var(--navy,#1e3a5f);font-size:1.02rem}
-.rc5-q{display:flex;align-items:flex-start;gap:10px;margin:10px 0 8px;font-size:.95rem;font-weight:700;color:var(--text,#1e293b)}
-.rc5-q input{margin-top:4px;width:17px;height:17px;accent-color:var(--navy,#1e3a5f);flex-shrink:0}
-.rc5-sign{font-size:.85rem;color:#9a3412;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:7px 12px;margin-left:27px;margin-bottom:6px}
-.rc5-doc{font-size:.83rem;color:#475569;margin-left:27px}
+.rc5-q{margin:10px 0 8px 38px;font-size:.95rem;font-weight:700;line-height:1.75;color:var(--text,#1e293b)}
+.rc5-sign{font-size:.85rem;color:#9a3412;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:7px 12px;margin-left:38px;margin-bottom:6px}
+.rc5-doc{font-size:.83rem;color:#475569;margin-left:38px}
 .rc5-doc b{color:#1e3a5f}
-.rc5-link{margin-left:27px;margin-top:6px;font-size:.82rem}
+.rc5-link{margin-left:38px;margin-top:6px;font-size:.82rem}
 .rc5-link a{color:var(--navy,#1e3a5f);text-decoration:none;border-bottom:1px dotted var(--navy,#1e3a5f)}
 .rc5-note{margin-top:18px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:12px 16px;font-size:.86rem;color:#075985}
 .rc5-cta{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+@media(max-width:560px){.rc5-q,.rc5-sign,.rc5-doc,.rc5-link{margin-left:0}}
 </style>
 <div class="rc5-wrap">
-<div class="section-kicker">全校点検</div>
 <h2 class="section-title">教育委員会・学校が確認する5領域</h2>
 <p class="section-lead">法令論の前に「学校が関与した事実」を確認します。各領域は核心の1問だけ。文書が無い場合は「問題なし」ではなく「未確認」として記録してください。</p>
 <div class="rc5-list">
 
 <div class="rc5-item">
-<div class="rc5-head"><div class="rc5-no">1</div><div class="rc5-axis">加入 ― 任意性</div></div>
-<label class="rc5-q"><input type="checkbox">加入が任意と明示され、入会申込書を取得し、未提出者を会員扱いしていないか</label>
+<div class="rc5-head"><div class="rc5-no">1</div><div class="rc5-axis">加入：任意性</div></div>
+<div class="rc5-q">加入が任意と明示され、入会申込書を取得し、未提出者を会員扱いしていないか。</div>
 <div class="rc5-sign">兆候：入学式・説明会の式次第にPTA加入/役員選出が組み込まれている、全員加入が前提</div>
 <div class="rc5-doc"><b>調べる文書：</b>入会案内文・配布記録・学校アプリ通知ログ</div>
 <div class="rc5-link">詳しく：<a href="edu-board-separation.html">学校とPTAの分離原則</a>／<a href="membership.html">入会手続</a></div>
 </div>
 
 <div class="rc5-item">
-<div class="rc5-head"><div class="rc5-no">2</div><div class="rc5-axis">会費 ― 学校徴収金との分離</div></div>
-<label class="rc5-q"><input type="checkbox">PTA会費を学校徴収金と一体で引き落とさず、教職員が集金していないか</label>
+<div class="rc5-head"><div class="rc5-no">2</div><div class="rc5-axis">会費：学校徴収金との分離</div></div>
+<div class="rc5-q">PTA会費を学校徴収金と一体で引き落とさず、教職員が集金していないか。</div>
 <div class="rc5-sign">兆候：一括引落・代行徴収、未払い対応に学校が関与</div>
 <div class="rc5-doc"><b>調べる文書：</b>徴収金案内・口座記録・引落処理記録</div>
 <div class="rc5-link">詳しく：<a href="fee-collection.html">会費徴収と学校徴収金</a></div>
 </div>
 
 <div class="rc5-item">
-<div class="rc5-head"><div class="rc5-no">3</div><div class="rc5-axis">個人情報 ― 学校保有情報の提供</div></div>
-<label class="rc5-q"><input type="checkbox">学校保有名簿をPTAへ渡さず、目的外利用・無同意提供がないか</label>
+<div class="rc5-head"><div class="rc5-no">3</div><div class="rc5-axis">個人情報：学校保有情報の提供</div></div>
+<div class="rc5-q">学校保有名簿をPTAへ渡さず、目的外利用・無同意提供がないか。</div>
 <div class="rc5-sign">兆候：学校名簿の流用、学校アプリでのPTA全保護者配信</div>
 <div class="rc5-doc"><b>調べる文書：</b>同意書・提供記録・目的通知・アプリ利用規程</div>
 <div class="rc5-link">詳しく：<a href="privacy.html">個人情報の取扱い</a></div>
 </div>
 
 <div class="rc5-item">
-<div class="rc5-head"><div class="rc5-no">4</div><div class="rc5-axis">服務 ― 教職員の関与</div></div>
-<label class="rc5-q"><input type="checkbox">教職員がPTA会計・徴収・名簿管理を恒常的に行っていないか（渉外を超えていないか）</label>
+<div class="rc5-head"><div class="rc5-no">4</div><div class="rc5-axis">服務：教職員の関与</div></div>
+<div class="rc5-q">教職員がPTA会計・徴収・名簿管理を恒常的に行っていないか（渉外を超えていないか）。</div>
 <div class="rc5-sign">兆候：勤務時間中のPTA事務従事、校長・教頭のPTA役員就任、職専免の濫用</div>
 <div class="rc5-doc"><b>調べる文書：</b>校務分掌表・職専免記録・兼職兼業届・職員会議資料</div>
 <div class="rc5-link">詳しく：<a href="personnel.html">教職員のPTA事務関与</a></div>
 </div>
 
 <div class="rc5-item">
-<div class="rc5-head"><div class="rc5-no">5</div><div class="rc5-axis">学校資源・施設 ― 利用の根拠</div></div>
-<label class="rc5-q"><input type="checkbox">学校HP・アプリ・施設・印刷機のPTA内部業務利用が、許可・支障の観点で確認されているか</label>
+<div class="rc5-head"><div class="rc5-no">5</div><div class="rc5-axis">学校資源・施設：利用の根拠</div></div>
+<div class="rc5-q">学校HP・アプリ・施設・印刷機のPTA内部業務利用が、許可・支障の観点で確認されているか。</div>
 <div class="rc5-sign">兆候：「PTAだから当然使用可」、許可・届出・責任範囲が不明</div>
 <div class="rc5-doc"><b>調べる文書：</b>Web/アプリ記録・施設利用申請記録・機器使用記録</div>
 <div class="rc5-link">詳しく：<a href="facilities.html">学校施設利用</a></div>
