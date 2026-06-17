@@ -5,7 +5,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <meta name="description" content="研究者・記者の方へ——全国公文書・教委回答・一次資料へのアクセスガイド。">
+  <meta name="description" content="研究者・記者の方へ——PTA問題を一次資料で検証するための読み方と資料入口。">
   <link rel="canonical" href="https://ptaorg.com/guide-research.html">
   <meta property="og:title" content="研究者・記者の方へ | PTA適正化推進委員会">
   <meta property="og:type" content="website">
@@ -28,28 +28,28 @@
     .pg h3{font-size:1.02rem;font-weight:800;color:var(--navy);margin:28px 0 10px;padding-left:12px;border-left:4px solid var(--gold)}
     .pg p{color:var(--text);line-height:1.9;margin-bottom:14px;font-size:.97rem}
     .pg section{margin-bottom:64px}
-    .strength-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
-    .strength-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-sm)}
-    .strength-card .s-icon{font-size:2rem;margin-bottom:10px}
-    .strength-card h4{font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:900;color:var(--navy);margin-bottom:8px}
-    .strength-card p{font-size:.87rem;color:var(--text-soft);line-height:1.75;margin:0}
-    .resource-list{display:flex;flex-direction:column;gap:14px;margin:20px 0}
-    .resource-item{display:flex;gap:16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-sm);text-decoration:none;color:inherit;transition:var(--t)}
-    .resource-item:hover{transform:translateX(4px);box-shadow:var(--shadow-md)}
-    .resource-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--navy-3));color:#fff;display:grid;place-items:center;font-size:1.3rem;flex-shrink:0}
-    .resource-body{flex:1}
-    .resource-body strong{display:block;font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:4px}
-    .resource-body p{font-size:.87rem;color:var(--text-soft);line-height:1.65;margin:0}
-    .resource-arrow{color:var(--text-soft);align-self:center;font-size:1.1rem}
-    .path-flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:20px 0;padding:20px;background:var(--bg);border-radius:var(--radius)}
-    .path-step{background:#fff;border:1.5px solid var(--navy-3);border-radius:10px;padding:10px 16px;font-size:.88rem;font-weight:700;color:var(--navy)}
-    .path-arrow{color:var(--text-soft)}
+    .research-prose{max-width:860px}
+    .research-prose p{font-size:1rem;line-height:2;color:var(--text)}
+    .research-source-types{margin:24px 0 0;padding:20px 0 4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .research-source-types li{display:grid;grid-template-columns:180px 1fr;gap:18px;padding:13px 0;border-top:1px solid #eef2f7;line-height:1.75}
+    .research-source-types li:first-child{border-top:0}
+    .research-source-types strong{color:var(--navy);font-weight:900}
+    .research-source-types span{color:var(--text-soft);font-size:.93rem}
+    .research-reading-list{margin:22px 0 0;padding-left:1.4em}
+    .research-reading-list li{margin:12px 0;line-height:1.9;color:var(--text)}
+    .research-link-list{margin:18px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+    .research-link-list li{border-bottom:1px solid var(--line);padding:14px 0;line-height:1.75}
+    .research-link-list a{font-weight:900;color:var(--navy);text-decoration:none;border-bottom:2px solid rgba(212,175,55,.55)}
+    .research-link-list span{display:block;color:var(--text-soft);font-size:.9rem;margin-top:3px}
+    .citation-note{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0}
+    .citation-note>div{background:#fff;border-left:4px solid var(--gold);padding:18px 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .citation-note strong{display:block;color:var(--navy);margin-bottom:8px}
+    .citation-note ul{font-size:.88rem;margin:8px 0 0 18px;line-height:1.8;color:var(--text)}
     .contact-box{background:linear-gradient(145deg,#1d4ed8,#2563eb);color:#fff;border-radius:var(--radius);padding:32px;margin-top:8px}
     .contact-box h3{color:var(--gold-lt);font-family:'Noto Serif JP',serif;font-size:1.15rem;margin-bottom:12px}
     .contact-box p{color:rgba(255,255,255,.85);font-size:.93rem;line-height:1.85;margin-bottom:14px}
     .contact-box a{color:var(--gold-lt);font-weight:700}
-    @media(max-width:800px){.strength-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:560px){.strength-grid{grid-template-columns:1fr}}
+    @media(max-width:760px){.research-source-types li{grid-template-columns:1fr;gap:4px}.citation-note{grid-template-columns:1fr}}
 
     .page-hero{position:relative;overflow:hidden;}
     .page-hero-bg-img{
@@ -223,156 +223,70 @@
       PTA問題はこれまで「体験談・感情論」として処理されてきましたが、当委員会は法令・行政解釈・公文書に基づく<strong>一次資料研究</strong>として取り組んでいます。収集した実物文書、教育委員会への照会回答、判例・行政実例の整理を公開し、研究者・記者の方が一次資料の所在と要点を確認できるようにしています。
     </p>
 
-
-    <section class="editorial-brief research-editorial-brief" aria-labelledby="research-reading-order">
-      <div class="editorial-brief-band">研究者・記者向け・資料確認の要点</div>
-      <div class="editorial-brief-body">
-        <h2 id="research-reading-order">このサイトの資料は、件数の多さではなく「実物文書と制度論を照合できること」に意味があります</h2>
-        <p>PTA問題は、体験談だけでは制度問題として整理しにくい分野です。入会申込書、学校徴収金案内、個人情報同意、教育委員会回答、行政通知を横断して読むことで、任意加入団体であるPTAが学校手続の中に組み込まれている構造を確認できます。</p>
-        <div class="editorial-brief-grid">
-          <div class="editorial-brief-point"><span>1</span><strong>実物資料</strong><p>学校別資料で、実際の案内・徴収・同意の文面を確認します。</p></div>
-          <div class="editorial-brief-point"><span>2</span><strong>行政回答</strong><p>自治体数、回答件数、分類タグを混同せず、回答本文を読みます。</p></div>
-          <div class="editorial-brief-point"><span>3</span><strong>公式資料</strong><p>通知・法令・行政資料は、発出主体と日付を確認して引用します。</p></div>
-          <div class="editorial-brief-point"><span>4</span><strong>論考</strong><p>個別資料を、契約・個人情報・会計・服務の論点へ接続します。</p></div>
-        </div>
-      </div>
-    </section>
-
-
     <!-- このサイトの強み -->
-    <section>
+    <section class="research-prose">
       <h2>このサイトの強み：意見ではなく一次資料</h2>
-      <p>PTA問題は体験談・意見・感情論が先行しやすい分野です。当委員会は一次資料の収集・整理・公開に特化しています。</p>
+      <p>このサイトで公開している資料は、PTA問題を単なる不満や体験談として扱うためのものではありません。入会届、会費徴収文書、個人情報同意書、学校・PTA間の依頼文書、教育委員会への照会回答などを相互に照合することで、任意加入団体であるPTAが、どのように学校の手続、学校徴収金、児童生徒名簿、教職員の勤務、学校施設利用と結び付いているのかを検証するための資料群です。</p>
+      <p>特に重要なのは、個別文書を単独で読むのではなく、制度論と運用実態を往復して読むことです。PTAが任意団体である以上、入会には本人の意思確認が必要となります。しかし実際の学校文書では、入学手続、学校徴収金、名簿提供、連絡ツール、役員選出などの中にPTA関係手続が組み込まれている例があります。このズレを、実物資料と教育委員会回答から検証できる点に、このサイトの意味があります。</p>
 
-      <div class="strength-grid">
-        <div class="strength-card">
-          <div class="s-icon">🗂️</div>
-          <h4>実物の行政文書</h4>
-          <p>収集した実物の行政文書。入会届・会費関係書類・個人情報同意書・覚書など。</p>
-        </div>
-        <div class="strength-card">
-          <div class="s-icon">📮</div>
-          <h4>全国教育委員会への照会回答</h4>
-          <p>強制加入、名簿提供、職務専念義務に関する各教育委員会の回答。回答本文ごとに論点を確認できます。</p>
-        </div>
-        <div class="strength-card">
-          <div class="s-icon">⚖️</div>
-          <h4>法令・判例との接続</h4>
-          <p>民法・個人情報保護法・地公法・憲法等の条文と、実物資料・行政回答を論点別に接続して整理。</p>
-        </div>
-        <div class="strength-card">
-          <div class="s-icon">🏙️</div>
-          <h4>自治体通知・公式資料</h4>
-          <p>任意加入、個人情報、非加入者への配慮などを整理する自治体通知・公式資料。引用時は発出主体・日付・現行性を確認します。</p>
-        </div>
-        <div class="strength-card">
-          <div class="s-icon">🏫</div>
-          <h4>学校別の実物PTA文書</h4>
-          <p>各校が実際に配布した入会案内・規約・会費明細。自治体・学校ごとの実態差を比較可能。</p>
-        </div>
-        <div class="strength-card">
-          <div class="s-icon">📊</div>
-          <h4>5軸診断システム</h4>
-          <p>入会手続・個人情報・会費・教職員関与・施設利用の5軸でリスクを可視化する運営チェックアプリ。研究の分類軸として活用可能。</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 資料へのアクセス -->
-    <section>
-      <h2>一次資料へのアクセス</h2>
-
-      <div class="resource-list">
-        <a href="national-archive.html" class="resource-item">
-          <div class="resource-icon">🗂️</div>
-          <div class="resource-body">
-            <strong>全国資料館（このサイト）</strong>
-            <p>論点別カテゴリで整理した資料案内。入会手続・個人情報・会費・教職員関与・施設利用・教委回答の6カテゴリ。</p>
-          </div>
-          <div class="resource-arrow">→</div>
-        </a>
-        <a href="documents.html" class="resource-item">
-          <div class="resource-icon">📂</div>
-          <div class="resource-body">
-            <strong>資料入口・索引（このサイト）</strong>
-            <p>収集した実物PDF文書や画像化資料の入口。原資料と解説をサイト内導線から確認できます。</p>
-          </div>
-          <div class="resource-arrow">→</div>
-        </a>
-        <a href="board-responses.html" class="resource-item">
-          <div class="resource-icon">📮</div>
-          <div class="resource-body">
-            <strong>教育委員会の回答（地図付き）</strong>
-            <p>全国の教育委員会への照会結果。強制加入・名簿提供・職務専念義務についての行政の公式見解一覧。</p>
-          </div>
-          <div class="resource-arrow">→</div>
-        </a>
-        <a href="journal.html" class="resource-item">
-          <div class="resource-icon">📝</div>
-          <div class="resource-body">
-            <strong>論考・調査報告</strong>
-            <p>制度分析・全国調査報告・行政動向の考察。スライド資料「PTA会費徴収のパラドックス」も掲載。</p>
-          </div>
-          <div class="resource-arrow">→</div>
-        </a>
-        <a href="law-map.html" class="resource-item">
-          <div class="resource-icon">⚖️</div>
-          <div class="resource-body">
-            <strong>法制度マップ</strong>
-            <p>憲法・民法・個人情報保護法・地方公務員法・学校教育法等を論点別に整理した法令対照表。</p>
-          </div>
-          <div class="resource-arrow">→</div>
-        </a>
-      </div>
+      <ul class="research-source-types">
+        <li><strong>実物文書</strong><span>入会案内、規約、会費明細、個人情報同意書、PTAから学校への依頼文書などを、配布文面として確認します。</span></li>
+        <li><strong>教育委員会回答</strong><span>任意加入、名簿提供、教職員関与、会費徴収に関する自治体の説明を、回答本文と分類タグを分けて確認します。</span></li>
+        <li><strong>法令・判例・行政資料</strong><span>民法、個人情報保護法、地方公務員法、学校教育法、自治体通知などを、実物文書の読解軸として接続します。</span></li>
+        <li><strong>委員会論考</strong><span>個別資料を契約、個人情報、会計、服務、施設利用の論点へ結び直す補助資料として扱います。</span></li>
+      </ul>
     </section>
 
     <!-- 推奨する確認手順 -->
-    <section>
+    <section class="research-prose">
       <h2>資料確認の要点</h2>
-      <p>制度整理 → 実物文書 → 行政回答 の順で見ると、制度と運用のズレが最もクリアに把握できます。</p>
-      <div class="path-flow">
-        <div class="path-step">①法制度マップで論点を把握</div>
-        <div class="path-arrow">→</div>
-        <div class="path-step">②全国資料館で実物文書を確認</div>
-        <div class="path-arrow">→</div>
-        <div class="path-step">③教委回答で行政の公式見解を照合</div>
-        <div class="path-arrow">→</div>
-        <div class="path-step">④論考・調査報告で構造分析</div>
-      </div>
-      <p>各ページから関連する法令条文・資料・他論点に相互リンクしているため、横断的な調査に対応しています。</p>
+      <p>まず法制度マップで、任意加入、個人情報、会費徴収、教職員関与、学校施設利用の基本論点を確認します。次に、全国資料館で実際の入会案内、規約、徴収文書、同意書等を確認します。そのうえで、教育委員会回答を照合すると、制度上の説明と学校現場の運用がどこで食い違っているのかが見えやすくなります。</p>
+      <ol class="research-reading-list">
+        <li>制度整理を先に読み、どの法令・行政資料が論点になるのかを把握します。</li>
+        <li>実物文書では、文書名だけでなく、配布主体、配布時期、対象者、提出先、学校手続との混在の有無を確認します。</li>
+        <li>教育委員会回答では、自治体数や件数だけでなく、回答本文がどの論点に答えているのかを確認します。</li>
+        <li>論考・調査報告は、一次資料から読み取れる範囲と、委員会の分析・評価を区別して参照します。</li>
+      </ol>
+    </section>
+
+    <!-- 資料へのアクセス -->
+    <section class="research-prose">
+      <h2>一次資料へのアクセス</h2>
+      <p>個別の資料入口は、本文の検証手順に沿って参照してください。記事化・論文化する場合は、リンク先の解説だけでなく、資料本文、発出主体、日付、対象校、現行性を確認してください。</p>
+      <ul class="research-link-list">
+        <li><a href="law-map.html">法制度マップ</a><span>任意加入、個人情報、会費徴収、教職員関与、学校施設利用の基本論点を確認する入口。</span></li>
+        <li><a href="national-archive.html">全国資料館</a><span>学校別・自治体別の実物文書を確認する入口。資料画像、元PDF、一次資料URLの有無を分けて確認します。</span></li>
+        <li><a href="board-responses.html">教育委員会の回答</a><span>照会回答本文を自治体別・論点別に確認する入口。回答件数と回答内容を混同しないように読みます。</span></li>
+        <li><a href="documents.html">資料入口・索引</a><span>行政通知、公式PDF、サイト内資料の所在を確認する補助入口。</span></li>
+        <li><a href="journal.html">論考・調査報告</a><span>一次資料を制度論へ接続するための分析記事・調査報告。</span></li>
+      </ul>
     </section>
 
     <!-- 引用・転載について -->
-    <section>
+    <section class="research-prose">
       <h2>資料の引用・転載について</h2>
-      <p>当委員会が収集・公開している資料は以下の通り取り扱います。</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0">
-        <div class="alert alert-success">
-          <div class="alert-icon">✅</div>
-          <div>
-            <p style="font-weight:800;margin-bottom:4px">自由に利用できるもの</p>
-            <ul style="font-size:.88rem;margin:8px 0 0 16px;line-height:1.8;color:var(--text)">
-              <li>当委員会の分析・論考（出典明記で引用可）</li>
-              <li>教育委員会の回答（公文書として著作権なし）</li>
-              <li>法令条文・行政通知（著作権なし）</li>
-              <li>統計・集計結果（出典明記で引用可）</li>
-            </ul>
-          </div>
+      <p>研究論文・報道記事で参照する場合は、資料の性質を分けて扱ってください。教育委員会の回答、法令条文、行政通知等については、各資料の性質に応じて出典を明記して引用してください。学校・PTA関係の実物文書は、作成主体、対象年度、配布状況、墨消しの有無を確認したうえで、必要な範囲に限って引用するのが安全です。</p>
+      <div class="citation-note">
+        <div>
+          <strong>引用時に確認する事項</strong>
+          <ul>
+            <li>資料名、作成主体、日付、対象校・対象年度</li>
+            <li>原資料、画像化資料、委員会による解説の区別</li>
+            <li>法令・行政通知は、現行性と発出主体</li>
+            <li>教育委員会回答は、質問文と回答本文の対応関係</li>
+          </ul>
         </div>
-        <div class="alert alert-warning">
-          <div class="alert-icon">⚠️</div>
-          <div>
-            <p style="font-weight:800;margin-bottom:4px">個別確認が必要なもの</p>
-            <ul style="font-size:.88rem;margin:8px 0 0 16px;line-height:1.8;color:var(--text)">
-              <li>各PTAの内部文書（著作権は原作者に帰属）</li>
-              <li>当委員会独自のデザイン・図版</li>
-              <li>大量複製・商業利用・改変再配布</li>
-              <li>研究論文等への一次資料の全文転載</li>
-            </ul>
-          </div>
+        <div>
+          <strong>個別確認が必要なもの</strong>
+          <ul>
+            <li>各PTA・学校関係者が作成した内部文書</li>
+            <li>当委員会独自の図版、デザイン、編集済み資料</li>
+            <li>大量複製、商業利用、改変再配布</li>
+            <li>研究論文等への一次資料の全文転載</li>
+          </ul>
         </div>
       </div>
-      <p>学術論文・報道記事での引用・参照は出典明記（委員会名・URL・取得日）のうえ自由に使用できます。</p>
+      <p>サイト内の分析・論考を引用する場合は、委員会名、ページURL、取得日を明記してください。一次資料を引用する場合は、可能な限り原資料本文または公的な発出元も併記してください。</p>
     </section>
 
     <!-- 研究者向けFAQ -->
@@ -401,7 +315,7 @@
             <div class="faq-q-text" style="font-size:.97rem;font-weight:700;color:var(--navy);flex:1">PTA問題に関して法的な専門家（弁護士・研究者）との連携はありますか？</div>
             <span class="faq-toggle" style="color:var(--text-soft)">▼</span>
           </div>
-          <div class="faq-a" style="padding:0 22px;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease"><p style="font-size:.93rem;color:var(--text);line-height:1.85;margin:0;padding-top:12px;border-top:1px solid var(--line)">当委員会の資料・論考はいずれも当委員会独自の整理に基づくものですが、法令解釈・行政実例については行政書士・弁護士等の専門家に確認を取りながら作成しています。共同研究・取材連携については個別にお問い合わせください。</p></div>
+          <div class="faq-a" style="padding:0 22px;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease"><p style="font-size:.93rem;color:var(--text);line-height:1.85;margin:0;padding-top:12px;border-top:1px solid var(--line)">当委員会の資料・論考はいずれも当委員会独自の整理に基づくものです。必要に応じて法律・行政実務に詳しい専門家の助言を受けながら確認していますが、個別事件についての法律意見を示すものではありません。共同研究・取材連携については個別にお問い合わせください。</p></div>
         </div>
 
       </div>
