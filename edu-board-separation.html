@@ -20,19 +20,19 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="css/style.css?v=20260617-label-clean" rel="stylesheet"/>
+<link href="css/style.css?v=20260618-layout-free" rel="stylesheet"/>
 <link href="css/refine.css?v=refine2" rel="stylesheet"/>
 <style>
     .page-hero{position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(5,17,31,.36) 0%,rgba(5,17,31,.18) 54%,rgba(5,17,31,.06) 100%),url('assets/slides/1.jpg') center/cover!important;color:#fff}
     .page-hero h1,.page-hero p{color:#fff!important;text-shadow:0 2px 12px rgba(5,17,31,.36)}
     .page-hero-kicker{background:rgba(212,175,55,.18)!important;border:1px solid rgba(212,175,55,.4)!important;color:var(--gold-lt)!important}
-    .edu-page{background:var(--bg);padding:44px 0 72px}
-    .edu-layout{width:min(calc(100% - 40px),1180px);margin-inline:auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:36px;align-items:start}
-    .edu-toc{position:sticky;top:96px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-sm)}
-    .edu-toc h2{font-size:.86rem;color:var(--navy);margin-bottom:10px;font-weight:900;letter-spacing:.04em}
-    .edu-toc a{display:block;padding:7px 8px;border-radius:8px;color:var(--text-soft);font-size:.82rem;line-height:1.45;text-decoration:none}
-    .edu-toc a:hover{background:#f6f9fd;color:var(--navy);font-weight:700}
-    .edu-article{min-width:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:44px}
+    .edu-page{background:#fff;padding:44px 0 72px}
+    .edu-layout{width:min(calc(100% - 40px),1060px);margin-inline:auto;display:block}
+    .edu-toc{position:static;background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:0 0 18px;margin:0 0 34px;box-shadow:none}
+    .edu-toc h2{font-size:.78rem;color:var(--navy);margin:0 0 10px;font-weight:900;letter-spacing:.08em}
+    .edu-toc a{display:inline-block;padding:0;border-radius:0;margin:0 18px 8px 0;color:var(--text-soft);font-size:.84rem;line-height:1.55;text-decoration:underline;text-decoration-color:rgba(11,42,74,.24);text-underline-offset:4px}
+    .edu-toc a:hover{background:transparent;color:var(--navy);font-weight:700;text-decoration-color:var(--gold)}
+    .edu-article{min-width:0;max-width:920px;margin-inline:auto;background:transparent;border:0;border-radius:0;box-shadow:none;padding:0}
     .edu-article section{scroll-margin-top:100px;margin-bottom:44px}
     .edu-article section:last-child{margin-bottom:0}
     .edu-article h2{font-family:'Noto Serif JP',serif;color:var(--navy);font-size:clamp(1.32rem,2.1vw,1.85rem);line-height:1.35;margin:0 0 18px;padding-bottom:10px;border-bottom:2px solid var(--gold)}
@@ -78,8 +78,9 @@
     .edu-voices-table th:nth-child(1),.edu-voices-table td:nth-child(1){width:48px;text-align:center;font-weight:900}
     .edu-voices-table th:nth-child(2),.edu-voices-table td:nth-child(2){width:108px}
     .edu-voices-table th:nth-child(6),.edu-voices-table td:nth-child(6){width:112px}
-    .edu-voices-tags{display:flex;flex-wrap:wrap;gap:5px}
-    .edu-voices-tags span{display:inline-flex;align-items:center;border:1px solid rgba(11,42,74,.16);border-radius:999px;background:#fff8df;color:var(--navy);padding:3px 8px;font-size:.76rem;font-weight:900;line-height:1.45}
+    .edu-voices-terms{display:block;color:var(--text-soft);font-size:.82rem;line-height:1.7}
+    .edu-voices-terms span{display:inline;border:0;border-radius:0;background:transparent;color:inherit;padding:0;font-weight:700}
+    .edu-voices-terms span+span::before{content:"／";color:#94a3b8;margin:0 .25em 0 .1em;font-weight:400}
     .edu-voices-source{font-weight:900;color:var(--navy);text-decoration:underline;text-underline-offset:3px}
     .edu-voices-conclusion{background:#fff8df;border-left:5px solid var(--gold);border-radius:0 14px 14px 0;padding:18px 20px;margin:22px 0 0;color:#3f3310;line-height:1.9}
     .edu-voices-note{margin-top:14px;color:var(--text-soft);font-size:.88rem;line-height:1.8}
@@ -94,9 +95,9 @@
     .mini-link:hover{color:var(--gold)}
     .desktop-nav .nav-item.has-dropdown:last-of-type .mega-menu{left:auto;right:0;transform:translateY(10px)}
     .desktop-nav .nav-item.has-dropdown:last-of-type:hover .mega-menu,.desktop-nav .nav-item.has-dropdown:last-of-type.is-open .mega-menu{transform:translateY(0)}
-    @media(max-width:920px){.edu-layout{grid-template-columns:1fr}.edu-toc{position:static}.edu-article{padding:30px 24px}.edu-voices-summary{grid-template-columns:1fr 1fr}.edu-voices-table{min-width:960px}}
-    @media(max-width:640px){.edu-page{padding:28px 0 52px}.edu-layout{width:min(calc(100% - 28px),1180px)}.edu-article{padding:24px 18px}.edu-table{min-width:680px}.edu-voices-summary{grid-template-columns:1fr}.edu-voices-table{min-width:900px}.page-hero h1{font-size:1.82rem}.flow-item{grid-template-columns:1fr}.flow-label{justify-content:flex-start;padding:0 12px}}
-    @media print{.site-header,.mobile-overlay,.footer,.edu-toc,.hero-actions{display:none!important}.page-hero{border:none;padding:0 0 18px;background:#fff!important}.page-hero::before,.page-hero::after{display:none}.page-hero-inner{width:100%}.edu-page{padding:0;background:#fff}.edu-layout{display:block;width:100%}.edu-article{border:none;box-shadow:none;padding:0}.edu-article section{break-inside:avoid}.edu-voices-table{min-width:0;font-size:.72rem}.edu-voices-tags span{border:1px solid #555;background:#fff;color:#000}.edu-final{background:#fff;color:#000;border:1px solid #aaa}.edu-final p{color:#000}}
+    @media(max-width:920px){.edu-voices-summary{grid-template-columns:1fr 1fr}.edu-voices-table{min-width:960px}}
+    @media(max-width:640px){.edu-page{padding:28px 0 52px}.edu-layout{width:min(calc(100% - 28px),1060px)}.edu-table{min-width:680px}.edu-voices-summary{grid-template-columns:1fr}.edu-voices-table{min-width:900px}.page-hero h1{font-size:1.82rem}.flow-item{grid-template-columns:1fr}.flow-label{justify-content:flex-start;padding:0 12px}}
+    @media print{.site-header,.mobile-overlay,.footer,.edu-toc,.hero-actions{display:none!important}.page-hero{border:none;padding:0 0 18px;background:#fff!important}.page-hero::before,.page-hero::after{display:none}.page-hero-inner{width:100%}.edu-page{padding:0;background:#fff}.edu-layout{display:block;width:100%}.edu-article{border:none;box-shadow:none;padding:0}.edu-article section{break-inside:avoid}.edu-voices-table{min-width:0;font-size:.72rem}.edu-voices-terms span{border:1px solid #555;background:#fff;color:#000}.edu-final{background:#fff;color:#000;border:1px solid #aaa}.edu-final p{color:#000}}
   </style>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0D18ZSSLMH"></script>
@@ -591,7 +592,7 @@
 <td>1</td>
 <td>千葉市</td>
 <td>市民の声：小学校PTAについて</td>
-<td><div class="edu-voices-tags"><span>任意加入</span><span>強制加入</span><span>教育委員会の関与</span></div></td>
+<td><div class="edu-voices-terms"><span>任意加入</span><span>強制加入</span><span>教育委員会の関与</span></div></td>
 <td>小学校PTAが強制加入のままで、入学後に会費を徴収されるとして、市からの周知・指導を求める声。</td>
 <td><a class="edu-voices-source" href="https://www.city.chiba.jp/sogoseisaku/shichokoshitsu/kohokocho/shiminnokoe/r5-1974.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -599,7 +600,7 @@
 <td>2</td>
 <td>大阪市</td>
 <td>市立学校におけるPTAについて</td>
-<td><div class="edu-voices-tags"><span>任意加入</span><span>活動負担</span><span>学校とPTAの混同</span></div></td>
+<td><div class="edu-voices-terms"><span>任意加入</span><span>活動負担</span><span>学校とPTAの混同</span></div></td>
 <td>入学説明会で任意加入の説明が十分でないことや、PTA活動負担の見直しを求める声。</td>
 <td><a class="edu-voices-source" href="https://www.city.osaka.lg.jp/seisakukikakushitsu/page/0000659152.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -607,7 +608,7 @@
 <td>3</td>
 <td>大阪市</td>
 <td>PTAについて</td>
-<td><div class="edu-voices-tags"><span>会費徴収</span><span>活動負担</span><span>PTAの必要性</span></div></td>
+<td><div class="edu-voices-terms"><span>会費徴収</span><span>活動負担</span><span>PTAの必要性</span></div></td>
 <td>PTA活動や会費徴収の負担、団体の必要性や運営見直しについて市の考えを問う声。</td>
 <td><a class="edu-voices-source" href="https://www.city.osaka.lg.jp/seisakukikakushitsu/page/0000656953.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -615,7 +616,7 @@
 <td>4</td>
 <td>野洲市</td>
 <td>野洲市内での公立小中学校、幼稚園におけるPTA加入説明について</td>
-<td><div class="edu-voices-tags"><span>任意加入</span><span>加入届</span><span>非加入届</span><span>役員免除</span></div></td>
+<td><div class="edu-voices-terms"><span>任意加入</span><span>加入届</span><span>非加入届</span><span>役員免除</span></div></td>
 <td>任意加入の説明、加入届・非加入届、役員免除規定などの運用について改善を求める声。</td>
 <td><a class="edu-voices-source" href="https://www.city.yasu.lg.jp/soshiki/kouhouhisho/goiken/reiwa5/1680485605781.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -623,7 +624,7 @@
 <td>5</td>
 <td>あきる野市</td>
 <td>PTAの在り方について</td>
-<td><div class="edu-voices-tags"><span>役員強制</span><span>学校連絡ツール</span><span>学校とPTAの混同</span></div></td>
+<td><div class="edu-voices-terms"><span>役員強制</span><span>学校連絡ツール</span><span>学校とPTAの混同</span></div></td>
 <td>学校連絡手段を通じたPTA活動や役員任命の連絡について、強要と受け止められる運用への対応を求める声。</td>
 <td><a class="edu-voices-source" href="https://www.city.akiruno.tokyo.jp/0000016929.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -631,7 +632,7 @@
 <td>6</td>
 <td>本庄市</td>
 <td>日本PTA全国協議会からの脱会について</td>
-<td><div class="edu-voices-tags"><span>任意加入</span><span>活動負担</span><span>上部団体</span></div></td>
+<td><div class="edu-voices-terms"><span>任意加入</span><span>活動負担</span><span>上部団体</span></div></td>
 <td>PTAが任意団体である一方、活動負担や強制力が強い実態を指摘し、上部団体との関係を問う声。</td>
 <td><a class="edu-voices-source" href="https://www.city.honjo.lg.jp/soshiki/kikakuzaisei/hisyo/shichohenotegami/yoseraretagoikentokaito/5_kyoiku_bunka_gakkokyoiku_shogaigakushu_supotsushinkonado/reiwa2nen/12038.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -639,7 +640,7 @@
 <td>7</td>
 <td>北本市</td>
 <td>小・中学校のPTA入会について</td>
-<td><div class="edu-voices-tags"><span>入会申込書</span><span>会費徴収</span><span>学校徴収金</span><span>役員割当</span></div></td>
+<td><div class="edu-voices-terms"><span>入会申込書</span><span>会費徴収</span><span>学校徴収金</span><span>役員割当</span></div></td>
 <td>入会申込書を提出していない場合でも学校徴収金とともに会費が引き落とされ、役員割当があることを問う声。</td>
 <td><a class="edu-voices-source" href="https://www.city.kitamoto.lg.jp/soshiki/seisakusuisinbu/koushitsu/gyomu/4/15205.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -647,7 +648,7 @@
 <td>8</td>
 <td>佐世保市</td>
 <td>【市長への手紙】PTA会費について</td>
-<td><div class="edu-voices-tags"><span>PTA会費</span><span>活動見直し</span><span>保護者負担</span></div></td>
+<td><div class="edu-voices-terms"><span>PTA会費</span><span>活動見直し</span><span>保護者負担</span></div></td>
 <td>公立小学校PTA会費の負担が大きいとして、活動内容や会費の見直しを求める声。</td>
 <td><a class="edu-voices-source" href="https://www.city.sasebo.lg.jp/soumu/kouhou/tegami/iken_13686.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -655,7 +656,7 @@
 <td>9</td>
 <td>館山市</td>
 <td>学校とPTAについて（市民の声 令和6年12月公表分）</td>
-<td><div class="edu-voices-tags"><span>入会申込書</span><span>学校徴収金</span><span>学校とPTAの混同</span><span>会費徴収</span></div></td>
+<td><div class="edu-voices-terms"><span>入会申込書</span><span>学校徴収金</span><span>学校とPTAの混同</span><span>会費徴収</span></div></td>
 <td>入学説明会で学校とPTA説明が混在し、入会意思確認や会費引落しの整理に疑義を示す声。</td>
 <td><a class="edu-voices-source" href="https://www.city.tateyama.chiba.jp/files/300384303.pdf" rel="noopener" target="_blank">公式PDF</a></td>
 </tr>
@@ -663,7 +664,7 @@
 <td>10</td>
 <td>横浜市</td>
 <td>市民の声：市立小学校のPTAについて</td>
-<td><div class="edu-voices-tags"><span>学校とPTAの混同</span><span>教育委員会の関与</span><span>任意加入</span></div></td>
+<td><div class="edu-voices-terms"><span>学校とPTAの混同</span><span>教育委員会の関与</span><span>任意加入</span></div></td>
 <td>学校とPTAの関係整理について、各校任せではなく教育委員会として統一的な方針を示すことを求める声。</td>
 <td><a class="edu-voices-source" href="https://cgi.city.yokohama.lg.jp/shimin/kouchou/search/data/37004955.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -671,7 +672,7 @@
 <td>11</td>
 <td>名古屋市</td>
 <td>PTA会費の引き落としについて</td>
-<td><div class="edu-voices-tags"><span>会費徴収</span><span>学校徴収金</span><span>委任契約</span><span>会計分離</span></div></td>
+<td><div class="edu-voices-terms"><span>会費徴収</span><span>学校徴収金</span><span>委任契約</span><span>会計分離</span></div></td>
 <td>PTA会費が学校費と同じ口座で引き落とされることについて、別会計としての整理を求める声。</td>
 <td><a class="edu-voices-source" href="https://voices.city.nagoya.jp/faq/detail.aspx?id=43973" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -679,7 +680,7 @@
 <td>12</td>
 <td>安城市</td>
 <td>PTAについて</td>
-<td><div class="edu-voices-tags"><span>自動加入</span><span>会費徴収</span><span>任意加入</span><span>役員強制</span></div></td>
+<td><div class="edu-voices-terms"><span>自動加入</span><span>会費徴収</span><span>任意加入</span><span>役員強制</span></div></td>
 <td>入学と同時の自動加入や、給食費と同じ口座からのPTA会費引落しについて、市の見解を求める声。</td>
 <td><a class="edu-voices-source" href="https://www.city.anjo.aichi.jp/shisei/jouhou-hassin/2014koe/201404-2.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -687,7 +688,7 @@
 <td>13</td>
 <td>守口市</td>
 <td>市立学校園におけるPTAについて</td>
-<td><div class="edu-voices-tags"><span>任意加入</span><span>活動負担</span><span>学校とPTAの関係</span></div></td>
+<td><div class="edu-voices-terms"><span>任意加入</span><span>活動負担</span><span>学校とPTAの関係</span></div></td>
 <td>市立学校園のPTA運営について、活動負担や学校との関係をめぐる市民意見と市の回答が掲載されている事例。</td>
 <td><a class="edu-voices-source" href="https://www.city.moriguchi.osaka.jp/kakukanoannai/kikakuzaiseibu/miryokusouzouhasshin/kocyo/shiminnokoe/shiminnnokoekaitou/shiminnokoe_2022/14112.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -695,7 +696,7 @@
 <td>14</td>
 <td>横浜市</td>
 <td>市民の声：小学校の校外委員について</td>
-<td><div class="edu-voices-tags"><span>役員強制</span><span>活動負担</span><span>登校班</span><span>学校とPTAの混同</span></div></td>
+<td><div class="edu-voices-terms"><span>役員強制</span><span>活動負担</span><span>登校班</span><span>学校とPTAの混同</span></div></td>
 <td>校外委員などのPTA関連活動について、保護者負担や業務の見直しを求める声。</td>
 <td><a class="edu-voices-source" href="https://cgi.city.yokohama.lg.jp/shimin/kouchou/search/data/37001728.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -703,7 +704,7 @@
 <td>15</td>
 <td>福岡県</td>
 <td>県立高校PTAについて</td>
-<td><div class="edu-voices-tags"><span>任意加入</span><span>退会の自由</span><span>会費徴収</span><span>未加入家庭への配慮</span></div></td>
+<td><div class="edu-voices-terms"><span>任意加入</span><span>退会の自由</span><span>会費徴収</span><span>未加入家庭への配慮</span></div></td>
 <td>県立高校PTAについて、任意団体であることや退会の自由の説明が十分かを問う県民の声。</td>
 <td><a class="edu-voices-source" href="https://kvoice.pref.fukuoka.lg.jp/voices/detail/?id=888" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -711,7 +712,7 @@
 <td>16</td>
 <td>伊勢市</td>
 <td>PTA寄附の適法性と今後の対応について</td>
-<td><div class="edu-voices-tags"><span>任意加入</span><span>寄附</span><span>学校徴収金</span><span>法令遵守</span></div></td>
+<td><div class="edu-voices-terms"><span>任意加入</span><span>寄附</span><span>学校徴収金</span><span>法令遵守</span></div></td>
 <td>PTAの任意加入が十分に確保されているか、学校がPTAから寄附を受ける運用との関係を問う声。</td>
 <td><a class="edu-voices-source" href="https://www.city.ise.mie.jp/_res/projects/default_project/_page_/001/018/647/0908-0912_koukaiyou.pdf" rel="noopener" target="_blank">公式PDF</a></td>
 </tr>
@@ -719,7 +720,7 @@
 <td>17</td>
 <td>米沢市</td>
 <td>令和5年度のご意見・ご提案と市の回答</td>
-<td><div class="edu-voices-tags"><span>任意加入</span><span>教育委員会の関与</span><span>学校とPTAの関係</span></div></td>
+<td><div class="edu-voices-terms"><span>任意加入</span><span>教育委員会の関与</span><span>学校とPTAの関係</span></div></td>
 <td>PTAが市と関係のない任意団体であるとの説明と、教育委員会に相談できる範囲との関係を問う声。</td>
 <td><a class="edu-voices-source" href="https://www.city.yonezawa.yamagata.jp/soshiki/2/hisyo/4/3/8184.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -727,7 +728,7 @@
 <td>18</td>
 <td>安城市</td>
 <td>PTA活動について</td>
-<td><div class="edu-voices-tags"><span>活動負担</span><span>役員選出</span><span>任意加入</span><span>退会</span></div></td>
+<td><div class="edu-voices-terms"><span>活動負担</span><span>役員選出</span><span>任意加入</span><span>退会</span></div></td>
 <td>PTA活動の必要性、役員決めのために保護者が集まる運用、加入しない場合の受け止めをめぐる声。</td>
 <td><a class="edu-voices-source" href="https://www.city.anjo.aichi.jp/shisei/jouhou-hassin/2022koe/0306.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -735,7 +736,7 @@
 <td>19</td>
 <td>横浜市</td>
 <td>PTAが任意加入となったものの校外活動が非会員にも強要されていますので指導してください</td>
-<td><div class="edu-voices-tags"><span>任意加入</span><span>非会員対応</span><span>校外活動</span><span>学校管理職</span></div></td>
+<td><div class="edu-voices-terms"><span>任意加入</span><span>非会員対応</span><span>校外活動</span><span>学校管理職</span></div></td>
 <td>PTA任意化後も校外委員などの活動が非会員にも強要されているとして、学校管理職を含む見直しを求める声。</td>
 <td><a class="edu-voices-source" href="https://cgi.city.yokohama.lg.jp/shimin/kouchou/search/data/37003565.html" rel="noopener" target="_blank">公式ページ</a></td>
 </tr>
@@ -743,7 +744,7 @@
 <td>20</td>
 <td>沼津市</td>
 <td>自治会・PTA組織のあり方（令和5年9月分「市民の声」）</td>
-<td><div class="edu-voices-tags"><span>強制加入</span><span>役員負担</span><span>活動見直し</span><span>教育委員会の関与</span></div></td>
+<td><div class="edu-voices-terms"><span>強制加入</span><span>役員負担</span><span>活動見直し</span><span>教育委員会の関与</span></div></td>
 <td>PTAが半ば強制となっており、役員や不要な活動が多すぎるとして、活動内容の見直しを求める声。</td>
 <td><a class="edu-voices-source" href="https://www.city.numazu.shizuoka.jp/opinion/kouhyo/doc/20.pdf" rel="noopener" target="_blank">公式PDF</a></td>
 </tr>

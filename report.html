@@ -21,8 +21,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20260617-label-clean">
-<link href="css/refine.css?v=refine2" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css?v=20260618-layout-free">
+    <link href="css/refine.css?v=refine2" rel="stylesheet"/>
     <title>PTA総合分析レポート | PTA適正化推進委員会</title>
 
 <!-- Google tag (gtag.js) -->
@@ -159,18 +159,18 @@
     </div>
 
     <!-- リード文 -->
-    <section style="background:#fff;padding:48px 0 40px">
-      <div style="width:min(calc(100% - 40px),860px);margin-inline:auto">
-        <p style="font-size:1.05rem;line-height:1.95;color:var(--text);padding:24px 28px;background:#f8fafc;border-left:5px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0">
+    <section class="report-open-lead" style="background:#fff;padding:44px 0 18px">
+      <div style="width:min(calc(100% - 40px),880px);margin-inline:auto">
+        <p style="font-size:1.05rem;line-height:1.95;color:var(--text);padding:2px 0 2px 22px;border-left:4px solid var(--gold)">
           このレポートは、PTA問題を「感情論」ではなく<strong>法令・判例・行政文書という一次資料</strong>の観点から整理した総合分析です。入会手続・個人情報・会費徴収・教職員関与・施設利用の5軸で構成し、それぞれが法的にどのように連動しているかを俯瞰します。行政実例・訴訟リスク・制度改善の方向性まで、PTA問題の全体像をここで把握できます。
         </p>
       </div>
     </section>
 
     <!-- 5論点サマリーインフォグラフィック -->
-    <section style="background:linear-gradient(180deg,#f8fafc 0%,#fff 100%);padding:64px 0;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb">
+    <section class="report-axis-section" style="background:#fff;padding:34px 0 42px">
       <div style="width:min(calc(100% - 40px),1100px);margin-inline:auto">
-        <div style="text-align:center;margin-bottom:40px">
+        <div style="text-align:center;margin-bottom:22px">
           <div class="section-kicker" style="background:#fff8e1;color:#8a6a00">総合レポート概要</div>
           <h2 class="section-title" style="color:var(--navy);margin-top:8px">PTA問題の5軸構造</h2>
 <figure class="ax5-fig" role="img" aria-label="PTA問題の5軸構造">
@@ -185,13 +185,13 @@
 .ax5 .ax5-num{grid-column:1;justify-self:center;z-index:2;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;background:var(--c);font-weight:900;font-size:1.05rem;box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 14%,transparent)}
 .ax5 .ax5-txt{grid-column:2;display:flex;flex-wrap:wrap;align-items:baseline;gap:7px 10px;min-width:0}
 .ax5 .ax5-name{font-weight:900;color:var(--ink);font-size:clamp(1rem,2.1vw,1.16rem);line-height:1.45}
-.ax5 .ax5-law{font-size:.68rem;font-weight:800;color:color-mix(in srgb,var(--c) 78%,#111827);border:1px solid color-mix(in srgb,var(--c) 50%,transparent);background:color-mix(in srgb,var(--c) 10%,transparent);border-radius:999px;padding:3px 10px;white-space:normal}
+.ax5 .ax5-law{font-size:.74rem;font-weight:700;color:#64748b;border:0;background:transparent;border-radius:0;padding:0;white-space:normal}
 .ax5 .ax5-desc{display:block;width:100%;margin:0;color:var(--sub);font-size:.86rem;line-height:1.7}
 .ax5 .ax5-foot{position:relative;z-index:2;margin-top:8px;padding:18px 34px 24px;background:rgba(255,251,235,.64);border-top:1px solid rgba(180,83,9,.18)}
 .ax5 .ax5-root{font-weight:850;font-size:clamp(.98rem,2.2vw,1.1rem);margin:0;color:var(--ink);line-height:1.65}
 .ax5 .ax5-root em{font-style:normal;color:#b45309}
 .ax5 .ax5-src{margin:8px 0 0;font-size:.68rem;color:#64748b;line-height:1.6}
-@media(max-width:600px){.ax5-fig{margin-left:-2px;margin-right:-2px}.ax5 .ax5-list,.ax5 .ax5-foot{padding-left:18px;padding-right:18px}.ax5 .ax5-rail{left:39px}.ax5 .ax5-node{grid-template-columns:34px 1fr;gap:13px}.ax5 .ax5-num{width:34px;height:34px;font-size:.88rem}.ax5 .ax5-law{font-size:.62rem;padding:2px 8px}}
+@media(max-width:600px){.ax5-fig{margin-left:-2px;margin-right:-2px}.ax5 .ax5-list,.ax5 .ax5-foot{padding-left:18px;padding-right:18px}.ax5 .ax5-rail{left:39px}.ax5 .ax5-node{grid-template-columns:34px 1fr;gap:13px}.ax5 .ax5-num{width:34px;height:34px;font-size:.88rem}.ax5 .ax5-law{font-size:.68rem}}
 </style>
 <div class="ax5">
 <div class="ax5-list">
@@ -211,13 +211,6 @@
           <p style="color:var(--text-soft);font-size:.95rem;max-width:640px;margin:8px auto 0;line-height:1.8">このレポートが扱う5つの論点と、それぞれが連動する構造を俯瞰します。</p>
         </div>
 
-        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px">
-          <a href="membership.html" class="btn-soft" style="font-size:.84rem;padding:8px 16px">📋 入会手続</a>
-          <a href="privacy.html" class="btn-soft" style="font-size:.84rem;padding:8px 16px">🔒 個人情報</a>
-          <a href="fee-collection.html" class="btn-soft" style="font-size:.84rem;padding:8px 16px">💰 会費徴収</a>
-          <a href="personnel.html" class="btn-soft" style="font-size:.84rem;padding:8px 16px">👩‍🏫 教職員関与</a>
-          <a href="facilities.html" class="btn-soft" style="font-size:.84rem;padding:8px 16px">🏫 施設利用</a>
-        </div>
       </div>
     </section>
 
@@ -225,7 +218,6 @@
             <aside class="report-toc">
                 <div class="report-toc-inner">
                     <div class="report-toc-title">目次</div>
-                    <a href="#source-nav">資料別ナビ</a>
                     <a href="#source-guide">資料の種類と使い方</a>
                     <a href="#intro">はじめに</a>
                     <a href="#reading-method">このページの確認ポイント</a>
@@ -242,35 +234,6 @@
     <h1>PTAの適正化に向けた課題と提言</h1>
     <div class="subtitle">法的枠組みと現状の検証</div>
   </header>
-
-  <nav class="report-source-nav" id="source-nav" aria-label="資料別ナビゲーション">
-    <a class="report-source-card" href="law-map.html">
-      <span class="report-source-label">法令</span>
-      <strong>制度上の根拠を確認</strong>
-      <small>社会教育法・個人情報保護法・地方自治法など</small>
-    </a>
-    <a class="report-source-card" href="cases.html">
-      <span class="report-source-label">判例</span>
-      <strong>争点と射程を整理</strong>
-      <small>熊本地裁事案・大阪地裁堺支部事案など</small>
-    </a>
-    <a class="report-source-card" href="administrative-materials.html">
-      <span class="report-source-label">行政実例</span>
-      <strong>実務解釈と通知を確認</strong>
-      <small>行政実例・通知・参考資料の位置づけ</small>
-    </a>
-    <a class="report-source-card" href="national-archive.html">
-      <span class="report-source-label">自治体回答</span>
-      <strong>自治体ごとの回答資料へ</strong>
-      <small>教育委員会回答や関連資料の確認導線</small>
-    </a>
-    <a class="report-source-card" href="#ref-committee">
-      <span class="report-source-label">委員会論考</span>
-      <strong>論点整理と横断分析</strong>
-      <small>委員会資料・学術資料の補助的参照</small>
-    </a>
-  </nav>
-
 
   <section aria-labelledby="source-guide">
     <h2 id="source-guide">資料の種類と使い方</h2>
@@ -316,22 +279,6 @@
     <p>第二次世界大戦後の日本で急速に普及したPTAは、当初「自主的・自発的な組織」として構想されました。ところが現実には、児童の入学と同時に保護者が自動的に会員とみなされる慣行が一般化し、PTA会費が給食費等と一体で徴収されるなど、公私の境界が曖昧になってきました。任意団体であるはずのPTAが実質的に強制加入となっていることに対しては、近年、法的な問題点や制度的課題が指摘されています。</p>
     <p>本稿では、PTA適正化推進委員会の研究成果や各種ガイドライン、国内の法令や判例を参照しながら、PTAの法的地位と運営の現状を検証し、適正化に向けた提言を総括的に述べます。社会教育法・地方自治法・個人情報保護法・地方公務員法など複数の法体系を横断的に分析し、PTAが抱える構造的な課題と改善の方向性を明らかにすることを目的とします。</p>
   </section>
-
-  <section aria-labelledby="issue-map">
-    <h2 id="issue-map">論点別リンク</h2>
-    <div class="report-link-grid">
-      <a class="report-link-chip" href="membership.html"><strong>入会手続</strong><span>オプトイン・任意加入</span></a>
-      <a class="report-link-chip" href="privacy.html"><strong>個人情報</strong><span>学校からPTAへの提供</span></a>
-      <a class="report-link-chip" href="fee-collection.html"><strong>会費徴収</strong><span>学校徴収・代理徴収</span></a>
-      <a class="report-link-chip" href="personnel.html"><strong>教職員関与</strong><span>職務専念義務・校務外事務</span></a>
-      <a class="report-link-chip" href="facilities.html"><strong>施設利用</strong><span>公私混同・学校施設</span></a>
-      <a class="report-link-chip" href="law-map.html"><strong>法制度マップ</strong><span>全体像の確認</span></a>
-      <a class="report-link-chip" href="cases.html"><strong>判例整理</strong><span>判例だけを独立整理</span></a>
-      <a class="report-link-chip" href="administrative-materials.html"><strong>行政実例・通知等</strong><span>行政資料を独立整理</span></a>
-      <a class="report-link-chip" href="administrative-materials.html#yokohama"><strong>行政資料整理表</strong><span>作成主体・日付・性質で確認</span></a>
-    </div>
-  </section>
-
 
   <section>
     <h2 id="history">PTAの歴史的背景と現状</h2>
