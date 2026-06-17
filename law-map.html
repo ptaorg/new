@@ -578,9 +578,59 @@
 <div style="width:min(calc(100% - 40px),960px);margin-inline:auto">
 <div class="section-kicker">Issue Chain</div>
 <h2 class="section-title" style="margin-bottom:8px">問題の連鎖構造</h2>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/00-%E5%85%B1%E9%80%9A/01_%E9%81%95%E6%B3%95%E3%81%AE%E9%80%A3%E9%8E%96.svg" alt="図解：違法の連鎖" loading="eager" width="760" height="769" style="display:block;width:100%;height:auto"></figure>
+<figure class="lawchain-fig" role="img" aria-label="入会申込書の不在が招く違法の連鎖">
+<style>
+.lawchain-fig{margin:28px auto 34px;max-width:900px}
+.lawchain{--ink:#13294b;--sub:#526174;position:relative;overflow:hidden;color:var(--ink);font-family:'Noto Sans JP',sans-serif;background:linear-gradient(180deg,rgba(250,252,255,.96),rgba(255,255,255,.72));border-top:2px solid rgba(19,41,75,.08);border-bottom:1px solid rgba(19,41,75,.08);box-shadow:none}
+.lawchain::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(rgba(19,41,75,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(19,41,75,.035) 1px,transparent 1px);background-size:32px 32px;-webkit-mask:linear-gradient(180deg,#000,transparent 84%);mask:linear-gradient(180deg,#000,transparent 84%)}
+.lawchain .lawchain-cnr{display:none}
+.lawchain .lawchain-cnr.tl{top:13px;left:13px;border-right:0;border-bottom:0}.lawchain .lawchain-cnr.tr{top:13px;right:13px;border-left:0;border-bottom:0}
+.lawchain .lawchain-cnr.bl{bottom:13px;left:13px;border-right:0;border-top:0}.lawchain .lawchain-cnr.br{bottom:13px;right:13px;border-left:0;border-top:0}
+.lawchain .lawchain-head{position:relative;z-index:2;padding:28px 34px 8px}
+.lawchain .lawchain-kick{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;font-weight:800;letter-spacing:.12em;color:#7f1d1d}
+.lawchain .lawchain-kick i{height:2px;width:26px;border-radius:2px;background:#c2410c}
+.lawchain .lawchain-title{font-family:'Noto Sans JP',sans-serif;font-weight:900;color:var(--ink);font-size:clamp(1.26rem,3vw,1.75rem);line-height:1.35;margin:10px 0 0}
+.lawchain .lawchain-title em{font-style:normal;color:#b91c1c}
+.lawchain .lawchain-list{position:relative;z-index:2;padding:16px 34px 6px}
+.lawchain .lawchain-rail{position:absolute;top:14px;bottom:14px;left:70px;width:2px;border-radius:2px;background:linear-gradient(180deg,#e2483f,#ef8a3c,#e0619c,#b070e0,#6f86e6,#2bb39a,#8bbf3c,#13294b)}
+.lawchain .lawchain-node{position:relative;display:grid;grid-template-columns:56px 1fr;gap:22px;padding:13px 0;align-items:center}
+.lawchain .lawchain-badge{grid-column:1;justify-self:center;z-index:2;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:1.05rem;color:#fff;background:var(--c);box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 14%,transparent),0 5px 12px -8px color-mix(in srgb,var(--c) 72%,transparent)}
+.lawchain .lawchain-node.cap .lawchain-badge{width:50px;height:50px;font-size:.95rem}
+.lawchain .lawchain-txt{grid-column:2;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;padding:2px 0}
+.lawchain .lawchain-name{font-family:'Noto Sans JP',sans-serif;font-weight:850;color:var(--ink);font-size:clamp(.98rem,2.1vw,1.14rem);line-height:1.4}
+.lawchain .lawchain-sub{display:block;width:100%;color:var(--sub);font-size:.85rem;line-height:1.6;margin-top:1px}
+.lawchain .lawchain-law{flex-shrink:0;font-size:.68rem;font-weight:700;letter-spacing:.02em;color:color-mix(in srgb,var(--c) 82%,#fff);border:1px solid color-mix(in srgb,var(--c) 55%,transparent);background:color-mix(in srgb,var(--c) 14%,transparent);border-radius:999px;padding:3px 11px;white-space:nowrap}
+.lawchain .lawchain-foot{position:relative;z-index:2;margin-top:10px;padding:18px 34px 24px;background:rgba(255,251,235,.58);border-top:1px solid rgba(180,83,9,.18)}
+.lawchain .lawchain-concl{font-family:'Noto Sans JP',sans-serif;font-weight:850;font-size:clamp(.98rem,2.3vw,1.12rem);line-height:1.65;margin:0;color:var(--ink)}
+.lawchain .lawchain-concl em{font-style:normal;color:#b45309}
+.lawchain .lawchain-src{margin:10px 0 0;font-size:.66rem;letter-spacing:.04em;color:#64748b}
+@media(max-width:600px){.lawchain .lawchain-head,.lawchain .lawchain-list,.lawchain .lawchain-foot{padding-left:18px;padding-right:18px}.lawchain .lawchain-rail{left:44px}.lawchain .lawchain-node{grid-template-columns:34px 1fr;gap:13px}.lawchain .lawchain-badge{width:34px;height:34px;font-size:.85rem}.lawchain .lawchain-node.cap .lawchain-badge{width:38px;height:38px}.lawchain .lawchain-law{font-size:.62rem;padding:2px 8px}}
+</style>
+<div class="lawchain">
+<span class="lawchain-cnr tl"></span><span class="lawchain-cnr tr"></span><span class="lawchain-cnr bl"></span><span class="lawchain-cnr br"></span>
+<div class="lawchain-head">
+<span class="lawchain-kick"><i></i>法制度マップ ｜ 問題の連鎖</span>
+<div class="lawchain-title">入会申込書の不在が招く<em>違法の連鎖</em></div>
+</div>
+<div class="lawchain-list">
+<div class="lawchain-rail"></div>
+<div class="lawchain-node cap" style="--c:#e2483f"><div class="lawchain-badge">起</div><div class="lawchain-txt"><span class="lawchain-name">入会申込書が存在しない</span><span class="lawchain-sub">「契約の不在」――すべての法的破綻の起点。</span></div></div>
+<div class="lawchain-node" style="--c:#ef8a3c"><div class="lawchain-badge">1</div><div class="lawchain-txt"><span class="lawchain-name">契約は不成立 ― 会費は「不当利得」に</span><span class="lawchain-law">民法 522・703条</span><span class="lawchain-sub">承諾の意思表示が無く、返還義務が生じうる。</span></div></div>
+<div class="lawchain-node" style="--c:#e0619c"><div class="lawchain-badge">2</div><div class="lawchain-txt"><span class="lawchain-name">会員が不明 ― 学校名簿の目的外利用</span><span class="lawchain-law">個人情報保護法</span><span class="lawchain-sub">本人同意なき第三者提供にあたりうる。</span></div></div>
+<div class="lawchain-node" style="--c:#b070e0"><div class="lawchain-badge">3</div><div class="lawchain-txt"><span class="lawchain-name">教職員が勤務時間に私団体の事務を代行</span><span class="lawchain-law">地方公務員法 35条</span><span class="lawchain-sub">職務専念義務との関係が問われる。</span></div></div>
+<div class="lawchain-node" style="--c:#6f86e6"><div class="lawchain-badge">4</div><div class="lawchain-txt"><span class="lawchain-name">未納者リスト等、家庭情報の漏えい</span><span class="lawchain-law">地方公務員法 34条</span><span class="lawchain-sub">職務上知り得た情報の漏示にあたりうる。</span></div></div>
+<div class="lawchain-node" style="--c:#2bb39a"><div class="lawchain-badge">5</div><div class="lawchain-txt"><span class="lawchain-name">全世帯一律＝事実上の強制徴収</span><span class="lawchain-law">地方財政法 4条の5</span><span class="lawchain-sub">「割当寄付」に接近する。</span></div></div>
+<div class="lawchain-node" style="--c:#8bbf3c"><div class="lawchain-badge">6</div><div class="lawchain-txt"><span class="lawchain-name">適正でない団体への学校施設の利用許可</span><span class="lawchain-law">学校教育法 137条</span><span class="lawchain-sub">「学校教育上の支障」の有無が問われる。</span></div></div>
+<div class="lawchain-node cap" style="--c:#13294b"><div class="lawchain-badge">結</div><div class="lawchain-txt"><span class="lawchain-name">是正を怠れば、監督責任・行政不作為へ</span><span class="lawchain-law">地教行法／国家賠償法</span><span class="lawchain-sub">損害が生じれば国家賠償請求の対象となりうる。</span></div></div>
+</div>
+<div class="lawchain-foot">
+<p class="lawchain-concl">一枚の「入会申込書」の不在から、問題が連鎖する。断つ鍵は<em>完全オプトイン化と、学校・PTAの分離</em>。</p>
+<p class="lawchain-src">出典：民法・個人情報保護法・地方公務員法・地方財政法・学校教育法ほか、文科省・消費者庁・個人情報保護委員会の一次資料</p>
+</div>
+</div>
+</figure>
 <p style="color:var(--text-soft);font-size:.95rem;margin-bottom:40px;line-height:1.75">
-        入会申込書が存在しないという一点から、5段階で根拠説明が崩れやすくなります。<br/>
+        入会申込書が存在しないという一点から、契約、会費、個人情報、服務、施設利用の根拠説明が崩れやすくなります。<br/>
         法令違反は「個別の問題」ではなく、制度的な設計ミスから生まれる<strong style="color:var(--navy)">連鎖的帰結</strong>です。
       </p>
 <!-- ステップカスケード -->
@@ -668,7 +718,7 @@
 <div style="background:#f0fdf4;border:1.5px solid #86efac;border-radius:var(--radius);padding:24px 20px;text-align:center">
 <div style="font-size:2rem;margin-bottom:12px">✅</div>
 <div style="font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:900;color:#15803d;margin-bottom:10px">3分離の制度的実現</div>
-<div style="font-size:.87rem;color:#166534;line-height:1.75">組織・金銭・情報における学校とPTAの完全分離。癒着構造の解消と責任の明確化。</div>
+<div style="font-size:.87rem;color:#166534;line-height:1.75">組織・金銭・情報における学校とPTAの完全分離。一体化（公私混同）構造の解消と責任の明確化。</div>
 </div>
 <div style="background:#f0fdf4;border:1.5px solid #86efac;border-radius:var(--radius);padding:24px 20px;text-align:center">
 <div style="font-size:2rem;margin-bottom:12px">✅</div>
