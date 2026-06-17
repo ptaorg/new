@@ -693,6 +693,154 @@ body.guide-board-direct-fixed .mou-col-label {
   text-transform:none!important;
 }
 </style>
+<style id="guide-board-visual-brief-20260618">
+  body.guide-board-direct-fixed #board-bluf-v22,
+  body.guide-board-direct-fixed #board-fact-accordion-v31 {
+    display:none!important;
+  }
+  main > section:not(#board-executive-brief):not(#principal-liability) {
+    display:none;
+  }
+  main > #board-executive-brief,
+  main > #principal-liability {
+    display:block;
+  }
+  body.guide-board-direct-fixed main > section:not(#board-executive-brief):not(#principal-liability) {
+    display:none!important;
+  }
+  body.guide-board-direct-fixed main > #board-executive-brief,
+  body.guide-board-direct-fixed main > #principal-liability {
+    display:block!important;
+  }
+  body.guide-board-direct-fixed #board-executive-brief {
+    background:linear-gradient(180deg,#fff 0%,#f8fbff 52%,#fff 100%)!important;
+    border-top:1px solid #dbe4ee!important;
+    border-bottom:1px solid #dbe4ee!important;
+    padding:56px 0 68px!important;
+  }
+  .gbv-wrap {
+    width:min(calc(100% - 48px),1120px);
+    margin-inline:auto;
+  }
+  .gbv-head {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(260px,360px);
+    gap:28px;
+    align-items:end;
+    margin-bottom:28px;
+  }
+  .gbv-head h2 {
+    font-family:'Noto Sans JP',sans-serif;
+    font-size:clamp(1.62rem,2.8vw,2.32rem);
+    line-height:1.42;
+    letter-spacing:0;
+    color:#12243b;
+    margin:0 0 12px;
+  }
+  .gbv-head p,
+  .gbv-note,
+  .gbv-source p {
+    color:#334155;
+    line-height:1.95;
+    font-size:.98rem;
+    margin:0;
+  }
+  .gbv-principle {
+    border-left:4px solid #d6a724;
+    padding:8px 0 8px 18px;
+    color:#12243b;
+    font-weight:800;
+    line-height:1.8;
+  }
+  .gbv-stack {
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+  }
+  .gbv-figure {
+    margin:0;
+    background:rgba(255,255,255,.86);
+    border:1px solid #d7e2ee;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .gbv-figure figcaption {
+    border-top:1px solid #e2e8f0;
+    padding:12px 18px 14px;
+    color:#475569;
+    font-size:.86rem;
+    line-height:1.75;
+    background:rgba(248,250,252,.92);
+  }
+  .gbv-scroll {
+    overflow-x:auto;
+    padding:18px;
+  }
+  .gbv-scroll svg {
+    display:block;
+    width:100%;
+    min-width:820px;
+    height:auto;
+    font-family:'Noto Sans JP',sans-serif;
+  }
+  .gbv-two {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .gbv-source {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(260px,.74fr);
+    gap:22px;
+    align-items:start;
+    padding:24px 0 0;
+  }
+  .gbv-source h3 {
+    font-family:'Noto Sans JP',sans-serif;
+    margin:0 0 10px;
+    color:#12243b;
+    font-size:1.18rem;
+    line-height:1.55;
+  }
+  .gbv-links {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  .gbv-links a {
+    display:block;
+    color:#123d66;
+    text-decoration:underline;
+    text-underline-offset:4px;
+    font-weight:800;
+    line-height:1.65;
+  }
+  .gbv-links span {
+    display:block;
+    color:#64748b;
+    font-size:.84rem;
+    line-height:1.7;
+    margin-top:2px;
+  }
+  .gbv-svg-title { font-size:18px;font-weight:900;fill:#12243b; }
+  .gbv-svg-label { font-size:14px;font-weight:800;fill:#12243b; }
+  .gbv-svg-small { font-size:12px;font-weight:600;fill:#475569; }
+  .gbv-svg-muted { fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.2; }
+  .gbv-svg-school { fill:#eef6ff;stroke:#8db7df;stroke-width:1.4; }
+  .gbv-svg-pta { fill:#f3fbf6;stroke:#8bc69d;stroke-width:1.4; }
+  .gbv-svg-risk { fill:#fff7ed;stroke:#e7b657;stroke-width:1.4; }
+  .gbv-svg-red { fill:#fff1f2;stroke:#e48484;stroke-width:1.4; }
+  @media(max-width:860px) {
+    .gbv-head,
+    .gbv-source,
+    .gbv-two { grid-template-columns:1fr; }
+    .gbv-wrap { width:min(calc(100% - 32px),1120px); }
+    body.guide-board-direct-fixed #board-executive-brief { padding:42px 0 54px!important; }
+  }
+</style>
 </head>
 <body>
 <div aria-label="活動支援のお願い" class="support-strip" role="complementary">
@@ -813,15 +961,242 @@ body.guide-board-direct-fixed .mou-col-label {
 <div class="page-hero-inner">
 <div class="page-hero-kicker">For School Boards</div>
 <h1>教育委員会向け<br/><em>ガイド</em></h1>
-<p>PTAは学校とは別の任意団体です。しかし、学校がPTAの配布、説明、加入書類の回収、会費徴収、個人情報の取扱い、学校連絡ツール、教職員のPTA事務従事に関与している場合、その部分は教育委員会・学校管理職が点検すべき学校運営上の課題となります。</p>
-<a class="mini-link" href="edu-board-separation.html">学校とPTAの分離原則・通知モデルを見る</a> <a class="mini-link" href="jp/" rel="noopener" target="_blank">教育委員会向け実務指針を見る</a>
+<p>PTA内部を指揮するページではありません。学校がPTAの配布、回収、徴収、名簿、連絡、教職員事務、施設利用に関与した部分を、学校管理上の点検対象として切り分けます。</p>
 <div class="hero-actions">
-<a class="btn-gold" href="#municipal-voices">市民の声から確認する</a>
+<a class="btn-gold" href="#board-executive-brief">点検範囲を見る</a>
 <a class="btn-outline" href="audit/index.html?mode=board">運営チェックを開始する</a>
 </div>
 </div>
 </section>
 <main>
+<section id="board-executive-brief" aria-labelledby="board-executive-brief-title">
+<div class="gbv-wrap">
+<div class="gbv-head">
+<div>
+<h2 id="board-executive-brief-title">教育委員会が見るのは、PTAそのものではなく、学校が境界を越えた部分です。</h2>
+<p>相談対応で最初に確認する対象は、PTA会長の判断や活動内容ではありません。入学説明会、配布・回収、学校徴収金、学校保有名簿、学校アプリ、教職員の勤務、学校施設のどこにPTA手続が入り込んでいるかです。</p>
+</div>
+<div class="gbv-principle">「任意団体だから関与しない」では足りません。学校が動いた部分は、学校管理と服務管理の問題として残ります。</div>
+</div>
+<div class="gbv-stack">
+<figure class="gbv-figure">
+<div class="gbv-scroll">
+<svg role="img" aria-labelledby="gbv-map-title gbv-map-desc" viewBox="0 0 920 380">
+<title id="gbv-map-title">学校とPTAの境界図</title>
+<desc id="gbv-map-desc">学校側の手続がPTA側に流れる場合に、教育委員会の点検対象となることを示す図。</desc>
+<defs>
+<marker id="gbv-arrow-warn" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" viewBox="0 0 10 10">
+<path d="M0 0 L10 5 L0 10 Z" fill="#c2410c"></path>
+</marker>
+<marker id="gbv-arrow-ok" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" viewBox="0 0 10 10">
+<path d="M0 0 L10 5 L0 10 Z" fill="#0f766e"></path>
+</marker>
+</defs>
+<rect x="26" y="26" width="868" height="328" rx="10" fill="#fff" stroke="#d7e2ee"></rect>
+<text x="58" y="68" class="gbv-svg-title">点検の入口は「学校関与」</text>
+<rect x="62" y="96" width="280" height="198" rx="8" class="gbv-svg-school"></rect>
+<text x="86" y="128" class="gbv-svg-label">学校側の管理領域</text>
+<text x="86" y="158" class="gbv-svg-small">入学説明会・配布物</text>
+<text x="86" y="184" class="gbv-svg-small">学校徴収金・口座振替</text>
+<text x="86" y="210" class="gbv-svg-small">児童生徒名簿・保護者連絡先</text>
+<text x="86" y="236" class="gbv-svg-small">学校アプリ・学校メール</text>
+<text x="86" y="262" class="gbv-svg-small">勤務時間・校務分掌・施設管理</text>
+<line x1="460" y1="92" x2="460" y2="302" stroke="#d6a724" stroke-width="6" stroke-linecap="round"></line>
+<text x="430" y="326" class="gbv-svg-label" fill="#7c5c00">公私の境界</text>
+<rect x="610" y="96" width="248" height="198" rx="8" class="gbv-svg-pta"></rect>
+<text x="632" y="128" class="gbv-svg-label">PTA側の団体事務</text>
+<text x="632" y="158" class="gbv-svg-small">入会申込・会員名簿</text>
+<text x="632" y="184" class="gbv-svg-small">会費徴収・会計・督促</text>
+<text x="632" y="210" class="gbv-svg-small">役員選出・活動参加</text>
+<text x="632" y="236" class="gbv-svg-small">PTA独自の連絡導線</text>
+<text x="632" y="262" class="gbv-svg-small">会員向け説明・問い合わせ</text>
+<path d="M342 142 L374 142" fill="none" stroke="#c2410c" stroke-width="2.6" marker-end="url(#gbv-arrow-warn)"></path>
+<path d="M548 142 L610 142" fill="none" stroke="#c2410c" stroke-width="2.6" marker-end="url(#gbv-arrow-warn)"></path>
+<path d="M342 194 L374 194" fill="none" stroke="#c2410c" stroke-width="2.6" marker-end="url(#gbv-arrow-warn)"></path>
+<path d="M548 194 L610 194" fill="none" stroke="#c2410c" stroke-width="2.6" marker-end="url(#gbv-arrow-warn)"></path>
+<path d="M342 246 L374 246" fill="none" stroke="#c2410c" stroke-width="2.6" marker-end="url(#gbv-arrow-warn)"></path>
+<path d="M548 246 L610 246" fill="none" stroke="#c2410c" stroke-width="2.6" marker-end="url(#gbv-arrow-warn)"></path>
+<rect x="374" y="118" width="174" height="48" rx="6" class="gbv-svg-red"></rect>
+<text x="461" y="148" text-anchor="middle" class="gbv-svg-label" fill="#991b1b">加入・回収</text>
+<rect x="374" y="170" width="174" height="48" rx="6" class="gbv-svg-red"></rect>
+<text x="461" y="200" text-anchor="middle" class="gbv-svg-label" fill="#991b1b">名簿・会費</text>
+<rect x="374" y="222" width="174" height="48" rx="6" class="gbv-svg-red"></rect>
+<text x="461" y="252" text-anchor="middle" class="gbv-svg-label" fill="#991b1b">勤務・施設・連絡</text>
+<path d="M535 305 C475 337 415 337 355 305" fill="none" stroke="#0f766e" stroke-width="2.2" marker-end="url(#gbv-arrow-ok)"></path>
+<text x="332" y="352" class="gbv-svg-small">是正方向：PTAが自前で取得・徴収・連絡し、学校は教育活動上必要な連絡調整に限る</text>
+</svg>
+</div>
+<figcaption>教育委員会はPTA内部の統制者ではありません。点検対象は、学校の手続や資源がPTA事務に使われた箇所です。</figcaption>
+</figure>
+<figure class="gbv-figure">
+<div class="gbv-scroll">
+<svg role="img" aria-labelledby="gbv-axis-title gbv-axis-desc" viewBox="0 0 920 300">
+<title id="gbv-axis-title">5領域の同時点検</title>
+<desc id="gbv-axis-desc">入会、個人情報、会費、服務、施設連絡を同時に確認する図。</desc>
+<defs>
+<marker id="gbv-axis-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" viewBox="0 0 10 10">
+<path d="M0 0 L10 5 L0 10 Z" fill="#17345c"></path>
+</marker>
+</defs>
+<rect x="26" y="24" width="868" height="252" rx="10" fill="#fff" stroke="#d7e2ee"></rect>
+<text x="58" y="64" class="gbv-svg-title">5領域は別々ではなく、同じ運用から連鎖します</text>
+<g transform="translate(76 112)">
+<circle cx="42" cy="42" r="40" fill="#eef6ff" stroke="#78a7d2" stroke-width="2"></circle>
+<text x="42" y="38" text-anchor="middle" class="gbv-svg-label">入会</text>
+<text x="42" y="58" text-anchor="middle" class="gbv-svg-small">意思確認</text>
+</g>
+<g transform="translate(230 112)">
+<circle cx="42" cy="42" r="40" fill="#f3fbf6" stroke="#83bd95" stroke-width="2"></circle>
+<text x="42" y="38" text-anchor="middle" class="gbv-svg-label">個人情報</text>
+<text x="42" y="58" text-anchor="middle" class="gbv-svg-small">取得元</text>
+</g>
+<g transform="translate(384 112)">
+<circle cx="42" cy="42" r="40" fill="#fff7ed" stroke="#ddb45a" stroke-width="2"></circle>
+<text x="42" y="38" text-anchor="middle" class="gbv-svg-label">会費</text>
+<text x="42" y="58" text-anchor="middle" class="gbv-svg-small">徴収経路</text>
+</g>
+<g transform="translate(538 112)">
+<circle cx="42" cy="42" r="40" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"></circle>
+<text x="42" y="38" text-anchor="middle" class="gbv-svg-label">服務</text>
+<text x="42" y="58" text-anchor="middle" class="gbv-svg-small">勤務時間</text>
+</g>
+<g transform="translate(692 112)">
+<circle cx="42" cy="42" r="40" fill="#fff1f2" stroke="#e48484" stroke-width="2"></circle>
+<text x="42" y="38" text-anchor="middle" class="gbv-svg-label">施設・連絡</text>
+<text x="42" y="58" text-anchor="middle" class="gbv-svg-small">利用根拠</text>
+</g>
+<line x1="160" y1="154" x2="226" y2="154" stroke="#17345c" stroke-width="2" marker-end="url(#gbv-axis-arrow)"></line>
+<line x1="314" y1="154" x2="380" y2="154" stroke="#17345c" stroke-width="2" marker-end="url(#gbv-axis-arrow)"></line>
+<line x1="468" y1="154" x2="534" y2="154" stroke="#17345c" stroke-width="2" marker-end="url(#gbv-axis-arrow)"></line>
+<line x1="622" y1="154" x2="688" y2="154" stroke="#17345c" stroke-width="2" marker-end="url(#gbv-axis-arrow)"></line>
+<rect x="96" y="218" width="728" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1"></rect>
+<text x="460" y="241" text-anchor="middle" class="gbv-svg-label">どれか一つでも学校経由なら、他の領域にも同じ学校関与が残っている可能性が高い</text>
+</svg>
+</div>
+<figcaption>入会申込がない、学校名簿を使う、学校徴収金で引き落とす、教職員が処理する、学校アプリで送る。これらは一つの構造として確認します。</figcaption>
+</figure>
+<div class="gbv-two">
+<figure class="gbv-figure">
+<div class="gbv-scroll">
+<svg role="img" aria-labelledby="gbv-decision-title" viewBox="0 0 820 360">
+<title id="gbv-decision-title">相談を受けたときの判断フロー</title>
+<defs>
+<marker id="gbv-flow-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" viewBox="0 0 10 10">
+<path d="M0 0 L10 5 L0 10 Z" fill="#17345c"></path>
+</marker>
+</defs>
+<rect x="28" y="24" width="764" height="312" rx="10" fill="#fff" stroke="#d7e2ee"></rect>
+<text x="58" y="62" class="gbv-svg-title">相談対応の最初の分岐</text>
+<rect x="78" y="92" width="250" height="56" rx="8" class="gbv-svg-risk"></rect>
+<text x="203" y="126" text-anchor="middle" class="gbv-svg-label">学校が関与した事実</text>
+<line x1="328" y1="120" x2="408" y2="120" stroke="#17345c" stroke-width="2.2" marker-end="url(#gbv-flow-arrow)"></line>
+<rect x="418" y="92" width="250" height="56" rx="8" class="gbv-svg-muted"></rect>
+<text x="543" y="116" text-anchor="middle" class="gbv-svg-label">文書・記録で確認</text>
+<text x="543" y="137" text-anchor="middle" class="gbv-svg-small">配布、回収、徴収、名簿、服務</text>
+<line x1="543" y1="148" x2="543" y2="196" stroke="#17345c" stroke-width="2.2" marker-end="url(#gbv-flow-arrow)"></line>
+<rect x="418" y="206" width="250" height="58" rx="8" class="gbv-svg-school"></rect>
+<text x="543" y="230" text-anchor="middle" class="gbv-svg-label">学校管理上の是正</text>
+<text x="543" y="252" text-anchor="middle" class="gbv-svg-small">停止、分離、条件明記</text>
+<path d="M202 148 C202 224 300 292 418 292" fill="none" stroke="#0f766e" stroke-width="2.2" marker-end="url(#gbv-flow-arrow)"></path>
+<rect x="418" y="274" width="250" height="38" rx="8" class="gbv-svg-pta"></rect>
+<text x="543" y="298" text-anchor="middle" class="gbv-svg-label">PTA内部は団体自治に戻す</text>
+</svg>
+</div>
+<figcaption>「PTAの問題かどうか」ではなく、学校の関与記録があるかどうかで分けます。</figcaption>
+</figure>
+<figure class="gbv-figure">
+<div class="gbv-scroll">
+<svg role="img" aria-labelledby="gbv-doc-title" viewBox="0 0 820 360">
+<title id="gbv-doc-title">各学校に求める資料</title>
+<rect x="28" y="24" width="764" height="312" rx="10" fill="#fff" stroke="#d7e2ee"></rect>
+<text x="58" y="62" class="gbv-svg-title">各学校へ求める資料は、この順で足ります</text>
+<g transform="translate(58 92)">
+<rect width="704" height="42" rx="6" fill="#17345c"></rect>
+<text x="24" y="27" fill="#fff" font-size="13" font-weight="800">確認領域</text>
+<text x="188" y="27" fill="#fff" font-size="13" font-weight="800">提出させる文書</text>
+<text x="520" y="27" fill="#fff" font-size="13" font-weight="800">不存在の意味</text>
+</g>
+<g transform="translate(58 138)">
+<rect width="704" height="36" rx="0" fill="#f8fafc" stroke="#e2e8f0"></rect>
+<text x="24" y="24" class="gbv-svg-label">入会</text><text x="188" y="24" class="gbv-svg-small">入会案内、申込書、退会方法</text><text x="520" y="24" class="gbv-svg-small">会員扱いの根拠不足</text>
+</g>
+<g transform="translate(58 178)">
+<rect width="704" height="36" rx="0" fill="#fff" stroke="#e2e8f0"></rect>
+<text x="24" y="24" class="gbv-svg-label">名簿</text><text x="188" y="24" class="gbv-svg-small">同意書、提供記録、利用目的</text><text x="520" y="24" class="gbv-svg-small">目的外利用の確認不能</text>
+</g>
+<g transform="translate(58 218)">
+<rect width="704" height="36" rx="0" fill="#f8fafc" stroke="#e2e8f0"></rect>
+<text x="24" y="24" class="gbv-svg-label">会費</text><text x="188" y="24" class="gbv-svg-small">徴収金案内、口座振替、督促記録</text><text x="520" y="24" class="gbv-svg-small">学校徴収との混在</text>
+</g>
+<g transform="translate(58 258)">
+<rect width="704" height="36" rx="0" fill="#fff" stroke="#e2e8f0"></rect>
+<text x="24" y="24" class="gbv-svg-label">服務</text><text x="188" y="24" class="gbv-svg-small">校務分掌、職専免、兼職兼業</text><text x="520" y="24" class="gbv-svg-small">勤務根拠の不存在</text>
+</g>
+<g transform="translate(58 298)">
+<rect width="704" height="28" rx="0" fill="#f8fafc" stroke="#e2e8f0"></rect>
+<text x="24" y="20" class="gbv-svg-label">施設</text><text x="188" y="20" class="gbv-svg-small">施設、印刷機、アプリ、配布記録</text><text x="520" y="20" class="gbv-svg-small">許可条件の不明確化</text>
+</g>
+</svg>
+</div>
+<figcaption>資料がない場合も結論ではなく確認結果です。「不存在」を記録し、学校が何を根拠に扱っていたかを改めて確認します。</figcaption>
+</figure>
+</div>
+<figure class="gbv-figure">
+<div class="gbv-scroll">
+<svg role="img" aria-labelledby="gbv-road-title" viewBox="0 0 920 330">
+<title id="gbv-road-title">教育委員会通知から移行までの流れ</title>
+<defs>
+<marker id="gbv-road-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" viewBox="0 0 10 10">
+<path d="M0 0 L10 5 L0 10 Z" fill="#17345c"></path>
+</marker>
+</defs>
+<rect x="26" y="24" width="868" height="282" rx="10" fill="#fff" stroke="#d7e2ee"></rect>
+<text x="58" y="62" class="gbv-svg-title">通知は「禁止リスト」ではなく、移行工程として出す</text>
+<line x1="122" y1="158" x2="788" y2="158" stroke="#17345c" stroke-width="2.4" marker-end="url(#gbv-road-arrow)"></line>
+<g transform="translate(70 104)">
+<rect width="150" height="108" rx="8" class="gbv-svg-school"></rect>
+<text x="75" y="34" text-anchor="middle" class="gbv-svg-label">1. 全校照会</text>
+<text x="75" y="62" text-anchor="middle" class="gbv-svg-small">文書と実態を</text>
+<text x="75" y="82" text-anchor="middle" class="gbv-svg-small">同じ様式で集める</text>
+</g>
+<g transform="translate(248 104)">
+<rect width="150" height="108" rx="8" class="gbv-svg-risk"></rect>
+<text x="75" y="34" text-anchor="middle" class="gbv-svg-label">2. 方針通知</text>
+<text x="75" y="62" text-anchor="middle" class="gbv-svg-small">学校関与の範囲と</text>
+<text x="75" y="82" text-anchor="middle" class="gbv-svg-small">停止事項を明記</text>
+</g>
+<g transform="translate(426 104)">
+<rect width="150" height="108" rx="8" class="gbv-svg-muted"></rect>
+<text x="75" y="34" text-anchor="middle" class="gbv-svg-label">3. 移行期間</text>
+<text x="75" y="62" text-anchor="middle" class="gbv-svg-small">入会、名簿、会費を</text>
+<text x="75" y="82" text-anchor="middle" class="gbv-svg-small">PTA自前化</text>
+</g>
+<g transform="translate(604 104)">
+<rect width="150" height="108" rx="8" class="gbv-svg-pta"></rect>
+<text x="75" y="34" text-anchor="middle" class="gbv-svg-label">4. 再点検</text>
+<text x="75" y="62" text-anchor="middle" class="gbv-svg-small">翌年度説明会前に</text>
+<text x="75" y="82" text-anchor="middle" class="gbv-svg-small">文書を確認</text>
+</g>
+<text x="460" y="262" text-anchor="middle" class="gbv-svg-small">横浜市通知は、入会・個人情報・会費徴収・非会員対応を一体で扱う参考資料として位置づける</text>
+</svg>
+</div>
+<figcaption>一度にすべてを罰する形ではなく、学校関与を止める工程表として通知します。横浜市通知はこの流れを説明する資料として確実に取り上げます。</figcaption>
+</figure>
+<div class="gbv-source">
+<div>
+<h3>根拠資料は、本文の中で必要な順に読む。</h3>
+<p>教育委員会向けページでは、リンクを散らすより、学校関与の有無を確認した後に根拠資料へ進む構成にします。横浜市通知、学校教育法第137条、学校徴収金通知、働き方改革3分類、個人情報保護委員会資料は、個別論点ではなく一つの移行方針として読みます。</p>
+</div>
+<ul class="gbv-links" aria-label="根拠資料への導線">
+<li><a href="journal/yokohama-notice-1965.html">横浜市教育委員会通知1965号の詳細整理</a><span>入会、個人情報、会費徴収、非会員対応を同時に見る参考資料。</span></li>
+<li><a href="assets/documents/mext-school-facility-purpose-use-notice-20250326.pdf">学校施設の目的外使用に係る文部科学省通知</a><span>PTAによる学校施設・学校資源利用を確認する入口。</span></li>
+<li><a href="assets/documents/mext-workstyle-3categories-20230724.pdf">学校・教師が担う業務に係る3分類</a><span>学校徴収金、地域連絡調整、教職員負担を分けて読む資料。</span></li>
+<li><a href="assets/documents/mext-school-collection-public-accounting-20250430.pdf">学校徴収金の公会計化等に関する通知</a><span>学校会計とPTA会費を混ぜないための前提資料。</span></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
 <section class="board-guide-section" id="board-first-reading">
 <div class="wrap">
 <div class="section-kicker">まず本文で確認する</div>
