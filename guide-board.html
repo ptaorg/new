@@ -1054,21 +1054,78 @@ body.guide-board-direct-fixed .mou-col-label {
 <p class="board-guide-note">これらの事例に共通するのは、PTAそのものの内部運営だけではなく、学校がPTAに関する配布、説明、集金、連絡、個人情報の取扱いに関与することで、保護者から見て「学校の手続」と「PTAの手続」の区別が見えにくくなる点です。教育委員会は、PTAを不当に支配するのではなく、学校が関与する部分について、任意加入の説明、個人情報の目的外利用、会計分離、職務専念義務、学校教育上の支障の有無を点検する必要があります。</p>
 </div>
 </section>
-<section class="board-guide-section alt" id="board-checklist">
-<div class="wrap">
-<div class="section-kicker">初動確認</div>
-<h2 class="section-title">教育委員会・学校管理職向け点検チェックリスト</h2>
-<ul class="board-guide-checklist">
-<li>PTA加入は任意であると明記されているか</li>
-<li>入会申込書を取得しているか</li>
-<li>未提出者を会員扱いしていないか</li>
-<li>PTA会費を学校徴収金と一体で引き落としていないか</li>
-<li>学校保有名簿をPTAへ渡していないか</li>
-<li>PTA通知を学校公式ツールで全保護者へ配信していないか</li>
-<li>非会員児童を区別していないか</li>
-<li>教職員がPTA会計・徴収・名簿管理を恒常的に行っていないか</li>
-<li>学校施設利用が学校教育上の支障を生じさせていないか</li>
-</ul>
+<section class="rc5-section" id="board-checklist">
+<style>
+.rc5-section{background:var(--bg,#f5f7fa);padding:64px 0}
+.rc5-wrap{width:min(calc(100% - 40px),900px);margin-inline:auto}
+.rc5-section .section-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.55rem,2.4vw,2.05rem);line-height:1.35;letter-spacing:0}
+.rc5-list{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.rc5-item{background:#fff;border:1px solid var(--line,#e2e8f0);border-left:4px solid var(--navy,#1e3a5f);border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(10,22,40,.05)}
+.rc5-head{display:flex;align-items:center;gap:12px}
+.rc5-no{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--navy,#1e3a5f);color:var(--gold-lt,#e8cd77);font-weight:900;font-size:.82rem;display:flex;align-items:center;justify-content:center}
+.rc5-axis{font-weight:900;color:var(--navy,#1e3a5f);font-size:1.02rem}
+.rc5-q{display:flex;align-items:flex-start;gap:10px;margin:10px 0 8px;font-size:.95rem;font-weight:700;color:var(--text,#1e293b)}
+.rc5-q input{margin-top:4px;width:17px;height:17px;accent-color:var(--navy,#1e3a5f);flex-shrink:0}
+.rc5-sign{font-size:.85rem;color:#9a3412;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:7px 12px;margin-left:27px;margin-bottom:6px}
+.rc5-doc{font-size:.83rem;color:#475569;margin-left:27px}
+.rc5-doc b{color:#1e3a5f}
+.rc5-link{margin-left:27px;margin-top:6px;font-size:.82rem}
+.rc5-link a{color:var(--navy,#1e3a5f);text-decoration:none;border-bottom:1px dotted var(--navy,#1e3a5f)}
+.rc5-note{margin-top:18px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:12px 16px;font-size:.86rem;color:#075985}
+.rc5-cta{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+</style>
+<div class="rc5-wrap">
+<div class="section-kicker">全校点検</div>
+<h2 class="section-title">教育委員会・学校が確認する5領域</h2>
+<p class="section-lead">法令論の前に「学校が関与した事実」を確認します。各領域は核心の1問だけ。文書が無い場合は「問題なし」ではなく「未確認」として記録してください。</p>
+<div class="rc5-list">
+
+<div class="rc5-item">
+<div class="rc5-head"><div class="rc5-no">1</div><div class="rc5-axis">加入 ― 任意性</div></div>
+<label class="rc5-q"><input type="checkbox">加入が任意と明示され、入会申込書を取得し、未提出者を会員扱いしていないか</label>
+<div class="rc5-sign">兆候：入学式・説明会の式次第にPTA加入/役員選出が組み込まれている、全員加入が前提</div>
+<div class="rc5-doc"><b>調べる文書：</b>入会案内文・配布記録・学校アプリ通知ログ</div>
+<div class="rc5-link">詳しく：<a href="edu-board-separation.html">学校とPTAの分離原則</a>／<a href="membership.html">入会手続</a></div>
+</div>
+
+<div class="rc5-item">
+<div class="rc5-head"><div class="rc5-no">2</div><div class="rc5-axis">会費 ― 学校徴収金との分離</div></div>
+<label class="rc5-q"><input type="checkbox">PTA会費を学校徴収金と一体で引き落とさず、教職員が集金していないか</label>
+<div class="rc5-sign">兆候：一括引落・代行徴収、未払い対応に学校が関与</div>
+<div class="rc5-doc"><b>調べる文書：</b>徴収金案内・口座記録・引落処理記録</div>
+<div class="rc5-link">詳しく：<a href="fee-collection.html">会費徴収と学校徴収金</a></div>
+</div>
+
+<div class="rc5-item">
+<div class="rc5-head"><div class="rc5-no">3</div><div class="rc5-axis">個人情報 ― 学校保有情報の提供</div></div>
+<label class="rc5-q"><input type="checkbox">学校保有名簿をPTAへ渡さず、目的外利用・無同意提供がないか</label>
+<div class="rc5-sign">兆候：学校名簿の流用、学校アプリでのPTA全保護者配信</div>
+<div class="rc5-doc"><b>調べる文書：</b>同意書・提供記録・目的通知・アプリ利用規程</div>
+<div class="rc5-link">詳しく：<a href="privacy.html">個人情報の取扱い</a></div>
+</div>
+
+<div class="rc5-item">
+<div class="rc5-head"><div class="rc5-no">4</div><div class="rc5-axis">服務 ― 教職員の関与</div></div>
+<label class="rc5-q"><input type="checkbox">教職員がPTA会計・徴収・名簿管理を恒常的に行っていないか（渉外を超えていないか）</label>
+<div class="rc5-sign">兆候：勤務時間中のPTA事務従事、校長・教頭のPTA役員就任、職専免の濫用</div>
+<div class="rc5-doc"><b>調べる文書：</b>校務分掌表・職専免記録・兼職兼業届・職員会議資料</div>
+<div class="rc5-link">詳しく：<a href="personnel.html">教職員のPTA事務関与</a></div>
+</div>
+
+<div class="rc5-item">
+<div class="rc5-head"><div class="rc5-no">5</div><div class="rc5-axis">学校資源・施設 ― 利用の根拠</div></div>
+<label class="rc5-q"><input type="checkbox">学校HP・アプリ・施設・印刷機のPTA内部業務利用が、許可・支障の観点で確認されているか</label>
+<div class="rc5-sign">兆候：「PTAだから当然使用可」、許可・届出・責任範囲が不明</div>
+<div class="rc5-doc"><b>調べる文書：</b>Web/アプリ記録・施設利用申請記録・機器使用記録</div>
+<div class="rc5-link">詳しく：<a href="facilities.html">学校施設利用</a></div>
+</div>
+
+</div>
+<div class="rc5-note">補足：PTAと学校の「連絡調整」は適法な渉外業務です。問題はそれ以上の関与（集金代行・配布代行・名簿管理・アプリ配信など）。区別して整理してください。</div>
+<div class="rc5-cta">
+<a class="btn-navy" href="audit/index.html?mode=board" style="font-size:.95rem;padding:13px 26px">チェックツールで点検する</a>
+<a class="btn-soft" href="#guidebook-text" style="font-size:.95rem;padding:13px 26px">ガイドブック本文を読む</a>
+</div>
 </div>
 </section>
 <section class="board-guide-section" id="board-response-policy">
@@ -2040,63 +2097,6 @@ body.guide-board-direct-fixed .mou-col-label {
 </div>
 </div>
 </section>
-<!-- 確認範囲テーブル（5領域） -->
-<section style="background:#fff;padding:80px 0">
-<div class="wrap">
-<div class="section-kicker">実態調査</div>
-<h2 class="section-title">教育委員会が確認すべき<br/>5つの領域</h2>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/06_教育委員会/02_確認すべき5領域.svg" alt="図解：確認すべき5領域" loading="lazy" style="display:block;width:100%;height:auto"></figure>
-<p class="section-lead">管下学校のPTA関与実態を把握するには、5つの領域を体系的に確認します。文書が存在しない＝「問題なし」ではなく、「未確認」として記録し、なぜ存在しないかを確認してください。</p>
-<div style="overflow-x:auto;margin-top:36px">
-<table style="width:100%;border-collapse:collapse;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)">
-<thead>
-<tr style="background:var(--navy)">
-<th style="padding:14px 18px;text-align:left;font-size:.82rem;font-weight:900;letter-spacing:.04em;color:var(--gold-lt);width:130px">確認領域</th>
-<th style="padding:14px 18px;text-align:left;font-size:.82rem;font-weight:900;letter-spacing:.04em;color:var(--gold-lt)">確認すべき問題点</th>
-<th style="padding:14px 18px;text-align:left;font-size:.82rem;font-weight:900;letter-spacing:.04em;color:var(--gold-lt)">調査対象文書・記録</th>
-</tr>
-</thead>
-<tbody>
-<tr style="border-bottom:1px solid var(--line)">
-<td style="padding:16px 18px;font-size:.9rem;font-weight:900;color:var(--navy)">🟡 加入</td>
-<td style="padding:16px 18px;font-size:.88rem;color:var(--text);line-height:1.7">入会案内の配布方法・任意性の説明・提出先がPTAになっているか・非会員把握の有無</td>
-<td style="padding:16px 18px;font-size:.88rem;color:var(--text-soft);line-height:1.7">入会案内文書・配布記録・学校アプリ通知ログ</td>
-</tr>
-<tr style="border-bottom:1px solid var(--line);background:#fafafa">
-<td style="padding:16px 18px;font-size:.9rem;font-weight:900;color:var(--navy)">💰 会費</td>
-<td style="padding:16px 18px;font-size:.88rem;color:var(--text);line-height:1.7">学校徴収金との混在・教職員による集金・未払い対応での学校関与の有無</td>
-<td style="padding:16px 18px;font-size:.88rem;color:var(--text-soft);line-height:1.7">徴収金案内・口座記録・引き落とし処理記録</td>
-</tr>
-<tr style="border-bottom:1px solid var(--line)">
-<td style="padding:16px 18px;font-size:.9rem;font-weight:900;color:var(--navy)">🔒 個人情報</td>
-<td style="padding:16px 18px;font-size:.88rem;color:var(--text);line-height:1.7">学校保有情報のPTA提供・個別同意の取得状況・学校アプリの目的外利用</td>
-<td style="padding:16px 18px;font-size:.88rem;color:var(--text-soft);line-height:1.7">同意書・提供記録・目的通知・連絡先リスト・アプリ利用規程</td>
-</tr>
-<tr style="border-bottom:1px solid var(--line);background:#fafafa">
-<td style="padding:16px 18px;font-size:.9rem;font-weight:900;color:var(--navy)">👩‍🏫 服務</td>
-<td style="padding:16px 18px;font-size:.88rem;color:var(--text);line-height:1.7">勤務時間中のPTA事務従事・校長教頭のPTA役員就任・職専免の取得状況</td>
-<td style="padding:16px 18px;font-size:.88rem;color:var(--text-soft);line-height:1.7">校務分掌表・職専免記録・兼職兼業届・職員会議資料</td>
-</tr>
-<tr>
-<td style="padding:16px 18px;font-size:.9rem;font-weight:900;color:var(--navy)">🏫 学校資源</td>
-<td style="padding:16px 18px;font-size:.88rem;color:var(--text);line-height:1.7">学校HP・アプリ・施設・印刷機のPTA内部業務への利用状況</td>
-<td style="padding:16px 18px;font-size:.88rem;color:var(--text-soft);line-height:1.7">Web記録・アプリログ・施設利用申請記録・機器使用記録</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px">
-<div style="background:#fff5f5;border:1px solid #fecaca;border-radius:var(--radius);padding:18px 20px">
-<div style="font-size:.74rem;font-weight:900;letter-spacing:.06em;color:#b91c1c;margin-bottom:10px">⚠ 重要な注意事項</div>
-<p style="font-size:.88rem;color:var(--text);line-height:1.75;margin:0">文書が存在しない場合は「問題なし」ではなく「不明・未確認」として記録し、なぜ存在しないかを確認することが必要です。「確認できなかった」という事実自体が重要な情報です。</p>
-</div>
-<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:var(--radius);padding:18px 20px">
-<div style="font-size:.74rem;font-weight:900;letter-spacing:.06em;color:#15803d;margin-bottom:10px">✅ 調査のポイント</div>
-<p style="font-size:.88rem;color:var(--text);line-height:1.75;margin:0">PTAと学校の「連絡調整」は適法な渉外業務です。問題があるのはそれ以上の関与（集金代行・配布代行・名簿管理・アプリ配信など）です。区別して整理してください。</p>
-</div>
-</div>
-</div>
-</section>
 <!-- 点検チェックリスト（13項目インタラクティブ） -->
 <section style="background:var(--bg);padding:80px 0">
 <div class="wrap">
@@ -2886,7 +2886,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fact.insertAdjacentElement('afterend', principal);
   }
 
-  var ids = ['worktime-duty-v22','article137-school-use','board-responsibility-essay','board-ed-resource-set','municipal-voices','board-checklist','board-response-policy'];
+  var ids = ['worktime-duty-v22','article137-school-use','board-responsibility-essay','board-ed-resource-set','municipal-voices','board-response-policy'];
   ids.forEach(function(id) {
     var sec = document.getElementById(id);
     if (!sec) return;
