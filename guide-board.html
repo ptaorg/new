@@ -788,6 +788,60 @@ body.guide-board-direct-fixed .mou-col-label {
     grid-template-columns:1fr 1fr;
     gap:18px;
   }
+  .gbv-legal {
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    gap:22px;
+    align-items:start;
+    padding:6px 0 0;
+  }
+  .gbv-legal .gbv-scroll svg {
+    min-width:760px;
+  }
+  .gbv-law-text {
+    border-left:4px solid #17345c;
+    padding:4px 0 4px 18px;
+  }
+  .gbv-law-text h3 {
+    font-family:'Noto Sans JP',sans-serif;
+    margin:0 0 12px;
+    color:#12243b;
+    font-size:1.2rem;
+    line-height:1.55;
+  }
+  .gbv-law-text p {
+    margin:0 0 12px;
+    color:#334155;
+    line-height:1.95;
+    font-size:.96rem;
+  }
+  .gbv-statute {
+    margin:16px 0;
+    padding:16px 18px;
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+    color:#172033;
+    font-weight:800;
+    line-height:1.9;
+  }
+  .gbv-law-points {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:14px;
+    grid-column:1 / -1;
+  }
+  .gbv-law-points div {
+    border-top:1px solid #e2e8f0;
+    padding-top:10px;
+    color:#334155;
+    font-size:.9rem;
+    line-height:1.8;
+  }
+  .gbv-law-points strong {
+    color:#12243b;
+  }
   .gbv-source {
     display:grid;
     grid-template-columns:minmax(0,1fr) minmax(260px,.74fr);
@@ -835,8 +889,10 @@ body.guide-board-direct-fixed .mou-col-label {
   .gbv-svg-red { fill:#fff1f2;stroke:#e48484;stroke-width:1.4; }
   @media(max-width:860px) {
     .gbv-head,
+    .gbv-legal,
     .gbv-source,
     .gbv-two { grid-template-columns:1fr; }
+    .gbv-law-points { grid-template-columns:1fr; }
     .gbv-wrap { width:min(calc(100% - 32px),1120px); }
     body.guide-board-direct-fixed #board-executive-brief { padding:42px 0 54px!important; }
   }
@@ -1182,6 +1238,60 @@ body.guide-board-direct-fixed .mou-col-label {
 </div>
 <figcaption>一度にすべてを罰する形ではなく、学校関与を止める工程表として通知します。横浜市通知はこの流れを説明する資料として確実に取り上げます。</figcaption>
 </figure>
+<div class="gbv-legal">
+<div class="gbv-law-text">
+<h3>学校教育法第137条は、学校利用を当然化する条文ではありません。</h3>
+<p>PTAが学校施設、PTA室、印刷機、児童経由配布、学校メール、学校アプリを使う場面では、まずこの条文に戻ります。学校利用は「できる」だけであって、学校教育上の支障がないことを校長・教育委員会が説明できる場合に限られます。</p>
+<div class="gbv-statute">学校教育上支障のない限り、学校には、社会教育に関する施設を附置し、又は学校の施設を社会教育その他公共のために、利用させることができる。</div>
+<p>任意加入の意思確認がない、学校保有名簿に依存している、PTA会費を学校徴収金と混ぜる、教職員が勤務時間中にPTA内部事務を担う。この状態で学校資源を使わせるなら、「学校教育上支障がない」とは言い切れません。</p>
+</div>
+<figure class="gbv-figure">
+<div class="gbv-scroll">
+<svg role="img" aria-labelledby="gbv-law-title" viewBox="0 0 820 360">
+<title id="gbv-law-title">学校教育法137条から見る判断階層</title>
+<defs>
+<marker id="gbv-law-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" viewBox="0 0 10 10">
+<path d="M0 0 L10 5 L0 10 Z" fill="#17345c"></path>
+</marker>
+</defs>
+<rect x="28" y="24" width="764" height="312" rx="10" fill="#fff" stroke="#d7e2ee"></rect>
+<text x="58" y="62" class="gbv-svg-title">根拠はこの順で読む</text>
+<g transform="translate(78 92)">
+<rect width="220" height="58" rx="8" class="gbv-svg-school"></rect>
+<text x="110" y="28" text-anchor="middle" class="gbv-svg-label">学校教育法第137条</text>
+<text x="110" y="48" text-anchor="middle" class="gbv-svg-small">学校利用の入口</text>
+</g>
+<line x1="298" y1="121" x2="386" y2="121" stroke="#17345c" stroke-width="2.2" marker-end="url(#gbv-law-arrow)"></line>
+<g transform="translate(396 92)">
+<rect width="220" height="58" rx="8" class="gbv-svg-risk"></rect>
+<text x="110" y="28" text-anchor="middle" class="gbv-svg-label">目的外使用通知</text>
+<text x="110" y="48" text-anchor="middle" class="gbv-svg-small">支障の有無を具体化</text>
+</g>
+<line x1="506" y1="150" x2="506" y2="190" stroke="#17345c" stroke-width="2.2" marker-end="url(#gbv-law-arrow)"></line>
+<g transform="translate(396 200)">
+<rect width="220" height="58" rx="8" class="gbv-svg-muted"></rect>
+<text x="110" y="28" text-anchor="middle" class="gbv-svg-label">徴収金通知・3分類</text>
+<text x="110" y="48" text-anchor="middle" class="gbv-svg-small">学校・教師の仕事を分ける</text>
+</g>
+<line x1="386" y1="229" x2="298" y2="229" stroke="#17345c" stroke-width="2.2" marker-end="url(#gbv-law-arrow)"></line>
+<g transform="translate(78 200)">
+<rect width="220" height="58" rx="8" class="gbv-svg-red"></rect>
+<text x="110" y="28" text-anchor="middle" class="gbv-svg-label">個人情報・服務</text>
+<text x="110" y="48" text-anchor="middle" class="gbv-svg-small">名簿、勤務、責任範囲</text>
+</g>
+<rect x="124" y="292" width="572" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1"></rect>
+<text x="410" y="315" text-anchor="middle" class="gbv-svg-label">結論：PTAだから当然使用可、ではなく、条件を満たす場合だけ許可</text>
+</svg>
+</div>
+<figcaption>学校教育法第137条、文部科学省の目的外使用通知、学校徴収金通知、業務の3分類、個人情報・服務を一体で読みます。</figcaption>
+</figure>
+<div class="gbv-law-points">
+<div><strong>施設・学校資源。</strong>PTA室、印刷機、配布、学校アプリ、学校メールは、学校教育上の支障と使用条件を確認してから扱います。</div>
+<div><strong>会費・徴収。</strong>学校徴収金でさえ公会計化・学校以外による処理が求められています。PTA会費はさらに学校処理から分離すべき性質があります。</div>
+<div><strong>教職員の関与。</strong>連絡調整と、会費徴収・名簿管理・役員選出・督促・会計処理の代行は分けます。後者は服務上の根拠が必要です。</div>
+<div><strong>個人情報。</strong>学校保有情報をPTA目的に流す場合は、利用目的、本人同意、提供記録、提供先管理を確認します。</div>
+</div>
+</div>
 <div class="gbv-source">
 <div>
 <h3>根拠資料は、本文の中で必要な順に読む。</h3>
