@@ -1880,8 +1880,127 @@
 <div class="wrap" style="max-width:980px">
 <div class="section-kicker">Main Issue</div>
 <h2 class="section-title" id="home-reading-title">問題は、PTAがあることではなく、学校手続に溶け込んで見えなくなることです。</h2>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/00-%E5%85%B1%E9%80%9A/01_%E9%81%95%E6%B3%95%E3%81%AE%E9%80%A3%E9%8E%96.svg" alt="図解：違法の連鎖" loading="eager" width="760" height="769" style="display:block;width:100%;height:auto"></figure>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/00-%E5%85%B1%E9%80%9A/02_%E5%AD%A6%E6%A0%A1%E3%81%A8PTA%E3%81%AE%E5%AE%8C%E5%85%A8%E5%88%86%E9%9B%A2.svg" alt="図解：学校とPTAの完全分離" loading="eager" width="760" height="485" style="display:block;width:100%;height:auto"></figure>
+<figure class="lc-fig" role="img" aria-label="入会申込書の不在が招く違法の連鎖">
+<style>
+.lc-fig{margin:30px auto;max-width:880px}
+.lc{--ink:#070f20;--navy:#0d1c38;--navy-2:#13294b;--sub:#a6b6cd;position:relative;border-radius:8px;overflow:hidden;color:#fff;font-family:'Noto Sans JP',sans-serif;background:radial-gradient(90% 55% at 12% -8%,rgba(226,72,63,.18),transparent 55%),radial-gradient(90% 60% at 92% 105%,rgba(19,41,75,.6),transparent 55%),linear-gradient(155deg,var(--ink),var(--navy) 62%,var(--navy-2));box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.lc::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.38;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:30px 30px;-webkit-mask:radial-gradient(120% 100% at 50% 0%,#000 55%,transparent);mask:radial-gradient(120% 100% at 50% 0%,#000 55%,transparent)}
+.lc .lc-cnr{position:absolute;width:24px;height:24px;border:1.5px solid rgba(255,255,255,.5);z-index:3}
+.lc .lc-cnr.tl{top:13px;left:13px;border-right:0;border-bottom:0}.lc .lc-cnr.tr{top:13px;right:13px;border-left:0;border-bottom:0}
+.lc .lc-cnr.bl{bottom:13px;left:13px;border-right:0;border-top:0}.lc .lc-cnr.br{bottom:13px;right:13px;border-left:0;border-top:0}
+.lc .lc-head{position:relative;z-index:2;padding:32px 38px 8px}
+.lc .lc-kick{display:inline-flex;align-items:center;gap:10px;font-size:.66rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:#f0a; background:linear-gradient(90deg,#e2483f,#ef8a3c,#e0619c);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lc .lc-kick i{height:2px;width:24px;border-radius:2px;background:linear-gradient(90deg,transparent,#e2483f)}
+.lc .lc-title{font-family:'Noto Serif JP',serif;font-weight:900;color:#fff;font-size:clamp(1.45rem,3.8vw,2.1rem);line-height:1.22;margin:12px 0 0}
+.lc .lc-title em{font-style:normal;background:linear-gradient(100deg,#ef8a3c,#e2483f,#e0619c);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lc .lc-list{position:relative;z-index:2;padding:18px 38px 6px}
+.lc .lc-rail{position:absolute;top:14px;bottom:14px;left:70px;width:2px;border-radius:2px;background:linear-gradient(180deg,#e2483f,#ef8a3c,#e0619c,#b070e0,#6f86e6,#2bb39a,#8bbf3c,#13294b)}
+.lc .lc-node{position:relative;display:grid;grid-template-columns:56px 1fr;gap:22px;padding:13px 0;align-items:center}
+.lc .lc-badge{grid-column:1;justify-self:center;z-index:2;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif JP',serif;font-weight:900;font-size:1.05rem;color:#fff;background:radial-gradient(circle at 35% 30%,color-mix(in srgb,var(--c) 75%,#fff 0%),var(--c));box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 18%,transparent),0 6px 16px -4px color-mix(in srgb,var(--c) 70%,transparent)}
+.lc .lc-node.cap .lc-badge{width:50px;height:50px;font-size:.95rem}
+.lc .lc-txt{grid-column:2;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;padding:2px 0}
+.lc .lc-name{font-family:'Noto Serif JP',serif;font-weight:700;color:#fff;font-size:clamp(.98rem,2.1vw,1.14rem);line-height:1.4}
+.lc .lc-sub{display:block;width:100%;color:var(--sub);font-size:.85rem;line-height:1.6;margin-top:1px}
+.lc .lc-law{flex-shrink:0;font-size:.68rem;font-weight:700;letter-spacing:.02em;color:color-mix(in srgb,var(--c) 82%,#fff);border:1px solid color-mix(in srgb,var(--c) 55%,transparent);background:color-mix(in srgb,var(--c) 14%,transparent);border-radius:999px;padding:3px 11px;white-space:nowrap}
+.lc .lc-foot{position:relative;z-index:2;margin-top:10px;padding:20px 38px 28px;background:linear-gradient(0deg,rgba(0,0,0,.35),transparent);border-top:1px solid rgba(255,255,255,.12)}
+.lc .lc-concl{font-family:'Noto Serif JP',serif;font-weight:700;font-size:clamp(.98rem,2.3vw,1.16rem);line-height:1.55;margin:0}
+.lc .lc-concl em{font-style:normal;background:linear-gradient(100deg,#ef8a3c,#e0619c,#8bbf3c);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lc .lc-src{margin:10px 0 0;font-size:.66rem;letter-spacing:.04em;color:rgba(255,255,255,.5)}
+@media(max-width:600px){.lc .lc-head,.lc .lc-list,.lc .lc-foot{padding-left:18px;padding-right:18px}.lc .lc-rail{left:44px}.lc .lc-node{grid-template-columns:34px 1fr;gap:13px}.lc .lc-badge{width:34px;height:34px;font-size:.85rem}.lc .lc-node.cap .lc-badge{width:38px;height:38px}.lc .lc-law{font-size:.62rem;padding:2px 8px}}
+</style>
+<div class="lc">
+<span class="lc-cnr tl"></span><span class="lc-cnr tr"></span><span class="lc-cnr bl"></span><span class="lc-cnr br"></span>
+<div class="lc-head">
+<span class="lc-kick"><i></i>共通 ｜ 全ページ</span>
+<div class="lc-title">入会申込書の不在が招く<em>違法の連鎖</em></div>
+</div>
+<div class="lc-list">
+<div class="lc-rail"></div>
+<div class="lc-node cap" style="--c:#e2483f"><div class="lc-badge">起</div><div class="lc-txt"><span class="lc-name">入会申込書が存在しない</span><span class="lc-sub">「契約の不在」――すべての法的破綻の起点。</span></div></div>
+<div class="lc-node" style="--c:#ef8a3c"><div class="lc-badge">1</div><div class="lc-txt"><span class="lc-name">契約は不成立 ― 会費は「不当利得」に</span><span class="lc-law">民法 522・703条</span><span class="lc-sub">承諾の意思表示が無く、返還義務が生じうる。</span></div></div>
+<div class="lc-node" style="--c:#e0619c"><div class="lc-badge">2</div><div class="lc-txt"><span class="lc-name">会員が不明 ― 学校名簿の目的外利用</span><span class="lc-law">個人情報保護法</span><span class="lc-sub">本人同意なき第三者提供にあたりうる。</span></div></div>
+<div class="lc-node" style="--c:#b070e0"><div class="lc-badge">3</div><div class="lc-txt"><span class="lc-name">教職員が勤務時間に私団体の事務を代行</span><span class="lc-law">地方公務員法 35条</span><span class="lc-sub">職務専念義務との関係が問われる。</span></div></div>
+<div class="lc-node" style="--c:#6f86e6"><div class="lc-badge">4</div><div class="lc-txt"><span class="lc-name">未納者リスト等、家庭情報の漏えい</span><span class="lc-law">地方公務員法 34条</span><span class="lc-sub">職務上知り得た情報の漏示にあたりうる。</span></div></div>
+<div class="lc-node" style="--c:#2bb39a"><div class="lc-badge">5</div><div class="lc-txt"><span class="lc-name">全世帯一律＝事実上の強制徴収</span><span class="lc-law">地方財政法 4条の5</span><span class="lc-sub">「割当寄付」に接近する。</span></div></div>
+<div class="lc-node" style="--c:#8bbf3c"><div class="lc-badge">6</div><div class="lc-txt"><span class="lc-name">適正でない団体への学校施設の利用許可</span><span class="lc-law">学校教育法 137条</span><span class="lc-sub">「学校教育上の支障」の有無が問われる。</span></div></div>
+<div class="lc-node cap" style="--c:#13294b"><div class="lc-badge">結</div><div class="lc-txt"><span class="lc-name">是正を怠れば、監督責任・行政不作為へ</span><span class="lc-law">地教行法／国家賠償法</span><span class="lc-sub">損害が生じれば国家賠償請求の対象となりうる。</span></div></div>
+</div>
+<div class="lc-foot">
+<p class="lc-concl">一枚の「入会申込書」の不在から、問題が連鎖する。断つ鍵は<em>完全オプトイン化と、学校・PTAの分離</em>。</p>
+<p class="lc-src">出典：民法・個人情報保護法・地方公務員法・地方財政法・学校教育法ほか、文科省・消費者庁・個人情報保護委員会の一次資料</p>
+</div>
+</div>
+</figure>
+
+<figure class="sep-fig" role="img" aria-label="一体化（公私混同）から、完全分離へ">
+<style>
+.sep-fig{margin:30px auto;max-width:880px}
+.sep{--ink:#070f20;--navy:#0d1c38;--navy-2:#13294b;--sub:#a6b6cd;--red:#e2584d;--grn:#33b07a;--blue:#4e9be0;position:relative;border-radius:8px;overflow:hidden;color:#fff;font-family:'Noto Sans JP',sans-serif;background:radial-gradient(80% 60% at 8% -10%,rgba(226,88,77,.16),transparent 55%),radial-gradient(80% 60% at 95% 110%,rgba(51,176,122,.18),transparent 55%),linear-gradient(155deg,var(--ink),var(--navy) 62%,var(--navy-2));box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.sep::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.36;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:30px 30px;-webkit-mask:radial-gradient(120% 100% at 50% 0%,#000 55%,transparent);mask:radial-gradient(120% 100% at 50% 0%,#000 55%,transparent)}
+.sep .sep-cnr{position:absolute;width:24px;height:24px;border:1.5px solid rgba(255,255,255,.5);z-index:3}
+.sep .sep-cnr.tl{top:13px;left:13px;border-right:0;border-bottom:0}.sep .sep-cnr.tr{top:13px;right:13px;border-left:0;border-bottom:0}
+.sep .sep-cnr.bl{bottom:13px;left:13px;border-right:0;border-top:0}.sep .sep-cnr.br{bottom:13px;right:13px;border-left:0;border-top:0}
+.sep .sep-head{position:relative;z-index:2;padding:32px 38px 6px}
+.sep .sep-kick{display:inline-flex;align-items:center;gap:10px;font-size:.66rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;background:linear-gradient(90deg,var(--red),#e0a83c,var(--grn));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sep .sep-kick i{height:2px;width:24px;border-radius:2px;background:linear-gradient(90deg,transparent,var(--red))}
+.sep .sep-title{font-family:'Noto Serif JP',serif;font-weight:900;color:#fff;font-size:clamp(1.4rem,3.6vw,2rem);line-height:1.25;margin:12px 0 0}
+.sep .sep-title em{font-style:normal;background:linear-gradient(100deg,#e0a83c,var(--grn));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sep .sep-grid{position:relative;z-index:2;padding:20px 38px 8px;display:grid;grid-template-columns:1fr 44px 1fr;gap:14px;align-items:stretch}
+.sep .sep-card{border-radius:14px;padding:18px 18px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1)}
+.sep .sep-card.bad{border-color:rgba(226,88,77,.45);background:rgba(226,88,77,.07)}
+.sep .sep-card.good{border-color:rgba(51,176,122,.45);background:rgba(51,176,122,.07)}
+.sep .sep-cap{font-family:'Noto Serif JP',serif;font-weight:700;font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px}
+.sep .bad .sep-cap{color:#f4a39b}.sep .good .sep-cap{color:#86dcae}
+.sep .sep-merge{display:flex;justify-content:center;align-items:center;margin:18px 0}
+.sep .sep-org{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.92rem;border:1.5px solid}
+.sep .sep-org.s{background:rgba(78,162,232,.18);border-color:rgba(78,162,232,.6);color:#bcd8f2}
+.sep .sep-org.p{background:rgba(226,88,77,.18);border-color:rgba(226,88,77,.6);color:#f4b3ac;margin-left:-26px}
+.sep .sep-shared{text-align:center;font-size:.82rem;color:#f3d18a;line-height:1.6;margin-top:4px}
+.sep .sep-shared b{color:#f4a39b;font-weight:700}
+.sep .sep-split{display:grid;grid-template-columns:1fr 1px 1fr;gap:10px;align-items:start;margin:10px 0 4px}
+.sep .sep-vline{background:repeating-linear-gradient(180deg,rgba(51,176,122,.7) 0 5px,transparent 5px 10px)}
+.sep .sep-side{text-align:center}
+.sep .sep-side b{display:block;font-family:'Noto Serif JP',serif;color:#fff;font-size:.95rem;margin-bottom:8px}
+.sep .sep-side span{display:block;color:var(--sub);font-size:.8rem;line-height:1.9}
+.sep .sep-note{text-align:center;font-size:.78rem;color:rgba(255,255,255,.6);margin:12px 0 0}
+.sep .sep-arrow{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#e0a83c}
+.sep .sep-arrow b{font-size:.66rem;letter-spacing:.18em;writing-mode:vertical-rl;font-weight:700}
+.sep .sep-arrow svg{width:22px;height:22px;stroke:#e0a83c;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sep .sep-foot{position:relative;z-index:2;margin-top:8px;padding:18px 38px 26px;background:linear-gradient(0deg,rgba(0,0,0,.35),transparent);border-top:1px solid rgba(255,255,255,.12)}
+.sep .sep-foot p{margin:0;color:var(--sub);font-size:.85rem;line-height:1.7}
+.sep .sep-foot .src{margin-top:8px;font-size:.66rem;color:rgba(255,255,255,.45)}
+@media(max-width:620px){.sep .sep-head,.sep .sep-grid,.sep .sep-foot{padding-left:18px;padding-right:18px}.sep .sep-grid{grid-template-columns:1fr;gap:10px}.sep .sep-arrow{flex-direction:row;padding:4px 0}.sep .sep-arrow b{writing-mode:horizontal-tb}.sep .sep-arrow svg{transform:rotate(90deg)}}
+</style>
+<div class="sep">
+<span class="sep-cnr tl"></span><span class="sep-cnr tr"></span><span class="sep-cnr bl"></span><span class="sep-cnr br"></span>
+<div class="sep-head">
+<span class="sep-kick"><i></i>共通 ｜ 公私分離</span>
+<div class="sep-title">一体化（公私混同）から、<em>完全分離</em>へ</div>
+</div>
+<div class="sep-grid">
+<div class="sep-card bad">
+<p class="sep-cap">⚠ 現状 ― 一体化</p>
+<div class="sep-merge"><span class="sep-org s">学校</span><span class="sep-org p">PTA</span></div>
+<div class="sep-shared"><b>名簿・会費徴収・教職員の事務</b>が混在し、境界が消える</div>
+</div>
+<div class="sep-arrow"><b>分離</b><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+<div class="sep-card good">
+<p class="sep-cap">✓ 適正化 ― 完全分離</p>
+<div class="sep-split">
+<div class="sep-side"><b>学校</b><span>公費会計<br>学校徴収金<br>教育活動<br>施設管理</span></div>
+<div class="sep-vline"></div>
+<div class="sep-side"><b>PTA</b><span>会員名簿<br>独自徴収<br>直接収集<br>自主運営</span></div>
+</div>
+<div class="sep-note">会計・情報・人を切り分ける</div>
+</div>
+</div>
+<div class="sep-foot">
+<p>左：申込書が無く、学校とPTAの名簿・会費・事務が一体化。右：申込書で会員を直接把握し、会計・情報・人を切り分ける。</p>
+<p class="src">出典：横浜市教育委員会通知（学教第1965号）ほか、入会届の必須化・名簿の本人同意取得を求める行政文書</p>
+</div>
+</div>
+</figure>
+
 <p class="section-lead" style="max-width:860px">PTAは、保護者と教職員が任意に参加する団体です。その活動自体を否定する必要はありません。確認すべきなのは、入会意思、会費、名簿、連絡、配布、教職員の事務が、学校の手続や学校の資源にどこまで組み込まれているかです。</p>
 <div class="editorial-bluebar" style="margin-top:24px">任意団体として尊重するためにこそ、学校の業務、学校の情報、学校徴収金、学校施設との境界を明確にする。</div>
 <div aria-label="トップページの主要論点" class="editorial-matrix" style="margin-top:24px">
@@ -2178,7 +2297,7 @@
 </div>
 <p class="copyright">© PTA適正化推進委員会</p>
 </footer>
-<script src="js/site.js?v=84"></script>
+<script src="js/site.js?v=85"></script>
 <script>
 /* ==========================================
    Hero Slideshow — クロスフェード + Ken Burns
