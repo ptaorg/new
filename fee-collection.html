@@ -573,7 +573,97 @@
       <section class="issue-section" id="slide-flow" style="scroll-margin-top:100px">
         <div class="section-eyebrow">図解</div>
         <h2>2つの「集金ルート」——適正運用と問題運用の分岐点</h2>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/03_会費徴収/01_集金の2ルート.svg" alt="図解：集金の2ルート" loading="lazy" style="display:block;width:100%;height:auto"></figure>
+<figure class="fee-fig" role="img" aria-label="2つの集金ルート――適正と問題">
+<style>
+.fee-fig{margin:30px auto;max-width:880px}
+.fee{--ink:#070f20;--navy:#0d1c38;--navy-2:#13294b;--sub:#a6b6cd;--grn:#33b07a;--red:#e2584d;position:relative;border-radius:8px;overflow:hidden;color:#fff;font-family:'Noto Sans JP',sans-serif;background:radial-gradient(85% 55% at 8% -8%,rgba(51,176,122,.14),transparent 55%),radial-gradient(80% 55% at 95% 108%,rgba(226,88,77,.14),transparent 55%),linear-gradient(155deg,var(--ink),var(--navy) 62%,var(--navy-2));box-shadow:0 28px 56px -30px rgba(0,0,0,.75)}
+.fee::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.36;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:30px 30px;-webkit-mask:radial-gradient(120% 100% at 50% 0%,#000 55%,transparent);mask:radial-gradient(120% 100% at 50% 0%,#000 55%,transparent)}
+.fee .fee-cnr{position:absolute;width:22px;height:22px;border:1.5px solid rgba(255,255,255,.5);z-index:3}
+.fee .fee-cnr.tl{top:12px;left:12px;border-right:0;border-bottom:0}.fee .fee-cnr.tr{top:12px;right:12px;border-left:0;border-bottom:0}
+.fee .fee-cnr.bl{bottom:12px;left:12px;border-right:0;border-top:0}.fee .fee-cnr.br{bottom:12px;right:12px;border-left:0;border-top:0}
+.fee .fee-head{position:relative;z-index:2;padding:30px 36px 6px}
+.fee .fee-kick{display:inline-flex;align-items:center;gap:10px;font-size:.66rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;background:linear-gradient(90deg,var(--grn),#e0a83c,var(--red));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.fee .fee-kick i{height:2px;width:24px;border-radius:2px;background:linear-gradient(90deg,transparent,#e0a83c)}
+.fee .fee-title{font-family:'Noto Serif JP',serif;font-weight:900;font-size:clamp(1.4rem,3.6vw,2rem);margin:12px 0 0;line-height:1.25;color:#fff}
+.fee .fee-title em{font-style:normal;background:linear-gradient(100deg,var(--grn),#e0a83c,var(--red));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.fee .fee-body{position:relative;z-index:2;padding:18px 36px 6px}
+.fee .fee-cols{display:grid;grid-template-columns:1fr 40px 1fr;gap:14px;align-items:stretch}
+.fee .fee-panel{border-radius:14px;padding:16px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12)}
+.fee .fee-panel.good{border-color:rgba(51,176,122,.5);background:rgba(51,176,122,.08)}
+.fee .fee-panel.bad{border-color:rgba(226,88,77,.5);background:rgba(226,88,77,.08)}
+.fee .fee-ph{font-family:'Noto Serif JP',serif;font-weight:700;font-size:1.02rem;margin:0 0 12px;color:#fff}
+.fee .fee-pli{display:flex;gap:9px;align-items:flex-start;font-size:.85rem;color:var(--sub);line-height:1.55;margin:7px 0}
+.fee .fee-pli::before{content:"";flex-shrink:0;width:7px;height:7px;border-radius:50%;margin-top:6px}
+.fee .good .fee-pli::before{background:var(--grn)}.fee .bad .fee-pli::before{background:var(--red)}
+.fee .fee-verdict{margin-top:12px;font-weight:700;font-size:.84rem;border-radius:999px;padding:6px 13px;display:inline-block}
+.fee .good .fee-verdict{background:rgba(51,176,122,.16);color:#8fe0b4}.fee .bad .fee-verdict{background:rgba(226,88,77,.16);color:#f6aaa0}
+.fee .fee-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#e0a83c}
+.fee .fee-mid b{font-size:.6rem;letter-spacing:.16em;writing-mode:vertical-rl;font-weight:700}
+.fee .fee-mid svg{width:20px;height:20px;stroke:#e0a83c;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fee .fee-flow{position:relative}
+.fee .fee-rail{position:absolute;top:12px;bottom:12px;left:66px;width:2px;border-radius:2px}
+.fee .fee-node{position:relative;display:grid;grid-template-columns:54px 1fr;gap:20px;padding:13px 0;align-items:center}
+.fee .fee-node+.fee-node{border-top:1px solid rgba(255,255,255,.06)}
+.fee .fee-badge{grid-column:1;justify-self:center;z-index:2;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif JP',serif;font-weight:900;font-size:1rem;color:#fff;background:var(--c);box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 18%,transparent),0 6px 14px -4px color-mix(in srgb,var(--c) 65%,transparent)}
+.fee .fee-ntxt{grid-column:2;display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 12px}
+.fee .fee-nname{font-family:'Noto Serif JP',serif;font-weight:700;color:#fff;font-size:clamp(.97rem,2vw,1.1rem);line-height:1.4}
+.fee .fee-nsub{display:block;width:100%;color:var(--sub);font-size:.83rem;line-height:1.55}
+.fee .fee-law{flex-shrink:0;font-size:.66rem;font-weight:700;color:color-mix(in srgb,var(--c) 82%,#fff);border:1px solid color-mix(in srgb,var(--c) 55%,transparent);background:color-mix(in srgb,var(--c) 14%,transparent);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.fee .fee-fund{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:center;margin:4px 0 16px}
+.fee .fee-stage{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:14px 10px;text-align:center;font-family:'Noto Serif JP',serif;font-weight:700;font-size:.92rem;line-height:1.4}
+.fee .fee-stage.mid{border-color:rgba(78,162,232,.5);background:rgba(78,162,232,.1)}
+.fee .fee-fa{display:flex;flex-direction:column;align-items:center;color:#e0a83c;font-size:.6rem;font-weight:700}
+.fee .fee-fa svg{width:20px;height:20px;stroke:#e0a83c;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fee .fee-probs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.fee .fee-prob{background:rgba(226,88,77,.08);border:1px solid rgba(226,88,77,.4);border-radius:11px;padding:12px 13px}
+.fee .fee-prob b{display:block;color:#f6b3aa;font-weight:700;font-size:.85rem;line-height:1.5;margin-bottom:8px}
+.fee .fee-prob span{font-size:.64rem;font-weight:700;color:#e0a83c;border:1px solid rgba(224,168,60,.5);border-radius:999px;padding:2px 9px}
+.fee .fee-bhead{text-align:center;background:linear-gradient(120deg,var(--navy-2),var(--navy));border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px;font-family:'Noto Serif JP',serif;font-weight:700;font-size:1rem;margin-bottom:14px}
+.fee .fee-branches{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.fee .fee-branch{border-radius:12px;padding:14px 13px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14)}
+.fee .fee-branch.ok{border-color:rgba(51,176,122,.5);background:rgba(51,176,122,.08)}
+.fee .fee-branch.ng{border-color:rgba(226,88,77,.5);background:rgba(226,88,77,.08)}
+.fee .fee-branch h4{margin:0 0 6px;font-family:'Noto Serif JP',serif;font-weight:700;color:#fff;font-size:.96rem}
+.fee .fee-branch p{margin:0 0 10px;color:var(--sub);font-size:.8rem;line-height:1.55}
+.fee .fee-tag{font-size:.68rem;font-weight:700;border-radius:999px;padding:3px 11px}
+.fee .ok .fee-tag{background:rgba(51,176,122,.18);color:#8fe0b4}.fee .ng .fee-tag{background:rgba(226,88,77,.18);color:#f6aaa0}
+.fee .fee-foot{position:relative;z-index:2;margin-top:10px;padding:18px 36px 26px;background:linear-gradient(0deg,rgba(0,0,0,.32),transparent);border-top:1px solid rgba(255,255,255,.12)}
+.fee .fee-concl{font-family:'Noto Serif JP',serif;font-weight:700;font-size:clamp(.95rem,2.1vw,1.1rem);margin:0;line-height:1.5}
+.fee .fee-concl em{font-style:normal;color:#f0d9a6}
+.fee .fee-src{margin:8px 0 0;font-size:.66rem;color:rgba(255,255,255,.45)}
+@media(max-width:640px){.fee .fee-head,.fee .fee-body,.fee .fee-foot{padding-left:18px;padding-right:18px}.fee .fee-cols{grid-template-columns:1fr;gap:10px}.fee .fee-mid{flex-direction:row}.fee .fee-mid b{writing-mode:horizontal-tb}.fee .fee-mid svg{transform:rotate(90deg)}.fee .fee-rail{left:42px}.fee .fee-node{grid-template-columns:34px 1fr;gap:13px}.fee .fee-badge{width:34px;height:34px;font-size:.85rem}.fee .fee-fund{grid-template-columns:1fr;gap:6px}.fee .fee-fa{flex-direction:row}.fee .fee-fa svg{transform:rotate(90deg)}.fee .fee-probs,.fee .fee-branches{grid-template-columns:1fr}}
+</style>
+<div class="fee">
+<span class="fee-cnr tl"></span><span class="fee-cnr tr"></span><span class="fee-cnr bl"></span><span class="fee-cnr br"></span>
+<div class="fee-head"><span class="fee-kick"><i></i>会費徴収</span><div class="fee-title">2つの集金ルート ― <em>適正と問題</em></div></div>
+<div class="fee-body">
+<div class="fee-cols">
+<div class="fee-panel good">
+<p class="fee-ph">PTAの独自徴収</p>
+<div class="fee-pli">PTA口座へ直接納付</div>
+<div class="fee-pli">口座振替・アプリ等を活用</div>
+<div class="fee-pli">学校事務の負担はゼロ</div>
+<div class="fee-pli">支払いの任意性が明確</div>
+<span class="fee-verdict">✓ 適正</span>
+</div>
+<div class="fee-mid"><b>移行</b><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></div>
+<div class="fee-panel bad">
+<p class="fee-ph">抱き合わせ・代行徴収</p>
+<div class="fee-pli">学校徴収金と同一口座・同一案内</div>
+<div class="fee-pli">委任契約なき代理（無権代理）</div>
+<div class="fee-pli">公私会計の混同</div>
+<div class="fee-pli">事実上の強制徴収</div>
+<span class="fee-verdict">✗ 問題</span>
+</div>
+</div>
+</div>
+<div class="fee-foot">
+<p class="fee-concl">問題は「金額」ではなく、<em>学校の徴収手続にPTA会費が混ざること</em>。</p>
+<p class="fee-src">出典：民法113条／地方財政法4条の5／文科省 学校徴収金ガイドライン</p>
+</div>
+</div>
+</figure>
+
         <p>会費徴収の問題を理解するには、まず「本来あるべき姿」と「現実に行われていること」の対比から入るのが分かりやすいです。</p>
 
         <svg width="100%" viewBox="0 0 760 480" role="img" style="max-width:760px;display:block;margin:28px auto 8px">
@@ -651,7 +741,24 @@
       <section id="overview" class="issue-section">
         <div class="section-eyebrow">概要</div>
         <h2>抱き合わせ徴収の三重の法的問題</h2>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/03_会費徴収/03_三重の法的問題.svg" alt="図解：三重の法的問題" loading="lazy" style="display:block;width:100%;height:auto"></figure>
+<figure class="fee-fig" role="img" aria-label="抱き合わせ徴収の三重の法的問題">
+<div class="fee">
+<span class="fee-cnr tl"></span><span class="fee-cnr tr"></span><span class="fee-cnr bl"></span><span class="fee-cnr br"></span>
+<div class="fee-head"><span class="fee-kick"><i></i>会費徴収</span><div class="fee-title">抱き合わせ徴収の <em>三重の法的問題</em></div></div>
+<div class="fee-body">
+<div class="fee-flow">
+<div class="fee-rail" style="background:linear-gradient(180deg,#f2a73c,#ee6b58,#9a79ea)"></div>
+<div class="fee-node" style="--c:#f2a73c"><div class="fee-badge">1</div><div class="fee-ntxt"><span class="fee-nname">無権代理 ― 委任契約なき代理徴収</span><span class="fee-law">民法113条</span><span class="fee-nsub">徴収業務の委託契約が無ければ代理は無効。</span></div></div>
+<div class="fee-node" style="--c:#ee6b58"><div class="fee-badge">2</div><div class="fee-ntxt"><span class="fee-nname">公私会計の混同</span><span class="fee-nsub">学校徴収金（準公金）とPTA会費（私費）の区別が消える。</span></div></div>
+<div class="fee-node" style="--c:#9a79ea"><div class="fee-badge">3</div><div class="fee-ntxt"><span class="fee-nname">割当寄付の禁止に抵触</span><span class="fee-law">地方財政法4条の5</span><span class="fee-nsub">全世帯一律の事実上の強制は、割当的寄付に接近する。</span></div></div>
+</div>
+</div>
+<div class="fee-foot">
+<p class="fee-src">出典：民法113条／地方財政法4条の5</p>
+</div>
+</div>
+</figure>
+
 
         <p>「給食費と一緒にPTA会費が引き落とされる」という慣行は、保護者から見れば「学校への支払い」として認識されがちですが、法的には三重の独立した問題を抱えています。</p>
 
@@ -688,7 +795,31 @@
       <section id="structure" class="issue-section">
         <div class="section-eyebrow">構造分析</div>
         <h2>「二重委任構造」が生む責任の曖昧化</h2>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/03_会費徴収/02_代行徴収の資金の流れ.svg" alt="図解：代行徴収の資金の流れ" loading="lazy" style="display:block;width:100%;height:auto"></figure>
+<figure class="fee-fig" role="img" aria-label="代行徴収の資金の流れと法的問題">
+<div class="fee">
+<span class="fee-cnr tl"></span><span class="fee-cnr tr"></span><span class="fee-cnr bl"></span><span class="fee-cnr br"></span>
+<div class="fee-head"><span class="fee-kick"><i></i>会費徴収</span><div class="fee-title">代行徴収の <em>資金の流れ</em>と法的問題</div></div>
+<div class="fee-body">
+<div class="fee-fund">
+<div class="fee-stage">全世帯の<br>保護者</div>
+<div class="fee-fa"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>会費（私費）</div>
+<div class="fee-stage mid">学校（教職員）<br>が代行徴収</div>
+<div class="fee-fa"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>繰入</div>
+<div class="fee-stage">PTA会計</div>
+</div>
+<div class="fee-probs">
+<div class="fee-prob"><b>学校徴収金と同口座・同案内</b><span>個人情報保護法／公私混同</span></div>
+<div class="fee-prob"><b>委任契約なき代理徴収（無権代理）</b><span>民法113条</span></div>
+<div class="fee-prob"><b>勤務時間中の私団体事務</b><span>地方公務員法35条</span></div>
+</div>
+</div>
+<div class="fee-foot">
+<p class="fee-concl">学校が私的団体PTAの会費を代行徴収する構造は、<em>委任契約・会計・服務の三方向</em>で法的問題を抱える。</p>
+<p class="fee-src">出典：民法113条／個人情報保護法／地方公務員法35条</p>
+</div>
+</div>
+</figure>
+
 
         <p>抱き合わせ徴収の実態では、以下のような「二重の委任構造」が形成されています。</p>
 
@@ -849,7 +980,25 @@
       <section id="public-private" class="issue-section">
         <div class="section-eyebrow">財務法規</div>
         <h2>公私会計の分離——学校徴収金とPTA会費は別物</h2>
-<figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/03_会費徴収/04_公会計化の分岐.svg" alt="図解：公会計化の分岐" loading="lazy" style="display:block;width:100%;height:auto"></figure>
+<figure class="fee-fig" role="img" aria-label="文科省ガイドラインが示す2つの道">
+<div class="fee">
+<span class="fee-cnr tl"></span><span class="fee-cnr tr"></span><span class="fee-cnr bl"></span><span class="fee-cnr br"></span>
+<div class="fee-head"><span class="fee-kick"><i></i>会費徴収</span><div class="fee-title">文科省ガイドラインが示す <em>「2つの道」</em></div></div>
+<div class="fee-body">
+<div class="fee-bhead">学校徴収金の徴収・管理（文科省ガイドライン）</div>
+<div class="fee-branches">
+<div class="fee-branch ok"><h4>公会計化</h4><p>給食費等は自治体の歳入へ。</p><span class="fee-tag">✓ 適切な種目</span></div>
+<div class="fee-branch ok"><h4>直接納付（直接購入）</h4><p>PTA会費はPTAが独自に集める。</p><span class="fee-tag">✓ PTAはこちら</span></div>
+<div class="fee-branch ng"><h4>PTA会費を公会計化</h4><p>私的団体の会費は公金化できない。</p><span class="fee-tag">✗ 不可</span></div>
+</div>
+</div>
+<div class="fee-foot">
+<p class="fee-concl">PTAは私的団体ゆえ公会計化の対象外。ガイドラインの文言どおりなら、<em>学校による代行徴収は廃止し、独自徴収へ移行</em>すべき。</p>
+<p class="fee-src">出典：文科省「学校給食費等の徴収等の公会計化等の推進について（ガイドライン）」2019</p>
+</div>
+</div>
+</figure>
+
 
         <h3 id="differences">学校徴収金とPTA会費の根本的な違い</h3>
 
@@ -1132,5 +1281,5 @@
   </div>
     <p class="copyright">© PTA適正化推進委員会</p>
   </footer>
-  <script src="js/site.js?v=84"></script>
+  <script src="js/site.js?v=87"></script>
 </body></html>

@@ -61,7 +61,7 @@
     ['学校・教育委員会の方へ','/guide-board.html','確認すべき5領域と初動チェック'],
     ['研究者・記者の方へ','/guide-research.html','調査・取材のための資料案内'],
     ['教委向け分離指針','/edu-board-separation.html','学校とPTAの線引きを示す実務整理'],
-    ['教委向け分離資料（/jp/）','/jp/','配布用ガイドラインPDF・通知ひな形・実態調査票'],
+    ['教委向け分離資料','/guide-board.html#board-jp-guideline','配布用ガイドラインPDF・通知ひな形・実態調査票'],
     ['PTAの適正化とは','/proper-management.html','適正化の定義と七つの基本原則'],
     ['適正化ガイドライン','/guideline.html','実務ガイドラインと書式テンプレート'],
     ['適正化ガイドブック 第4版','/PTA運営適正化ガイドブック_第4版_改訂本文.html','総合ガイドブック本文（HTML版）'],
@@ -124,31 +124,31 @@
 
   function mobileNavHtml(){
     return [
-      '<button type="button" class="mobile-close-btn" id="closeOverlay" aria-label="メニューを閉じる">CLOSE ×</button>',
+      '<button type="button" class="mobile-close-btn" id="closeOverlay" aria-label="メニューを閉じる">閉じる ×</button>',
       '<div class="mobile-menu-group">',
       '<div class="mobile-menu-label">主要入口</div>',
-      '<a class="mobile-link" href="/index.html"><span>Top</span>トップ</a>',
-      '<a class="mobile-link" href="/guide-parent.html"><span>Parents</span>保護者の方へ</a>',
-      '<a class="mobile-link" href="/guide-pta.html"><span>PTA Board</span>PTA役員の方へ</a>',
-      '<a class="mobile-link" href="/guide-board.html"><span>School / Board</span>教育委員会・学校へ</a>',
+      '<a class="mobile-link" href="/index.html">トップ</a>',
+      '<a class="mobile-link" href="/guide-parent.html">保護者の方へ</a>',
+      '<a class="mobile-link" href="/guide-pta.html">PTA役員の方へ</a>',
+      '<a class="mobile-link" href="/guide-board.html">教育委員会・学校へ</a>',
       '</div>',
       '<div class="mobile-menu-group">',
       '<div class="mobile-menu-label">教育委員会向け</div>',
-      '<a class="mobile-link" href="/jp/"><span>Board Materials</span>教委向け分離資料</a>',
-      '<a class="mobile-link" href="/edu-board-separation.html"><span>Separation</span>学校とPTAの分離指針</a>',
-      '<a class="mobile-link" href="/board-responses.html"><span>Responses</span>教育委員会の回答</a>',
+      '<a class="mobile-link" href="/guide-board.html#board-jp-guideline">教委向け分離資料</a>',
+      '<a class="mobile-link" href="/edu-board-separation.html">学校とPTAの分離指針</a>',
+      '<a class="mobile-link" href="/board-responses.html">教育委員会の回答</a>',
       '</div>',
       '<div class="mobile-menu-group">',
       '<div class="mobile-menu-label">資料・論考</div>',
-      '<a class="mobile-link" href="/documents.html"><span>Index</span>資料入口・索引</a>',
-      '<a class="mobile-link" href="/national-archive.html"><span>Archive</span>全国資料館</a>',
-      '<a class="mobile-link" href="/administrative-materials.html"><span>Official PDFs</span>行政通知・公式PDF</a>',
-      '<a class="mobile-link" href="/journal.html"><span>Journal</span>論考・調査報告</a>',
-      '<a class="mobile-link" href="/audit/index.html"><span>Check</span>運営チェックアプリ</a>',
+      '<a class="mobile-link" href="/documents.html">資料入口・索引</a>',
+      '<a class="mobile-link" href="/national-archive.html">全国資料館</a>',
+      '<a class="mobile-link" href="/administrative-materials.html">行政通知・公式PDF</a>',
+      '<a class="mobile-link" href="/journal.html">論考・調査報告</a>',
+      '<a class="mobile-link" href="/audit/index.html">運営チェックアプリ</a>',
       '</div>',
       '<div class="mobile-menu-group mobile-menu-bottom">',
-      '<a class="mobile-link" href="/contact.html"><span>Contact</span>お問い合わせ・情報提供</a>',
-      '<a class="mobile-link support-mobile-link" href="/support.html"><span>Support</span>応援・寄付</a>',
+      '<a class="mobile-link" href="/contact.html">お問い合わせ・情報提供</a>',
+      '<a class="mobile-link support-mobile-link" href="/support.html">応援・寄付</a>',
       '</div>'
     ].join('');
   }
@@ -157,19 +157,19 @@
     var h0=document.getElementById('hamburger');
     var m0=document.getElementById('mobileOverlay');
     if(!h0||!m0) return;
-    if(h0.dataset.stableMobileNav==='v71' && m0.dataset.stableMobileNav==='v71'){
+    if(h0.dataset.stableMobileNav==='v72' && m0.dataset.stableMobileNav==='v72'){
       return;
     }
-    addStyle('mobile-nav-stable-v71',
+    addStyle('mobile-nav-stable-v72',
       'html.mobile-nav-lock-root{overflow:hidden!important;overscroll-behavior:none!important}' +
       'body.mobile-nav-lock{position:fixed!important;left:0;right:0;width:100%;overflow:hidden!important;touch-action:none!important}' +
       '.mobile-overlay{position:fixed!important;inset:0!important;z-index:5000!important;display:none!important;flex-direction:column!important;justify-content:flex-start!important;align-items:center!important;gap:10px!important;padding:calc(18px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom))!important;background:rgba(5,17,31,.92)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}' +
       '.mobile-overlay.is-open{display:flex!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}' +
       '.mobile-menu-group{width:min(100%,430px);display:flex;flex-direction:column;gap:8px;margin:0 0 8px!important}' +
       '.mobile-menu-label{color:rgba(255,255,255,.78)!important;font-size:.76rem!important;font-weight:900!important;letter-spacing:.08em!important;margin:8px 4px 0!important}' +
-      '.mobile-link{width:100%!important;display:block!important;background:rgba(255,255,255,.98)!important;border:1px solid rgba(255,255,255,.18)!important;border-radius:14px!important;padding:13px 16px!important;text-decoration:none!important;color:#0f2742!important;font-weight:900!important;line-height:1.45!important;box-shadow:0 8px 22px rgba(0,0,0,.13)!important}' +
-      '.mobile-link span{display:block!important;font-size:.68rem!important;letter-spacing:.08em!important;text-transform:uppercase!important;color:#64748b!important;margin:0 0 2px!important}' +
-      '.mobile-link.support-mobile-link{background:#ea580c!important;color:#fff!important}.mobile-link.support-mobile-link span{color:rgba(255,255,255,.80)!important}' +
+      '.mobile-link{width:100%!important;display:block!important;background:rgba(255,255,255,.98)!important;border:1px solid rgba(255,255,255,.18)!important;border-radius:14px!important;padding:15px 16px!important;text-decoration:none!important;color:#0f2742!important;font-weight:900!important;line-height:1.45!important;box-shadow:0 8px 22px rgba(0,0,0,.13)!important}' +
+      '.mobile-link span{display:none!important}' +
+      '.mobile-link.support-mobile-link{background:#ea580c!important;color:#fff!important}' +
       '.mobile-close-btn,.close-overlay{width:min(100%,430px)!important;display:block!important;position:sticky!important;top:0!important;z-index:2!important;margin:0 0 8px!important;padding:12px 16px!important;border-radius:999px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(15,39,66,.94)!important;color:#fff!important;text-align:center!important;font-weight:900!important;letter-spacing:.06em!important;cursor:pointer!important}' +
       '.hamburger.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}.hamburger.is-active span:nth-child(2){opacity:0!important}.hamburger.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}.hamburger span{transition:transform .18s ease,opacity .18s ease!important}' +
       '@media(max-width:860px){.site-header{z-index:4900!important}.nav-container{min-height:64px!important}.hamburger{display:inline-flex!important;position:relative!important;z-index:5100!important}.desktop-nav{display:none!important}.header-search{display:none!important}}' +
@@ -184,8 +184,8 @@
     m.className='mobile-overlay';
     m.setAttribute('aria-hidden','true');
     m.innerHTML=mobileNavHtml();
-    h.dataset.stableMobileNav='v71';
-    m.dataset.stableMobileNav='v71';
+    h.dataset.stableMobileNav='v72';
+    m.dataset.stableMobileNav='v72';
     h.setAttribute('aria-controls','mobileOverlay');
     h.setAttribute('aria-expanded','false');
     h.setAttribute('aria-label','メニューを開く');
@@ -245,11 +245,11 @@
     var supportUrl='/support.html';
     var d=document.querySelector('.desktop-nav');
     if(d){
-      d.innerHTML='<a class="nav-link" href="/index.html">トップ</a><div class="nav-item has-dropdown"><a class="nav-link" href="#">立場別</a><div class="mega-menu"><div class="mega-col"><h4>立場別</h4><ul><li><a href="/guide-parent.html">保護者の方へ</a></li><li><a href="/guide-pta.html">PTA役員の方へ</a></li><li><a href="/guide-board.html">教育委員会・学校の方へ</a></li><li><a href="/guide-research.html">研究者・記者の方へ</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="#">資料・データ</a><div class="mega-menu"><div class="mega-col"><h4>一次資料</h4><ul><li><a href="/board-responses.html">教育委員会の回答</a></li><li><a href="/national-archive.html">全国資料館</a></li><li><a href="/administrative-materials.html">行政通知・公式PDF</a></li><li><a href="/compliance.html">PTA運営の現場実例</a></li></ul></div><div class="mega-col"><h4>配布資料・索引</h4><ul><li><a href="/documents.html">資料入口・索引</a></li><li><a href="/jp/">教委向け分離資料</a></li><li><a href="/PTA運営適正化ガイドブック_第4版_改訂本文.html">適正化ガイドブック 第4版</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="/journal.html">研究</a><div class="mega-menu"><div class="mega-col"><h4>論考・整理</h4><ul><li><a href="/guide-research.html">研究者・記者の方へ</a></li><li><a href="/journal.html">論考・調査報告</a></li><li><a href="/report.html">総合分析レポート</a></li><li><a href="/law-map.html">法制度マップ</a></li><li><a href="/cases.html">判例整理</a></li><li><a href="/timeline.html">PTA制度史</a></li></ul></div><div class="mega-col"><h4>論点別</h4><ul><li><a href="/membership.html">入会手続</a></li><li><a href="/privacy.html">個人情報</a></li><li><a href="/fee-collection.html">会費徴収</a></li><li><a href="/personnel.html">教職員関与</a></li><li><a href="/facilities.html">施設利用</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="#">ツール</a><div class="mega-menu"><div class="mega-col"><h4>点検用</h4><ul><li><a href="/audit/index.html">運営チェックアプリ</a></li><li><a href="/guideline.html">適正化ガイドライン</a></li><li><a href="/edu-board-separation.html">教委向け分離指針</a></li></ul></div></div></div><a class="nav-link support-nav-link" href="'+supportUrl+'">応援</a>';
+      d.innerHTML='<a class="nav-link" href="/index.html">トップ</a><div class="nav-item has-dropdown"><a class="nav-link" href="#">立場別</a><div class="mega-menu"><div class="mega-col"><h4>立場別</h4><ul><li><a href="/guide-parent.html">保護者の方へ</a></li><li><a href="/guide-pta.html">PTA役員の方へ</a></li><li><a href="/guide-board.html">教育委員会・学校の方へ</a></li><li><a href="/guide-research.html">研究者・記者の方へ</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="#">資料・データ</a><div class="mega-menu"><div class="mega-col"><h4>一次資料</h4><ul><li><a href="/board-responses.html">教育委員会の回答</a></li><li><a href="/national-archive.html">全国資料館</a></li><li><a href="/administrative-materials.html">行政通知・公式PDF</a></li><li><a href="/compliance.html">PTA運営の現場実例</a></li></ul></div><div class="mega-col"><h4>配布資料・索引</h4><ul><li><a href="/documents.html">資料入口・索引</a></li><li><a href="/guide-board.html#board-jp-guideline">教委向け分離資料</a></li><li><a href="/PTA運営適正化ガイドブック_第4版_改訂本文.html">適正化ガイドブック 第4版</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="/journal.html">研究</a><div class="mega-menu"><div class="mega-col"><h4>論考・整理</h4><ul><li><a href="/guide-research.html">研究者・記者の方へ</a></li><li><a href="/journal.html">論考・調査報告</a></li><li><a href="/report.html">総合分析レポート</a></li><li><a href="/law-map.html">法制度マップ</a></li><li><a href="/cases.html">判例整理</a></li><li><a href="/timeline.html">PTA制度史</a></li></ul></div><div class="mega-col"><h4>論点別</h4><ul><li><a href="/membership.html">入会手続</a></li><li><a href="/privacy.html">個人情報</a></li><li><a href="/fee-collection.html">会費徴収</a></li><li><a href="/personnel.html">教職員関与</a></li><li><a href="/facilities.html">施設利用</a></li></ul></div></div></div><div class="nav-item has-dropdown"><a class="nav-link" href="#">ツール</a><div class="mega-menu"><div class="mega-col"><h4>点検用</h4><ul><li><a href="/audit/index.html">運営チェックアプリ</a></li><li><a href="/guideline.html">適正化ガイドライン</a></li><li><a href="/edu-board-separation.html">教委向け分離指針</a></li></ul></div></div></div><a class="nav-link support-nav-link" href="'+supportUrl+'">応援</a>';
     }
     var m=document.getElementById('mobileOverlay');
     if(m){
-      m.innerHTML='<a class="mobile-link" href="/index.html"><span>Top</span>トップ</a><a class="mobile-link" href="/guide-parent.html"><span>Parents</span>保護者の方へ</a><a class="mobile-link" href="/guide-pta.html"><span>PTA Board</span>PTA役員の方へ</a><a class="mobile-link" href="/guide-board.html"><span>School Board</span>教育委員会・学校へ</a><a class="mobile-link" href="/guide-research.html"><span>Research</span>研究者・記者の方へ</a><a class="mobile-link" href="/board-responses.html"><span>Data</span>教育委員会の回答</a><a class="mobile-link" href="/national-archive.html"><span>Archive</span>全国資料館</a><a class="mobile-link" href="/administrative-materials.html"><span>Materials</span>行政資料整理</a><a class="mobile-link" href="/compliance.html"><span>Examples</span>現場実例</a><a class="mobile-link" href="/documents.html"><span>Index</span>資料入口・索引</a><a class="mobile-link" href="/jp/"><span>Board</span>教委向け分離資料</a><a class="mobile-link" href="/journal.html"><span>Journal</span>論考・調査報告</a><a class="mobile-link" href="/audit/index.html"><span>Check</span>運営チェックアプリ</a><a class="mobile-link support-mobile-link" href="'+supportUrl+'"><span>Support</span>応援・寄付</a><div class="close-overlay" id="closeOverlay">CLOSE ×</div>';
+      m.innerHTML='<a class="mobile-link" href="/index.html">トップ</a><a class="mobile-link" href="/guide-parent.html">保護者の方へ</a><a class="mobile-link" href="/guide-pta.html">PTA役員の方へ</a><a class="mobile-link" href="/guide-board.html">教育委員会・学校へ</a><a class="mobile-link" href="/guide-research.html">研究者・記者の方へ</a><a class="mobile-link" href="/board-responses.html">教育委員会の回答</a><a class="mobile-link" href="/national-archive.html">全国資料館</a><a class="mobile-link" href="/administrative-materials.html">行政資料整理</a><a class="mobile-link" href="/compliance.html">現場実例</a><a class="mobile-link" href="/documents.html">資料入口・索引</a><a class="mobile-link" href="/guide-board.html#board-jp-guideline">教委向け分離資料</a><a class="mobile-link" href="/journal.html">論考・調査報告</a><a class="mobile-link" href="/audit/index.html">運営チェックアプリ</a><a class="mobile-link support-mobile-link" href="'+supportUrl+'">応援・寄付</a><div class="close-overlay" id="closeOverlay">閉じる ×</div>';
     }
     try{ if(typeof window.initMegaMenu==='function') window.initMegaMenu(); }catch(e){}
   }
@@ -258,6 +258,7 @@
     document.querySelectorAll('a[href]').forEach(function(a){
       var h=a.getAttribute('href'); if(!h) return;
       if(h==='/donate/'||h==='donate/'||h==='https://ptaorg.com/donate/'||h==='/support.html'||h==='/support.html') a.setAttribute('href','/support.html');
+      if(h==='/jp/'||h==='jp/'||h==='https://ptaorg.com/jp/') a.setAttribute('href','/guide-board.html#board-jp-guideline');
       if(h==='https://ptaorg.github.io/ed/'||h==='https://ptaorg.github.io/ed') a.setAttribute('href','https://ptaorg.com/ed');
     });
   }
@@ -327,9 +328,12 @@
     normalizeNavigation(); stabilizeMobileNavigation(); normalizeLinks(); rebuildHomeReadingSection(); replaceHomeFieldcase(); fixGuidePta(); improveParentResponseIntro(); parentConsultationBottom(); pdfLinks(); loadArchiveNotice(); initHomeMap(); if(location.hash) scheduleHashScroll(); else forceTopBurst(2200);
   }
 
-  var original=document.createElement('script');
-  original.src='/js/site-v48-original.js?v=59';
-  original.onload=function(){ patchOriginalNavigationHooks(); ready(function(){ baseInit(); local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(fixGuidePta,250); setTimeout(function(){ stabilizeMobileNavigation(); if(location.hash) scheduleHashScroll(); else forceTopBurst(1800); },300); }); };
-  original.onerror=function(){ patchOriginalNavigationHooks(); ready(function(){ local(); setTimeout(stabilizeMobileNavigation,80); setTimeout(function(){ stabilizeMobileNavigation(); if(location.hash) scheduleHashScroll(); else forceTopBurst(1800); },300); }); };
-  document.head.appendChild(original);
+  patchOriginalNavigationHooks();
+  ready(function(){
+    baseInit();
+    local();
+    setTimeout(stabilizeMobileNavigation,80);
+    setTimeout(fixGuidePta,250);
+    setTimeout(function(){ stabilizeMobileNavigation(); if(location.hash) scheduleHashScroll(); else forceTopBurst(1800); },300);
+  });
 })();
