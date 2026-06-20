@@ -3,92 +3,37 @@
 h2,h3,.section-title{font-weight:700;letter-spacing:.005em}.section-kicker{font-weight:700;letter-spacing:.08em}.article-body,.plain-prose-block,.chapter-content,.officer-prose{line-height:1.95}.thesis-section,.thesis-lead-section{max-width:100%}
 [id="ed-resource-set"]{max-width:920px;margin-left:auto;margin-right:auto}
 
-/* 2026-06-20 厚木市資料欄：全員提出方式の論点を本文として補う */
-.national-archive-page #atsugi-schools .wrap::before{
-  content:"厚木市PTA資料の読み方\A\A厚木市内の学校PTA資料でまず確認すべき点は、入会申込書の有無だけではありません。より重要なのは、入会しない保護者、判断を保留する保護者、PTAに個人情報を出したくない保護者にまで、学校経由でPTA書類の提出又は回答を求めているかどうかです。PTAは任意団体であり、本来は、入会を希望する保護者だけが、会の目的、会費、活動内容、個人情報の利用目的を確認したうえで入会を申し込めば足ります。加入しない者に、非加入届、不同意欄、保留回答、理由欄、全員提出の回答票を提出させる運用は、厳密には任意加入の完成形ではありません。\A\Aとくに、入学式、担任回収、学校提出書類との同時提出、未回答者への確認、登校班編成、役員選出、会費集金、会員カード作成が一体化している場合、保護者から見るとPTAへの応答が学校手続の一部のように見えます。この構造では、非加入者情報の把握、家庭事情や役員をできない理由の収集、学校保有情報との混在が生じやすくなります。したがって、厚木市資料は『入会する・しないを聞いているから適正』と評価するのではなく、入会申込、個人情報同意、会費納入、役員協力、学校提出書類を分離できているかを順に確認する必要があります。\A\A厚木第二小学校型の『入会・非入会にかかわらず全員提出』、戸田小学校型の『入会する・しないにかかわらず確認のため記入』、小鮎小学校型の『登録する・登録しない・保留する』は、自動加入より改善された面がある一方で、非加入者までPTAに回答させる点ではなお問題が残ります。依知小学校、上荻野小学校、上依知小学校のように、PTAカード、会員カード、アンケート、役員希望調査票の提出を入会意思表示又は加入扱いに結びつける資料は、入会契約、名簿整備、役員選出、会費徴収を混同するものとして、より重大な確認対象です。\A\A厚木市教育委員会に確認すべき事項は明確です。第一に、入会を希望する保護者のみが入会申込書を提出する方式を原則としているのか。第二に、非加入者に非加入届や全員回答票を提出させる運用を認めているのか。第三に、会員カード、保護者カード、役員希望調査票、委員登録票、会費納入を入会申込書の代替として扱うことを認めているのか。第四に、PTA書類を入学式、担任回収、学校提出書類と同時に処理する学校職務上の根拠は何か。第五に、学校が保有する児童・保護者情報をPTA会員管理、役員選出、会費徴収、登校班、広報活動に利用又は提供する場合、利用目的、同意取得、記録管理をどのように整理しているのかです。";
-  display:block;
-  white-space:pre-line;
-  margin:0 0 30px;
-  padding:26px 28px;
-  background:#fff;
-  border:1px solid #d8dee8;
-  border-left:7px solid #d4af37;
-  border-radius:0 18px 18px 0;
-  color:#24364a;
-  font-size:.97rem;
-  line-height:2.05;
-  box-shadow:0 12px 30px rgba(5,17,31,.06);
+/* guide-board.html：横並び図解のカード内スクロールを解消 */
+body.guide-board-direct-fixed .gbv-two{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:24px!important;
+  align-items:stretch!important;
 }
-.national-archive-page #atsugi-schools .wrap::after{
-  content:"補足：下の学校別カードは、本文の論点を確認するための補助導線です。カードの有無や評価色だけで判断せず、各学校ページの資料画像、元PDF、確認できる事実、資料上確認できない点をあわせて確認してください。";
-  display:block;
-  white-space:normal;
-  margin:24px 0 0;
-  padding:16px 18px;
-  background:#fff8df;
-  border-left:5px solid #d4af37;
-  border-radius:0 12px 12px 0;
-  color:#3f3a2a;
-  font-size:.9rem;
-  line-height:1.9;
+body.guide-board-direct-fixed .gbv-two .gbv-figure{
+  width:100%!important;
+  max-width:100%!important;
+}
+body.guide-board-direct-fixed .gbv-two .gbv-scroll{
+  overflow-x:visible!important;
+  overflow-y:visible!important;
+  padding:18px!important;
+}
+body.guide-board-direct-fixed .gbv-two .gbv-scroll svg{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  height:auto!important;
+}
+body.guide-board-direct-fixed .gbv-two .gbv-figure figcaption{
+  font-size:.88rem!important;
+  line-height:1.8!important;
 }
 
-/* 厚木市学校別カードの暫定評価補完。HTML本体を壊さず、厚木市欄だけ表示を完成させる。 */
-.national-archive-page #atsugi-schools .archive-evaluation-summary .eval-critical strong{font-size:0!important}.national-archive-page #atsugi-schools .archive-evaluation-summary .eval-critical strong::after{content:"6校";font-size:1.6rem;line-height:1;}
-.national-archive-page #atsugi-schools .archive-evaluation-summary .eval-problem strong{font-size:0!important}.national-archive-page #atsugi-schools .archive-evaluation-summary .eval-problem strong::after{content:"2校";font-size:1.6rem;line-height:1;}
-.national-archive-page #atsugi-schools .archive-evaluation-summary .eval-warning strong{font-size:0!important}.national-archive-page #atsugi-schools .archive-evaluation-summary .eval-warning strong::after{content:"5校";font-size:1.6rem;line-height:1;}
-.national-archive-page #atsugi-schools .archive-evaluation-summary .eval-pending strong{font-size:0!important}.national-archive-page #atsugi-schools .archive-evaluation-summary .eval-pending strong::after{content:"23校";font-size:1.6rem;line-height:1;}
-
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/kamiechi-es/"]),
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/kamiogino-es/"]),
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/echi-es/"]),
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/tsumada-es/"]),
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/atsugi-daini-es/"]){border-left:6px solid #e60012!important;}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/nanmori-es/"]),
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/tomuro-es/"]){border-left:6px solid #c2410c!important;}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/atsugi-es/"]),
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/koayu-es/"]),
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/shimizu-es/"]),
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/toda-es/"]),
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/mutsuai-jhs/"]){border-left:6px solid #facc15!important;}
-
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/kamiechi-es/"]) .eval-badge,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/kamiogino-es/"]) .eval-badge,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/echi-es/"]) .eval-badge,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/tsumada-es/"]) .eval-badge,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/atsugi-daini-es/"]) .eval-badge{font-size:0!important;background:#e60012!important;color:#fff!important;border-color:#e60012!important;}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/kamiechi-es/"]) .eval-badge::after,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/kamiogino-es/"]) .eval-badge::after,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/echi-es/"]) .eval-badge::after,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/tsumada-es/"]) .eval-badge::after,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/atsugi-daini-es/"]) .eval-badge::after{content:"重大リスク";font-size:.68rem;line-height:1;white-space:nowrap;}
-
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/nanmori-es/"]) .eval-badge,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/tomuro-es/"]) .eval-badge{font-size:0!important;background:#c2410c!important;color:#fff!important;border-color:#c2410c!important;}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/nanmori-es/"]) .eval-badge::after,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/tomuro-es/"]) .eval-badge::after{content:"問題あり";font-size:.68rem;line-height:1;white-space:nowrap;}
-
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/atsugi-es/"]) .eval-badge,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/koayu-es/"]) .eval-badge,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/shimizu-es/"]) .eval-badge,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/toda-es/"]) .eval-badge,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/mutsuai-jhs/"]) .eval-badge{font-size:0!important;background:#facc15!important;color:#0b2a4a!important;border-color:#facc15!important;}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/atsugi-es/"]) .eval-badge::after,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/koayu-es/"]) .eval-badge::after,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/shimizu-es/"]) .eval-badge::after,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/toda-es/"]) .eval-badge::after,
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/mutsuai-jhs/"]) .eval-badge::after{content:"要確認";font-size:.68rem;line-height:1;white-space:nowrap;}
-
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href^="/archive/atsugi/"])::after{display:block;margin-top:10px;padding:10px 12px;border-radius:10px;background:#f8fafc;border:1px solid #e5e7eb;color:#334155;font-size:.78rem;line-height:1.75;}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/kamiechi-es/"])::after{content:"確認ポイント：アンケート提出を入会意思表示と扱う構造。役員希望調査・理由記入と入会意思確認が混在しており、任意加入の手続として重大な確認対象。";}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/kamiogino-es/"])::after{content:"確認ポイント：PTA会員カードの提出をもって入会・継続扱い。会員管理、会費、委員選出を同一カードで処理しており、入会申込書との分離が必要。";}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/echi-es/"])::after{content:"確認ポイント：PTAカード提出をもって加入扱い。入学式提出、役員・委員負担、できない理由の記入が結びついており、任意性との矛盾が強い。";}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/tsumada-es/"])::after{content:"確認ポイント：委員登録票の提出及び会費納入を加入扱いに結びつける構造。入会申込、会費納入、委員登録を分けて確認する必要がある。";}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/atsugi-daini-es/"])::after{content:"確認ポイント：入会・非入会にかかわらず全員提出。未回答者を入学式や担任経由で確認する設計は、PTAへの応答を学校手続化する典型例。";}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/nanmori-es/"])::after{content:"確認ポイント：会費集金案内を確認。会費納入を加入意思又は協力意思と扱う余地があるため、入会申込記録、会費徴収根拠、非会員対応の分離確認が必要。";}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/tomuro-es/"])::after{content:"確認ポイント：保護者カードで加入・非加入を回答させる方式。登校班編成、PTA会員確認、役員選出の情報が同一カードに載る点が問題。";}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/atsugi-es/"])::after{content:"確認ポイント：PTA会員名簿は確認できるが、資料自体に入会届を兼ねない旨がある。別途、入会申込記録が存在するか確認が必要。";}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/koayu-es/"])::after{content:"確認ポイント：登録する・登録しない・保留の選択肢は自動加入より改善。ただし非加入・保留までPTAに回答させる全員提出方式なら問題が残る。";}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/shimizu-es/"])::after{content:"確認ポイント：入会申込書は確認できるが、会費集金委託、個人情報取扱同意、会員登録カードが一体化している。各同意の分離が必要。";}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/toda-es/"])::after{content:"確認ポイント：入会する・しないにかかわらず記入を求める方式。非加入者にまでPTAへの回答義務を負わせる構造として要確認。";}
-.national-archive-page #atsugi-schools .archive-school-card:has(a[href="/archive/atsugi/mutsuai-jhs/"])::after{content:"確認ポイント：学校教育活動とPTA活動の個人情報同意が同一書面で扱われる。学校利用目的とPTA利用目的の分離、不同意時の扱いを確認する必要がある。";}
+/* 小画面でも同じく縦積み */
+@media(max-width:900px){
+  body.guide-board-direct-fixed .gbv-two{grid-template-columns:1fr!important;}
+  body.guide-board-direct-fixed .gbv-two .gbv-scroll{overflow-x:visible!important;}
+  body.guide-board-direct-fixed .gbv-two .gbv-scroll svg{min-width:0!important;width:100%!important;}
+}
