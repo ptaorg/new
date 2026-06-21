@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PTA Open System｜PTAホームページ・入会申込・管理アプリ無料テンプレート</title>
+<style>
+:root{--navy:#123047;--blue:#1e5b82;--green:#0f766e;--bg:#f4f8fb;--line:#d7e3ea;--text:#1f2d38;--muted:#667684;--warn:#fff7ed}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;color:var(--text);line-height:1.85;background:#fff}.wrap{max-width:1100px;margin:auto;padding:18px}.hero{background:linear-gradient(135deg,var(--navy),#1d7898);color:#fff;border-radius:26px;padding:36px 26px;margin:18px 0}.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.2;margin:0 0 12px}.hero p{font-size:18px;max-width:850px}.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.btn{display:inline-block;text-decoration:none;border-radius:999px;padding:12px 18px;font-weight:800}.btn.white{background:#fff;color:var(--navy)}.btn.green{background:var(--green);color:#fff}.btn.blue{background:var(--blue);color:#fff}h2{font-size:clamp(24px,3vw,34px);border-bottom:3px solid var(--line);padding-bottom:8px;margin:34px 0 14px}h3{margin:18px 0 8px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card,.box{border:1px solid var(--line);border-radius:18px;padding:18px;background:#fff}.box{background:var(--bg)}.notice{background:var(--warn);border:1px solid #fed7aa;border-left:6px solid #f59e0b;border-radius:16px;padding:16px 18px}.safe{background:#ecfdf5;border:1px solid #bbf7d0;border-left:6px solid var(--green);border-radius:16px;padding:16px 18px}.filelist a{display:block;padding:10px 0;border-bottom:1px solid var(--line);word-break:break-all}code{background:#eef5f9;border:1px solid var(--line);border-radius:6px;padding:2px 6px}.footer{margin:40px 0 10px;color:var(--muted);font-size:13px}@media(max-width:800px){.grid{grid-template-columns:1fr}.btn{width:100%;text-align:center}.hero{border-radius:18px;padding:26px 18px}.wrap{padding:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+<h1>PTA Open System</h1>
+<p>PTAの任意加入、明示申込、学校名簿非流用を前提にした、無料で使えるPTAホームページ・入会申込・役員用管理アプリのテンプレートです。</p>
+<div class="btns">
+<a class="btn white" href="https://github.com/ptaorg/ptaorg.github.io/tree/main/pta-open-system" target="_blank" rel="noopener">GitHubで見る</a>
+<a class="btn green" href="apps-script/admin-app-preview.html">管理アプリ画面プレビュー</a>
+<a class="btn blue" href="docs/03_apps-script-admin-app.md">導入手順を見る</a>
+</div>
+</section>
+
+<section class="safe">
+<strong>基本原則</strong><br>
+PTAへの加入は任意です。加入しない方は、入会申込フォームを提出する必要はありません。加入しないことにより、児童・生徒が学校教育活動上の不利益を受けることはありません。
+</section>
+
+<h2>このセットでできること</h2>
+<div class="grid">
+<div class="card"><h3>保護者用サイト</h3><p>GoogleサイトにHTMLを貼るだけで、トップページ、お知らせ、活動紹介、資料室、入会案内、重要事項、FAQ、お問い合わせを作れます。</p></div>
+<div class="card"><h3>入会申込</h3><p>加入希望者だけがGoogleフォームを提出する運用にできます。非加入届や非加入者情報収集には使いません。</p></div>
+<div class="card"><h3>役員用管理アプリ</h3><p>Apps Scriptで、申込一覧、会員確定、取下げ、会員名簿、設定確認をボタン操作できます。</p></div>
+</div>
+
+<h2>使う順番</h2>
+<ol>
+<li>Googleサイトで8ページを作る。</li>
+<li><code>google-sites-html</code> のHTMLを各ページに埋め込む。</li>
+<li>入会申込Googleフォームを作る。</li>
+<li>管理用スプレッドシートにApps Scriptを入れる。</li>
+<li>保護者用サイトのフォームURLを差し替える。</li>
+<li>テスト申込を送信し、管理アプリで会員確定まで確認する。</li>
+<li>公開する。</li>
+</ol>
+
+<h2>Googleサイト用HTML</h2>
+<div class="box filelist">
+<a href="google-sites-html/01_top.html">トップページ：01_top.html</a>
+<a href="google-sites-html/02_news.html">お知らせ：02_news.html</a>
+<a href="google-sites-html/03_activities.html">活動紹介：03_activities.html</a>
+<a href="google-sites-html/04_documents.html">資料室：04_documents.html</a>
+<a href="google-sites-html/05_join.html">入会案内：05_join.html</a>
+<a href="google-sites-html/06_important.html">重要事項：06_important.html</a>
+<a href="google-sites-html/07_faq.html">FAQ：07_faq.html</a>
+<a href="google-sites-html/08_contact.html">お問い合わせ：08_contact.html</a>
+</div>
+
+<h2>管理アプリ用ファイル</h2>
+<div class="box filelist">
+<a href="apps-script/Code.combined.gs">Code.combined.gs</a>
+<a href="apps-script/Index.html">Index.html</a>
+<a href="apps-script/AdminApp.gs">AdminApp.gs</a>
+<a href="apps-script/admin-app-preview.html">管理アプリ画面プレビュー</a>
+</div>
+
+<h2>導入資料</h2>
+<div class="box filelist">
+<a href="README.md">README.md</a>
+<a href="docs/01_overview.md">01 全体像</a>
+<a href="docs/02_google-sites-html.md">02 GoogleサイトHTMLの使い方</a>
+<a href="docs/03_apps-script-admin-app.md">03 役員用管理アプリの入れ方</a>
+<a href="docs/04_do-not-do.md">04 やってはいけないこと</a>
+</div>
+
+<section class="notice">
+<strong>注意</strong><br>
+管理アプリURL、管理スプレッドシートURL、編集用フォームURLは保護者へ共有しません。保護者に案内するのは、公開されたGoogleサイトと入会申込フォームだけです。
+</section>
+
+<div class="footer">PTA適正化推進委員会 / PTA Open System</div>
+</div>
+</body>
+</html>
