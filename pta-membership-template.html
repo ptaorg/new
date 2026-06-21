@@ -104,6 +104,9 @@
     }
 
     .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
       margin: 26px 0 10px;
     }
 
@@ -116,6 +119,10 @@
       border-radius: 999px;
       padding: 14px 24px;
       box-shadow: 0 3px 10px rgba(0,0,0,.12);
+    }
+
+    .button.secondary {
+      background: var(--blue);
     }
 
     .button:hover { filter: brightness(.95); }
@@ -156,6 +163,13 @@
 
     .definition dd {
       margin: 0 0 12px;
+    }
+
+    .admin-box {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 20px;
     }
 
     .footer {
@@ -234,6 +248,15 @@
       <h2>管理者向けの注意</h2>
       <p>保護者に共有してよいのは、公開フォームURLだけです。編集用フォームURL、管理用スプレッドシート、GASのWebアプリURL、Apps Scriptの編集画面は、PTA役員等の管理者限りで扱ってください。</p>
       <p>特に編集用フォームURLを外部に出すと、フォーム項目の変更や回答の取扱いに影響するおそれがあります。案内文、PTAだより、学校配布物、SNS等には、公開フォームURLだけを掲載してください。</p>
+
+      <div class="admin-box">
+        <h3>PTA役員・管理者の方へ</h3>
+        <p>テンプレート一式、運用資料、管理用ファイルは管理者向けページに分けています。Drive側の共有権限を確認し、必要な管理者だけで利用してください。</p>
+        <div class="button-row">
+          <a class="button secondary" href="pta-membership-template-admin.html" rel="nofollow">管理者向け資料ページを開く</a>
+        </div>
+        <p class="sub">保護者への案内には、この管理者向けページではなく、上部の公開フォームURLを使用してください。</p>
+      </div>
     </section>
 
     <section>
