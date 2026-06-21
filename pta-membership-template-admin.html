@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>管理者向け資料 | PTA加入・会員管理テンプレート</title>
+  <meta name="description" content="PTA加入・会員管理テンプレートの管理者向け資料ページです。保護者向け公開ページではありません。">
+  <style>
+    :root {
+      --ink: #172a3a;
+      --muted: #5d6b78;
+      --line: #d8e3ea;
+      --blue: #174a73;
+      --blue-dark: #0f304d;
+      --pale: #f4f8fb;
+      --accent: #b33a3a;
+      --green: #2f6f4e;
+      --bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+      line-height: 1.88;
+      letter-spacing: .01em;
+    }
+
+    a { color: #0e5f94; }
+
+    .site-header {
+      background: linear-gradient(135deg, var(--blue-dark), #092238);
+      color: #fff;
+      padding: 30px 0 28px;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .crumb {
+      font-size: .9rem;
+      opacity: .9;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 2.45rem);
+      line-height: 1.35;
+      margin: 0 0 .5em;
+    }
+
+    .site-header p {
+      max-width: 820px;
+      margin: 0;
+      color: #eef6fd;
+      font-size: 1.02rem;
+    }
+
+    main { padding: 38px 0 64px; }
+
+    section { margin: 0 0 42px; }
+
+    h2 {
+      font-size: 1.42rem;
+      line-height: 1.45;
+      border-left: 6px solid var(--blue);
+      padding-left: 14px;
+      margin: 38px 0 14px;
+    }
+
+    p { margin: 0 0 1em; }
+
+    .lead { font-size: 1.07rem; }
+
+    .notice {
+      background: var(--pale);
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--blue);
+      padding: 18px 20px;
+      margin: 22px 0;
+    }
+
+    .warn {
+      background: #fff8f0;
+      border-color: #f0d1aa;
+      border-left-color: var(--accent);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 26px 0 10px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 14px 24px;
+      box-shadow: 0 3px 10px rgba(0,0,0,.12);
+    }
+
+    .button.secondary { background: var(--blue); }
+
+    .button:hover { filter: brightness(.95); }
+
+    .sub {
+      color: var(--muted);
+      font-size: .92rem;
+      margin-top: 8px;
+    }
+
+    .flow {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 0;
+    }
+
+    .flow li { margin: .55em 0; }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      background: #f8fafc;
+      padding: 24px 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    @media (max-width: 760px) {
+      .wrap { padding: 0 16px; }
+      .site-header { padding: 24px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="crumb">PTA適正化推進委員会 / 管理者向け</div>
+      <h1>PTA加入・会員管理テンプレート 管理者向け資料</h1>
+      <p>このページは、PTA役員・管理者がテンプレート一式、運用資料、管理用ファイルにアクセスするためのページです。保護者向け案内ページではありません。</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <p class="lead">保護者に案内するのは、公開フォームURLのみです。管理用フォルダ、管理用スプレッドシート、編集用フォームURL、GASのWebアプリURL、Apps Script編集画面は、PTA役員等の管理者限りで扱ってください。</p>
+
+      <div class="notice warn">
+        <strong>注意：</strong><br>
+        このページは検索避け設定をしていますが、URLを知っている人はアクセスできます。最終的なアクセス制御は、Google Drive側の共有権限で行ってください。フォルダは「リンクを知っている全員」ではなく、必要な管理者だけに共有する運用を推奨します。
+      </div>
+
+      <div class="button-row">
+        <a class="button" href="https://drive.google.com/drive/u/0/folders/1o6hQ5aXFkw-B6vI9FS0K7qfzOWktWvqu" target="_blank" rel="noopener nofollow">管理者用Driveフォルダを開く</a>
+        <a class="button secondary" href="pta-membership-template.html">保護者向け公開ページに戻る</a>
+      </div>
+      <p class="sub">Driveフォルダ内にGAS管理画面URL、コピー用スプレッドシート、運用資料等をまとめる想定です。</p>
+    </section>
+
+    <section>
+      <h2>管理者が配布してよいもの</h2>
+      <ol class="flow">
+        <li>保護者向けには、公開フォームURLのみを案内します。</li>
+        <li>PTA役員・管理者には、必要に応じて管理用Driveフォルダ又は管理用スプレッドシートを共有します。</li>
+        <li>編集用フォームURLは、フォーム項目や回答連携を変更できるため、保護者には共有しません。</li>
+        <li>GAS WebアプリURLは管理者画面です。保護者には共有しません。</li>
+        <li>Apps Script編集画面は、コードを変更できる担当者に限って共有します。</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>運用上の基本線</h2>
+      <p>このテンプレートは、加入を希望する保護者本人の申込情報に基づいて会員管理を行うためのものです。加入しない保護者に非加入届を提出させること、未提出者リストを作成すること、学校名簿をPTA名簿に流用することを前提にしません。</p>
+      <p>管理者は、申込受付、会費確認、会員確定、名簿反映を分けて扱い、会員名簿には会員確定済みの情報だけを反映してください。</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">PTA適正化推進委員会</div>
+  </footer>
+</body>
+</html>
