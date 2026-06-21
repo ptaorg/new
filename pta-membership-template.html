@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PTA加入・会員管理テンプレート β版 | PTA適正化推進委員会</title>
+  <meta name="description" content="PTA加入を任意の申込として扱い、学校名簿に依存せずに加入意思・重要事項同意・会費確認・会員確定を整理するためのテンプレートです。">
+  <style>
+    :root {
+      --ink: #172a3a;
+      --muted: #5d6b78;
+      --line: #d8e3ea;
+      --blue: #174a73;
+      --blue-dark: #0f304d;
+      --pale: #f4f8fb;
+      --accent: #b33a3a;
+      --green: #2f6f4e;
+      --bg: #ffffff;
+      --paper: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+      line-height: 1.88;
+      letter-spacing: .01em;
+    }
+
+    a { color: #0e5f94; }
+
+    .site-header {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: #fff;
+      padding: 30px 0 28px;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .crumb {
+      font-size: .9rem;
+      opacity: .9;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 2.55rem);
+      line-height: 1.35;
+      margin: 0 0 .5em;
+    }
+
+    .site-header p {
+      max-width: 820px;
+      margin: 0;
+      color: #eef6fd;
+      font-size: 1.02rem;
+    }
+
+    main { padding: 38px 0 64px; }
+
+    section { margin: 0 0 42px; }
+
+    h2 {
+      font-size: 1.42rem;
+      line-height: 1.45;
+      border-left: 6px solid var(--blue);
+      padding-left: 14px;
+      margin: 38px 0 14px;
+    }
+
+    h3 {
+      font-size: 1.08rem;
+      color: #224b68;
+      margin: 24px 0 8px;
+    }
+
+    p { margin: 0 0 1em; }
+
+    .lead {
+      font-size: 1.07rem;
+    }
+
+    .notice {
+      background: var(--pale);
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--blue);
+      padding: 18px 20px;
+      margin: 22px 0;
+    }
+
+    .notice strong { color: var(--blue-dark); }
+
+    .warn {
+      background: #fff8f0;
+      border-color: #f0d1aa;
+      border-left-color: var(--accent);
+    }
+
+    .button-row {
+      margin: 26px 0 10px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 14px 24px;
+      box-shadow: 0 3px 10px rgba(0,0,0,.12);
+    }
+
+    .button:hover { filter: brightness(.95); }
+
+    .sub {
+      color: var(--muted);
+      font-size: .92rem;
+      margin-top: 8px;
+    }
+
+    .flow {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 0;
+    }
+
+    .flow li { margin: .55em 0; }
+
+    .term {
+      display: inline-block;
+      border: 1px solid #c8d7e2;
+      background: #f8fbfd;
+      border-radius: 5px;
+      padding: .02em .35em;
+      font-weight: 700;
+    }
+
+    .definition {
+      border-left: 4px solid #c8d7e2;
+      padding-left: 16px;
+      margin: 20px 0;
+    }
+
+    .definition dt {
+      font-weight: 700;
+      margin: 16px 0 4px;
+    }
+
+    .definition dd {
+      margin: 0 0 12px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      background: #f8fafc;
+      padding: 24px 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    @media (max-width: 760px) {
+      .wrap { padding: 0 16px; }
+      .site-header { padding: 24px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="crumb">PTA適正化推進委員会 / 配布ツール</div>
+      <h1>PTA加入・会員管理テンプレート β版</h1>
+      <p>PTA加入を「なんとなく全員加入」ではなく、加入を希望する保護者本人の明示的な申込として整理するためのテンプレートです。</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <p class="lead">PTAは任意団体であり、加入は保護者本人の意思表示に基づいて行われるべきものです。ところが実務上は、入学時に学校から配られる書類、学校が保有する児童生徒名簿、学校徴収金や学校連絡ツールとPTA手続きが混在し、保護者が「学校の手続きの一部」と誤認しやすい運用が残っています。</p>
+      <p>このテンプレートは、その混在を避けるために、PTA加入申込、重要事項への同意、会費確認、会員確定、会員名簿作成を、学校名簿に依存せず、申込者本人の入力情報に基づいて整理するものです。</p>
+
+      <div class="notice warn">
+        <strong>加入しない方は、このフォームを提出する必要はありません。</strong><br>
+        このテンプレートは、非加入届、非加入者リスト、未提出者管理表、未協力者リストを作成するためのものではありません。
+      </div>
+
+      <div class="button-row">
+        <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeql1W4MG0hXaBWTLFw_BuB6AITcRhS1zh_gHbd_BYgM-uEcA/viewform" target="_blank" rel="noopener">加入申込フォームを開く</a>
+      </div>
+      <p class="sub">上のリンクは保護者向けの公開フォームです。編集用フォームURLや管理用スプレッドシートは公開しないでください。</p>
+    </section>
+
+    <section>
+      <h2>このテンプレートが整理すること</h2>
+      <p>このテンプレートでは、PTA加入を「会員になったものとして扱う」ことから始めません。まず加入希望者本人がフォームを提出し、その内容をPTA側で確認し、会費納付等の条件が整った段階で会員として確定する流れにしています。</p>
+      <p>この流れにより、申込の有無、会員確定の有無、会費納付の有無を分けて確認できます。学校の児童生徒名簿をそのままPTA名簿として使う運用や、申込のない保護者を会員扱いする運用を避けることができます。</p>
+
+      <dl class="definition">
+        <dt>申込受付</dt>
+        <dd>保護者がPTA加入の意思を示し、必要事項を入力した段階です。この時点では、会員確定とは分けて扱います。</dd>
+        <dt>会員確定</dt>
+        <dd>PTA側が申込内容と会費納付等を確認し、会員として扱う段階です。会員名簿には、会員確定済みの情報だけを反映します。</dd>
+        <dt>取下げ・無効</dt>
+        <dd>入力誤り、重複、申込の撤回などがあった場合に、会員名簿へ反映しない状態として整理します。</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>このテンプレートで行わないこと</h2>
+      <p>このテンプレートは、加入しない保護者に届出を求める仕組みではありません。PTA加入は任意である以上、加入しない方に「非加入届」や「登録だけ」を求める運用は、保護者に不要な心理的圧力を与え、非加入者名簿の作成につながるおそれがあります。</p>
+      <p>また、学校が保有する名簿、学校徴収金、学校連絡ツール、入学式や学校説明会の導線を使って、PTA加入を学校手続きと一体に見せることも前提としていません。PTAはPTAとして、加入を希望する方から必要最小限の情報を受け取る設計にする必要があります。</p>
+    </section>
+
+    <section>
+      <h2>利用の流れ</h2>
+      <ol class="flow">
+        <li>保護者は、PTA加入を希望する場合だけ、公開フォームを開きます。</li>
+        <li>フォーム上で、PTA加入の任意性、個人情報の取扱い、会費等の説明を確認します。</li>
+        <li>加入を希望する保護者本人が、必要事項を入力して送信します。</li>
+        <li>PTA側は、申込内容を確認し、必要に応じて会費納付方法を案内します。</li>
+        <li>会費納付等を確認した後、PTA側で会員として確定します。</li>
+        <li>会員名簿には、会員確定済みの情報のみを反映します。</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>管理者向けの注意</h2>
+      <p>保護者に共有してよいのは、公開フォームURLだけです。編集用フォームURL、管理用スプレッドシート、GASのWebアプリURL、Apps Scriptの編集画面は、PTA役員等の管理者限りで扱ってください。</p>
+      <p>特に編集用フォームURLを外部に出すと、フォーム項目の変更や回答の取扱いに影響するおそれがあります。案内文、PTAだより、学校配布物、SNS等には、公開フォームURLだけを掲載してください。</p>
+    </section>
+
+    <section>
+      <h2>更新情報</h2>
+      <p><span class="term">β版</span> 2026年6月21日公開。実際のPTA運用での検証を踏まえ、文言、項目、管理手順を調整していきます。</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">PTA適正化推進委員会</div>
+  </footer>
+</body>
+</html>
