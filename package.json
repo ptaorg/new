@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "check:site": "node tools/check-site.mjs",
+    "check:generated": "node scripts/check-generated-files.js",
     "sync:materials": "node scripts/sync-school-materials.js --dry-run",
     "sync:materials:write": "node scripts/sync-school-materials.js --write",
     "generate:schools": "node scripts/generate-school-pages.js",
