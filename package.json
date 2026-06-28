@@ -4,6 +4,7 @@
   "scripts": {
     "check:site": "node tools/check-site.mjs",
     "check:generated": "node scripts/check-generated-files.js",
+    "check:site-js-version": "node scripts/check-site-js-version.js 89",
     "sync:materials": "node scripts/sync-school-materials.js --dry-run",
     "sync:materials:write": "node scripts/sync-school-materials.js --write",
     "generate:schools": "node scripts/generate-school-pages.js",
