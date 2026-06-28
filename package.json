@@ -14,6 +14,7 @@
     "generate:sitemap": "node scripts/generate-sitemap.js",
     "generate:search": "node scripts/generate-search-index.js",
     "generate:all": "npm run generate:schools && npm run generate:archive && npm run generate:sitemap && npm run generate:search",
+    "maintenance:add-home-audience-gateway": "node scripts/add-home-audience-gateway.js",
     "maintenance:bump-site-js:dry-run": "node scripts/bump-site-js-version.js 89 --dry-run",
     "maintenance:bump-site-js": "node scripts/bump-site-js-version.js",
     "maintenance:bump-site-js:check": "npm run maintenance:bump-site-js -- 89 && npm run check:site-js-version",
