@@ -8,6 +8,7 @@
     "generate:schools": "node scripts/generate-school-pages.js",
     "generate:archive": "node scripts/generate-national-archive.js",
     "generate:sitemap": "node scripts/generate-sitemap.js",
-    "generate:all": "npm run generate:schools && npm run generate:archive && npm run generate:sitemap"
+    "generate:search": "node scripts/generate-search-index.js",
+    "generate:all": "npm run generate:schools && npm run generate:archive && npm run generate:sitemap && npm run generate:search"
   }
 }
