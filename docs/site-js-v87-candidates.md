@@ -1,54 +1,31 @@
-# site.js v87 候補ページ
+# site.js v87 候補ページ（対応済み）
 
-GitHub 検索で `site.js?v=87` が残っている候補として出たページの作業メモです。
+このメモは、過去に `site.js?v=87` が残っている候補として確認したページの作業記録です。
 
-検索結果は古いインデックスを拾う可能性があるため、正本は次のローカル確認コマンドです。
+## 対応状況
+
+2026-06-28 に Codespaces で一括メンテナンスを実行し、残っていた読み込み指定を `site.js?v=89` に更新しました。
+
+対応コミット：`671cefd0ee57ad03db6c909768c92b8f4042798c`
+
+あわせて、検索インデックスとサイトマップも生成結果に合わせて更新されています。
+
+## 今後の確認方法
+
+正確な状態確認は、次のコマンドで行います。
 
 ```bash
 npm run report:site-js-version
 ```
 
-## 候補一覧
-
-- `law-map.html`
-- `cases.html`
-- `index.html`
-- `documents.html`
-- `board-responses.html`
-- `guideline.html`
-- `facilities.html`
-- `proper-management.html`
-- `edu-board-separation.html`
-- `report.html`
-- `guide-research.html`
-- `membership.html`
-- `journal/consumer-contract.html`
-- `reality.html`
-- `timeline.html`
-- `privacy.html`
-- `administrative-materials.html`
-- `guide-pta.html`
-- `fee-collection.html`
-- `journal.html`
-- `education-board-responsibility.html`
-- `guide-parent.html`
-- `personnel.html`
-- `claim-evidence-ledger.html`
-- `audit/index.html`
-- `shizuoka-incident.html`
-- `compliance.html`
-
-## 推奨作業手順
+必要に応じて、次の一括メンテナンスコマンドを実行します。
 
 ```bash
-npm run report:site-js-version
-npm run maintenance:bump-site-js:dry-run
-npm run maintenance:bump-site-js:check
-npm run check:all
+npm run maintenance:site-js-cache
 ```
 
 ## 注意
 
-- 上記は検索結果ベースの候補であり、すでに更新済みのページが混じる可能性があります。
-- 大型 HTML は GitHub コネクタ上で全文取得が切れることがあるため、手作業全文置換を避けます。
+- このファイルは、過去の候補ページの作業記録として残します。
+- 新たに `site.js` を更新した場合は、HTML 側の読み込み版数も同じ版数へ更新します。
 - 版数更新と本文修正は別コミットにします。
