@@ -1,4 +1,4 @@
-/* site.js v88 — static body preservation
+/* site.js v89 — static body preservation
    重要本文はHTML側を正とし、JavaScriptは補助機能だけを担当する。 */
 (function(){
   var initialPath = location.pathname + location.search;
@@ -148,6 +148,16 @@
     ['応援・寄付', '/support.html', '活動支援のお願い']
   ];
 
+  function getSearchIndex() {
+    if (Array.isArray(window.PTA_SITE_SEARCH_INDEX) && window.PTA_SITE_SEARCH_INDEX.length) return window.PTA_SITE_SEARCH_INDEX;
+    return SITE_INDEX;
+  }
+
+  function preloadSearchIndex() {
+    if (Array.isArray(window.PTA_SITE_SEARCH_INDEX) && window.PTA_SITE_SEARCH_INDEX.length) return;
+    loadScript('site-search-index-dynamic', '/data/site-search-index.js?v=1');
+  }
+
   function initSearch() {
     document.querySelectorAll('.header-search').forEach(function(box){
       var input = box.querySelector('.search-input');
@@ -161,14 +171,28 @@
           dropdown.classList.remove('is-open');
           return;
         }
-        var hits = SITE_INDEX.filter(function(row){
-          return (row[0] + ' ' + row[1] + ' ' + row[2]).toLowerCase().indexOf(q) >= 0;
+        var hits = getSearchIndex().filter(function(row){
+          return row && (row[0] + ' ' + row[1] + ' ' + row[2]).toLowerCase().indexOf(q) >= 0;
         }).slice(0, 8);
         if (!hits.length) {
-          dropdown.innerHTML = '<div class="search-result-item srd-empty"><strong>該当なし</strong><span>別の語で検索してください。</span></div>';
+          var empty = document.createElement('div');
+          empty.className = 'search-result-item srd-empty';
+          empty.innerHTML = '<strong>該当なし</strong><span>別の語で検索してください。</span>';
+          dropdown.appendChild(empty);
         } else {
           hits.forEach(function(row){
-            dropdown.insertAdjacentHTML('beforeend', '<a class="search-result-item srd-item" href="' + row[1] + '"><strong class="srd-item-title">' + row[0] + '</strong><span class="srd-item-desc">' + row[2] + '</span></a>');
+            var a = document.createElement('a');
+            a.className = 'search-result-item srd-item';
+            a.href = row[1];
+            var title = document.createElement('strong');
+            title.className = 'srd-item-title';
+            title.textContent = row[0];
+            var desc = document.createElement('span');
+            desc.className = 'srd-item-desc';
+            desc.textContent = row[2] || '';
+            a.appendChild(title);
+            a.appendChild(desc);
+            dropdown.appendChild(a);
           });
         }
         dropdown.classList.add('is-open');
@@ -216,9 +240,9 @@
   function stabilizeMobileNavigation() {
     var hamburger = document.getElementById('hamburger');
     var overlay = document.getElementById('mobileOverlay');
-    if (!hamburger || !overlay || hamburger.dataset.stableMobileNav === 'v88') return;
+    if (!hamburger || !overlay || hamburger.dataset.stableMobileNav === 'v89') return;
 
-    addStyle('mobile-nav-stable-v88',
+    addStyle('mobile-nav-stable-v89',
       'html.mobile-nav-lock-root{overflow:hidden!important;overscroll-behavior:none!important}' +
       'body.mobile-nav-lock{position:fixed!important;left:0;right:0;width:100%;overflow:hidden!important;touch-action:none!important}' +
       '.mobile-overlay{position:fixed!important;inset:0!important;z-index:5000!important;display:none!important;flex-direction:column!important;justify-content:flex-start!important;align-items:center!important;gap:10px!important;padding:calc(18px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom))!important;background:rgba(5,17,31,.92)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}' +
@@ -237,8 +261,8 @@
     newOverlay.className = 'mobile-overlay';
     newOverlay.setAttribute('aria-hidden', 'true');
     newOverlay.innerHTML = mobileNavHtml();
-    newHamburger.dataset.stableMobileNav = 'v88';
-    newOverlay.dataset.stableMobileNav = 'v88';
+    newHamburger.dataset.stableMobileNav = 'v89';
+    newOverlay.dataset.stableMobileNav = 'v89';
     newHamburger.setAttribute('aria-controls', 'mobileOverlay');
     newHamburger.setAttribute('aria-expanded', 'false');
     newHamburger.setAttribute('aria-label', 'メニューを開く');
@@ -293,8 +317,8 @@
 
   function normalizeNavigation() {
     var desktop = document.querySelector('.desktop-nav');
-    if (!desktop || desktop.dataset.normalized === 'v88') return;
-    desktop.dataset.normalized = 'v88';
+    if (!desktop || desktop.dataset.normalized === 'v89') return;
+    desktop.dataset.normalized = 'v89';
     desktop.innerHTML = '<a class="nav-link" href="/index.html">トップ</a>' +
       '<div class="nav-item has-dropdown"><a class="nav-link" href="/guide-parent.html">立場別</a><div class="mega-menu"><div class="mega-col"><h4>立場別</h4><ul><li><a href="/guide-parent.html">保護者の方へ</a></li><li><a href="/guide-pta.html">PTA役員の方へ</a></li><li><a href="/guide-board.html">教育委員会・学校の方へ</a></li><li><a href="/guide-research.html">研究者・記者の方へ</a></li></ul></div></div></div>' +
       '<div class="nav-item has-dropdown"><a class="nav-link" href="/documents.html">資料・データ</a><div class="mega-menu"><div class="mega-col"><h4>一次資料</h4><ul><li><a href="/board-responses.html">教育委員会の回答</a></li><li><a href="/national-archive.html">全国資料館</a></li><li><a href="/administrative-materials.html">行政通知・公式PDF</a></li><li><a href="/compliance.html">PTA運営の現場実例</a></li></ul></div><div class="mega-col"><h4>配布資料・索引</h4><ul><li><a href="/documents.html">資料入口・索引</a></li><li><a href="/guide-board.html#board-jp-guideline">教委向け分離資料</a></li><li><a href="/PTA運営適正化ガイドブック_第4版_改訂本文.html">適正化ガイドブック 第4版</a></li></ul></div></div></div>' +
@@ -323,7 +347,7 @@
     }
     var guide = document.getElementById('guidebook-text');
     if (guide && main && main.firstElementChild !== guide) main.insertBefore(guide, main.firstElementChild);
-    addStyle('guide-pta-layout-v88',
+    addStyle('guide-pta-layout-v89',
       'body:has(#guidebook-text) main{display:block!important;width:100%!important;max-width:none!important}' +
       '#guidebook-text{display:block!important;position:static!important;float:none!important;clear:both!important;width:100%!important;max-width:none!important;margin:0!important;padding:56px 0 44px!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}' +
       '#guidebook-text>.wrap{display:block!important;float:none!important;position:static!important;width:min(calc(100% - 40px),860px)!important;max-width:860px!important;margin-left:auto!important;margin-right:auto!important;padding-left:0!important;padding-right:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}' +
@@ -415,6 +439,7 @@
     normalizeNavigation();
     stabilizeMobileNavigation();
     normalizeLinks();
+    preloadSearchIndex();
     initSearch();
     initFAQ();
     fixGuidePta();
