@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PTA加入・会員管理テンプレート ダウンロード</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/css/style.css?v=20260628-type-scale">
+<style>
+  body{background:#f7f3e8;color:#0f2747;font-family:'Noto Sans JP',system-ui,sans-serif;line-height:1.8}
+  .download-wrap{width:min(calc(100% - 40px),820px);margin:72px auto;background:#fff;border:1px solid rgba(15,39,71,.14);border-left:8px solid #2f6f73;border-radius:22px;box-shadow:0 16px 42px rgba(5,17,31,.10);padding:32px}
+  h1{font-family:'Noto Serif JP',serif;font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.45;margin:0 0 12px;color:#0f2747}
+  p{color:#475569;margin:0 0 16px}.status{background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:14px 16px;margin:18px 0;color:#334155;font-weight:700}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}.actions a,.actions button{text-decoration:none;border:none;cursor:pointer}.hidden{display:none!important}
+</style>
+</head>
+<body>
+<main class="download-wrap">
+  <h1>PTA加入・会員管理テンプレートをダウンロードします</h1>
+  <p>PTA役員向けの加入申込・会員管理テンプレート配布セットです。自動でダウンロードが始まらない場合は、下のボタンを押してください。</p>
+  <div class="status" id="status">ダウンロード準備中です。</div>
+  <div class="actions">
+    <button class="btn-gold hidden" id="downloadBtn" type="button">ZIPをダウンロード</button>
+    <a class="btn-outline" href="/guide-pta.html#pta-member-template">PTA役員向けページへ戻る</a>
+  </div>
+</main>
+<script>
+(function(){
+  const fileName = 'pta-membership-management-template-complete.zip';
+  const status = document.getElementById('status');
+  const btn = document.getElementById('downloadBtn');
+  let blobUrl = null;
+
+  function base64ToBlob(base64){
+    const binary = atob(base64.replace(/\s+/g,''));
+    const bytes = new Uint8Array(binary.length);
+    for(let i=0;i<binary.length;i++) bytes[i] = binary.charCodeAt(i);
+    return new Blob([bytes], {type:'application/zip'});
+  }
+  function startDownload(){
+    if(!blobUrl) return;
+    const a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+  fetch('/scripts/connect-pta-template-to-officers.js', {cache:'no-store'})
+    .then(res => {
+      if(!res.ok) throw new Error('template source not found');
+      return res.text();
+    })
+    .then(text => {
+      const m = text.match(/const ZIP_BASE64 = `([\s\S]*?)`;/);
+      if(!m) throw new Error('template payload not found');
+      const blob = base64ToBlob(m[1]);
+      blobUrl = URL.createObjectURL(blob);
+      status.textContent = '準備できました。自動で始まらない場合はボタンを押してください。';
+      btn.classList.remove('hidden');
+      btn.addEventListener('click', startDownload);
+      setTimeout(startDownload, 250);
+    })
+    .catch(err => {
+      console.error(err);
+      status.textContent = 'ダウンロード準備に失敗しました。PTA役員向けページから再度お試しください。';
+    });
+})();
+</script>
+</body>
+</html>
