@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   fix-refine-cache:
+    # trigger sitewide run 2026-06-29
     if: contains(github.event.head_commit.message, 'Run sitewide refine cache fix') || contains(github.event.head_commit.message, 'Run refine cache fix')
     runs-on: ubuntu-latest
     steps:
@@ -42,7 +43,6 @@ jobs:
               text = text.replace('css/refine.css?v=hero-fix-20260629b', 'css/refine.css?v=sitewide-hero-fix-20260629')
 
               has_photo_hero = 'page-hero--photo' in text
-              has_refine = 'css/refine.css?' in text or 'css/refine.css"' in text or "css/refine.css'" in text
               if has_photo_hero:
                   start = text.find('<style id="final-hero-layout-fix">')
                   if start != -1:
