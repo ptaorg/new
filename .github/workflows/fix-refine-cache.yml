@@ -10,8 +10,7 @@ permissions:
 
 jobs:
   fix-refine-cache:
-    # trigger run 2026-06-29
-    if: contains(github.event.head_commit.message, 'Inject final hero overrides into target pages') || contains(github.event.head_commit.message, 'Run refine cache fix')
+    if: contains(github.event.head_commit.message, 'Run sitewide refine cache fix') || contains(github.event.head_commit.message, 'Run refine cache fix')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,43 +18,58 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Inject final CSS overrides
+      - name: Update all HTML refine cache keys and photo hero overrides
         run: |
           python - <<'PY'
           from pathlib import Path
 
-          targets = [
-              Path('guide-pta.html'),
-              Path('guide-board.html'),
-              Path('personnel.html'),
-              Path('privacy.html'),
-          ]
+          exclude_dirs = {'.git', 'node_modules', 'docs', 'scripts', 'tools', 'tests', 'source-candidates'}
+          html_files = []
+          for path in Path('.').rglob('*.html'):
+              if any(part in exclude_dirs for part in path.parts):
+                  continue
+              html_files.append(path)
 
           block = '''\n<style id="final-hero-layout-fix">\nhtml,body{overflow-x:hidden!important}\n.support-strip{background:linear-gradient(90deg,#0a192f 0%,#1e3a5f 58%,#2d5a8e 100%)!important;color:#fff!important;border-bottom:1px solid rgba(212,175,55,.42)!important}\n.support-strip-inner,.support-strip-text{color:#fff!important}\n.site-header{background:linear-gradient(90deg,#0a192f 0%,#1e3a5f 58%,#2d5a8e 100%)!important;border-bottom:3px solid #d4af37!important}\n.site-header .nav-container{background:transparent!important}\n.site-header .logo,.site-header .logo span,.site-header .nav-link{color:#fff!important}\n.site-header .hamburger span{background:#fff!important}\n.breadcrumb-bar{display:none!important}\n.page-hero.page-hero--photo{display:block!important;position:relative!important;width:100%!important;max-width:none!important;min-height:340px!important;margin:0!important;padding:0!important;overflow:hidden!important;background:#0a192f!important;border:0!important}\n.page-hero.page-hero--photo .page-hero-bg-img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}\n.page-hero.page-hero--photo .page-hero-bg-img img{display:block!important;width:100%!important;height:100%!important;min-height:340px!important;object-fit:cover!important}\n.page-hero.page-hero--photo .page-hero-bg-img::after{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(90deg,rgba(5,17,31,.78) 0%,rgba(5,17,31,.52) 48%,rgba(5,17,31,.18) 100%)!important}\n.page-hero.page-hero--photo .page-hero-inner{position:relative!important;z-index:1!important;width:min(calc(100% - 40px),1080px)!important;max-width:1080px!important;margin:0 auto!important;padding:68px 0 74px!important;color:#fff!important}\n.page-hero.page-hero--photo h1,.page-hero.page-hero--photo p{color:#fff!important;text-shadow:0 2px 12px rgba(0,0,0,.34)!important}\n.page-hero.page-hero--photo h1 em{color:#f4e7a6!important}\n@media(max-width:760px){.page-hero.page-hero--photo{min-height:300px!important}.page-hero.page-hero--photo .page-hero-bg-img img{min-height:300px!important}.page-hero.page-hero--photo .page-hero-inner{width:min(calc(100% - 28px),1080px)!important;padding:44px 0 52px!important}}\n</style>\n'''
 
-          for path in targets:
+          changed = []
+          for path in html_files:
               text = path.read_text(encoding='utf-8')
-              text = text.replace('css/refine.css?v=refine2', 'css/refine.css?v=hero-fix-20260629')
-              text = text.replace('css/refine.css?v=hero-fix-20260629', 'css/refine.css?v=hero-fix-20260629b')
-              start = text.find('<style id="final-hero-layout-fix">')
-              if start != -1:
-                  end = text.find('</style>', start)
-                  if end != -1:
-                      text = text[:start] + text[end + len('</style>'):]
-              if '</head>' not in text:
-                  raise SystemExit(f'{path}: </head> not found')
-              text = text.replace('</head>', block + '</head>', 1)
-              path.write_text(text, encoding='utf-8')
+              original = text
+
+              text = text.replace('css/refine.css?v=refine2', 'css/refine.css?v=sitewide-hero-fix-20260629')
+              text = text.replace('css/refine.css?v=hero-fix-20260629', 'css/refine.css?v=sitewide-hero-fix-20260629')
+              text = text.replace('css/refine.css?v=hero-fix-20260629b', 'css/refine.css?v=sitewide-hero-fix-20260629')
+
+              has_photo_hero = 'page-hero--photo' in text
+              has_refine = 'css/refine.css?' in text or 'css/refine.css"' in text or "css/refine.css'" in text
+              if has_photo_hero:
+                  start = text.find('<style id="final-hero-layout-fix">')
+                  if start != -1:
+                      end = text.find('</style>', start)
+                      if end != -1:
+                          text = text[:start] + text[end + len('</style>'):]
+                  if '</head>' not in text:
+                      raise SystemExit(f'{path}: </head> not found')
+                  text = text.replace('</head>', block + '</head>', 1)
+
+              if text != original:
+                  path.write_text(text, encoding='utf-8')
+                  changed.append(str(path))
+
+          print('changed files:')
+          for item in changed:
+              print(item)
           PY
 
       - name: Commit changes
         run: |
-          if git diff --quiet -- guide-pta.html guide-board.html personnel.html privacy.html; then
-            echo "No final hero override changes needed."
+          if git diff --quiet -- '*.html'; then
+            echo "No sitewide refine changes needed."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add guide-pta.html guide-board.html personnel.html privacy.html
-          git commit -m "Inject final hero layout overrides"
+          git add '*.html'
+          git commit -m "Apply sitewide hero and refine cache fixes"
           git push
