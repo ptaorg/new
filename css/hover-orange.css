@@ -174,16 +174,38 @@ body:has(.doc-index) .doc-index::before{
   display:block!important;
   white-space:pre-line!important;
   margin:0 0 34px!important;
-  padding:26px 28px!important;
+  padding:30px 32px!important;
   border:1px solid #dbe4ee!important;
-  border-left:6px solid #d4af37!important;
-  border-radius:0 16px 16px 0!important;
-  background:#fff!important;
-  box-shadow:0 10px 28px rgba(5,17,31,.06)!important;
+  border-left:7px solid #d4af37!important;
+  border-radius:0 18px 18px 0!important;
+  background:linear-gradient(135deg,#ffffff 0%,#f8fafc 100%)!important;
+  box-shadow:0 14px 34px rgba(5,17,31,.08)!important;
   color:#26364a!important;
-  font-size:1rem!important;
-  line-height:1.95!important;
-  content:"このページは、単なるリンク集ではありません\A\APTA問題では、主張だけを並べても相手は動きません。入会手続、個人情報、会費徴収、学校連絡網、教職員関与、施設利用のどこに問題があるのかを、実物文書と公式資料に戻って確認する必要があります。このページは、そのための入口です。\A\Aカードは移動用の目印にすぎません。まず見るべきなのは、どの資料が一次資料で、どの資料が分析・解説で、どの資料が提出文の雛形なのかという区別です。教育委員会や学校へ照会する場合も、いきなり結論をぶつけるのではなく、『どの文書があるのか』『誰が作成したのか』『どこで保管しているのか』『学校がどこまで関与しているのか』を分けて確認します。\A\A下のカードは、読む順番を示す目次です。証拠資料から入り、法令と行政通知で位置づけを確認し、最後に提出文・照会文へ落とす流れで使ってください。"!important;
+  font-size:1.02rem!important;
+  line-height:1.98!important;
+  content:"このページは、単なるリンク集ではありません\A\APTA問題では、主張だけを並べても相手は動きません。入会手続、個人情報、会費徴収、学校連絡網、教職員関与、施設利用のどこに問題があるのかを、実物文書と公式資料に戻って確認する必要があります。このページは、そのための入口です。\A\Aまず見るべきなのは、どの資料が一次資料で、どの資料が分析・解説で、どの資料が提出文の雛形なのかという区別です。学校配布文書、教育委員会回答、行政通知、法令本文、提出文例は、それぞれ証拠としての強さと使い方が違います。\A\A学校へ聞くべきことは、配布・回収・集金・名簿・連絡網・施設利用・教職員作業の範囲です。PTAへ聞くべきことは、会員管理、会則、会費、退会、個人情報の取得経路です。教育委員会へ聞くべきことは、学校の関与範囲、個人情報の利用目的、服務、学校財産・学校媒体の扱いです。\A\Aカードは移動用の目印にすぎません。証拠資料から入り、法令と行政通知で位置づけを確認し、最後に提出文・照会文へ落とす流れで使ってください。"!important;
+}
+body:has(.doc-index) .doc-sec{
+  background:#fff!important;
+  border:1px solid #e2e8f0!important;
+  border-radius:16px!important;
+  padding:22px 24px!important;
+  box-shadow:0 8px 22px rgba(5,17,31,.045)!important;
+}
+body:has(.doc-index) .doc-sec h2::before{
+  content:"資料索引：";
+  color:#ea580c!important;
+  font-size:.78rem!important;
+  letter-spacing:.08em!important;
+  font-weight:900!important;
+  display:block!important;
+  margin-bottom:5px!important;
+}
+body:has(.doc-index) .doc-grid{
+  margin-top:16px!important;
+}
+body:has(.doc-index) .doc-item{
+  min-height:118px!important;
 }
 
 @media(max-width:760px){
@@ -192,4 +214,5 @@ body:has(.doc-index) .doc-index::before{
   .admin-materials-hero{min-height:280px!important;padding:48px 0!important}
   .admin-materials-hero > *{width:min(calc(100% - 28px),1120px)!important}
   body:has(.doc-index) .doc-index::before{padding:22px 20px!important;font-size:.95rem!important}
+  body:has(.doc-index) .doc-sec{padding:18px 16px!important}
 }
