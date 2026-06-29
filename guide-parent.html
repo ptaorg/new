@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=20260628-type-scale">
-<link rel="stylesheet" href="css/refine.css?v=refine2">
+<link rel="stylesheet" href="css/refine.css?v=sitewide-hero-fix-20260629">
 <style>
 .parent-page{background:var(--bg);color:var(--text)}
 .parent-lead-mag{background:#fff;padding:80px 0 70px}.lead-kicker{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:999px;background:rgba(5,17,31,.07);color:var(--navy);font-size:.76rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px}.parent-lead-mag h2{font-family:'Noto Serif JP',serif;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.32;color:var(--navy);margin-bottom:18px}.parent-lead-mag p{font-size:1.02rem;line-height:2.05;color:var(--text);margin:0 0 16px}.parent-lead-mag p.soft{color:var(--text-soft)}.lead-close{font-weight:900;color:var(--navy);border-left:6px solid var(--gold);background:#fff7ed;padding:16px 20px;border-radius:0 14px 14px 0;margin-top:24px!important}
@@ -35,6 +35,25 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D18ZSSLMH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0D18ZSSLMH');</script>
+
+<style id="final-hero-layout-fix">
+html,body{overflow-x:hidden!important}
+.support-strip{background:linear-gradient(90deg,#0a192f 0%,#1e3a5f 58%,#2d5a8e 100%)!important;color:#fff!important;border-bottom:1px solid rgba(212,175,55,.42)!important}
+.support-strip-inner,.support-strip-text{color:#fff!important}
+.site-header{background:linear-gradient(90deg,#0a192f 0%,#1e3a5f 58%,#2d5a8e 100%)!important;border-bottom:3px solid #d4af37!important}
+.site-header .nav-container{background:transparent!important}
+.site-header .logo,.site-header .logo span,.site-header .nav-link{color:#fff!important}
+.site-header .hamburger span{background:#fff!important}
+.breadcrumb-bar{display:none!important}
+.page-hero.page-hero--photo{display:block!important;position:relative!important;width:100%!important;max-width:none!important;min-height:340px!important;margin:0!important;padding:0!important;overflow:hidden!important;background:#0a192f!important;border:0!important}
+.page-hero.page-hero--photo .page-hero-bg-img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}
+.page-hero.page-hero--photo .page-hero-bg-img img{display:block!important;width:100%!important;height:100%!important;min-height:340px!important;object-fit:cover!important}
+.page-hero.page-hero--photo .page-hero-bg-img::after{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(90deg,rgba(5,17,31,.78) 0%,rgba(5,17,31,.52) 48%,rgba(5,17,31,.18) 100%)!important}
+.page-hero.page-hero--photo .page-hero-inner{position:relative!important;z-index:1!important;width:min(calc(100% - 40px),1080px)!important;max-width:1080px!important;margin:0 auto!important;padding:68px 0 74px!important;color:#fff!important}
+.page-hero.page-hero--photo h1,.page-hero.page-hero--photo p{color:#fff!important;text-shadow:0 2px 12px rgba(0,0,0,.34)!important}
+.page-hero.page-hero--photo h1 em{color:#f4e7a6!important}
+@media(max-width:760px){.page-hero.page-hero--photo{min-height:300px!important}.page-hero.page-hero--photo .page-hero-bg-img img{min-height:300px!important}.page-hero.page-hero--photo .page-hero-inner{width:min(calc(100% - 28px),1080px)!important;padding:44px 0 52px!important}}
+</style>
 </head>
 <body class="parent-page">
 <header class="site-header">
