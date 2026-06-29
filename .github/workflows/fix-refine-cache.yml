@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   fix-refine-cache:
+    # trigger redundant intro cleanup 2026-06-29
     if: contains(github.event.head_commit.message, 'Remove redundant intro blocks') || contains(github.event.head_commit.message, 'Remove compliance reading guide') || contains(github.event.head_commit.message, 'Run sitewide refine cache fix') || contains(github.event.head_commit.message, 'Run refine cache fix')
     runs-on: ubuntu-latest
     steps:
