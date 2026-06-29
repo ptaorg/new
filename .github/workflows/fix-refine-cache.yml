@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   fix-refine-cache:
-    # trigger orange hover run 2026-06-29
+    # trigger orange hover run final 2026-06-29
     if: contains(github.event.head_commit.message, 'Apply orange hover styles') || contains(github.event.head_commit.message, 'Remove redundant intro blocks') || contains(github.event.head_commit.message, 'Remove compliance reading guide') || contains(github.event.head_commit.message, 'Run sitewide refine cache fix') || contains(github.event.head_commit.message, 'Run refine cache fix')
     runs-on: ubuntu-latest
     steps:
@@ -43,9 +43,11 @@ jobs:
                   'css/refine.css?v=hero-fix-20260629',
                   'css/refine.css?v=hero-fix-20260629b',
                   'css/refine.css?v=sitewide-hero-fix-20260629',
+                  'css/refine.css?v=sitewide-hero-fix-20260629bb',
                   'css/refine.css?v=hover-orange-20260629',
+                  'css/refine.css?v=hover-orange-20260629b',
               ]:
-                  text = text.replace(old_key, 'css/refine.css?v=hover-orange-20260629b')
+                  text = text.replace(old_key, 'css/refine.css?v=hover-orange-20260629c')
 
               if 'page-hero--photo' in text:
                   start = text.find('<style id="final-hero-layout-fix">')
@@ -137,44 +139,6 @@ a.btn-dl:hover{
           if text != original:
               refine.write_text(text, encoding='utf-8')
               changed.append('css/refine.css')
-
-          compliance = Path('compliance.html')
-          text = compliance.read_text(encoding='utf-8')
-          original = text
-          start = text.find('<section class="reading-guide"')
-          if start != -1:
-              end = text.find('</section>', start)
-              if end == -1:
-                  raise SystemExit('compliance.html: reading-guide closing section not found')
-              text = text[:start] + text[end + len('</section>'):]
-          text = text.replace('\n\n\n<nav class="case-anchor-nav"', '\n\n<nav class="case-anchor-nav"')
-          if text != original:
-              compliance.write_text(text, encoding='utf-8')
-              changed.append('compliance.html')
-
-          cases = Path('cases.html')
-          text = cases.read_text(encoding='utf-8')
-          original = text
-          text = text.replace('        <a href="#case-reading">位置づけ</a>\n', '')
-          marker_case = '<h2 id="case-reading">このページの確認ポイント</h2>'
-          marker_index = text.find(marker_case)
-          if marker_index != -1:
-              start = text.rfind('<section', 0, marker_index)
-              end = text.find('</section>', marker_index)
-              if start == -1 or end == -1:
-                  raise SystemExit('cases.html: case-reading section bounds not found')
-              text = text[:start] + text[end + len('</section>'):]
-          if text != original:
-              cases.write_text(text, encoding='utf-8')
-              changed.append('cases.html')
-
-          report = Path('report.html')
-          text = report.read_text(encoding='utf-8')
-          original = text
-          text = text.replace('                    <a href="#reading-method">このページの確認ポイント</a>\n', '')
-          if text != original:
-              report.write_text(text, encoding='utf-8')
-              changed.append('report.html')
 
           print('changed files:')
           for item in changed:
