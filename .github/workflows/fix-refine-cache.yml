@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   fix-refine-cache:
+    # trigger run 2026-06-29
     if: contains(github.event.head_commit.message, 'Inject final hero overrides into target pages') || contains(github.event.head_commit.message, 'Run refine cache fix')
     runs-on: ubuntu-latest
     steps:
