@@ -10,8 +10,7 @@ permissions:
 
 jobs:
   fix-refine-cache:
-    # trigger broadened hero run final 2026-06-29
-    if: contains(github.event.head_commit.message, 'Run sitewide refine cache fix') || contains(github.event.head_commit.message, 'Run refine cache fix')
+    if: contains(github.event.head_commit.message, 'Remove compliance reading guide') || contains(github.event.head_commit.message, 'Run sitewide refine cache fix') || contains(github.event.head_commit.message, 'Run refine cache fix')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -56,6 +55,20 @@ jobs:
                   path.write_text(text, encoding='utf-8')
                   changed.append(str(path))
 
+          compliance = Path('compliance.html')
+          text = compliance.read_text(encoding='utf-8')
+          original = text
+          start = text.find('<section class="reading-guide"')
+          if start != -1:
+              end = text.find('</section>', start)
+              if end == -1:
+                  raise SystemExit('compliance.html: reading-guide closing section not found')
+              text = text[:start] + text[end + len('</section>'):]
+          text = text.replace('\n\n\n<nav class="case-anchor-nav"', '\n\n<nav class="case-anchor-nav"')
+          if text != original:
+              compliance.write_text(text, encoding='utf-8')
+              changed.append('compliance.html')
+
           print('changed files:')
           for item in changed:
               print(item)
@@ -64,11 +77,11 @@ jobs:
       - name: Commit changes
         run: |
           if git diff --quiet -- '*.html'; then
-            echo "No sitewide refine changes needed."
+            echo "No HTML changes needed."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add '*.html'
-          git commit -m "Apply sitewide hero and refine cache fixes"
+          git commit -m "Remove compliance reading guide"
           git push
