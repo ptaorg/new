@@ -1,0 +1,75 @@
+/* Sitewide orange hover states */
+:root{
+  --hover-orange:#f97316;
+  --hover-orange-deep:#ea580c;
+  --hover-orange-soft:#fff7ed;
+  --hover-orange-line:#fed7aa;
+}
+
+a:hover,
+.article-body a:hover,
+.pta-report-container a:hover,
+.report-content-wrap a:hover,
+.case-body a:hover,
+.case-actions a:hover,
+.source-note a:hover,
+.related-link-card:hover strong,
+.related-link-card:hover span,
+.case-anchor-link:hover,
+.report-toc a:hover,
+.footer a:hover{
+  color:var(--hover-orange-deep)!important;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link.active,
+.nav-link:hover,
+.nav-link.active{
+  color:#fff!important;
+  background:var(--hover-orange)!important;
+  border-color:rgba(255,255,255,.28)!important;
+}
+
+.site-header .logo:hover,
+.site-header .logo:hover span{
+  color:#fff7ed!important;
+}
+
+.site-header .mega-col a:hover,
+.mega-col a:hover,
+.mobile-link:hover,
+.case-anchor-link:hover,
+.report-toc a:hover{
+  color:var(--hover-orange-deep)!important;
+  background:var(--hover-orange-soft)!important;
+  border-color:var(--hover-orange-line)!important;
+}
+
+.btn-navy:hover,
+.btn-soft:hover,
+.btn-outline:hover,
+.btn-dl:hover,
+.related-link-card:hover,
+.visual-card:hover,
+.card:hover,
+.case-card:hover{
+  border-color:var(--hover-orange)!important;
+  box-shadow:0 12px 28px rgba(249,115,22,.18)!important;
+}
+
+.btn-gold:hover,
+.support-strip-link:hover,
+.footer-support a:hover,
+a.btn-navy:hover,
+a.btn-soft:hover,
+a.btn-outline:hover,
+a.btn-dl:hover{
+  background:var(--hover-orange-deep)!important;
+  color:#fff!important;
+  border-color:var(--hover-orange-deep)!important;
+}
+
+.case-anchor-link:hover span,
+.mega-col a:hover::before{
+  color:var(--hover-orange-deep)!important;
+}
