@@ -10,8 +10,7 @@ permissions:
 
 jobs:
   fix-refine-cache:
-    # trigger orange hover run final 2026-06-29
-    if: contains(github.event.head_commit.message, 'Apply orange hover styles') || contains(github.event.head_commit.message, 'Remove redundant intro blocks') || contains(github.event.head_commit.message, 'Remove compliance reading guide') || contains(github.event.head_commit.message, 'Run sitewide refine cache fix') || contains(github.event.head_commit.message, 'Run refine cache fix')
+    if: contains(github.event.head_commit.message, 'Inject orange hover stylesheet') || contains(github.event.head_commit.message, 'Apply orange hover styles') || contains(github.event.head_commit.message, 'Remove redundant intro blocks') || contains(github.event.head_commit.message, 'Remove compliance reading guide') || contains(github.event.head_commit.message, 'Run sitewide refine cache fix') || contains(github.event.head_commit.message, 'Run refine cache fix')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,7 +18,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Update all HTML refine cache keys and photo hero overrides
+      - name: Update all HTML cache keys and inject hover CSS
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -31,7 +30,8 @@ jobs:
                   continue
               html_files.append(path)
 
-          block = '''\n<style id="final-hero-layout-fix">\nhtml,body{overflow-x:hidden!important}\n.support-strip{background:linear-gradient(90deg,#0a192f 0%,#1e3a5f 58%,#2d5a8e 100%)!important;color:#fff!important;border-bottom:1px solid rgba(212,175,55,.42)!important}\n.support-strip-inner,.support-strip-text{color:#fff!important}\n.site-header{background:linear-gradient(90deg,#0a192f 0%,#1e3a5f 58%,#2d5a8e 100%)!important;border-bottom:3px solid #d4af37!important}\n.site-header .nav-container{background:transparent!important}\n.site-header .logo,.site-header .logo span,.site-header .nav-link{color:#fff!important}\n.site-header .hamburger span{background:#fff!important}\n.breadcrumb-bar{display:none!important}\n.page-hero--photo{display:block!important;position:relative!important;width:100%!important;max-width:none!important;min-height:340px!important;margin:0!important;padding:0!important;overflow:hidden!important;background:#0a192f!important;border:0!important;color:#fff!important}\n.page-hero--photo .page-hero-bg-img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}\n.page-hero--photo .page-hero-bg-img img{display:block!important;width:100%!important;height:100%!important;min-height:340px!important;object-fit:cover!important}\n.page-hero--photo .page-hero-bg-img::after{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(90deg,rgba(5,17,31,.78) 0%,rgba(5,17,31,.52) 48%,rgba(5,17,31,.18) 100%)!important}\n.page-hero--photo> :not(.page-hero-bg-img){position:relative!important;z-index:1!important;width:min(calc(100% - 40px),1080px)!important;max-width:1080px!important;margin-left:auto!important;margin-right:auto!important;padding-top:68px!important;padding-bottom:74px!important;color:#fff!important}\n.page-hero--photo .page-hero-inner,.page-hero--photo .issue-hero-inner,.page-hero--photo .journal-hero-inner{position:relative!important;z-index:1!important;width:min(calc(100% - 40px),1080px)!important;max-width:1080px!important;margin-left:auto!important;margin-right:auto!important;padding-top:68px!important;padding-bottom:74px!important;color:#fff!important}\n.page-hero--photo h1,.page-hero--photo p,.page-hero--photo .section-lead{color:#fff!important;text-shadow:0 2px 12px rgba(0,0,0,.34)!important}\n.page-hero--photo h1 em{color:#f4e7a6!important}\n@media(max-width:760px){.page-hero--photo{min-height:300px!important}.page-hero--photo .page-hero-bg-img img{min-height:300px!important}.page-hero--photo> :not(.page-hero-bg-img),.page-hero--photo .page-hero-inner,.page-hero--photo .issue-hero-inner,.page-hero--photo .journal-hero-inner{width:min(calc(100% - 28px),1080px)!important;padding-top:44px!important;padding-bottom:52px!important}}\n</style>\n'''
+          hero_block = '''\n<style id="final-hero-layout-fix">\nhtml,body{overflow-x:hidden!important}\n.support-strip{background:linear-gradient(90deg,#0a192f 0%,#1e3a5f 58%,#2d5a8e 100%)!important;color:#fff!important;border-bottom:1px solid rgba(212,175,55,.42)!important}\n.support-strip-inner,.support-strip-text{color:#fff!important}\n.site-header{background:linear-gradient(90deg,#0a192f 0%,#1e3a5f 58%,#2d5a8e 100%)!important;border-bottom:3px solid #d4af37!important}\n.site-header .nav-container{background:transparent!important}\n.site-header .logo,.site-header .logo span,.site-header .nav-link{color:#fff!important}\n.site-header .hamburger span{background:#fff!important}\n.breadcrumb-bar{display:none!important}\n.page-hero--photo{display:block!important;position:relative!important;width:100%!important;max-width:none!important;min-height:340px!important;margin:0!important;padding:0!important;overflow:hidden!important;background:#0a192f!important;border:0!important;color:#fff!important}\n.page-hero--photo .page-hero-bg-img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}\n.page-hero--photo .page-hero-bg-img img{display:block!important;width:100%!important;height:100%!important;min-height:340px!important;object-fit:cover!important}\n.page-hero--photo .page-hero-bg-img::after{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(90deg,rgba(5,17,31,.78) 0%,rgba(5,17,31,.52) 48%,rgba(5,17,31,.18) 100%)!important}\n.page-hero--photo> :not(.page-hero-bg-img){position:relative!important;z-index:1!important;width:min(calc(100% - 40px),1080px)!important;max-width:1080px!important;margin-left:auto!important;margin-right:auto!important;padding-top:68px!important;padding-bottom:74px!important;color:#fff!important}\n.page-hero--photo .page-hero-inner,.page-hero--photo .issue-hero-inner,.page-hero--photo .journal-hero-inner{position:relative!important;z-index:1!important;width:min(calc(100% - 40px),1080px)!important;max-width:1080px!important;margin-left:auto!important;margin-right:auto!important;padding-top:68px!important;padding-bottom:74px!important;color:#fff!important}\n.page-hero--photo h1,.page-hero--photo p,.page-hero--photo .section-lead{color:#fff!important;text-shadow:0 2px 12px rgba(0,0,0,.34)!important}\n.page-hero--photo h1 em{color:#f4e7a6!important}\n@media(max-width:760px){.page-hero--photo{min-height:300px!important}.page-hero--photo .page-hero-bg-img img{min-height:300px!important}.page-hero--photo> :not(.page-hero-bg-img),.page-hero--photo .page-hero-inner,.page-hero--photo .issue-hero-inner,.page-hero--photo .journal-hero-inner{width:min(calc(100% - 28px),1080px)!important;padding-top:44px!important;padding-bottom:52px!important}}\n</style>\n'''
+          hover_link = '<link rel="stylesheet" href="css/hover-orange.css?v=20260629">'
 
           changed = []
           for path in html_files:
@@ -46,6 +46,7 @@ jobs:
                   'css/refine.css?v=sitewide-hero-fix-20260629bb',
                   'css/refine.css?v=hover-orange-20260629',
                   'css/refine.css?v=hover-orange-20260629b',
+                  'css/refine.css?v=hover-orange-20260629c',
               ]:
                   text = text.replace(old_key, 'css/refine.css?v=hover-orange-20260629c')
 
@@ -57,88 +58,18 @@ jobs:
                           text = text[:start] + text[end + len('</style>'):]
                   if '</head>' not in text:
                       raise SystemExit(f'{path}: </head> not found')
-                  text = text.replace('</head>', block + '</head>', 1)
+                  text = text.replace('</head>', hero_block + '</head>', 1)
+
+              if 'css/hover-orange.css' not in text:
+                  if '</head>' not in text:
+                      raise SystemExit(f'{path}: </head> not found for hover link')
+                  text = text.replace('</head>', hover_link + '\n</head>', 1)
+              else:
+                  text = text.replace('css/hover-orange.css?v=20260629', 'css/hover-orange.css?v=20260629')
 
               if text != original:
                   path.write_text(text, encoding='utf-8')
                   changed.append(str(path))
-
-          refine = Path('css/refine.css')
-          text = refine.read_text(encoding='utf-8')
-          original = text
-          marker = '/* Sitewide orange hover states */'
-          if marker in text:
-              text = text[:text.find(marker)].rstrip() + '\n'
-          hover_block = '''
-
-/* Sitewide orange hover states */
-:root{--hover-orange:#f97316;--hover-orange-deep:#ea580c;--hover-orange-soft:#fff7ed;--hover-orange-line:#fed7aa}
-a:hover,
-.article-body a:hover,
-.pta-report-container a:hover,
-.report-content-wrap a:hover,
-.case-body a:hover,
-.case-actions a:hover,
-.source-note a:hover,
-.related-link-card:hover strong,
-.related-link-card:hover span,
-.case-anchor-link:hover,
-.report-toc a:hover,
-.footer a:hover{
-  color:var(--hover-orange-deep)!important;
-}
-.site-header .nav-link:hover,
-.site-header .nav-link.active,
-.nav-link:hover,
-.nav-link.active{
-  color:#fff!important;
-  background:var(--hover-orange)!important;
-  border-color:rgba(255,255,255,.28)!important;
-}
-.site-header .logo:hover,
-.site-header .logo:hover span{
-  color:#fff7ed!important;
-}
-.site-header .mega-col a:hover,
-.mega-col a:hover,
-.mobile-link:hover,
-.case-anchor-link:hover,
-.report-toc a:hover{
-  color:var(--hover-orange-deep)!important;
-  background:var(--hover-orange-soft)!important;
-  border-color:var(--hover-orange-line)!important;
-}
-.btn-navy:hover,
-.btn-soft:hover,
-.btn-outline:hover,
-.btn-dl:hover,
-.related-link-card:hover,
-.visual-card:hover,
-.card:hover,
-.case-card:hover{
-  border-color:var(--hover-orange)!important;
-  box-shadow:0 12px 28px rgba(249,115,22,.18)!important;
-}
-.btn-gold:hover,
-.support-strip-link:hover,
-.footer-support a:hover,
-a.btn-navy:hover,
-a.btn-soft:hover,
-a.btn-outline:hover,
-a.btn-dl:hover{
-  background:var(--hover-orange-deep)!important;
-  color:#fff!important;
-  border-color:var(--hover-orange-deep)!important;
-}
-.case-anchor-link:hover span,
-.mega-col a:hover::before{
-  color:var(--hover-orange-deep)!important;
-}
-'''
-          text = text.rstrip() + hover_block
-          if text != original:
-              refine.write_text(text, encoding='utf-8')
-              changed.append('css/refine.css')
 
           print('changed files:')
           for item in changed:
@@ -147,12 +78,12 @@ a.btn-dl:hover{
 
       - name: Commit changes
         run: |
-          if git diff --quiet -- '*.html' css/refine.css; then
-            echo "No HTML or CSS changes needed."
+          if git diff --quiet -- '*.html'; then
+            echo "No HTML changes needed."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add '*.html' css/refine.css
-          git commit -m "Apply orange hover styles"
+          git add '*.html'
+          git commit -m "Inject orange hover stylesheet"
           git push
