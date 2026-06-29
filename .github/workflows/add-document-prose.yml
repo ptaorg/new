@@ -1,0 +1,77 @@
+name: Add document prose
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  add-document-prose:
+    if: contains(github.event.head_commit.message, 'Add document prose to card pages')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add prose to card-heavy pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('documents.html')
+          text = path.read_text(encoding='utf-8')
+          original = text
+
+          css = '''
+.doc-prose-intro{background:#fff;border:1px solid #dbe4ee;border-left:6px solid #d4af37;border-radius:0 16px 16px 0;padding:26px 28px;margin:0 0 34px;box-shadow:0 10px 28px rgba(5,17,31,.06)}
+.doc-prose-intro h2{font-family:'Noto Serif JP',serif;font-size:1.35rem;color:#1e3a5f;margin:0 0 14px;border:0;padding:0}
+.doc-prose-intro p{color:#26364a;line-height:1.95;margin:0 0 14px;font-size:1rem}
+.doc-prose-intro p:last-child{margin-bottom:0}
+.doc-prose-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0 2px}
+.doc-prose-box{background:#f8fafc;border:1px solid #dbe4ee;border-radius:14px;padding:16px 17px;color:#26364a;line-height:1.8}
+.doc-prose-box strong{display:block;color:#1e3a5f;margin-bottom:6px;font-size:.98rem}
+.doc-prose-box span{font-size:.9rem;color:#475569}
+@media(max-width:860px){.doc-prose-grid{grid-template-columns:1fr}.doc-prose-intro{padding:22px 20px}}
+'''
+          if '.doc-prose-intro{' not in text:
+              text = text.replace('</style>', css + '</style>', 1)
+
+          block = '''
+<section class="doc-sec doc-prose-intro" id="documents-reading-prose">
+<h2>このページは、単なるリンク集ではありません</h2>
+<p>PTA問題では、主張だけを並べても相手は動きません。入会手続、個人情報、会費徴収、学校連絡網、教職員関与、施設利用のどこに問題があるのかを、実物文書と公式資料に戻って確認する必要があります。このページは、そのための入口です。</p>
+<p>カードは移動用の目印にすぎません。まず見るべきなのは、どの資料が一次資料で、どの資料が分析・解説で、どの資料が提出文の雛形なのかという区別です。教育委員会や学校へ照会する場合も、いきなり結論をぶつけるのではなく、「どの文書があるのか」「誰が作成したのか」「どこで保管しているのか」「学校がどこまで関与しているのか」を分けて確認します。</p>
+<div class="doc-prose-grid">
+<div class="doc-prose-box"><strong>一次資料を先に見る</strong><span>通知、回答、学校配布文書、PDF原本を先に確認します。解説ページだけで判断せず、根拠に戻れる状態にします。</span></div>
+<div class="doc-prose-box"><strong>論点ごとに分ける</strong><span>入会、会費、個人情報、学校関与、施設利用を一つに混ぜず、別々の資料と質問に分けます。</span></div>
+<div class="doc-prose-box"><strong>提出文へ落とす</strong><span>資料を読んだ後は、確認事項を学校・PTA・教育委員会ごとに分け、回答可能な文書名で照会します。</span></div>
+</div>
+<p>下のカードは、読む順番を示す目次です。証拠資料から入り、法令と行政通知で位置づけを確認し、最後に提出文・照会文へ落とす流れで使ってください。</p>
+</section>
+'''
+          if 'id="documents-reading-prose"' not in text:
+              marker = '<section class="doc-sec">\n<h2>証拠資料・データベース</h2>'
+              if marker not in text:
+                  raise SystemExit('documents.html: insertion marker not found')
+              text = text.replace(marker, block + '\n' + marker, 1)
+
+          if text != original:
+              path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- documents.html; then
+            echo "No document prose changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add documents.html
+          git commit -m "Add document prose to card pages"
+          git push
