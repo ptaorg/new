@@ -130,6 +130,66 @@ body:has(.yk-notice-section) .site-header .nav-link{
 }
 .support-strip-link:hover{background:#ea580c!important;color:#fff!important}
 
+/* guide-pta.html hero hard fix: remove breadcrumb leak and make photo hero full width. */
+body:has(.officer-core-section) .breadcrumb-bar{display:none!important}
+body:has(.officer-core-section) .page-hero,
+body:has(.officer-core-section) .page-hero--photo{
+  display:block!important;
+  width:100vw!important;
+  max-width:none!important;
+  min-height:330px!important;
+  margin:0!important;
+  margin-left:calc(50% - 50vw)!important;
+  margin-right:calc(50% - 50vw)!important;
+  padding:0!important;
+  position:relative!important;
+  overflow:hidden!important;
+  background:#0a192f!important;
+  border-top:0!important;
+  border-bottom:0!important;
+}
+body:has(.officer-core-section) .page-hero-bg-img{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  z-index:0!important;
+}
+body:has(.officer-core-section) .page-hero-bg-img img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:330px!important;
+  object-fit:cover!important;
+}
+body:has(.officer-core-section) .page-hero-bg-img::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  background:linear-gradient(90deg,rgba(5,17,31,.74) 0%,rgba(5,17,31,.48) 46%,rgba(5,17,31,.16) 100%)!important;
+}
+body:has(.officer-core-section) .page-hero-inner{
+  position:relative!important;
+  z-index:1!important;
+  width:min(100% - 40px,980px)!important;
+  max-width:980px!important;
+  margin:0 auto!important;
+  padding:64px 0 70px!important;
+  color:#fff!important;
+}
+body:has(.officer-core-section) .page-hero h1,
+body:has(.officer-core-section) .page-hero p{
+  color:#fff!important;
+  text-shadow:0 2px 12px rgba(0,0,0,.34)!important;
+}
+body:has(.officer-core-section) .page-hero h1 em{color:var(--color-accent-soft)!important}
+@media(max-width:760px){
+  body:has(.officer-core-section) .page-hero-inner{width:min(100% - 28px,980px)!important;padding:44px 0 52px!important}
+  body:has(.officer-core-section) .page-hero,
+  body:has(.officer-core-section) .page-hero--photo,
+  body:has(.officer-core-section) .page-hero-bg-img img{min-height:300px!important}
+}
+
 /* Navigation tightening and priority cues */
 .desktop-nav{gap:.48rem}
 .nav-link{font-size:.86rem;padding:7px 9px}
