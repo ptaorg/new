@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   fix-refine-cache:
-    if: contains(github.event.head_commit.message, 'Run refine cache fix') || contains(github.event.head_commit.message, 'Add one-time refine cache fix workflow')
+    if: contains(github.event.head_commit.message, 'Update refine cache workflow for privacy') || contains(github.event.head_commit.message, 'Run refine cache fix')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,6 +26,7 @@ jobs:
               Path('guide-pta.html'),
               Path('guide-board.html'),
               Path('personnel.html'),
+              Path('privacy.html'),
           ]
           for path in targets:
               text = path.read_text(encoding='utf-8')
@@ -35,12 +36,12 @@ jobs:
 
       - name: Commit changes
         run: |
-          if git diff --quiet -- guide-pta.html guide-board.html personnel.html; then
+          if git diff --quiet -- guide-pta.html guide-board.html personnel.html privacy.html; then
             echo "No cache key changes needed."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add guide-pta.html guide-board.html personnel.html
-          git commit -m "Bump refine CSS cache for hero pages"
+          git add guide-pta.html guide-board.html personnel.html privacy.html
+          git commit -m "Bump refine CSS cache for privacy page"
           git push
