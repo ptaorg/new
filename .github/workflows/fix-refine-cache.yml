@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   fix-refine-cache:
-    # trigger hover stylesheet injection 2026-06-29
+    # trigger hover stylesheet injection final 2026-06-29
     if: contains(github.event.head_commit.message, 'Inject orange hover stylesheet') || contains(github.event.head_commit.message, 'Apply orange hover styles') || contains(github.event.head_commit.message, 'Remove redundant intro blocks') || contains(github.event.head_commit.message, 'Remove compliance reading guide') || contains(github.event.head_commit.message, 'Run sitewide refine cache fix') || contains(github.event.head_commit.message, 'Run refine cache fix')
     runs-on: ubuntu-latest
     steps:
