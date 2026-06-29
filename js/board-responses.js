@@ -12,7 +12,6 @@
     { id: 'kyushu', name: '九州・沖縄', prefs: ['福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'] }
   ];
 
-  /* 各地方マップは、ピンの位置ではなく地方名に対応する固定範囲で表示する。 */
   const REGION_BOUNDS = {
     'hokkaido-tohoku': [[37.0, 138.0], [46.2, 146.6]],
     'kanto': [[34.5, 138.2], [37.3, 141.3]],
@@ -63,6 +62,12 @@
       .response-pin-marker{display:block;width:14px;height:14px;border-radius:50% 50% 50% 0;background:#d93025;border:2px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.28);transform:rotate(-45deg)}
       .response-pin-marker::after{content:'';position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;left:3px;top:3px}
       .manual-map-pin-layer{display:none!important}
+      .index-map-layout{display:block!important}
+      .region-content-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
+      .region-pref-list{min-width:0}
+      .region-map-slot{min-width:0}
+      .region-map-panel.is-relocated-source{display:none!important}
+      @media(max-width:980px){.region-content-grid{grid-template-columns:1fr}}
     `;
     document.head.appendChild(style);
   }
@@ -78,16 +83,31 @@
     let html = '';
     for (const region of REGIONS) {
       const prefs = tree[region.id]; if (!prefs || !Object.keys(prefs).length) continue;
-      html += `<section class="region-block" data-region="${esc(region.id)}"><h3 class="region-heading">${esc(region.name)}</h3>`;
+      html += `<section class="region-block" data-region="${esc(region.id)}"><h3 class="region-heading">${esc(region.name)}</h3><div class="region-content-grid"><div class="region-pref-list">`;
       for (const pref of Object.keys(prefs).sort()) {
         const list = prefs[pref].slice().sort((a,b)=>a.no-b.no);
         html += `<div class="prefecture-group"><h4 class="pref-heading">${esc(pref)}</h4><ul class="municipality-list">`;
         for (const m of list) html += `<li><a href="#${ansId(m.no)}" class="muni-link">${esc(m.municipality)}${m.detailCount>1?`<span class="muni-count">${m.detailCount}件</span>`:''}</a></li>`;
         html += '</ul></div>';
       }
-      html += '</section>';
+      html += `</div><div class="region-map-slot" data-region-slot="${esc(region.id)}"></div></div></section>`;
     }
     el.innerHTML = html;
+  }
+
+  function relocateRegionMaps() {
+    const panel = document.querySelector('.region-map-panel');
+    if (!panel) return;
+    panel.querySelectorAll('.region-map-card').forEach(function (card) {
+      const mapEl = card.querySelector('.region-map');
+      if (!mapEl) return;
+      const regionId = mapEl.getAttribute('data-region-id');
+      const slot = document.querySelector(`[data-region-slot="${regionId}"]`);
+      if (!slot) return;
+      slot.appendChild(card);
+    });
+    panel.classList.add('is-relocated-source');
+    panel.setAttribute('aria-hidden', 'true');
   }
 
   function renderBodies() {
@@ -180,6 +200,13 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    injectMapStyles(); renderIndex(); renderBodies(); renderExcluded(); initMainMap(); initRegionMaps(); initSearch();
+    injectMapStyles();
+    renderIndex();
+    relocateRegionMaps();
+    renderBodies();
+    renderExcluded();
+    initMainMap();
+    initRegionMaps();
+    initSearch();
   });
 })();
