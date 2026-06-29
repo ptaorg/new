@@ -20,7 +20,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="css/style.css?v=20260628-type-scale" rel="stylesheet"/>
-<link href="css/refine.css?v=hero-fix-20260629" rel="stylesheet"/>
+<link href="css/refine.css?v=hero-fix-20260629b" rel="stylesheet"/>
 <style>
     /* 章の折りたたみ */
     .chapter-block{
@@ -1075,6 +1075,25 @@ body.guide-board-direct-fixed .mou-col-label {
     .board-jp-article .diagram-scroll img { min-width:720px; }
     body.guide-board-direct-fixed #board-executive-brief { padding:42px 0 54px!important; }
   }
+</style>
+
+<style id="final-hero-layout-fix">
+html,body{overflow-x:hidden!important}
+.support-strip{background:linear-gradient(90deg,#0a192f 0%,#1e3a5f 58%,#2d5a8e 100%)!important;color:#fff!important;border-bottom:1px solid rgba(212,175,55,.42)!important}
+.support-strip-inner,.support-strip-text{color:#fff!important}
+.site-header{background:linear-gradient(90deg,#0a192f 0%,#1e3a5f 58%,#2d5a8e 100%)!important;border-bottom:3px solid #d4af37!important}
+.site-header .nav-container{background:transparent!important}
+.site-header .logo,.site-header .logo span,.site-header .nav-link{color:#fff!important}
+.site-header .hamburger span{background:#fff!important}
+.breadcrumb-bar{display:none!important}
+.page-hero.page-hero--photo{display:block!important;position:relative!important;width:100%!important;max-width:none!important;min-height:340px!important;margin:0!important;padding:0!important;overflow:hidden!important;background:#0a192f!important;border:0!important}
+.page-hero.page-hero--photo .page-hero-bg-img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}
+.page-hero.page-hero--photo .page-hero-bg-img img{display:block!important;width:100%!important;height:100%!important;min-height:340px!important;object-fit:cover!important}
+.page-hero.page-hero--photo .page-hero-bg-img::after{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(90deg,rgba(5,17,31,.78) 0%,rgba(5,17,31,.52) 48%,rgba(5,17,31,.18) 100%)!important}
+.page-hero.page-hero--photo .page-hero-inner{position:relative!important;z-index:1!important;width:min(calc(100% - 40px),1080px)!important;max-width:1080px!important;margin:0 auto!important;padding:68px 0 74px!important;color:#fff!important}
+.page-hero.page-hero--photo h1,.page-hero.page-hero--photo p{color:#fff!important;text-shadow:0 2px 12px rgba(0,0,0,.34)!important}
+.page-hero.page-hero--photo h1 em{color:#f4e7a6!important}
+@media(max-width:760px){.page-hero.page-hero--photo{min-height:300px!important}.page-hero.page-hero--photo .page-hero-bg-img img{min-height:300px!important}.page-hero.page-hero--photo .page-hero-inner{width:min(calc(100% - 28px),1080px)!important;padding:44px 0 52px!important}}
 </style>
 </head>
 <body>
