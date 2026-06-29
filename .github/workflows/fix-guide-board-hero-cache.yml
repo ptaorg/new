@@ -1,0 +1,44 @@
+name: Fix guide board hero cache
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  fix-guide-board-hero-cache:
+    if: contains(github.event.head_commit.message, 'Fix guide board hero cache')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bump guide-board hover CSS cache key
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('guide-board.html')
+          text = path.read_text(encoding='utf-8')
+          original = text
+          import re
+          text = re.sub(r'css/hover-orange\.css\?v=[^"\']+', 'css/hover-orange.css?v=board-hero-fix-20260629', text)
+          if text != original:
+              path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- guide-board.html; then
+            echo "No guide-board.html changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add guide-board.html
+          git commit -m "Fix guide board hero cache"
+          git push
