@@ -12,6 +12,16 @@
     { id: 'kyushu', name: '九州・沖縄', prefs: ['福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'] }
   ];
 
+  /* 各地方マップは、ピンの位置ではなく地方名に対応する固定範囲で表示する。 */
+  const REGION_BOUNDS = {
+    'hokkaido-tohoku': [[37.0, 138.0], [46.2, 146.6]],
+    'kanto': [[34.5, 138.2], [37.3, 141.3]],
+    'chubu': [[33.2, 134.9], [39.4, 140.0]],
+    'kinki': [[33.4, 134.0], [36.3, 137.1]],
+    'chugoku-shikoku': [[32.1, 130.7], [35.8, 135.9]],
+    'kyushu': [[24.0, 122.0], [34.1, 132.4]]
+  };
+
   function esc(s) {
     return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
   }
@@ -33,6 +43,12 @@
       tooltipAnchor: [0, -16]
     });
   }
+  function makeTileLayer() {
+    return L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+      noWrap: true
+    });
+  }
   function injectMapStyles() {
     if (document.getElementById('board-response-pin-style')) return;
     const style = document.createElement('style');
@@ -43,7 +59,9 @@
       .response-tags span{font-size:.72rem;font-weight:800;color:#1e3a5f;background:#f4f7fb;border:1px solid #dbe4ee;border-radius:999px;padding:2px 8px}
       .mask-chip{display:inline-block;margin-left:.5em;color:#614500;background:#fff4c7;border:1px solid #ead88a;border-radius:999px;padding:1px 7px;font-size:.72rem;font-family:'Noto Sans JP',sans-serif;font-weight:900}
       .excluded-response-list{font-size:.88rem;line-height:1.8}.excluded-response-list li{margin-bottom:.6rem}
-      .response-pin-wrap{background:transparent!important;border:none!important}.response-pin-marker{display:block;width:14px;height:14px;border-radius:50% 50% 50% 0;background:#d93025;border:2px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.28);transform:rotate(-45deg)}.response-pin-marker::after{content:'';position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;left:3px;top:3px}
+      .response-pin-wrap{background:transparent!important;border:none!important}
+      .response-pin-marker{display:block;width:14px;height:14px;border-radius:50% 50% 50% 0;background:#d93025;border:2px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.28);transform:rotate(-45deg)}
+      .response-pin-marker::after{content:'';position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;left:3px;top:3px}
       .manual-map-pin-layer{display:none!important}
     `;
     document.head.appendChild(style);
@@ -120,7 +138,7 @@
   function initMainMap() {
     const el = document.getElementById('responseMap'); if (!el || typeof L === 'undefined') return;
     const map = L.map('responseMap', { scrollWheelZoom:false }).setView([36.2,138.2],5);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'&copy; OpenStreetMap contributors' }).addTo(map);
+    makeTileLayer().addTo(map);
     const group = L.featureGroup();
     for (const m of DATA.municipalities || []) if (Array.isArray(m.coordinates)) addMarkerToMap(map, group, m);
     if (group.getLayers().length) map.fitBounds(group.getBounds().pad(0.12));
@@ -130,19 +148,24 @@
     if (typeof L === 'undefined') return;
     document.querySelectorAll('.region-map').forEach(function (el) {
       const regionId = el.getAttribute('data-region-id');
-      const map = L.map(el, { scrollWheelZoom:false, dragging:false, doubleClickZoom:false, boxZoom:false, keyboard:false, zoomControl:false, attributionControl:false });
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'' }).addTo(map);
+      const regionBounds = L.latLngBounds(REGION_BOUNDS[regionId] || [[24,122],[46,146]]);
+      const map = L.map(el, {
+        scrollWheelZoom:false,
+        dragging:false,
+        doubleClickZoom:false,
+        boxZoom:false,
+        keyboard:false,
+        zoomControl:false,
+        attributionControl:false,
+        maxBounds: regionBounds.pad(0.15),
+        maxBoundsViscosity: 1
+      });
+      makeTileLayer().addTo(map);
       const group = L.featureGroup();
       const munis = getRegionMunicipalities(regionId);
       for (const m of munis) if (Array.isArray(m.coordinates)) addMarkerToMap(map, group, m);
-      if (group.getLayers().length) {
-        const bounds = group.getBounds().pad(0.25);
-        map.fitBounds(bounds, { maxZoom: 7, animate:false });
-        map.setMaxBounds(bounds.pad(0.45));
-      } else {
-        map.setView([36.2,138.2],4);
-      }
-      setTimeout(function(){ map.invalidateSize(); }, 0);
+      map.fitBounds(regionBounds, { animate:false, padding:[6,6] });
+      setTimeout(function(){ map.invalidateSize(); map.fitBounds(regionBounds, { animate:false, padding:[6,6] }); }, 0);
     });
   }
 
