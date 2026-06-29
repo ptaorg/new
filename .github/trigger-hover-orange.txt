@@ -1,1 +1,2 @@
 trigger hover orange stylesheet injection
+bump orange hero stylesheet cache
