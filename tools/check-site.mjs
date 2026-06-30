@@ -128,7 +128,7 @@ function checkInternalRefs() {
   });
   const patterns = [
     /\b(?:href|src|action|poster)\s*=\s*["']([^"']+)["']/gi,
-    /url\(\s*["']?([^"')]+)["']?\s*\)/gi,
+    /(?<![\w-])url\(\s*["']?([^"')]+)["']?\s*\)/gi,
     /<loc>([^<]+)<\/loc>/gi
   ];
   const missing = new Map();
