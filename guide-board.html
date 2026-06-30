@@ -329,15 +329,53 @@
   margin: 0 0 18px;
 }
 
-.board-chain-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+.board-chain-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 }
+
+.board-chain-path {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 20px;
+  border: 1px solid rgba(15,39,71,.14);
+  border-radius: 14px;
+  color: var(--navy);
+  text-decoration: none;
+  background: #f8fafc;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.board-chain-path:hover {
+  border-color: #1d4ed8;
+  box-shadow: 0 10px 24px rgba(29,78,216,.12);
+  transform: translateY(-2px);
+}
+
+.board-chain-path--primary {
+  background: linear-gradient(135deg, #1d4ed8 0%, #17345c 100%);
+  color: #fff;
+}
+
+.board-chain-path-step {
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  color: #1d4ed8;
+}
+
+.board-chain-path--primary .board-chain-path-step { color: #fde68a; }
+.board-chain-path strong { font-size: 1rem; line-height: 1.55; }
+.board-chain-path-desc { color: #475569; font-size: .86rem; line-height: 1.7; }
+.board-chain-path--primary .board-chain-path-desc { color: rgba(255,255,255,.82); }
 
 @media (max-width: 760px) {
   .board-chain-direct { padding: 32px 0; }
   .board-chain-card { padding: 24px 20px; border-left-width: 6px; }
+  .board-chain-paths { grid-template-columns: 1fr; }
 }
 
 </style>
@@ -1300,10 +1338,19 @@ html,body{overflow-x:hidden!important}
 <div class="wrap-narrow">
 <div class="board-chain-card">
 <div class="board-chain-badge">教育委員会・学校向け確認ページ</div>
-<h2 id="board-chain-title">加入確認がないPTAに、学校はどこまで関与できますか</h2>
-<p>入会申込書がないまま、学校名簿、会費徴収、学校連絡網、教職員関与、施設利用が続いている場合、学校側の説明根拠が連鎖的に不安定になります。教育委員会・学校が確認すべき順番を整理しました。</p>
-<div class="board-chain-actions">
-<a class="btn-gold" href="/board-pta-chain.html">学校関与の何が崩れるのかを見る</a>
+<h2 id="board-chain-title">学校関与の問題を確認し、分離方針まで実務化する</h2>
+<p>入会申込書がないまま、学校名簿、会費徴収、学校連絡網、教職員関与、施設利用が続いている場合、学校側の説明根拠が連鎖的に不安定になります。まず問題の連鎖を確認し、次に教育委員会として通知・全校調査・移行計画へ進んでください。</p>
+<div class="board-chain-paths">
+<a class="board-chain-path board-chain-path--primary" href="/board-pta-chain.html">
+<span class="board-chain-path-step">STEP 1　現状確認</span>
+<strong>学校関与の何が崩れるのかを見る</strong>
+<span class="board-chain-path-desc">加入確認の欠落が、名簿・徴収・連絡・教職員・施設へ波及する順番を確認します。</span>
+</a>
+<a class="board-chain-path" href="/edu-board-separation.html">
+<span class="board-chain-path-step">STEP 2　実務対応</span>
+<strong>学校とPTAの分離指針へ進む</strong>
+<span class="board-chain-path-desc">教育委員会通知モデル、全校調査項目、移行案を使って共通方針へ落とし込みます。</span>
+</a>
 </div>
 </div>
 </div>
