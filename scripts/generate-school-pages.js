@@ -192,15 +192,15 @@ function renderAssessmentPremise(record) {
     ? "学校別の個別評価は未実施です。現時点では、掲載資料の有無と確認すべき項目だけを示します。"
     : "評価状況は、掲載資料から確認できる運用上の疑義の強さを示すものです。特定の学校・PTAについて法令違反を断定するものではありません。";
   return `<p>${escapeHtml(pendingNote)}</p>
-      <p>このページでは、資料に書かれている事実、資料だけでは確認できない点、当委員会の評価を分けて表示しています。未掲載資料、口頭説明、後日是正済みの運用までは反映できていない場合があります。</p>`;
+      <p>表示内容は、資料に書かれている事実、資料だけでは確認できない点、当委員会の評価を分けています。未掲載資料、口頭説明、後日是正済みの運用までは反映できていない場合があります。</p>`;
 }
 
 function renderSummary(record) {
   const summary = record.summary || "PTA関連資料の確認状況を整理しています。";
   if (!sourceImages(record).length && !pdfLinks(record).length && !meaningfulDocuments(record).length) {
-    return "このページでは、資料の有無と確認すべき項目を整理しています。現時点では個別評価を行っていません。";
+    return "掲載資料は未確認です。資料の有無と次に確認すべき項目を整理しており、個別評価はまだ行っていません。";
   }
-  return summary.replace(
+  return summary.replace(/^このページでは、/, "").replace(
     "画像とPDFは、個人情報・印影・口座情報・QRコード等の確認が完了するまで掲載しません。",
     "資料画像とPDFは、個人情報・印影・口座情報・QRコード等の確認が完了したものだけを掲載します。"
   );
@@ -210,9 +210,10 @@ function renderSchoolPage(record) {
   validateSchoolRecord(record);
   const statusClass = statusClassFor(record.status, record.statusClass);
   const ogImage = record.ogImage && publicPathExists(record.ogImage) ? record.ogImage : "/assets/ogp/atsugi/default.png";
-  const ogDescription = record.ogDescription || record.description || record.summary;
   const title = `${record.schoolName} PTA関連資料・評価 | PTA適正化推進委員会`;
-  const description = record.description || `${record.schoolName}のPTA関連資料について、確認できる事実、資料上確認できない点、当委員会の評価を整理したページです。`;
+  const fallbackDescription = `${record.schoolName}のPTA関連資料について、確認できる事実、資料上確認できない点、当委員会の評価を整理したページです。`;
+  const description = record.ogDescription || record.description || renderSummary(record) || fallbackDescription;
+  const ogDescription = record.ogDescription || description;
   const documentName = meaningfulDocuments(record).join("、") || "確認資料なし";
   const applicationStatus = record.materials.applicationFormStatus || record.materials.hasApplicationForm || "未確認";
   const pdfCount = pdfLinks(record).length;
@@ -245,10 +246,11 @@ function renderSchoolPage(record) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?v=20260628-type-scale">
   <link rel="stylesheet" href="/css/archive.css">
 
 ${gaTag()}
+  <link rel="stylesheet" href="/css/hover-orange.css?v=20260629-hero22-hero22">
 </head>
 <body>
 ${renderSupportStrip()}
