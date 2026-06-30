@@ -12,92 +12,20 @@
   .download-wrap{width:min(calc(100% - 40px),860px);margin:72px auto;background:#fff;border:1px solid rgba(15,39,71,.14);border-left:8px solid #2f6f73;border-radius:22px;box-shadow:0 16px 42px rgba(5,17,31,.10);padding:32px}
   h1{font-family:'Noto Serif JP',serif;font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.45;margin:0 0 12px;color:#0f2747}
   p{color:#475569;margin:0 0 16px}.status{background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:14px 16px;margin:18px 0;color:#334155;font-weight:700}
-  .status.error{background:#fff7ed;border-color:#fed7aa;color:#9a3412}
-  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}.actions a,.actions button{text-decoration:none;border:none;cursor:pointer}.hidden{display:none!important}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}.actions a{text-decoration:none}
   .small-note{font-size:.88rem;color:#64748b;margin-top:14px}
 </style>
 </head>
 <body>
 <main class="download-wrap">
-  <h1>PTA加入・会員管理テンプレートをダウンロードします</h1>
-  <p>PTA役員向けの加入申込・会員管理テンプレート配布セットです。自動でダウンロードが始まらない場合は、下のボタンを押してください。</p>
-  <div class="status" id="status">ダウンロード準備中です。</div>
+  <h1>PTA加入・会員管理テンプレート</h1>
+  <p>PTA役員向けの加入申込・会員管理テンプレート配布セットです。</p>
+  <div class="status">ZIPファイルを用意しました。下のボタンからダウンロードしてください。</div>
   <div class="actions">
-    <button class="btn-gold hidden" id="downloadBtn" type="button">ZIPをダウンロード</button>
-    <a class="btn-outline" href="/guide-pta.html#pta-member-template">PTA役員向けページへ戻る</a>
+    <a class="btn-gold" href="/downloads/pta-membership-management-template-complete.zip" download>ZIPをダウンロード</a>
+    <a class="btn-outline" href="/guide-pta.html">PTA役員向けページへ戻る</a>
   </div>
-  <p class="small-note">ブラウザの設定により自動ダウンロードが止まる場合があります。その場合は「ZIPをダウンロード」を押してください。</p>
+  <p class="small-note">ZIPには、会員管理CSV、導入・運用上の注意、入会手続確認用PDFなどが含まれます。</p>
 </main>
-<script>
-(function(){
-  const fileName = 'pta-membership-management-template-complete.zip';
-  const status = document.getElementById('status');
-  const btn = document.getElementById('downloadBtn');
-  const sources = [
-    '/downloads/pta-template-payload.js',
-    'https://raw.githubusercontent.com/ptaorg/ptaorg.github.io/main/scripts/connect-pta-template-to-officers.js'
-  ];
-  let blobUrl = null;
-
-  function setStatus(message, isError){
-    status.textContent = message;
-    status.classList.toggle('error', Boolean(isError));
-  }
-  function base64ToBlob(base64){
-    const clean = base64.replace(/\s+/g,'');
-    const binary = atob(clean);
-    const chunkSize = 1024 * 256;
-    const chunks = [];
-    for(let offset=0; offset<binary.length; offset += chunkSize){
-      const slice = binary.slice(offset, offset + chunkSize);
-      const bytes = new Uint8Array(slice.length);
-      for(let i=0;i<slice.length;i++) bytes[i] = slice.charCodeAt(i);
-      chunks.push(bytes);
-    }
-    return new Blob(chunks, {type:'application/zip'});
-  }
-  function startDownload(){
-    if(!blobUrl) return;
-    const a = document.createElement('a');
-    a.href = blobUrl;
-    a.download = fileName;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-  }
-  async function fetchPayload(){
-    let lastError = null;
-    for(const url of sources){
-      try{
-        const res = await fetch(url, {cache:'no-store'});
-        if(!res.ok) throw new Error(url + ' returned ' + res.status);
-        const text = await res.text();
-        const match = text.match(/const ZIP_BASE64 = `([\s\S]*?)`;/);
-        if(!match) throw new Error('ZIP payload not found in ' + url);
-        return match[1];
-      }catch(err){
-        lastError = err;
-        console.warn(err);
-      }
-    }
-    throw lastError || new Error('ZIP payload not found');
-  }
-
-  fetchPayload()
-    .then(base64 => {
-      const blob = base64ToBlob(base64);
-      blobUrl = URL.createObjectURL(blob);
-      setStatus('準備できました。自動で始まらない場合はボタンを押してください。', false);
-      btn.classList.remove('hidden');
-      btn.addEventListener('click', startDownload);
-      setTimeout(startDownload, 250);
-    })
-    .catch(err => {
-      console.error(err);
-      setStatus('ダウンロード準備に失敗しました。通信環境を確認して再読み込みするか、PTA役員向けページから再度お試しください。', true);
-      btn.classList.add('hidden');
-    });
-})();
-</script>
 </body>
 </html>
