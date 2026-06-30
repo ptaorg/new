@@ -286,6 +286,60 @@
 .key-materials-grid>a>div>div:last-child{margin-top:auto!important;padding-top:14px!important;font-size:.86rem!important;font-weight:900!important;color:#17345c!important;text-decoration:underline!important;text-underline-offset:4px!important;}
 @media(max-width:720px){.key-materials-section{padding:48px 0!important}.key-materials-grid{grid-template-columns:1fr!important}.key-materials-grid>a>img{height:150px!important}}
 
+.board-chain-direct {
+  background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+  padding: 42px 0;
+  border-top: 1px solid rgba(15,39,71,.06);
+  border-bottom: 1px solid rgba(15,39,71,.08);
+}
+
+.board-chain-card {
+  background: #fff;
+  border: 1px solid rgba(15,39,71,.14);
+  border-left: 8px solid #1d4ed8;
+  border-radius: 0 18px 18px 0;
+  box-shadow: 0 14px 34px rgba(5,17,31,.10);
+  padding: 28px 30px;
+}
+
+.board-chain-badge {
+  display: inline-flex;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(29,78,216,.09);
+  color: #1d4ed8;
+  font-size: .74rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  margin-bottom: 12px;
+}
+
+.board-chain-card h2 {
+  font-family: 'Noto Serif JP', serif;
+  color: var(--navy);
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  line-height: 1.45;
+  margin: 0 0 12px;
+}
+
+.board-chain-card p {
+  color: var(--text);
+  font-size: .98rem;
+  line-height: 1.95;
+  margin: 0 0 18px;
+}
+
+.board-chain-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 760px) {
+  .board-chain-direct { padding: 32px 0; }
+  .board-chain-card { padding: 24px 20px; border-left-width: 6px; }
+}
+
 </style>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0D18ZSSLMH"></script>
@@ -1239,6 +1293,18 @@ html,body{overflow-x:hidden!important}
 <div class="hero-actions">
 <a class="btn-gold" href="#board-executive-brief">点検範囲を見る</a>
 <a class="btn-outline" href="audit/index.html?mode=board">運営チェックを開始する</a>
+</div>
+</div>
+</section>
+<section class="board-chain-direct" id="board-chain-direct" aria-labelledby="board-chain-title">
+<div class="wrap-narrow">
+<div class="board-chain-card">
+<div class="board-chain-badge">教育委員会・学校向け確認ページ</div>
+<h2 id="board-chain-title">加入確認がないPTAに、学校はどこまで関与できますか</h2>
+<p>入会申込書がないまま、学校名簿、会費徴収、学校連絡網、教職員関与、施設利用が続いている場合、学校側の説明根拠が連鎖的に不安定になります。教育委員会・学校が確認すべき順番を整理しました。</p>
+<div class="board-chain-actions">
+<a class="btn-gold" href="/board-pta-chain.html">学校関与の何が崩れるのかを見る</a>
+</div>
 </div>
 </div>
 </section>
@@ -3905,7 +3971,9 @@ document.addEventListener('DOMContentLoaded', function() {
     bluf.className = 'pta-panel';
     bluf.id = 'board-bluf-v22';
     bluf.innerHTML = '<div class="pta-kicker">For school boards</div><h2>問題はPTAの存在ではなく、学校手続に溶け込むことです。</h2><p class="pta-quote">入会、名簿、徴収、会計、連絡、役員選出を学校から切り離せば、多くのリスクは同時にほどけます。</p><div class="pta-list"><div class="pta-check">入会申込記録を、会員ごとに確認できますか。</div><div class="pta-check">PTA会費徴収に、学校徴収金・学校口座・学校保有情報を使っていませんか。</div><div class="pta-check">PTA名簿、役員候補者名簿、連絡網を学校保有情報から作っていませんか。</div><div class="pta-check">教職員が勤務時間中にPTA会計、集金、名簿、役員選出、未納督促をしていませんか。</div></div>';
-    if (hero) hero.insertAdjacentElement('afterend', bluf);
+    var chainDirect = document.getElementById('board-chain-direct');
+    if (chainDirect) chainDirect.insertAdjacentElement('afterend', bluf);
+    else if (hero) hero.insertAdjacentElement('afterend', bluf);
     else document.querySelector('main').insertAdjacentElement('afterbegin', bluf);
   }
 

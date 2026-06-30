@@ -287,6 +287,60 @@
       }
     }
 
+    .officer-chain-direct {
+      background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
+      padding: 42px 0;
+      border-top: 1px solid rgba(15,39,71,.06);
+      border-bottom: 1px solid rgba(15,39,71,.08);
+    }
+
+    .officer-chain-card {
+      background: #fff;
+      border: 1px solid rgba(15,39,71,.14);
+      border-left: 8px solid #2f6f73;
+      border-radius: 0 18px 18px 0;
+      box-shadow: 0 14px 34px rgba(5,17,31,.10);
+      padding: 28px 30px;
+    }
+
+    .officer-chain-badge {
+      display: inline-flex;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(47,111,115,.10);
+      color: #2f6f73;
+      font-size: .74rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      margin-bottom: 12px;
+    }
+
+    .officer-chain-card h2 {
+      font-family: 'Noto Serif JP', serif;
+      color: var(--navy);
+      font-size: clamp(1.35rem, 2.5vw, 2rem);
+      line-height: 1.45;
+      margin: 0 0 12px;
+    }
+
+    .officer-chain-card p {
+      color: var(--text);
+      font-size: .98rem;
+      line-height: 1.95;
+      margin: 0 0 18px;
+    }
+
+    .officer-chain-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .officer-chain-direct { padding: 32px 0; }
+      .officer-chain-card { padding: 24px 20px; border-left-width: 6px; }
+    }
+
   </style>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0D18ZSSLMH"></script>
@@ -465,6 +519,18 @@ html,body{overflow-x:hidden!important}
 <a class="btn-outline" href="#visual-guide">図解で確認</a>
 <a class="btn-outline" href="#roadmap">適正化ロードマップ</a>
 <a class="btn-outline" href="#pdf-officer">原資料PDF</a>
+</div>
+</div>
+</section>
+<section class="officer-chain-direct" id="officer-chain-direct" aria-labelledby="officer-chain-title">
+<div class="wrap-narrow">
+<div class="officer-chain-card">
+<div class="officer-chain-badge">PTA役員向け確認ページ</div>
+<h2 id="officer-chain-title">入会申込書がないまま引き継いでいませんか</h2>
+<p>会員名簿、会費徴収、役員選出、学校名簿、教職員関与は、入会確認を入口としてつながっています。PTA役員が説明できる運営へ切り替えるため、まずは何が崩れるのかを確認してください。</p>
+<div class="officer-chain-actions">
+<a class="btn-gold" href="/pta-officer-chain.html">PTA運営の何が崩れるのかを見る</a>
+</div>
 </div>
 </div>
 </section>
