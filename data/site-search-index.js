@@ -23,3 +23,36 @@ window.PTA_SITE_SEARCH_INDEX = [
   ["応援・寄付", "/support.html", "活動支援のお願い"],
   ["PTA加入・会員管理テンプレート", "/downloads/pta-membership-management-template.html", "PTA役員向けの加入申込・会員管理テンプレート配布セット"]
 ];
+
+(function(){
+  function addNavOnlyLink(){
+    var path = '/pta-application-chain.html';
+    var label = '入会申込書がないと何が崩れるのか';
+    var nav = document.querySelector('.desktop-nav');
+    if(nav && !nav.querySelector('a[href="' + path + '"]')){
+      var firstList = nav.querySelector('.nav-item.has-dropdown .mega-col ul');
+      if(firstList){
+        var li = document.createElement('li');
+        li.innerHTML = '<a href="' + path + '">' + label + '</a>';
+        var afterParent = firstList.querySelector('a[href="/guide-parent.html"]');
+        if(afterParent && afterParent.parentNode && afterParent.parentNode.nextSibling){
+          firstList.insertBefore(li, afterParent.parentNode.nextSibling);
+        } else firstList.appendChild(li);
+      }
+    }
+    var overlay = document.getElementById('mobileOverlay');
+    if(overlay && !overlay.querySelector('a[href="' + path + '"]')){
+      var parent = overlay.querySelector('a[href="/guide-parent.html"]');
+      var a = document.createElement('a');
+      a.className = 'mobile-link';
+      a.href = path;
+      a.textContent = label;
+      if(parent && parent.parentNode) parent.parentNode.insertBefore(a, parent.nextSibling);
+      else overlay.appendChild(a);
+    }
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addNavOnlyLink, {once:true});
+  else addNavOnlyLink();
+  setTimeout(addNavOnlyLink, 250);
+  setTimeout(addNavOnlyLink, 1000);
+})();
