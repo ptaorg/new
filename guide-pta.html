@@ -213,6 +213,80 @@
     .officer-action-list strong{display:block;color:var(--navy);margin-bottom:3px}
     @media(max-width:760px){.officer-action-list{grid-template-columns:1fr}.officer-legal-table{display:block;overflow-x:auto}.officer-legal-table th,.officer-legal-table td{min-width:12rem}}
 
+    .officer-video-section {
+      background: linear-gradient(180deg, #fffaf0 0%, #ffffff 100%);
+      padding: 48px 0;
+      border-top: 1px solid rgba(15,39,71,.06);
+      border-bottom: 1px solid rgba(15,39,71,.08);
+    }
+
+    .officer-video-card {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(320px, 1.25fr);
+      gap: 28px;
+      align-items: center;
+      background: #fff;
+      border: 1px solid rgba(15,39,71,.14);
+      border-left: 8px solid #2f6f73;
+      border-radius: 0 22px 22px 0;
+      box-shadow: 0 16px 38px rgba(5,17,31,.10);
+      padding: 30px;
+    }
+
+    .officer-video-badge {
+      display: inline-flex;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(47,111,115,.10);
+      color: #2f6f73;
+      font-size: .74rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      margin-bottom: 12px;
+    }
+
+    .officer-video-copy h2 {
+      font-family: 'Noto Serif JP', serif;
+      color: var(--navy);
+      font-size: clamp(1.35rem, 2.5vw, 2rem);
+      line-height: 1.45;
+      margin: 0 0 12px;
+    }
+
+    .officer-video-copy p {
+      color: var(--text);
+      font-size: .98rem;
+      line-height: 1.95;
+      margin: 0;
+    }
+
+    .officer-video-frame {
+      position: relative;
+      width: 100%;
+    }
+
+    .officer-video-frame video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+      background: #0f2747;
+      box-shadow: 0 18px 42px rgba(5,17,31,.18);
+    }
+
+    @media (max-width: 860px) {
+      .officer-video-card {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+        border-left-width: 6px;
+      }
+
+      .officer-video-section {
+        padding: 36px 0;
+      }
+    }
+
   </style>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0D18ZSSLMH"></script>
@@ -391,6 +465,27 @@ html,body{overflow-x:hidden!important}
 <a class="btn-outline" href="#visual-guide">図解で確認</a>
 <a class="btn-outline" href="#roadmap">適正化ロードマップ</a>
 <a class="btn-outline" href="#pdf-officer">原資料PDF</a>
+</div>
+</div>
+</section>
+<section class="officer-video-section" id="officer-video">
+<div class="wrap-narrow">
+<div class="officer-video-card">
+<div class="officer-video-copy">
+<div class="officer-video-badge">PTA役員向け動画</div>
+<h2>PTA役員こそ、入会手続と会員管理を見直す時です</h2>
+<p>
+          PTAを続けるために必要なのは、慣例ではなく説明できる手続です。
+          入会申込、会員名簿、会費徴収、個人情報、学校との分離を、
+          役員が実務として整理できるようにするための導入動画です。
+        </p>
+</div>
+<div class="officer-video-frame">
+<video controls playsinline preload="metadata" aria-label="PTA役員向け説明動画">
+<source src="/assets/videos/pta-officers.mp4" type="video/mp4">
+          お使いのブラウザは動画再生に対応していません。
+        </video>
+</div>
 </div>
 </div>
 </section>
