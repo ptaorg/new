@@ -26,7 +26,8 @@ const requiredSitemapUrls = [
   "https://ptaorg.com/contact.html",
   "https://ptaorg.com/support.html",
   "https://ptaorg.com/education-board-responsibility.html",
-  "https://ptaorg.com/reality.html"
+  "https://ptaorg.com/compliance.html",
+  "https://ptaorg.com/research-index.html"
 ];
 
 function exists(file) {

@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const EXPECTED_VERSION = process.argv[2] || '89';
+const EXPECTED_VERSION = process.argv[2] || '90';
 const EXPECTED_PATTERN = new RegExp(`site\\.js\\?v=${EXPECTED_VERSION}(?:["'])`);
 const SITE_JS_PATTERN = /site\.js\?v=([^"']+)/g;
 

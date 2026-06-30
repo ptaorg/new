@@ -203,46 +203,12 @@
     });
   }
 
-  function mobileNavHtml() {
-    return [
-      '<button type="button" class="mobile-close-btn" id="closeOverlay" aria-label="メニューを閉じる">閉じる ×</button>',
-      '<div class="mobile-menu-group">',
-      '<div class="mobile-menu-label">主要入口</div>',
-      '<a class="mobile-link" href="/index.html">トップ</a>',
-      '<a class="mobile-link" href="/guide-parent.html">保護者の方へ</a>',
-      '<a class="mobile-link" href="/guide-pta.html">PTA役員の方へ</a>',
-      '<a class="mobile-link" href="/guide-board.html">教育委員会・学校へ</a>',
-      '</div>',
-      '<div class="mobile-menu-group">',
-      '<div class="mobile-menu-label">資料・論考</div>',
-      '<a class="mobile-link" href="/board-responses.html">教育委員会の回答</a>',
-      '<a class="mobile-link" href="/national-archive.html">全国資料館</a>',
-      '<a class="mobile-link" href="/administrative-materials.html">行政通知・公式PDF</a>',
-      '<a class="mobile-link" href="/documents.html">資料入口・索引</a>',
-      '<a class="mobile-link" href="/journal.html">論考・調査報告</a>',
-      '</div>',
-      '<div class="mobile-menu-group">',
-      '<div class="mobile-menu-label">論点</div>',
-      '<a class="mobile-link" href="/membership.html">入会手続</a>',
-      '<a class="mobile-link" href="/privacy.html">個人情報</a>',
-      '<a class="mobile-link" href="/fee-collection.html">会費徴収</a>',
-      '<a class="mobile-link" href="/personnel.html">教職員関与</a>',
-      '<a class="mobile-link" href="/facilities.html">施設利用</a>',
-      '</div>',
-      '<div class="mobile-menu-group mobile-menu-bottom">',
-      '<a class="mobile-link" href="/audit/index.html">運営チェックアプリ</a>',
-      '<a class="mobile-link" href="/contact.html">お問い合わせ・情報提供</a>',
-      '<a class="mobile-link support-mobile-link" href="/support.html">応援・寄付</a>',
-      '</div>'
-    ].join('');
-  }
-
   function stabilizeMobileNavigation() {
     var hamburger = document.getElementById('hamburger');
     var overlay = document.getElementById('mobileOverlay');
-    if (!hamburger || !overlay || hamburger.dataset.stableMobileNav === 'v89') return;
+    if (!hamburger || !overlay || hamburger.dataset.stableMobileNav === 'v90') return;
 
-    addStyle('mobile-nav-stable-v89',
+    addStyle('mobile-nav-stable-v90',
       'html.mobile-nav-lock-root{overflow:hidden!important;overscroll-behavior:none!important}' +
       'body.mobile-nav-lock{position:fixed!important;left:0;right:0;width:100%;overflow:hidden!important;touch-action:none!important}' +
       '.mobile-overlay{position:fixed!important;inset:0!important;z-index:5000!important;display:none!important;flex-direction:column!important;justify-content:flex-start!important;align-items:center!important;gap:10px!important;padding:calc(18px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom))!important;background:rgba(5,17,31,.92)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}' +
@@ -253,44 +219,37 @@
       '.mobile-close-btn{width:min(100%,430px);min-height:44px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(255,255,255,.1);color:#fff;font-weight:900;cursor:pointer}'
     );
 
-    var newHamburger = hamburger.cloneNode(true);
-    var newOverlay = overlay.cloneNode(false);
-    hamburger.parentNode.replaceChild(newHamburger, hamburger);
-    overlay.parentNode.replaceChild(newOverlay, overlay);
-    newOverlay.id = 'mobileOverlay';
-    newOverlay.className = 'mobile-overlay';
-    newOverlay.setAttribute('aria-hidden', 'true');
-    newOverlay.innerHTML = mobileNavHtml();
-    newHamburger.dataset.stableMobileNav = 'v89';
-    newOverlay.dataset.stableMobileNav = 'v89';
-    newHamburger.setAttribute('aria-controls', 'mobileOverlay');
-    newHamburger.setAttribute('aria-expanded', 'false');
-    newHamburger.setAttribute('aria-label', 'メニューを開く');
+    hamburger.dataset.stableMobileNav = 'v90';
+    overlay.dataset.stableMobileNav = 'v90';
+    overlay.setAttribute('aria-hidden', 'true');
+    hamburger.setAttribute('aria-controls', 'mobileOverlay');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-label', 'メニューを開く');
 
     var savedY = 0;
     function openMenu() {
       savedY = window.scrollY || window.pageYOffset || 0;
       allowAutoTop = false;
-      newOverlay.classList.add('is-open');
-      newHamburger.classList.add('is-active');
-      newHamburger.setAttribute('aria-expanded', 'true');
-      newHamburger.setAttribute('aria-label', 'メニューを閉じる');
-      newOverlay.setAttribute('aria-hidden', 'false');
+      overlay.classList.add('is-open');
+      hamburger.classList.add('is-active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      hamburger.setAttribute('aria-label', 'メニューを閉じる');
+      overlay.setAttribute('aria-hidden', 'false');
       document.body.style.top = '-' + savedY + 'px';
       document.documentElement.classList.add('mobile-nav-lock-root');
       document.body.classList.add('mobile-nav-lock');
       setTimeout(function(){
-        var close = newOverlay.querySelector('#closeOverlay');
+        var close = overlay.querySelector('#closeOverlay');
         if (close && close.focus) close.focus({ preventScroll: true });
       }, 0);
     }
     function closeMenu() {
       var locked = document.body.classList.contains('mobile-nav-lock');
-      newOverlay.classList.remove('is-open');
-      newHamburger.classList.remove('is-active');
-      newHamburger.setAttribute('aria-expanded', 'false');
-      newHamburger.setAttribute('aria-label', 'メニューを開く');
-      newOverlay.setAttribute('aria-hidden', 'true');
+      overlay.classList.remove('is-open');
+      hamburger.classList.remove('is-active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'メニューを開く');
+      overlay.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('mobile-nav-lock');
       document.documentElement.classList.remove('mobile-nav-lock-root');
       document.body.style.top = '';
@@ -298,33 +257,21 @@
         try { window.scrollTo(0, savedY); } catch (e) {}
       }
     }
-    newHamburger.addEventListener('click', function(e){
+    hamburger.addEventListener('click', function(e){
       e.preventDefault();
       e.stopPropagation();
-      if (newOverlay.classList.contains('is-open')) closeMenu();
+      if (overlay.classList.contains('is-open')) closeMenu();
       else openMenu();
     });
-    newOverlay.addEventListener('click', function(e){
-      if (e.target === newOverlay || e.target.id === 'closeOverlay' || (e.target.closest && e.target.closest('a.mobile-link'))) closeMenu();
+    overlay.addEventListener('click', function(e){
+      if (e.target === overlay || e.target.id === 'closeOverlay' || (e.target.closest && e.target.closest('a.mobile-link'))) closeMenu();
     });
     document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && newOverlay.classList.contains('is-open')) closeMenu();
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeMenu();
     });
     window.addEventListener('resize', function(){
-      if (window.innerWidth > 860 && newOverlay.classList.contains('is-open')) closeMenu();
+      if (window.innerWidth > 860 && overlay.classList.contains('is-open')) closeMenu();
     }, { passive: true });
-  }
-
-  function normalizeNavigation() {
-    var desktop = document.querySelector('.desktop-nav');
-    if (!desktop || desktop.dataset.normalized === 'v89') return;
-    desktop.dataset.normalized = 'v89';
-    desktop.innerHTML = '<a class="nav-link" href="/index.html">トップ</a>' +
-      '<div class="nav-item has-dropdown"><a class="nav-link" href="/guide-parent.html">立場別</a><div class="mega-menu"><div class="mega-col"><h4>立場別</h4><ul><li><a href="/guide-parent.html">保護者の方へ</a></li><li><a href="/guide-pta.html">PTA役員の方へ</a></li><li><a href="/guide-board.html">教育委員会・学校の方へ</a></li><li><a href="/guide-research.html">研究者・記者の方へ</a></li></ul></div></div></div>' +
-      '<div class="nav-item has-dropdown"><a class="nav-link" href="/documents.html">資料・データ</a><div class="mega-menu"><div class="mega-col"><h4>一次資料</h4><ul><li><a href="/board-responses.html">教育委員会の回答</a></li><li><a href="/national-archive.html">全国資料館</a></li><li><a href="/administrative-materials.html">行政通知・公式PDF</a></li><li><a href="/compliance.html">PTA運営の現場実例</a></li></ul></div><div class="mega-col"><h4>配布資料・索引</h4><ul><li><a href="/documents.html">資料入口・索引</a></li><li><a href="/guide-board.html#board-jp-guideline">教委向け分離資料</a></li><li><a href="/PTA運営適正化ガイドブック_第4版_改訂本文.html">適正化ガイドブック 第4版</a></li></ul></div></div></div>' +
-      '<div class="nav-item has-dropdown"><a class="nav-link" href="/journal.html">研究</a><div class="mega-menu"><div class="mega-col"><h4>論考・整理</h4><ul><li><a href="/journal.html">論考・調査報告</a></li><li><a href="/report.html">総合分析レポート</a></li><li><a href="/law-map.html">法制度マップ</a></li><li><a href="/cases.html">判例整理</a></li><li><a href="/timeline.html">PTA制度史</a></li></ul></div><div class="mega-col"><h4>論点別</h4><ul><li><a href="/membership.html">入会手続</a></li><li><a href="/privacy.html">個人情報</a></li><li><a href="/fee-collection.html">会費徴収</a></li><li><a href="/personnel.html">教職員関与</a></li><li><a href="/facilities.html">施設利用</a></li></ul></div></div></div>' +
-      '<div class="nav-item has-dropdown"><a class="nav-link" href="/audit/index.html">ツール</a><div class="mega-menu"><div class="mega-col"><h4>点検用</h4><ul><li><a href="/audit/index.html">運営チェックアプリ</a></li><li><a href="/guideline.html">適正化ガイドライン</a></li><li><a href="/edu-board-separation.html">教委向け分離指針</a></li></ul></div></div></div>' +
-      '<a class="nav-link support-nav-link" href="/support.html">応援</a>';
   }
 
   function normalizeLinks() {
@@ -335,24 +282,6 @@
       if (href === '/jp/' || href === 'jp/' || href === 'https://ptaorg.com/jp/') a.setAttribute('href', '/guide-board.html#board-jp-guideline');
       if (href === 'https://ptaorg.github.io/ed/' || href === 'https://ptaorg.github.io/ed') a.setAttribute('href', 'https://ptaorg.com/ed');
     });
-  }
-
-  function fixGuidePta() {
-    if (!location.pathname.endsWith('/guide-pta.html')) return;
-    var main = document.querySelector('main');
-    if (main) {
-      main.style.display = 'block';
-      main.style.width = '100%';
-      main.style.maxWidth = 'none';
-    }
-    var guide = document.getElementById('guidebook-text');
-    if (guide && main && main.firstElementChild !== guide) main.insertBefore(guide, main.firstElementChild);
-    addStyle('guide-pta-layout-v89',
-      'body:has(#guidebook-text) main{display:block!important;width:100%!important;max-width:none!important}' +
-      '#guidebook-text{display:block!important;position:static!important;float:none!important;clear:both!important;width:100%!important;max-width:none!important;margin:0!important;padding:56px 0 44px!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}' +
-      '#guidebook-text>.wrap{display:block!important;float:none!important;position:static!important;width:min(calc(100% - 40px),860px)!important;max-width:860px!important;margin-left:auto!important;margin-right:auto!important;padding-left:0!important;padding-right:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}' +
-      '.gb-chapter,.gb-chapter-accordion,.gb-chapter-summary{box-shadow:none!important}'
-    );
   }
 
   function pdfLinks() {
@@ -436,13 +365,11 @@
   }
 
   function boot() {
-    normalizeNavigation();
     stabilizeMobileNavigation();
     normalizeLinks();
     preloadSearchIndex();
     initSearch();
     initFAQ();
-    fixGuidePta();
     pdfLinks();
     loadArchiveNotice();
     initHomeMap();
@@ -452,7 +379,7 @@
 
   window.initSearch = initSearch;
   window.initMobileNav = stabilizeMobileNavigation;
-  window.initPrimaryNavigation = function(){ normalizeNavigation(); stabilizeMobileNavigation(); };
+  window.initPrimaryNavigation = stabilizeMobileNavigation;
 
   ready(function(){
     boot();
