@@ -43,7 +43,7 @@ const today = `<section class="home-next-section" aria-labelledby="home-next-tit
 if (!html.includes('class="home-next-section"')) {
   const firstReading = findSection('aria-labelledby="home-reading-title"');
   if (!firstReading) throw new Error('Primary home reading section not found');
-  html = html.slice(0, firstReading[0]) + today + html.slice(firstReading[1]);
+  html = html.slice(0, firstReading[1]) + '\n' + today + html.slice(firstReading[1]);
 }
 
 const walkthrough = findSection('このサイトの歩き方');
