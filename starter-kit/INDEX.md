@@ -1,0 +1,16 @@
+# PTA適正運営スターターキット v1.0
+
+- [公開入口](index.html)
+- [マニュアル本文](manual.html)
+- [標準書式14種](templates.html)
+- [PTA会則モデル](rules.html)
+- [移行ロードマップ](roadmap.html)
+- [学校・教育委員会向け説明書](school-board.html)
+- [反論対応集](rebuttals.html)
+- [情報公開・監査確認項目](audit.html)
+- [詳細チェックリスト](checklist.html)
+- [一次資料リンク集](sources.html)
+- [Google実装版](google-implementation.html)
+- [PDF印刷版](print.html)
+- [QA](qa.html)
+- [更新履歴](changelog.html)
