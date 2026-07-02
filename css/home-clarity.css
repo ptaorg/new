@@ -64,6 +64,8 @@
   line-height: 1.75;
 }
 
+#starterKitBridge { display: none !important; }
+
 @media (max-width: 760px) {
   .home-next-section { padding: 40px 0; }
   .home-next-grid { grid-template-columns: 1fr; }
