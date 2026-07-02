@@ -1,0 +1,20 @@
+{
+  "name": "PTA適正運営スターターキット",
+  "version": "1.0",
+  "published": "2026-07-03",
+  "publisher": "PTA適正化推進委員会",
+  "entry": "starter-kit/index.html",
+  "pages": [
+    "index.html",
+    "manual.html",
+    "templates.html",
+    "rules.html",
+    "roadmap.html",
+    "school-board.html",
+    "rebuttals.html",
+    "audit.html",
+    "sources.html",
+    "qa.html",
+    "changelog.html"
+  ]
+}
