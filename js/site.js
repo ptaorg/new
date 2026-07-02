@@ -1,4 +1,4 @@
-/* site.js v89 — static body preservation
+/* site.js v91 — static body preservation
    重要本文はHTML側を正とし、JavaScriptは補助機能だけを担当する。 */
 (function(){
   var initialPath = location.pathname + location.search;
@@ -110,6 +110,8 @@
 
   var SITE_INDEX = [
     ['トップ', '/index.html', 'PTA適正化推進委員会の全体像'],
+    ['PTA適正運営スターターキット v1.0', '/starter-kit/', '任意加入、個人情報、会計分離、学校との公私分離を実務資料一式で確認'],
+    ['スターターキット ダウンロード', '/starter-kit/downloads.html', 'PDF印刷版、総合ZIP、Google実装版の配布ページ'],
     ['資料入口・索引', '/documents.html', '公開資料への入口'],
     ['保護者の方へ', '/guide-parent.html', '入会した覚えがない・会費の根拠が分からない場合の確認手順'],
     ['PTA役員の方へ', '/guide-pta.html', '引き継いだ運営を適法に直す実務手順'],
@@ -149,7 +151,12 @@
   ];
 
   function getSearchIndex() {
-    if (Array.isArray(window.PTA_SITE_SEARCH_INDEX) && window.PTA_SITE_SEARCH_INDEX.length) return window.PTA_SITE_SEARCH_INDEX;
+    if (Array.isArray(window.PTA_SITE_SEARCH_INDEX) && window.PTA_SITE_SEARCH_INDEX.length) {
+      var merged = window.PTA_SITE_SEARCH_INDEX.slice();
+      merged.unshift(['PTA適正運営スターターキット v1.0', '/starter-kit/', '任意加入、個人情報、会計分離、学校との公私分離を実務資料一式で確認']);
+      merged.unshift(['スターターキット ダウンロード', '/starter-kit/downloads.html', 'PDF印刷版、総合ZIP、Google実装版の配布ページ']);
+      return merged;
+    }
     return SITE_INDEX;
   }
 
@@ -201,6 +208,33 @@
         if (!box.contains(e.target)) dropdown.classList.remove('is-open');
       });
     });
+  }
+
+  function insertStarterKitBridge() {
+    var p = location.pathname;
+    var isHome = p === '/' || p === '/index.html' || p.endsWith('/index.html');
+    if (!isHome || document.getElementById('starterKitBridge')) return;
+    addStyle('starter-kit-bridge-style',
+      '.starter-kit-bridge{background:linear-gradient(135deg,#0f2747,#17345c);color:#fff;border-bottom:3px solid #d4af37}' +
+      '.starter-kit-bridge-inner{width:min(calc(100% - 40px),1280px);margin:0 auto;padding:18px 0;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}' +
+      '.starter-kit-bridge-kicker{display:inline-flex;margin-bottom:6px;padding:3px 10px;border-radius:999px;background:rgba(212,175,55,.18);border:1px solid rgba(212,175,55,.45);color:#fff2a8;font-size:.68rem;font-weight:900;letter-spacing:.12em}' +
+      '.starter-kit-bridge-title{font-family:"Noto Serif JP",serif;font-size:clamp(1.08rem,2vw,1.42rem);font-weight:900;line-height:1.35;margin:0 0 4px;color:#fff}' +
+      '.starter-kit-bridge-text{font-size:.88rem;line-height:1.75;color:rgba(255,255,255,.78);margin:0}' +
+      '.starter-kit-bridge-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}' +
+      '.starter-kit-bridge-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:10px 18px;border-radius:999px;text-decoration:none;font-size:.85rem;font-weight:900;white-space:nowrap}' +
+      '.starter-kit-bridge-btn.primary{background:#d4af37;color:#05172f}' +
+      '.starter-kit-bridge-btn.secondary{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.42)}' +
+      '@media(max-width:760px){.starter-kit-bridge-inner{grid-template-columns:1fr;padding:16px 0}.starter-kit-bridge-actions{justify-content:flex-start}.starter-kit-bridge-btn{width:100%}}'
+    );
+    var bridge = document.createElement('section');
+    bridge.id = 'starterKitBridge';
+    bridge.className = 'starter-kit-bridge';
+    bridge.innerHTML = '<div class="starter-kit-bridge-inner"><div><div class="starter-kit-bridge-kicker">New Release</div><h2 class="starter-kit-bridge-title">PTA適正運営スターターキット v1.0 を公開しました</h2><p class="starter-kit-bridge-text">任意加入、個人情報、会費分離、学校との公私分離を、本文・標準書式・Google実装版まで一体で確認できます。</p></div><div class="starter-kit-bridge-actions"><a class="starter-kit-bridge-btn primary" href="/starter-kit/">スターターキットを見る</a><a class="starter-kit-bridge-btn secondary" href="/starter-kit/downloads.html">配布ファイルへ</a></div></div>';
+    var header = document.querySelector('.site-header');
+    var support = document.querySelector('.support-strip');
+    if (header && header.parentNode) header.parentNode.insertBefore(bridge, header.nextSibling);
+    else if (support && support.parentNode) support.parentNode.insertBefore(bridge, support.nextSibling);
+    else document.body.insertBefore(bridge, document.body.firstChild);
   }
 
   function stabilizeMobileNavigation() {
@@ -367,6 +401,7 @@
   function boot() {
     stabilizeMobileNavigation();
     normalizeLinks();
+    insertStarterKitBridge();
     preloadSearchIndex();
     initSearch();
     initFAQ();
