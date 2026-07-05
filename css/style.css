@@ -3539,16 +3539,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
   }
 }
 
-/* Keep the shared mobile navigation within reach on every long page. */
-@media screen and (max-width:860px){
-  html{scroll-padding-top:calc(88px + env(safe-area-inset-top))!important}
-  body:has(.site-header){padding-top:calc(74px + env(safe-area-inset-top))!important}
-  body:has(.site-header) .site-header{
-    position:fixed!important;
-    inset:0 0 auto 0!important;
-    width:100%!important;
-    z-index:1400!important;
-    padding-top:env(safe-area-inset-top)!important;
-  }
-  body:has(.site-header) .site-header .nav-container{min-height:74px!important}
+/* Keep the shared navigation within reach on every long page. */
+html:has(.site-header){scroll-padding-top:calc(88px + env(safe-area-inset-top))!important}
+body:has(.site-header){padding-top:calc(74px + env(safe-area-inset-top))!important}
+body:has(.site-header) .site-header{
+  position:fixed!important;
+  inset:0 0 auto 0!important;
+  width:100%!important;
+  z-index:1400!important;
+  padding-top:env(safe-area-inset-top)!important;
 }
+body:has(.site-header) .site-header .nav-container{min-height:74px!important}
