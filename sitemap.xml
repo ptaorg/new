@@ -319,6 +319,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ptaorg.com/forms/pta-taikai-todoke.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ptaorg.com/forms/pta-hinyukai-tsuchi.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ptaorg.com/forms/pta-kyouiku-iinkai-shokaisho.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ptaorg.com/guide-board.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>weekly</changefreq>
