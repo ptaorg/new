@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="430" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">学校在籍情報とPTA会員情報の分離図</title>
+  <desc id="desc">学校在籍情報はそのままPTA会員情報にはならず、PTA会員情報は本人のオプトイン型申込記録に基づいて別に管理されることを示す図。</desc>
+  <rect width="920" height="430" fill="#f8fafc"/>
+  <rect x="48" y="48" width="336" height="156" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="216" y="86" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="22" font-weight="800" fill="#0a192f">学校在籍情報</text>
+  <text x="216" y="124" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="17" font-weight="700" fill="#334155">児童生徒情報／保護者連絡先</text>
+  <text x="216" y="154" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="17" font-weight="700" fill="#334155">学校徴収金口座情報</text>
+  <path d="M402 126 H518" stroke="#b91c1c" stroke-width="4" stroke-linecap="round"/>
+  <path d="M496 104 L520 126 L496 148" fill="none" stroke="#b91c1c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="460" cy="126" r="38" fill="#fff1f2" stroke="#fecdd3" stroke-width="2"/>
+  <text x="460" y="136" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="900" fill="#b91c1c">×</text>
+  <rect x="536" y="48" width="336" height="156" rx="14" fill="#ecfdf5" stroke="#86efac" stroke-width="2"/>
+  <text x="704" y="86" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="22" font-weight="800" fill="#0a192f">PTA会員情報</text>
+  <text x="704" y="124" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="17" font-weight="700" fill="#334155">本人のオプトイン型申込記録に基づき</text>
+  <text x="704" y="154" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="17" font-weight="700" fill="#334155">PTAが別に管理する情報</text>
+  <rect x="218" y="250" width="484" height="88" rx="12" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <text x="460" y="286" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="21" font-weight="900" fill="#9a3412">そのままPTA会員情報にはならない</text>
+  <text x="460" y="318" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="16" font-weight="700" fill="#475569">学校情報とPTA会員情報は、取得主体・利用目的・根拠を分けて確認する</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="430" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">入会申込記録がない場合の混同連鎖</title>
+  <desc id="desc">入会申込記録がない場合、会員不確定から学校名簿や学校連絡網への依存、PTA連絡や役員候補、当番表、会費徴収への流用、学校情報とPTA会員情報の混同へ進む流れ。</desc>
+  <rect width="920" height="430" fill="#f8fafc"/>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#7f1d1d"/>
+    </marker>
+  </defs>
+  <g font-family="'Noto Sans JP', sans-serif">
+    <rect x="110" y="34" width="700" height="52" rx="12" fill="#fff1f2" stroke="#fda4af" stroke-width="2"/>
+    <text x="460" y="67" text-anchor="middle" font-size="20" font-weight="900" fill="#7f1d1d">入会申込記録なし</text>
+    <line x1="460" y1="94" x2="460" y2="120" stroke="#7f1d1d" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="110" y="128" width="700" height="52" rx="12" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+    <text x="460" y="161" text-anchor="middle" font-size="20" font-weight="900" fill="#7c2d12">会員不確定</text>
+    <line x1="460" y1="188" x2="460" y2="214" stroke="#7f1d1d" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="110" y="222" width="700" height="52" rx="12" fill="#fefce8" stroke="#fde047" stroke-width="2"/>
+    <text x="460" y="255" text-anchor="middle" font-size="20" font-weight="900" fill="#713f12">学校名簿・学校連絡網・学校口座情報へ依存</text>
+    <line x1="460" y1="282" x2="460" y2="308" stroke="#7f1d1d" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="110" y="316" width="700" height="52" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+    <text x="460" y="349" text-anchor="middle" font-size="20" font-weight="900" fill="#1e3a5f">PTA連絡／役員候補／当番表／会費徴収へ流用</text>
+    <line x1="460" y1="376" x2="460" y2="396" stroke="#7f1d1d" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <text x="460" y="420" text-anchor="middle" font-size="20" font-weight="900" fill="#7f1d1d">学校在籍情報とPTA会員情報の混同</text>
+  </g>
+</svg>
