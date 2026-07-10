@@ -519,6 +519,41 @@ body.fee-editorial main a:hover{
   }
 }
 </style>
+
+<style id="fee-final-editorial-20260710">
+.fee-editorial .issue-hero-inner{grid-template-columns:1fr!important;max-width:960px!important}
+.fee-editorial .issue-hero-toc,
+.fee-editorial .related-links-section{display:none!important}
+.fee-editorial .issue-content{grid-template-columns:1fr!important;max-width:960px!important}
+.fee-editorial .section-eyebrow,
+.fee-editorial .section-kicker,
+.fee-editorial .editorial-brief-band{display:none!important}
+.fee-editorial .triple-problem,
+.fee-editorial .transition-options{display:block!important}
+.fee-editorial .triple-card,
+.fee-editorial .trans-card,
+.fee-editorial .double-commission,
+.fee-editorial .alert-block,
+.fee-editorial .law-quote-block,
+.fee-editorial .mext-quote{
+  margin:0!important;
+  padding:22px 0!important;
+  border:0!important;
+  border-bottom:1px solid #d8dee8!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  background:#fff!important;
+  transform:none!important;
+}
+.fee-editorial .triple-law,
+.fee-editorial .trans-label,
+.fee-editorial .req-law{
+  padding:0!important;
+  background:transparent!important;
+  border-radius:0!important;
+}
+.fee-editorial .req-step-num{border-radius:0!important;box-shadow:none!important}
+</style>
 </head>
 <body class="fee-editorial">
 
@@ -686,42 +721,12 @@ body.fee-editorial main a:hover{
 
   <div class="issue-content">
 
-    <aside class="issue-sidebar">
-      <nav class="sidebar-nav">
-        <div class="sidebar-nav-title">目次</div>
-        <a href="#overview" class="sidebar-link section-head">三重の問題</a>
-        <a href="#structure" class="sidebar-link section-head">二重委任構造</a>
-        <a href="#no-agency" class="sidebar-link section-head">無権代理</a>
-        <a href="#civil113" class="sidebar-link">民法113条の適用</a>
-        <a href="#requirements" class="sidebar-link">適法化の要件</a>
-        <a href="#public-private" class="sidebar-link section-head">公私会計の分離</a>
-        <a href="#differences" class="sidebar-link">学校徴収金との違い</a>
-        <a href="#mext" class="sidebar-link section-head">文科省・中教審</a>
-        <a href="#financial-law" class="sidebar-link section-head">地方財政法</a>
-        <a href="#transition" class="sidebar-link section-head">適正化の移行方法</a>
-      </nav>
-      <div class="sidebar-cta">
-        <p>会費徴収の現状を診断</p>
-        <a href="audit/index.html">運営チェックアプリを開く →</a>
-      </div>
-    </aside>
+    
 
     <main class="issue-main">
 
 
-      <section class="editorial-brief fee-editorial-brief" aria-labelledby="fee-reading-order">
-        <div class="editorial-brief-band">会費徴収・学校徴収金の確認ポイント</div>
-        <div class="editorial-brief-body">
-          <h2 id="fee-reading-order">問題は「金額」ではなく、学校の徴収手続にPTA会費が混ざることです</h2>
-          <p>PTA会費が数百円であっても、学校徴収金と同じ通知、同じ口座、同じ引落し、同じ未納管理で扱われると、保護者からは学校への支払いに見えます。任意団体の会費であること、会員だけが負担すること、学校が取得した口座情報をPTA目的に使っていないことを分けて確認する必要があります。</p>
-          <div class="editorial-brief-grid">
-            <div class="editorial-brief-point"><span>1</span><strong>通知</strong><p>学校徴収金通知の中にPTA会費が混在していないかを確認します。</p></div>
-            <div class="editorial-brief-point"><span>2</span><strong>口座</strong><p>学校用の口座振替情報をPTA会費に流用していないかを見ます。</p></div>
-            <div class="editorial-brief-point"><span>3</span><strong>委任</strong><p>学校が代理徴収する根拠、範囲、会員確認が記録されているかを確認します。</p></div>
-            <div class="editorial-brief-point"><span>4</span><strong>分離</strong><p>最終的にはPTAが会員から直接徴収する設計へ移行します。</p></div>
-          </div>
-        </div>
-      </section>
+      
 
 
       <section class="editorial-panel" id="fee-public-accounting-note">
@@ -825,7 +830,7 @@ body.fee-editorial main a:hover{
 <p class="fee-ph">抱き合わせ・代行徴収</p>
 <div class="fee-pli">学校徴収金と同一口座・同一案内</div>
 <div class="fee-pli">委任契約なき代理（無権代理）</div>
-<div class="fee-pli">公私会計の混同</div>
+<div class="fee-pli">学校側の事務権限・服務・決裁</div>
 <div class="fee-pli">事実上の強制徴収</div>
 <span class="fee-verdict">✗ 問題</span>
 </div>
@@ -833,7 +838,7 @@ body.fee-editorial main a:hover{
 </div>
 <div class="fee-foot">
 <p class="fee-concl">問題は「金額」ではなく、<em>学校の徴収手続にPTA会費が混ざること</em>。</p>
-<p class="fee-src">出典：民法113条／地方財政法4条の5／文科省 学校徴収金ガイドライン</p>
+<p class="fee-src">確認条文：民法521条・522条／個人情報保護法61条・69条／学校側の会計・服務規程／文科省 学校徴収金ガイドライン</p>
 </div>
 </div>
 </figure>
@@ -922,9 +927,9 @@ body.fee-editorial main a:hover{
 <div class="fee-body">
 <div class="fee-flow">
 <div class="fee-rail" style="background:linear-gradient(180deg,#f2a73c,#ee6b58,#9a79ea)"></div>
-<div class="fee-node" style="--c:#f2a73c"><div class="fee-badge">1</div><div class="fee-ntxt"><span class="fee-nname">無権代理 ― 委任契約なき代理徴収</span><span class="fee-law">民法113条</span><span class="fee-nsub">徴収業務の委任がなければ無権代理として効果の帰属が争点。</span></div></div>
-<div class="fee-node" style="--c:#ee6b58"><div class="fee-badge">2</div><div class="fee-ntxt"><span class="fee-nname">公私会計の混同</span><span class="fee-nsub">学校徴収金（準公金）とPTA会費（私費）の区別が消える。</span></div></div>
-<div class="fee-node" style="--c:#9a79ea"><div class="fee-badge">3</div><div class="fee-ntxt"><span class="fee-nname">割当寄付の禁止に抵触</span><span class="fee-law">地方財政法4条の5</span><span class="fee-nsub">全世帯一律の事実上の強制は、割当的寄付に接近する。</span></div></div>
+<div class="fee-node" style="--c:#f2a73c"><div class="fee-badge">1</div><div class="fee-ntxt"><span class="fee-nname">会員関係と会費債務の確認</span><span class="fee-law">民法521条・522条</span><span class="fee-nsub">加入申込み、承諾、会則上の会費額と徴収対象者を先に確認。</span></div></div>
+<div class="fee-node" style="--c:#ee6b58"><div class="fee-badge">2</div><div class="fee-ntxt"><span class="fee-nname">公私会計の混同</span><span class="fee-nsub">学校が私的団体会費を扱う根拠、担当、責任範囲を確認。</span></div></div>
+<div class="fee-node" style="--c:#9a79ea"><div class="fee-badge">3</div><div class="fee-ntxt"><span class="fee-nname">学校保有口座情報の利用根拠</span><span class="fee-law">個人情報保護法61条・69条</span><span class="fee-nsub">学校徴収金用に取得した情報をPTA会費へ使う根拠を確認。</span></div></div>
 </div>
 </div>
 <div class="fee-foot">
@@ -983,13 +988,13 @@ body.fee-editorial main a:hover{
 </div>
 <div class="fee-probs">
 <div class="fee-prob"><b>学校徴収金と同口座・同案内</b><span>個人情報保護法／公私混同</span></div>
-<div class="fee-prob"><b>委任契約なき代理徴収（無権代理）</b><span>民法113条</span></div>
-<div class="fee-prob"><b>勤務時間中の私団体事務</b><span>地方公務員法35条</span></div>
+<div class="fee-prob"><b>加入・会費債務・学校関与の根拠</b><span>民法521条・522条／学校側規程</span></div>
+<div class="fee-prob"><b>校務・服務・決裁の確認</b><span>地方公務員法35条／自治体規程</span></div>
 </div>
 </div>
 <div class="fee-foot">
-<p class="fee-concl">学校が私的団体PTAの会費を代行徴収する構造は、<em>委任契約・会計・服務の三方向</em>で法的問題を抱える。</p>
-<p class="fee-src">出典：民法113条／個人情報保護法／地方公務員法35条</p>
+<p class="fee-concl">学校がPTA会費の徴収へ関与する場合は、<em>加入契約・情報利用・校務服務・会計区分</em>を別々に確認する。</p>
+<p class="fee-src">確認条文・規程：民法521条・522条／個人情報保護法61条・69条／地方公務員法35条／自治体会計規程</p>
 </div>
 </div>
 </figure>
@@ -1029,7 +1034,7 @@ body.fee-editorial main a:hover{
               <div class="dc-node-name">保護者は何がPTA会費か分からない</div>
             </div>
           </div>
-          <div class="dc-problem">⚠️ この構造では保護者にとって「学校への支払い」と「PTA会費」の区別が不可能になり、事実上の強制加入・強制徴収となります。</div>
+          <div class="dc-problem">学校徴収金とPTA会費が同じ通知・口座・未納管理に入ると、保護者が両者を区別しにくくなります。徴収主体、会員確認、情報利用、会計責任を文書で分ける必要があります。</div>
         </div>
 
         <p>確認すべき点は三つです。第一に、PTAが誰を会員として会費を請求しているか。第二に、学校がどの決裁と権限に基づいて徴収・保管・未納管理をしているか。第三に、学校徴収金とPTA会費が、通知、口座、帳簿、未納者情報、監査で明確に分離されているかです。</p>
@@ -1061,18 +1066,18 @@ body.fee-editorial main a:hover{
 <figure class="fee-fig" role="img" aria-label="文科省ガイドラインが示す2つの道">
 <div class="fee">
 <span class="fee-cnr tl"></span><span class="fee-cnr tr"></span><span class="fee-cnr bl"></span><span class="fee-cnr br"></span>
-<div class="fee-head"><span class="fee-kick"><i></i>会費徴収</span><div class="fee-title">文科省ガイドラインが示す <em>「2つの道」</em></div></div>
+<div class="fee-head"><span class="fee-kick"><i></i>会費徴収</span><div class="fee-title">2025年通知が示す <em>学校徴収金の整理</em></div></div>
 <div class="fee-body">
 <div class="fee-bhead">学校徴収金の徴収・管理（文科省ガイドライン）</div>
 <div class="fee-branches">
-<div class="fee-branch ok"><h4>公会計化</h4><p>給食費等は自治体の歳入へ。</p><span class="fee-tag">✓ 適切な種目</span></div>
-<div class="fee-branch ok"><h4>直接納付（直接購入）</h4><p>PTA会費はPTAが独自に集める。</p><span class="fee-tag">✓ PTAはこちら</span></div>
-<div class="fee-branch ng"><h4>PTA会費を公会計化</h4><p>私的団体の会費は公金化できない。</p><span class="fee-tag">✗ 不可</span></div>
+<div class="fee-branch ok"><h4>公会計化</h4><p>対象となる学校徴収金を地方公共団体の会計で扱う。</p><span class="fee-tag">学校徴収金の選択肢</span></div>
+<div class="fee-branch ok"><h4>学校を経由しない直接支払</h4><p>保護者と業者等の間で直接支払う。</p><span class="fee-tag">学校徴収金の選択肢</span></div>
+<div class="fee-branch ng"><h4>PTA会費</h4><p>この通知の直接対象ではないため、加入、徴収主体、情報利用、会計区分を別に確認する。</p><span class="fee-tag">別途根拠確認</span></div>
 </div>
 </div>
 <div class="fee-foot">
-<p class="fee-concl">PTAは私的団体ゆえ公会計化の対象外。ガイドラインの文言どおりなら、<em>学校による代行徴収は廃止し、独自徴収へ移行</em>すべき。</p>
-<p class="fee-src">出典：文科省「学校給食費等の徴収等の公会計化等の推進について（ガイドライン）」2019</p>
+<p class="fee-concl">2025年通知はPTA会費を直接規律するものではない。学校教育に必要な費用ですら学校外へ移す政策方向と比較し、PTA会費への学校関与は<em>別個の根拠と記録</em>を確認する。</p>
+<p class="fee-src">出典：文部科学省「学校徴収金の公会計化等の取組の一層の推進について」2025年4月30日</p>
 </div>
 </div>
 </figure>
@@ -1085,19 +1090,19 @@ body.fee-editorial main a:hover{
             <thead>
               <tr>
                 <th>比較項目</th>
-                <th>学校徴収金（学校預り金）</th>
+                <th>学校が扱う教育活動関係費</th>
                 <th>PTA会費</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>会計の性質</td>
-                <td class="ok">準公金（学校が管理責任）</td>
+                <td class="ok">費目・制度により公会計、私費会計、直接支払等に分かれる</td>
                 <td>私金（PTAという私的団体の資金）</td>
               </tr>
               <tr>
                 <td>徴収の根拠</td>
-                <td class="ok">教育活動への使用・児童への直接還元</td>
+                <td class="ok">対象となる教育活動、購入又はサービスとの関係</td>
                 <td>任意加入の団体運営費（強制根拠なし）</td>
               </tr>
               <tr>
@@ -1107,12 +1112,12 @@ body.fee-editorial main a:hover{
               </tr>
               <tr>
                 <td>支払義務</td>
-                <td class="ok">在籍する全児童に関係</td>
+                <td class="ok">費目、対象者、購入・参加の条件による</td>
                 <td class="ng">入会届提出者のみ（任意）</td>
               </tr>
               <tr>
                 <td>学校による管理</td>
-                <td class="ok">学校の責任下で管理可能</td>
+                <td class="ok">自治体の制度・規程・費目に応じて管理主体を確認</td>
                 <td class="ng">原則としてPTA自身が管理すべき</td>
               </tr>
               <tr>
@@ -1172,11 +1177,11 @@ body.fee-editorial main a:hover{
         <div class="section-eyebrow">適正化の手順</div>
         <h2>抱き合わせ徴収から適正化への移行</h2>
 
-        <p>最も構造が明確なのは、PTAが加入者本人から必要な情報を取得し、自ら会費を請求・徴収する完全分離です。学校が関与する例外的な運用を残す場合は、学校側とPTA側の根拠を別々に文書化する必要があります。</p>
+        <p>最も構造が明確なのは、PTAが加入者本人から必要な情報を取得し、自ら会費を請求・徴収する方式です。学校関与を残す場合は、PTA側の加入・会費債務と、学校側の情報利用・校務・服務・決裁・会計の根拠を別々に文書化します。</p>
 
         <div class="transition-options">
           <div class="trans-card recommended">
-            <div class="trans-label">✅ 推奨 — 完全分離</div>
+            <div class="trans-label">基本方式 — PTAによる直接徴収</div>
             <h4>PTAによる独自徴収</h4>
             <div class="trans-item"><span class="trans-check">✓</span>PTAが専用口座を開設し、入会届提出者に直接振込を依頼</div>
             <div class="trans-item"><span class="trans-check">✓</span>コンビニ払い・スマホ決済・集金アプリ等を活用</div>
@@ -1185,7 +1190,7 @@ body.fee-editorial main a:hover{
             <div class="trans-item"><span class="trans-check">✓</span>学校保有口座情報の流用、学校未納管理、公私混在の問題を避けやすい</div>
           </div>
           <div class="trans-card acceptable">
-            <div class="trans-label">⚠️ 経過措置 — 条件付き委託</div>
+            <div class="trans-label">学校関与を残す場合 — 条件確認</div>
             <h4>学校への委託（要件充足が必要）</h4>
             <div class="trans-item"><span class="trans-check">△</span>PTA独自の入会届で加入意思を確認</div>
             <div class="trans-item"><span class="trans-check">△</span>本人がPTAに対して学校関与の徴収方法を選択した記録と、学校側の情報利用根拠を分けて確認</div>
