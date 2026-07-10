@@ -37,7 +37,7 @@ function walk(dir) {
     const rel = path.relative(ROOT, filePath).replace(/\\/g, '/');
     const text = fs.readFileSync(filePath, 'utf8');
 
-    if (!text.includes('site.js')) return;
+    if (!text.includes('site.js')) continue;
 
     SITE_JS_PATTERN.lastIndex = 0;
     const versions = [];
@@ -48,7 +48,7 @@ function walk(dir) {
 
     if (versions.length === 0) {
       noVersionRefs.push(rel);
-      return;
+      continue;
     }
 
     const hasExpected = EXPECTED_PATTERN.test(text);
