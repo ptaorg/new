@@ -48,3 +48,5 @@ jobs:
           git add proper-management.html
           git commit -m "Remove unnecessary fee-zero framing" || exit 0
           git push
+
+# trigger
