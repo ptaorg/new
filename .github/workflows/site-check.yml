@@ -28,6 +28,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Allow repeated membership labels
+        run: python tools/relax-membership-patch-20260710.py
+
       - name: Refine membership page
         run: python tools/refine-membership-page-20260710.py
 
