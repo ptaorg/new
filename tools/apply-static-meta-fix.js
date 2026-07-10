@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const fs=require('fs');
-const targets=['timeline.html','shizuoka-incident.html','guideline.html','compliance.html'];
+const targets=['timeline.html','guideline.html','compliance.html'];
 const IMG='https://ptaorg.com/assets/og-image-popc-en.png';
 const ALT='PTA適正化推進委員会';
 function beforeHead(html,frag){if(!/<\/head>/i.test(html))throw new Error('missing head');return html.replace(/<\/head>/i,frag+'\n</head>')}
