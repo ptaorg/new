@@ -734,6 +734,12 @@ html,body{overflow-x:hidden!important}
 .page-hero--photo h1 em{color:#f4e7a6!important}
 @media(max-width:760px){.page-hero--photo{min-height:300px!important}.page-hero--photo .page-hero-bg-img img{min-height:300px!important}.page-hero--photo> :not(.page-hero-bg-img),.page-hero--photo .page-hero-inner,.page-hero--photo .issue-hero-inner,.page-hero--photo .journal-hero-inner{width:min(calc(100% - 28px),1080px)!important;padding-top:44px!important;padding-bottom:52px!important}}
 </style>
+
+<style id="membership-editorial-fix">
+.issue-hero-inner{grid-template-columns:minmax(0,1fr)!important;max-width:920px!important}
+.issue-hero-toc{display:none!important}
+.issue-hero-eyebrow,.section-eyebrow{text-transform:none!important;letter-spacing:.03em!important;border-radius:3px!important}
+</style>
 </head>
 <body>
 
@@ -882,12 +888,12 @@ html,body{overflow-x:hidden!important}
     </div>
     <div class="issue-hero-inner">
       <div>
-        <div class="issue-hero-eyebrow">📋 Issue 01 — Membership</div>
+        <div class="issue-hero-eyebrow">論点1　入会手続</div>
         <h1>入会手続と<br>オプトアウト問題</h1>
-        <p>任意団体への加入は、申込みと承諾を確認できることが基本です。「拒否しなければ加入」というオプトアウト方式・みなし加入だけで直ちに契約が無効になるとは限らず、会費納入などから黙示の合意が認定される場合もあります。後から追認・既成事実化されたと評価されないよう、加入意思、会費、個人情報利用を分けて記録することが重要です。</p>
+        <p>学校への入学や在籍、PTAからの一方的な通知、保護者の沈黙だけでは、PTAへの加入は成立しません。PTAが会員関係を主張するには、本人による加入の申込みとPTAによる承諾を客観的に確認できる必要があります。個別の紛争で事後の行為が争点になることと、恒常的な加入制度を黙示の合意で運用することは別問題です。制度として採用できるのは、本人が積極的に申し込むオプトイン方式です。</p>
       </div>
       <div class="issue-hero-toc">
-        <div class="toc-label">このページの構成</div>
+        <div class="toc-label">目次</div>
         <a href="#overview" class="toc-link"><span class="toc-link-num">1</span>問題の全体像</a>
         <a href="#civil-law" class="toc-link"><span class="toc-link-num">2</span>民法上の成立要件</a>
         <a href="#consumer" class="toc-link"><span class="toc-link-num">3</span>消費者契約法上の論点</a>
@@ -932,8 +938,8 @@ html,body{overflow-x:hidden!important}
       <!-- ===== 図解：オプトイン/オプトアウト ===== -->
       <section class="issue-section" style="margin-bottom:48px">
         <div class="section-eyebrow">図解</div>
-        <h2>「有効」と「無効」——入会同意の2つのルート</h2>
-<figure class="mb-fig" role="img" aria-label="有効（オプトイン）と無効（オプトアウト）の2ルート">
+        <h2>オプトインで成立を確認し、オプトアウトでは成立を推定しない</h2>
+<figure class="mb-fig" role="img" aria-label="成立を確認できるオプトインと、成立を推定できないオプトアウトの対比">
 <style>
 .mb-fig{margin:30px auto;max-width:880px}
 .mb{--ink:#070f20;--navy:#0d1c38;--navy-2:#13294b;--sub:#a6b6cd;--grn:#33b07a;--red:#e2584d;position:relative;border-radius:8px;overflow:hidden;color:#fff;font-family:'Noto Sans JP',sans-serif;background:radial-gradient(85% 55% at 8% -8%,rgba(51,176,122,.14),transparent 55%),radial-gradient(80% 55% at 95% 108%,rgba(226,88,77,.14),transparent 55%),linear-gradient(155deg,var(--ink),var(--navy) 62%,var(--navy-2));box-shadow:0 28px 56px -30px rgba(0,0,0,.75)}
@@ -999,9 +1005,9 @@ html,body{overflow-x:hidden!important}
 <p class="mb-ph">オプトアウト（みなし加入）</p>
 <div class="mb-pli">入学＝自動的に会員扱い</div>
 <div class="mb-pli">沈黙を承諾とみなす条項</div>
-<div class="mb-pli">契約は成立していない</div>
-<div class="mb-pli">消費者契約法上も無効の可能性</div>
-<span class="mb-verdict">✗ 法的に無効</span>
+<div class="mb-pli">沈黙だけでは契約成立を確認できない</div>
+<div class="mb-pli">消費者契約法上の不当条項・不当勧誘も問題となる</div>
+<span class="mb-verdict">✗ 加入制度として採用できない</span>
 </div>
 </div>
 </div>
@@ -1012,7 +1018,7 @@ html,body{overflow-x:hidden!important}
 </div>
 </figure>
 
-        <p>入会手続では、保護者の意思確認がどのように記録されているかを確認します。書面だけでなく、その後の会費納入や活動参加を含む具体的事情も契約成立の判断材料になり得ます。</p>
+        <p>入会手続では、保護者の意思確認がどのように記録されているかを確認します。個別の紛争では事後の行為が主張されることがありますが、それは恒常的な加入制度を黙示の合意で代替できることを意味しません。</p>
 
         <svg width="100%" viewBox="0 0 720 340" role="img" style="max-width:720px;display:block;margin:24px auto 6px">
           <title>オプトインと、成立根拠の確認を要するオプトアウトの対比図</title>
@@ -1130,7 +1136,7 @@ html,body{overflow-x:hidden!important}
             </div>
             <div class="domino-body">
               <strong>沈黙した保護者は「会員」とされ会費が徴収される</strong>
-              <p>沈黙だけを承諾と扱うことには成立根拠の説明が必要です。一方、会費納入などの具体的事情から黙示の合意が認定される場合もあるため、申込みと承諾を記録します。</p>
+              <p>沈黙や未提出は承諾の意思表示ではありません。会費納入等が個別紛争で争点になることはあっても、PTAが全保護者を一律に会員と扱う制度上の根拠にはなりません。申込みと承諾を、加入時点で客観的に記録する必要があります。</p>
               <span class="domino-law">民法 522条・703条</span>
             </div>
           </div>
@@ -1139,8 +1145,8 @@ html,body{overflow-x:hidden!important}
               <div class="domino-dot result">✗</div>
             </div>
             <div class="domino-body">
-              <strong>結論：オプトアウト方式は制度として物理的・法的に成立しない</strong>
-              <p>適法なアプローチの起点（個人情報の取得）が不可能な以上、オプトアウト方式は実施プロセスの最初の段階から崩壊している。</p>
+              <strong>結論：オプトアウト方式はPTAの加入制度として採用できない</strong>
+              <p>学校在籍者全員の情報を先に利用し、拒否しない人を会員と扱うオプトアウト方式は、加入意思と情報取得の双方で根拠を欠きます。PTAが加入者本人から申込みと必要情報を直接取得するオプトイン方式へ改める必要があります。</p>
             </div>
           </div>
         </div>
@@ -1208,7 +1214,7 @@ html,body{overflow-x:hidden!important}
 <div class="mb-step" style="--c:#4e9be0"><div class="mb-snum">3</div><div class="mb-sname">契約成立</div><div class="mb-sdesc">会員関係が発生する（民法522条）。</div></div>
 <div class="mb-step" style="--c:#25b9a6"><div class="mb-snum">4</div><div class="mb-sname">会費の根拠</div><div class="mb-sdesc">契約にもとづき正当に徴収できる。</div></div>
 </div>
-<div class="mb-callout">※ 契約成立には申込みと承諾の合致が必要です。書面がなくても具体的事情から黙示の合意が認定される場合があるため、加入意思と会費納入を記録します。</div>
+<div class="mb-callout">※ 契約成立には申込みと承諾の合致が必要です。個別紛争で黙示の合意が主張されることはあっても、PTAの恒常的な加入制度をそれに依存させることはできません。加入時点で、本人の申込みとPTAの承諾を客観的に記録します。</div>
 </div>
 <div class="mb-foot">
 <p class="mb-src">出典：民法522条（契約の成立）・703条（不当利得）</p>
