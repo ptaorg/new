@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'tools/patch-guideline-accuracy-editorial-20260710.py'
+      - '.github/workflows/patch-guideline-accuracy-editorial-20260710.yml'
 
 permissions:
   contents: write
