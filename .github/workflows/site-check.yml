@@ -23,14 +23,6 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Refine claim evidence ledger
-        run: python tools/refine-claim-evidence-ledger-20260710.py
-
       - name: Install dependencies if package metadata is present
         run: |
           if [ -f package-lock.json ]; then
@@ -41,18 +33,23 @@ jobs:
             echo "No package.json found; skipping dependency install."
           fi
 
+      - name: Regenerate search index and sitemap
+        run: |
+          npm run generate:search
+          npm run generate:sitemap
+
       - name: Run site checks
         run: npm test
 
-      - name: Commit claim evidence ledger
+      - name: Commit generated files
         if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          git add claim-evidence-ledger.html
+          git add data/site-search-index.js sitemap.xml
           if git diff --cached --quiet; then
-            echo "No ledger changes"
+            echo "Generated files already current"
           else
-            git commit -m "Refine claim evidence ledger"
+            git commit -m "Synchronize search index and sitemap"
             git push
           fi
