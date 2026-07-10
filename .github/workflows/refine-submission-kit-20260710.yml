@@ -26,38 +26,30 @@ jobs:
           html_path = Path('submission-kit.html')
           html = html_path.read_text(encoding='utf-8')
 
-          replacements = {
-          '''3　学校が保有する児童・保護者情報をPTAへ提供している場合の提供項目、同意取得方法、提供記録の有無
-          4　教職員が勤務時間中に行っているPTA関連事務の内容及び校務分掌上の位置づけ
-          5　学校ホームページ、配信アプリ、学校施設、学校備品をPTA内部事務に使用している場合の取扱い''':
-          '''3　学校が保有する児童・保護者情報を、PTA会員管理、会費徴収、役員選出等のために学校自身が利用している場合の利用目的、所掌事務・業務、根拠及び利用記録
-          4　学校が保有する児童・保護者情報をPTAへ提供している場合の提供項目、提供先、根拠、同意取得方法及び提供記録
-          5　教職員が勤務時間中に行っているPTA関連事務の内容、校務としての位置づけ、職務命令、職専免又は兼職兼業等の根拠
-          6　学校ホームページ、配信アプリ、学校施設、学校備品をPTA内部事務に使用している場合の取扱い''',
-          '''PTA会費は、学校徴収金とは異なり、任意団体であるPTAの会費です。入会意思、会費額、請求主体、支払方法、退会・非加入時の取扱いを明確にするため、次の点について分離又は資料確認をお願いします。
+          replacements = [
+              ('3　学校が保有する児童・保護者情報をPTAへ提供している場合の提供項目、同意取得方法、提供記録の有無',
+               '3　学校が保有する児童・保護者情報を、PTA会員管理、会費徴収、役員選出等のために学校自身が利用している場合の利用目的、所掌事務・業務、根拠及び利用記録\n4　学校が保有する児童・保護者情報をPTAへ提供している場合の提供項目、提供先、根拠、同意取得方法及び提供記録'),
+              ('4　教職員が勤務時間中に行っているPTA関連事務の内容及び校務分掌上の位置づけ',
+               '5　教職員が勤務時間中に行っているPTA関連事務の内容、校務としての位置づけ、職務命令、職専免又は兼職兼業等の根拠'),
+              ('5　学校ホームページ、配信アプリ、学校施設、学校備品をPTA内部事務に使用している場合の取扱い',
+               '6　学校ホームページ、配信アプリ、学校施設、学校備品をPTA内部事務に使用している場合の取扱い'),
+              ('PTA会費は、学校徴収金とは異なり、任意団体であるPTAの会費です。入会意思、会費額、請求主体、支払方法、退会・非加入時の取扱いを明確にするため、次の点について分離又は資料確認をお願いします。',
+               'PTA会費は、学校徴収金とは異なり、任意団体であるPTAの会費です。入会意思、会費額、請求主体、支払方法、退会・非加入時の取扱いを明確にするため、次の点について分離又は資料確認をお願いします。\n\n文部科学省の2025年通知は、学校給食費以外の学校徴収金について、公会計化して地方公共団体が徴収・管理する方法だけでなく、保護者が業者等へ直接支払い、学校を経由しない方法も示しています。この通知はPTA会費を直接規律するものではありませんが、学校教育に必要な費用ですら学校外へ移す政策方向を示す重要な資料です。'),
+              ('1　PTAへ提供又は共有している情報項目',
+               '1　学校がPTA会員管理、会費徴収、役員選出等のために学校保有情報を自ら利用している場合の情報項目、利用目的、所掌事務・業務及び利用記録\n2　PTAへ提供又は共有している情報項目、提供先及び提供方法'),
+              ('2　学校側の利用目的及びPTA側の利用目的',
+               '3　個人情報保護法第61条・第69条に基づく利用又は提供の根拠'),
+              ('3　本人又は保護者の同意取得方法、同意しない場合の除外・マスキング方法',
+               '4　本人又は保護者の同意取得方法、同意しない場合の除外・マスキング方法'),
+              ('4　提供記録、管理責任者、保管期間、廃棄方法',
+               '5　利用・提供記録、管理責任者、保管期間、廃棄方法'),
+              ('5　学校配信アプリ、学校メール、学校HPをPTA内部事務に使う場合の基準',
+               '6　学校配信アプリ、学校メール、学校HPをPTA内部事務に使う場合の基準'),
+              ('<tr><td>個人情報</td><td>名簿提供記録、同意書、利用目的通知、学校アプリ配信文。</td><td>学校保有情報とPTA会員管理・地区班・当番表の接続を確認する。</td></tr>',
+               '<tr><td>個人情報</td><td>学校側の利用記録、名簿提供記録、同意書、利用目的通知、学校アプリ配信文。</td><td>学校自身による目的外利用と、学校からPTAへの提供を分け、学校保有情報とPTA会員管理・地区班・当番表の接続を確認する。</td></tr>')
+          ]
 
-          1　学校徴収金通知''':
-          '''PTA会費は、学校徴収金とは異なり、任意団体であるPTAの会費です。入会意思、会費額、請求主体、支払方法、退会・非加入時の取扱いを明確にするため、次の点について分離又は資料確認をお願いします。
-
-          文部科学省の2025年通知は、学校給食費以外の学校徴収金について、公会計化して地方公共団体が徴収・管理する方法だけでなく、保護者が業者等へ直接支払い、学校を経由しない方法も示しています。この通知はPTA会費を直接規律するものではありませんが、学校教育に必要な費用ですら学校外へ移す政策方向を示す重要な資料です。
-
-          1　学校徴収金通知''',
-          '''1　PTAへ提供又は共有している情報項目
-          2　学校側の利用目的及びPTA側の利用目的
-          3　本人又は保護者の同意取得方法、同意しない場合の除外・マスキング方法
-          4　提供記録、管理責任者、保管期間、廃棄方法
-          5　学校配信アプリ、学校メール、学校HPをPTA内部事務に使う場合の基準''':
-          '''1　学校がPTA会員管理、会費徴収、役員選出等のために学校保有情報を自ら利用している場合の情報項目、利用目的、所掌事務・業務及び利用記録
-          2　PTAへ提供又は共有している情報項目、提供先及び提供方法
-          3　個人情報保護法第61条・第69条に基づく利用又は提供の根拠
-          4　本人又は保護者の同意取得方法、同意しない場合の除外・マスキング方法
-          5　利用・提供記録、管理責任者、保管期間、廃棄方法
-          6　学校配信アプリ、学校メール、学校HPをPTA内部事務に使う場合の基準''',
-          '''<tr><td>個人情報</td><td>名簿提供記録、同意書、利用目的通知、学校アプリ配信文。</td><td>学校保有情報とPTA会員管理・地区班・当番表の接続を確認する。</td></tr>''':
-          '''<tr><td>個人情報</td><td>学校側の利用記録、名簿提供記録、同意書、利用目的通知、学校アプリ配信文。</td><td>学校自身による目的外利用と、学校からPTAへの提供を分け、学校保有情報とPTA会員管理・地区班・当番表の接続を確認する。</td></tr>'''
-          }
-
-          for old, new in replacements.items():
+          for old, new in replacements:
               count = html.count(old)
               if count != 1:
                   raise SystemExit(f'HTML marker count {count}: {old[:80]}')
@@ -67,69 +59,24 @@ jobs:
 
           css_path = Path('css/submission-kit.css')
           css = css_path.read_text(encoding='utf-8')
+          marker = '/* Editorial, sequential layout — 2026-07-10 */'
+          if marker in css:
+              raise SystemExit('Editorial CSS already present')
           css += '''
 
 /* Editorial, sequential layout — 2026-07-10 */
-.submission-main .submission-wrap{
-  width:min(calc(100% - 40px),920px);
-}
-.submission-main .submission-links{
-  display:none;
-}
-.submission-main .submission-body{
-  padding:58px 0 92px;
-}
-.submission-main .submission-section{
-  margin:0;
-  padding:38px 0 46px;
-  background:transparent;
-  border:0;
-  border-top:1px solid #cfd8e2;
-  border-radius:0;
-  box-shadow:none;
-}
-.submission-main .submission-section:first-child{
-  border-top:2px solid #17324f;
-}
-.submission-main .submission-section h2{
-  padding:0 0 11px;
-  border-left:0;
-  border-bottom:2px solid #17324f;
-}
-.submission-main .submission-grid,
-.submission-main .submission-source-list{
-  display:block;
-}
-.submission-main .submission-card,
-.submission-main .submission-source-list a{
-  margin:0;
-  padding:18px 0;
-  background:transparent;
-  border:0;
-  border-bottom:1px solid #dbe4ee;
-  border-radius:0;
-  box-shadow:none;
-}
-.submission-main .submission-table-wrap,
-.submission-main .submission-template{
-  border-radius:0;
-  box-shadow:none;
-}
-.submission-main .submission-template{
-  background:#f8fafc;
-}
-.submission-main main a:hover{
-  transform:none;
-  box-shadow:none;
-}
-@media(max-width:820px){
-  .submission-main .submission-wrap{
-    width:min(calc(100% - 30px),920px);
-  }
-  .submission-main .submission-section{
-    padding:32px 0 38px;
-  }
-}
+.submission-main .submission-wrap{width:min(calc(100% - 40px),920px)}
+.submission-main .submission-links{display:none}
+.submission-main .submission-body{padding:58px 0 92px}
+.submission-main .submission-section{margin:0;padding:38px 0 46px;background:transparent;border:0;border-top:1px solid #cfd8e2;border-radius:0;box-shadow:none}
+.submission-main .submission-section:first-child{border-top:2px solid #17324f}
+.submission-main .submission-section h2{padding:0 0 11px;border-left:0;border-bottom:2px solid #17324f}
+.submission-main .submission-grid,.submission-main .submission-source-list{display:block}
+.submission-main .submission-card,.submission-main .submission-source-list a{margin:0;padding:18px 0;background:transparent;border:0;border-bottom:1px solid #dbe4ee;border-radius:0;box-shadow:none}
+.submission-main .submission-table-wrap,.submission-main .submission-template{border-radius:0;box-shadow:none}
+.submission-main .submission-template{background:#f8fafc}
+.submission-main main a:hover{transform:none;box-shadow:none}
+@media(max-width:820px){.submission-main .submission-wrap{width:min(calc(100% - 30px),920px)}.submission-main .submission-section{padding:32px 0 38px}}
 '''
           css_path.write_text(css, encoding='utf-8')
           PY
@@ -143,4 +90,4 @@ jobs:
           git commit -m "Refine submission kit content and layout" || exit 0
           git push
 
-# trigger
+# trigger 2
