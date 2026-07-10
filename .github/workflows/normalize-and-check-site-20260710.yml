@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/normalize-and-check-site-20260710.yml'
+      - '.github/site-check-trigger-20260710'
 
 permissions:
   contents: write
