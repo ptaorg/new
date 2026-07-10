@@ -28,11 +28,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Allow repeated membership labels
-        run: python tools/relax-membership-patch-20260710.py
-
-      - name: Refine membership page
-        run: python tools/refine-membership-page-20260710.py
+      - name: Apply residual membership cleanup
+        run: python tools/fix-membership-residual-20260710.py
 
       - name: Install dependencies if package metadata is present
         run: |
@@ -52,15 +49,15 @@ jobs:
       - name: Run site checks
         run: npm test
 
-      - name: Commit membership page
+      - name: Commit residual membership cleanup
         if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
           git add membership.html data/site-search-index.js sitemap.xml
           if git diff --cached --quiet; then
-            echo "No membership changes"
+            echo "No residual membership changes"
           else
-            git commit -m "Align membership page with contract and evidence framework"
+            git commit -m "Complete membership page cleanup"
             git push
           fi
