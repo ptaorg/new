@@ -1,1 +1,0 @@
-trigger journal index simplification 2026-07-10
