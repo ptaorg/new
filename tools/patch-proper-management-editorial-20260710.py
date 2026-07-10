@@ -1,5 +1,6 @@
 from pathlib import Path
 
+# workflow trigger
 path = Path(__file__).resolve().parents[1] / "proper-management.html"
 text = path.read_text(encoding="utf-8")
 
