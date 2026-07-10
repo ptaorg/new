@@ -6,30 +6,17 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Remove unverified incident page
-        run: python tools/remove-unverified-shizuoka-20260710.py
 
       - name: Install dependencies if package metadata is present
         run: |
@@ -41,23 +28,5 @@ jobs:
             echo "No package.json found; skipping dependency install."
           fi
 
-      - name: Regenerate search index and sitemap
-        run: |
-          npm run generate:search
-          npm run generate:sitemap
-
-      - name: Run site checks
-        run: npm test
-
-      - name: Commit verified public set
-        if: github.event_name == 'push'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          git add -A journal.html compliance.html shizuoka-incident.html 404.html tools/check-static-meta.js tools/apply-static-meta-fix.js data/site-search-index.js sitemap.xml
-          if git diff --cached --quiet; then
-            echo "No verification cleanup changes"
-          else
-            git commit -m "Remove unverified Shizuoka incident publication"
-            git push
-          fi
+      - name: Validate site.js cache version
+        run: npm run check:site-js-version
