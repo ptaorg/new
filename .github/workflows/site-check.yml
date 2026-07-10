@@ -41,21 +41,23 @@ jobs:
             echo "No package.json found; skipping dependency install."
           fi
 
-      - name: Regenerate site search index
-        run: npm run generate:search
+      - name: Regenerate generated files
+        run: |
+          npm run generate:sitemap
+          npm run generate:search
 
       - name: Run all checks
         run: npm run check:all
 
-      - name: Commit guidebook and search index
+      - name: Commit guidebook and generated files
         if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add 'PTA運営適正化ガイドブック_第4版_改訂本文.html' data/site-search-index.js
+          git add 'PTA運営適正化ガイドブック_第4版_改訂本文.html' sitemap.xml data/site-search-index.js
           if git diff --cached --quiet; then
-            echo "No guidebook or search-index changes"
+            echo "No guidebook or generated-file changes"
           else
-            git commit -m "Synchronize guidebook contents and site search index"
+            git commit -m "Synchronize guidebook contents and generated indexes"
             git push
           fi
