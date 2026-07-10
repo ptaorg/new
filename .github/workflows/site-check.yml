@@ -28,8 +28,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Refine audit and page metadata
-        run: python tools/refine-audit-and-metadata-20260710.py
+      - name: Apply residual audit fix
+        run: python tools/fix-audit-residual-20260710.py
 
       - name: Install dependencies if package metadata is present
         run: |
@@ -49,15 +49,15 @@ jobs:
       - name: Run site checks
         run: npm test
 
-      - name: Commit audit and metadata updates
+      - name: Commit residual audit fix
         if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          git add audit/index.html audit/check-app.js research-index.html key-materials.html data/site-search-index.js sitemap.xml
+          git add audit/index.html audit/check-app.js data/site-search-index.js sitemap.xml
           if git diff --cached --quiet; then
-            echo "No audit or metadata changes"
+            echo "No residual audit changes"
           else
-            git commit -m "Simplify audit interface and align metadata"
+            git commit -m "Complete audit wording cleanup"
             git push
           fi
