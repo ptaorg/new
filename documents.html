@@ -176,6 +176,24 @@ body.documents-editorial main a:hover{
   }
 }
 </style>
+
+<style id="documents-final-index-20260710">
+body.documents-editorial .doc-sec.featured-pack,
+body.documents-editorial .doc-pack-layout,
+body.documents-editorial .doc-pack-grid,
+body.documents-editorial .doc-pack-card,
+body.documents-editorial .doc-diagram{display:none!important}
+body.documents-editorial .doc-index{max-width:920px!important}
+body.documents-editorial .doc-sec>p{max-width:780px!important}
+body.documents-editorial .doc-item,
+body.documents-editorial .doc-item.gold{
+  grid-template-columns:minmax(220px,280px) minmax(0,1fr)!important;
+}
+@media(max-width:760px){
+  body.documents-editorial .doc-item,
+  body.documents-editorial .doc-item.gold{grid-template-columns:1fr!important}
+}
+</style>
 </head>
 <body class="documents-editorial">
 <div aria-label="活動支援のお願い" class="support-strip" role="complementary">
@@ -338,55 +356,21 @@ body.documents-editorial main a:hover{
 </div>
 </section>
 
-<section class="doc-sec featured-pack" id="legal-template-pack">
-<h2>法的根拠から使う文書パック</h2>
-<p>根拠資料、確認事項、提出文書を論点別に対応させています。学校関与、名簿、会費、施設利用の事実を、具体的な文書名で確認するために使用します。</p>
-<div class="doc-item gold" style="margin:16px 0 0"><strong><a href="submission-kit.html" style="color:inherit;text-decoration:none">提出文書キット</a></strong><span>学校・PTA・教育委員会へ出す確認文、会費分離申入書、学校名簿・学校アプリ利用確認書、根拠整理メモを一つにまとめています。</span></div>
-<div class="doc-pack-layout">
-<div class="doc-pack-grid">
-<article class="doc-pack-card">
-<div class="doc-pack-label">入会意思・個人情報</div>
-<strong>加入届・個人情報同意書の3点セット</strong>
-<p>民法522条の申込み・承諾、個人情報保護法の利用目的・第三者提供、横浜市通知のオプトイン整理を一緒に確認します。</p>
-<div class="doc-pack-links"><a href="guideline.html#template-pack">使う順番</a><a href="journal/yokohama-notice-1965.html">横浜市通知</a><a href="privacy.html">個人情報</a><a href="journal/third-party-consent.html">第三者提供同意</a></div>
-</article>
-<article class="doc-pack-card">
-<div class="doc-pack-label">教育委員会・学校照会</div>
-<strong>学校関与を確認する照会書</strong>
-<p>入会申込記録、学校名簿・連絡ツール、PTA会費徴収、教職員の事務従事、学校施設利用を、抽象論ではなく文書名で確認します。</p>
-<div class="doc-pack-links"><a href="guideline.html#tpl-board-inquiry">ひな形</a><a href="guide-board.html#board-executive-brief">確認項目</a><a href="board-responses.html">回答例</a></div>
-</article>
-<article class="doc-pack-card">
-<div class="doc-pack-label">会費徴収・学校徴収金</div>
-<strong>PTA会費徴収分離申入書</strong>
-<p>学校徴収金とPTA会費を同じ文書・同じ口座・同じ未納管理で扱う運用について、学校徴収金公会計化とPTA会計処理通知を踏まえて確認します。</p>
-<div class="doc-pack-links"><a href="guideline.html#tpl-fee-separation">ひな形</a><a href="fee-collection.html">論点解説</a><a href="administrative-materials.html">公式資料</a><a href="journal/work-style-reform.html">働き方改革</a></div>
-</article>
-<article class="doc-pack-card">
-<div class="doc-pack-label">施設利用・職務専念義務</div>
-<strong>PTA活動の校内利用・教職員関与チェック</strong>
-<p>学校教育法137条、社会教育法12条、地方公務員法35条を、印刷・保管・配布・会計・役員兼任などの実務に落として確認します。</p>
-<div class="doc-pack-links"><a href="facilities.html">施設利用</a><a href="personnel.html">教職員関与</a><a href="law-map.html">法制度マップ</a></div>
-</article>
-</div>
-<figure class="doc-diagram">
-<img alt="公式根拠から照会書・申入書へつなぐ流れ" loading="lazy" src="assets/diagrams/source-to-documents.svg"/>
-<figcaption>公式資料を引用して終わらせず、確認事項と提出文書に変換する流れです。</figcaption>
-</figure>
-</div>
-</section>
+
 
 <section class="doc-sec">
-<h2>配布資料・テンプレート</h2>
-<p>そのまま印刷・提出・配布できる形に整えた資料です。</p>
+<h2 id="legal-template-pack">提出文書・書式</h2>
+<p>提出先と確認目的に応じて、必要な文書または書式を直接開けます。</p>
 <div class="doc-grid">
-<a class="doc-item gold" href="submission-kit.html"><strong>提出文書キット</strong><span>学校・PTA・教育委員会への確認文例、会費分離申入書、個人情報確認書、根拠整理メモ。</span></a>
-<a class="doc-item" href="claim-evidence-ledger.html"><strong>主張と根拠の対応表</strong><span>主張、根拠条文、公式資料、実物文書、提出文例を一列につなげ、断定を避けて精度を保つ台帳。</span></a>
-<a class="doc-item gold" href="guide-board.html#board-jp-guideline"><strong>教育委員会・学校管理職向け分離資料</strong><span>学校とPTAの分離原則を整理した行政向けガイドライン本文、通知ひな形、学校別実態調査票（PDF・Excel配布）。</span></a>
-<a class="doc-item" href="PTA運営適正化ガイドブック_第4版_改訂本文.html"><strong>PTA運営適正化ガイドブック 第4版</strong><span>保護者・役員・学校向けの総合ガイドブック本文（HTML版）。</span></a>
-<a class="doc-item" href="PTA運営適正化ガイドブック_第4版_改訂版.pdf"><strong>PTA運営適正化ガイドブック 第4版 PDF</strong><span>印刷・配布・保存用のPDF版。全文を紙面で確認する場合はこちらを使います。</span></a>
-<a class="doc-item" href="guideline.html"><strong>PTA運営適正化ガイドライン・書式テンプレート</strong><span>入会申込書、同意書、通知文など、適正運営に必要な書式のテンプレート集。</span></a>
-<a class="doc-item" href="audit/index.html"><strong>PTA運営チェックアプリ</strong><span>自校・自PTAの運営状況を設問に沿って点検できるセルフチェックツール。</span></a>
+<a class="doc-item gold" href="submission-kit.html"><strong>提出文書キット</strong><span>学校、PTA、教育委員会への確認文例、会費分離申入書、個人情報確認書、根拠整理メモ。</span></a>
+<a class="doc-item" href="guideline.html#tpl-board-inquiry"><strong>学校・教育委員会への確認照会書</strong><span>入会記録、学校保有情報、会費徴収、教職員関与、施設利用について、保有文書と事実関係を確認する書式。</span></a>
+<a class="doc-item" href="guideline.html#tpl-fee-separation"><strong>PTA会費徴収分離申入書</strong><span>学校徴収金とPTA会費の通知、口座、引落し、未納管理を分けるための申入書。</span></a>
+<a class="doc-item" href="guideline.html#template-pack"><strong>入会・個人情報関係の書式</strong><span>入会申込、利用目的の説明、本人同意等を記録する書式を確認。</span></a>
+<a class="doc-item gold" href="guide-board.html#board-jp-guideline"><strong>教育委員会・学校管理職向け分離資料</strong><span>学校とPTAの関与範囲を確認する行政向け本文、通知ひな形、学校別実態調査票。</span></a>
+<a class="doc-item" href="PTA運営適正化ガイドブック_第4版_改訂本文.html"><strong>PTA運営適正化ガイドブック 第4版</strong><span>保護者、役員、学校向けの総合ガイドブック本文。</span></a>
+<a class="doc-item" href="PTA運営適正化ガイドブック_第4版_改訂版.pdf"><strong>PTA運営適正化ガイドブック 第4版 PDF</strong><span>印刷、配布、保存用のPDF版。</span></a>
+<a class="doc-item" href="guideline.html"><strong>PTA運営適正化ガイドライン</strong><span>入会、個人情報、会費、教職員関与、施設利用の確認事項と書式をまとめた実務資料。</span></a>
+<a class="doc-item" href="audit/index.html"><strong>PTA運営チェック</strong><span>現在の運営状況を設問に沿って点検するチェックツール。</span></a>
 </div>
 </section>
 
