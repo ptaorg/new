@@ -1,4 +1,4 @@
-/* site.js v91 — static body preservation
+/* site.js v90 — static body preservation
    重要本文はHTML側を正とし、JavaScriptは補助機能だけを担当する。 */
 (function(){
   var initialPath = location.pathname + location.search;
@@ -110,8 +110,6 @@
 
   var SITE_INDEX = [
     ['トップ', '/index.html', 'PTA適正化推進委員会の全体像'],
-    ['PTA適正運営スターターキット v1.0', '/starter-kit/', '任意加入、個人情報、会計分離、学校との公私分離を実務資料一式で確認'],
-    ['スターターキット ダウンロード', '/starter-kit/downloads.html', 'PDF印刷版、総合ZIP、Google実装版の配布ページ'],
     ['資料入口・索引', '/documents.html', '公開資料への入口'],
     ['保護者の方へ', '/guide-parent.html', '入会した覚えがない・会費の根拠が分からない場合の確認手順'],
     ['PTA役員の方へ', '/guide-pta.html', '引き継いだ運営を適法に直す実務手順'],
@@ -120,8 +118,8 @@
     ['教委向け分離指針', '/edu-board-separation.html', '学校とPTAの線引き'],
     ['適正化とは', '/proper-management.html', 'PTA適正化の基本原則'],
     ['適正化ガイドライン', '/guideline.html', '実務ガイドラインと書式テンプレート'],
-    ['入会手続とオプトアウト', '/membership.html', '入会申込書・同意・みなし加入'],
-    ['個人情報提供の問題', '/privacy.html', '学校名簿のPTA提供と個人情報保護法'],
+    ['PTA入会の成立と申込記録', '/membership.html', '申込み・承諾・申込記録・みなし加入の確認'],
+    ['学校保有情報のPTA目的利用・提供', '/privacy.html', '学校自身の利用、PTAへの提供、PTAによる直接取得'],
     ['会費徴収と学校徴収金', '/fee-collection.html', '抱合せ徴収・代行徴収・公会計化'],
     ['教職員関与と職務専念義務', '/personnel.html', '地方公務員法第35条と職専免'],
     ['施設利用と公私の境界', '/facilities.html', '学校教育法第137条と目的外使用許可'],
@@ -140,12 +138,11 @@
     ['学校徴収金とPTA会費', '/journal/school-fee-separation.html', '学校徴収金と任意団体会費の分離'],
     ['第三者提供同意とPTA名簿', '/journal/third-party-consent.html', '学校書類内のPTA個人情報同意'],
     ['働き方改革とPTA会費代理徴収', '/journal/work-style-reform.html', '学校事務とPTA会費の分離'],
-    ['PTA運営の現場実例', '/compliance.html', 'みなし加入・代行徴収・名簿提供の実例'],
-    ['静岡市個人情報事案', '/shizuoka-incident.html', '個人情報漏えい事案の整理'],
+    ['学校とPTAの運用実例を点検する', '/reality.html', '入会案内、会費徴収、学校保有情報、教職員関与の再現資料'],
     ['論考・調査報告', '/journal.html', '個別テーマの掘り下げ'],
     ['総合分析レポート', '/report.html', 'PTA問題の構造分析'],
     ['なぜ教育委員会の所掌なのか', '/education-board-responsibility.html', '学校関与を点検すべき理由'],
-    ['運営チェックアプリ', '/audit/index.html', '自校・自PTAのセルフチェック'],
+    ['運営チェック', '/audit/index.html', '資料と運用の確認優先度を整理するチェック表'],
     ['お問い合わせ・情報提供', '/contact.html', '資料・情報提供窓口'],
     ['応援・寄付', '/support.html', '活動支援のお願い']
   ];
@@ -153,8 +150,6 @@
   function getSearchIndex() {
     if (Array.isArray(window.PTA_SITE_SEARCH_INDEX) && window.PTA_SITE_SEARCH_INDEX.length) {
       var merged = window.PTA_SITE_SEARCH_INDEX.slice();
-      merged.unshift(['PTA適正運営スターターキット v1.0', '/starter-kit/', '任意加入、個人情報、会計分離、学校との公私分離を実務資料一式で確認']);
-      merged.unshift(['スターターキット ダウンロード', '/starter-kit/downloads.html', 'PDF印刷版、総合ZIP、Google実装版の配布ページ']);
       return merged;
     }
     return SITE_INDEX;
@@ -210,32 +205,6 @@
     });
   }
 
-  function insertStarterKitBridge() {
-    var p = location.pathname;
-    var isHome = p === '/' || p === '/index.html' || p.endsWith('/index.html');
-    if (!isHome || document.getElementById('starterKitBridge')) return;
-    addStyle('starter-kit-bridge-style',
-      '.starter-kit-bridge{background:linear-gradient(135deg,#0f2747,#17345c);color:#fff;border-bottom:3px solid #d4af37}' +
-      '.starter-kit-bridge-inner{width:min(calc(100% - 40px),1280px);margin:0 auto;padding:18px 0;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}' +
-      '.starter-kit-bridge-kicker{display:inline-flex;margin-bottom:6px;padding:3px 10px;border-radius:999px;background:rgba(212,175,55,.18);border:1px solid rgba(212,175,55,.45);color:#fff2a8;font-size:.68rem;font-weight:900;letter-spacing:.12em}' +
-      '.starter-kit-bridge-title{font-family:"Noto Serif JP",serif;font-size:clamp(1.08rem,2vw,1.42rem);font-weight:900;line-height:1.35;margin:0 0 4px;color:#fff}' +
-      '.starter-kit-bridge-text{font-size:.88rem;line-height:1.75;color:rgba(255,255,255,.78);margin:0}' +
-      '.starter-kit-bridge-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}' +
-      '.starter-kit-bridge-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:10px 18px;border-radius:999px;text-decoration:none;font-size:.85rem;font-weight:900;white-space:nowrap}' +
-      '.starter-kit-bridge-btn.primary{background:#d4af37;color:#05172f}' +
-      '.starter-kit-bridge-btn.secondary{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.42)}' +
-      '@media(max-width:760px){.starter-kit-bridge-inner{grid-template-columns:1fr;padding:16px 0}.starter-kit-bridge-actions{justify-content:flex-start}.starter-kit-bridge-btn{width:100%}}'
-    );
-    var bridge = document.createElement('section');
-    bridge.id = 'starterKitBridge';
-    bridge.className = 'starter-kit-bridge';
-    bridge.innerHTML = '<div class="starter-kit-bridge-inner"><div><div class="starter-kit-bridge-kicker">New Release</div><h2 class="starter-kit-bridge-title">PTA適正運営スターターキット v1.0 を公開しました</h2><p class="starter-kit-bridge-text">任意加入、個人情報、会費分離、学校との公私分離を、本文・標準書式・Google実装版まで一体で確認できます。</p></div><div class="starter-kit-bridge-actions"><a class="starter-kit-bridge-btn primary" href="/starter-kit/">スターターキットを見る</a><a class="starter-kit-bridge-btn secondary" href="/starter-kit/downloads.html">配布ファイルへ</a></div></div>';
-    var header = document.querySelector('.site-header');
-    var support = document.querySelector('.support-strip');
-    if (header && header.parentNode) header.parentNode.insertBefore(bridge, header.nextSibling);
-    else if (support && support.parentNode) support.parentNode.insertBefore(bridge, support.nextSibling);
-    else document.body.insertBefore(bridge, document.body.firstChild);
-  }
 
   function stabilizeMobileNavigation() {
     var hamburger = document.getElementById('hamburger');
@@ -247,10 +216,10 @@
       'body.mobile-nav-lock{position:fixed!important;left:0;right:0;width:100%;overflow:hidden!important;touch-action:none!important}' +
       '.mobile-overlay{position:fixed!important;inset:0!important;z-index:5000!important;display:none!important;flex-direction:column!important;justify-content:flex-start!important;align-items:center!important;gap:10px!important;padding:calc(18px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom))!important;background:rgba(5,17,31,.92)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}' +
       '.mobile-overlay.is-open{display:flex!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}' +
-      '.mobile-menu-group{width:min(100%,430px);display:flex;flex-direction:column;gap:8px;margin:0 0 8px!important}' +
-      '.mobile-menu-label{color:rgba(255,255,255,.55);font-size:.72rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;margin:5px 4px}' +
-      '.mobile-link{width:100%!important;background:rgba(255,255,255,.97)!important;border-radius:14px!important;padding:14px 18px!important;text-decoration:none!important;color:var(--navy,#1e3a5f)!important;font-weight:800!important;box-shadow:0 6px 20px rgba(0,0,0,.14)!important}' +
-      '.mobile-close-btn{width:min(100%,430px);min-height:44px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(255,255,255,.1);color:#fff;font-weight:900;cursor:pointer}'
+      '.mobile-menu-group{width:min(100%,430px);display:flex;flex-direction:column;gap:0;margin:0 0 16px!important;border-top:1px solid rgba(255,255,255,.2)}' +
+      '.mobile-menu-label{color:rgba(255,255,255,.58);font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:none;margin:14px 0 6px}' +
+      '.mobile-link{width:100%!important;background:transparent!important;border:0!important;border-bottom:1px solid rgba(255,255,255,.18)!important;border-radius:0!important;padding:13px 2px!important;text-decoration:none!important;color:#fff!important;font-weight:800!important;box-shadow:none!important}' +
+      '.mobile-close-btn{width:min(100%,430px);min-height:44px;border:1px solid rgba(255,255,255,.35);border-radius:0;background:transparent;color:#fff;font-weight:900;cursor:pointer}'
     );
 
     hamburger.dataset.stableMobileNav = 'v90';
@@ -312,7 +281,7 @@
     document.querySelectorAll('a[href]').forEach(function(a){
       var href = a.getAttribute('href');
       if (!href) return;
-      if (href === '/donate/' || href === 'donate/' || href === 'https://ptaorg.com/donate/') a.setAttribute('href', '/support.html');
+      if (href === '/donate/' || href === 'donate/' || href === 'https://ptaorg.com/donate/' || href === 'https://ptaorg.github.io/donate/' || href === 'https://ptaorg.github.io/donate') a.setAttribute('href', '/support.html');
       if (href === '/jp/' || href === 'jp/' || href === 'https://ptaorg.com/jp/') a.setAttribute('href', '/guide-board.html#board-jp-guideline');
       if (href === 'https://ptaorg.github.io/ed/' || href === 'https://ptaorg.github.io/ed') a.setAttribute('href', 'https://ptaorg.com/ed');
     });
@@ -401,7 +370,6 @@
   function boot() {
     stabilizeMobileNavigation();
     normalizeLinks();
-    insertStarterKitBridge();
     preloadSearchIndex();
     initSearch();
     initFAQ();
