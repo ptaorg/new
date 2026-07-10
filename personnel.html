@@ -123,8 +123,78 @@ html,body{overflow-x:hidden!important}
 .page-hero--photo h1 em{color:#f4e7a6!important}
 @media(max-width:760px){.page-hero--photo{min-height:300px!important}.page-hero--photo .page-hero-bg-img img{min-height:300px!important}.page-hero--photo> :not(.page-hero-bg-img),.page-hero--photo .page-hero-inner,.page-hero--photo .issue-hero-inner,.page-hero--photo .journal-hero-inner{width:min(calc(100% - 28px),1080px)!important;padding-top:44px!important;padding-bottom:52px!important}}
 </style>
+
+<style id="personnel-editorial-20260710">
+body.personnel-editorial .page-banner,
+body.personnel-editorial .hero-actions{
+  display:none!important;
+}
+body.personnel-editorial .page-hero-kicker,
+body.personnel-editorial .section-kicker,
+body.personnel-editorial .scope-label{
+  text-transform:none!important;
+  letter-spacing:.03em!important;
+  border-radius:3px!important;
+}
+body.personnel-editorial .pg-main{
+  width:min(calc(100% - 40px),920px)!important;
+  padding:68px 0 96px!important;
+}
+body.personnel-editorial .pg-section,
+body.personnel-editorial .editorial-panel,
+body.personnel-editorial .editorial-brief{
+  margin:0!important;
+  padding:40px 0 46px!important;
+  background:#fff!important;
+  border:0!important;
+  border-top:1px solid #cfd8e2!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+body.personnel-editorial .editorial-brief-grid,
+body.personnel-editorial .scope-grid{
+  display:block!important;
+}
+body.personnel-editorial .editorial-brief-point,
+body.personnel-editorial .scope-ok,
+body.personnel-editorial .scope-ng{
+  margin:0!important;
+  padding:20px 0!important;
+  background:#fff!important;
+  border:0!important;
+  border-top:1px solid #dbe4ee!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+body.personnel-editorial .scope-grid > div:last-child,
+body.personnel-editorial .editorial-brief-point:last-child{
+  border-bottom:1px solid #dbe4ee!important;
+}
+body.personnel-editorial .scope-label{
+  color:#17345c!important;
+}
+body.personnel-editorial .ok-dot,
+body.personnel-editorial .ng-dot{
+  color:#64748b!important;
+}
+body.personnel-editorial .alert,
+body.personnel-editorial .law-quote,
+body.personnel-editorial .ed-resource-list > div{
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+body.personnel-editorial main a:hover{
+  transform:none!important;
+  box-shadow:none!important;
+}
+@media(max-width:700px){
+  body.personnel-editorial .pg-main{
+    width:min(calc(100% - 30px),920px)!important;
+  }
+}
+</style>
 </head>
-<body>
+<body class="personnel-editorial">
   
 <div class="support-strip" role="complementary" aria-label="活動支援のお願い">
   <div class="support-strip-inner">
@@ -267,9 +337,9 @@ html,body{overflow-x:hidden!important}
       <img src="assets/slides/1.jpg" alt="" aria-hidden="true" loading="eager">
     </div>
     <div class="page-hero-inner">
-      <div class="page-hero-kicker">👩‍🏫 Issue 04 — Personnel</div>
+      <div class="page-hero-kicker">教職員関与・服務管理</div>
       <h1>教職員関与と<br><em>職務専念義務</em></h1>
-      <p>勤務時間中に教職員がPTA内部事務を担う運用は、地方公務員法第35条の職務専念義務との関係で確認が必要です。学校側の基本的な接点は「渉外業務（学校↔PTA間の連絡調整）」であり、名簿管理・会費処理・役員事務とは分けて整理する必要があります。</p>
+      <p>勤務時間中に教職員がPTA関連作業を行う場合は、その作業が校務として特定されているか、職務命令があるか、職務専念義務免除や兼職等の根拠があるか、実際の内容が学校の連絡調整かPTA内部事務かを分けて確認します。</p>
       <div class="hero-actions">
         <a href="guide-board.html" class="btn-gold">教育委員会向けガイドを読む</a>
         <a href="audit/index.html" class="btn-outline">運営チェックで確認する</a>
@@ -294,8 +364,8 @@ html,body{overflow-x:hidden!important}
         <h2 id="personnel-reading-order">問題は、教職員の善意ではなく「勤務時間中に誰の事務をしているか」です</h2>
         <p>学校とPTAは協力関係を持ち得ます。しかし、学校職員が勤務時間中に、PTAの会計、集金、名簿、役員選出、文書作成、封入、メール配信などを恒常的に担う場合、それは学校の職務なのか、PTAという別団体の内部事務なのかを分けて確認する必要があります。</p>
         <div class="editorial-brief-grid">
-          <div class="editorial-brief-point"><span>1</span><strong>連絡調整</strong><p>学校行事や施設利用に必要な範囲の連絡は、渉外的な対応として整理できます。</p></div>
-          <div class="editorial-brief-point"><span>2</span><strong>内部事務</strong><p>PTA会計、名簿、役員選出、会費徴収はPTA側で完結させるべき事務です。</p></div>
+          <div class="editorial-brief-point"><span>1</span><strong>連絡調整</strong><p>学校行事、施設利用、安全管理等に必要な連絡は、学校の職務として位置付けられている範囲を確認します。</p></div>
+          <div class="editorial-brief-point"><span>2</span><strong>内部事務</strong><p>PTA会計、会員名簿、役員選出、会費徴収はPTA内部事務です。学校が関与する場合は、個別の職務上の根拠を確認します。</p></div>
           <div class="editorial-brief-point"><span>3</span><strong>職専免</strong><p>服務免除を使う場合でも、根拠規則、対象者、時間、用務の記録が必要です。</p></div>
           <div class="editorial-brief-point"><span>4</span><strong>移行</strong><p>教職員任せを責めるのではなく、PTA側の事務体制へ段階的に戻します。</p></div>
         </div>
@@ -327,14 +397,14 @@ html,body{overflow-x:hidden!important}
 
 
     <section class="pg-section">
-      <p>「担任の先生がPTA封筒を配ってくれる」「事務室で会費の集計をしてもらっている」——多くの学校でこれが当たり前になっていますが、これらは<strong>地方公務員法第35条（職務専念義務）との関係で、職務上の根拠を確認すべき行為</strong>です。悪意があったわけではなく、長年の慣行として定着してきたものですが、制度上の線引きは必要です。このページでは、何が問題なのか・何はよくて何はダメなのか・どう改善するかを整理します。</p>
+      <p>「担任がPTA文書を配布・回収する」「事務室がPTA会費を処理する」といった運用は、慣行だけで学校職務になるものではありません。地方公務員法第35条との関係では、作業の内容、校務としての位置付け、職務命令、職専免等の有無を文書で確認する必要があります。このページでは、連絡調整とPTA内部事務を分け、確認すべき根拠と移行方法を整理します。</p>
     </section>
 
     <!-- 時計インフォグラフィック -->
     <section class="pg-section">
       <h2>図解：職務専念義務の壁</h2>
 <figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/04_教職員関与/01_職務専念義務の壁.svg" alt="図解：職務専念義務の壁" loading="lazy" style="display:block;width:100%;height:auto"></figure>
-      <p>税金で支払われる勤務時間を、任意団体（PTA）の事務に充てることが問題の核心です。</p>
+      <p>問題の核心は、勤務時間中の作業が当該地方公共団体の職務として位置付けられているか、それともPTAという別団体の内部事務なのかを確認できることです。</p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin:28px 0">
 
@@ -367,7 +437,7 @@ html,body{overflow-x:hidden!important}
           </div>
           <div class="alert alert-danger">
             <div class="alert-icon">⚠️</div>
-            <p>PTAは学校とは別の任意団体です。教職員が勤務時間中にPTA内部事務を担う運用は、職務専念義務や公私分離の観点から確認が必要な<strong>便宜供与</strong>の問題になります。</p>
+            <p>PTAは学校とは別の任意団体です。教職員が勤務時間中にPTA内部事務を担う場合は、校務としての位置付け、職務命令、職専免等の根拠、学校による便宜供与の範囲を確認します。</p>
           </div>
         </div>
       </div>
@@ -375,34 +445,34 @@ html,body{overflow-x:hidden!important}
 
     <!-- 行政実例 -->
     <section class="pg-section">
-      <h2>行政実例：「PTA事務は職務に含まれない」</h2>
+      <h2>行政実例が示す、学校職務と任意団体事務の区別</h2>
 <figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/04_教職員関与/02_職務命令のダブルバインド.svg" alt="図解：職務命令のダブルバインド" loading="lazy" style="display:block;width:100%;height:auto"></figure>
-      <p>この点は、法令の解釈として1960年代から一貫して確認されています。</p>
+      <p>昭和39年の行政実例は、PTA等の任意団体の事務と教職員の職務上の事務を区別する資料の一つです。現在の具体的な運用は、現行の条例・規則、学校管理規則、職務命令、職専免等と合わせて確認します。</p>
 
       <div class="law-quote">
         <div class="law-quote-label">行政実例（昭和39年1月20日 自治丁公発第3号・熊本県教育長あて）</div>
         PTA等の任意団体の事務は、教職員の職務上の事務には含まれない。
       </div>
 
-      <p>この行政実例は、現在の運用を点検する際にも重要な手掛かりになります。当委員会が整理している教育委員会回答の中にも、<strong>PTA内部事務と学校職務を分けて考える趣旨の回答</strong>があります。「昔からやっていた」「暗黙の了解だった」は法的な正当化根拠にはなりません。</p>
+      <p>この行政実例は、現在の運用を点検する際の重要な手掛かりです。ただし、個々の作業が学校職務に当たるかは、作業内容と現在の職務規程等に基づいて判断します。「昔から行っていた」「暗黙の了解だった」だけでは、職務上の根拠を説明したことにはなりません。</p>
 
       <div class="alert alert-warning">
         <div class="alert-icon">📋</div>
         <div>
           <p><strong>服務免除制度との関係</strong></p>
-          <p>地方公務員法第35条ただし書き・各自治体の条例に基づき、一定の場合には「職務に専念する義務の特例（服務免除）」が認められることがあります。ただし、この制度を使うためには条例・規則の根拠が必要で、PTAへの日常的な関与を包括的に免除することはできません。「服務免除を取れば問題ない」というわけでなく、その範囲と手続きが厳格に問われます。</p>
+          <p>地方公務員法第35条ただし書きと各自治体の条例・規則により、一定の場合に職務専念義務が免除されることがあります。PTA関係で適用する場合は、対象者、用務、日時、承認権者、申請・承認記録を確認します。包括的・恒常的な取扱いが可能かは、各自治体の規定と実際の承認内容によります。</p>
         </div>
       </div>
     </section>
 
     <!-- 渉外業務の範囲 -->
     <section class="pg-section">
-      <h2>何はOKで、何はNGか</h2>
+      <h2>学校の連絡調整とPTA内部事務を分ける</h2>
 <figure style="margin:30px auto;max-width:860px"><img src="assets/diagrams/04_教職員関与/03_渉外のOKとNG.svg" alt="図解：渉外のOKとNG" loading="lazy" style="display:block;width:100%;height:auto"></figure>
       <p>「一切の関与禁止」ではありません。<strong>渉外業務（学校↔PTA間の連絡調整窓口）</strong>を基本的な接点とし、PTA内部事務の代行と分けて確認します。</p>
       <div class="scope-grid">
         <div class="scope-ok">
-          <div class="scope-label">✅ 渉外業務として許容される範囲</div>
+          <div class="scope-label">学校職務として説明しやすい連絡調整</div>
           <div class="scope-item"><span class="ok-dot">✓</span>PTAからの行事協力依頼の受付・校長への取次ぎ</div>
           <div class="scope-item"><span class="ok-dot">✓</span>学校行事日程など公開情報のPTAへの提供</div>
           <div class="scope-item"><span class="ok-dot">✓</span>PTAと校長の定期連絡会議への校長参加</div>
@@ -410,26 +480,26 @@ html,body{overflow-x:hidden!important}
           <div class="scope-item"><span class="ok-dot">✓</span>学校施設使用許可の窓口対応</div>
         </div>
         <div class="scope-ng">
-          <div class="scope-label">❌ 渉外業務を超える・問題ある関与</div>
-          <div class="scope-item"><span class="ng-dot">✗</span>担任がPTA封筒・配布物を配布・回収する</div>
+          <div class="scope-label">PTA内部事務として個別の根拠確認が必要な作業</div>
+          <div class="scope-item"><span class="ng-dot">✗</span>担任がPTA入会届、会員向け文書、役員選出文書を恒常的に配布・回収する</div>
           <div class="scope-item"><span class="ng-dot">✗</span>事務職員がPTA会費の集計・処理を行う</div>
-          <div class="scope-item"><span class="ng-dot">✗</span>学校名簿をPTAに提供する（個人情報保護法69条にも抵触）</div>
+          <div class="scope-item"><span class="ng-dot">✗</span>学校名簿をPTAに提供・閲覧させる（個人情報保護法69条等の根拠確認が必要）</div>
           <div class="scope-item"><span class="ng-dot">✗</span>学校印刷機でPTA文書を印刷する</div>
           <div class="scope-item"><span class="ng-dot">✗</span>会費引落しを学校名義口座で行う</div>
           <div class="scope-item"><span class="ng-dot">✗</span>教職員がPTA役員・会計担当として運営を担う</div>
-          <div class="scope-item"><span class="ng-dot">✗</span>勤務時間中にPTA関係の電話・メール対応をする</div>
+          <div class="scope-item"><span class="ng-dot">✗</span>PTAの会員管理、会計、役員選出等の内部事務に関する電話・メール対応をする</div>
         </div>
       </div>
 
       <h3>教職員がPTA役員になること</h3>
-      <p>「校長がPTA会長」「教頭がPTA副会長」という状態は各地で見られますが、これは複数の問題をはらんでいます。</p>
+      <p>校長、教頭、教員がPTAの副会長、会計、書記等を兼ねる例があります。この場合は、学校職務上の立場とPTA役員としての立場を分け、次の点を確認します。</p>
       <ul style="margin:12px 0 12px 20px;font-size:.95rem;line-height:1.9;color:var(--text)">
-        <li>勤務時間中の役員活動が職務専念義務違反になる（地公法35条）</li>
-        <li>学校の公的権限とPTAの私的意思決定が混同される（社会教育法上の独立性の毀損）</li>
-        <li>「校長に反対できない」という心理的圧力が保護者に生じ、任意加入の実質を損なう</li>
+        <li>勤務時間中の役員活動について、校務、職務命令、職専免等の根拠があるか</li>
+        <li>学校の公的権限とPTAの私的意思決定が混同されていないか</li>
+        <li>管理職の役職が、加入や議決に対する心理的圧力を生じさせていないか</li>
         <li>管理職が会計を担うと公費・私費の区分が一層曖昧になる</li>
       </ul>
-      <p>社会教育法第12条の精神（行政からの自主性）からも、教職員がPTAの意思決定機関の中核を担うことは望ましくありません。</p>
+      <p>社会教育法第12条との関係でも、行政・学校による統制的支配とならないよう、学校の公的権限とPTAの自主的意思決定を分ける役割設計が必要です。</p>
     </section>
 
     <!-- 是正手順 -->
@@ -450,21 +520,21 @@ html,body{overflow-x:hidden!important}
           <div style="width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.95rem;flex-shrink:0">2</div>
           <div>
             <p style="font-weight:800;color:var(--navy);margin-bottom:4px">PTA側で代替できる業務を特定する</p>
-            <p style="font-size:.92rem;margin:0">会費管理にはクラウド会計ツール、配布物配付にはPTA役員による配付体制など、学校に依存しない方法を検討します。「不可能」なものはほとんどなく、ほぼすべてPTA側で担えます。</p>
+            <p style="font-size:.92rem;margin:0">会費管理、会員連絡、総会資料、役員選出等について、学校に依存しない方法を検討します。PTA内部事務の多くは、PTA側の口座、連絡手段、会計・会員管理体制へ移すことができます。</p>
           </div>
         </div>
         <div style="display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)">
           <div style="width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.95rem;flex-shrink:0">3</div>
           <div>
             <p style="font-weight:800;color:var(--navy);margin-bottom:4px">校長・教育委員会と移行計画を共有する</p>
-            <p style="font-size:.92rem;margin:0">「法令上の問題があるため、1年かけて切り離す」と校長に伝えます。教育委員会も同様の問題認識を持っているケースが多く、指針を共有することで協力を得やすくなります。</p>
+            <p style="font-size:.92rem;margin:0">現行運用の職務上の根拠を確認し、PTA内部事務を段階的にPTA側へ移す計画を、校長・教育委員会・PTAで共有します。</p>
           </div>
         </div>
         <div style="display:flex;gap:16px;padding:20px 0">
           <div style="width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.95rem;flex-shrink:0">4</div>
           <div>
             <p style="font-weight:800;color:var(--navy);margin-bottom:4px">切り離し後の「渉外業務のみ」体制を書面化する</p>
-            <p style="font-size:.92rem;margin:0">学校とPTAの間で「渉外窓口覚書」を作成し、接点の範囲を明示します。これが適正化の完成形です。</p>
+            <p style="font-size:.92rem;margin:0">学校とPTAの連絡窓口、学校が扱う事項、PTAが自ら処理する内部事務、施設・情報・会計の責任範囲を文書化します。</p>
           </div>
         </div>
       </div>
