@@ -28,11 +28,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Relax one-time patch assertions
-        run: python tools/relax-core-patch-20260710.py
-
-      - name: Apply core issue page updates
-        run: python tools/patch-core-issue-pages-20260710.py
+      - name: Apply residual fee and facility correction
+        run: python tools/fix-fee-facility-residual-20260710.py
 
       - name: Install dependencies if package metadata is present
         run: |
@@ -47,15 +44,15 @@ jobs:
       - name: Run site checks
         run: npm test
 
-      - name: Commit core issue page updates
+      - name: Commit residual corrections
         if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          git add fee-collection.html personnel.html facilities.html
+          git add fee-collection.html facilities.html
           if git diff --cached --quiet; then
-            echo "No core issue page changes"
+            echo "No residual changes"
           else
-            git commit -m "Align fee personnel and facilities pages"
+            git commit -m "Remove categorical fee and facility wording"
             git push
           fi
