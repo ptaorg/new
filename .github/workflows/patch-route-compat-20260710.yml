@@ -1,0 +1,28 @@
+name: Patch route compatibility 20260710
+
+on:
+  push:
+    paths:
+      - 'scripts/patch-route-compat-20260710.py'
+      - '.github/workflows/patch-route-compat-20260710.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply compatibility patch
+        run: python scripts/patch-route-compat-20260710.py
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html css/home-clarity.css scripts/simplify-global-nav.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Restore legacy role anchor compatibility"
+          git push
