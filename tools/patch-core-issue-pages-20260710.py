@@ -15,18 +15,14 @@ def remove_once(text: str, pattern: str, label: str) -> str:
         raise SystemExit(f"{label}: expected 1 occurrence, found {count}")
     return text
 
+
 # ============================================================
 # fee-collection.html
 # ============================================================
 p = Path('fee-collection.html')
 s = p.read_text(encoding='utf-8')
-s = remove_once(s, r'<div class="issue-hero-toc">.*?</div>\s*</div>\s*</section>', 'fee hero toc') + ''
-# The preceding regex consumes the hero wrappers; restore their closing structure before issue-content.
-s = s.replace('\n\n  <div class="issue-content">', '\n    </div>\n  </section>\n\n  <div class="issue-content">', 1)
 s = remove_once(s, r'<aside class="issue-sidebar">.*?</aside>', 'fee sidebar')
 s = remove_once(s, r'<section class="editorial-brief fee-editorial-brief".*?</section>', 'fee editorial brief')
-s = remove_once(s, r'<div class="related-links-section">.*?</div>\s*</div>\s*</main>', 'fee related links') + ''
-s = s.replace('\n  </div>\n\n  <!-- Footer -->', '\n    </main>\n  </div>\n\n  <!-- Footer -->', 1)
 fee_repls = {
     '無権代理 ― 委任契約なき代理徴収': '会員関係と会費債務の確認',
     '<span class="fee-law">民法113条</span><span class="fee-nsub">徴収業務の委任がなければ無権代理として効果の帰属が争点。</span>': '<span class="fee-law">民法521条・522条</span><span class="fee-nsub">加入申込み、承諾、会則上の会費額と徴収対象者を先に確認。</span>',
@@ -60,6 +56,8 @@ for old, new in fee_repls.items():
 fee_css = '''
 <style id="fee-final-editorial-20260710">
 .fee-editorial .issue-hero-inner{grid-template-columns:1fr!important;max-width:960px!important}
+.fee-editorial .issue-hero-toc,
+.fee-editorial .related-links-section{display:none!important}
 .fee-editorial .issue-content{grid-template-columns:1fr!important;max-width:960px!important}
 .fee-editorial .section-eyebrow,
 .fee-editorial .section-kicker,
@@ -89,11 +87,11 @@ fee_css = '''
   border-radius:0!important;
 }
 .fee-editorial .req-step-num{border-radius:0!important;box-shadow:none!important}
-.fee-editorial .related-links-section{display:none!important}
 </style>
 '''
 s = replace_once(s, '</head>', fee_css + '</head>', 'fee css')
 p.write_text(s, encoding='utf-8')
+
 
 # ============================================================
 # personnel.html
@@ -101,11 +99,11 @@ p.write_text(s, encoding='utf-8')
 p = Path('personnel.html')
 s = p.read_text(encoding='utf-8')
 s = remove_once(s, r'<div class="hero-actions">.*?</div>', 'personnel hero actions')
-s = remove_once(s, r'<div class="page-banner".*?</div>\s*</div>', 'personnel page banner')
 s = remove_once(s, r'<section class="pg-section">\s*<h2>関連導線</h2>.*?</section>', 'personnel related links')
 s = replace_once(s, '切り離し後の「渉外業務のみ」体制を書面化する', '切り離し後の連絡調整と協力範囲を書面化する', 'personnel step heading')
 personnel_css = '''
 <style id="personnel-final-editorial-20260710">
+.page-banner{display:none!important}
 .pg-main{max-width:920px!important}
 .pg-main .section-kicker,
 .pg-main .editorial-brief-band{display:none!important}
@@ -138,13 +136,13 @@ personnel_css = '''
 s = replace_once(s, '</head>', personnel_css + '</head>', 'personnel css')
 p.write_text(s, encoding='utf-8')
 
+
 # ============================================================
 # facilities.html
 # ============================================================
 p = Path('facilities.html')
 s = p.read_text(encoding='utf-8')
 s = remove_once(s, r'<div class="hero-actions">.*?</div>', 'facilities hero actions')
-s = remove_once(s, r'<div class="page-banner".*?</div>\s*</div>', 'facilities page banner')
 s = remove_once(s, r'<section class="editorial-brief facilities-editorial-brief".*?</section>', 'facilities editorial brief')
 s = remove_once(s, r'<section>\s*<h2>関連導線</h2>.*?</section>', 'facilities related links')
 facility_repls = {
@@ -157,6 +155,7 @@ for old, new in facility_repls.items():
     s = replace_once(s, old, new, f'facility replacement: {old[:35]}')
 facility_css = '''
 <style id="facilities-final-editorial-20260710">
+.page-banner{display:none!important}
 .pg{max-width:920px!important}
 .pg .section-kicker{display:none!important}
 .pg .safes,
