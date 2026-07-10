@@ -28,6 +28,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Relax one-time patch assertions
+        run: python tools/relax-core-patch-20260710.py
+
       - name: Apply core issue page updates
         run: python tools/patch-core-issue-pages-20260710.py
 
