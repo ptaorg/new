@@ -1,0 +1,31 @@
+name: Patch personnel FAQ accuracy 20260710
+
+on:
+  push:
+    paths:
+      - 'scripts/patch-personnel-faq-accuracy-20260710.py'
+      - '.github/workflows/patch-personnel-faq-accuracy-20260710.yml'
+      - '.github/personnel-faq-accuracy-trigger-20260710'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply personnel FAQ accuracy patch
+        run: python scripts/patch-personnel-faq-accuracy-20260710.py
+      - name: Run site checks
+        run: npm test
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add personnel.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Align personnel FAQ with documented duty analysis"
+          git push
