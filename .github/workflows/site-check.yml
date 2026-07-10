@@ -46,8 +46,8 @@ jobs:
           npm run generate:sitemap
           npm run generate:search
 
-      - name: Run all checks
-        run: npm run check:all
+      - name: Run site checks
+        run: npm test
 
       - name: Commit guidebook and generated files
         if: github.event_name == 'push'
