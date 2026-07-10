@@ -142,3 +142,5 @@ jobs:
           git add submission-kit.html css/submission-kit.css
           git commit -m "Refine submission kit content and layout" || exit 0
           git push
+
+# trigger
