@@ -1,0 +1,35 @@
+name: Patch law map editorial 20260710
+
+on:
+  push:
+    paths:
+      - 'tools/patch-law-map-editorial-20260710.py'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Patch law map
+        run: python tools/patch-law-map-editorial-20260710.py
+      - name: Run site checks
+        run: npm test
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add law-map.html
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Align law map with current legal framework"
+            git push
+          fi
