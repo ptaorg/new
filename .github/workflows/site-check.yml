@@ -28,8 +28,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Refine research support pages
-        run: python tools/refine-research-support-pages-20260710.py
+      - name: Apply residual research cleanup
+        run: python tools/fix-research-support-residual-20260710.py
 
       - name: Install dependencies if package metadata is present
         run: |
@@ -44,15 +44,15 @@ jobs:
       - name: Run site checks
         run: npm test
 
-      - name: Commit research support pages
+      - name: Commit residual research cleanup
         if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          git add guide-research.html evidence-checklist.html key-materials.html case-reading.html timeline-issues.html
+          git add guide-research.html key-materials.html timeline-issues.html
           if git diff --cached --quiet; then
-            echo "No research support changes"
+            echo "No residual research changes"
           else
-            git commit -m "Refine research support pages"
+            git commit -m "Remove residual research hub wording"
             git push
           fi
