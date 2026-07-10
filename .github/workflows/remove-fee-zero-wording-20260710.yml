@@ -1,0 +1,50 @@
+name: Remove fee-zero wording
+
+on:
+  push:
+    paths:
+      - '.github/workflows/remove-fee-zero-wording-20260710.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Restore neutral proper-management wording
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('proper-management.html')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace(
+              '適正化とは、PTAをなくすことでも、会費をゼロにすることでもありません。PTAを、学校に溶け込んだ慣行から切り離し、保護者が納得して参加できる任意団体として立て直すことです。',
+              '適正化とは、PTAを学校に溶け込んだ慣行から切り離し、保護者が納得して参加できる任意団体として立て直すことです。'
+          )
+          s = s.replace(
+              '年会費制、必要時の都度負担、寄付・カンパ型など、資金調達の方法は一つではありません。重要なのは、加入意思、会費額と使途、請求主体、徴収方法、会計責任、退会後の取扱いをPTA自身が説明できることです。',
+              '学校とPTAの関係をあいまいにしたままでは、入会意思、会費徴収、個人情報、教職員関与、学校施設利用の根拠が見えなくなります。適正化は、任意団体としての手続と学校の公的手続を分け、責任の所在を明確にすることです。'
+          )
+          start = s.index('<section class="pm-section" id="fees">')
+          end = s.index('<section class="pm-section" id="principles">')
+          s = s[:start] + s[end:]
+          if '会費ゼロ' in s:
+              raise SystemExit('会費ゼロの文言が残っています')
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Run site checks
+        run: npm test
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add proper-management.html
+          git commit -m "Remove unnecessary fee-zero framing" || exit 0
+          git push
