@@ -1,0 +1,16 @@
+
+> test
+> npm run check:site && npm run check:site-js-version
+
+
+> check:site
+> node tools/check-site.mjs
+
+site check passed
+
+> check:site-js-version
+> node scripts/check-site-js-version.js 90
+
+All site.js references use v=90.
+
+EXIT_STATUS=0
