@@ -139,6 +139,15 @@
   border-color: #fff;
 }
 
+/* Backward-compatible target for older global navigation links. */
+.home-anchor-alias {
+  display: block;
+  position: relative;
+  top: -92px;
+  height: 0;
+  visibility: hidden;
+}
+
 /* Common section structure */
 .home-prose-section,
 .home-evidence-section,

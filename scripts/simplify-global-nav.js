@@ -8,7 +8,7 @@ const SKIP_DIRS = new Set(['.git', '.claude', 'assets', 'css', 'data', 'js', 'sc
 const desktopNav = `<nav aria-label="主要ナビゲーション" class="desktop-nav">
 <a class="nav-link" href="/index.html">トップ</a>
 <div class="nav-item has-dropdown">
-<a class="nav-link" href="/index.html#audience-gateway">立場別</a>
+<a class="nav-link" href="/index.html#roles">立場別</a>
 <div class="mega-menu">
 <div class="mega-col">
 <h4>あなたの立場から</h4>
