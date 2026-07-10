@@ -5,6 +5,7 @@ on:
     paths:
       - 'scripts/patch-guide-pta-editorial-20260710.py'
       - '.github/workflows/patch-guide-pta-editorial-20260710.yml'
+      - '.github/guide-pta-editorial-trigger-20260710'
 
 permissions:
   contents: write
