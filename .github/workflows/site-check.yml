@@ -28,8 +28,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Refine privacy page
-        run: python tools/refine-privacy-page-20260710.py
+      - name: Apply residual privacy cleanup
+        run: python tools/fix-privacy-residual-20260710.py
 
       - name: Install dependencies if package metadata is present
         run: |
@@ -49,15 +49,15 @@ jobs:
       - name: Run site checks
         run: npm test
 
-      - name: Commit privacy page
+      - name: Commit residual privacy cleanup
         if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
           git add privacy.html data/site-search-index.js sitemap.xml
           if git diff --cached --quiet; then
-            echo "No privacy changes"
+            echo "No residual privacy changes"
           else
-            git commit -m "Align privacy page with current information-use framework"
+            git commit -m "Complete privacy page cleanup"
             git push
           fi
