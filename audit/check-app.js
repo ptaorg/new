@@ -7,10 +7,10 @@
   ];
 
   const RISK_CONFIG = {
-    0: { label: '問題なしに近い', shortLabel: 'OK', color: '#15803D', cls: 'lv0', barPct: 100 },
-    1: { label: '確認が必要', shortLabel: '要確認', color: '#2563EB', cls: 'lv1', barPct: 76 },
-    2: { label: '運用リスクあり', shortLabel: 'リスク', color: '#D97706', cls: 'lv2', barPct: 52 },
-    3: { label: '早急な見直しが必要', shortLabel: '見直し', color: '#C2410C', cls: 'lv3', barPct: 28 }
+    0: { label: '大きな問題は見えにくい', shortLabel: '確認済', color: '#15803D', cls: 'lv0', barPct: 10 },
+    1: { label: '資料確認が必要', shortLabel: '要確認', color: '#2563EB', cls: 'lv1', barPct: 40 },
+    2: { label: '運用の見直しを検討', shortLabel: '見直し', color: '#D97706', cls: 'lv2', barPct: 70 },
+    3: { label: '優先して確認・見直し', shortLabel: '優先確認', color: '#C2410C', cls: 'lv3', barPct: 100 }
   };
 
   const AXIS_LABELS = {
@@ -58,7 +58,7 @@
       documents: ['PTA入会案内', 'PTA入会申込書', 'PTA退会届', '学校徴収金案内', '口座振替案内', '役員希望調査票', '免除申請書', '個人情報同意書', '学校アプリ配信画面', 'PTA会則', '配布封筒、提出先の記載'],
       actions: ['配布文書を捨てずに保存する。', '表面、裏面、封筒、配信画面、提出先を保存する。', '入会申込書があるか確認する。', '会費の請求主体と引落方法を確認する。', '個人情報同意の範囲を確認する。', '不安があれば、学校・PTA・教育委員会に文書で確認する。'],
       contacts: ['PTA会長・PTA役員', '学校長', '副校長・教頭', '学校事務', '教育委員会', '必要に応じて個人情報保護担当部署'],
-      questions: ['PTA入会申込書はありますか。', 'PTAに加入していない場合、会費は請求されますか。', 'PTA会費は学校徴収金と分けて管理されていますか。', 'PTA書類の提出先が担任・学校になっている理由は何ですか。', '学校が保有する児童・保護者情報をPTAへ提供していますか。', 'PTAに加入しない場合、子どもの学校生活上の取扱いに違いはありますか。'],
+      questions: ['PTA入会申込書はありますか。', 'PTAに加入していない場合、会費は請求されますか。', 'PTA会費は学校徴収金と分けて管理されていますか。', 'PTA書類の提出先が担任・学校になっている理由は何ですか。', '学校が保有する児童・保護者情報をPTA目的で自ら利用し、又はPTAへ提供していますか。', 'PTAに加入しない場合、子どもの学校生活上の取扱いに違いはありますか。'],
       links: [
         { label: '保護者向けガイド', url: '../guide-parent.html' },
         { label: '現場実例', url: '../compliance.html' },
@@ -85,9 +85,9 @@
     },
     school: {
       documents: ['PTA文書配布・回収に関する記録', '学校徴収金案内', '学校徴収金システムの対象費目', 'PTA会費徴収に関する委任・覚書', '個人情報提供記録', '学校名簿・クラス名簿の提供記録', '校務分掌表', '職専免記録', '兼職承認記録', '学校連絡アプリ利用基準', '施設利用許可', '印刷機利用記録', '教育委員会通知', '校長会資料', '苦情・相談記録'],
-      actions: ['学校がPTA文書を配布・回収している実態を確認する。', 'PTA会費を学校徴収金と一緒に扱っていないか確認する。', '学校保有個人情報のPTA提供実態を確認する。', '教職員がPTA固有事務を担っていないか確認する。', '学校連絡ツール・施設・印刷機のPTA利用を確認する。', '学校向け通知・点検基準を整備する。', 'PTAが自ら会員管理・会費徴収を行う体制へ移行させる。'],
+      actions: ['学校がPTA文書を配布・回収している実態を確認する。', 'PTA会費を学校徴収金と一緒に扱っていないか確認する。', '学校保有情報のPTA目的利用とPTAへの提供実態を分けて確認する。', '教職員がPTA固有事務を担っていないか確認する。', '学校連絡ツール・施設・印刷機のPTA利用を確認する。', '学校向け通知・点検基準を整備する。', 'PTA自身が会員管理・会費徴収を行えるよう、学校関与の範囲を整理する。'],
       contacts: ['学校長', '副校長・教頭', '学校事務', '教育委員会担当課', '個人情報保護担当', '学校徴収金担当', '教職員服務担当', '施設管理担当'],
-      questions: ['学校がPTA文書を配布・回収している実態はありますか。', 'PTA会費を学校徴収金に含めている学校はありますか。', '学校保有の個人情報をPTAへ提供している実態はありますか。', 'PTA名簿作成に学校名簿・クラス名簿が使われていますか。', '教職員がPTA固有事務を勤務時間内に行っていますか。', '学校連絡アプリをPTA連絡に利用していますか。', '教育委員会として学校向けのPTA運営適正化通知はありますか。'],
+      questions: ['学校がPTA文書を配布・回収している実態はありますか。', 'PTA会費を学校徴収金に含めている学校はありますか。', '学校保有情報をPTA目的で自ら利用し、又はPTAへ提供している実態はありますか。', 'PTA名簿作成に学校名簿・クラス名簿が使われていますか。', '教職員がPTA固有事務を勤務時間内に行っていますか。', '学校連絡アプリをPTA連絡に利用していますか。', '教育委員会として学校向けのPTA運営適正化通知はありますか。'],
       links: [
         { label: '学校・教育委員会向け', url: '../guide-board.html' },
         { label: '会費徴収', url: '../fee-collection.html' },
@@ -96,7 +96,7 @@
         { label: '施設利用', url: '../facilities.html' },
         { label: '現場実例', url: '../compliance.html' }
       ],
-      note: 'PTA固有事務を校務、職専免、兼職承認等で処理している場合、学校とPTAの分離がかえって不明確になるおそれがあります。確認すべき点は、PTA文書の配布・回収、会費処理、名簿管理、役員選出などを学校職員が恒常的に担っていないかです。'
+      note: 'PTA関係事務を学校職員が行う場合は、具体的作業を分け、校務・職務命令・職専免・兼職兼業のどの整理によるのか、個人情報、費用、決裁、責任主体とともに確認します。PTAから依頼されたという事実だけでは、学校側の職務上の根拠にはなりません。'
     }
   };
 
@@ -178,8 +178,8 @@
     school: [
       makeCheck({ cat: '配布・回収', axis: 'personnel', q: '学校がPTA文書を配布・回収していますか。', severity: 2, risk: '学校経由提出・担任回収', advice: 'PTA文書を学校が配布・回収している場合、学校手続と任意団体手続の混同が起きていないか確認が必要です。' }),
       makeCheck({ cat: '学校職員関与', axis: 'personnel', q: '担任、教頭、事務職員等が、PTA文書の作成、配布、回収、集計、会費処理、役員選出、名簿管理に関与していますか。', severity: 3, risk: '教職員のPTA事務従事', advice: '学校職員がPTA固有事務を恒常的に担っている場合、学校とPTAの分離を見直す必要があります。', links: [{ label: '教職員関与', url: '../personnel.html' }] }),
-      makeCheck({ cat: '制度処理', axis: 'personnel', q: 'PTA固有事務を、校務、職専免、兼職承認等の名目で学校側が恒常的に処理していますか。', riskOn: 'yes', severity: 2, risk: 'PTA固有事務の学校処理', advice: '形式上の処理根拠があるかではなく、PTA固有事務を学校から分離できているかを確認してください。' }),
-      makeCheck({ cat: '個人情報提供', axis: 'privacy', q: '学校保有の児童・保護者情報を、PTA会員管理、役員選出、地区班、登校班、当番表、協力金依頼等に利用・提供していますか。', riskOn: 'yes', severity: 3, risk: '学校保有個人情報のPTA利用', advice: '公立学校が保有する個人情報をPTA用途へ使う場面では、個人情報保護法第69条の目的外利用・提供の問題として確認が必要です。', links: [{ label: '個人情報', url: '../privacy.html' }] }),
+      makeCheck({ cat: '制度処理', axis: 'personnel', q: 'PTA関係事務について、校務、職務命令、職専免、兼職兼業の区分と対象作業が文書化されていますか。', riskOn: 'no', severity: 2, risk: '学校側の職務・服務整理が不明確', advice: '具体的作業ごとに、校務としての根拠、職務命令、職専免、兼職兼業、勤務時間、費用負担、決裁を確認してください。' }),
+      makeCheck({ cat: '個人情報利用・提供', axis: 'privacy', q: '学校保有の児童・保護者情報を、PTA会員管理、役員選出、地区班、登校班、当番表、協力金依頼等のために学校が自ら利用し、又はPTAへ提供していますか。', riskOn: 'yes', severity: 3, risk: '学校保有情報のPTA目的利用・提供', advice: '学校自身による利用とPTAへの提供を分け、個人情報保護法第61条・第69条の根拠、対象情報、不同意者の除外、利用・提供記録を確認してください。', links: [{ label: '個人情報', url: '../privacy.html' }] }),
       makeCheck({ cat: '学校名簿', axis: 'privacy', q: 'PTAが学校名簿、クラス名簿、保護者連絡先、地区情報を利用していますか。', riskOn: 'yes', severity: 3, risk: '学校保有個人情報のPTA利用', advice: 'PTAが学校名簿やクラス名簿を利用している場合、提供元、利用目的、本人同意、提供記録を確認してください。' }),
       makeCheck({ cat: '会費徴収', axis: 'finance', q: 'PTA会費を学校徴収金と一緒に徴収していますか。', severity: 3, risk: '学校徴収金とPTA会費の混在', advice: 'PTA会費と学校徴収金が混在している場合、任意団体の会費であること、請求主体、会員確認の有無を確認する必要があります。', links: [{ label: '会費徴収', url: '../fee-collection.html' }] }),
       makeCheck({ cat: '学校口座・システム', axis: 'finance', q: '学校口座、学校徴収金システム、学校徴収金案内文書をPTA会費に利用していますか。', severity: 2, risk: '学校徴収金とPTA会費の混在', advice: '学校の徴収金システムや案内文書をPTA会費に使う場合、公私の区分と会員確認を整理する必要があります。' }),
@@ -188,7 +188,7 @@
       makeCheck({ cat: '施設・印刷', axis: 'facilities', q: '学校施設、印刷機、児童経由配布、担任経由回収を、PTAに無条件で利用させていますか。', riskOn: 'yes', severity: 2, risk: '学校施設・印刷機・児童経由配布の利用', advice: '施設、印刷機、児童経由配布、担任回収には、利用条件、費用負担、公平性、学校教育との区分を確認する必要があります。', links: [{ label: '施設利用', url: '../facilities.html' }] }),
       makeCheck({ cat: '児童の取扱い', axis: 'facilities', q: 'PTA加入状況を、児童への対応、配布物、行事参加、登下校、安全活動、記念品等の取扱いと結び付けていますか。', riskOn: 'yes', severity: 3, risk: '非加入・退会を児童の取扱いと結び付ける運用', advice: '児童への対応や学校教育上の取扱いは、PTA加入状況と切り離して整理してください。' }),
       makeCheck({ cat: '非会員把握', axis: 'privacy', q: '非会員への協力金依頼、記念品除外、行事対象者整理等のために、PTA会員情報と学校保有の児童・保護者情報を突合していますか。', riskOn: 'yes', severity: 3, risk: '非会員把握のための学校情報突合', advice: '非会員を割り出して個別対応する方向ではなく、児童に関わる取扱いをPTA加入状況と切り離す方向で整理してください。' }),
-      makeCheck({ cat: '教育委員会基準', axis: 'personnel', q: '教育委員会として、学校がPTA会費徴収、PTA個人情報提供、PTA文書配布回収、PTA事務従事を行わないための基準・通知・点検項目を整備していますか。', riskOn: 'no', severity: 2, risk: '教育委員会通知・点検基準の不足', advice: '学校ごとの慣行に任せず、教育委員会として学校向けの基準・通知・点検項目を整備する必要があります。' })
+      makeCheck({ cat: '教育委員会基準', axis: 'personnel', q: '教育委員会として、学校によるPTA会費徴収、個人情報の利用・提供、文書配布回収、PTA関係事務の関与範囲を確認する基準・通知・点検項目を整備していますか。', riskOn: 'no', severity: 2, risk: '教育委員会通知・点検基準の不足', advice: '学校ごとの慣行に任せず、教育委員会として学校関与の根拠と範囲を確認する基準・通知・点検項目を整備する必要があります。' })
     ]
   };
 
@@ -229,15 +229,15 @@
     if (level3 > 0) return {
       level: 3,
       cls: 'lv3',
-      eyebrow: '見直し優先',
-      title: '早急な見直しが必要な項目があります',
+      eyebrow: '優先確認',
+      title: '優先して確認・見直す項目があります',
       summary: '手続、情報管理、学校関与のいずれかで、運用を早めに確認すべき回答がありました。結果は適法性を断定するものではありませんが、関係資料を保存し、学校・PTA・教育委員会へ確認してください。'
     };
     if (level2 > 0) return {
       level: 2,
       cls: 'lv2',
       eyebrow: '運用確認',
-      title: '運用リスクがあります',
+      title: '運用の見直しを検討する項目があります',
       summary: '任意性、会員管理、個人情報、学校との分離について、確認した方がよい項目があります。文書と実務が一致しているかを整理してください。'
     };
     if (level1 > 0) return {
@@ -251,7 +251,7 @@
       level: 0,
       cls: 'lv0',
       eyebrow: '確認結果',
-      title: '問題なしに近い状態です',
+      title: '今回の回答では大きな問題は見えにくい状態です',
       summary: '今回の回答範囲では、大きな問題は見えにくい状態です。今後も文書、会員台帳、同意記録、会費請求方法を保存し、説明できる状態を維持してください。'
     };
   }
@@ -475,11 +475,11 @@
 
       bodyEl.innerHTML = `
         <section class="check-result-summary">
-          <h2>総合評価：${escapeHtml(overall.title)}</h2>
+          <h2>確認結果：${escapeHtml(overall.title)}</h2>
           <p>${escapeHtml(overall.summary)}</p>
         </section>
         <section class="check-result-risks">
-          <h3>重点リスク</h3>
+          <h3>優先して確認する事項</h3>
           ${risksHtml}
         </section>
         <div class="check-result-grid">
@@ -488,7 +488,7 @@
             ${listHtml(documents)}
           </section>
           <section class="check-result-actions">
-            <h3>次にやること</h3>
+            <h3>次の確認事項</h3>
             ${listHtml(roleConfig.actions, true)}
           </section>
         </div>
@@ -503,7 +503,7 @@
           </section>
         </div>
         <section class="check-result-links">
-          <h3>関連ページ</h3>
+          <h3>参照資料</h3>
           <ul>${links.map((link) => `<li><a href="${escapeHtml(link.url)}">${escapeHtml(link.label)} →</a></li>`).join('')}</ul>
         </section>
         <section class="check-result-note">
@@ -531,7 +531,7 @@
 
     share() {
       const title = document.getElementById('bannerTitle').textContent;
-      const text = `【PTA運営チェック】\n結果: ${title}\n\nPTA適正化推進委員会の運営チェックアプリで確認しました。`;
+      const text = `【PTA運営チェック】\n結果: ${title}\n\nPTA適正化推進委員会の運営チェックで確認しました。`;
       window.open(
         `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(location.href)}`,
         '_blank',
