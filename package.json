@@ -20,6 +20,6 @@
     "maintenance:bump-site-js:dry-run": "node scripts/bump-site-js-version.js 90 --dry-run",
     "maintenance:bump-site-js": "node scripts/bump-site-js-version.js",
     "maintenance:bump-site-js:check": "npm run maintenance:bump-site-js -- 90 && npm run check:site-js-version",
-    "maintenance:site-js-cache": "npm run report-site-js-version && npm run maintenance:bump-site-js:dry-run && npm run maintenance:bump-site-js:check && npm run report:site-js-version && npm run check:all"
+    "maintenance:site-js-cache": "npm run report:site-js-version && npm run maintenance:bump-site-js:dry-run && npm run maintenance:bump-site-js:check && npm run report:site-js-version && npm run check:all"
   }
 }
