@@ -151,6 +151,46 @@
   }
 }
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Dataset",
+ "name": "PTA関連 教育委員会回答データベース",
+ "description": "PTAの入会意思確認、会費徴収、個人情報、教職員関与、学校施設利用に関する全国72自治体・72件の教育委員会回答本文(個人情報等マスキング済み)。",
+ "url": "https://ptaorg.com/board-responses.html",
+ "keywords": [
+  "PTA",
+  "任意加入",
+  "教育委員会",
+  "会費徴収",
+  "個人情報",
+  "教職員関与",
+  "学校施設利用"
+ ],
+ "creator": {
+  "@type": "Organization",
+  "name": "PTA適正化推進委員会",
+  "url": "https://ptaorg.com/"
+ },
+ "dateModified": "2026-06-30",
+ "inLanguage": "ja",
+ "isAccessibleForFree": true,
+ "distribution": [
+  {
+   "@type": "DataDownload",
+   "name": "CSV形式",
+   "encodingFormat": "text/csv",
+   "contentUrl": "https://ptaorg.com/data/board-responses.csv"
+  },
+  {
+   "@type": "DataDownload",
+   "name": "JSON形式",
+   "encodingFormat": "application/json",
+   "contentUrl": "https://ptaorg.com/data/board-responses.json"
+  }
+ ]
+}
+</script>
 </head>
 <body class="board-responses-editorial">
 <header class="site-header"><div class="nav-container"><a class="logo" href="index.html"><img alt="PTA適正化推進委員会" src="assets/popc-logo.png"/><span>PTA適正化推進委員会</span></a><div class="header-search"><svg viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input aria-label="サイト内検索" class="search-input" placeholder="キーワードで検索…" type="text"/><div class="search-results-dropdown"></div></div><nav aria-label="主要ナビゲーション" class="desktop-nav">
@@ -271,6 +311,7 @@
 <section class="municipality-index-section" id="municipality-index"><div class="wrap"><h2 class="section-title">自治体索引</h2><p class="section-lead">地方・都道府県ごとに掲載回答を確認できます。</p><div class="index-map-layout"><div class="index-main"><div class="muni-search-wrap"><input id="muniSearch" placeholder="自治体名で絞り込み" type="search"/></div><div id="regionIndex"></div></div><aside class="region-map-panel"><div class="region-map-card"><h3>北海道・東北</h3><div class="region-map" id="regionMap-hokkaido-tohoku" data-region-id="hokkaido-tohoku"></div></div><div class="region-map-card"><h3>関東</h3><div class="region-map" id="regionMap-kanto" data-region-id="kanto"></div></div><div class="region-map-card"><h3>中部</h3><div class="region-map" id="regionMap-chubu" data-region-id="chubu"></div></div><div class="region-map-card"><h3>近畿</h3><div class="region-map" id="regionMap-kinki" data-region-id="kinki"></div></div><div class="region-map-card"><h3>中国・四国</h3><div class="region-map" id="regionMap-chugoku-shikoku" data-region-id="chugoku-shikoku"></div></div><div class="region-map-card"><h3>九州・沖縄</h3><div class="region-map" id="regionMap-kyushu" data-region-id="kyushu"></div></div></aside></div></div></section>
 <section class="response-bodies-section"><div class="wrap"><h2 class="section-title">回答本文</h2><p class="section-lead">各自治体等の回答本文を、公開用に個人情報等を省略したうえで掲載しています。回答本文は折りたたみを開いて確認してください。</p><div id="responseBodiesContent"></div></div></section>
 <section class="excluded-section"><div class="wrap"><h2 class="section-title">掲載対象から外した資料</h2><p class="section-lead">回答本文ではない可能性が高い資料、重複資料、本文確認ができない資料は、判断理由を明示して掲載対象から外しています。</p><div id="excludedResponses"></div></div></section>
+<section class="download-section" style="background:#fff;padding:52px 0;border-top:1px solid var(--line)"><div class="wrap"><h2 class="section-title">データのダウンロード</h2><p class="section-lead">掲載回答を、研究・報道・行政実務での検証に使いやすい形式で提供しています。個人情報等はマスキング済みです。(最終更新:2026-06-30・72自治体・72件)</p><p style="margin:18px 0 0"><a class="map-index-link" href="/data/board-responses.csv" download>CSVをダウンロード</a> <a class="map-index-link" href="/data/board-responses.json" download style="margin-left:10px">JSONをダウンロード</a></p><p class="map-note" style="margin-top:14px">ご利用の際は、出典として「PTA適正化推進委員会（ptaorg.com）」を明記してください。回答内容は各自治体の回答時点の見解です。</p></div></section>
 <section class="caution-section"><div class="wrap"><p>本ページは、各教育委員会等からの回答を整理した資料ページです。回答内容は各自治体等の回答時点の見解・説明であり、個別事案への適用には、学校別の実物文書、規約、入会申込書、会費徴収資料、個人情報同意書、施設利用許可資料等との照合が必要です。</p></div></section>
 <footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><h3>PTA適正化推進委員会</h3><div class="footer-contact-masked"><p>本ページでは、個人情報保護と資料公開の安全性を優先し、所在地・電話番号等の直接連絡先は表示していません。</p><p><a href="/contact.html">お問い合わせページへ</a></p></div></div></div><p class="copyright">© PTA適正化推進委員会</p></div></footer>
 <script crossorigin="" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
