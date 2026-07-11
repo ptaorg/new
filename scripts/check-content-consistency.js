@@ -5,6 +5,7 @@ const root = path.join(__dirname, '..');
 const forbidden = [
   { text: 'https://ptaorg.github.io/donate/', label: '旧寄付URL' },
   { text: '運営チェックアプリ', label: '旧運営チェック名称' },
+  { text: 'PTAオプトアウト加入の無効性', label: '旧オプトアウト記事名' },
 ];
 
 const ignoredDirs = new Set(['.git', 'node_modules']);
