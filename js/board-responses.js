@@ -130,7 +130,8 @@
         if (tags) html += `<div class="response-tags">${tags}</div>`;
         html += `<details><summary>回答本文を読む</summary><div class="response-body">${esc(d.body || '回答本文未掲載。')}</div></details>`;
         if (d.sourceFile) html += `<p class="source-note">元資料：${esc(d.sourceFile)}</p>`;
-        html += `<p class="back-to-index"><a href="#municipality-index">▲ 自治体索引へ戻る</a></p></article>`;
+        const plink = no != null ? (window.PTA_BOARD_RESPONSE_PERMALINKS || {})[String(no)] : null;
+        html += `<p class="back-to-index">${plink ? `<a href="${plink}">この回答の個別ページを開く →</a>　` : ''}<a href="#municipality-index">▲ 自治体索引へ戻る</a></p></article>`;
       }
       html += '</section>';
     }
