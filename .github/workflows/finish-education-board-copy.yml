@@ -1,0 +1,69 @@
+name: Finish education board copy cleanup
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Remove remaining meta copy
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('edu-board-separation.html')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace(
+            '<p>校長に任せるから現場が苦しくなります。教育委員会が線を引けば、校長は「教育委員会の方針です」と説明できます。</p>',
+            '<p>自治体共通の基準により、学校ごとの判断と説明のばらつきを減らします。</p>'
+          )
+          path.write_text(text, encoding='utf-8')
+
+          path = Path('education-board-responsibility.html')
+          text = path.read_text(encoding='utf-8')
+          replacements = {
+            '<span class="current">教育委員会の所掌論考</span>': '<span class="current">教育委員会の確認責任</span>',
+            '<div class="section-kicker">論考・教育委員会向け</div>': '',
+            '<p>PTAが任意団体であることと、学校がPTAのために行う配布、回収、集金、名簿、連絡、施設利用、教職員事務を確認することは別の問題です。</p>': '<p>教育委員会は、学校がPTAのために行う配布、回収、集金、名簿、連絡、施設利用、教職員事務を確認します。</p>',
+            '<p>一方で、学校がPTAの入会書類を回収し、PTA会費を学校徴収金と一体で扱い、学校保有情報や学校連絡ツールをPTA運営に使わせている場合、それはPTA内部だけの問題ではなく、学校側の関与の問題です。教育委員会が学校の関与範囲を確認し、必要に応じて学校協力の条件を整理することは、PTAへの不当な支配ではなく、学校管理上の適正化です。</p>': '<p>学校がPTAの入会書類を回収し、PTA会費を学校徴収金と一体で扱い、学校保有情報や学校連絡ツールをPTA運営に使わせている場合、教育委員会は学校側の関与範囲と学校協力の条件を確認します。</p>',
+            '<div class="section-kicker">教育委員会向け根拠資料セット</div>': '',
+            '<h2 class="section-title">法令リンク・アーカイブ資料・通知モデルは、実務指針ページで確認できます</h2>': '<h2 class="section-title">関連資料</h2>',
+            '<p>本ページは考え方を整理する論考です。教育委員会が実際に通知、全校点検、照会、学校向け説明を組み立てる場合には、法令本文、個人情報保護委員会ガイドライン、地方公務員法第35条関係資料、教員の職務整理、働き方改革資料、民法・消費者契約法・地方自治法などをまとめた教育委員会向け実務指針ページを併用してください。</p>': '<p>法令本文、個人情報保護委員会資料、服務関係資料、通知モデルを掲載しています。</p>',
+            '<p>アーカイブ経由で確認する必要がある資料もあるため、本文中で断片的に引用するのではなく、資料セットとして確認し、発出主体・日付・対象制度・現行性を確認してから照会文や通知案に反映することが重要です。</p>': '',
+            '<div class="section-kicker">Issue Chain</div>': '',
+            '<h2 class="section-title">入会記録の不在は、学校関与全体の説明を不安定にする</h2>': '<h2 class="section-title">入会記録と学校関与</h2>',
+            '<p>入会申込書や加入意思確認記録が確認できない場合、問題は「申込書が一枚ない」という形式論にとどまりません。誰が会員なのか、誰から会費を受け取れるのか、学校がどの範囲で名簿・連絡・徴収・配布に協力できるのかという説明が、連鎖的に難しくなります。</p>': '<p>入会申込書や加入意思確認記録が確認できない場合は、会員資格、会費請求、名簿、連絡、徴収、配布の根拠を確認します。</p>',
+            '<p>この連鎖は、公開資料上ただちに一律の違法認定をするための図ではありません。教育委員会が全校点検を行う際に、学校側の行為として確認すべき順番を示すものです。</p>': '<p>全校点検では、学校側の行為を項目別に確認します。</p>',
+            '<strong>起点は、PTAが任意団体として会員を直接確認しているかどうかです。</strong>': '<strong>PTAによる会員確認記録を確認します。</strong>',
+            '<p>ここが曖昧なまま学校が徴収・名簿・連絡・回収を支えると、PTA内部の問題ではなく、学校管理、服務、個人情報、会計処理の説明問題になります。</p>': '<p>学校が徴収、名簿、連絡、回収に関与する場合は、学校管理、服務、個人情報、会計処理の根拠を確認します。</p>'
+          }
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+          text = re.sub(r'<section class="thesis-section thesis-note-section" id="page-position">.*?</section>', '', text, count=1, flags=re.S)
+          text = re.sub(r'<div class="thesis-related">.*?</div>', '', text, flags=re.S)
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Run checks
+        run: npm test
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add edu-board-separation.html education-board-responsibility.html
+          if git diff --cached --quiet; then
+            echo "No copy changes needed"
+          else
+            git commit -m "Finish education board copy cleanup"
+            git push origin main
+          fi
