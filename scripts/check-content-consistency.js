@@ -8,6 +8,7 @@ const forbidden = [
 ];
 
 const ignoredDirs = new Set(['.git', 'node_modules']);
+const checkedExtensions = new Set(['.html', '.js', '.mjs']);
 const findings = [];
 
 function walk(dir) {
@@ -18,7 +19,7 @@ function walk(dir) {
       walk(full);
       continue;
     }
-    if (!entry.isFile() || !entry.name.endsWith('.html')) continue;
+    if (!entry.isFile() || !checkedExtensions.has(path.extname(entry.name))) continue;
     const text = fs.readFileSync(full, 'utf8');
     for (const rule of forbidden) {
       if (text.includes(rule.text)) {
