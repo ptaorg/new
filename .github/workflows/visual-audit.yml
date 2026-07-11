@@ -1,0 +1,52 @@
+name: Full-site visual audit
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  visual-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install project dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          elif [ -f package.json ]; then
+            npm install
+          fi
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.52.0
+          npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/pta-visual-server.log 2>&1 &
+          echo $! > /tmp/pta-visual-server.pid
+          sleep 2
+          curl --fail http://127.0.0.1:4173/index.html >/dev/null
+
+      - name: Run structural checks
+        run: npm test
+
+      - name: Run Chromium audit
+        run: node scripts/visual-audit.mjs
+
+      - name: Upload visual audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pta-full-site-visual-audit
+          path: visual-audit-output/
+          retention-days: 7
