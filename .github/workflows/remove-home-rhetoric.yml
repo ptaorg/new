@@ -1,0 +1,49 @@
+name: Apply concise home wording
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  update-home-copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Simplify rhetorical wording
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+          replacements = {
+              'このサイトは、慣習や印象ではなく、法令、行政回答、学校文書、PTA文書を照合し、どこに確認すべき問題があるのかを本文で説明する資料サイトです。':
+              'このサイトは、法令、行政回答、学校文書、PTA文書をもとに、確認すべき論点を本文で説明する資料サイトです。',
+              '主張ではなく、行政回答と実物資料を照合する':
+              '行政回答・実物資料'
+          }
+          changed = False
+          for old, new in replacements.items():
+              if old in text:
+                  text = text.replace(old, new)
+                  changed = True
+          if changed:
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No wording changes needed"
+          else
+            git commit -m "Simplify home page evidence wording"
+            git push origin main
+          fi
