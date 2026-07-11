@@ -1,0 +1,45 @@
+name: Remove injected document meta copy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  clean-doc-css:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Remove injected explanatory block
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('css/hover-orange.css')
+          text = path.read_text(encoding='utf-8')
+          start = text.find('/* Documents page prose injection: break the old card-only layout. */')
+          end = text.find('@media(max-width:760px){')
+          if start != -1 and end != -1 and start < end:
+              text = text[:start] + text[end:]
+          text = text.replace("  body:has(.doc-index) .doc-index::before{padding:22px 20px!important;font-size:.95rem!important}\n", '')
+          text = text.replace("  body:has(.doc-index) .doc-sec{padding:18px 16px!important}\n", '')
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Run checks
+        run: npm test
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add css/hover-orange.css
+          if git diff --cached --quiet; then
+            echo "No CSS cleanup needed"
+          else
+            git commit -m "Remove injected document page commentary"
+            git push origin main
+          fi
