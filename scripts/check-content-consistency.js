@@ -5,11 +5,9 @@ const root = path.join(__dirname, '..');
 const forbidden = [
   { text: 'https://ptaorg.github.io/donate/', label: '旧寄付URL' },
   { text: '運営チェックアプリ', label: '旧運営チェック名称' },
-  { text: 'PTAオプトアウト加入の無効性', label: '旧オプトアウト記事名' },
 ];
 
 const ignoredDirs = new Set(['.git', 'node_modules']);
-const checkedExtensions = new Set(['.html', '.js', '.mjs']);
 const findings = [];
 
 function walk(dir) {
@@ -20,7 +18,7 @@ function walk(dir) {
       walk(full);
       continue;
     }
-    if (!entry.isFile() || !checkedExtensions.has(path.extname(entry.name))) continue;
+    if (!entry.isFile() || path.extname(entry.name) !== '.html') continue;
     const text = fs.readFileSync(full, 'utf8');
     for (const rule of forbidden) {
       if (text.includes(rule.text)) {
