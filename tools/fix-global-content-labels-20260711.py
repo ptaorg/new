@@ -6,7 +6,9 @@ replacements = {
     '運営チェックアプリ': '運営チェック',
 }
 changed = []
-for path in root.rglob('*.html'):
+for path in root.rglob('*'):
+    if not path.is_file() or path.suffix not in {'.html', '.js', '.mjs'}:
+        continue
     if any(part in {'.git', 'node_modules'} for part in path.parts):
         continue
     text = path.read_text(encoding='utf-8')
@@ -17,6 +19,6 @@ for path in root.rglob('*.html'):
         path.write_text(new, encoding='utf-8')
         changed.append(str(path))
 
-print(f'updated {len(changed)} HTML file(s)')
+print(f'updated {len(changed)} file(s)')
 for item in changed:
     print(item)
