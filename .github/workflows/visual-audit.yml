@@ -18,20 +18,22 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
           fetch-depth: 0
 
-      - name: Apply visual consistency import
+      - name: Apply visual consistency stylesheet
         if: github.event_name == 'pull_request' && github.head_ref == 'visual-audit-20260711'
-        run: python3 tools/apply-site-consistency-import-20260711.py
+        run: |
+          python3 tools/apply-site-consistency-import-20260711.py
+          python3 tools/apply-site-consistency-links-20260711.py
 
-      - name: Commit visual consistency import
+      - name: Commit visual consistency stylesheet links
         if: github.event_name == 'pull_request' && github.head_ref == 'visual-audit-20260711'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          git add css/hover-orange.css
+          git add -A
           if git diff --cached --quiet; then
-            echo "Consistency import already applied"
+            echo "Consistency stylesheet already applied"
           else
-            git commit -m "Load sitewide visual consistency stylesheet"
+            git commit -m "Apply sitewide visual consistency stylesheet"
             git push origin HEAD:${{ github.head_ref }}
           fi
 
