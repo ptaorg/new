@@ -4,6 +4,7 @@ root = Path('.')
 replacements = {
     'https://ptaorg.github.io/donate/': '/support.html',
     '運営チェックアプリ': '運営チェック',
+    'PTAオプトアウト加入の無効性': 'PTAオプトアウト加入の成立要件と実務リスク',
 }
 changed = []
 for path in root.rglob('*'):
