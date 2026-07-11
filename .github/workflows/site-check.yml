@@ -6,17 +6,30 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Clean journal index
+        run: python tools/cleanup-journal-index-20260711.py
 
       - name: Install dependencies if package metadata is present
         run: |
@@ -28,5 +41,23 @@ jobs:
             echo "No package.json found; skipping dependency install."
           fi
 
+      - name: Regenerate search index and sitemap
+        run: |
+          npm run generate:search
+          npm run generate:sitemap
+
       - name: Run site checks
         run: npm test
+
+      - name: Commit journal cleanup
+        if: github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add journal.html data/site-search-index.js sitemap.xml
+          if git diff --cached --quiet; then
+            echo "No journal changes"
+          else
+            git commit -m "Remove obsolete journal filter and card scaffolding"
+            git push
+          fi
