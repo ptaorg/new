@@ -1,5 +1,10 @@
 window.PTA_SITE_SEARCH_INDEX = [
   [
+    "PTA事務と教職員の職務専念義務——地方公務員法35条・文科省通知から見る境界線",
+    "/journal/pta-shokumu-sennen-gimu.html",
+    "教頭のPTA会計、勤務時間中の集金・名簿作成は誰の職務か。職務専念義務、職専免、兼職兼業、文科省通知、働き方改革の3分類から境界線を整理する研究ノート。"
+  ],
+  [
     "PTA問題グランドフレームワーク",
     "/framework.html",
     "制度史・三層構造・崩壊過程・法的枠組み（61条・69条・FAQ Q3-3-2）・五つの境界線・出口設計（移行4類型・会費ゼロPTA）までを一体で整理する統合ページ。"
@@ -345,24 +350,9 @@ window.PTA_SITE_SEARCH_INDEX = [
     "学校徴収金とPTA会費の不可分徴収について、既存の研究ノートPDFと会費徴収ページの整理をもとにHTML記事化しました。"
   ],
   [
-    "PTA会費代理徴収の法的限界",
-    "/journal/pta-fee-collection-legal-limits.html",
-    "学校によるPTA会費代理徴収の制度的緊張と分離への移行設計を整理する重点論考です。"
-  ],
-  [
-    "PTA会費徴収のパラドックス——なぜ「自立」が教職員と保護者を守る基本方向なのか",
-    "/journal/pta-fee-collection-paradox.html",
-    "PTA会費徴収のパラドックスを、学校徴収金との混在、代理徴収、個人情報、教職員負担の観点からHTML記事化しました。"
-  ],
-  [
     "PTA適正化の最終地点",
     "/journal/pta-final-point-ptf.html",
     "固定会費型PTAの構造分析とPTFの制度設計を整理する重点論考です。"
-  ],
-  [
-    "PTA運営の法的構造と教育行政の監督責任",
-    "/journal/pta-legal-structure-education-administration.html",
-    "PTA内部自治と教育行政の学校管理責任の境界を整理する重点論考です。"
   ],
   [
     "現行法から分析するPTA入会におけるオプトイン型申込記録の不可欠性",
