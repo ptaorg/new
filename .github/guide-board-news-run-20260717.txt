@@ -1,0 +1,1 @@
+Run the temporary guide-board newspaper restoration and browser verification workflow.
