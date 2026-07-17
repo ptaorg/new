@@ -367,6 +367,155 @@
     });
   }
 
+
+  /* ===== 現在地の可視化（v90追補）=====
+     ナビの現在ページ強調と、簡易パンくず（既存の静的パンくずが見えているページでは注入しない）。 */
+
+  function locNormPath(p) {
+    try { p = decodeURI(p); } catch (e) {}
+    if (p.slice(-11) === '/index.html') p = p.slice(0, -10);
+    return p;
+  }
+
+  var LOC_SECTIONS = [
+    { re: /^\/journal\//, href: '/journal.html', label: '論考・調査報告' },
+    { re: /^\/board-responses\//, href: '/board-responses.html', label: '教育委員会の回答' },
+    { re: /^\/archive\//, href: '/national-archive.html', label: '全国資料館' },
+    { re: /^\/starter-kit\//, href: '/starter-kit/', label: 'スターターキット' },
+    { re: /^\/forms\//, href: '/documents.html', label: '資料入口・文例索引' },
+    { re: /^\/downloads\//, href: '/documents.html', label: '資料入口・文例索引' }
+  ];
+
+  var LOC_GROUPS = {
+    '/guide-parent.html': '立場別', '/guide-pta.html': '立場別', '/guide-board.html': '立場別', '/guide-research.html': '立場別',
+    '/membership.html': '問題別', '/privacy.html': '問題別', '/fee-collection.html': '問題別', '/personnel.html': '問題別', '/facilities.html': '問題別', '/law-map.html': '問題別',
+    '/board-responses.html': '根拠資料', '/national-archive.html': '根拠資料', '/administrative-materials.html': '根拠資料', '/cases.html': '根拠資料', '/journal.html': '根拠資料', '/report.html': '根拠資料', '/research-index.html': '根拠資料',
+    '/guideline.html': 'チェック・文例', '/submission-kit.html': 'チェック・文例', '/documents.html': 'チェック・文例'
+  };
+
+  function initCurrentLocation() {
+    var cur = locNormPath(location.pathname);
+    if (document.documentElement.dataset.locReady === '1') return;
+    document.documentElement.dataset.locReady = '1';
+
+    addStyle('loc-style-v90',
+      '.desktop-nav > a.nav-link.is-here,.desktop-nav .nav-item > a.nav-link.is-here-parent{color:#f0c95c!important;position:relative}' +
+      '.desktop-nav > a.nav-link.is-here::after,.desktop-nav .nav-item > a.nav-link.is-here-parent::after{content:"";position:absolute;left:8px;right:8px;bottom:1px;height:3px;background:#d4af37;border-radius:2px}' +
+      '.mega-menu a.is-here{color:#b45309!important;font-weight:900}' +
+      '.mega-menu a.is-here::before{content:"▸ ";color:#d4af37}' +
+      '.mobile-link.is-here{color:#f0c95c!important;border-left:4px solid #d4af37!important;padding-left:10px!important}' +
+      '.loc-trail{background:#f4f7fa;border-bottom:1px solid #dbe4ee;font-size:.82rem;line-height:1.6}' +
+      '.loc-trail-inner{max-width:1200px;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;color:#64748b}' +
+      '.loc-trail a{color:#1e3a5f;text-decoration:none;font-weight:700}' +
+      '.loc-trail a:hover{text-decoration:underline}' +
+      '.loc-trail .loc-sep{color:#94a3b8}' +
+      '.loc-trail .loc-current{color:#334155;font-weight:700;max-width:34em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}'
+    );
+
+    var isHome = (cur === '/' || cur === '');
+    var matchedInNav = false;
+
+    function markAnchor(a) {
+      a.classList.add('is-here');
+      a.setAttribute('aria-current', 'page');
+      var item = a.closest ? a.closest('.nav-item') : null;
+      if (item) {
+        var top = item.querySelector(':scope > a.nav-link') || item.querySelector('a.nav-link');
+        if (top && top !== a) top.classList.add('is-here-parent');
+      }
+    }
+
+    var navAnchors = document.querySelectorAll('.desktop-nav a[href], .mobile-overlay a[href]');
+    navAnchors.forEach(function(a){
+      var href = a.getAttribute('href') || '';
+      if (href.indexOf('#') !== -1) return;
+      if (locNormPath(a.pathname) === cur) { markAnchor(a); matchedInNav = true; }
+    });
+
+    var section = null;
+    for (var i = 0; i < LOC_SECTIONS.length; i++) {
+      if (LOC_SECTIONS[i].re.test(cur)) { section = LOC_SECTIONS[i]; break; }
+    }
+
+    if (!matchedInNav && section) {
+      navAnchors.forEach(function(a){
+        var href = a.getAttribute('href') || '';
+        if (href.indexOf('#') !== -1) return;
+        if (locNormPath(a.pathname) === section.href) {
+          a.classList.add('is-here');
+          var item = a.closest ? a.closest('.nav-item') : null;
+          if (item) {
+            var top = item.querySelector(':scope > a.nav-link') || item.querySelector('a.nav-link');
+            if (top && top !== a) top.classList.add('is-here-parent');
+          }
+        }
+      });
+    }
+
+    /* 簡易パンくず */
+    if (isHome) return;
+    var existing = document.querySelector('.breadcrumb-bar');
+    if (existing) {
+      var st = window.getComputedStyle(existing);
+      if (st && st.display !== 'none' && existing.offsetParent !== null) return;
+    }
+    if (document.querySelector('.loc-trail')) return;
+
+    var label = '';
+    var h1 = document.querySelector('main h1, h1');
+    if (h1) label = (h1.textContent || '').replace(/\s+/g, ' ').trim();
+    if (!label) label = (document.title || '').split(/[|｜]/)[0].trim();
+    if (label.length > 42) label = label.slice(0, 42) + '…';
+    if (!label) return;
+
+    var group = LOC_GROUPS[cur] || null;
+    var frag = '<div class="loc-trail-inner"><a href="/index.html">トップ</a>';
+    if (section) {
+      frag += '<span class="loc-sep">›</span><a href="' + section.href + '">' + section.label + '</a>';
+    } else if (group) {
+      frag += '<span class="loc-sep">›</span><span>' + group + '</span>';
+    }
+    frag += '<span class="loc-sep">›</span><span class="loc-current" title="現在のページ">' + label.replace(/</g, '&lt;') + '</span></div>';
+
+    var bar = document.createElement('nav');
+    bar.className = 'loc-trail';
+    bar.setAttribute('aria-label', '現在地');
+    bar.innerHTML = frag;
+    var header = document.querySelector('header.site-header');
+    if (header && header.insertAdjacentElement) header.insertAdjacentElement('afterend', bar);
+    else document.body.insertBefore(bar, document.body.firstChild);
+  }
+
+  /* ===== リンクの開き方の選別（v90追補）=====
+     外部ドメインとファイル（PDF等）は別タブで開き、サイト内の現在地を失わないようにする。 */
+  function applyLinkTargets(root) {
+    var FILE_RE = /\.(pdf|xlsx?|docx?|pptx?|zip|csv)(?=$|[?#])/i;
+    (root || document).querySelectorAll('a[href]').forEach(function(a){
+      var href = a.getAttribute('href') || '';
+      if (!href || href.charAt(0) === '#') return;
+      if (/^(mailto:|tel:|javascript:)/i.test(href)) return;
+      var external = false;
+      try { external = !!a.hostname && a.hostname !== location.hostname; } catch (e) {}
+      var isFile = FILE_RE.test(a.pathname || '');
+      if (!external && !isFile) return;
+      a.setAttribute('target', '_blank');
+      var rel = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
+      if (rel.indexOf('noopener') < 0) rel.push('noopener');
+      if (external && rel.indexOf('noreferrer') < 0) rel.push('noreferrer');
+      a.setAttribute('rel', rel.join(' '));
+      if (external && !a.querySelector('img,svg') && (a.textContent || '').trim() && !a.classList.contains('no-ext-mark')) {
+        a.classList.add('ext-link-mark');
+      }
+    });
+    addStyle('ext-link-style-v90',
+      'a.ext-link-mark::after{content:"↗";font-size:.72em;margin-left:3px;vertical-align:super;opacity:.65}'
+    );
+  }
+  function initLinkTargets() {
+    applyLinkTargets(document);
+    setTimeout(function(){ applyLinkTargets(document); }, 1500);
+  }
+
   function boot() {
     stabilizeMobileNavigation();
     normalizeLinks();
@@ -374,6 +523,8 @@
     initSearch();
     initFAQ();
     pdfLinks();
+    initCurrentLocation();
+    initLinkTargets();
     loadArchiveNotice();
     initHomeMap();
     if (location.hash) scheduleHashScroll();
@@ -381,6 +532,7 @@
   }
 
   window.initSearch = initSearch;
+  window.applyLinkTargets = applyLinkTargets;
   window.initMobileNav = stabilizeMobileNavigation;
   window.initPrimaryNavigation = stabilizeMobileNavigation;
 
