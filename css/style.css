@@ -3550,3 +3550,107 @@ body:has(.site-header) .site-header{
   padding-top:env(safe-area-inset-top)!important;
 }
 body:has(.site-header) .site-header .nav-container{min-height:74px!important}
+
+/* Open content layout
+   Content collections should read as one continuous document.  Reserve framed
+   surfaces for controls, forms, media, maps, and genuinely independent tools. */
+main :where(
+  .card,
+  .article-card,
+  .pdf-card,
+  .related-link-card,
+  .board-guide-card,
+  .documents-card,
+  .cat-doc-item,
+  .archive-school-card,
+  .yokomusubi-card,
+  .ref-item,
+  .case-card,
+  .case-block,
+  .case-item,
+  .risk-item,
+  .scope-item,
+  .check-item,
+  .pm-compare-item,
+  .audience-gateway-card,
+  .action-pack-card,
+  .feature-duo-card,
+  .proper-card,
+  .fc-card,
+  .doc-item,
+  .resource-card,
+  .thesis-card,
+  .gl-problem-card,
+  .gl-principle-card,
+  .gl-pack-card,
+  .edu-voices-card,
+  .transition-item,
+  .flow-item,
+  .law-explain-item
+){
+  margin:0!important;
+  padding:24px 0!important;
+  background:transparent!important;
+  border:0!important;
+  border-bottom:1px solid var(--site-line,#d7e0e9)!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  transform:none!important;
+}
+
+main :where(
+  .cards,
+  .card-grid,
+  .article-grid,
+  .documents-grid,
+  .resource-grid,
+  .case-grid,
+  .audience-gateway-grid,
+  .action-pack-grid,
+  .feature-duo-grid,
+  .proper-grid,
+  .thesis-grid,
+  .gl-problem-grid,
+  .gl-principle-grid,
+  .gl-pack-grid,
+  .transition-list,
+  .flow-list,
+  .law-explain
+){
+  gap:0!important;
+  border-top:2px solid var(--navy,#102a43)!important;
+}
+
+main :where(
+  .card,
+  .article-card,
+  .pdf-card,
+  .related-link-card,
+  .board-guide-card,
+  .documents-card,
+  .cat-doc-item,
+  .archive-school-card,
+  .case-card,
+  .doc-item,
+  .resource-card
+):hover{
+  background:transparent!important;
+  border-color:var(--site-line,#d7e0e9)!important;
+  box-shadow:none!important;
+  transform:none!important;
+}
+
+/* Keep restrained emphasis without turning notes into floating cards. */
+main :where(
+  .editorial-panel,
+  .editorial-section,
+  .editorial-brief,
+  .conclusion-box,
+  .key-takeaway,
+  .summary-first,
+  .notice-box,
+  .info-box
+){
+  border-radius:0!important;
+  box-shadow:none!important;
+}
